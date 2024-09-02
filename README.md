@@ -20,7 +20,7 @@ Before running the code, ensure you have Python 3.8+ installed. We recommend usi
 
 3. **Install the required packages:**
    ```bash
-   pip install pandas scikit-learn openai anthropic transformers torch accelerate beautifulsoup4
+   pip install pandas scikit-learn openai anthropic transformers torch accelerate beautifulsoup4 matplotlib tabulate
    ```
 
 ## Running LLM_Project.ipynb
