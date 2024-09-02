@@ -1,6 +1,6 @@
 # LLM-Network-Eval
 
-This repository contains all the necessary code and instructions to reproduce the results presented in our paper. The project involves running large language models (LLMs) to evaluate their performance on various tasks, generating data for fine-tuning, and analyzing the results.
+This repository contains all the necessary code and instructions to reproduce the results presented in our paper. The project involves running large language models (LLMs) to evaluate their performance on various questions relaated to computer networking, generating data for fine-tuning, and analyzing the results.
 
 ## Prerequisites
 
