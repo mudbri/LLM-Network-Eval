@@ -50,9 +50,9 @@ def parseFreeAnswersMistral(response, choices):
   print(answers)
   return ",".join(answers)
 
-def infer_mistral(question_text, choices, model):
+def infer_mistral(question_text, choices, model_name):
     # Update model and model_id for Mistral
-    model_id = "mistralai/" + model
+    model_id = "mistralai/" + model_name
 
     # Load the tokenizer and model
     tokenizer = AutoTokenizer.from_pretrained(model_id)
@@ -61,12 +61,12 @@ def infer_mistral(question_text, choices, model):
         torch_dtype=torch.bfloat16,
         device_map="auto"
     )
-
-    # Create the pipeline
-    pipeline = pipeline(
+    generator = pipeline(
         "text-generation",
         model=model,
         tokenizer=tokenizer,
+        max_new_tokens=256,
+        do_sample=False,  # If you want non-deterministic generation; set to False for deterministic.
     )
     message_question = question_text + "\n" + choices
 
@@ -74,13 +74,7 @@ def infer_mistral(question_text, choices, model):
     # Since this is a text-generation pipeline, we concatenate the messages.
     prompt = "As a virtual assistant specializing in computer networking, your task is to analyze and respond to multiple-choice questions from a course related to computer networking. For each question, you are to identify the correct option(s) from the given choices. Your response should  include the selected option(s) using their corresponding letter(s) in lowercase (e.g., a, b, c, d) or combination thereof if multiple selections are correct and an explanation. Respond with the selected choices and explanation.\nQuestion: " + message_question + "\nAnswer: "
     
-    outputs = pipeline(
-        prompt,
-        max_new_tokens=256,
-        do_sample=False,  # If you want non-deterministic generation; set to False for deterministic.
-
-    )
-    
+    outputs = generator(prompt)
     answer = outputs[0]["generated_text"].strip()
     return parseFreeAnswersMistral(answer, choices)
 
