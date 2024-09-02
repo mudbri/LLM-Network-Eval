@@ -1,0 +1,193 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+1,Which form of NAT enables a firewall to selectively perform translations based on the destination address? Select one choice.,"a. dynamic PAT
+b. dynamic NAT
+c. policy NAT
+d. static PAT
+e. static NAT
+",,c,c,,"Policy NAT allows a firewall to selectively perform translations based on the destination address. It is used to define specific translation rules based on policies or conditions, such as the destination address. This type of NAT is more flexible and allows for granular control over the translation process based on defined policies.",['https://www.cisco.com/c/en/us/td/docs/security/asa/asa90/configuration/guide/asa_90_cli_config/nat_overview.html'],1,NetSec,0.95,0.9999874092852638,1.0
+2,Which form of NAT uses port addresses to distinguish between translated sessions? Select one choice.,"a. dynamic PAT
+b. dynamic NAT
+c. static NAT
+d. policy NAT
+",,a,a,,"Dynamic PAT (Port Address Translation) is a form of NAT (Network Address Translation) that maps multiple private IP addresses to a single public IP address by using different source port numbers. This method allows for many internal devices to share a single public IP address while being uniquely identified by the combination of the public IP address and the source port number. Dynamic NAT, on the other hand, maps private IP addresses to a pool of public IP addresses without involving port numbers. Static NAT maps a single private IP address to a single public IP address, and policy NAT is used to apply NAT based on defined policies rather than just IP addresses and ports.",['https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html'],1,NetSec,1.0,0.9999784691637916,1.0
+3,"In an ACL, if a traffic flow is not explicitly permitted, once it has expired testing all the user-configured control entries in the list, the result will be:","a. The traffic will be implicitly denied.
+b. The traffic will be implicitly permitted.
+c. The traffic will be explicitly denied.
+d. The traffic will be explicitly permitted.
+",,a,a,,"In an Access Control List (ACL), if a traffic flow is not explicitly permitted by any of the user-configured control entries in the list, the default behavior is to implicitly deny the traffic. This means that if the traffic does not match any of the permit statements in the ACL, it will be denied by default.",['https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html'],1,NetSec,1.0,0.9999763235462916,1.0
+4,Which TCP flag must be set in a packet in order for the packet to match an ACL entry that contains the established keyword? Select one choice.,"a. SYN or ACK
+b. ACK or RST
+c. ACK only
+d. SYN only
+e. RST only
+",,b,b,,"In order for a packet to match an ACL entry that contains the established keyword, the ACK flag must be set. The 'established' keyword in ACLs is used to allow TCP traffic that is part of an existing connection. When a packet with the ACK flag set is received, it indicates that the connection is established and part of an existing session. Therefore, the ACK flag must be set for the packet to match an ACL entry with the established keyword.","['https://networklessons.com/uncategorized/extended-access-list-established', 'https://www.cisco.com/c/en/us/support/docs/ip/access-lists/26448-ACLsamples.html']",1,NetSec,0.9,0.999988005296937,1.0
+5,Which one of the following best describes the limitations of local AAA databases? Select one choice.,"a. Scalability issues force network administrators to enter username credentials into each network device.
+b. Usernames, passwords, and credentials must be synchronized with a TACACS+/RADIUS server.
+c. Authorization policies that are created with local AAA databases cannot be synchronized and made available to all the devices across the network.
+d. While they support accounting, they do not meet the requirements for large persistent storage.
+",,a,a,,"Local AAA databases have scalability issues that require network administrators to manually enter username credentials into each network device, which can be cumbersome and inefficient for large networks. This limitation hinders the ability to easily manage and scale the authentication process across multiple devices.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_aaa/configuration/xe-16-6/sec-usr-aaa-xe-16-6-book/sec-local-aaa.html'],1,NetSec,0.95,0.9999784691637916,1.0
+6,"What benefit does a web application firewall provide, in addition to the benefits provided by a traditional load balancer? Select one choice.","a. Protects the servers behind the WAF from attacks using Layer 3 and 4 firewall rules
+b. Protects web applications from common vulnerabilities and DDoS attacks
+c. Protects any Layer 7 applications from malware
+d. Protects the back-end database by acting as a reverse proxy between the web server and the back-end database
+",,b,b,,"A web application firewall (WAF) provides protection for web applications from common vulnerabilities and DDoS attacks by monitoring, filtering, and blocking malicious HTTP traffic. Unlike a traditional load balancer that primarily focuses on traffic distribution and high availability, a WAF specifically targets web application security threats at Layer 7 of the OSI model. It helps in safeguarding against SQL injection, cross-site scripting (XSS), and other web application-specific attacks, which are not addressed by a standard load balancer.",['https://www.cloudflare.com/learning/security/threats/web-application-firewall-waf/'],1,NetSec,0.95,0.9999579667834204,1.0
+7,What are four common algorithms that typical load balancers use to load balance the traffic? (Choose four.),"a. Weighted early random detection
+b. Hash
+c. Round robin
+d. Anomaly based
+e. Least time
+f. Fewest connections
+",,"b,c,e,f","b,c,e,f",,"The four common algorithms that typical load balancers use to distribute traffic are:
+- Hash: Distributes traffic based on a hash of selected fields in the packet header.
+- Round robin: Sends traffic to each server in a rotating manner, one after the other.
+- Least time: Routes traffic to the server with the least active connections or the fastest response time.
+- Fewest connections: Directs traffic to the server with the fewest active connections.",['https://avinetworks.com/glossary/load-balancing-algorithms/'],1,NetSec,1.0,0.7181458751337298,1.0
+8,What three elements can be configured in firewall policies to detect network-based malware? (Choose three.),"a. Metadata stored that is within the files
+b. Access control lists (ACLs)
+c. Commonly used protocols
+d. SHA-256 hashes
+e. Commonly used rainbow hash tables
+",,"a,c,d","a,b,d",,"The three elements that can be configured in firewall policies to detect network-based malware are: a. Metadata stored within the files - analyzing file metadata can help identify potentially malicious files, b. Access control lists (ACLs) - used to control traffic flow and filter packets based on defined criteria, and d. SHA-256 hashes - cryptographic hash functions used to verify the integrity of files and detect changes that may indicate malware.","['https://www.paloaltonetworks.com/cyberpedia/what-is-a-firewall', 'https://www.cloudflare.com/learning/security/glossary/what-is-a-hash-function/']",0,NetSec,0.9,0.9127202888129692,0.1999999999999999
+9,What is the first step in centralized syslog management? Select one choice.,"a. Receive syslog messages from syslog clients that are distributed across the network and store those messages in a flat log file.
+b. Present syslog data in the form of automated reports, dashboards, and real-time query responses.
+c. Process low-level data in the relational database to produce higher-level information constructs.
+d. Move messages from the flat log file to a high-performance relational database.
+",,a,a,,The first step in centralized syslog management is to receive syslog messages from syslog clients distributed across the network and store those messages in a flat log file. This step involves collecting logs from various sources into a central repository before further processing or analysis.,['https://www.loggly.com/ultimate-guide/centralized-logging/'],1,NetSec,0.95,0.9999266180325884,1.0
+10,What must a host on an Ethernet network know about a destination to send an Ethernet frame to that destination? Select one choice.,"a. IP address
+b. Window size
+c. MAC address
+d. Receiving port number
+",,c,c,,A host on an Ethernet network must know the MAC address of the destination to send an Ethernet frame to that destination. MAC addresses are used in Ethernet networks to uniquely identify devices on the network at the data link layer. The MAC address is essential for the Ethernet frame to reach the correct destination device.,['https://www.geeksforgeeks.org/mac-address-in-computer-network/'],1,NetSec,1.0,0.9999967070975216,1.0
+11,On which OSI layer or layers does ARP operate? Select one choice.,"a. Between Layer 2 and Layer 3
+b. At Layer 3
+c. At Layer 2
+d. Between Layer 1 and Layer 2
+",,a,a,,ARP (Address Resolution Protocol) operates between Layer 2 (Data Link Layer) and Layer 3 (Network Layer) of the OSI model. It is used to map IP addresses to MAC addresses within the local network segment.,['https://www.cloudflare.com/learning/ddos/glossary/address-resolution-protocol-arp/'],1,NetSec,1.0,0.9999870516788304,1.0
+12,ARP messages are sent using which Ethertype designation in the frame header? Select one choice.,"a. 0x0800
+b. 0x8100
+c. 0x2100
+d. 0x0806
+",,d,d,,ARP (Address Resolution Protocol) messages are encapsulated within Ethernet frames and use an Ethertype value of 0x0806 in the frame header. This Ethertype value indicates that the payload of the frame is an ARP message.,['https://en.wikipedia.org/wiki/EtherType'],1,NetSec,1.0,0.9999242341303785,1.0
+13,Which two higher-level protocols rely on TCP/IP and are susceptible to attacks such as session hijacking? (Choose two.),"a. UDP
+b. Telnet
+c. HTTP
+d. ICMP
+e. ARP
+",,"b,c","b,c",,"Telnet and HTTP are the two higher-level protocols that rely on TCP/IP and are susceptible to attacks such as session hijacking. Telnet is a protocol used for remote access and is unencrypted, making it vulnerable to session hijacking. HTTP, the protocol used for web browsing, also faces session hijacking threats due to the stateless nature of the protocol and the potential for interception of session cookies.","['https://www.cloudflare.com/learning/security/threats/session-hijacking/', 'https://www.imperva.com/learn/application-security/session-hijacking/']",1,NetSec,0.9,0.9982232718408904,1.0
+15,"Which type of IP attack features a simultaneous, coordinated attack from multiple source machines? Select one choice.","a. Rogue DHCP attack
+b. MAC address flooding attack
+c. MITM attack
+d. DDoS attack
+",,d,d,,"A DDoS (Distributed Denial of Service) attack involves multiple compromised systems attacking a target, such as a server or network, causing a denial of service for users. These attacks overwhelm the target with a flood of traffic, making it unreachable. The coordinated nature of the attack from multiple sources is a key characteristic of DDoS attacks.",['https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/'],1,NetSec,1.0,0.999987886094374,1.0
+16,What is the key to the success of an MITM attack? Select one choice.,"a. The attacker waits until after a communication session is established.
+b. The hacked machine becomes overwhelmed with responses.
+c. TCP/IP bugs make it easy to crash older operating systems.
+d. Packet flooding consumes resources.
+",,a,a,,"The key to the success of a Man-in-the-Middle (MITM) attack is for the attacker to wait until after a communication session is established. By intercepting and manipulating the communication between two parties after the session is established, the attacker can eavesdrop, modify, or inject messages without the knowledge of the communicating parties.",['https://www.geeksforgeeks.org/man-in-the-middle-attack-mitm/'],1,NetSec,0.95,0.999994323034814,1.0
+17,What information can an attacker use within ICMP to determine what type of OS the device is running? Select one choice.,"a. TTL value
+b. Total length
+c. Version
+d. Checksum
+",,a,a,,"An attacker can use the Time-to-Live (TTL) value within ICMP packets to determine the type of operating system (OS) the device is running. Different operating systems set the initial TTL value differently, which can be used as a fingerprint to identify the OS. By analyzing the TTL values of ICMP packets, attackers can make educated guesses about the OS in use.",['https://resources.infosecinstitute.com/topic/icmp-fingerprinting/'],1,NetSec,0.9,0.9999906277489198,1.0
+18,Why is it important for security analysts to understand how ICMP works and what normal ICMP activity looks like? Select one choice.,"a. To determine when ICMP is broken
+b. To spot ARP Poisoning attacks
+c. To spot misuses of TCP discovery packets and rogue devices
+d. To spot Denial of Service attacks
+",,d,d,,"It is important for security analysts to understand how ICMP works and what normal ICMP activity looks like to spot Denial of Service (DoS) attacks. ICMP can be misused in DoS attacks, such as ICMP flood attacks, ping of death, and smurf attacks. By understanding normal ICMP activity, security analysts can better detect and mitigate these types of attacks.",['https://www.cloudflare.com/learning/ddos/icmp-flood-ddos-attack/'],1,NetSec,0.9,0.999997660724136,1.0
+19,"Regarding TCP attacks, which statement is true? Select one choice.","a. A TCP reset attack terminates TCP communications between two hosts.
+b. A malicious attack is always indicated when the RST bit is set to 1 in a TCP packet header.
+c. A TCP reset attack is designed to disrupt the TCP 3-way handshake.
+d. In a TCP reset attack, the RST bit in the TCP packet header must be set to 1; settings for other fields in the TCP header are irrelevant.
+",,a,a,,"Option a is correct. A TCP reset attack, also known as a RST attack, terminates TCP communications between two hosts by sending forged TCP RST (reset) packets to one or both hosts. This disrupts the established connections and can lead to denial of service or other malicious activities.",['https://www.cloudflare.com/learning/ddos/tcp-reset-attack/'],1,NetSec,1.0,0.999987886094374,1.0
+20,Which TCP flag is used to initiate a graceful termination of a TCP connection? Select one choice.,"a. SYN
+b. RST
+c. ACK
+d. PSH
+e. URG
+f. FIN
+",,f,f,,"The FIN (Finish) flag is used to initiate a graceful termination of a TCP connection. When a FIN flag is sent, it indicates that the sender has finished sending data. The FIN flag is used during the connection termination process to close the connection in a graceful manner.",['https://www.geeksforgeeks.org/tcp-flags/'],1,NetSec,0.95,0.999997064707508,1.0
+21,Which application-layer protocol that uses UDP to manage and monitor devices on the network could be exploited if it is not secured on devices? Select one choice.,"a. HTTPS
+b. FTP
+c. SNMP
+d. TFTP
+e. SMTP
+",,c,c,,"The Simple Network Management Protocol (SNMP) uses UDP and is commonly used to manage and monitor devices on a network. If SNMP is not properly secured, it can be exploited by attackers to gain unauthorized access to network devices or sensitive information. SNMP versions 1 and 2c are particularly vulnerable due to weak security mechanisms like clear text community strings. It is crucial to implement SNMP version 3 with secure authentication and encryption to mitigate these risks.",['https://www.cloudflare.com/learning/ddos/glossary/simple-network-management-protocol-snmp/'],1,NetSec,0.95,0.9999868132749457,1.0
+22,Which two of the following might be considered attack surfaces in the network environment? (Choose two.),"a. Privacy settings
+b. Use of SSH
+c. Open ports
+d. Use of Telnet
+",,"c,d","c,d",,"Open ports and the use of Telnet are considered attack surfaces in a network environment. Open ports provide potential entry points for attackers to exploit vulnerabilities in services running on those ports. Telnet, being an unencrypted protocol, can expose sensitive information to eavesdropping and man-in-the-middle attacks, making it a security risk.","['https://www.cloudflare.com/learning/security/threat-landscape/what-is-an-attack-surface/', 'https://www.cloudflare.com/learning/security/glossary/what-is-telnet/']",1,NetSec,0.9,0.9959844636017252,1.0
+23,Which type of common security threat can be solved by patching the operating system or hardware device? Select one choice.,"a. Phishing
+b. SQL injection
+c. Malware
+d. Known vulnerabilities
+",,d,d,,"Patching the operating system or hardware device helps in addressing known vulnerabilities by fixing security flaws or weaknesses in the system. By applying patches, organizations can protect their systems from exploitation by attackers who target these vulnerabilities.",['https://www.csoonline.com/article/3567748/what-is-patch-management-and-why-is-it-important.html'],1,NetSec,0.9,0.9999857404566682,1.0
+24,Which three methods are used by an attacker while gathering network data? (Choose three.),"a. Packet sniffer
+b. Unplug network devices
+c. Port scans
+d. Ping sweeps
+",,"a,c,d","a,c,d",,"Attackers use various methods to gather network data. Packet sniffers are tools used to capture and analyze data packets transmitted over a network, allowing attackers to intercept sensitive information. Port scans involve scanning a range of ports on a target system to discover open ports and services running on them. Ping sweeps are used to discover live hosts within a range of IP addresses by sending ICMP echo requests. These three methods help attackers gather valuable information about the network infrastructure and potential vulnerabilities.",['https://www.geeksforgeeks.org/common-methods-for-network-attacks-and-countermeasures/'],1,NetSec,0.95,0.9966977120149804,1.0
+25,Which utility allows an attacker to scan the network in stealth mode? Select one choice.,"a. Nmap
+b. Wireshark
+c. Cain & Abel
+d. UDP Unicorn
+e. whois
+",,a,a,,"Nmap is a powerful network scanning tool that can be used by attackers to scan networks stealthily. It provides various scanning techniques to gather information about target hosts without being easily detected. Nmap can perform tasks like port scanning, service version detection, and OS fingerprinting, making it a popular choice for both legitimate network administrators and attackers.","['https://nmap.org/', 'https://resources.infosecinstitute.com/topic/nmap-tutorial/']",1,NetSec,0.95,0.9999947998470208,1.0
+26,"Which type of malware masquerades as a legitimate software, but is actually malicious when launched? Select one choice.","a. Brute-force
+b. Smurf
+c. DoS
+d. Trojan
+",,d,d,,"A Trojan is a type of malware that disguises itself as legitimate software to trick users into downloading and executing it. Once launched, Trojans can perform various malicious activities on the infected system, such as stealing sensitive information, spying on user activities, or providing backdoor access to attackers. Unlike brute-force attacks, Smurf attacks, and DoS attacks which are different types of cyber threats, Trojans specifically involve deceptive software that appears harmless but is actually malicious.","['https://us.norton.com/internetsecurity-malware-what-is-a-trojan.html', 'https://www.mcafee.com/blogs/consumer/what-is-a-trojan-horse/']",1,NetSec,1.0,0.9999856212553752,1.0
+27,The type of access attack that allows an attacker to take over a session or spoof a session is done using which technique? Select one choice.,"a. Brute-force
+b. Password attack
+c. Malware insertion
+d. Man-in-the-middle
+",,d,d,,"The technique that allows an attacker to take over a session or spoof a session is known as a Man-in-the-Middle (MitM) attack. In this type of attack, the attacker secretly intercepts and possibly alters the communication between two parties who believe they are directly communicating with each other. This interception can lead to session hijacking or session spoofing, enabling the attacker to manipulate the communication flow.",['https://www.cloudflare.com/learning/security/threats/man-in-the-middle-attack/'],1,NetSec,0.95,0.9999781115595554,1.0
+28,Which option best describes an MITM attack? Select one choice.,"a. Easily detected and not a threat
+b. A system that has the ability to view the communication between two systems and imposes itself in the communication path between those other systems
+c. A device that issues an extremely large amount of SYN requests to a server, preventing all other devices from making a connection
+d. A device that connects to a switch and issues an enormous amount of DHCP requests until the DHCP server runs out of IP addresses
+",,b,b,,"An MITM (Man-in-the-Middle) attack is when a malicious actor intercepts and possibly alters the communication between two parties without their knowledge. The attacker can eavesdrop on the communication, steal data, or impersonate one of the parties. This type of attack is a serious threat to the confidentiality and integrity of the communication. Option b correctly describes an MITM attack by stating that it involves a system that can view the communication between two systems and inserts itself into the communication path without the knowledge of the communicating parties.",['https://www.cloudflare.com/learning/security/threats/man-in-the-middle-attack/'],1,NetSec,1.0,0.9999835948245664,1.0
+29,Which two techniques would an attacker apply so that a client sends packets to the wrong gateway? (Choose two.),"a. Reflection
+b. DNS spoofing
+c. ICMP redirect
+d. ARP poisoning
+",,"c,d","c,d",,"An attacker can use ICMP redirect messages to trick a client into sending packets to the wrong gateway by sending fake ICMP redirect messages to the client, redirecting its traffic. ARP poisoning is another technique where the attacker associates its MAC address with the IP address of the legitimate gateway in the ARP cache of the client, causing the client to send packets to the wrong gateway.","['https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/', 'https://www.cloudflare.com/learning/network-layer/what-is-arp-spoofing/']",1,NetSec,0.95,0.992589381234374,1.0
+30,"Which three types of traffic must a security analyst be aware of, because the traffic might be botnet CnC traffic? (Choose three.)","a. RCMP
+b. P2P
+c. SNMP
+d. RTMP
+e. IRC
+f. DNS
+",,"b,e,f","b,e,f",,"The three types of traffic that a security analyst must be aware of as they might be botnet Command and Control (CnC) traffic are P2P (Peer-to-Peer), IRC (Internet Relay Chat), and DNS (Domain Name System). Botnets often use these protocols to communicate and receive commands from the CnC server. P2P is commonly used due to its decentralized nature, IRC provides real-time communication, and DNS can be abused for command and control purposes.","['https://www.sans.org/security-resources/idfaq/botnets/2/7', 'https://www.cloudflare.com/learning/ddos/botnet-ddos-attack/']",1,NetSec,1.0,0.9835159926262098,1.0
+31,What do attackers use to launch an attack on a location without the attack coming directly from the attacker’s location? Select one choice.,"a. Malware that is controlled through CnC
+b. Ping of death
+c. Direct SYN flood attack
+d. Spear phishing
+",,a,a,,Attackers use malware that is controlled through Command and Control (CnC) servers to launch attacks on a target location without the attack traffic originating directly from the attacker's location. The malware-infected devices act as bots and receive commands from the CnC server to carry out coordinated attacks on the target.,['https://www.cloudflare.com/learning/ddos/command-and-control-cnc-explained/'],1,NetSec,0.9,0.9999912237625114,1.0
+32,Which TCP/IP application protocol can be used in an amplification attack by exploiting the protocol weakness in recursive lookup? Select one choice.,"a. SMTP
+b. HTTP
+c. HTTPS
+d. LDAP
+e. DNS
+",,e,e,,"The TCP/IP application protocol that can be used in an amplification attack by exploiting the protocol weakness in recursive lookup is DNS (Domain Name System). In a DNS amplification attack, the attacker sends a small DNS query with a spoofed source IP address to a DNS server. The server then responds to the spoofed IP address with a much larger response, amplifying the traffic towards the target. This attack takes advantage of the recursive lookup feature of DNS servers, making them a common target for amplification attacks.",['https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/'],1,NetSec,1.0,0.9999133874850804,1.0
+33,Which type of attack forces a machine to respond to a SYN message by sending a packet to itself on the same port it received the SYN? Select one choice.,"a. Reflection attack
+b. Smurf
+c. Amplification attack
+d. Land attack
+",,d,d,,"A Land attack occurs when an attacker sends a spoofed TCP SYN packet with the target host's IP address and the same port number as the target port. This causes the target machine to reply to itself endlessly, leading to a denial of service (DoS) condition. The Land attack is a type of DoS attack that exploits a vulnerability in the TCP/IP stack of the target system.",['https://www.cloudflare.com/learning/ddos/land-attack/'],1,NetSec,0.9,0.999981687597674,1.0
+34,A Layer 2 redirect or spoofing attack can be referred to as what type of attack? Select one choice.,"a. SSID attack
+b. DHCP attack
+c. ARP attack
+d. NetBios attack
+",,c,c,,"A Layer 2 redirect or spoofing attack is commonly known as an ARP (Address Resolution Protocol) attack. In this type of attack, the attacker sends falsified ARP messages over a local area network, associating the attacker's MAC address with the IP address of a legitimate network resource. This causes network traffic intended for the legitimate resource to be sent to the attacker instead, allowing for interception or modification of the data.",['https://www.cloudflare.com/learning/ddos/glossary/layer-2-attack/'],1,NetSec,0.9,0.9999398487531588,1.0
+35,Which one of the following options is the illegitimate DHCP server that is referred to in the context of a DHCP server-based attack? Select one choice.,"a. A sitting duck server
+b. An erroneous server
+c. A rogue DHCP server
+d. A target server
+",,c,c,,"In the context of a DHCP server-based attack, the illegitimate DHCP server is commonly referred to as a rogue DHCP server. Rogue DHCP servers are unauthorized servers that distribute IP addresses and configuration settings to DHCP clients, causing network connectivity issues and potential security risks.",['https://www.cloudflare.com/learning/ddos/glossary/what-is-a-rogue-dhcp-server/'],1,NetSec,0.95,0.9999978991308068,1.0
+36,What is one way of mitigating DHCP attacks by using a Cisco switch? Select one choice.,"a. MAC address security
+b. DHCP snooping
+c. VLAN segmentation
+d. DHCP authentication""
+",,b,b,,"One effective way of mitigating DHCP attacks on a Cisco switch is by using DHCP snooping. DHCP snooping is a security feature that acts like a firewall between untrusted hosts and DHCP servers. It helps to prevent unauthorized DHCP servers from providing IP addresses to clients and protects against DHCP spoofing attacks. By enabling DHCP snooping, the switch can inspect DHCP messages and build a DHCP snooping binding table, which contains the association of IP addresses to MAC addresses. This way, only legitimate DHCP servers are allowed to assign IP addresses to clients, enhancing network security.",['https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3750x_3560x/software/release/12-2_55_se/configuration/guide/3750xscg/swdhcp82.html'],1,NetSec,0.95,0.9999720323251028,1.0

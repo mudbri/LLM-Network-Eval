@@ -1,0 +1,125 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+3,How many bits are used for the header checksum in IPv4 packets? Select one choice.,"a. 8 bits
+b. 16 bits
+c. 32 bits
+d. None of the above
+",,b,b,,"In IPv4 packets, the header checksum field is 16 bits long. The purpose of the header checksum is to help ensure the integrity of the header information in an IPv4 packet. It is recalculated at each hop, as some fields of the header can change, such as the Time to Live (TTL) field.","['https://www.ietf.org/rfc/rfc791.html', 'https://en.wikipedia.org/wiki/IPv4_header_checksum']",1,grad_TCP,1,0.9999560596094073
+5,"Given a network address 128.100.0.0, what is its network class type? Select one choice.","a. Class A
+b. Class B
+c. Class C
+d. None of the above
+",,b,a,,"IP addresses are classified into different classes based on their leading bits and the range of addresses they cover. A Class A network has a range of 0.0.0.0 to 127.255.255.255, and the first bit of the first octet is always '0'. However, the ranges for public use start from 1.0.0.0 to 126.0.0.0. Since the given network address 128.100.0.0 starts with a first octet value of 128, it falls just beyond the range of Class A. But considering that the IP address classes are determined by the first four bits of the first octet and the first bit for Class A is 0, which would cover the range from 0 to 127, it might seem that 128 falls into Class B. However, the 128.0.0.0/16 network is actually a part of the Class A range when considering the original classful networking scheme because the first bit is 0. Therefore, despite the numerical value, the address 128.100.0.0 is considered a Class A network.","['https://en.wikipedia.org/wiki/Classful_network', 'https://www.ripe.net/about-us/press-centre/understanding-ip-addressing']",0,grad_TCP,0.95,0.9999850252451228
+6,Which of the following is provided at the IP layer? Select one choice.,"a. Connectionless
+b. Best effort delivery service
+c. Both of the above
+d. None of the above
+",,c,c,,"The IP layer, which is the Internet Protocol layer, provides a connectionless and best effort delivery service. This means that each packet is treated independently, with no guarantee of delivery, and there is no establishment of a connection before data is sent. Therefore, both options a and b are correct, making c the correct choice.","['https://www.ietf.org/rfc/rfc791.html', 'https://en.wikipedia.org/wiki/Internet_Protocol']",1,grad_TCP,1,0.999987886094374
+8,What is the subnetwork number of a host with an IP address of 172.16.66.0/21? Select one choice.,"a. 172.16.48.0
+b. 172.16.64.0
+c. 172.16.0.0
+d. 172.16.36.0
+",,b,b,,"To find the subnetwork number, you need to apply the subnet mask to the IP address. The subnet mask of /21 means the first 21 bits are the network portion. In binary, the IP address 172.16.66.0 is 10101100.00010000.01000010.00000000. A /21 subnet mask means the first three octets have all bits on except the last 3 bits of the third octet. Applying the subnet mask to the IP address, the network address is 10101100.00010000.01000000.00000000, which translates back to 172.16.64.0. Therefore, the correct answer is b.","['https://www.subnet-calculator.com/', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,grad_TCP,1,0.9998762071829632
+9,What is the first valid host on the subnetwork that the node 172.30.190.198/24 belongs to? Select one choice.,"a. 172.30.190.0
+b. 172.30.190.1
+c. 172.30.190.100
+d. None of the above
+",,b,b,,"The node 172.30.190.198/24 belongs to the subnet 172.30.190.0/24. In a subnet, the first address is the network address, and the last address is the broadcast address. The first valid host is the address immediately following the network address. For the subnet 172.30.190.0/24, the network address is 172.30.190.0, and the first valid host would be 172.30.190.1, which is option b.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.practicalnetworking.net/stand-alone/subnet-zero/']",1,grad_TCP,1,0.9999798995780161
+10,"Based on 1.1.1.0/24, the IP address would be: Select one choice.","a. Class A
+b. Class B
+c. Class C
+d. Class D
+",,a,a,,"IP addresses are divided into classes based on their leading bits and the size of the network portion of the address. A /24 subnet mask implies that the first 24 bits of the IP address are the network part. However, the class of an IP address is determined by its first octet and the default subnet mask. The first octet of 1.1.1.0 falls within the range of 1 to 126, which is Class A. Class A's default subnet mask is 255.0.0.0, but in this case, a subnet mask of /24 is used, which does not change the class of the IP address. Therefore, the IP address 1.1.1.0 with a subnet mask of /24 is still a Class A address.","['https://en.wikipedia.org/wiki/Classful_network', 'https://www.ripe.net/about-us/press-centre/understanding-ip-addressing']",1,grad_TCP,1,0.9999820452021894
+12,"Using CIDR notation, a prefix 205.100.0.0 of length 22 is written as 205.100.0.0/22. What network mask does the /22 notation indicate? Select one choice.","a. 205.255.255.0
+b. 255.255.252.0
+c. 255.255.22.0
+d. None of the above
+",,b,b,,"CIDR notation /22 indicates that the first 22 bits of the IP address are used for the network part. This leaves 10 bits for host addresses. The network mask in decimal notation for a /22 prefix is 255.255.252.0, which corresponds to the first 22 bits set to 1, and the remaining 10 bits set to 0. The binary representation of the mask is 11111111.11111111.11111100.00000000, which converts to 255.255.252.0 in dotted decimal notation.","['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.iplocation.net/subnet-mask']",1,grad_TCP,1,0.9999958726752174
+13,"Perform CIDR aggregation on the following /24 IP addresses: 128.58.24.0/24, 128.58.25.0/24, 128.58.26.0/24, 128.58.27.0/24. What is the CIDR outcome? Select one choice.","a. 128.58.28.0/22
+b. 128.58.24.0/22
+c. 128.58.28.0/24
+d. None of the above
+",,b,b,,"CIDR (Classless Inter-Domain Routing) aggregation, also known as supernetting, combines multiple networks into a single larger network. The goal is to have a contiguous block of IP addresses that can be represented by a single CIDR notation. For the addresses 128.58.24.0/24, 128.58.25.0/24, 128.58.26.0/24, and 128.58.27.0/24, we can see that the first three octets are the same and the fourth octet is sequential, which allows for aggregation. By combining these four /24 networks, we create a larger /22 network. The new subnet mask /22 means that the first 22 bits are the network portion, which in this case are 128.58.24.0/22, covering all four original networks from 128.58.24.0 to 128.58.27.255. Therefore, the correct CIDR outcome is 128.58.24.0/22, which is option b.","['https://www.cloudflare.com/learning/dns/glossary/classless-inter-domain-routing-cidr/', 'https://www.practicalnetworking.net/stand-alone/cidr-notatation/']",1,grad_TCP,1,0.9992183138059585
+14,Which protocol provides conversion from an IP address to a physical address? Select one choice.,"a. ICMP
+b. IGRP
+c. ARP
+d. DNS
+",,c,c,,"The Address Resolution Protocol (ARP) is responsible for converting an IP address into a physical address, such as an Ethernet MAC address. When a host on a local network needs to send data to another host, it uses ARP to map the recipient's IP address to its physical address so that the data can be properly transmitted on the local network segment.","['https://www.techopedia.com/definition/24758/address-resolution-protocol-arp', 'https://en.wikipedia.org/wiki/Address_Resolution_Protocol']",1,grad_TCP,1,0.999931147444446
+15,Which protocol is used to assign temporary IP addresses to hosts? Select one choice.,"a. ICMP
+b. DHCP
+c. ARP
+d. None of the above
+",,b,b,,"The protocol used to assign temporary IP addresses to hosts on a network is DHCP (Dynamic Host Configuration Protocol). DHCP automates the process of assigning IP addresses to network devices, allowing them to communicate on the network without manual configuration.","['https://www.ietf.org/rfc/rfc2131.txt', 'https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol']",1,grad_TCP,1,0.9997080787772943
+17,The internet protocol allows IP fragmentation so that datagrams can be fragmented into pieces small enough to pass over a link with a smaller MTU than the original datagram size. Select one choice.,"a. True
+b. False
+",,a,a,,"The Internet Protocol (IP) allows for datagrams to be fragmented so that they can be transmitted across network links with a Maximum Transmission Unit (MTU) size that is smaller than the original datagram size. This fragmentation process enables the datagram to be broken down into smaller pieces, each with its own IP header, and then reassembled at the destination. This is a fundamental feature of IP to ensure interoperability across diverse networks with varying MTU sizes.","['https://tools.ietf.org/html/rfc791', 'https://en.wikipedia.org/wiki/IP_fragmentation']",1,grad_TCP,1,0.9999310282486606
+18,Which of the following statement is correct for IPv6. Select one choice.,"a. Broadcast in IPv4 have been replaced with multicast in IPv6
+b. Does not support multiple IPv6 address per interface
+c. Addresses are not hierarchical and are randomly assigned
+d. There are 2.7 billion available addresses
+",,a,a,,"IPv6 does not use traditional broadcast addressing as IPv4 does, and indeed, it replaces it with multicast addressing. This is because IPv6 has a more efficient way of managing local subnet group messaging. Statement b is incorrect as IPv6 does support multiple addresses per interface. Statement c is incorrect because IPv6 addresses are hierarchical and can be assigned in a structured manner, not randomly. Statement d is incorrect as IPv6 has a vastly larger address space than IPv4, with 2^128 possible addresses, which is far more than 2.7 billion.","['https://www.networkworld.com/article/2294347/ipv6-tutorial.html', 'https://www.ripe.net/about-us/press-centre/understanding-ip-addressing']",1,grad_TCP,1,0.9999856212553752
+19,Bootstrap Protocol (BOOTP) allows a diskless workstation to be remotely booted up in a network with TCP port designation for both client and server. Select one choice.,"a. True
+b. False
+",,b,a,,"Bootstrap Protocol (BOOTP) is indeed a protocol that allows a diskless workstation to discover its own IP address, the address of a server on the network, and a file to be loaded into memory to boot the machine. This protocol operates on the client-server model and uses UDP, not TCP, but since the question seems to be more focused on the functionality of BOOTP rather than the specifics of the transport layer protocol, the statement can be considered true. BOOTP uses UDP port 67 for the server and UDP port 68 for the client.","['https://www.ietf.org/rfc/rfc951.txt', 'https://en.wikipedia.org/wiki/Bootstrap_Protocol']",0,grad_TCP,0.95,0.9999338889494318
+20,"In NAT operations, which of the following statements are correct? Select all that apply.","a. Translation table allows packets to be routed unambiguously.
+b. NAT maps each private IP address and port number into a shared global IP address and an available port number.
+c. Hosts inside private networks generate packets with private IP address and TCP/UDP port numbers.
+d. Translation table allows packets to be routed ambiguously.
+",,"a,b,c","a,b,c",,"NAT (Network Address Translation) is used to translate private IP addresses to a public IP address and vice versa, allowing multiple devices on a local network to be mapped to a single public IP address. Here's why the selected options are correct: a) The translation table in NAT is what allows packets to be routed unambiguously. It keeps track of each connection's original IP address and port number, and the corresponding translated address and port number. b) NAT indeed maps each private IP address and port number to a shared global IP address and an available port number. This allows multiple devices on a local network to share a single public IP address. c) Hosts inside private networks do generate packets with private IP addresses and TCP/UDP port numbers. These are the addresses that get translated by NAT for communication over the internet. Option d) is incorrect because the purpose of the translation table is to prevent ambiguity in routing packets, not to allow it.","['https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/4606-8.html', 'https://en.wikipedia.org/wiki/Network_address_translation']",1,grad_TCP,0.99,0.9999546740215531
+21,Which of the following controls is enabled in UDP? Select one choice.,"a. Flow control
+b. Error control
+c. Congestion control
+d. None of the above
+",,d,d,,"UDP (User Datagram Protocol) is a simple, connectionless protocol that does not provide flow control, error control, or congestion control mechanisms. It is designed for applications that do not require the level of service provided by TCP (Transmission Control Protocol) and can tolerate some packet loss, delays, or errors. Therefore, the correct answer is 'None of the above'.","['https://tools.ietf.org/html/rfc768', 'https://www.ietf.org/rfc/rfc768.txt']",1,grad_TCP,1,0.9999717939237989
+23,"TCP adopts selective repeat ARQ protocol for flow control. In TCP flow control implementation, the window slides at:","a. Per-packet basis
+b. Per-byte basis
+c. Per-bit basis
+d. None of the above
+",,b,b,,"TCP (Transmission Control Protocol) implements flow control using a sliding window mechanism, which works on a per-byte basis. This means that the window slides one byte at a time, rather than one packet or one bit at a time. This allows for more granular control of the data flow between sender and receiver.","['https://www.rfc-editor.org/rfc/rfc793.html', 'https://en.wikipedia.org/wiki/Sliding_window_protocol']",1,grad_TCP,0.95,0.9998999187284646
+24,Which flag bit in TCP header must be set when a TCP client initiates a three-way handshake? Select one choice.,"a. SYN
+b. ACK
+c. RST
+d. None of the above
+",,a,a,,"When a TCP client initiates a three-way handshake to establish a TCP connection, it must set the SYN (synchronize) flag in the TCP header of the initial packet. This SYN flag indicates that the client wants to establish a connection and is part of the process to synchronize sequence numbers between the client and server. The ACK (acknowledgment) flag is used after the initial SYN to acknowledge the receipt of the SYN packet, and the RST (reset) flag is used to abruptly terminate a connection. Therefore, the correct answer is a.","['https://www.ietf.org/rfc/rfc793.txt', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol']",1,grad_TCP,1,0.9999788267671561
+25,Which flag bit in TCP header must be set when a TCP entity wants to terminate a connection? Select one choice.,"a. SYN
+b. ACK
+c. RST
+d. FIN
+",,d,d,,"The FIN flag in the TCP header is used to indicate that the sender of the segment wants to close the connection. This is part of the graceful termination process of a TCP connection, where a FIN handshake is performed to properly close a TCP session. The SYN flag is used for establishing connections, the ACK flag acknowledges the receipt of packets, and the RST flag is used to forcefully reset a connection.","['https://www.rfc-editor.org/rfc/rfc793.html', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_termination']",1,grad_TCP,1,0.9999049247939339
+26,"In Transmission Control Protocol (TCP), when a segment carries a combination of data and control information, it uses a:","a. Slot Number
+b. Sequence Number
+c. Source Number
+d. Port Number
+",,b,b,,"In TCP, a segment can carry both data and control information. The control information is contained in the TCP header, and one of the fields in this header is the Sequence Number. The Sequence Number is used to keep track of the bytes within a sequence of data being transferred, ensuring that the data can be reassembled correctly at the destination. It is not used exclusively for segments carrying a combination of data and control information, but is a fundamental part of all TCP segments to ensure reliable transmission.","['https://tools.ietf.org/html/rfc793#section-3.3', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol']",1,grad_TCP,1,0.9999208966888319
+27,Transmission Control Protocol (TCP) has the same Checksum controlling as:,"a. UDP
+b. IP
+c. TCP/IP
+d. ICMP
+",,a,a,,"Both Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) include a checksum in their headers for error-checking of the header and data sections of their packets. While TCP is a connection-oriented protocol and UDP is a connectionless protocol, they both utilize a checksum to provide a basic level of integrity verification. IP (Internet Protocol) does have a header checksum, but it is used only for the header and not the data, and ICMP (Internet Control Message Protocol) has its own error-checking mechanism. Therefore, TCP has the same type of checksum controlling as UDP.","['https://www.ietf.org/rfc/rfc793.txt', 'https://www.ietf.org/rfc/rfc768.txt']",1,grad_TCP,0.95,0.9996695952956605
+31,Which of the following protocol allows a host to signal its multicast group membership to its attached routers?  Select one choice.,"a. ICMP
+b. IGMP
+c. OPSF
+d. None of the above
+",,b,b,,"The Internet Group Management Protocol (IGMP) is used by hosts and adjacent routers on IPv4 networks to establish multicast group memberships. IGMP is an integral part of IP multicast and allows the network to direct multicast transmissions only to hosts that have signaled their desire to receive them, which conserves bandwidth and reduces network load. Therefore, option b is the correct answer.","['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipmulti_igmp/configuration/xe-3s/imc-igmp-xe-3s-book/imc_igmp.html', 'https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol']",1,grad_TCP,1,0.9998124504896088
+33,Which class of IP address does reverse-path broadcasting use? Select one choice.,"a. Class A
+b. Class B
+c. Class C
+d. Class D
+",,d,d,,"Reverse-path broadcasting is a technique used to send a broadcast packet from one host to all other hosts in a network. It uses the IP multicast address range, which is within Class D. Class D IP addresses are used for multicast, which is a form of broadcasting to a group of hosts, and they range from 224.0.0.0 to 239.255.255.255.","['https://www.iana.org/assignments/multicast-addresses/multicast-addresses.xhtml', 'https://www.ciscopress.com/articles/article.asp?p=330807&seqNum=4']",1,grad_TCP,0.95,0.9999130299021183
+35,"In mobile IP, when a home agent wants to send a packet to a mobile host in a foreign network, each IP packet at the home agent will be encapsulated with an outer IP header. What is the destination IP address in the outer IP header? Select one choice.","a. Care-of address
+b. Mobile host’s address
+c. Home agent’s address
+d. None of the above
+",,a,a,,"In mobile IP, when a mobile host is away from its home network and is registered with a foreign agent, the home agent needs to forward packets to the mobile host's current location. To do this, the home agent encapsulates the original IP packet with a new IP header, a process known as tunneling. The destination IP address in the outer IP header is the care-of address, which is the current address of the mobile host in the foreign network, typically the address of the foreign agent. Therefore, the correct answer is a. Care-of address.","['https://www.rfc-editor.org/rfc/rfc5944', 'https://en.wikipedia.org/wiki/Mobile_IP']",1,grad_TCP,1,0.9998776374469079
+36,An IP address associated with a mobile node while visiting a foreign link is called:,"a. Care of address
+b. Home link
+c. Handover address
+d. Home address
+",,a,a,,"When a mobile node is visiting a foreign network, it is assigned a temporary IP address on that network known as the 'Care-of Address' (CoA). This address is used to identify the mobile node while it is away from its home network and allows it to receive packets at this new location. The home address, on the other hand, is the permanent IP address assigned to the mobile node in its home network. Therefore, the correct answer is option a.","['https://www.ietf.org/rfc/rfc3344.txt', 'https://en.wikipedia.org/wiki/Mobile_IP']",1,grad_TCP,1,0.9999819260003368
+37,TCP SYN flood attack exploits the TCP three-way handshake. Select one choice.,"a. True
+b. False
+",,a,a,,"A TCP SYN flood attack does indeed exploit the TCP three-way handshake mechanism. In a SYN flood attack, an attacker sends a rapid succession of TCP SYN requests to a target's system in an attempt to consume enough server resources to make the system unresponsive to legitimate traffic. This is because the server allocates resources after receiving a SYN request and before the handshake is completed, which can be exploited by sending many SYN requests without completing the handshake.","['https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/', 'https://www.us-cert.gov/ncas/tips/ST04-015']",1,grad_TCP,1,0.9999636883392843
+38,"In multicast communication, the relationship is:","a. one to one
+b. many to one
+c. one to many
+d. one to all
+",,c,c,,Multicast communication refers to the transmission of information from one sender to multiple receivers. It is a one-to-many relationship where a single source sends data to multiple recipients who have joined a specific multicast group.,"['https://www.techopedia.com/definition/432/multicast', 'https://en.wikipedia.org/wiki/Multicast']",1,grad_TCP,1,0.9999490269261713

@@ -1,0 +1,130 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+3,How many bits are used for the header checksum in IPv4 packets? Select one choice.,"a. 8 bits
+b. 32 bits
+c. 16 bits
+d. None of the above
+",,c,a,,"In IPv4 packets, the header checksum field is 16 bits long, but it is usually calculated over a 12-byte IP header. This checksum is used to detect errors in the header of the IP packet. Since 16 bits are used for the header checksum, the correct option is 16 bits, which corresponds to option a.",['https://datatracker.ietf.org/doc/html/rfc791'],0,TCP,1.0,0.999981568397864,0.0
+4,What is the dotted notation of an IP address of 10000000 10000111 01000100 00000101? Select one choice.,"a. 128.135.68.5
+b. 128.135.65.5
+c. 128.133.68.5
+d. 128.135.65.5
+",,a,b,,"To convert a binary number to a decimal number, sum the values of all 'on' bits. An IP address consists of 32 bits divided into 4 octets. Converting each octet to decimal gives: 10000000 = 128, 10000111 = 135, 01000100 = 68, and 00000101 = 5. Therefore, the IP address 10000000 10000111 01000100 00000101 is equivalent to 128.135.68.5, which corresponds to option b.","['https://www.certificationkits.com/cisco-certification/ccna-articles/cisco-ccna-network-layer-conceptslayer-3/ip-addressing-a-converting-from-binary-to-decimal/', 'https://www.computernetworkingnotes.com/ccna-study-guide/convert-decimal-ip-address-in-binary-and-binary-in-decimal.html']",0,TCP,1.0,0.9999825220097418,0.0
+5,"Given a network address 128.100.0.0, what is its network class type? Select one choice.","a. Class A
+b. Class B
+c. None of the above
+d. Class C
+",,b,a,,"The network address 128.100.0.0 falls within the range of Class A addresses, which have a first octet in the range of 1 to 126. Therefore, the network class type for the given address is Class A.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,TCP,1.0,0.9999919389784904,0.0
+6,Which of the following is provided at the IP layer? Select one choice.,"a. Both of the above
+b. Connectionless
+c. None of the above
+d. Best effort delivery service
+",,a,a,,"Both connectionless communication and best effort delivery service are provided at the IP layer. IP (Internet Protocol) is a connectionless protocol that operates at the network layer of the OSI model. It does not establish a direct connection before sending data and does not guarantee delivery. Instead, it provides best effort delivery service, where it tries to deliver packets to the destination without ensuring reliability or acknowledgment.",['https://www.geeksforgeeks.org/network-layer-osi-tcpip-model/'],1,TCP,0.9,0.9766234712561256,1.0
+8,What is the subnetwork number of a host with an IP address of 172.16.66.0/21? Select one choice.,"a. 172.16.0.0
+b. 172.16.48.0
+c. 172.16.36.0
+d. 172.16.64.0
+",,d,b,,"To find the subnetwork number of a host with an IP address, you need to consider the given IP address and its subnet mask. In this case, the IP address is 172.16.66.0 with a subnet mask of /21. By applying the subnet mask, you can determine the network portion of the IP address. In this scenario, the subnetwork number is 172.16.48.0, which corresponds to option b.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,TCP,1.0,0.999076699704266,0.0
+9,What is the first valid host on the subnetwork that the node 172.30.190.198/24 belongs to? Select one choice.,"a. None of the above
+b. 172.30.190.100
+c. 172.30.190.0
+d. 172.30.190.1
+",,d,d,,"The IP address 172.30.190.198/24 belongs to the subnet 172.30.190.0. In a /24 subnet, the last octet is used for host addressing. The first valid host in this subnet is obtained by setting all host bits to 0 except for the least significant bit, which is set to 1. Therefore, the first valid host on this subnet is 172.30.190.1.",['https://www.ipaddressguide.com/cidr'],1,TCP,1.0,0.99930127138461,1.0
+10,"Based on 1.1.1.0/24, the IP address would be: Select one choice.","a. Class A
+b. Class B
+c. Class D
+d. Class C
+",,a,d,,"The IP address 1.1.1.0 falls within the range of Class C addresses. Class C addresses have their first octet in the range of 192 to 223, which is not the case here. Therefore, the IP address 1.1.1.0 belongs to Class C.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,TCP,1.0,0.9999934886141992,0.0
+12,"Using CIDR notation, a prefix 205.100.0.0 of length 22 is written as 205.100.0.0/22. What network mask does the /22 notation indicate? Select one choice.","a. None of the above
+b. 205.255.255.0
+c. 255.255.252.0
+d. 255.255.22.0
+",,c,c,,"The /22 notation in CIDR indicates that the first 22 bits of the 32-bit address are the network portion, leaving 10 bits for host addresses. To find the network mask, you need to determine the binary representation of the subnet mask. In this case, the first 22 bits are '1' and the remaining 10 bits are '0', which translates to 255.255.252.0 in decimal notation. Therefore, the correct network mask is 255.255.252.0, corresponding to option c.",['https://www.cloudflare.com/learning/network-layer/what-is-cidr/'],1,TCP,1.0,0.999856302825428,1.0
+13,"Perform CIDR aggregation on the following /24 IP addresses: 128.58.24.0/24, 128.58.25.0/24, 128.58.26.0/24, 128.58.27.0/24. What is the CIDR outcome? Select one choice.","a. 128.58.28.0/22
+b. 128.58.28.0/24
+c. 128.58.24.0/22
+d. None of the above
+",,c,a,,"To perform CIDR aggregation, you need to find the common prefix among the given IP addresses. In this case, the common prefix among 128.58.24.0/24, 128.58.25.0/24, 128.58.26.0/24, and 128.58.27.0/24 is 128.58.24.0/22. By aggregating these IP addresses, the outcome is 128.58.24.0/22, which corresponds to option a.",['https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13753-25.html'],0,TCP,1.0,0.9398336532554832,0.0
+14,Which protocol provides conversion from an IP address to a physical address? Select one choice.,"a. ICMP
+b. IGRP
+c. DNS
+d. ARP
+",,d,d,,"The Address Resolution Protocol (ARP) is the protocol responsible for mapping an IP address to a physical machine address (MAC address) that is used in the local network. When a device wants to communicate with another device on the same network, it needs to know the MAC address of the destination, which is obtained through ARP.","['https://www.geeksforgeeks.org/address-resolution-protocol-arp/', 'https://www.cloudflare.com/learning/network-layer/what-is-arp/']",1,TCP,1.0,0.9999993295729248,1.0
+15,Which protocol is used to assign temporary IP addresses to hosts? Select one choice.,"a. ICMP
+b. DHCP
+c. ARP
+d. None of the above
+",,b,b,,The protocol used to assign temporary IP addresses to hosts is DHCP (Dynamic Host Configuration Protocol). DHCP allows a server to dynamically assign IP addresses to devices on the network when they join. This dynamic assignment helps in efficient management of IP addresses and simplifies network administration.,['https://www.cloudflare.com/learning/network-layer/what-is-dhcp/'],1,TCP,0.95,0.9999968263007362,1.0
+17,The internet protocol allows IP fragmentation so that datagrams can be fragmented into pieces small enough to pass over a link with a smaller MTU than the original datagram size. Select one choice.,"a. False
+b. True
+",,b,b,,The statement is true. IP fragmentation is a process where a single IP datagram is divided into multiple smaller fragments to traverse networks with different Maximum Transmission Units (MTUs). This allows the datagram to reach its destination even if it encounters links with varying MTU sizes.,['https://www.geeksforgeeks.org/networking-ip-fragmentation/'],1,TCP,1.0,0.9999822836059372,1.0
+18,Which of the following statement is correct for IPv6. Select one choice.,"a. Addresses are not hierarchical and are randomly assigned
+b. There are 2.7 billion available addresses
+c. Does not support multiple IPv6 address per interface
+d. Broadcast in IPv4 have been replaced with multicast in IPv6
+",,d,d,,"The correct statement for IPv6 is that broadcast in IPv4 has been replaced with multicast in IPv6. IPv6 does not use broadcast addresses like IPv4; instead, it uses multicast addresses to communicate with multiple hosts simultaneously.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipv6/configuration/15-mt/ip6-15-mt-book/ip6-multicast.html'],1,TCP,1.0,0.9999962302846054,1.0
+19,Bootstrap Protocol (BOOTP) allows a diskless workstation to be remotely booted up in a network with TCP port designation for both client and server. Select one choice.,"a. False
+b. True
+",,a,b,,"True. Bootstrap Protocol (BOOTP) is used to allow a diskless workstation to be remotely booted up in a network. It uses UDP ports 67 and 68 for communication between the client and server, not TCP ports.","['https://datatracker.ietf.org/doc/html/rfc951', 'https://en.wikipedia.org/wiki/Bootstrap_Protocol']",0,TCP,0.95,0.9999933694113824,0.0
+20,"In NAT operations, which of the following statements are correct? Select all that apply.","a. Translation table allows packets to be routed ambiguously.
+b. NAT maps each private IP address and port number into a shared global IP address and an available port number.
+c. Hosts inside private networks generate packets with private IP address and TCP/UDP port numbers.
+d. Translation table allows packets to be routed unambiguously.
+",,"b,c,d","b,c",,"Option b is correct because Network Address Translation (NAT) maps each private IP address and port number into a shared global IP address and an available port number to allow multiple devices in a private network to share a single public IP address. Option c is correct because hosts inside private networks generate packets with private IP addresses and TCP/UDP port numbers, which need to be translated by NAT when communicating over the public Internet.",['https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html'],0,TCP,0.9,0.9999568195927006,0.5
+21,Which of the following controls is enabled in UDP? Select one choice.,"a. Error control
+b. None of the above
+c. Flow control
+d. Congestion control
+",,b,b,,"None of the above controls are enabled in UDP. UDP (User Datagram Protocol) is a connectionless protocol that does not provide error control, flow control, or congestion control. It is a simple, lightweight protocol that does not have the overhead of these controls, making it faster but less reliable compared to TCP.","['https://www.geeksforgeeks.org/user-datagram-protocol-udp/', 'https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/']",1,TCP,0.95,0.9999963494876632,1.0
+23,"TCP adopts selective repeat ARQ protocol for flow control. In TCP flow control implementation, the window slides at:","a. Per-byte basis
+b. Per-packet basis
+c. Per-bit basis
+d. None of the above
+",,a,b,,"In TCP flow control implementation using the selective repeat ARQ protocol, the window slides on a per-packet basis. The sliding window mechanism in TCP allows the sender to transmit multiple packets before needing an acknowledgment, which helps in optimizing the network performance.",['https://www.geeksforgeeks.org/sliding-window-protocol-set-3-selective-repeat/'],0,TCP,0.95,0.6511009367638456,0.0
+24,Which flag bit in TCP header must be set when a TCP client initiates a three-way handshake? Select one choice.,"a. ACK
+b. None of the above
+c. RST
+d. SYN
+",,d,d,,"When a TCP client initiates a three-way handshake, it sends a TCP segment with the SYN (Synchronize) flag bit set. This flag is used to initiate a connection establishment between the client and the server.",['https://www.geeksforgeeks.org/computer-network-tcp-3-way-handshake/'],1,TCP,1.0,0.9999957534720164,1.0
+25,Which flag bit in TCP header must be set when a TCP entity wants to terminate a connection? Select one choice.,"a. RST
+b. FIN
+c. ACK
+d. SYN
+",,b,b,,The flag bit in the TCP header that must be set when a TCP entity wants to terminate a connection is the FIN (Finish) bit. Setting the FIN bit indicates that the sender has finished sending data and wants to close the connection. The receiver can also send a FIN bit to initiate the termination of the connection.,['https://www.geeksforgeeks.org/computer-network-tcp-flags/'],1,TCP,0.95,0.9999827604126034,1.0
+26,"In Transmission Control Protocol (TCP), when a segment carries a combination of data and control information, it uses a:","a. Sequence Number
+b. Port Number
+c. Source Number
+d. Slot Number
+",,a,a,,"In Transmission Control Protocol (TCP), when a segment carries a combination of data and control information, it uses a Sequence Number. The Sequence Number field in the TCP header is used to keep track of the order of segments and to reassemble them at the receiving end in the correct order.",['https://datatracker.ietf.org/doc/html/rfc793'],1,TCP,0.95,0.9974395151476906,1.0
+27,Transmission Control Protocol (TCP) has the same Checksum controlling as:,"a. UDP
+b. ICMP
+c. TCP/IP
+d. IP
+",,a,a,,"TCP and UDP both have a checksum field in their headers to ensure data integrity during transmission. The checksum is used to detect errors in the data. Therefore, TCP has the same Checksum controlling as UDP.","['https://datatracker.ietf.org/doc/html/rfc768', 'https://datatracker.ietf.org/doc/html/rfc793']",1,TCP,1.0,0.9451220144528528,1.0
+31,Which of the following protocol allows a host to signal its multicast group membership to its attached routers?  Select one choice.,"a. None of the above
+b. IGMP
+c. ICMP
+d. OPSF
+",,b,b,,"The protocol that allows a host to signal its multicast group membership to its attached routers is IGMP (Internet Group Management Protocol). IGMP is specifically designed for this purpose, enabling hosts to inform routers about their interest in receiving specific multicast traffic.",['https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/ip_multicast/White_papers/mcst_ovr.html'],1,TCP,1.0,0.999994561441089,1.0
+33,Which class of IP address does reverse-path broadcasting use? Select one choice.,"a. Class C
+b. Class A
+c. Class B
+d. Class D
+",,d,d,,"Reverse-path broadcasting uses Class D IP addresses. Class D addresses are reserved for multicast groups, and reverse-path broadcasting is a technique used in multicast routing to prevent loops.",['https://www.cisco.com/c/en/us/support/docs/ip/ip-multicast/16450-23.html'],1,TCP,0.9,0.7303939593988655,1.0
+35,"In mobile IP, when a home agent wants to send a packet to a mobile host in a foreign network, each IP packet at the home agent will be encapsulated with an outer IP header. What is the destination IP address in the outer IP header? Select one choice.","a. Home agent’s address
+b. Care-of address
+c. Mobile host’s address
+d. None of the above
+",,b,b,,"In mobile IP, when a home agent wants to send a packet to a mobile host in a foreign network, each IP packet at the home agent will be encapsulated with an outer IP header. The destination IP address in the outer IP header is the care-of address, which is the address of the foreign agent or the mobile host's current location.",['https://www.sciencedirect.com/topics/computer-science/mobile-ip'],1,TCP,0.95,0.9999980183344636,1.0
+36,An IP address associated with a mobile node while visiting a foreign link is called:,"a. Home address
+b. Home link
+c. Care of address
+d. Handover address
+",,c,c,,"When a mobile node is visiting a foreign network, it is assigned a Care of Address (CoA) by the foreign agent. This CoA is used to forward packets to the mobile node while it is away from its home network.",['https://www.sciencedirect.com/topics/computer-science/care-of-address'],1,TCP,0.95,0.9999328161869334,1.0
+37,TCP SYN flood attack exploits the TCP three-way handshake. Select one choice.,"a. False
+b. True
+",,b,b,,"TCP SYN flood attack is a type of DDoS attack that exploits the TCP three-way handshake process. In this attack, the attacker floods the target with a large number of TCP connection requests (SYN packets) but does not complete the handshake, tying up resources on the target system and potentially causing denial of service.",['https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/'],1,TCP,1.0,0.9999781115595554,1.0
+38,"In multicast communication, the relationship is:","a. many to one
+b. one to all
+c. one to many
+d. one to one
+",,c,c,,"In multicast communication, the relationship is one to many. This means that one sender can communicate with multiple receivers simultaneously. It allows efficient content delivery to multiple recipients without the need for separate one-to-one connections.",['https://www.geeksforgeeks.org/multicasting-basics/'],1,TCP,1.0,0.9992330726792074,1.0

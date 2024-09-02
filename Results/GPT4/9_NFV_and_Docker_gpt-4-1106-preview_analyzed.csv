@@ -1,0 +1,48 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,QD - Goal clear?(0/1),QD - Context clear?(0/1),QD - How challenging(1-4),QD - Level learnt(1-7),SM - Description,SM - Goal understood?(0/1),SM - Context understood?(0/1),SM - Implied Context understood?(0/1),SM - Relvant facts identified?(0/1),SM - Correct facts retieved?(0/1),SM - No incorrect facts?(0/1),SM - Correct reasoning?(0/1),SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),Source Problems,AQ - Precise?,AQ - Explainable?,Effect - Description of effects,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,Effect - Error Type,Effect - Severity,Effect - Who is most effected(1-4),CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+72,"In NFV, which of the following is the function of steering?","a. Finding the best location to place a single network function in an enterprise or wide area network.
+b. Installing custom packet processing code on servers in the network.
+c. Placing middleboxes at places throughout the network to minimize network load.
+d. Installing custom packet processing code on switches in the network.
+e. Installing flow table entries in switches to forward traffic through network functions or middleboxes that are installed in the network
+",,e,e,,"In the context of Network Functions Virtualization (NFV), steering refers to the process of directing traffic through a series of network functions or middleboxes. This is typically done by installing flow table entries in switches, which dictate how traffic should flow through the network to ensure it passes through the necessary network functions for processing. This can include functions like firewalls, load balancers, intrusion detection systems, etc. Steering does not involve placing middleboxes or installing code on servers or switches; rather, it is about the control plane logic that dictates how traffic is forwarded through the network functions that are already deployed.","['https://www.sdxcentral.com/networking/nfv/definitions/whats-network-functions-virtualization-nfv/', 'https://en.wikipedia.org/wiki/Network_function_virtualization']",1,9_NFV_and_Docker,0.95,0.9920656697932404,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+74,What are some advantages of Docker containers over virtual machines? Select all that apply.,"a. Containers can be connected to build a virtual network, whereas virtual machines cannot.
+b. Performance in containers may be better since they invoke OS system calls directly, rather than through an emulated machine.
+c. Containers require less storage and memory per-instance, and require less time to instantiate than virtual machines.
+d. Containers provide more flexibility in the choice of operating system.
+e. Containers provide better isolation than virtual machines.
+",,"b,c","b,c",,"Containers offer several advantages over virtual machines (VMs), but it's important to evaluate each option carefully to determine if it is indeed an advantage of containers over VMs.
+
+a. This statement is incorrect because both containers and virtual machines can be connected to build a virtual network. Virtualization technologies and container orchestration tools like Docker Swarm or Kubernetes allow for the creation of virtual networks for both VMs and containers.
+
+b. This statement is correct. Containers share the host system's kernel and invoke OS system calls directly, which can lead to better performance compared to virtual machines that have to go through a hypervisor layer.
+
+c. This statement is also correct. Containers are more lightweight than virtual machines because they do not include a full-blown operating system but instead share the host's OS kernel. This results in less storage and memory overhead and faster instantiation times for containers compared to VMs.
+
+d. This statement is incorrect because containers are actually more limited in terms of operating system choice. All containers on a host must use the same kernel, although they can use different distributions. Virtual machines can run entirely different operating systems because they include their own OS kernel.
+
+e. This statement is incorrect. Virtual machines provide better isolation by default than containers because they are completely separated from the host system by the hypervisor, each with its own OS instance. Containers, while isolated, share the host's kernel and are considered less isolated compared to VMs.","['https://www.docker.com/resources/what-container', 'https://kubernetes.io/docs/concepts/containers/', 'https://www.vmware.com/topics/glossary/content/virtual-machine']",1,9_NFV_and_Docker,0.95,0.9999989719621284,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+75,Which of the following commands is used to instantiate a new Docker container by invoking a command in that container?,"a. docker stop
+b. docker attach
+c. docker commit
+d. docker pull
+e. docker run
+",,e,e,,"The command used to instantiate a new Docker container by invoking a command in that container is 'docker run'. This command creates a new container from a given image and starts it immediately, optionally running a specific command within the container. Here's a breakdown of the other options:
+
+a. 'docker stop' is used to stop one or more running containers, not to instantiate new ones.
+b. 'docker attach' is used to attach local standard input, output, and error streams to a running container, not for instantiation.
+c. 'docker commit' creates a new image from a container's changes, which is not about instantiation of a container.
+d. 'docker pull' is used to pull an image or a repository from a registry, not to instantiate a container.","['https://docs.docker.com/engine/reference/commandline/run/', 'https://docs.docker.com/engine/reference/commandline/stop/', 'https://docs.docker.com/engine/reference/commandline/attach/', 'https://docs.docker.com/engine/reference/commandline/commit/', 'https://docs.docker.com/engine/reference/commandline/pull/']",1,9_NFV_and_Docker,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+76,Which of the following is true about networking Docker containers? Select all that apply.,"a. Docker containers can be networked to each other via the native Docker bridge or Open vSwitch.
+b. A Docker container can never expose a low port (e.g., port 80) to the external Internet; Internet hosts must always reach a Docker service by a high port (e.g., 8080).
+c. Docker containers running in different virtual machines cannot be networked together.
+d. Connecting Docker containers requires setting up GRE tunnels between the containers.
+e. Docker containers are not reachable from the external Internet by default.
+",,"a,e","a,e",,"a. Docker containers can be networked to each other via various networking modes including the default Docker bridge network or using third-party solutions like Open vSwitch. This is a standard feature of Docker networking.
+
+b. This statement is false. A Docker container can expose any port, including low ports like port 80, to the external Internet using port mapping. For example, you can map port 80 inside the container to port 80 on the Docker host.
+
+c. This statement is false. Docker containers running in different virtual machines can be networked together using overlay networks, or other networking mechanisms that allow inter-VM communication.
+
+d. Setting up GRE tunnels is not a requirement for connecting Docker containers. Docker provides several networking options out of the box, such as bridge, host, and overlay networks, which do not require GRE tunnels.
+
+e. By default, Docker containers are isolated and not directly reachable from the external Internet unless specifically configured to expose certain ports using port mappings or placed in a network mode that allows external access.","['https://docs.docker.com/network/', 'https://docs.docker.com/network/bridge/', 'https://docs.docker.com/network/overlay/']",1,9_NFV_and_Docker,0.95,0.9996572059673048,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1

@@ -1,0 +1,86 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+54,Which of the following properties are characteristics of virtual networks (but not necessarily characteristics of SDN). Select all that apply.,"a. Separates the data and control plane.
+b. Refactors network control so that network behavior is controlled from a single logically centralized controller.
+c. Separates logical and physical networks.
+d. Often deployed in data center networks to allow multiple tenants to share physical network infrastructure.
+e. Abstracts the details of the physical network.
+",,"c,d,e","c,d,e",,"a. Separation of the data and control plane is a defining characteristic of SDN, not necessarily of virtual networks in general. Virtual networks can exist without this separation, and the separation itself is a core principle of SDN.
+b. Refactoring network control to a single logically centralized controller is another key characteristic of SDN, not of virtual networks.
+c. Virtual networks are designed to separate logical networking from the physical networking infrastructure, allowing for the creation of multiple independent networks on the same physical hardware.
+d. Virtual networks are indeed often deployed in data centers to enable multi-tenancy, where different customers or tenants can share the same physical infrastructure without interfering with each other.
+e. Virtual networks abstract the details of the underlying physical network to provide a simplified and consistent networking interface to the end user or application, regardless of the physical network configuration.","['https://www.sdxcentral.com/networking/virtualization/definitions/what-is-network-virtualization/', 'https://www.vmware.com/topics/glossary/content/network-virtualization.html', 'https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-network-virtualization.html']",1,7_virtual_networking,0.95,0.9998671119249025
+55,Which of the following are possible ways of creating virtual links in a virtual network? Select all that apply.,"a. A wide-area tunnel, whereby an IP packet is encapsulated in an MPLS tunnel by attaching an MPLS header to the packet.
+b. Longest-prefix match forwarding on an IP router.
+c. A wide-area tunnel, whereby an Ethernet packet sent between two virtual machines is encapsulated in an IP packet.
+d. VLAN switching based on a VLAN tag.
+e. Pairs of virtual Ethernet interfaces, where one end of the Ethernet interface pair resides in the virtual environment, and the other resides in the root namespace on the host machine.
+",,"a,c,d,e","a,c,d,e",,"a. A wide-area tunnel using MPLS encapsulation is a common way to create a virtual link over a physical network, which is especially useful in service provider networks for creating virtual paths over shared infrastructure.
+
+b. Longest-prefix match forwarding is a technique used by IP routers to determine the next hop for a packet based on the destination IP address. It is not a method for creating virtual links.
+
+c. Encapsulating Ethernet packets within IP packets is a method used by technologies such as VXLAN or GRE tunnels to create virtual links across different network segments.
+
+d. VLANs are used to segment a physical network into multiple logical networks by tagging Ethernet frames with a VLAN identifier. This effectively creates virtual links within a LAN.
+
+e. Virtual Ethernet interfaces can be used to connect virtual environments to the physical network, effectively creating a virtual link between the virtual machine and the physical network.","['https://www.cisco.com/c/en/us/td/docs/net_mgmt/prime/network/4-2/mpls/user/guide/mpls_ug/mplsconcepts.html', 'https://www.juniper.net/documentation/us/en/software/junos/mpls/topics/topic-map/mpls-tunneling.html', 'https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-2SX/configuration/guide/book/vlans.html', 'https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt']",1,7_virtual_networking,0.95,0.9956825422788534
+56,Which of the following are true of the Mininet network emulator? Select all that apply.,"a. It requires running OpenFlow-capable switches.
+b. It is difficult to use it to route traffic for real services.
+c. Mininet only allows users to create three types of topologies: linear, tree, and single-switch topologies.
+d. It can create an emulation that runs across multiple physically distributed nodes.
+e. All of the hosts in the topology must run the same underlying operating system.
+",,"b,e","a,e",,"a. Mininet is commonly used to emulate Software Defined Networks (SDNs) that use the OpenFlow protocol for communication between the controller and the OpenFlow-capable switches, so it requires running OpenFlow-capable switches for such scenarios.
+
+b. While Mininet is a lightweight emulator that runs on a single machine, it is not inherently difficult to route traffic for real services using Mininet. It can be used for various networking experiments, including routing real traffic.
+
+c. Mininet is quite flexible and allows users to create custom topologies beyond the basic types mentioned. Users can create complex and custom network topologies using Python scripts.
+
+d. Mininet is designed to emulate a network on a single machine, not across multiple physically distributed nodes. There are other tools and extensions, like MaxiNet, that allow for distributed emulation.
+
+e. Mininet creates a network of virtual hosts, switches, controllers, and links on a single Linux kernel. All the hosts run as network namespaces on the same underlying operating system, which is typically a Linux distribution.","['https://github.com/mininet/mininet', 'https://www.sciencedirect.com/science/article/pii/S1877050919315462', 'https://www.researchgate.net/publication/261343429_MaxiNet_Towards_a_distributed_emulation_platform_for_software_defined_networks']",0,7_virtual_networking,0.95,0.8739538170981737
+57,"What are the benefits of emulation as opposed to, say, simulation? Select all that apply.","a. An emulation will complete faster than a simulation.
+b. An emulator makes it possible to ""port"" experiments from one machine to another.
+c. An emulator allows the experimenter run real software on each of the nodes in the emulation.
+d. An emulation is easier to debug than a simulation.
+e. Every run of the emulator will yield exactly the same results, resulting in reproducible experiments.
+",,"b,c","b,c",,"a. Emulation does not necessarily complete faster than a simulation. The speed depends on the complexity of the system being emulated and the level of detail in the simulation.
+b. Emulators often provide a virtualized environment that can be easily transferred or ported from one physical machine to another, making experiments more flexible.
+c. Emulators allow real software and systems to be run within the emulation environment, which is a key advantage over simulation, which typically uses models to represent the behavior of software or systems.
+d. Debugging is not inherently easier in an emulation compared to a simulation. The ease of debugging depends on the tools available and the nature of the system being tested.
+e. Emulation involves running real software, which can have non-deterministic behavior due to timing, concurrency issues, or interactions with external systems. This can lead to different results in different runs, so it is not guaranteed to yield exactly the same results every time.","['https://www.nsnam.org/overview/faq/#what-is-the-difference-between-emulation-and-simulation', 'https://www.sciencedirect.com/topics/computer-science/network-emulation']",1,7_virtual_networking,0.9,0.9993160798527725
+58,Which of the following are possible in Mininet? Select all that apply.,"a. Measuring the latency between a host in San Francisco and a host in Los Angeles.
+b. Assigning custom IP addresses to each node in the topology.
+c. Assigning IP addresses to each node in the topology using a DHCP server.
+d. Running performance measurement tools (e.g., iperf, wget) between nodes.
+e. ""Shaping"" a link between two nodes to a particular traffic rate.
+",,"b,c,d,e","b,d,e",,"a. Mininet is a network emulator that allows the creation of a virtual network on a single machine. It does not measure real-world latencies between geographic locations, so it cannot measure the latency between a host in San Francisco and a host in Los Angeles. However, it can emulate latencies between virtual hosts within its emulated environment, but not specific to real-world cities.
+b. Mininet allows assigning custom IP addresses to each node in the topology. This is part of the basic functionality of Mininet where you can specify the IP address for each host when you define your network topology.
+c. Mininet does not provide a DHCP server by default for assigning IP addresses. IP addresses are typically statically assigned when creating the network topology, although it is possible to run a DHCP server within the Mininet environment if configured by the user.
+d. Mininet supports running standard network performance measurement tools like iperf and wget between nodes. This is commonly done to test the performance of the emulated network.
+e. Mininet allows 'shaping' a link between two nodes to emulate different network conditions, including bandwidth limitations, latency, loss, and other link characteristics through traffic control settings.","['http://mininet.org/', 'https://github.com/mininet/mininet/wiki/Introduction-to-Mininet', 'https://github.com/mininet/mininet/wiki/FAQ#can-i-use-real-dhcp-on-my-mininet-network']",0,7_virtual_networking,0.95,0.973531845327591
+59,Which of the following functions does FlowVisor enable? Select all that apply.,"a. Allowing two different researchers to implement and deploy different load balancing applications for all traffic between the same source-destination pair.
+b. Allowing two controllers to control traffic on distinct VLANs.
+c. Allowing two different researchers to implement and deploy different Web load balancing applications for port 80 traffic.
+d. Allowing two different researchers to implement and deploy control mechanisms for two distinct applications.
+e. Allowing one controller to control TCP traffic and one controller to control UDP traffic.
+",,"b,d,e","b,d,e",,"FlowVisor is a special purpose OpenFlow controller that acts as a transparent proxy between OpenFlow switches and multiple OpenFlow controllers. It creates slices of network resources and delegates control over each slice to a different controller. This enables multiple researchers or controllers to manage different portions of the network without interfering with each other. Therefore, the correct answers are as follows:
+
+b. FlowVisor can allow two controllers to control traffic on distinct VLANs, as VLANs can be used to segment the network into different slices.
+d. It allows different researchers to deploy control mechanisms for different applications, effectively managing different slices of the network.
+e. FlowVisor can enable one controller to manage TCP traffic and another to manage UDP traffic, by slicing the network based on the type of traffic.
+
+Option a is incorrect because even if FlowVisor allows for multiple controllers, the scenario described would likely cause a conflict as both researchers are trying to manage the same traffic. Option c is incorrect because it is too specific in its application (Web load balancing for port 80) and does not highlight FlowVisor's slicing capability, which is more general and not limited to a specific application or port.",['https://www.opennetworking.org/wp-content/uploads/2013/02/cs-flowvisor.pdf'],1,7_virtual_networking,0.95,0.6969680713018537
+60,Which of the following are stated applications of the Nicira Network Virtualization Platform? Select all that apply.,"a. Easier transition to IPv6 in data-center networks.
+b. Creating more than 1024 virtual networks, as opposed to the alternative of using VLAN tags.
+c. Allowing experimental protocols to coincide with a production network.
+d. Central management of security policies.
+e. Dynamic workload placement in multi-tenant data centers.
+",,"b,d,e","b,c,d,e",,"a. While transitioning to IPv6 might be made easier with network virtualization, it is not commonly cited as a direct application of the Nicira Network Virtualization Platform specifically.
+b. Nicira's platform allows the creation of a large number of isolated virtual networks, which overcomes the VLAN limit of 4096 tags.
+c. Network virtualization platforms like Nicira's allow for experimental protocols to run over the network without affecting the production network, enabling testing and development in a live environment.
+d. Centralized management of security policies is one of the key benefits of network virtualization platforms, as it simplifies administration.
+e. Dynamic workload placement in multi-tenant data centers is facilitated by network virtualization, as it allows for greater flexibility in managing resources and tenant isolation.","['https://www.networkworld.com/article/2182525/nicira-network-virtualization-software-aims-to-reinvent-networking.html', 'https://www.sdxcentral.com/network-virtualization/definitions/what-is-nicira/']",0,7_virtual_networking,0.95,0.9964543609793921
+61,Select the statement that is most true about the relationship between network virtualization and SDNs.,"a. Network virtualization is a potential enabler for software-defined networks, since the separation of data and control planes first requires the creation of a logical network.
+b. Software-defined networking is a potential enabler for virtual networks, since separation of data and control planes makes it easier to manage a logical network topology.
+c. Network virtualization is a new concept introduced by Amazon, Nicira, and industry players; it only made sense to talk about network virtualization once central SDN controllers existed.
+d. Network virtualization and software-defined networking each enable the other: SDN cannot exist without network virtualization, and network virtualization cannot exist without SDN.
+",,b,b,,"Network virtualization refers to the process of creating a virtual version of network resources (e.g., switches, routers, devices, etc.), which can be managed and configured in software. Software-defined networking (SDN) is an approach to networking that uses software-based controllers or application programming interfaces (APIs) to direct traffic on the network and communicate with the underlying hardware infrastructure. While network virtualization can be implemented without SDN, SDN can greatly facilitate network virtualization by providing a centralized control plane that can manage the virtual network topology more easily. Therefore, SDN is a potential enabler for virtual networks, not the other way around. Moreover, network virtualization existed before SDN, as seen with technologies such as VLANs and VPNs. SDN and network virtualization are complementary technologies, but neither is strictly required for the existence of the other.","['https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/', 'https://www.networkworld.com/article/2287045/what-is-network-virtualization-.html']",1,7_virtual_networking,0.95,0.9998584481894031

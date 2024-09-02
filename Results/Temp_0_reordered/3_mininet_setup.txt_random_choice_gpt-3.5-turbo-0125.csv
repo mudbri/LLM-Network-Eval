@@ -1,0 +1,15 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+16,Which of the following command is used to generate an OpenFlow network topology consisting of a single switch and 8 hosts with randomly generated MAC addresses for each host?,"a. sudo mn --topo single,3 --mac --switch ovsk --controller remote
+b. sudo mn --topo single,8  --switch ovsk --controller remote
+c. sudo mn --topo linear,8  --switch ovsk --controller remote
+d. sudo mn --topo single,8 --mac --switch ovsk --controller remote
+",,b,d,,"The correct command to generate an OpenFlow network topology consisting of a single switch and 8 hosts with randomly generated MAC addresses for each host is 'sudo mn --topo single,8 --mac --switch ovsk --controller remote'. This command specifies a single switch with 8 hosts, generates random MAC addresses for each host, uses the Open vSwitch kernel module, and sets up a remote controller.",['https://github.com/mininet/mininet'],0,3_mininet_setup,1.0,0.9999520068687072,0.0
+17,What is the purpose of --mac flag used in mininet?,"a. Generates random MAC addresses for the hosts.
+b. Generates sequential MAC addresses for the hosts, matching their IP address.
+c. Generates random MAC addresses for the switch ports.
+d. Generates sequential MAC addresses for the switch ports, matching their IP address.
+",,b,a,,"The --mac flag in Mininet is used to generate random MAC addresses for the hosts, not for the switch ports. This randomization helps in avoiding conflicts and ensures uniqueness in the network setup.",['https://github.com/mininet/mininet/issues/885'],0,3_mininet_setup,0.9,0.7034536425853196,0.0
+20,"What is the purpose of dpctl, provided with mininet?","a. To enable visibility and control over a single switch’s flow table.
+b. Is an OpenFlow controller.
+c. To enable visibility and control over multiple switch flow table.
+",,a,a,,"The purpose of dpctl provided with Mininet is to enable visibility and control over a single switch's flow table. It allows users to interact with the OpenFlow switch's datapath, view flow entries, and modify them for testing and debugging purposes.",['https://github.com/mininet/mininet/blob/master/util/dpctl'],1,3_mininet_setup,0.95,0.999937345628867,1.0

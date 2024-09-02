@@ -1,0 +1,53 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Unnamed: 46,Score-right-minus-wrong
+92,"A LAN design uses a Layer 3 EtherChannel between two switches SW1 and SW2, with port-channel interface 1 used on both switches. SW1 uses ports G0/1 and G0/2 in the channel. However, only interface G0/1 is bundled into the channel and working. Think about the configuration settings on port G0/2 that could have existed before adding G0/2 to the EtherChannel. Which answers identify a setting that could prevent IOS from adding G0/2 to the Layer 3 EtherChannel? (Choose two answers.)","a. A different STP cost (spanning-tree cost value)
+b. A different access VLAN (switchport access vlan vlanid)
+c. A different speed (speed value)
+d. A default setting for switchport (switchport)
+","c,d","a,c","The settings that could prevent IOS from adding G0/2 to the Layer 3 EtherChannel are a different STP cost (spanning-tree cost value) and a different speed (speed value). If the STP cost or speed setting on G0/2 is different from G0/1, it can cause issues with EtherChannel formation and prevent G0/2 from being added to the channel.",[],0,chapter5_ipv4_routing,0.9,0.749980869582822,Wrong information about what effects the ports,Wrong Facts/Concept,Incorrect information/concept,,,0,,,,1,1,1,Network administration,3,4,3,4,,0.0
+93,"A network engineer has configured a Layer 3 switch with SVIs for VLANs 4 and 5. Hosts in the subnets using VLANs 4 and 5 can ping each other with the Layer 3 switch routing the packets. The next week, the network engineer receives a call that those same users can no longer ping each other. If the problem is with the Layer 3 switching function, which of the following could have caused the problem? (Choose two answers.)","a. A shutdown command issued from VLAN 4 configuration mode
+b. VTP on the switch removing VLAN 5 from the switch’s VLAN list
+c. 1 out of 10 working VLAN 4 access ports failing due to physical problems
+d. A shutdown command issued from VLAN 6 configuration mode","a,b","a,c","Option a could have caused the problem if a shutdown command was issued from VLAN 4 configuration mode, which would have disabled the interface associated with VLAN 4, leading to the loss of connectivity for hosts in that VLAN. Option c could also be a reason for the problem as if 1 out of 10 working VLAN 4 access ports failed due to physical issues, connectivity for hosts in VLAN 4 would be impacted, resulting in the inability to ping hosts in other VLANs.",[],0,chapter5_ipv4_routing,0.9,0.782008546084296,Missing info that option b is correct. Reasoning issue with option c since not all hosts would stop working,"Wrong Facts/Concept,       Incorrect reasoning/deduction","Incorrect information/concept,      Faulty inference",,,0,,,,1,1,1,Network administration,3,6,3,4,,0.0
+94,"Which of the given commands produces the following output?
+Output:
+""Global values:
+Internet Protocol routing is enabled
+Embedded-Service-Engine0/0 is administratively down, line
+protocol is down
+GigabitEthernet0/0 is up, line protocol is up
+Internet address is 158.16.1.1/24
+GigabitEthernet0/1 is administratively down, line protocol is
+down
+Serial0/0/0 is up, line protocol is up
+Internet address is 158.16.4.1/24
+Serial0/0/1 is administratively down, line protocol is down
+GigabitEthernet0/1/0 is up, line protocol is up
+Internet address is 158.16.1.1/24""","a. show interfaces
+b. show protocols
+c. show values
+d. show routing
+",b,a,"The 'show interfaces' command displays detailed information about all interfaces on the router, including their status, IP addresses, and line protocol status, which matches the provided output.",[],0,chapter5_ipv4_routing,0.9,0.618469612078553,Wrong info about a command,Wrong Facts/Concept,Incorrect information/concept,,,0,,,,1,1,0,Network administration,3,4,3,4,,0.0
+98,"A router lists the following partial output from the show ip route command. Out which interface will the router route packets destined to IP address 180.5.38.122? 10.0.0.0/8 is variably subnetted, 8 subnets, 5 masks
+O 180.5.38.100/32 [110/50] via 172.16.25.2, 00:00:04, GigabitEthernet0/0/0
+O 180.5.38.64/26 [110/100] via 172.16.25.129, 00:00:09, GigabitEthernet0/1/0
+O 180.5.37.0/23 [110/65] via 172.16.24.2, 00:00:04, Gigabit-Ethernet0/2/0
+O 180.5.38.96/27 [110/65] via 172.16.24.129, 00:00:09, GigabitEthernet0/3/0
+O 0.0.0.0/0 [110/129] via 172.16.25.129, 00:00:09, GigabitEthernet0/0/0","a. G0/3/0
+b. G0/2/0
+c. G0/1/0
+d. G0/0/0",a,c,"The router will route packets destined to IP address 180.5.38.122 out of interface GigabitEthernet0/1/0 because the most specific route to this destination is 180.5.38.64/26, which is reachable via 172.16.25.129 through GigabitEthernet0/1/0.",[],0,chapter5_ipv4_routing,0.9,0.870359355776143,The selected output is not the most specific address. There are other addresses that are more specific,Incorrect reasoning/deduction,An error related to misinterpreting IP addresses,,,0,,,,1,1,0,Basic networking,3,3,3,1,,0.0
+99,"You are connected on a router R1, Which command will you type the command to connect to R2 using SSH. Login credentials in order to get access to R2. R2’s IP address: 145.167.2.1
+username: userexamsdigest
+password: passexamsdigest","a. ssh -l userexamsdigest 145.167.2.1
+passexamsdigest
+b. ssh -l userexamsdigest 145.167.2.2
+passexamsdigest
+c. ssh -l userexams 145.167.2.1
+passexamsdigest
+d. ssh -l userexamsdigest 145.167.2.1
+examsdigest",a,d,"The correct command to connect to R2 using SSH is 'ssh -l userexamsdigest 145.167.2.1' followed by entering the password 'passexamsdigest'. The '-l' option is used to specify the login username, and then you input the IP address of the destination (R2) which is 145.167.2.1.",[],0,chapter5_ipv4_routing,0.9,0.987886235617725,Just wrong choice selected,Incorrect reasoning/deduction,Incorrect Choice,,,2,,,,1,1,0,Network administration,1,1,1,1,,0.0
+103,"After configuring a working router interface with IP address/mask 10.1.1.100/26, which of the following routes would you expect to see in the output of the show ip route command? (Choose two answers.)","a. A connected route for subnet 10.1.1.64 255.255.255.192
+b. A local route for host 10.1.1.64 255.255.255.255
+c. A local route for host 10.1.1.100 255.255.255.255
+d. A local route for host 10.1.1.100 255.255.255.192
+e. A connected route for subnet 10.1.1.0 255.255.255.0","a,c","a,e","The router interface with IP address/mask 10.1.1.100/26 falls within the subnet 10.1.1.64/26. Therefore, a connected route for subnet 10.1.1.64 255.255.255.192 would be expected in the output. Additionally, since the IP address 10.1.1.100 is directly configured on the router interface, a connected route for subnet 10.1.1.0 255.255.255.0 would also be present.",[],0,chapter5_ipv4_routing,0.9,0.996138966551597,"The provided explanation doesn’t make sense. Why would another subnet be involved? Also, missing concept that local route is also formed",Wrong Facts/Concept,Incorrect information/concept,,,0,,,,1,0,1,Basic networking,3,4,3,4,,0.1999999999999999

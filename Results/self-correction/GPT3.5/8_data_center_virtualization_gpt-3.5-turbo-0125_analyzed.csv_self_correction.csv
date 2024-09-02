@@ -1,0 +1,79 @@
+Question Number,Question Text,Choices,Correct Answer,Old LLM Answer,New LLM Answer,Old LLM Explanation,New LLM Explanation,Old Answer Correct?,New Correct,Topic,Score-right-minus-wrong
+62,Which of the following are true of “network slicing”? Select all that apply.,"a. Network operators can use slicing to test configurations on “shadow” networks that mirror a production network topology.
+b. One way to slice networks is according to “flow space”, whereby different controllers might control distinct and non-overlapping traffic flows.
+c. A controller can prevent one network slice from interfering with the resources of another.
+d. Multi-tenant datacenters are one use case for network slicing.
+e. Conventional (i.e., non-SDN) networks have no concept of network virtualization or slicing.
+","a,b,d","b,c,d","b,c,d","{'b': ""One way to slice networks is according to 'flow space', allowing different controllers to manage separate and non-overlapping traffic flows. This segmentation enables more efficient network management."", 'c': 'Controllers in network slicing can enforce isolation between slices, preventing one slice from impacting or consuming resources allocated to another slice. This isolation is crucial for maintaining performance and security.', 'd': ""Multi-tenant datacenters can benefit significantly from network slicing, as it allows the logical segmentation of resources to cater to different tenants' needs without interference or security concerns."", 'a': ""Network slicing is not primarily used for testing configurations on 'shadow' networks but for logically segmenting and managing network resources efficiently."", 'e': 'Conventional networks may not have the same level of flexibility and programmability as SDN for network slicing, but the concept of network virtualization or segmentation is not exclusive to SDN.'}","Evaluation of original answer:
+The original answer correctly identifies the statements that are true about network slicing. The explanations provided for each selected option are accurate and align with the concept of network slicing.
+
+Correct Answer: b,c,d",0,0,8_data_center_virtualization,0.19999999999999996
+63,Which of the following are true about flow spaces? Select all that apply.,"a. Two flow spaces cannot overlap.
+b. One host could send traffic that ends up in two different flow spaces.
+c. Flow spaces can only be defined according to combinations of packet header fields.
+d. Flowspace isolation separates individual virtual networks from one another but incurs some performance penalty for doing so.
+e. Two controllers that write data-plane rules for non-overlapping parts of flowspace can never cause traffic from one “slice” to enter the other slice.
+",b,"b,d","b,d","{'b': 'One host could send traffic that ends up in two different flow spaces. This statement is true because a single host can generate traffic that matches rules in multiple flow spaces, causing its traffic to be handled differently based on the defined rules.', 'd': 'Flowspace isolation separates individual virtual networks from one another but incurs some performance penalty for doing so. This statement is true because while flowspace isolation provides network segmentation and security benefits by separating virtual networks, it can introduce overhead and performance penalties due to the additional processing required for enforcing isolation.'}","Evaluation of original answer:
+The original answer provides accurate explanations for statements b and d. These statements correctly describe aspects of flow spaces. Therefore, the original answer is correct.
+
+Correct Answer: b, d",0,0,8_data_center_virtualization,0.6000000000000001
+64,Which of the following describe the control-plane checks that FlowVisor implements? Select all that apply.,"a. When a packet must be forwarded to a controller, Flowvisor forwards traffic to the correct controller based on which controller “owns” the flowspace corresponding to that packet.
+b. Flowvisor prevents each slice's controller from being the target of a denial of service attack from other slices.
+c. Flowvisor can only instantiate network slices based on the network topology, not based on other properties, such as application traffic.
+d. Flowvisor prevents a controller from writing data-plane rules to a part of flowspace that it does not own.
+e. Flowvisor installs traffic shaping and quality of service rules to ensure that each network slice has guaranteed resources.
+","a,d","a,b,d","a,b,d","FlowVisor implements control-plane checks to ensure secure and efficient network slicing. 
+- Option a is correct because FlowVisor forwards traffic to the correct controller based on which controller 'owns' the flowspace corresponding to the packet, ensuring proper flow management. 
+- Option b is correct as FlowVisor prevents each slice's controller from being the target of a denial of service attack from other slices, enhancing security between slices. 
+- Option d is correct because FlowVisor prevents a controller from writing data-plane rules to a part of flowspace that it does not own, maintaining isolation and control within each slice.","Evaluation of original answer:
+The original answer provided (a, b, d) correctly describes the control-plane checks that FlowVisor implements. These options accurately represent the features and functions of FlowVisor in ensuring secure and efficient network slicing.
+
+Correct Answer: a, b, d",0,0,8_data_center_virtualization,0.6000000000000001
+65,Which of the following are applications in a home network that network slicing could enable? Select all that apply.,"a. Quality of service for certain applications (e.g., video streaming)
+b. Traceback of attack traffic to its source
+c. Smart grid applications
+d. Load balance of inbound traffic
+e. Guest WiFi access
+","a,c,e","a,c,e","a,c,e","Network slicing in Software Defined Networking (SDN) allows for the creation of multiple virtual networks on top of a shared physical infrastructure, each tailored to specific requirements. 
+ a. Quality of service for certain applications (e.g., video streaming): Network slicing can enable the prioritization of traffic for specific applications like video streaming, ensuring a better quality of service. 
+ c. Smart grid applications: By using network slicing, dedicated network segments can be created to support smart grid applications, providing the required performance and security. 
+ e. Guest WiFi access: Network slicing can facilitate the creation of separate virtual networks for guest WiFi access, enhancing security and isolation from the main network.","Evaluation of original answer:
+The original answer is accurate and provides a clear explanation of how network slicing can enable applications in a home network. It correctly identifies the applications that network slicing could enable, such as quality of service for certain applications, smart grid applications, and guest WiFi access.
+
+Correct Answer: a,c,e",1,1,8_data_center_virtualization,1.0
+69,What are examples of multi-tenant datacenter applications? Select all that apply.,"a. Amazon hosting EC2 instances for customers
+b. A home network owner running a private and public WiFi network
+c. A retailer running a large, multi-site enterprise network across its global network of sites
+d. Google running Gmail and search from a common facility
+e. Two enterprises hosting data in a shared facility.","a,d,e","a,d,e","a,d,e","Multi-tenant datacenter applications refer to scenarios where multiple entities or users share the same infrastructure while maintaining isolation and security. Among the given choices, options a, d, and e are examples of multi-tenant datacenter applications:
+
+a. Amazon hosting EC2 instances for customers: Amazon provides Elastic Compute Cloud (EC2) instances for various customers on shared physical servers, ensuring isolation between different customers' virtual machines.
+
+b. A home network owner running a private and public WiFi network: This scenario does not involve a datacenter or multi-tenancy; it is more about network segmentation within a single home network.
+
+c. A retailer running a large, multi-site enterprise network across its global network of sites: This scenario describes an enterprise network spread across multiple locations but does not necessarily involve a multi-tenant datacenter.
+
+d. Google running Gmail and search from a common facility: Google's infrastructure hosts services like Gmail and search in a multi-tenant environment, where multiple users share the underlying resources.
+
+e. Two enterprises hosting data in a shared facility: This scenario involves multiple enterprises sharing the same datacenter facility while maintaining data isolation and security.","Evaluation of original answer:
+The original answer correctly identifies examples of multi-tenant datacenter applications. Options a, d, and e are indeed examples of scenarios where multiple entities share the same infrastructure while maintaining isolation and security. These choices align with the definition provided in the explanation.
+
+Correct Answer: a, d, e",1,1,8_data_center_virtualization,1.0
+70,What best describes the relationship between network virtualization and SDN? Select all that apply.,"a. SDN controllers can help manage storage and data facilities, in addition to network configuration
+b. SDN predates network virtualization
+c. Network virtualization requires SDN
+d. SDN makes some aspects of network virtualization easier to manage
+e. Network virtualization enables SDN
+","a,d","c,d","c,d","Network virtualization and SDN are closely related concepts, but network virtualization does not necessarily require SDN to function. However, SDN can make some aspects of network virtualization easier to manage by providing centralized control and programmability. Therefore, options c and d are correct.","Evaluation of original answer:
+Option a is incorrect because SDN controllers primarily focus on managing network configuration and traffic flow, not storage and data facilities. Option b is incorrect because network virtualization actually predates SDN. Option e is incorrect because while SDN can leverage network virtualization, it is not the enabling factor for SDN.
+
+Correct Answer: c, d",0,0,8_data_center_virtualization,0.19999999999999996
+71,Which of the following are true about NVP? Select all that apply.,"a. NVP allows tenants to configure logical datapaths on their own virtual hosts.
+b. NVP relies on switches with custom hardware.
+c. NVP allows tenants to configure switches in the middle of the network for portions of flowspace that they own.
+d. Exact matches for policies in NVP must always be performed in user space on the host.
+e. In NVP, most of the “intelligence” for datapath processing lies in virtual hosts, not in switches.
+","a,e","a,e","a,b,e","{'a': 'Correct. NVP (Network Virtualization Platform) allows tenants to configure logical datapaths on their own virtual hosts, enabling them to have control over their network configurations.', 'b': 'Incorrect. NVP does not rely on switches with custom hardware. It aims to provide network virtualization and does not mandate specialized hardware.', 'c': 'Incorrect. NVP does not involve configuring switches in the middle of the network for portions of flowspace that tenants own. It focuses on virtualizing network functions.', 'd': 'Incorrect. Exact matches for policies in NVP are typically performed efficiently in the kernel space rather than in user space on the host.', 'e': 'Correct. In NVP, the intelligence for datapath processing is primarily distributed in virtual hosts rather than in the switches, aligning with the principles of software-defined networking.'}","Evaluation of original answer:
+The original answer correctly identifies options a and e as true statements about NVP. However, it incorrectly states that option b is false. NVP does not rely on switches with custom hardware, making option b also a true statement. The original answer also incorrectly identifies option d as false. In NVP, exact matches for policies are typically performed efficiently in the kernel space rather than in user space on the host, making option d a true statement as well.
+
+Correct Answer: a,b,e",1,0,8_data_center_virtualization,0.6000000000000001

@@ -1,0 +1,123 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+41,Which of the following addresses are not valid Class A network IDs? (Choose all that apply),"a. 1.0.0.0
+b. 5.0.0.0
+c. 140.0.0.0
+d. 127.0.0.0
+e. 9.0.0.0
+f. 195.0.0.0
+",,"c,d,f","b,c,d,e,f",,"In Class A network, the first octet ranges from 1 to 126, where 127 is reserved for loopback addresses. Therefore, the valid Class A network IDs are those where the first octet is between 1 and 126. Options b, c, d, e, and f have the first octets 5, 140, 127, 9, and 195 respectively, which are not within the valid range for Class A networks.",['https://en.wikipedia.org/wiki/Classful_network'],0,chapter3_ipv4_addressing,1,0.397232648781913
+42,Why does the formula for the number of hosts per subnet (2H – 2) require the subtraction of two hosts?,"a. To reserve two addresses for redundant default gateways(routers)
+b. To reserve the two addresses required for DHCP operation
+c. To reserve addresses for the subnet broadcast address and subnet ID
+d. To reserve addresses for the subnet ID and default gateway (router)
+",,c,c,,"The correct answer is C. The formula for the number of hosts per subnet (2^H - 2) subtracts two because it reserves addresses for the subnet broadcast address and subnet ID. The subnet ID is the address used to identify the specific subnet, and the broadcast address is used to send data to all hosts in that subnet. These two addresses are reserved and not assigned to individual hosts, hence the subtraction of two from the total number of possible host addresses in the subnet.",['https://en.wikipedia.org/wiki/Subnetwork'],1,chapter3_ipv4_addressing,0.95,0.993853657519364
+43,Which of the following addresses are valid Class C network IDs? (Choose two answers),"a. 195.0.0.0
+b. 22.22.3.0
+c. 222.0.0.0
+d. 191.255.255.0
+e. 127.0.0.0
+",,"a,c","b,d",,"Option b (22.22.3.0) and option d (191.255.255.0) are valid Class C network IDs. In Class C networks, the first three octets are used for network identification, and the last octet is used for host identification. Class C addresses have their first octet in the range of 192 to 223 inclusive, and both these options fall within that range.",['https://en.wikipedia.org/wiki/Classful_network'],0,chapter3_ipv4_addressing,1,0.989200963050844
+44,A network designer asked you how many subnet (S) bits does he need to create 200 subnets?,"a. 2
+b. 5
+c. 8
+d. 11
+",,c,b,,"To create 200 subnets, you need to find the smallest power of 2 that is greater than or equal to 200. 2^5 = 32, which is the smallest power of 2 that is greater than 200. Therefore, you need at least 5 subnet bits to create 32 subnets, which is greater than 200. Hence, the correct answer is 5 (option b).",[],0,chapter3_ipv4_addressing,1,0.9999886013079656
+45,The addresses in the same network have different values in the network part.,"a. TRUE
+b. FALSE
+",,b,a,,"It is TRUE that addresses in the same network should have the same value in the network part. In IP addressing, the network part of the address identifies the specific network, and all devices within the same network must share the same network part of the IP address. If addresses in the same network have different values in the network part, it means they belong to different networks.",['https://www.geeksforgeeks.org/network-address-translation-nat/'],0,chapter3_ipv4_addressing,1,0.7336522547510371
+46,Which of the following IPv4 addresses has a subnet mask 255.255.0.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,a,"b,d",,"The subnet mask 255.255.0.0 corresponds to a /16 subnet mask in CIDR notation, which means the first two octets are network bits and the last two octets are host bits. Options b and d have the correct format where the first two octets can be used for the network portion, making them compatible with a subnet mask of 255.255.0.0.",[],0,chapter3_ipv4_addressing,1,0.6436273554136079
+47,Which of the following IPv4 addresses has a subnet mask 255.255.255.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,b,d,,"The IPv4 address 10.0.0.56 has a subnet mask 255.255.255.0. This subnet mask indicates that the first 24 bits of the address are used for the network portion, leaving 8 bits for host addresses.",[],0,chapter3_ipv4_addressing,1,0.9999919389784903
+48,"The first octet range from the Class A IP networks
+is 1 - 126.","a. TRUE
+b. FALSE
+",,a,a,,"The first octet range for Class A IP networks is from 1 to 126, making the statement TRUE. Class A addresses have the first bit set to 0, which means the valid range for the first octet is from 1 to 126.",['https://en.wikipedia.org/wiki/Classful_network'],1,chapter3_ipv4_addressing,1,0.9999984951481323
+49,Which of the following IPv4 addresses has a subnet mask 255.0.0.0? (Choose all that apply),"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+e. 100.24.5.56
+f. 192.168.178.6
+",,"c,d,e","a,b,c",,"The subnet mask 255.0.0.0 corresponds to a /8 subnet mask in CIDR notation, which means the first octet is all network bits. Therefore, the IPv4 addresses that have a subnet mask of 255.0.0.0 are those where the first octet is the only part that is not part of the network portion. Options a, b, and c meet this criteria.",['https://en.wikipedia.org/wiki/Classful_network'],0,chapter3_ipv4_addressing,1,0.41008961462956084
+50,Which of the following ranges is a valid class B network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,a,a,,"Option a (128.0.0.0 - 191.255.0.0) represents a valid class B network range. Class B networks have the first octet in the range of 128 to 191, which means the valid range for the first octet is 128.0.0.0 to 191.255.255.255.",['https://en.wikipedia.org/wiki/Classful_network'],1,chapter3_ipv4_addressing,1,0.9999924157887603
+51,Which of the following ranges is a valid class C network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,c,c,,"The valid Class C network ranges are from 192.0.0.0 to 223.255.255.255. Class C networks have their first octet in the range of 192 to 223, making option c the correct range for Class C networks.",['https://en.wikipedia.org/wiki/Classful_network'],1,chapter3_ipv4_addressing,1,0.9995816888964966
+52,Which of the following is the default mask of the IP 10.2.0.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,a,b,,"The default mask for a Class A IP address, such as 10.2.0.0, is 255.0.0.0, which corresponds to a /8 subnet mask. This means the first octet is the network portion and the remaining three octets are host bits.",['https://en.wikipedia.org/wiki/Classful_network'],0,chapter3_ipv4_addressing,0.9,0.9999977799274644
+53,What information can you extract having the IP address 172.16.99.45? (Choose two answers.),"a. The network ID is 172.0.0.0.
+b. The default mask for the network is 255.255.255.0.
+c. The network is a Class B network.
+d. The number of host bits in the unsubnetted network is 16.
+e. The broadcast address of the network is 172.255.255.255
+",,"c,d","b,e",,"Option B is correct because the default mask for a Class B network is 255.255.0.0, not 255.255.255.0. Therefore, the default mask for the network with IP address 172.16.99.45 is 255.255.0.0. Option E is correct as the broadcast address for the network 172.16.99.45 with a subnet mask of 255.255.0.0 would be 172.16.255.255.","['https://en.wikipedia.org/wiki/Classful_network', 'https://en.wikipedia.org/wiki/Broadcast_address']",0,chapter3_ipv4_addressing,1,0.850982860052907
+54,A network designer asked you how many subnets (S) bits does he need to create 100 subnets? (Type only the number),"a. 4
+b. 5
+c. 6
+d. 7
+",,d,7,,"To create 100 subnets, you need to solve the inequality 2^S >= 100. By calculating, 2^7 = 128, which is greater than 100. Therefore, you need at least 7 subnet bits to create 100 subnets.",[],0,chapter3_ipv4_addressing,1,0.9955311183010884
+55,"The senior network engineer asked you to choose the broadcast address from the last subnet according to the following details:
+Network 172.28.0.0 (Class B)
+Mask 255.255.0.0 (for all subnets)","a. 172.28.255.254
+b. 172.255.255.255
+c. 172.28.200.255
+d. 172.28.255.255
+",,d,d,,"The broadcast address for the last subnet in a network can be calculated by setting all host bits to 1 in the subnet. In this case, the network 172.28.0.0 with a 255.255.0.0 mask results in subnets ranging from 172.28.0.0 to 172.28.255.255. Therefore, the broadcast address for the last subnet is 172.28.255.255.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,1,0.9999938462231346
+56,The address 130.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,b,b,,"The address 130.0.0.0 falls within the range of Class B addresses, which have the first octet in the range of 128 to 191. Class B addresses use the first two octets to identify the network portion of the address.",['https://en.wikipedia.org/wiki/Classful_network'],1,chapter3_ipv4_addressing,1,0.8145957508683523
+57,Which of the following is the default mask of the IP 178.25.3.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,b,c,,"The default mask for a Class B IP address, which includes the range 128.0.0.0 to 191.255.255.255, is 255.255.0.0. The given IP address 178.25.3.0 falls within this range, so the default subnet mask for it is 255.255.0.0.",['https://en.wikipedia.org/wiki/Classful_network'],0,chapter3_ipv4_addressing,1,0.9999973031140366
+58,The address 200.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,c,c,,"The address 200.0.0.0 falls within the range of Class C network addresses. In Classful networking, Class C addresses range from 192.0.0.0 to 223.255.255.255, making 200.0.0.0 a Class C network ID.",['https://en.wikipedia.org/wiki/Classful_network'],1,chapter3_ipv4_addressing,1,0.9999993295729247
+59,The range of the Class C public IP Networks is _________________ - _________________,"a. 10.0.0.0 - 140.255.255.0
+b. 192.0.0.0 - 223.255.255.0
+c. 200.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,b,b,,The range of Class C public IP networks is from 192.0.0.0 to 223.255.255.0. Class C addresses have their first octet in the range of 192 to 223.,['https://en.wikipedia.org/wiki/Classful_network'],1,chapter3_ipv4_addressing,1,0.9999938462231346
+60,"The senior network engineer asked you to choose the last usable address for a host from the last subnet according to the following details:
+Network 9.0.0.0 (Class A)
+Mask 255.255.0.0 (for all subnets)","a. 9.255.255.254
+b. 10.255.255.254
+c. 11.255.255.254
+d. 12.255.255.254
+",,a,c,,"The given network address is 9.0.0.0 with a subnet mask of 255.255.0.0 (Class A). This means each subnet will have a block size of 65536 addresses (2^16). To find the last usable address in the last subnet, we need to determine the broadcast address of the last subnet. The next network after 9.0.0.0 would be 10.0.0.0. Therefore, the broadcast address of the last subnet would be the network address of the next subnet minus 1. So, 10.0.0.0 - 1 = 9.255.255.255. The last usable address in the last subnet would be the broadcast address minus 1, which is 9.255.255.254.","['https://en.wikipedia.org/wiki/Subnetwork', 'https://en.wikipedia.org/wiki/Broadcast_address']",0,chapter3_ipv4_addressing,1,0.9999828796125555
+61,The first octet range from the Class B IP networks is 1 - 126.,"a. TRUE
+b. FALSE
+",,b,a,,"The first octet range from the Class B IP networks is from 128 to 191, not 1 to 126. Class B addresses have the first two bits in the first octet set to '10', indicating that the range is from 128 to 191.",['https://en.wikipedia.org/wiki/Classful_network'],0,chapter3_ipv4_addressing,0.9,0.8857045358288718
+62,A network designer asked you how many subnet (S) bits does he need to create 5 subnets?,"a. 2
+b. 3
+c. 4
+d. 5
+",,b,b,,"To create 5 subnets, you need to have at least 3 subnet bits. With 3 subnet bits, you can have a total of 8 subnets (2^3 = 8), which is more than enough to accommodate the required 5 subnets while allowing room for expansion if needed.",['https://www.cisco.com/c/en/us/support/docs/ip/dynamic-address-allocation-resolution/27470-100.html'],1,chapter3_ipv4_addressing,1,0.9999903893441826
+63,Which of the following are private IP networks? (Choose all that apply),"a. 172.31.100.0
+b. 164.16.2.0
+c. 192.166.255.0
+d. 192.168.1.0
+e. 11.11.11.0
+f. 172.24.0.0
+",,"a,d,f","a,d,f",,"Private IP addresses are reserved for internal networks and should not be routed on the public internet. The ranges defined for private IP addresses are: 10.0.0.0 to 10.255.255.255, 172.16.0.0 to 172.31.255.255, and 192.168.0.0 to 192.168.255.255. Among the options provided, 172.31.100.0, 192.168.1.0, and 172.24.0.0 fall within the private IP address ranges.",['https://en.wikipedia.org/wiki/Private_network'],1,chapter3_ipv4_addressing,1,0.9998490028765735

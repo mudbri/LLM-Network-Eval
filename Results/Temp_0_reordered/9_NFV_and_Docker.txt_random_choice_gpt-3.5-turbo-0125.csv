@@ -1,0 +1,28 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+72,"In NFV, which of the following is the function of steering?","a. Finding the best location to place a single network function in an enterprise or wide area network.
+b. Installing custom packet processing code on servers in the network.
+c. Installing flow table entries in switches to forward traffic through network functions or middleboxes that are installed in the network
+d. Installing custom packet processing code on switches in the network.
+e. Placing middleboxes at places throughout the network to minimize network load.
+",,c,c,,"In NFV (Network Function Virtualization), the function of steering involves installing flow table entries in switches to direct traffic through network functions or middleboxes that are deployed in the network. This process helps in routing traffic efficiently through the desired network functions.",['https://www.sciencedirect.com/topics/computer-science/network-function-virtualization'],1,9_NFV_and_Docker,0.9,0.9999680987188568,1.0
+74,What are some advantages of Docker containers over virtual machines? Select all that apply.,"a. Containers provide better isolation than virtual machines.
+b. Performance in containers may be better since they invoke OS system calls directly, rather than through an emulated machine.
+c. Containers can be connected to build a virtual network, whereas virtual machines cannot.
+d. Containers require less storage and memory per-instance, and require less time to instantiate than virtual machines.
+e. Containers provide more flexibility in the choice of operating system.
+",,"b,d","b,d,e",,"b. Containers have better performance as they interact directly with the host OS, avoiding the overhead of a hypervisor used in virtual machines. This direct interaction allows containers to make system calls more efficiently. 
+c. Both containers and virtual machines can be connected to build virtual networks, so this advantage is not specific to containers. 
+d. Containers are lightweight, requiring less storage and memory compared to virtual machines. They also start up faster, making them more efficient in terms of resource usage. 
+e. Containers offer flexibility in the choice of operating system since they share the host OS kernel, allowing different OS environments to run on the same host. This flexibility is a significant advantage over virtual machines.",['https://www.docker.com/resources/what-container'],0,9_NFV_and_Docker,0.9,0.9996569307067328,0.6000000000000001
+75,Which of the following commands is used to instantiate a new Docker container by invoking a command in that container?,"a. docker commit
+b. docker attach
+c. docker pull
+d. docker stop
+e. docker run
+",,e,e,,The correct command to instantiate a new Docker container by invoking a command in that container is 'docker run'. This command creates and starts a container in one operation.,['https://docs.docker.com/engine/reference/commandline/run/'],1,9_NFV_and_Docker,1.0,0.9999955150656572,1.0
+76,Which of the following is true about networking Docker containers? Select all that apply.,"a. Connecting Docker containers requires setting up GRE tunnels between the containers.
+b. Docker containers are not reachable from the external Internet by default.
+c. Docker containers running in different virtual machines cannot be networked together.
+d. A Docker container can never expose a low port (e.g., port 80) to the external Internet; Internet hosts must always reach a Docker service by a high port (e.g., 8080).
+e. Docker containers can be networked to each other via the native Docker bridge or Open vSwitch.
+",,"b,e",e,,"Option e is correct. Docker containers can be networked to each other via the native Docker bridge or Open vSwitch. The other options are incorrect: a. Docker containers do not require GRE tunnels for networking; they can communicate through Docker's networking capabilities. b. Docker containers can be exposed to the external Internet based on the network configuration. c. Docker containers running in different virtual machines can be networked together using Docker's networking features. d. Docker containers can expose ports, including low ports like port 80, to the external Internet.",['https://docs.docker.com/network/'],0,9_NFV_and_Docker,0.9,0.8961145304617143,0.6000000000000001

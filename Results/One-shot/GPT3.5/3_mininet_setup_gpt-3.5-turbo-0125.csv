@@ -1,0 +1,15 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+16,Which of the following command is used to generate an OpenFlow network topology consisting of a single switch and 8 hosts with randomly generated MAC addresses for each host?,"a. sudo mn --topo single,8  --switch ovsk --controller remote
+b. sudo mn --topo single,3 --mac --switch ovsk --controller remote
+c. sudo mn --topo single,8 --mac --switch ovsk --controller remote
+d. sudo mn --topo linear,8  --switch ovsk --controller remote
+",,a,c,,"The correct command to generate an OpenFlow network topology consisting of a single switch and 8 hosts with randomly generated MAC addresses for each host is 'sudo mn --topo single,8 --mac --switch ovsk --controller remote'. This command specifies a single switch with 8 hosts, includes the '--mac' flag for randomly generated MAC addresses, and sets the switch type to 'ovsk' with a remote controller.",['https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#creating-topologies'],0,3_mininet_setup,1,0.9971854173856285
+17,What is the purpose of --mac flag used in mininet?,"a. Generates random MAC addresses for the hosts.
+b. Generates sequential MAC addresses for the hosts, matching their IP address.
+c. Generates sequential MAC addresses for the switch ports, matching their IP address.
+d. Generates random MAC addresses for the switch ports.
+",,b,a,,"The --mac flag in Mininet is used to generate random MAC addresses for the hosts, not sequential ones. This randomness helps avoid conflicts and ensures uniqueness in the network setup.",['https://github.com/mininet/mininet/issues/647'],0,3_mininet_setup,0.9,0.9999804955832136
+20,"What is the purpose of dpctl, provided with mininet?","a. To enable visibility and control over a single switch’s flow table.
+b. To enable visibility and control over multiple switch flow table.
+c. Is an OpenFlow controller.
+",,a,a,,"The purpose of dpctl in Mininet is to provide visibility and control over a single switch's flow table. It allows users to interact with the switch's data plane directly, viewing and modifying flow entries.",['https://github.com/mininet/mininet/blob/master/util/dpctl'],1,3_mininet_setup,0.9,0.9999801379802525

@@ -1,0 +1,50 @@
+Question 95. What are some benefits to using a layer-2 MAC topology for an entire data center? Select all that apply.
+(A) Host configuration is simpler, since all hosts are visible from a single large Ethernet topology. -*
+(B) Forwarding on physical MAC addresses is simpler, since both the data center network topology and hosts' physical MAC addresses are hierarchical.
+(C) IP routing does not need to be reconfigured when physical or virtual machines move from one part of the network to another. -*
+(D) Scaling problems are simpler, since all hosts are configured on a single, flat topology.
+(E) Load balancing is easier on a layer-2 topology than on a layer 3 topology.
+
+Question 96. In PortLand, what are the reasons for assigning hosts pseudo-MAC addresses, as opposed to simply forwarding traffic on physical MAC addresses? Select all that apply.
+(A) Hosts in the data-center network topology are more vulnerable to attack if they expose their actual physical MAC addresses, rather than having a layer of indirection.
+(B) It is very difficult to load balance traffic using physical MAC addresses; pseudo MAC addresses make it possible to assign traffic to destination IP addresses.
+(C) Without pseudo-MAC addresses, switches would have to update forwarding state whenever hosts with a particular MAC address moved from one portion of the topology to another. -*
+(D) Forwarding loops are be more common in a flat layer-2 topology than they are in a topology with hierarchical pseudo MAC addresses.
+(E) In a flat layer-2 topology, switches cannot know on which port to forward traffic without maintaining switch tables for each MAC address, since MAC addresses are flat, not hierarchical. -*
+
+Question 97. What are the steps involved in the Proxy ARP process that PortLand's Fabric Manager runs?
+(A) Host sends ARP query, edge switch intercepts query and redirects to the fabric manager, fabric manager consults PMAC mapping table and returns returns PMAC directly to the end host.
+(B) Edge switch sends ARP query to fabric manager, fabric manager consults PMAC mapping table and returns PMAC to edge switch, edge switch updates its local PMAC mapping table.
+(C) Host sends ARP query, fabric manager intercepts ARP query, consults PMAC mapping table and returns PMAC to end host.
+(D) Host sends ARP query, edge switch intercepts query, consults PMAC mapping table and returns PMAC to the host. 
+(E) Host sends ARP query, edge switch intercepts query and redirects to the fabric manager, fabric manager consults PMAC mapping table and returns PMAC to edge switch, edge switch returns PMAC to end host. -*
+
+Question 98. What are some of the disadvantages of today's interdomain routing protocol, BGP? Select all that apply.
+(A) ISPs cannot load-balance traffic across multiple routes to the same destination IP prefix.
+(B) Routing and forwarding decisions are only based on IP prefix, not on a broader range of traffic flow attributes. -*
+(C) ISPs can only influence route selection through indirect mechanisms (e.g., prepending), rather than directly manipulating the forwarding table entries in switches. -*
+(D) ISPs cannot express preference of one route over another, given multiple routes to a destination.
+(E) ISPs can only influence the routing decisions of their immediate neighbor, not the entire end-to-end path. -*
+
+Question 101. What are some of the features that an SDX enables that today's IXPs cannot support? Select all that apply.
+(A) Application of different business relationships across different regions of the world (e.g., peering only in a specific geographic region).
+(B) Application-specific peering -*
+(C) Wide-area load balancing using DNS-based redirection
+(D) On-the-fly redirection to middleboxes -*
+(E) Wide-area load balancing using IP packet rewriting -*
+
+Question 103. What are some of the motivations for applying software defined networking in home networks? Select all that apply.
+(A) Better performance, since control decisions can be made from a well-provisioned server, as opposed to an under-provisioned router.
+(B) Ability to better user interfaces to control home network behavior, independent of the interfaces that ship with home router devices. -*
+(C) Ability to allow multiple service providers access to the home network infrastructure for different applications and services. -*
+(D) Outsourcing control and management of the home network to a third party. -*
+(E) More fine-grained control over the forwarding behavior of individual devices as conditions in the network change (e.g., a device uses too much bandwidth or data). -*
+
+Question 104. Suppose that an operator of a home network wants to write the following policy:
+1. Block all traffic to Facebook from my child's computer.
+2. Rate limit BitTorrent traffic from my child's computer if the VoIP client on my desktop is active.
+Which of the following most closely approximates the policy?  Assume that "facebook" represents Facebook IP addresses, that "bittorrent" represents BitTorrent ports, and that "limitifVOIP" is a dynamic policy that checks a Resonance-like state machine to determine whether VOIP traffic has recently been observed.
+(A) (match(srcip=child, dstip=facebook) + drop) + (match(srcip=child, dstport=bittorrent) + dynamic(limitIfVOIP))
+(B) (match(srcip=child, dstip=facebook) >> drop) >> (match(srcip=child, dstport=bittorrent) >> dynamic(limitIfVOIP))
+(C) (match(srcip=child, dstip=facebook) >> drop) + (match(srcip=child, dstport=bittorrent) >> dynamic(limitIfVOIP)) -*
+(D) (match(srcip=child, dstip=facebook) + drop) >> (match(srcip=child, dstport=bittorrent) + dynamic(limitIfVOIP))

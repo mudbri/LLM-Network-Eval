@@ -1,0 +1,66 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+113,"Which are reasonable approaches for designing a fast, scalable, programmable data plane? Select all that apply.","a. Make hardware routers more programmable with custom OpenFlow chips.
+b. Make software routers faster by reducing the need to copy packets from the kernel into user space.
+c. Send all traffic through software switches running in user space.
+d. Make software routers faster by distributing software routers across clusters.
+e. Make software routers faster by amortizing packet-processing costs across batches of packets.
+",,"a,b,d,e","a,b,d,e",,"a. Making hardware routers more programmable with custom OpenFlow chips allows for flexible and programmable data plane operations. This enhances scalability and speed. OpenFlow enables centralized control over the network's data plane forwarding decisions. 
+b. Reducing the need to copy packets from the kernel into user space helps in making software routers faster, improving performance and scalability. 
+d. Distributing software routers across clusters can enhance speed and scalability by parallelizing packet processing. This approach leverages the distributed nature of clusters to handle increased traffic efficiently. 
+e. Amortizing packet-processing costs across batches of packets can improve the efficiency and speed of software routers by processing multiple packets in a single batch, reducing overhead and enhancing performance.","['https://www.sciencedirect.com/science/article/pii/S2352864818300846', 'https://www.sciencedirect.com/science/article/pii/S1877050915015503']",1,10_programmable_data_planes,0.95,0.9210436556823226
+114,What are functions that are commonly performed by a programmable data plane? Select all that apply.,"a. Performing deep packet inspection
+b. Forwarding
+c. Specifying access control policies
+d. Shaping traffic
+e. Computing routes
+",,"a,b,d","a,b,d",,"a. Performing deep packet inspection is a function commonly performed by a programmable data plane to analyze and process packets at a granular level within the network. This helps in making forwarding decisions based on the packet content. b. Forwarding packets based on predefined rules or instructions is a fundamental function of the data plane. d. Shaping traffic, which involves controlling the flow of data to ensure a certain quality of service, is another function that can be implemented in the data plane.","['https://www.sciencedirect.com/topics/computer-science/data-plane', 'https://ieeexplore.ieee.org/document/8320184']",1,10_programmable_data_planes,0.95,0.5200723479902335
+115,Which of the following functions might be performed by a Click element? Select all that apply.,"a. Reading a packet from a network device
+b. Dropping packets
+c. Counting packets
+d. Classifying packets into different priority queues
+e. Computing shortest paths routes between two routers
+",,"a,b,c,d","a,b,c,d",,"a. Click elements can read packets from network devices as part of processing them. This is a common function performed by Click elements. 
+b. Click elements have the capability to drop packets as needed, making this a possible function they can perform. 
+c. Counting packets is a function that can be implemented by Click elements to monitor network traffic. 
+d. Click elements can classify packets into different priority queues based on various criteria, which is a function they might perform. 
+e. Computing shortest path routes between routers is typically not a function performed by Click elements as they are more focused on packet processing within a network.",['https://dl.acm.org/doi/10.1145/956993.956995'],1,10_programmable_data_planes,0.9,0.8736769676772256
+116,Which of the following are true about programmable data planes in Click? Select all that apply.,"a. Click elements cannot perform common data plane operations such as TTL decrement or checksum computations.
+b. Data-plane processing in Click is limited to a fixed set of elements provided by the software.
+c. Click elements can be composed to perform complex functions, such as the forwarding at an IP router.
+d. Click configuration is a simplified version of Python.
+e. Click elements can be composed to perform complex network-wide functions, such as shortest paths or BGP routing.
+",,c,"c,e",,"a. Click elements can perform common data plane operations like TTL decrement or checksum computations. This statement is false as Click allows for flexibility in defining data plane operations.
+b. Click allows users to create custom elements, making data-plane processing not limited to a fixed set of elements. This statement is false.
+c. Click elements can indeed be composed to perform complex functions, such as forwarding at an IP router. This is a true statement about programmable data planes in Click.
+d. Click configuration is not a simplified version of Python; it uses its own configuration language.
+e. Click elements can be composed to perform complex network-wide functions, such as computing shortest paths or BGP routing. This statement is true.","['https://dl.acm.org/doi/10.1145/3430980.3430990', 'https://www.usenix.org/legacy/event/nsdi06/tech/full_papers/kohler/kohler.pdf']",0,10_programmable_data_planes,1,0.9998832768104816
+117,Why does a RouteBricks server assign one core per queue?,"a. Having multiple cores accessing the same queue would require each core to perform only one function in the packet processing pipeline, which is inefficient.
+b. Having multiple cores accessing the same queue would require locking to prevent concurrent memory accesses, slowing packet forwarding performance.
+c. Having multiple cores accessing the same queue might create the possibility that there is a queue that is not served by any cores.
+d. Cores have heterogeneous performance, and packets are different sizes, so it makes sense to assign less powerful cores to queues that have smaller packets.
+",,b,b,,"Having multiple cores accessing the same queue would require locking to prevent concurrent memory accesses, slowing packet forwarding performance. By assigning one core per queue, the need for locking to manage concurrent access is eliminated, improving packet forwarding performance.",['https://dl.acm.org/doi/10.1145/1282427.1282404'],1,10_programmable_data_planes,0.9,0.999908977336814
+118,What are some tricks commonly employed in software to accelerate packet forwarding? Select all that apply.,"a. Ethernet GRE tunnels
+b. Large packet buffers that hold multiple packets that can be read with a single read
+c. Forwarding smaller packets before larger packets
+d. Avoiding lookups on the software bridge between virtual interfaces and physical interfaces
+e. Batch processing
+",,"a,b,d,e","b,c,e",,"a. Ethernet GRE tunnels are not typically used as a trick to accelerate packet forwarding but rather for encapsulation purposes. They do not directly accelerate packet forwarding. 
+b. Large packet buffers that hold multiple packets for efficient reading can help accelerate packet forwarding by reducing the number of read operations needed. 
+c. Forwarding smaller packets before larger packets is a common optimization technique to reduce latency and improve overall network performance. 
+d. Avoiding lookups on the software bridge is more related to optimizing the data path rather than accelerating packet forwarding directly. 
+e. Batch processing, where multiple packets are processed together, can improve efficiency and speed up packet forwarding. 
+Therefore, options b, c, and e are commonly employed tricks in software to accelerate packet forwarding.","['https://ieeexplore.ieee.org/document/8274391', 'https://www.researchgate.net/publication/318447544_A_Survey_of_Software_Techniques_for_Reducing_Packet_Processing_Latency_on_Multicore_Network_Functions']",0,10_programmable_data_planes,0.9,0.554443633222286
+119,What are some of the problems with current OpenFlow hardware that motivated a custom OpenFlow chip design? Select all that apply.,"a. Current hardware makes it difficult to implement multiple match action stages, and to repurpose TCAM and SRAM across multiple match-action stages.
+b. Current hardware cannot forward traffic at line rates.
+c. The current OpenFlow protocol depends on the constraints of conventional switching chips.
+d. Current hardware cannot support OpenFlow 1.0 match-action primitives.
+e. Current hardware is difficult to repurpose in the field.
+",,"a,c,e","a,b,c",,"a. Current hardware limitations include difficulty implementing multiple match action stages and repurposing TCAM and SRAM across stages, motivating custom chip design to address these issues. 
+b. Inadequacy in forwarding traffic at line rates was a problem with existing OpenFlow hardware, necessitating custom chip design to enhance performance. 
+c. The current OpenFlow protocol being dependent on conventional switching chips' constraints was a motivation to design custom OpenFlow chips to overcome these limitations.","['https://ieeexplore.ieee.org/document/6638936', 'https://dl.acm.org/doi/10.1145/2342356.2342369']",0,10_programmable_data_planes,0.95,0.8444828309273313
+120,"Which of the following are motivations for SwitchBlade, which supports composition of pre-synthesized hardware data plane modules on an FPGA? Select all that apply.","a. Most data plane protocols involve composing only a limited number of data-plane actions.
+b. Experimental data planes may need to operate in parallel with production data planes.
+c. Programming in Verilog is difficult.
+d. FPGAs are lower-cost and consume less power than conventional ASICs or OpenFlow switching chips.
+e. Programming in C is difficult.
+",,"a,b,c","a,b",,"a. SwitchBlade supports the composition of pre-synthesized hardware data plane modules on an FPGA to enable the rapid development of new data plane protocols that involve composing only a limited number of data-plane actions. This is a motivation for its use. b. Experimental data planes may need to operate in parallel with production data planes, which is facilitated by SwitchBlade's capability of supporting multiple data plane modules on an FPGA. This is another motivation for using SwitchBlade.",['https://dl.acm.org/doi/10.1145/3371934.3371963'],0,10_programmable_data_planes,0.9,0.9203165910762103

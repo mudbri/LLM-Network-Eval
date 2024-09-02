@@ -1,0 +1,75 @@
+Question Number,Question Text,Choices,Correct Answer,Old LLM Answer,New LLM Answer,Old LLM Explanation,New LLM Explanation,Old Answer Correct?,New Correct,Topic,Score-right-minus-wrong
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. The cause is not related to dynamic NAT
+b. The command output does not provide any clue to identify the problem
+c. Dynamic NAT can't use Standard ACLs
+d. The NAT pool does not have enough entries to fulfill the user's requests
+",d,d,d,"The output shows that all addresses in the NAT pool have been allocated (100%), which means there are no more available addresses for new connections. This shortage of addresses is likely the reason why users are unable to reach the Internet.","Evaluation of original answer:
+The original answer provides a clear and accurate explanation based on the information provided in the show command output. It correctly identifies that the NAT pool has run out of available addresses, which is causing users to be unable to reach the Internet. Therefore, the original answer is correct.
+
+Correct Answer: d",1,1,chapter11_ip_services,1.0
+195,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Warning - Warning condition?","a. 2
+b. 3
+c. 4
+d. 5",c,b,b,Severity level 3 means Warning - Warning condition in IOS. It indicates a warning condition that should be addressed.,"Evaluation of original answer:
+The original answer correctly identifies severity level 3 as representing a warning condition in IOS. Therefore, it is a correct answer.
+
+Correct Answer: b",0,0,chapter11_ip_services,0.0
+196,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Informational: Informational message only?","a. 1
+b. 6
+c. 4
+d. 5",b,c,c,"In Cisco IOS, severity level 4 (Notification) means Informational: Informational message only. This level is used for normal but significant conditions.","Evaluation of original answer:
+The original answer correctly identifies that severity level 4 in Cisco IOS means Informational messages. However, it incorrectly labels it as ""Notification"" instead of ""Informational."" This is misleading and could confuse the reader. 
+
+Correct Answer: c",0,0,chapter11_ip_services,0.0
+198,One of the features of SNMPv3 is called message integrity.,"a. TRUE
+b. FALSE
+",a,a,a,The statement is TRUE. SNMPv3 provides message integrity by using HMAC-SHA (Hash-based Message Authentication Code - Secure Hash Algorithm) to ensure that the data has not been tampered with during transit.,"Evaluation of original answer:
+The original answer is correct. SNMPv3 does indeed provide message integrity by using HMAC-SHA to ensure data integrity during transit.
+
+Correct Answer: a",1,1,chapter11_ip_services,1.0
+199,You have been tasked to find out whether the Cisco Discovery Protocol (CDP) is enabled globally. Which command will you type?,"a. show protocols
+b. show cdp
+c. show running-config
+d. show interface brief
+",b,b,b,"The correct command to check if Cisco Discovery Protocol (CDP) is enabled globally is 'show cdp'. This command will display the CDP information, including whether it is enabled globally or not.","Evaluation of original answer:
+The original answer correctly identifies the command to check if Cisco Discovery Protocol (CDP) is enabled globally. It provides a clear explanation of how the 'show cdp' command can be used to display the CDP information and its global status.
+
+Correct Answer: b",1,1,chapter11_ip_services,1.0
+200,Which of the following protocols synchronize the time of different systems?,"a. NTP
+b. SMTP
+c. UDP
+d. CDP
+",a,a,a,The correct protocol that synchronizes the time of different systems is NTP (Network Time Protocol). NTP is specifically designed for this purpose to ensure accurate time synchronization across network devices.,"Evaluation of original answer:
+The original answer is accurate and provides a correct explanation of the Network Time Protocol (NTP) as the protocol used to synchronize the time of different systems.
+
+Correct Answer: a",1,1,chapter11_ip_services,1.0
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. You can't connect two routers to the same LAN subnet.
+b. If one router fails, hosts can't send packets off-subnet
+c. If one router fails, both hosts will use the one remaining router as a default router
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",c,c,c,"In this scenario, R1 and R2 are attached to the same LAN subnet with an FHRP (First Hop Redundancy Protocol) in place. When one router fails, the other router will take over as the default gateway for both hosts. This ensures continuous connectivity for the hosts in case of a router failure.","Evaluation of original answer:
+The original answer is correct in stating that if one router fails, both hosts will use the remaining router as the default router due to the FHRP configuration. 
+
+Correct Answer: c",1,1,chapter11_ip_services,1.0
+203,Which of the following characteristics of network traffic can be managed by Quality of Service (QoS)? (Choose all that apply),"a. Bandwidth
+b. LLQ
+c. Loss
+d. Delay
+e. CoS
+f. Jitter
+","a,c,d,f","a,b,c,d,e,f","a,b,c,d,e,f","Quality of Service (QoS) can manage various characteristics of network traffic, including: 
+a. Bandwidth: QoS can prioritize and allocate bandwidth to different types of traffic based on defined policies. 
+b. LLQ (Low Latency Queuing): It is a QoS mechanism that provides strict priority queuing for delay-sensitive data such as voice and video. 
+c. Loss: QoS can help mitigate packet loss by prioritizing critical traffic and ensuring its delivery. 
+d. Delay: QoS can minimize delays for specific types of traffic by managing queuing and scheduling mechanisms. 
+e. CoS (Class of Service): QoS can classify and treat different types of traffic based on their class of service, allowing for differentiated handling. 
+f. Jitter: QoS can help reduce jitter by prioritizing real-time traffic to ensure a more consistent delivery rate.","Evaluation of original answer:
+The original answer is correct in listing all the characteristics of network traffic that can be managed by Quality of Service (QoS). Each point mentioned in the answer accurately describes how QoS can address the specific characteristic of network traffic.
+
+Correct Answer: a,b,c,d,e,f",0,0,chapter11_ip_services,0.3333333333333333

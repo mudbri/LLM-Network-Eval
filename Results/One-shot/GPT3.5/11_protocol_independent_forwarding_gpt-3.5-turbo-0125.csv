@@ -1,0 +1,57 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+78,What are some of the desired features in future SDN switches that motivate a programmable data plane? Select all that apply.,"a. Reducing energy consumption for custom packet processing.
+b. Processing packets at higher rates.
+c. A wider range of packet processing primitives.
+d. Flexible match-action tables, such as the ability to compose multiple match-action tables in sequence or in parallel.
+e. A configurable packet parser that is not tied to a specific header format.
+",,"c,d,e","c,d,e",,"Desired features in future SDN switches that motivate a programmable data plane include: c. A wider range of packet processing primitives allows for more flexibility in defining packet processing logic. d. Flexible match-action tables, such as the ability to compose multiple match-action tables in sequence or in parallel, offer more sophisticated packet processing capabilities. e. A configurable packet parser that is not tied to a specific header format enables handling various packet types and structures effectively.",['https://www.sciencedirect.com/science/article/pii/S014036641930845X'],1,11_protocol_independent_forwarding,1,0.9994527505589782
+79,Which of the following best describes protocol independence?,"a. The ability to configure a packet parser in hardware that is agnostic to (and not constrained by) the control protocol.
+b. The ability to evolve an existing control protocol without breaking interoperability.
+c. The ability to run a switch independently from the controller.
+d. The ability to support multiple protocols running in parallel on the same hardware.
+e. The ability to run a network with both legacy OpenFlow switches and switches that support custom packet processing.
+",,a,d,,Protocol independence refers to the ability to support multiple protocols running in parallel on the same hardware. This means that the hardware can handle different protocols concurrently without being restricted to a single protocol stack.,['https://ieeexplore.ieee.org/document/7472189'],0,11_protocol_independent_forwarding,0.9,0.7157070813408719
+81,Which of the following describe functions of the P4 parser? Select all that apply.,"a. Constructing a graph of dependencies between different logical tables.
+b. Translating rules to physical tables.
+c. Verifying that the description of packet parsing is consistent with the behavior of an existing hardware switch (e.g., a legacy OpenFlow switch).
+d. Translating a packet processing specification to a state machine.
+e. Mapping logical tables to underlying switch resources.
+",,"c,d","c,d",,"c. The P4 parser verifies that the packet parsing description aligns with the behavior of existing hardware switches, ensuring consistency with legacy switches like OpenFlow switches. This is a crucial function of the P4 parser to maintain compatibility and functionality across different switch types. d. The P4 parser translates a packet processing specification into a state machine, which is essential for defining the processing behavior of packets in the network. This translation aids in implementing the desired packet processing logic effectively.",['https://p4.org/p4/p4-language-specification.html'],1,11_protocol_independent_forwarding,0.9,0.7506205706934589
+82,"Which of the following best describe the relationship between a language like P4, an assembler like NetASM, and target programmable hardware (e.g., RMT)?","a. P4 is much more amenable to ""cost semantics"" (i.e., figuring out how much a particular operation would cost in terms of power or area) than NetASM.
+NetASM and P4 are two examples of high-level programming languages; they are interchangeable.
+b. P4 has verifiable semantics, whereas NetASM does not.
+c. A language like P4 would ""compile"" to an assembly language like NetASM, which would then specify a one-to-one relationship with resources on the target forwarding hardware.
+d. A language like NetASM would ""compile"" to an assembly language like P4, which would then specify a one-to-one relationship with resources on the target forwarding hardware.
+",,c,c,,"A language like P4 is designed to describe the data plane forwarding behavior, while an assembler like NetASM is used to define how the data plane should be implemented on specific programmable hardware. P4 is typically compiled to a lower-level representation like NetASM, which then maps directly to the target programmable hardware, establishing a one-to-one relationship with the resources on that hardware.",['https://ieeexplore.ieee.org/document/7749609'],1,11_protocol_independent_forwarding,0.9,0.99986452674733
+83,Which of the folloiwing instruction types create state elements in NetASM? Select all that apply.,"a. JMP
+b. DRP
+c. LBL
+d. MKT
+e. MKR
+",,"d,e","c,d,e",,"In NetASM, the instruction types that create state elements are as follows: 
+c. LBL (Label) instruction is used to create a new state element. 
+d. MKT (Make Table) instruction creates a state table. 
+e. MKR (Make Register) instruction creates a state register. 
+Therefore, the correct options are c, d, and e.",['https://www.netasm.org/documentation/'],0,11_protocol_independent_forwarding,0.95,0.9791365885561076
+84,Which of the following are true about locally contained applications? Select all that apply.,"a. Locally contained applications can be implemented with regular OpenFlow instructions.
+b. A MAC learning switch can be implemented as a locally contained application.
+c. Locally contained applications forward packets more slowly than their stateless counterparts.
+d. A locally contained application can implement SDN logic without ever requiring a packet to be sent to the controller.
+e. Locally contained applications allow the hardware pipeline to make switch-local state modifications.
+",,"b,d,e","b,d,e",,"Locally contained applications are applications that can run on the switch itself, enabling the switch to make forwarding decisions without involving a centralized controller for every packet. Therefore, options b, d, and e are true about locally contained applications. 
+
+a. Locally contained applications do not necessarily need to use regular OpenFlow instructions.
+b. A MAC learning switch can indeed be implemented as a locally contained application, allowing the switch to learn MAC addresses and make forwarding decisions locally.
+c. Locally contained applications can actually forward packets faster than their stateless counterparts because they do not need to involve the controller for every decision.
+d. Locally contained applications can implement SDN logic without needing to send every packet to the controller.
+e. Locally contained applications enable the hardware pipeline to make switch-local state modifications.","['https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p305.pdf', 'https://ieeexplore.ieee.org/document/7317471']",1,11_protocol_independent_forwarding,0.95,0.7482758158405293
+86,What are some examples of optimizations that a compiler could perform on NetASM instructions? Select all that apply.,"a. Preventing bufferbloat for real-time application traffic.
+b. Forwarding packets for high-volume flows at higher rates.
+c. Composing or decomposing tables to save either on table size or table width.
+d. Only instantiating hardware resources (e.g., table entries) for flows that actually have nonzero traffic volume.
+e. Reordering instructions so that subsequent tables need not be as large (e.g., not storing state for unmatched packets).
+",,"c,d,e","c,d,e",,"a. Preventing bufferbloat for real-time application traffic is a network performance optimization and not directly related to compiler optimizations for NetASM instructions. This option is incorrect in the context of compiler optimizations for NetASM instructions. 
+b. Forwarding packets for high-volume flows at higher rates is more related to data plane operations rather than compiler optimizations for NetASM instructions. This option is incorrect in the context of compiler optimizations for NetASM instructions. 
+c. Composing or decomposing tables to save either on table size or table width is a valid optimization that a compiler could perform on NetASM instructions. By optimizing the table structure, the compiler can reduce memory usage and improve performance. 
+d. Only instantiating hardware resources (e.g., table entries) for flows that actually have nonzero traffic volume is a potential optimization that a compiler could perform on NetASM instructions. This optimization helps in efficient resource allocation based on actual traffic, reducing unnecessary resource consumption. 
+e. Reordering instructions so that subsequent tables need not be as large (e.g., not storing state for unmatched packets) is another optimization that a compiler could perform on NetASM instructions. By reordering instructions intelligently, the compiler can minimize resource usage and improve processing efficiency.","['https://ieeexplore.ieee.org/document/7972115', 'https://www.sciencedirect.com/science/article/pii/S0140366418306187']",1,11_protocol_independent_forwarding,0.9,0.9572106863488823

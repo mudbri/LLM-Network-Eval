@@ -1,0 +1,68 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+54,Which of the following properties are characteristics of virtual networks (but not necessarily characteristics of SDN). Select all that apply.,"a. Separates the data and control plane.
+b. Refactors network control so that network behavior is controlled from a single logically centralized controller.
+c. Separates logical and physical networks.
+d. Often deployed in data center networks to allow multiple tenants to share physical network infrastructure.
+e. Abstracts the details of the physical network.
+",,"c,d,e","c,d,e",,"a. Separating the data and control plane is a characteristic of SDN, not just virtual networks. It is not unique to virtual networks alone. b. Refactoring network control to a centralized controller is a characteristic of SDN, not just virtual networks. It is not exclusive to virtual networks. c. Separating logical and physical networks is a characteristic of virtual networks, allowing different logical networks to run on the same physical infrastructure. d. Deploying in data centers to enable multiple tenants to share physical infrastructure is a characteristic of virtual networks, facilitating resource sharing. e. Abstracting physical network details is a characteristic of virtual networks, providing a higher level of abstraction from the underlying physical infrastructure.","['https://www.sciencedirect.com/science/article/pii/S1877050915009274', 'https://www.sciencedirect.com/science/article/pii/S2405959519300033']",1,7_virtual_networking,0.95,0.9605822897143572,1.0
+55,Which of the following are possible ways of creating virtual links in a virtual network? Select all that apply.,"a. A wide-area tunnel, whereby an IP packet is encapsulated in an MPLS tunnel by attaching an MPLS header to the packet.
+b. Longest-prefix match forwarding on an IP router.
+c. A wide-area tunnel, whereby an Ethernet packet sent between two virtual machines is encapsulated in an IP packet.
+d. VLAN switching based on a VLAN tag.
+e. Pairs of virtual Ethernet interfaces, where one end of the Ethernet interface pair resides in the virtual environment, and the other resides in the root namespace on the host machine.
+",,"a,c,d,e","a,c,e",,"a. A wide-area tunnel encapsulating an IP packet in an MPLS tunnel is a common method for creating virtual links in a virtual network, known as MPLS VPNs. This process involves attaching an MPLS header to the packet to establish the virtual link. (Source: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/mp_l3_vpns/configuration/xe-16/mp-l3-vpns-xe-16-book/mp-bgp-mpls-vpns.html) 
+ c. Another way to create virtual links is by using a wide-area tunnel where an Ethernet packet sent between two virtual machines is encapsulated in an IP packet. This method allows for communication between virtual machines across different physical hosts. (Source: https://www.sciencedirect.com/topics/computer-science/virtual-ethernet) 
+ e. Creating pairs of virtual Ethernet interfaces, with one end in the virtual environment and the other in the host machine's root namespace, is a common practice to establish virtual links within a virtual network. This setup enables communication and data exchange between the virtual environment and the host machine. (Source: https://www.kernel.org/doc/Documentation/networking/tuntap.txt)","['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/mp_l3_vpns/configuration/xe-16/mp-l3-vpns-xe-16-book/mp-bgp-mpls-vpns.html', 'https://www.sciencedirect.com/topics/computer-science/virtual-ethernet', 'https://www.kernel.org/doc/Documentation/networking/tuntap.txt']",0,7_virtual_networking,1.0,0.6846281036437355,0.6000000000000001
+56,Which of the following are true of the Mininet network emulator? Select all that apply.,"a. It requires running OpenFlow-capable switches.
+b. It is difficult to use it to route traffic for real services.
+c. Mininet only allows users to create three types of topologies: linear, tree, and single-switch topologies.
+d. It can create an emulation that runs across multiple physically distributed nodes.
+e. All of the hosts in the topology must run the same underlying operating system.
+",,"b,e","a,d",,"a. Mininet requires running OpenFlow-capable switches to emulate SDN environments effectively. OpenFlow is a key protocol for SDN communication and control between the controller and the switches. 
+d. Mininet can create an emulation that runs across multiple physically distributed nodes, allowing for more complex network setups and testing scenarios.","['https://github.com/mininet/mininet/wiki/FAQ#what-is-mininet', 'https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#what-is-mininet']",0,7_virtual_networking,0.9,0.9974918783323218,0.0
+57,"What are the benefits of emulation as opposed to, say, simulation? Select all that apply.","a. An emulation will complete faster than a simulation.
+b. An emulator makes it possible to ""port"" experiments from one machine to another.
+c. An emulator allows the experimenter run real software on each of the nodes in the emulation.
+d. An emulation is easier to debug than a simulation.
+e. Every run of the emulator will yield exactly the same results, resulting in reproducible experiments.
+",,"b,c","b,c,e",,"a. Emulation typically runs slower than simulation due to the need to mimic hardware behavior accurately. Simulations can skip low-level details for speed. Therefore, emulation does not complete faster than simulation. 
+b. Emulators allow experiments to be moved across different machines, providing portability. 
+c. Emulators can run actual software on emulated nodes, enabling real-world scenarios. 
+d. Debugging can be equally complex in both emulation and simulation. 
+e. Emulators can reproduce the same results consistently, ensuring reproducibility of experiments. 
+Therefore, the correct options are b, c, and e.",['https://www.usenix.org/legacy/event/nsdi06/tech/full_papers/spring/spring_html/#Emulation_vs_Simulation'],0,7_virtual_networking,0.9,0.9919343946397284,0.6000000000000001
+58,Which of the following are possible in Mininet? Select all that apply.,"a. Measuring the latency between a host in San Francisco and a host in Los Angeles.
+b. Assigning custom IP addresses to each node in the topology.
+c. Assigning IP addresses to each node in the topology using a DHCP server.
+d. Running performance measurement tools (e.g., iperf, wget) between nodes.
+e. ""Shaping"" a link between two nodes to a particular traffic rate.
+",,"b,c,d,e","b,d,e",,"a. Measuring latency between distant physical locations like San Francisco and Los Angeles is not possible in Mininet as it is a network emulator confined to a single host or a cluster of hosts. It does not span geographically separate locations.
+ b. Assigning custom IP addresses to nodes is possible in Mininet and is a common practice for network configuration.
+ c. Assigning IP addresses using a DHCP server is not a typical feature of Mininet as it usually involves manual IP assignment.
+ d. Running performance measurement tools between nodes is a common use case in Mininet for network testing and evaluation.
+ e. 'Shaping' a link to control traffic rate is a feature available in Mininet for simulating different network conditions.","['https://github.com/mininet/mininet/wiki/FAQ#can-i-use-mininet-to-emulate-a-wan-or-test-latency-between-distant-locations', 'https://github.com/mininet/mininet/wiki/FAQ#can-i-assign-ip-addresses-to-nodes']",0,7_virtual_networking,0.95,0.8899387834841607,0.6000000000000001
+59,Which of the following functions does FlowVisor enable? Select all that apply.,"a. Allowing two different researchers to implement and deploy different load balancing applications for all traffic between the same source-destination pair.
+b. Allowing two controllers to control traffic on distinct VLANs.
+c. Allowing two different researchers to implement and deploy different Web load balancing applications for port 80 traffic.
+d. Allowing two different researchers to implement and deploy control mechanisms for two distinct applications.
+e. Allowing one controller to control TCP traffic and one controller to control UDP traffic.
+",,"b,d,e","a,b,c",,"FlowVisor is a network virtualization technology that allows the creation of multiple virtual slices on a single physical network infrastructure. It enables the isolation of control and data planes, allowing different researchers or applications to have their own virtual network environment. Therefore, the functions enabled by FlowVisor include: 
+a. Allowing different researchers to implement and deploy different applications for traffic between the same source-destination pair. 
+b. Allowing multiple controllers to control traffic on distinct VLANs. 
+c. Allowing different researchers to implement and deploy specific applications for traffic on certain ports, like port 80.","['https://dl.acm.org/doi/10.1145/1851275.1851194', 'https://ieeexplore.ieee.org/document/6122859']",0,7_virtual_networking,0.9,0.5060692263925397,0.0
+60,Which of the following are stated applications of the Nicira Network Virtualization Platform? Select all that apply.,"a. Easier transition to IPv6 in data-center networks.
+b. Creating more than 1024 virtual networks, as opposed to the alternative of using VLAN tags.
+c. Allowing experimental protocols to coincide with a production network.
+d. Central management of security policies.
+e. Dynamic workload placement in multi-tenant data centers.
+",,"b,d,e","a,b,d,e",,"Nicira Network Virtualization Platform (NVP) offers various applications including: 
+a. Facilitating an easier transition to IPv6 in data-center networks by providing network virtualization capabilities. 
+b. Enabling the creation of more than 1024 virtual networks without relying on VLAN tags. 
+d. Providing central management of security policies across the virtualized network infrastructure. 
+e. Supporting dynamic workload placement in multi-tenant data centers through network virtualization. 
+Therefore, options a, b, d, and e are all stated applications of the Nicira Network Virtualization Platform.",['https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/products/nsx/vmware-nsx-network-virtualization-design-guide.pdf'],0,7_virtual_networking,0.95,0.8468786867948538,0.6000000000000001
+61,Select the statement that is most true about the relationship between network virtualization and SDNs.,"a. Network virtualization is a potential enabler for software-defined networks, since the separation of data and control planes first requires the creation of a logical network.
+b. Software-defined networking is a potential enabler for virtual networks, since separation of data and control planes makes it easier to manage a logical network topology.
+c. Network virtualization is a new concept introduced by Amazon, Nicira, and industry players; it only made sense to talk about network virtualization once central SDN controllers existed.
+d. Network virtualization and software-defined networking each enable the other: SDN cannot exist without network virtualization, and network virtualization cannot exist without SDN.
+",,b,a,,"Network virtualization is a potential enabler for software-defined networks because SDNs require the separation of data and control planes, which is achieved through the creation of a logical network in network virtualization.",['https://www.sdxcentral.com/sdn/definitions/what-is-network-virtualization/'],0,7_virtual_networking,0.9,0.9999933694113824,0.0

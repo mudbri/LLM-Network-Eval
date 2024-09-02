@@ -1,0 +1,71 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+78,What are some of the desired features in future SDN switches that motivate a programmable data plane? Select all that apply.,"a. Reducing energy consumption for custom packet processing.
+b. Processing packets at higher rates.
+c. A wider range of packet processing primitives.
+d. Flexible match-action tables, such as the ability to compose multiple match-action tables in sequence or in parallel.
+e. A configurable packet parser that is not tied to a specific header format.
+","c,d,e","a,b,c,d,e","Software Defined Networking (SDN) aims to make network management more flexible and efficient. Programmability in the data plane is a key aspect of this, as it allows for customized packet processing. Here's how each option fits into the desired features for future SDN switches with programmable data planes:
+
+a. Reducing energy consumption for custom packet processing is a goal in SDN switches to make them more environmentally friendly and cost-effective.
+
+b. Processing packets at higher rates is essential to meet the increasing demand for bandwidth and to handle large volumes of traffic efficiently.
+
+c. A wider range of packet processing primitives allows for more sophisticated and tailored packet handling, enabling new network functions and services.
+
+d. Flexible match-action tables, such as the ability to compose multiple match-action tables in sequence or in parallel, provide the ability to implement complex forwarding and processing policies.
+
+e. A configurable packet parser that is not tied to a specific header format is crucial for handling the diversity of protocols and custom packet formats that exist in various networks.
+
+Each of these features contributes to the overall goal of making SDN switches more adaptable, efficient, and capable of handling the evolving needs of modern networks.","['https://ieeexplore.ieee.org/document/6602305', 'https://www.sciencedirect.com/science/article/pii/S0140366416302240', 'https://www.ietf.org/archive/id/draft-kang-openfabric-00.txt']",0,11_protocol_independent_forwarding,0.95,0.916607921878711,"Misinterpreting questions. The question is asking about motivation for programmable switches, not general goals",Misinterpreting questions,Misinterpreting a word,,,0,1,research paper,0,1,0,0,Advanced networking,1,3,1,1,0.1999999999999999
+79,Which of the following best describes protocol independence?,"a. The ability to configure a packet parser in hardware that is agnostic to (and not constrained by) the control protocol.
+b. The ability to evolve an existing control protocol without breaking interoperability.
+c. The ability to run a switch independently from the controller.
+d. The ability to support multiple protocols running in parallel on the same hardware.
+e. The ability to run a network with both legacy OpenFlow switches and switches that support custom packet processing.
+",a,"a,d,e","Protocol independence generally refers to the ability of networking devices or systems to operate without being tied to a specific set of protocols. This means they can adapt to different or new protocols without requiring significant changes to the underlying hardware or software. Let's evaluate each choice in the context of protocol independence:
+
+a. The ability to configure a packet parser in hardware that is agnostic to (and not constrained by) the control protocol is a direct example of protocol independence. It implies that the hardware can understand and process packets regardless of the specific control protocols in use.
+
+b. The ability to evolve an existing control protocol without breaking interoperability is more about protocol evolution and backward compatibility rather than protocol independence.
+
+c. Running a switch independently from the controller is related to the concept of control and data plane separation, which is a characteristic of Software Defined Networking, but it does not directly address protocol independence.
+
+d. Supporting multiple protocols running in parallel on the same hardware is also an example of protocol independence. It shows that the hardware can handle different protocols simultaneously without being tied to any single one.
+
+e. Running a network with both legacy OpenFlow switches and switches that support custom packet processing suggests that the network can support multiple types of switches with different protocol capabilities, which is in line with the concept of protocol independence.
+
+Therefore, options a, d, and e best describe protocol independence.","['https://www.ietf.org/archive/id/draft-filsfils-spring-sr-policy-considerations-02.html', 'https://www.opennetworking.org/software-defined-standards/models/']",0,11_protocol_independent_forwarding,0.95,0.825898288520724,Misinterpreting questions. The question is implicitly asking to select just one,Misinterpreting questions,Misinterpreting a word,,,0,1,documentation,0,1,1,0,Advanced networking,1,3,1,1,0.1999999999999999
+81,Which of the following describe functions of the P4 parser? Select all that apply.,"a. Constructing a graph of dependencies between different logical tables.
+b. Translating rules to physical tables.
+c. Verifying that the description of packet parsing is consistent with the behavior of an existing hardware switch (e.g., a legacy OpenFlow switch).
+d. Translating a packet processing specification to a state machine.
+e. Mapping logical tables to underlying switch resources.
+","c,d","a,d","The P4 language allows users to define how packets are parsed and processed by the data plane of a network element such as a switch or a router. The key functions of the P4 parser include:
+
+a. Constructing a graph of dependencies between different logical tables: The P4 parser helps in defining the parse graph which dictates the sequence in which headers are extracted and the dependencies between them.
+
+d. Translating a packet processing specification to a state machine: The parse graph essentially acts as a state machine where each state represents a parsing operation for a specific type of header.
+
+The other options are not direct functions of the P4 parser:
+
+b. Translating rules to physical tables is typically a function of the compiler or control plane, not the parser itself.
+
+c. Verifying that the description of packet parsing is consistent with the behavior of an existing hardware switch is also a function of the control plane or a verification tool, not the parser.
+
+e. Mapping logical tables to underlying switch resources is a task of the P4 compiler or the control plane, which takes the abstract definition provided by the P4 program and maps it to the specific hardware resources.","['https://p4.org/p4-spec/docs/P4-16-v1.2.1.html', 'https://p4.org/p4/what-is-p4.html']",0,11_protocol_independent_forwarding,0.95,0.8360068476183,Misinformation about the purpose and jobs of the parser,Wrong Facts/Concept,Incorrect information/concept,,,0,1,documentation,1,1,1,1,Advanced networking,3,3,3,3,0.1999999999999999
+84,Which of the following are true about locally contained applications? Select all that apply.,"a. Locally contained applications can be implemented with regular OpenFlow instructions.
+b. A MAC learning switch can be implemented as a locally contained application.
+c. Locally contained applications forward packets more slowly than their stateless counterparts.
+d. A locally contained application can implement SDN logic without ever requiring a packet to be sent to the controller.
+e. Locally contained applications allow the hardware pipeline to make switch-local state modifications.
+","b,d,e","a,b,d,e","Locally contained applications are those that can be implemented within the switch hardware without requiring interaction with an external controller for every packet. This means they can operate independently of the controller for most operations once they are set up, which can lead to faster packet processing as opposed to the applications that require constant controller interaction. Let's evaluate each choice individually:
+
+a. True. Locally contained applications can indeed be implemented with regular OpenFlow instructions. These instructions are used to define the behavior of the switch in handling packets, including setting up flows that can handle packets without further controller intervention.
+
+b. True. A MAC learning switch is an example of a locally contained application. It learns the source MAC addresses of packets and the ports on which they arrive, and then makes forwarding decisions based on this learned state. This functionality can be implemented using OpenFlow's flow table entries and does not require controller intervention for every packet once the learning has been done.
+
+c. False. The statement that locally contained applications forward packets more slowly than their stateless counterparts is generally incorrect. Locally contained applications can actually forward packets faster because they do not require round-trip communication with the controller for every packet once the initial flow rules are set up.
+
+d. True. A locally contained application can be designed to handle packets based on pre-configured rules and state that is maintained within the switch, thus not requiring packets to be sent to the controller once the application logic has been established.
+
+e. True. Locally contained applications can indeed allow the hardware pipeline to make switch-local state modifications. This is part of the definition of being 'locally contained,' as the application can modify state based on the observed traffic without needing to consult an external controller.","['https://www.opennetworking.org/software-defined-standards/specifications/', 'https://en.wikipedia.org/wiki/OpenFlow', 'https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/']",0,11_protocol_independent_forwarding,0.95,0.987519204830518,Does not know that open flow cannot be used for these applications,Wrong Facts/Concept,Incorrect information/concept,,,0,3,"wikipedia, documentation, trusted article",2,1,1,1,Advanced networking,3,3,3,3,0.6000000000000001

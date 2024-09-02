@@ -1,0 +1,49 @@
+Question 78. What are some of the desired features in future SDN switches that motivate a programmable data plane? Select all that apply.
+(A) Reducing energy consumption for custom packet processing.
+(B) Flexible match-action tables, such as the ability to compose multiple match-action tables in sequence or in parallel. -*
+(C) A wider range of packet processing primitives. -*
+(D) A configurable packet parser that is not tied to a specific header format. -*
+(E) Processing packets at higher rates.
+
+Question 79. Which of the following best describes protocol independence?
+(A) The ability to run a switch independently from the controller.
+(B) The ability to run a network with both legacy OpenFlow switches and switches that support custom packet processing.
+(C) The ability to configure a packet parser in hardware that is agnostic to (and not constrained by) the control protocol. -*
+(D) The ability to evolve an existing control protocol without breaking interoperability.
+(E) The ability to support multiple protocols running in parallel on the same hardware.
+
+Question 81. Which of the following describe functions of the P4 parser? Select all that apply.
+(A) Constructing a graph of dependencies between different logical tables.
+(B) Translating a packet processing specification to a state machine. -*
+(C) Mapping logical tables to underlying switch resources.
+(D) Translating rules to physical tables.
+(E) Verifying that the description of packet parsing is consistent with the behavior of an existing hardware switch (e.g., a legacy OpenFlow switch). -*
+
+Question 82. Which of the following best describe the relationship between a language like P4, an assembler like NetASM, and target programmable hardware (e.g., RMT)?
+(A) A language like NetASM would "compile" to an assembly language like P4, which would then specify a one-to-one relationship with resources on the target forwarding hardware.
+(B) A language like P4 would "compile" to an assembly language like NetASM, which would then specify a one-to-one relationship with resources on the target forwarding hardware. -*
+(C) P4 is much more amenable to "cost semantics" (i.e., figuring out how much a particular operation would cost in terms of power or area) than NetASM.
+NetASM and P4 are two examples of high-level programming languages; they are interchangeable.
+(D) P4 has verifiable semantics, whereas NetASM does not.
+
+Question 83. Which of the folloiwing instruction types create state elements in NetASM? Select all that apply.
+(A) MKR -*
+(B) LBL
+(C) DRP
+(D) JMP
+(E) MKT -*
+
+Question 84. Which of the following are true about locally contained applications? Select all that apply.
+(A) Locally contained applications forward packets more slowly than their stateless counterparts.
+(B) Locally contained applications allow the hardware pipeline to make switch-local state modifications. -*
+(C) Locally contained applications can be implemented with regular OpenFlow instructions.
+(D) A locally contained application can implement SDN logic without ever requiring a packet to be sent to the controller. -*
+(E) A MAC learning switch can be implemented as a locally contained application. -*
+
+Question 86. What are some examples of optimizations that a compiler could perform on NetASM instructions? Select all that apply.
+(A) Preventing bufferbloat for real-time application traffic.
+(B) Reordering instructions so that subsequent tables need not be as large (e.g., not storing state for unmatched packets). -*
+(C) Forwarding packets for high-volume flows at higher rates.
+(D) Only instantiating hardware resources (e.g., table entries) for flows that actually have nonzero traffic volume. -*
+(E) Composing or decomposing tables to save either on table size or table width. -*
+

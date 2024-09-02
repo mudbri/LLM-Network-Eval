@@ -1,0 +1,103 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+179,"When APs are placed at different geographic locations, they can all be interconnected by a switched infrastructure. The 802.11 standard calls this an extended service set (ESS).","a. FALSE
+b. TRUE
+",,b,b,,"An Extended Service Set (ESS) is a set of two or more Basic Service Sets (BSSs) that form a single subnetwork. Access Points (APs) in an ESS are connected by a distribution system, which is typically a wired LAN. This allows for seamless roaming within the geographic coverage area as the mobile device can move from one BSS to another within the same ESS while maintaining a continuous connection to the network.","['https://en.wikipedia.org/wiki/Service_set_(802.11_network)', 'https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116056-technote-product-00.html']",1,chapter10_wireless_networks,0.95,0.9999989719621284,1.0
+180,A lightweight access point in which one of the following architectures participate?,"a. Tunnel-MAC
+b. Split-MAC
+c. Big-MAC
+d. Light-MAC
+",,b,b,,"A lightweight access point (LWAP) operates in an architecture where control and data packets are split between the access point and the wireless LAN controller. This is known as the Split-MAC architecture. In this architecture, the access point handles real-time MAC layer operations (such as beaconing, probing, basic data transmission and reception, etc.), while the controller manages non-real-time MAC layer operations (like association and authentication, more complex data frame processing, key management, etc.). The other options, such as Tunnel-MAC, Big-MAC, and Light-MAC, are not standard architectures related to lightweight access points.","['https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-1/Enterprise_Mobility_8-1_Design_Guide/Enterprise_Mobility_8-1_Deployment_Guide/Chapter-11.html', 'https://www.ciscopress.com/articles/article.asp?p=1271791&seqNum=2']",1,chapter10_wireless_networks,1.0,0.999999091165773,1.0
+181,Which of the following controller ports is used to connect to a peer controller for high availability (HA) operation?,"a. Service port
+b. Distribution system port
+c. Console port
+d. Redundancy port
+",,d,d,,"In a Cisco Wireless LAN Controller (WLC) setup, the redundancy port is used to connect to a peer controller for High Availability (HA) operation. This port is specifically designed for synchronization and stateful switchover between the active and standby controllers, ensuring minimal disruption in service during a failover event. The other ports serve different purposes: the service port is used for out-of-band management, the distribution system port connects the controller to the network, and the console port is for direct device management and not for HA.","['https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-5/b_high_availability_DG/b_high_availability_DG_chapter_010.html', 'https://www.cisco.com/c/en/us/support/docs/wireless/5500-series-wireless-controllers/113034-ccpexp-wlc-ha-00.html']",1,chapter10_wireless_networks,0.95,0.9999591587700256,1.0
+182,Which of the following wireless security tools is used to protect the integrity of data in a wireless frame?,"a. EAP
+b. MIC
+c. WEP
+d. WIPS
+",,b,b,,"The Message Integrity Check (MIC) is a security tool used to protect the integrity of data in a wireless frame. MIC provides a way to ensure that a frame has not been tampered with in transit. It adds a few bytes to each packet to make sure that the keys have not been tampered with, which is a process known as Michael. WEP (Wired Equivalent Privacy) is an outdated security protocol that was designed to provide a wireless local area network (WLAN) with a level of security and privacy comparable to what is usually expected of a wired LAN. EAP (Extensible Authentication Protocol) is an authentication framework frequently used in wireless networks and point-to-point connections. WIPS (Wireless Intrusion Prevention System) is a network device that monitors the radio spectrum for the presence of unauthorized access points.","['https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wlan-security/69340-wlan-mic.html', 'https://en.wikipedia.org/wiki/Wired_Equivalent_Privacy', 'https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol', 'https://en.wikipedia.org/wiki/Wireless_intrusion_prevention_system']",1,chapter10_wireless_networks,0.95,0.999998852758658,1.0
+183,Wi-Fi is based on ________________ IEEE standards.,"a. 802.12
+b. 802.11
+c. 802.1
+d. 802.2
+",,b,b,,"Wi-Fi technology is based on the IEEE 802.11 standards. This family of standards defines the set of protocols for implementing wireless local area network (WLAN) computer communication in various frequencies, including but not limited to 2.4, 5, and 60 GHz frequency bands. The other options listed (802.12, 802.1, and 802.2) do not pertain to Wi-Fi; they refer to other types of networking standards and protocols.","['https://en.wikipedia.org/wiki/IEEE_802.11', 'https://www.ieee.org/']",1,chapter10_wireless_networks,1.0,1.0,1.0
+184,Which of the following bridges can be used to provide wireless connectivity to a non-wireless device?,"a. Transparent bridge
+b. Workgroup bridge
+c. Wireless repeater
+d. Adaptive bridge
+",,b,b,,"A workgroup bridge is used to connect a non-wireless device to a wireless network. It acts as a client to the wireless network, allowing Ethernet devices to connect to it and have wireless connectivity. Transparent bridges are used to connect two or more network segments, typically in a wired network, and are not specifically designed to provide wireless connectivity to non-wireless devices. Wireless repeaters are used to extend the range of a wireless network by repeating the signal. Adaptive bridges can connect different types of networks together, but they are not specifically for providing wireless connectivity to non-wireless devices.","['https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116057-config-wgb-00.html', 'https://www.cisco.com/c/en/us/td/docs/wireless/access_point/12-4_10b_JA/Configuration/guide/scg12410b-chap5-bridge.html']",1,chapter10_wireless_networks,0.95,0.9999993295729248,1.0
+185,Which controller interface type maps a WLAN to a VLAN?,"a. Virtual interface
+b. Redundancy management
+c. Management interface
+d. Service port interface
+e. Dynamic interface
+",,e,e,,"In Cisco Wireless LAN Controller (WLC) configurations, a dynamic interface is used to map a WLAN (Wireless LAN) to a VLAN (Virtual Local Area Network). This type of interface allows the controller to connect wireless clients to specific VLANs based on the SSID to which they are associated. The dynamic interface handles the VLAN tagging and untagging for the WLAN traffic and assigns specific IP address ranges, DHCP settings, and other network parameters to the wireless clients on that WLAN.
+
+Here's a brief evaluation of the other choices:
+a. Virtual interface - Typically used for controller management traffic and not for mapping WLANs to VLANs.
+b. Redundancy management - This is related to high availability and redundancy configurations, not VLAN mapping.
+c. Management interface - Used for in-band management of the controller and not for WLAN to VLAN mapping.
+d. Service port interface - Used for out-of-band management and not for WLAN to VLAN mapping.","['https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-5/b_wireless_lan_controller_config_guide_85/b_wireless_lan_controller_config_guide_85_chapter_011.html', 'https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116143-configure-wlc-00.html']",1,chapter10_wireless_networks,1.0,0.9999996871837188,1.0
+186,Which is the most preferred and secure way of connecting to a WLC GUI to configure a new WLAN?,"a. FTP
+b. SSH
+c. HTTP
+d. None of the above
+e. HTTPS
+",,e,e,,"When connecting to a Wireless LAN Controller (WLC) for configuration purposes, security is paramount. FTP (File Transfer Protocol) is not typically used for configuring a WLC, and while it can be used for transferring files, it is not secure as it transmits data in clear text. SSH (Secure Shell) is a secure method for command-line access but is not used for GUI (Graphical User Interface) access. HTTP (HyperText Transfer Protocol) is used for web-based access but is also not secure as it does not encrypt the traffic, which could expose sensitive information to potential eavesdropping. HTTPS (HTTP Secure), on the other hand, is the secure version of HTTP, which encrypts the traffic between the client and the server, thus providing a secure way to access the WLC GUI and configure a new WLAN. Therefore, HTTPS is the most preferred and secure method for this purpose.","['https://www.cisco.com/c/en/us/support/docs/wireless/5500-series-wireless-controllers/112926-5508-wlc-ts.html', 'https://en.wikipedia.org/wiki/HTTPS']",1,chapter10_wireless_networks,1.0,0.9999814491960682,1.0
+187,The maximum configurable number of WLANs on a controller is __________________.,"a. 251
+b. 5
+c. 512
+d. 152
+",,c,c,,"The maximum number of WLANs that can be configured on a Cisco Wireless LAN Controller depends on the model of the controller. For many of the Cisco WLC models, the maximum is 512 WLANs. Option a (251) and option d (152) are incorrect because they are not standard maximums for Cisco WLCs. Option b (5) is far below the typical capabilities of a Cisco WLC.","['https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-0/WLAN_Configuration/b_WLAN_Configuration_8_0/b_WLAN_Configuration_8_0_chapter_0100.html', 'https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116056-config-wlan-00.html']",1,chapter10_wireless_networks,0.95,0.9200491835385652,1.0
+188,Which of the following IEEE 802.11 Wi-Fi standards use the 5 GHz band? (Choose all that apply),"a. 802.11ax
+b. 802.11ac
+c. 802.11n
+d. 802.11a
+e. 802.11g
+f. 802.11b
+g. 802.11
+",,"a,b,c,d","a,b,c,d",,"The IEEE 802.11 standards specify the technologies for wireless LANs. Among the choices given, the following standards use the 5 GHz band:
+- 802.11ax, also known as Wi-Fi 6, operates in both the 2.4 GHz and 5 GHz bands.
+- 802.11ac, which is also known as Wi-Fi 5, operates exclusively in the 5 GHz band.
+- 802.11n, also known as Wi-Fi 4, can operate in both the 2.4 GHz and 5 GHz bands, although it is more commonly associated with the 2.4 GHz band.
+- 802.11a operates exclusively in the 5 GHz band.
+On the other hand, 802.11g and 802.11b both operate in the 2.4 GHz band. 802.11 without any suffix is not a standard that specifies a frequency band, it's the base standard for Wi-Fi, and the specific amendments (like a, b, g, n, ac, ax, etc.) define the frequencies and other characteristics.","['https://en.wikipedia.org/wiki/IEEE_802.11', 'https://en.wikipedia.org/wiki/IEEE_802.11ac', 'https://en.wikipedia.org/wiki/IEEE_802.11n', 'https://en.wikipedia.org/wiki/IEEE_802.11a', 'https://en.wikipedia.org/wiki/IEEE_802.11ax']",1,chapter10_wireless_networks,0.95,0.9934696656758676,1.0
+189,Wi-Fi commonly uses the 2.5GHz and __________________ GHz bands.,"a. 5
+b. 4
+c. 3
+d. 1
+",,a,a,,"Wi-Fi technology typically operates on two frequency bands: 2.4 GHz and 5 GHz. The 2.4 GHz band is the more commonly used frequency range and is known for its longer range but it is more susceptible to interference from various household devices. The 5 GHz band offers faster data rates and is less prone to interference but has a shorter range. Option 'a' is the correct answer because Wi-Fi does not commonly use the 4 GHz, 3 GHz, or 1 GHz bands for consumer devices.","['https://www.fcc.gov/consumers/guides/wireless-networking-101', 'https://www.wi-fi.org/discover-wi-fi/wi-fi-bands']",1,chapter10_wireless_networks,1.0,0.9999998063873689,1.0
+190,"Choose the term that best describes a Cisco wireless access point that operates in a standalone, independent manner.","a. Standalone Access point (AP)
+b. Cisco Access Point (AP)
+c. Autonomous Access Point (AP)
+d. Independent Access Point (AP)
+",,c,c,,"The term 'Autonomous Access Point (AP)' refers to a Cisco wireless access point that operates independently, with all the intelligence to handle wireless clients, security, and Quality of Service (QoS) built into the device itself. It does not require a wireless controller to function and can operate standalone, which is what distinguishes it from other types of access points that might rely on a centralized controller. The other terms listed are not specific to the concept of an access point operating in a standalone manner.","['https://www.cisco.com/c/en/us/products/wireless/buyers-guide.html', 'https://www.cisco.com/c/en/us/support/docs/wireless/aironet-1200-series/9200-deploy-autonomous.html']",1,chapter10_wireless_networks,1.0,0.9999992103693116,1.0
+191,"You are creating a new WLAN with the controller GUI, which of the following parameters are necessary? (Choose two)","a. IP subnet
+b. SSID
+c. Interface
+d. BSSID
+e. VLAN number
+",,"b,c","b,c",,"When creating a new Wireless Local Area Network (WLAN) using a controller's graphical user interface (GUI), the following parameters are necessary: SSID and Interface. The SSID (Service Set Identifier) is the network name that users see when they are searching for wireless networks to connect to. The Interface refers to the specific interface on the controller that the WLAN will use, which is associated with a particular IP subnet and VLAN. The IP subnet and VLAN number are important, but they are not directly specified when creating the WLAN; they are associated with the interface that the WLAN uses. The BSSID (Basic Service Set Identifier) is a unique identifier for a basic service set, but it is not something you manually set when creating a WLAN; it is automatically generated based on the MAC address of the access point.","['https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116143-configure-wlan-00.html', 'https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-0/WLAN_Configuration/b_WLAN_Configuration_8_0/b_WLAN_Configuration_8_0_chapter_0100.html', 'https://documentation.meraki.com/MR/SSID_and_VLAN_Settings/Creating_and_Configuring_an_SSID']",1,chapter10_wireless_networks,0.95,0.9459798827919456,1.0
+192,Which one of the following is a wireless encryption method that is not recommended for use due to vulnerability issues?,"a. Advanced Encryption Standard (AES)
+b. Extensible Authentication Protocol (EAP)
+c. Wired Equivalent Privacy (WEP)
+d. Wi-Fi Protected Access (WPA)
+",,c,c,,"Wired Equivalent Privacy (WEP) is a security protocol for wireless networks that was designed to provide a wireless local area network (WLAN) with a level of security and privacy comparable to what is usually expected of a wired LAN. However, WEP has been found to have several serious weaknesses and vulnerabilities that allow attackers to crack its encryption with relative ease. Therefore, WEP is not recommended for use and has been superseded by more secure encryption methods like Wi-Fi Protected Access (WPA) and WPA2 with Advanced Encryption Standard (AES). Extensible Authentication Protocol (EAP) is not an encryption method but rather an authentication framework used in wireless networks and point-to-point connections.","['https://en.wikipedia.org/wiki/Wired_Equivalent_Privacy', 'https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wi-fi-protected-access/200037-WPA-and-WPA2-Security-Enhancements.html', 'https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol']",1,chapter10_wireless_networks,1.0,1.0,1.0
+193,Which of the following IEEE 802.11 Wi-Fi standards use the 2.4 GHz band? (Choose all that apply),"a. 802.11g
+b. 802.11b
+c. 802.11n
+d. 802.11
+e. 802.11ac
+f. 802.11ax
+g. 802.11a
+",,"a,b,c,d,f","a,b,c,d",,"The IEEE 802.11 standards specify the technologies for wireless LANs (WLANs). Among the choices given, the following standards use the 2.4 GHz band:
+- 802.11g: Introduced in 2003, it operates in the 2.4 GHz band and offers data rates up to 54 Mbps.
+- 802.11b: This standard was ratified in 1999 and also operates in the 2.4 GHz band with data rates up to 11 Mbps.
+- 802.11n: Ratified in 2009, it can operate in both the 2.4 GHz and 5 GHz bands and offers higher data rates and improved range over previous standards.
+- 802.11: The original version of the IEEE 802.11 standard was released in 1997 and operates in the 2.4 GHz band.
+
+The other standards mentioned use different frequency bands:
+- 802.11ac (option e) operates exclusively in the 5 GHz band.
+- 802.11ax (option f), also known as Wi-Fi 6, operates in both 2.4 GHz and 5 GHz bands, but it is not one of the original standards that operated solely on 2.4 GHz.
+- 802.11a (option g) operates in the 5 GHz band.","['https://en.wikipedia.org/wiki/IEEE_802.11', 'https://en.wikipedia.org/wiki/List_of_WLAN_channels']",0,chapter10_wireless_networks,0.95,0.8876115844343716,0.7142857142857142

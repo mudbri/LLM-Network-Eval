@@ -1,0 +1,60 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+62,Which of the following are true of “network slicing”? Select all that apply.,"a. A controller can prevent one network slice from interfering with the resources of another.
+b. Network operators can use slicing to test configurations on “shadow” networks that mirror a production network topology.
+c. Conventional (i.e., non-SDN) networks have no concept of network virtualization or slicing.
+d. One way to slice networks is according to “flow space”, whereby different controllers might control distinct and non-overlapping traffic flows.
+e. Multi-tenant datacenters are one use case for network slicing.
+",,"b,d,e","a,b,d,e",,"The correct statements regarding network slicing are as follows:
+ a. A controller can prevent one network slice from interfering with the resources of another: This is true as one of the key features of network slicing is the ability to isolate and control resources for different slices.
+ b. Network operators can use slicing to test configurations on “shadow” networks that mirror a production network topology: This is true as network slicing allows for the creation of isolated virtual networks for testing purposes.
+ d. One way to slice networks is according to “flow space”, whereby different controllers might control distinct and non-overlapping traffic flows: This is true as network slicing can be implemented based on different criteria such as traffic flows.
+ e. Multi-tenant datacenters are one use case for network slicing: This is true as network slicing enables the creation of separate virtual networks for different tenants in a multi-tenant environment.",[],0,8_data_center_virtualization,0.9,0.501553699791514,0.6000000000000001
+63,Which of the following are true about flow spaces? Select all that apply.,"a. Flow spaces can only be defined according to combinations of packet header fields.
+b. Two controllers that write data-plane rules for non-overlapping parts of flowspace can never cause traffic from one “slice” to enter the other slice.
+c. Two flow spaces cannot overlap.
+d. Flowspace isolation separates individual virtual networks from one another but incurs some performance penalty for doing so.
+e. One host could send traffic that ends up in two different flow spaces.
+",,e,"b,d,e",,"{'b': ""Two controllers that write data-plane rules for non-overlapping parts of flowspace can indeed prevent traffic from one 'slice' to enter the other slice. This is a fundamental aspect of flow space definition and control."", 'd': 'Flowspace isolation does separate individual virtual networks and can incur a performance penalty due to the additional processing required to enforce the isolation.', 'e': 'It is possible for one host to send traffic that ultimately ends up in two different flow spaces based on how the flow rules are defined.'}",[],0,8_data_center_virtualization,0.9,0.4788000777963826,0.1999999999999999
+64,Which of the following describe the control-plane checks that FlowVisor implements? Select all that apply.,"a. When a packet must be forwarded to a controller, Flowvisor forwards traffic to the correct controller based on which controller “owns” the flowspace corresponding to that packet.
+b. Flowvisor can only instantiate network slices based on the network topology, not based on other properties, such as application traffic.
+c. Flowvisor prevents a controller from writing data-plane rules to a part of flowspace that it does not own.
+d. Flowvisor installs traffic shaping and quality of service rules to ensure that each network slice has guaranteed resources.
+e. Flowvisor prevents each slice's controller from being the target of a denial of service attack from other slices.
+",,"a,c","a,c,e",,"FlowVisor is a key component in Software Defined Networking (SDN) environments that enables multiple controllers to operate on the same physical network without interfering with each other. The control-plane checks that FlowVisor implements include: 
+
+a. When a packet must be forwarded to a controller, FlowVisor forwards traffic to the correct controller based on which controller 'owns' the flowspace corresponding to that packet. This ensures that each controller only deals with the traffic it is responsible for, maintaining isolation and security.
+
+b. FlowVisor can instantiate network slices based on various properties, including network topology and application traffic, not limited to just the network topology. This makes the network slicing process more flexible and customizable.
+
+c. FlowVisor prevents a controller from writing data-plane rules to a part of flowspace that it does not own. This restriction ensures that controllers cannot interfere with each other's traffic handling, enhancing network security and stability.
+
+d. FlowVisor does not typically handle traffic shaping and quality of service rules for network slices. These functions are usually managed by the controllers or other network devices.
+
+e. FlowVisor prevents each slice's controller from being the target of a denial of service attack from other slices. This security measure helps in maintaining the integrity and availability of the controllers and their respective network slices.",[],0,8_data_center_virtualization,0.9,0.9985279732185246,0.6000000000000001
+65,Which of the following are applications in a home network that network slicing could enable? Select all that apply.,"a. Smart grid applications
+b. Guest WiFi access
+c. Load balance of inbound traffic
+d. Traceback of attack traffic to its source
+e. Quality of service for certain applications (e.g., video streaming)
+",,"a,b,e","a,b,e",,"Network slicing in a home network could enable various applications such as:
+- Smart grid applications: Network slicing can provide dedicated network resources to support smart grid applications, ensuring reliable and secure communication for managing energy distribution.
+- Guest WiFi access: By utilizing network slicing, separate virtual networks can be created to provide secure and isolated guest WiFi access, enhancing network security.
+- Quality of service for certain applications (e.g., video streaming): Network slicing allows for the prioritization of specific applications like video streaming, ensuring a better quality of service for these applications.",[],1,8_data_center_virtualization,0.9,0.716014670576083,1.0
+69,What are examples of multi-tenant datacenter applications? Select all that apply.,"a. A retailer running a large, multi-site enterprise network across its global network of sites
+b. Google running Gmail and search from a common facility
+c. Two enterprises hosting data in a shared facility.
+d. A home network owner running a private and public WiFi network
+e. Amazon hosting EC2 instances for customers
+",,"b,c,e","c,e",,"Option c is correct because it describes two enterprises hosting data in a shared facility, which is an example of a multi-tenant datacenter application where multiple tenants share the same physical infrastructure. Option e is also correct as it represents Amazon hosting EC2 instances for customers, which is another example of multi-tenancy in a datacenter environment.",[],0,8_data_center_virtualization,0.9,0.7766773389869466,0.6000000000000001
+70,What best describes the relationship between network virtualization and SDN? Select all that apply.,"a. Network virtualization requires SDN
+b. Network virtualization enables SDN
+c. SDN makes some aspects of network virtualization easier to manage
+d. SDN predates network virtualization
+e. SDN controllers can help manage storage and data facilities, in addition to network configuration
+",,"c,e","b,c",,"Option b is correct because network virtualization enables SDN by abstracting the network services from the underlying hardware, allowing SDN controllers to programmatically manage the network. Option c is also correct as SDN can simplify and improve the management of network virtualization by providing centralized control and programmability, making it easier to manage virtualized network resources.","['https://www.sdxcentral.com/sdn/definitions/what-is-network-virtualization/', 'https://www.cisco.com/c/en/us/solutions/data-center-virtualization/what-is-sdn.html']",0,8_data_center_virtualization,0.9,0.9383286918450175,0.1999999999999999
+71,Which of the following are true about NVP? Select all that apply.,"a. Exact matches for policies in NVP must always be performed in user space on the host.
+b. NVP allows tenants to configure logical datapaths on their own virtual hosts.
+c. In NVP, most of the “intelligence” for datapath processing lies in virtual hosts, not in switches.
+d. NVP relies on switches with custom hardware.
+e. NVP allows tenants to configure switches in the middle of the network for portions of flowspace that they own.
+",,"b,c","b,c",,"{'b': 'NVP allows tenants to configure logical datapaths on their own virtual hosts. This is a key feature of NVP where tenants can define and control their network paths.', 'c': ""In NVP, most of the 'intelligence' for datapath processing lies in virtual hosts, not in switches. This is a fundamental design principle of NVP where the virtual hosts play a significant role in network processing.""}",[],1,8_data_center_virtualization,0.9,0.9422019857038526,1.0

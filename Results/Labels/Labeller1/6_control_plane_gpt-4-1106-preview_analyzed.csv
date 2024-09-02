@@ -1,0 +1,25 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+50,Which of the following functions ensures that the controller will hear PacketIn messages? Select all that apply.,"a. connection.addListeners
+b. _handle_PacketIn
+c. AddRule
+d. init
+e. launch
+",a,"a,b","In the context of Software Defined Networking (SDN) and specifically OpenFlow controllers, the controller needs to be able to receive PacketIn messages from the switches. PacketIn messages are sent by the switches to the controller when they need instructions on how to handle a packet that has arrived at the switch. Here's the evaluation of each choice:
+
+a. connection.addListeners - This function is used to add listeners for various events in the controller, including listening for PacketIn messages. When a PacketIn event occurs, the controller is notified through the listeners it has registered.
+
+b. _handle_PacketIn - This is typically a handler function within the controller software that is invoked when a PacketIn message is received. It contains the logic that the controller will execute upon receiving a PacketIn message.
+
+c. AddRule - This function is used to add a flow entry to a switch's flow table. While it's related to the actions that might be taken after receiving a PacketIn message, it does not itself ensure that PacketIn messages are heard by the controller.
+
+d. init - This function usually initializes the controller or a module within the controller. It might be involved in setting up listeners indirectly, but on its own, it does not ensure that PacketIn messages are heard.
+
+e. launch - This function typically starts the controller or a particular application within the controller. Like init, it might be involved in setting up the environment where listeners could be added, but it does not directly ensure that PacketIn messages are heard.
+
+Therefore, the correct answers are 'connection.addListeners' and '_handle_PacketIn' because they are directly involved in ensuring that the controller will hear PacketIn messages.","['https://ryu.readthedocs.io/en/latest/writing_ryu_app.html', 'https://osrg.github.io/ryu-book/en/html/switching_hub.html']",0,6_control_plane,0.95,0.986119246240591,Classic case of misinterpreting questions. The question is just about functions that ensure packet in messages will be heard. It is not about what is done when packet in messages are heard,Misinterpreting questions,Misinterpreting a word,,,1,2,"documentation, documentation",2,1,1,0,Advanced networking,2,4,2,4,0.6
+52,Which of the following are true about the OpenDaylight controller? Select all that apply.,"a. It allows dynamic reloading of controller functionality without restarting the controller.
+b. It only supports OpenFlow as a ""southbound"" control framework.
+c. Its code shares a lot of similarities with Beacon.
+d. Open Daylight only supports proprietary switches from Cisco and IBM.
+e. It is slower and less scalable than some of the more lightweight SDN controllers such as Pox.
+","a,c","a,c,e","The OpenDaylight (ODL) controller is an open-source Software Defined Networking (SDN) controller that allows for dynamic reloading of its functionality without requiring a restart, which makes it flexible in adapting to changes in the network (a). It does share a lot of its initial code base with Beacon, which was an early SDN controller platform (c). While it may be true that OpenDaylight can be slower and less scalable than more lightweight controllers like Pox, this is a trade-off for its extensive features and broad protocol support (e). However, it is incorrect to say that OpenDaylight only supports OpenFlow (b) as it supports multiple southbound protocols, making it versatile in terms of device compatibility. Similarly, it is not limited to proprietary switches from Cisco and IBM (d); it supports a wide range of network devices from various vendors, which is one of the key benefits of using an open-source SDN controller.","['https://www.opendaylight.org/', 'https://wiki.opendaylight.org/view/OpenDaylight_Controller:Main', 'https://www.sdxcentral.com/networking/sdn/definitions/whats-opendaylight/']",0,6_control_plane,0.95,0.999428036031589,Another case of misunderstanding the question. The question is not asking if the SDN in question is a good option or not. It is just asking about the true statements about it,Wrong Facts/Concept,Incorrect information/concept,,,0,1,service description,1,1,1,1,Advanced networking,3,6,2,6,0.6

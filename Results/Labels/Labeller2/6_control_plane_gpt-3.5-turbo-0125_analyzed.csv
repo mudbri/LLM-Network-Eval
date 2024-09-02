@@ -1,0 +1,25 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+45,Which of the following are reasonable considerations for the choice of controller? Select all that apply.,"a. Performance of the programming language that the controller is implemented in.
+b. Support for and integration with cloud applications.
+c. Ease of learning curve.
+d. Need for production-quality operation.
+e. Speed of prototyping.
+","a,b,c,d,e","a,b,d",The considerations for the choice of controller should include: a) Performance of the programming language that the controller is implemented in - this is important as it can impact the overall efficiency and speed of the controller, b) Support for and integration with cloud applications - crucial for modern networking setups that often rely on cloud services,0,6_control_plane,0.9,0.593230189023652,,Incorrect reasoning/deduction,Self-aware but still wrong conclusion,,,0,,,,0,0,1,,3,6,3,6,0.2
+46,Which of the following controllers support OpenStack integration? Select all that apply.,"a. NOX
+b. Pox
+c. CpQD
+d. Floodlight
+e. Ryu
+","d,e","c,d,e","Among the given options, CpQD, Floodlight, and Ryu support OpenStack integration. NOX and Pox do not directly support OpenStack integration. CpQD provides a plugin for Neutron, the networking component of OpenStack, to integrate with the SDN controller. Floodlight has modules that allow integration with OpenStack services. Ryu has plugins available for integrating with OpenStack components.","['https://wiki.openstack.org/wiki/Neutron/ML2/CpQD', 'https://www.openstack.org/summit/vancouver-2018/summit-schedule/events/21422/openstack-and-sdn-integration-using-floodlight-controller', 'https://osrg.github.io/ryu-book/en/html/openstack_integration.html']",0,6_control_plane,0.9,0.407197900378713,,Wrong Facts/Concept,Incorrect information/concept,,,0,,,,0,0,1,,2,6,2,6,0.6
+47,Which of the following are true about Pox? Select all that apply.,"a. Pox automatically determines the order to install flow table rules, to avoid inconsistent forwarding behavior.
+b. Pox's _handle_PacketIn function determines how a packet should be handled when it arrives at the controller.
+c. Pox provides a function to modify flow table entries at a switch.
+d. Pox's performance is typically slower than NOX.
+e. Pox automatically determines the priority between two conflicting rules.
+","b,c,d","b,c","{'b': 'Correct. In Pox, the _handle_PacketIn function is responsible for determining how a packet should be handled when it arrives at the controller.', 'c': 'Correct. Pox does provide a function to modify flow table entries at a switch, allowing for dynamic control over the network behavior.'}",['https://opennetlinux.org/wp-content/uploads/2019/05/SDN-Programming-Part-I.pdf'],0,6_control_plane,0.9,0.997842707178201,,Wrong Facts/Concept,Incorrect information/concept,,,1,,,,0,1,1,,3,6,3,6,0.6
+49,Which of the following are true about hubs and learning switches? Select all that apply,"a. A hub implemented in Pox requires all incoming packets to be directed to the controller.
+b. A learning switch requires more logic at the controller (in terms of lines of code in Pox) than a hub.
+c. A learning switch implemented in Pox can be easily extended to support firewall capabilities.
+d. A learning switch implemented in Pox requires all incoming packets to be redirected to the controller.
+e. A hub forwards an incoming packet on all ports (except the incoming port), whereas a switch only floods an incoming packet on all ports if it does not have a table entry that determines the output port for that packet.
+","b,c,e","c,e","{'c': 'A learning switch implemented in Pox can be easily extended to support firewall capabilities. This is true because learning switches can maintain a table of MAC addresses and associated ports, allowing for additional functionality like implementing firewall rules based on MAC addresses or other packet attributes.', 'e': 'A hub forwards an incoming packet on all ports (except the incoming port), whereas a switch only floods an incoming packet on all ports if it does not have a table entry that determines the output port for that packet. This statement correctly distinguishes the behavior of hubs and switches in terms of packet forwarding.'}",[],0,6_control_plane,0.9,0.409219142193126,,Incorrect reasoning/deduction,Self-aware but still wrong conclusion,,,1,,,,0,1,1,,1,2,1,2,0.6

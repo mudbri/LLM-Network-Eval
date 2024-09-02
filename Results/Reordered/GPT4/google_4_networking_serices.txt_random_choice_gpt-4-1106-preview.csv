@@ -1,0 +1,153 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+46,What transport layer protocol does DNS normally use?,"a. UDP
+b. ICMP
+c. TCP
+d. IP
+",,a,"a,c",,"The Domain Name System (DNS) primarily uses two transport layer protocols: UDP (User Datagram Protocol) and TCP (Transmission Control Protocol). By default, DNS queries are usually sent using UDP on port 53 because it is faster and requires no connection setup. However, if the response data size exceeds 512 bytes or for tasks such as zone transfers (AXFR), DNS will use TCP, which provides reliable data transmission.","['https://www.rfc-editor.org/rfc/rfc1035', 'https://www.ietf.org/rfc/rfc5966.txt']",0,4_networking_serices,0.95,0.999999448776502,0.5
+47,A DNS TTL determines what?,"a. How far away a DNS can be from you.
+b. How many steps there are in the resolution process.
+c. How long a DNS entry is allowed to be cached.
+d. How many DNS resolutions can take place before the IP has to change.
+",,c,c,,"The DNS TTL (Time to Live) is a setting in the DNS record that specifies the duration for which a DNS entry can be cached by a DNS resolver or client device before it must be discarded or refreshed. It does not relate to the physical distance of a DNS server (a), the number of steps in the resolution process (b), or the number of resolutions before an IP has to change (d).","['https://www.cloudflare.com/learning/dns/what-is-dns-ttl/', 'https://en.wikipedia.org/wiki/Time_to_live#DNS_records']",1,4_networking_serices,1.0,1.0,1.0
+48,How many root servers are there?,"a. 13
+b. 16
+c. 17
+d. 8
+",,a,a,,"There are 13 root servers in the Domain Name System (DNS), identified by the letters A through M. These root servers are a critical part of the internet infrastructure, as they are the first step in translating human-readable domain names into IP addresses that computers use to identify each other on the network. Despite there being 13 root servers, there are many more physical servers, as each root server identifier (A-M) corresponds to a network of replicated servers around the world using anycast addressing to provide a distributed service.","['https://www.iana.org/domains/root/servers', 'https://en.wikipedia.org/wiki/Root_name_server']",1,4_networking_serices,1.0,0.9999998063873689,1.0
+49,Which of the following are benefits of using Domain Name Resolution (DNS)? (Select all that apply.),"a. Small routing tables.
+b. Allows administrative changes to happen seamlessly.
+c. Easier for humans to remember website names.
+d. Easy for the node to find the network ID.
+",,"b,c","b,c",,"Domain Name System (DNS) is the hierarchical and decentralized naming system used to identify computers, services, and other resources reachable through the Internet or other IP networks. It translates more readily memorized domain names to the numerical IP addresses needed for locating and identifying computer services and devices with the underlying network protocols. Here are the evaluations for each choice provided:
+
+a. Small routing tables - DNS does not directly affect the size of routing tables. Routing tables are used by routers to make forwarding decisions and are related to the network layer, while DNS operates at the application layer.
+
+b. Allows administrative changes to happen seamlessly - DNS allows administrators to change the IP addresses of servers without affecting the end-users who use domain names. Users continue to use the same domain names they always have, and DNS resolves these to the new IP addresses.
+
+c. Easier for humans to remember website names - DNS translates numerical IP addresses into human-readable domain names, which are indeed easier for humans to remember.
+
+d. Easy for the node to find the network ID - DNS does not involve finding the network ID. It resolves domain names to IP addresses. Network IDs are part of subnetting and are related to the network layer of the OSI model.","['https://en.wikipedia.org/wiki/Domain_Name_System', 'https://www.cloudflare.com/learning/dns/what-is-dns/', 'https://www.cisco.com/c/en/us/support/docs/ip/domain-name-system-dns/24182-revdom.html']",1,4_networking_serices,0.95,0.9999971839107652,1.0
+50,The process of using DNS to turn a domain name into an IP address is known as_________.,"a. name resolution
+b. IP addresses
+c. ARP table lookup
+d. DNS server
+",,a,a,,"The process of converting a domain name into its corresponding IP address is known as name resolution. This is typically done using the Domain Name System (DNS), which acts like a phonebook for the internet. When you type a domain name into your browser, DNS servers take that domain name and translate it into an IP address so your browser can load the appropriate website. Choices 'b' and 'd' are related to DNS but do not describe the process of converting a domain name to an IP address. An ARP table lookup, choice 'c', is used to map IP addresses to MAC addresses within a local network, which is a different process.","['https://www.cloudflare.com/learning/dns/what-is-dns/', 'https://www.cisco.com/c/en/us/support/docs/ip/domain-name-system-dns/24182-reversedns.html']",1,4_networking_serices,1.0,1.0,1.0
+51,An A Record contains what?,"a. An IPv4 address
+b. A CNAME
+c. An SOA
+d. An IPv6 address
+",,a,a,,"An A Record (Address Record) in DNS (Domain Name System) maps a domain name to an IPv4 address of the computer hosting the domain. It is used for translating human-friendly domain names into IP addresses which computers use to identify each other on the network. Here's the evaluation of each choice:
+
+a. An IPv4 address - Correct. This is what an A Record contains.
+b. A CNAME - Incorrect. A CNAME (Canonical Name) record maps an alias name to a true or canonical domain name.
+c. An SOA - Incorrect. An SOA (Start of Authority) record provides information about a DNS zone and other DNS records.
+d. An IPv6 address - Incorrect. An IPv6 address is stored in a AAAA Record, not an A Record.","['https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/', 'https://en.wikipedia.org/wiki/List_of_DNS_record_types']",1,4_networking_serices,1.0,1.0,1.0
+52,MX stands for ________.,"a. Micro exchange
+b. Meta exchange
+c. Micro extreme
+d. Mail exchange
+",,d,d,,MX stands for Mail Exchange. MX records are DNS records that are necessary for delivering email to your address. They specify the mail server responsible for accepting email messages on behalf of a domain name.,['https://en.wikipedia.org/wiki/MX_record'],1,4_networking_serices,1.0,1.0,1.0
+53,A fully qualified domain name can contain how many characters?,"a. 63
+b. 64
+c. 255
+d. 127
+",,c,c,,"A fully qualified domain name (FQDN) can contain up to 255 characters. This includes the domain name, subdomains, and a trailing dot that represents the root level of the DNS hierarchy. Each label (the part between the dots) can be up to 63 characters long, but the full domain name, including all labels and separators, should not exceed 255 characters.",['https://www.rfc-editor.org/rfc/rfc1035'],1,4_networking_serices,1.0,0.999961661949922,1.0
+54,What technique is used to balance traffic across multiple IPs for the same domain?,"a. Cycling records
+b. CNAME
+c. Quad A record
+d. Round robin
+",,d,d,,"Round robin is a simple load balancing technique used by DNS servers to share and distribute network traffic across multiple servers. When a DNS server uses round robin, it rotates the order of IP addresses in the DNS response for each new request. This means that if there are multiple IP addresses associated with a single domain name, the DNS server will alternate which IP address it provides to clients, effectively distributing the incoming requests among the different servers. This can help balance the load and improve the overall responsiveness of a system. Options 'a', 'b', and 'c' do not describe techniques for balancing traffic across multiple IPs for the same domain. 'Cycling records' is not a standard term in DNS, 'CNAME' is an alias for a domain, not a load balancing technique, and 'Quad A record' (AAAA) is simply an IPv6 address record, not a load balancing technique.","['https://en.wikipedia.org/wiki/Round-robin_DNS', 'https://www.cloudflare.com/learning/dns/glossary/round-robin-dns/']",1,4_networking_serices,0.95,0.9959824085021024,1.0
+55,Which of the following are part of a Zone File? (select all that apply),"a. A Record
+b. SOA
+c. FQDN
+d. NS record
+",,"a,b,d","a,b,d",,"A Zone File is a file that contains mappings between domain names and IP addresses and is a critical component of the Domain Name System (DNS). An A Record (a) maps a domain name to its corresponding IPv4 address. The SOA (Start of Authority) record (b) contains administrative information about the zone, such as the primary name server, email of the domain administrator, domain serial number, and other important data. The NS record (d) specifies the name servers for the domain, which are authoritative for the zone. The FQDN (Fully Qualified Domain Name) (c) is the complete domain name for a specific computer, or host, on the Internet, but it is not a part of the zone file itself; rather, it is the type of name that is used within zone file records.","['https://www.iana.org/help/naming-authority', 'https://en.wikipedia.org/wiki/Zone_file', 'https://en.wikipedia.org/wiki/List_of_DNS_record_types']",1,4_networking_serices,1.0,0.9922779031069524,1.0
+56,Which of the following need to be configured for a computer to operate on a modern network? Check all that apply.,"a. A name server
+b. A MAC address
+c. A TCP port
+d. An IP address
+",,"a,d","a,b,d",,"For a computer to operate on a modern network, certain configurations are required. These include the following:
+a. A name server - This is necessary for resolving human-friendly domain names to IP addresses that computers use to identify each other on the network.
+b. A MAC address - This is a hardware address that uniquely identifies each device on a network. It is usually configured by the manufacturer and is necessary for local network communication.
+d. An IP address - This is required for a computer to be identified on a network, allowing it to communicate with other devices across the network or the internet.
+A TCP port (choice c) is not something that is configured for a computer to operate on a network; rather, it is used by applications and services to establish connections once the computer is already configured to communicate on the network.","['https://en.wikipedia.org/wiki/Name_server', 'https://en.wikipedia.org/wiki/MAC_address', 'https://en.wikipedia.org/wiki/IP_address', 'https://en.wikipedia.org/wiki/Port_(computer_networking)']",0,4_networking_serices,0.95,0.9708806180187388,0.5
+57,"When using Fixed Allocation DHCP, what is used to determine a computer's IP?","a. Location
+b. An A Record
+c. A MAC address
+d. A subnet mask
+",,c,c,,"In Fixed Allocation DHCP (also known as static DHCP or DHCP reservation), a computer's IP address is assigned based on its MAC (Media Access Control) address. The DHCP server is configured with a mapping of MAC addresses to specific IP addresses. When a computer with a registered MAC address requests an IP address from the DHCP server, it receives the IP address that has been reserved for its MAC address. This ensures that the computer always receives the same IP address each time it connects to the network. Options a, b, and d are not used for determining a computer's IP address in a fixed allocation scenario.","['https://www.techopedia.com/definition/13004/dynamic-host-configuration-protocol-dhcp-reservation', 'https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Client_configuration']",1,4_networking_serices,1.0,0.9999993295729248,1.0
+58,"The process by which a client, configured to use DHCP, attempts to get network configuration information is known as _________________.","a. DHCP Request
+b. DHCP Offer
+c. DHCP Discovery
+d. DHCP Acknowledgement
+",,c,c,,The process by which a client configured to use DHCP attempts to get network configuration information is known as DHCP Discovery. This is the first step in the DHCP process where the client broadcasts a message on the network to discover DHCP servers. The DHCP Request is the step where the client requests the offered configuration from one of the servers. The DHCP Offer is when a DHCP server offers network configuration information to the client. DHCP Acknowledgement is the final step where the server acknowledges the client's request and finalizes the configuration process.,['https://www.ietf.org/rfc/rfc2131.txt'],1,4_networking_serices,1.0,0.9990382661627136,1.0
+59,Which of the following are ways a DHCP can operate? Select all that apply.,"a. ARP
+b. Dynamic allocation
+c. Fixed allocation
+d. CIDR
+",,"b,c","b,c",,"DHCP, which stands for Dynamic Host Configuration Protocol, is used to assign IP addresses to devices on a network. It can operate in different modes:","['https://www.ietf.org/rfc/rfc2131.txt', 'https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol']",1,4_networking_serices,0.95,0.999999448776502,1.0
+60,DHCP is a protocol of which layer?,"a. Physical layer
+b. Application layer
+c. Transport layer
+d. Network Layer
+",,b,b,,"DHCP, which stands for Dynamic Host Configuration Protocol, operates at the Application layer of the OSI model. It is used to automatically assign IP addresses and other network configuration parameters to devices on a network, allowing them to communicate with other IP networks. DHCP works on top of the Transport layer using UDP (User Datagram Protocol) as its transport mechanism, but the protocol itself is considered an Application layer protocol because it provides application-level services.","['https://www.ietf.org/rfc/rfc2131.txt', 'https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol', 'https://en.wikipedia.org/wiki/OSI_model']",1,4_networking_serices,1.0,0.9996837722805288,1.0
+61,What technique allows for specific destination ports to be configured to always deliver to specific nodes?,"a. Port forwarding
+b. IP translation
+c. IP masquerading
+d. Ephemeral ports
+",,a,a,,"Port forwarding is a technique used in networking to redirect a communication request from one address and port number combination to another while the packets are traversing a network gateway, such as a router or firewall. This technique is commonly used to allow external users to access services on a private network from the outside internet. Port forwarding ensures that traffic arriving at a specific port is sent to a specific local computer or server.
+
+Option 'b', IP translation, generally refers to the translation of IP addresses and doesn't relate to specific port destination configurations. Option 'c', IP masquerading, is a form of network address translation (NAT) that allows a set of devices on a private network to access the internet using a single public IP address, which is not specifically about delivering to specific nodes based on destination ports. Option 'd', ephemeral ports, are temporary port numbers used by client systems when initiating a connection to a server, and they don't have to do with a deliberate configuration to always deliver to specific nodes.","['https://en.wikipedia.org/wiki/Port_forwarding', 'https://en.wikipedia.org/wiki/Network_address_translation', 'https://en.wikipedia.org/wiki/Ephemeral_port']",1,4_networking_serices,1.0,1.0,1.0
+62,The total number of IPv4 addresses is approximately:,"a. 4.2 million
+b. 4.2 trillion
+c. 4.2 billion
+d. 100 billion
+",,c,c,,"IPv4 addresses are 32-bit numbers, which means they can have 2^32 possible combinations. This results in a total of 4,294,967,296 addresses, which is approximately 4.2 billion. Therefore, the correct answer is 4.2 billion.",['https://en.wikipedia.org/wiki/IPv4'],1,4_networking_serices,1.0,1.0,1.0
+63,Which Regional Internet Registry(RIR) serves the USA and Canada?,"a. RIPE
+b. APNIC
+c. LACNIC
+d. ARIN
+",,d,d,,"The Regional Internet Registry (RIR) that serves the USA and Canada is ARIN, which stands for the American Registry for Internet Numbers. ARIN is responsible for the allocation and registration of Internet number resources within North America, including the USA and Canada.",['https://www.arin.net/'],1,4_networking_serices,1.0,1.0,1.0
+64,What is another solution to IP exhaustion that will create more public IP addresses as it is implemented?,"a. RFC1918
+b. IPv6
+c. Port preservation
+d. IP masquerading
+",,b,b,,"IP exhaustion refers to the depletion of available IPv4 addresses. To address this issue, various solutions have been proposed and implemented. Here's an evaluation of the provided options:
+
+a. RFC1918 - This refers to the standard that allows for the use of private IP address spaces within organizations. While it helps conserve public IP addresses by allowing multiple organizations to use the same private IP ranges internally, it does not create more public IP addresses.
+
+b. IPv6 - This is the new version of the Internet Protocol that significantly increases the number of available IP addresses by using a 128-bit address space, compared to the 32-bit space used by IPv4. This is the correct answer as it creates a vastly larger pool of public IP addresses.
+
+c. Port preservation - This term is not commonly associated with solutions to IP exhaustion. It may be a misinterpretation of 'port address translation' (PAT), which conserves IP addresses by allowing multiple hosts on a private network to share a single public IP address. It does not create new public IP addresses.
+
+d. IP masquerading - This is a form of network address translation (NAT) that allows a computer on a private network to act as if it has a public IP address. It conserves public IP addresses by allowing multiple devices to share one public IP, but does not create more public IP addresses.","['https://en.wikipedia.org/wiki/IPv6', 'https://tools.ietf.org/html/rfc1918', 'https://en.wikipedia.org/wiki/Network_address_translation']",1,4_networking_serices,0.95,0.9999998063873689,1.0
+65,What allows a gateway to rewrite the source IP of an outgoing datagram?,"a. NAT
+b. IPv4
+c. IPv6
+d. IANA
+",,a,a,,"NAT, or Network Address Translation, allows a gateway to rewrite the source IP address of an outgoing datagram. This is commonly used in IPv4 networks to allow multiple devices on a private network to share a single public IP address. NAT modifies the IP address information in the packet headers as they pass through a routing device, typically a firewall or router, which enables devices on a local network to communicate with external networks using one public IP address. IPv4 and IPv6 are versions of the Internet Protocol, and they define the structure of IP addresses but do not themselves provide a mechanism for rewriting IP addresses. IANA, or the Internet Assigned Numbers Authority, is responsible for the global coordination of the DNS Root, IP addressing, and other Internet protocol resources but is not a technology for IP address translation.","['https://en.wikipedia.org/wiki/Network_address_translation', 'https://www.iana.org/']",1,4_networking_serices,1.0,0.9999998063873689,1.0
+66,What is two-factor authentication? Select all that apply.,"a. a method where you authenticate twice
+b. a method where you need two passwords
+c. a method that requires two usernames
+d. a method where users are required to verify their credentials through a combination of hardware and/or software. Usually a username, password, and a short-lived token.
+",,"a,d","a,d",,"Two-factor authentication (2FA) is a security process in which users provide two different authentication factors to verify themselves. This method is an extra layer of security designed to ensure that people trying to gain access to an online account are who they say they are. First, a user will enter their username and a password. Then, instead of immediately gaining access, they will be required to provide another piece of information. This second factor could be a physical token, a text message with a code sent to their phone, or a biometric factor like a fingerprint or face scan. Option (a) is correct because it broadly describes the process of authenticating twice with different methods. Option (d) is correct because it specifically mentions the combination of credentials that are typically used in 2FA, including something you know (password) and something you have (a token). Option (b) is incorrect because 2FA does not necessarily require two passwords; it involves two different types of authentication. Option (c) is incorrect because two usernames are not a common practice in 2FA.","['https://en.wikipedia.org/wiki/Multi-factor_authentication', 'https://www.cisa.gov/uscert/ncas/tips/ST05-012']",1,4_networking_serices,0.95,0.9998755295070948,1.0
+67,VPNs are known as a _____ protocol.,"a. Tunneling
+b. network layer
+c. data link layer
+d. Connectionless
+",,a,a,,"VPNs, or Virtual Private Networks, are known as a tunneling protocol because they encapsulate and encrypt data packets to create a secure 'tunnel' through the internet or other unsecured networks. This tunneling protocol operates at a higher layer than the network layer or data link layer and can work over connection-oriented as well as connectionless network services. Therefore, the term 'tunneling' best describes the function of a VPN.","['https://www.cisco.com/c/en/us/support/docs/security/vpn-client/4647-vpn-4647.html', 'https://en.wikipedia.org/wiki/Virtual_private_network']",1,4_networking_serices,1.0,1.0,1.0
+68,A proxy is something that _______________________.,"a. communicates on behalf of something else
+b. encrypts traffic sent across the Internet
+c. allows for many devices to speak to one other device
+d. sends data across a single network segment
+",,a,a,,"A proxy server acts as an intermediary for requests from clients seeking resources from other servers. It communicates on behalf of something else, typically a client, and may also provide additional functions such as content caching and access control. Options b, c, and d do not accurately describe the primary function of a proxy. While a proxy can sometimes provide encryption services, it is not its defining characteristic (b). Option c describes a function more akin to a network switch or router, which allows many devices to communicate with one another. Option d is also inaccurate as a proxy does not necessarily send data across a single network segment; it can facilitate communication across different network segments or the internet.",['https://en.wikipedia.org/wiki/Proxy_server'],1,4_networking_serices,0.95,0.9999998063873689,1.0
+69,What are some use cases for reverse proxies? Select all that apply.,"a. IP address translation
+b. Encryption and Decryption
+c. Improved computer graphics
+d. Load balancing
+",,"b,d","a,b,d",,"Reverse proxies are intermediary servers that sit between clients and the servers they are accessing. They have several use cases, including: a) IP address translation - reverse proxies can hide the IP addresses of backend servers, providing an additional layer of obfuscation and security; b) Encryption and Decryption - they can handle the encryption and decryption of data, offloading this task from web servers and providing SSL termination; d) Load balancing - reverse proxies can distribute incoming network traffic across multiple servers, thereby distributing the load and improving the responsiveness and availability of applications. Option c) Improved computer graphics is not related to the functionalities of a reverse proxy, as computer graphics are typically handled by the client's hardware and software, not by network infrastructure.","['https://en.wikipedia.org/wiki/Reverse_proxy', 'https://www.nginx.com/resources/glossary/reverse-proxy-server/', 'https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/']",0,4_networking_serices,1.0,0.9999949638443514,0.5
+70,What was one of the first technologies that commonly utilized 2FA (Two-Factor Authentication)?,"a. UDP
+b. VPN
+c. DNS
+d. TCP
+",,b,b,,"Two-Factor Authentication (2FA) is a security process in which the user provides two different authentication factors to verify themselves. This method is used to better protect both the user's credentials and the resources the user can access. VPNs, or Virtual Private Networks, were among the first technologies to commonly utilize 2FA. They often required a user to enter a password (something they know) and a second factor like a physical token or a one-time password sent to their phone (something they have) to gain access to the network. This is because VPNs are used for secure remote access to an organization's internal network, and additional security measures like 2FA are crucial. UDP (User Datagram Protocol), DNS (Domain Name System), and TCP (Transmission Control Protocol) are all fundamental protocols used in the networking stack, but they are not directly related to authentication methods like 2FA.","['https://en.wikipedia.org/wiki/Multi-factor_authentication', 'https://en.wikipedia.org/wiki/Virtual_private_network']",1,4_networking_serices,0.95,0.9999993295729248,1.0

@@ -1,0 +1,120 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+23,Which of the following are examples of control plane operations? Select all that apply.,"a. Computing a shortest path routing tree.
+b. Determining that a user's MAC address is authentic before allowing it to send traffic on the network.
+c. Rate-limiting traffic so that the overall sending rate does not exceed a certain throughput.
+d. Load balancing traffic across two output ports based on the hash of each packet's source IP address.
+e. Determining the forwarding path that satisfies an access control policy.
+",,"a,b,e","a,b,e",,"Control plane operations in networking are those that involve making decisions about how traffic should be handled by the network. These operations typically involve network-wide logic and state and are not directly involved with the actual forwarding of packets, which is a data plane operation.
+
+a. Computing a shortest path routing tree is a control plane operation because it involves network-wide decision-making about the best paths for data to travel, which is used to configure the forwarding behavior of the network.
+
+b. Determining that a user's MAC address is authentic before allowing it to send traffic on the network is also a control plane task, as it involves policy enforcement and security controls.
+
+c. Rate-limiting traffic is more of a data plane operation because it involves the direct manipulation of traffic as it flows through the network.
+
+d. Load balancing traffic across two output ports based on the hash of each packet's source IP address is another data plane operation because it is concerned with the handling and distribution of packets based on their characteristics.
+
+e. Determining the forwarding path that satisfies an access control policy is a control plane operation because it involves the application of network-wide policies to traffic routing decisions.","['https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-the-control-plane.html', 'https://www.juniper.net/documentation/en_US/day-one-books/SDNandOpenFlowForBeginners.pdf']",1,4_control_and_data_separation,0.95,0.7514539927986529,1.0
+25,What could be the operational steps behind the AT&T's IRSCP (a commercial version of the Routing Control Platform) for detecting malicious traffic? Select all that apply.,"a. The controller sees all traffic passing through the network, detects an attack, and installs a null route to drop traffic at the entry point where the attack traffic is originating.
+b. A measurement system detects an attack, identifies the entry point of the attack, and instructs a controller to install a null route to drop traffic at the entry point where attack traffic is originating.
+c. A victim end host sends an alert to an on-path firewall about the source and nature of an attack, at which point the firewall installs a null route to drop the traffic at the entry point where the attack is originating.
+d. The end host changes its IP address so that it is no longer the target of the attack traffic.
+e. A measurement system detects an attack, identifies the entry point of the attack, and instructs a controller to re-route traffic through a deep-packet inspection device.
+",,"b,e","b,e",,"The operational steps behind AT&T's IRSCP for detecting and mitigating malicious traffic typically involve a measurement system and a controller. The measurement system is responsible for detecting the attack and identifying its entry point into the network. Once the attack is detected and the entry point is identified, the measurement system can instruct a controller to take appropriate action. Option (b) describes this process accurately, where a null route is installed to drop the attack traffic at the entry point, preventing it from reaching the intended victim. Option (e) also describes a valid response, where the measurement system instructs the controller to reroute traffic through a deep-packet inspection device for further scrutiny. This can help in filtering out the malicious traffic while allowing legitimate traffic to pass through. Options (a) and (c) are less likely as they suggest direct involvement of the controller or an on-path firewall without the initial detection and analysis step by a measurement system. Option (d) is not a typical response for a network-based mitigation strategy like IRSCP, as changing the IP address of the end host is a host-based defense mechanism that does not involve network traffic management.","['https://www.usenix.org/legacy/event/nsdi06/tech/full_papers/feamster/feamster.pdf', 'https://www.researchgate.net/publication/221518875_The_Case_for_Separating_Routing_from_Routers']",1,4_control_and_data_separation,0.95,0.9948467039956614,1.0
+26,What are some example network management applications that become easier with control and data plane separation? Select all that apply.,"a. Improved interdomain routing security.
+b. Customer-controlled egress selection.
+c. Improved logging capabilities.
+d. Forecasting of network capacity.
+e. Planned maintenance of an edge router.
+",,"a,b,e","a,b,c,d,e",,"With the separation of the control and data planes, which is a fundamental characteristic of Software Defined Networking (SDN), network management applications can be more easily implemented due to the centralized control and programmability of the network. Here's how each option relates to this concept: 
+
+a. Improved interdomain routing security: Centralized control can enforce consistent security policies and quickly react to security incidents. 
+
+b. Customer-controlled egress selection: Customers can dynamically select or program egress points based on real-time conditions, policies, or cost. 
+
+c. Improved logging capabilities: Centralized control allows for the collection and analysis of data from across the network, improving visibility and logging. 
+
+d. Forecasting of network capacity: With global network visibility, SDN can better predict and manage network capacity needs. 
+
+e. Planned maintenance of an edge router: SDN can reroute traffic and manage network resources to minimize the impact of maintenance windows.","['https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/', 'https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-sdn.html']",0,4_control_and_data_separation,1.0,0.5873041815166884,0.1999999999999999
+27,What are some of the motivations for using Layer-2 forwarding in a data center? Select all that apply.,"a. Easier configuration/administration, since there is no need to number hosts or configure subnets.
+b. Better security properties.
+c. Better load balancing properties.
+d. Ability to use existing routing protocols to establish paths between hosts.
+e. Better scaling properties.
+",,a,"a,c,e",,"Layer-2 forwarding in a data center has several motivations, including easier configuration and administration. Because Layer-2 forwarding operates at the Data Link layer of the OSI model, it does not require IP addressing or subnet configurations for host communication, which simplifies the setup (a). Layer-2 networks also allow for various load balancing techniques that can distribute traffic evenly across servers, which can be more challenging in Layer-3 networks due to the need for more complex routing decisions (c). Finally, Layer-2 can offer better scaling properties in certain data center environments because it can extend the broadcast domain, allowing for larger flat networks and potentially reducing the complexity associated with Layer-3 routing (e).","['https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-data-centers/design-guide-content/layer2-technologies.html', 'https://www.networkworld.com/article/2224725/why-layer-2-networks-could-be-the-best-choice-for-data-center-networking.html', 'https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/']",0,4_control_and_data_separation,0.85,0.9381804856971576,0.1999999999999999
+28,How does the separation of the control and data plane make networking in data centers easier?,"a. A network controller can permit the renumbering of end hosts to have topology-dependent Layer 2 MAC addresses.
+b. Virtual machines can be migrated within the network without renumbering entire portions of the network or re-assigning network services to different IP addresses.
+c. All routes can be controlled and monitored from a central point of control.
+d. The control plane allows traffic to be forwarded using Layer 2 addresses, thus allowing automatic load balance across the topology.
+e. The separation allows fewer switches to be used in the data center topology, thus lowering costs.
+",,"a,b,c","b,c",,"The separation of the control and data planes is a central concept in Software Defined Networking (SDN). It allows for centralized management and the abstraction of the underlying network infrastructure from the applications and network services that use it. Here's an evaluation of the choices provided:
+
+a. While a network controller can manage the addressing of hosts, the renumbering of end hosts to have topology-dependent Layer 2 MAC addresses is not a common practice and is not a direct benefit of the control/data plane separation.
+
+b. Virtual machines can indeed be migrated within the network without renumbering, as the control plane can update the network configuration dynamically to reflect the changes in the network, which is one of the key benefits of SDN.
+
+c. Centralized control is a fundamental feature of SDN, which allows all routes to be controlled and monitored from a central point. This simplifies network management and enables more efficient use of resources.
+
+d. The control plane does not directly allow traffic to be forwarded using Layer 2 addresses for load balancing; load balancing decisions are made by the control logic, which might not necessarily relate to Layer 2 addressing.
+
+e. The separation of control and data planes does not inherently reduce the number of switches needed in a data center topology. It's about the management of those switches, not the quantity.
+
+Therefore, the correct answers that describe how the separation of control and data planes makes networking in data centers easier are the migration of virtual machines without renumbering (b) and centralized control and monitoring of routes (c).","['https://www.oreilly.com/library/view/software-defined-networking/9781449342302/ch01.html', 'https://www.cisco.com/c/en/us/solutions/software-defined-networking/what-is-sdn.html']",0,4_control_and_data_separation,0.95,0.9998949126820592,0.6000000000000001
+29,"What are some examples of problems that can arise from consistency problems in the control plane, where a network has multiple controller replicas?","a. Incorrect security policies.
+b. Inability to respond to link failures.
+c. Incorrect operation when one controller fails.
+d. Forwarding loops.
+e. A flood of traffic at the controller.
+",,"a,d","a,b,c,d",,"In a Software Defined Networking (SDN) environment, the control plane is responsible for making decisions about how traffic should be handled in the network. When you have multiple controller replicas for the sake of redundancy or load balancing, consistency between these controllers is crucial. If the controllers are not consistent with each other, several problems can arise: 
+
+a. Incorrect security policies: If controllers have inconsistent views of the network, they might enforce different security policies, leading to potential security breaches or unintended access. 
+
+b. Inability to respond to link failures: If one controller is not aware of a link failure that others are, it might not reroute traffic correctly, leading to dropped packets or service disruptions. 
+
+c. Incorrect operation when one controller fails: In the event of a controller failure, if there is inconsistency in the state information among the controllers, the failover might not operate correctly, leading to incorrect network operations. 
+
+d. Forwarding loops: Inconsistent routing information can lead to situations where packets are sent in loops, wasting network resources and potentially causing congestion. 
+
+e. A flood of traffic at the controller is typically a result of a Distributed Denial-of-Service (DDoS) attack or a misconfiguration, not directly a result of consistency problems between controller replicas. Therefore, this option is less likely to be a direct consequence of control plane consistency issues.","['https://www.sciencedirect.com/topics/computer-science/software-defined-networking', 'https://ieeexplore.ieee.org/document/6602305', 'https://www.researchgate.net/publication/261149445_Software_Defined_Networking_A_Survey']",0,4_control_and_data_separation,0.9,0.5869383497741891,0.1999999999999999
+30,What are some approaches to coping with inconsistency across controller replicas? Select all that apply.,"a. Having multiple controllers install forwarding table entries on the same router and resolving the conflict on the router itself.
+b. Using different controllers for independent parts of the network.
+c. Running a consistency protocol across controller replicas.
+d. Keeping a ""hot spare"" replica that has a complete view of the network state.
+e. Only keeping a subset of the network state in memory at any time.
+",,"b,c,d,e","b,c",,"Dealing with inconsistency across controller replicas in a Software Defined Networking (SDN) environment involves several strategies. Here are the evaluations for each choice provided:
+
+a. Having multiple controllers install forwarding table entries on the same router and resolving the conflict on the router itself is not an approach to coping with inconsistency across controller replicas. This could potentially lead to more inconsistencies and conflicts at the data plane level.
+
+b. Using different controllers for independent parts of the network is a valid approach. It minimizes the potential for conflicts as each controller operates in a separate domain, and there is less need for synchronization between controllers.
+
+c. Running a consistency protocol across controller replicas ensures that all replicas have a consistent view of the network state. This is a common approach in distributed systems to maintain consistency.
+
+d. Keeping a 'hot spare' replica that has a complete view of the network state is a strategy for high availability, but it does not address the issue of inconsistency across active controller replicas.
+
+e. Only keeping a subset of the network state in memory at any time does not directly cope with inconsistency; it's more related to memory management and performance optimization.","['https://ieeexplore.ieee.org/document/6602305', 'https://www.sciencedirect.com/science/article/pii/S0140366416301820']",0,4_control_and_data_separation,0.95,0.9053079587781356,0.1999999999999999
+31,What are some approaches to coping with scalability challenges associated with control and data plane separation? Select all that apply.,"a. Caching forwarding decisions in the data plane to reduce traffic at the controller.
+b. Running multiple controllers, and having each controller only manage a part of the network.
+c. Sending all traffic through the controller to minimize forwarding decisions that the routers and switches must make.
+d. Eliminating redundant data structures.
+e. Only performing control-plane operations for a limited set of network operations.
+",,"a,b,d,e","a,b,d,e",,"Coping with scalability challenges in Software Defined Networking (SDN) involves strategies that reduce the load on the controller and optimize the performance of the network devices. Here's an evaluation of each choice provided:
+
+a. Caching forwarding decisions in the data plane can significantly reduce the number of queries to the controller because common decisions are stored locally at the switch level. This is a widely used technique in SDN to improve scalability.
+
+b. Running multiple controllers in a distributed fashion where each controller manages a segment of the network can enhance scalability and reliability. This approach is known as a distributed control plane and helps in scaling out the network control.
+
+c. Sending all traffic through the controller is not a scalable approach. It would create a bottleneck at the controller, making the network inefficient and slow, especially as the network grows in size and complexity.
+
+d. Eliminating redundant data structures within the network devices can improve processing efficiency and memory usage, contributing to better scalability.
+
+e. Limiting control-plane operations to a subset of network operations can reduce the load on the controller, allowing it to scale better. By not involving the controller in every decision, the data plane can handle more operations independently.
+
+Overall, options a, b, d, and e are valid approaches to addressing scalability challenges in SDN by optimizing the use of resources and distributing control functions.","['https://www.sciencedirect.com/topics/computer-science/software-defined-networking', 'https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/', 'https://www.researchgate.net/publication/261343054_Scalability_in_Software_Defined_Networking']",1,4_control_and_data_separation,0.95,0.9999209118703012,1.0
+32,"Which property guarantees that each RCP replica continues to install correct forwarding state in the network data plane, even in the case of a partition in the data plane?","a. The controller cannot see many of the routers in the network anyway, so there is no way for it to install incorrect routing state in the routers that it is not connected to.
+b. Running the network from a single high-level control plane guarantees that network partitions and loops never occur in the first place.
+c. Each controller has a complete view of the portion of the network that it is controlling, and therefore can guarantee consistent routing within that partition.
+d. The controllers are partitioned from the network routers, and the routers will fall back to running a distributed routing protocol.
+",,c,c,,"The property described in the question relates to the ability of a controller in a Software Defined Network (SDN) to maintain a correct and consistent state of the network, even when there are partitions. Option (c) is correct because if each controller has a complete view of its controlled portion of the network, it can ensure consistent routing within that partition despite any network partitioning. This is based on the assumption that the controller's view is accurate and up-to-date for the part of the network it can communicate with.
+
+Option (a) is incorrect because the inability of the controller to see many routers does not guarantee correct forwarding state; it just limits the scope of control. Option (b) is incorrect because the statement is an overgeneralization and does not account for the possibility of network partitions due to failures or misconfigurations. Option (d) is incorrect because it suggests a fallback to distributed routing rather than the controller maintaining correct forwarding state, which is not the property being asked about.","['https://en.wikipedia.org/wiki/Software-defined_networking', 'https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/']",1,4_control_and_data_separation,0.95,0.9996062239101634,1.0

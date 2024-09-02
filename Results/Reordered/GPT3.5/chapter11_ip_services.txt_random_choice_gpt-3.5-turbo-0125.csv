@@ -1,0 +1,59 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. Dynamic NAT can't use Standard ACLs
+b. The NAT pool does not have enough entries to fulfill the user's requests
+c. The cause is not related to dynamic NAT
+d. The command output does not provide any clue to identify the problem
+",,b,b,,"The issue is that the NAT pool has all its addresses allocated (100%), as indicated in the output 'allocated 10 (100%)'. This means that there are no available addresses in the NAT pool to fulfill new requests from users trying to reach the Internet.",[],1,chapter11_ip_services,0.9,0.9972008229224222,1.0
+195,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Warning - Warning condition?","a. 4
+b. 3
+c. 2
+d. 5
+",,a,b,,"In Cisco IOS, severity level 3 indicates a Warning condition. This level is used for warning messages that should be reviewed but do not indicate an immediate issue or failure.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/syslog/configuration/15-mt/slog-15-mt-book/slog-msg-codes.pdf'],0,chapter11_ip_services,0.9,0.973714658187626,0.0
+196,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Informational: Informational message only?","a. 4
+b. 6
+c. 5
+d. 1
+",,b,c,,"In Cisco IOS, severity level 5 is used for Informational messages only. Severity level 4 is for Warning messages, level 6 is for Debugging messages, and level 1 is for Emergency messages.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sys-sec-messages-v3-1/5204/sys-sec-messages-v3-1-5204-book/syslog-msgs-sev.pdf'],0,chapter11_ip_services,0.9,0.9900686904178732,0.0
+198,One of the features of SNMPv3 is called message integrity.,"a. FALSE
+b. TRUE
+",,b,b,,The statement is TRUE. SNMPv3 provides message integrity as one of its features. This ensures that the data has not been tampered with during transmission.,['https://www.cisco.com/c/en/us/td/docs/ios/12_2/configfun/configuration/guide/ffun_c/fcf014.html'],1,chapter11_ip_services,0.95,0.999999448776502,1.0
+199,You have been tasked to find out whether the Cisco Discovery Protocol (CDP) is enabled globally. Which command will you type?,"a. show running-config
+b. show protocols
+c. show cdp
+d. show interface brief
+",,c,c,,The correct command to verify if Cisco Discovery Protocol (CDP) is enabled globally is 'show cdp'. This command will display the current status of CDP on the device.,['https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/8021x/116529-problemsolution-product-00.html'],1,chapter11_ip_services,0.9,0.9855701665394888,1.0
+200,Which of the following protocols synchronize the time of different systems?,"a. UDP
+b. SMTP
+c. CDP
+d. NTP
+",,d,d,,"NTP (Network Time Protocol) is specifically designed to synchronize the time of different systems within a network. UDP (User Datagram Protocol) is a transport layer protocol that can be used by NTP for time synchronization, but NTP itself is the protocol responsible for time synchronization. SMTP (Simple Mail Transfer Protocol) is used for email transmission, and CDP (Cisco Discovery Protocol) is used by Cisco devices to share information about directly connected neighbors.",[],1,chapter11_ip_services,0.95,0.9999998063873689,1.0
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. If one router fails, both hosts will use the one remaining router as a default router
+b. If one router fails, hosts can't send packets off-subnet
+c. You can't connect two routers to the same LAN subnet.
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",,a,a,,"In the scenario described, R1 and R2 are configured with FHRP (First Hop Redundancy Protocol) on the same VLAN. When both routers are operational, they share the routing load. However, if one router fails, the other router takes over the responsibility of being the default gateway for all hosts in the VLAN. This ensures that both hosts can still communicate with devices outside their subnet by using the remaining functional router as the default gateway.",[],1,chapter11_ip_services,0.9,0.609498330009352,1.0
+203,Which of the following characteristics of network traffic can be managed by Quality of Service (QoS)? (Choose all that apply),"a. Jitter
+b. CoS
+c. Delay
+d. LLQ
+e. Loss
+f. Bandwidth
+",,"a,c,e,f","a,c,e",,"Quality of Service (QoS) allows for the management of various characteristics of network traffic to ensure better performance and prioritize certain types of traffic over others. 
+
+a. Jitter: QoS can help manage jitter by prioritizing real-time traffic such as VoIP or video conferencing to reduce delays and ensure a smoother transmission.
+
+b. CoS (Class of Service): CoS is related to QoS but is not directly managed by QoS itself. CoS is used in technologies like Ethernet to prioritize certain types of traffic.
+
+c. Delay: QoS can manage and minimize delays by prioritizing time-sensitive traffic to ensure it reaches its destination with minimal delay.
+
+d. LLQ (Low Latency Queuing): LLQ is a QoS mechanism used to prioritize delay-sensitive data streams over other traffic.
+
+e. Loss: QoS can help manage and reduce packet loss by prioritizing critical traffic to ensure reliable delivery.
+
+f. Bandwidth: While QoS can allocate and prioritize bandwidth for specific types of traffic, it does not directly manage the total available bandwidth of a network.",[],0,chapter11_ip_services,0.9,0.6067117055072084,0.6666666666666667

@@ -1,0 +1,55 @@
+Question 113. Which are reasonable approaches for designing a fast, scalable, programmable data plane? Select all that apply.
+(A) Make software routers faster by amortizing packet-processing costs across batches of packets. -*
+(B) Make software routers faster by reducing the need to copy packets from the kernel into user space. -*
+(C) Make software routers faster by distributing software routers across clusters. -*
+(D) Make hardware routers more programmable with custom OpenFlow chips. -*
+(E) Send all traffic through software switches running in user space.
+
+Question 114. What are functions that are commonly performed by a programmable data plane? Select all that apply.
+(A) Computing routes
+(B) Shaping traffic -*
+(C) Forwarding -*
+(D) Specifying access control policies
+(E) Performing deep packet inspection -*
+
+Question 115. Which of the following functions might be performed by a Click element? Select all that apply.
+(A) Dropping packets -*
+(B) Reading a packet from a network device -*
+(C) Computing shortest paths routes between two routers
+(D) Counting packets -*
+(E) Classifying packets into different priority queues -*
+
+Question 116. Which of the following are true about programmable data planes in Click? Select all that apply.
+(A) Click configuration is a simplified version of Python.
+(B) Click elements can be composed to perform complex functions, such as the forwarding at an IP router. -*
+(C) Data-plane processing in Click is limited to a fixed set of elements provided by the software.
+(D) Click elements can be composed to perform complex network-wide functions, such as shortest paths or BGP routing.
+(E) Click elements cannot perform common data plane operations such as TTL decrement or checksum computations.
+
+Question 117. Why does a RouteBricks server assign one core per queue?
+(A) Cores have heterogeneous performance, and packets are different sizes, so it makes sense to assign less powerful cores to queues that have smaller packets.
+(B) Having multiple cores accessing the same queue might create the possibility that there is a queue that is not served by any cores.
+(C) Having multiple cores accessing the same queue would require each core to perform only one function in the packet processing pipeline, which is inefficient.
+(D) Having multiple cores accessing the same queue would require locking to prevent concurrent memory accesses, slowing packet forwarding performance. -*
+
+Question 118. What are some tricks commonly employed in software to accelerate packet forwarding? Select all that apply.
+(A) Batch processing -*
+(B) Large packet buffers that hold multiple packets that can be read with a single read -*
+(C) Ethernet GRE tunnels -*
+(D) Forwarding smaller packets before larger packets
+(E) Avoiding lookups on the software bridge between virtual interfaces and physical interfaces -*
+
+Question 119. What are some of the problems with current OpenFlow hardware that motivated a custom OpenFlow chip design? Select all that apply.
+(A) Current hardware cannot forward traffic at line rates.
+(B) Current hardware is difficult to repurpose in the field. -*
+(C) Current hardware cannot support OpenFlow 1.0 match-action primitives.
+(D) Current hardware makes it difficult to implement multiple match action stages, and to repurpose TCAM and SRAM across multiple match-action stages. -*
+(E) The current OpenFlow protocol depends on the constraints of conventional switching chips. -*
+
+Question 120. Which of the following are motivations for SwitchBlade, which supports composition of pre-synthesized hardware data plane modules on an FPGA? Select all that apply.
+(A) Programming in C is difficult.
+(B) Most data plane protocols involve composing only a limited number of data-plane actions. -*
+(C) FPGAs are lower-cost and consume less power than conventional ASICs or OpenFlow switching chips.
+(D) Experimental data planes may need to operate in parallel with production data planes. -*
+(E) Programming in Verilog is difficult. -*
+

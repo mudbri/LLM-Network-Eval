@@ -1,0 +1,108 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,QD - Goal clear?(0/1),QD - Context clear?(0/1),QD - How challenging(1-4),QD - Level learnt(1-7),SM - Description,SM - Goal understood?(0/1),SM - Context understood?(0/1),SM - Implied Context understood?(0/1),SM - Relvant facts identified?(0/1),SM - Correct facts retieved?(0/1),SM - No incorrect facts?(0/1),SM - Correct reasoning?(0/1),SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),Source Problems,AQ - Precise?,AQ - Explainable?,Effect - Description of effects,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,Effect - Error Type,Effect - Severity,Effect - Who is most effected(1-4),CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+90,The protocol used to communicate network errors is known as __________.,"a. ICMP
+b. Traceroute
+c. TCP
+d. UDP
+",,a,a,,"ICMP, which stands for Internet Control Message Protocol, is used by network devices, including routers, to send error messages and operational information indicating, for example, that a requested service is not available or that a host or router could not be reached. ICMP is used for diagnostics and generating error reports to help in IP operations. TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are used for sending data but do not specifically communicate network errors. Traceroute is a utility that uses ICMP to trace the path from one network device to another, but it is not a protocol used to communicate network errors in itself.","['https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol', 'https://www.cloudflare.com/learning/ddos/glossary/internet-control-message-protocol-icmp/']",1,6_troubleshooting_and_future_networking,0.99,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+91,The ping utility sends what message type?,"a. Echo Request
+b. Echo Reply
+c. Destination Network Unknown
+d. Destination Network Unreachable
+",,a,a,,"The ping utility is used to test the reachability of a host on an Internet Protocol (IP) network and measures the round-trip time for messages sent from the originating host to a destination computer. The utility sends ICMP (Internet Control Message Protocol) Echo Request messages to the destination host and listens for ICMP Echo Reply messages in response. Choices b, 'Echo Reply', is the message type that the ping utility expects to receive back if the destination is reachable. Choices c and d, 'Destination Network Unknown' and 'Destination Network Unreachable', are also types of ICMP messages, but they are error messages that are not sent by the ping utility, rather they may be received in response to network issues.","['https://en.wikipedia.org/wiki/Ping_(networking_utility)', 'https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol']",1,6_troubleshooting_and_future_networking,1,0.999999687183719,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+92,What is one of the tools you can use to verify connectivity to a specific port on Windows OS?,"a. nc (netcat)
+b. Ping
+c. Test-NetConnection
+d. Tracert
+",,c,c,,"To verify connectivity to a specific port on a Windows operating system, you can use the 'Test-NetConnection' cmdlet in PowerShell. This tool allows you to check for connectivity to a specific IP address or hostname and a particular port, providing detailed information on the status of the connection. Here's how each option evaluates in this context:
+
+a. nc (netcat): While netcat is a versatile networking tool that can be used to connect to ports, it is not built into Windows by default and would need to be installed separately.
+
+b. Ping: The ping command is used to check the availability of a networked device by sending ICMP echo requests. However, it does not have the capability to check specific port connectivity.
+
+c. Test-NetConnection: This PowerShell cmdlet is a built-in Windows tool that can be used to test network connections, including the ability to specify a port, making it the correct choice for this question.
+
+d. Tracert: The tracert (or traceroute) command is used to determine the path packets take to reach a destination. It does not have functionality to check connectivity on a specific port.","['https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection', 'https://en.wikipedia.org/wiki/Netcat', 'https://en.wikipedia.org/wiki/Ping_(networking_utility)', 'https://en.wikipedia.org/wiki/Traceroute']",1,6_troubleshooting_and_future_networking,0.95,0.99945259681982,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+93,Traceroute uses UDP packets on which of the following operating systems? Select all that apply.,"a. Mac Os
+b. Windows 10
+c. Windows 7
+d. Linux",,"a,d","a,d",,"Traceroute is a network diagnostic tool used to track the path that an IP packet takes to reach its destination. On Unix-like operating systems, including Mac OS and Linux, traceroute typically uses UDP (User Datagram Protocol) packets to perform its analysis. It sends out UDP packets with a low TTL (Time To Live) value, which causes routers along the path to return an ICMP 'Time Exceeded' message, thereby revealing the route. On the other hand, Windows implements traceroute as 'tracert' and uses ICMP (Internet Control Message Protocol) echo requests instead of UDP packets.","['https://en.wikipedia.org/wiki/Traceroute', 'https://www.lifewire.com/traceroute-linux-command-4092586', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert']",1,6_troubleshooting_and_future_networking,0.95,0.998628364042178,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+94,"During a traceroute, which action does a router perform to the value in the Time To Live (TTL) field?","a. Multiplication
+b. Division
+c. Subtraction
+d. Addition
+",,c,c,,"During a traceroute operation, each router along the path to the destination decreases the TTL value by 1 (subtraction). The TTL field is used to prevent packets from looping indefinitely in the network. When the TTL reaches zero, the packet is discarded, and an ICMP Time Exceeded message is sent back to the source.","['https://en.wikipedia.org/wiki/Time_to_live', 'https://www.cloudflare.com/learning/ddos/glossary/internet-control-message-protocol-icmp/']",1,6_troubleshooting_and_future_networking,1,0.999999806387369,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+95,One of Level 3's public DNS servers is ____________.,"a. 4.2.2.3
+b. 8.8.8.8
+c. 127.0.0.1
+d. 192.168.1.1",,a,a,,"Level 3 Communications, which is now part of CenturyLink, operates a set of globally distributed public DNS servers. One of their well-known IP addresses for DNS services is 4.2.2.3. Option b, 8.8.8.8, is a public DNS server operated by Google. Option c, 127.0.0.1, is the loopback address used by a host computer to access its own network services. Option d, 192.168.1.1, is a common private IP address used for local area networks (LANs), typically as the default gateway for routers.","['https://www.lifewire.com/free-and-public-dns-servers-2626062', 'https://developers.google.com/speed/public-dns']",1,6_troubleshooting_and_future_networking,1,0.999999448776502,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+96,A DNS resolver tool available on all major desktop operating systems is __________.,"a. Nslookup
+b. Host
+c. Tracert
+d. Ping
+",,a,a,,"The DNS resolver tool available on all major desktop operating systems (such as Windows, macOS, and Linux) is 'Nslookup'. This tool is used to query Domain Name System (DNS) servers to obtain domain name or IP address mapping or other specific DNS records. Here's a brief overview of the given options:
+
+a. Nslookup - This is a network administration command-line tool available on many computer operating systems for querying the Domain Name System to obtain domain name or IP address mapping or for any specific DNS record.
+
+b. Host - This is another DNS lookup utility, but it is not as universally available across all major desktop operating systems as Nslookup.
+
+c. Tracert (or traceroute on Unix/Linux) - This is a network diagnostic tool used to trace the pathway taken by a packet on an IP network from source to destination, showing how many hops the packet requires to reach the host.
+
+d. Ping - This is a utility used to test the reachability of a host on an Internet Protocol (IP) network and to measure the round-trip time for messages sent from the originating host to a destination computer.","['https://en.wikipedia.org/wiki/Nslookup', 'https://en.wikipedia.org/wiki/Host_(Unix)', 'https://en.wikipedia.org/wiki/Traceroute', 'https://en.wikipedia.org/wiki/Ping_(networking_utility)']",1,6_troubleshooting_and_future_networking,0.95,0.999999567980093,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+97,Which top-level organization manages the global DNS (Domain Name System)?,"a. RFC
+b. IANA
+c. ICANN
+d. Google
+",,c,c,,"The Internet Corporation for Assigned Names and Numbers (ICANN) is the organization that manages the global Domain Name System (DNS). ICANN is responsible for coordinating the maintenance and methodologies of several databases related to the namespaces of the Internet, ensuring the network's stable and secure operation. The Internet Assigned Numbers Authority (IANA) is a department of ICANN responsible for overseeing global IP address allocation, but the top-level management of DNS is within the purview of ICANN itself. The Request for Comments (RFC) is a type of publication from the technology community, and Google, while a major player in the internet space, does not manage the global DNS.","['https://www.icann.org/', 'https://www.iana.org/']",1,6_troubleshooting_and_future_networking,0.95,0.995547896825287,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+98,Which of the following commands displays the current network configuration information?,"a. Winver
+b. Pathping
+c. Net user
+d. Ipconfig
+",,d,d,,"The 'ipconfig' command in Windows is used to display the current network configuration information, including the IP address, subnet mask, and default gateway for all adapters. 'Winver' is used to display the current version of Windows. 'Pathping' is a network utility that provides information about network latency and network loss at intermediate hops between a source and destination. 'Net user' is a command-line tool used to add, remove, and manage user accounts on a computer, not to display network configuration.","['https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/net-user', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pathping']",1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+99,An organization responsible for assigning individual domain names to other organizations or individuals is known as a(n) ______.,"a. DNS registrar
+b. Autonomous system
+c. Internet authority
+d. Government
+",,a,a,,"An organization that is responsible for assigning individual domain names to other organizations or individuals is known as a Domain Name System (DNS) registrar. A DNS registrar is an entity that manages the reservation of Internet domain names and is accredited by the Internet Corporation for Assigned Names and Numbers (ICANN) or by a national country code top-level domain authority. Options 'b' and 'c' are not specifically responsible for assigning domain names, and while 'd' might be involved in regulation at a higher level, governments typically do not directly assign individual domain names.","['https://www.icann.org/resources/pages/responsibilities-2014-03-14-en', 'https://en.wikipedia.org/wiki/Domain_name_registrar']",1,6_troubleshooting_and_future_networking,1,0.999999687183719,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+100,A piece of software that runs and manages virtual machines is known as a __________.,"a. cloud storage device
+b. cloud computing device
+c. Hypervisor
+d. virtual instance
+",,c,c,,"A hypervisor, also known as a virtual machine monitor (VMM), is a piece of software that allows one to create and manage virtual machines (VMs). It sits between the hardware and the virtual machine and is responsible for managing the system's resources so that each VM operates efficiently and remains isolated from other VMs. This is distinct from cloud storage devices, which are used for storing data in the cloud, and cloud computing devices, which generally refer to the hardware or services that deliver cloud computing capabilities. A virtual instance typically refers to an individual VM running within a hypervisor or cloud environment.","['https://en.wikipedia.org/wiki/Hypervisor', 'https://www.vmware.com/topics/glossary/content/hypervisor']",1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+101,What is Office 365 Outlook an example of?,"a. FttH
+b. IaaS
+c. SaaS
+d. PaaS
+",,c,c,,"Office 365 Outlook is a part of Microsoft Office 365 suite, which is a cloud-based service offering a range of applications and services. It falls into the category of Software as a Service (SaaS), where the service provider hosts the software application and makes it available to customers over the internet. SaaS does not require users to manage the infrastructure or platforms that run the applications. This contrasts with Infrastructure as a Service (IaaS), where the provider supplies the virtualized computing resources over the internet, and Platform as a Service (PaaS), which provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure.","['https://www.microsoft.com/en-us/microsoft-365/previous-versions/office-365-service-descriptions', 'https://azure.microsoft.com/en-us/overview/what-is-saas/']",1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+102,A hybrid cloud is ________________.,"a. a combination of a public cloud and a private cloud
+b. a combination of a private cloud and a mesh network
+c. a combination of a public cloud and hardware virtualization
+d. a combination of virtual hosts and virtual guests
+",,a,a,,"A hybrid cloud is an IT architecture that incorporates some degree of workload portability, orchestration, and management across 2 or more environments. These environments typically include a combination of public clouds, private clouds, and on-premises infrastructure. Option 'a' correctly describes a hybrid cloud as it involves both a public cloud and a private cloud, allowing for the orchestration of workloads between the two. Option 'b' is incorrect because a mesh network is a type of network topology and does not define a cloud type. Option 'c' is incorrect as hardware virtualization is a technology that can be used within any type of cloud but does not specifically combine with a public cloud to form a hybrid cloud. Option 'd' is also incorrect because the combination of virtual hosts and virtual guests describes virtualization within a computing environment rather than a hybrid cloud.","['https://azure.microsoft.com/en-us/overview/what-is-a-hybrid-cloud/', 'https://aws.amazon.com/what-is-a-hybrid-cloud/']",1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+103,Which of the following are  cloud services? Select all that apply.,"a. Platform as a Service (PaaS)
+b. Python as a Service (PaaS)
+c. Infrastructure as a Service (IaaS)
+d. Software as a Service (SaaS)
+",,"a,c,d","a,c,d",,"Cloud services typically refer to services that are provided over the internet by cloud computing providers. The common models of cloud services include Platform as a Service (PaaS), Infrastructure as a Service (IaaS), and Software as a Service (SaaS). PaaS provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure. IaaS offers computing infrastructure, such as virtual machines and other resources, as a fully outsourced service. SaaS allows users to connect to and use cloud-based apps over the internet. Python as a Service (PaaS) is not a standard cloud service model.","['https://azure.microsoft.com/en-us/overview/what-is-paas/', 'https://aws.amazon.com/what-is-iaas/', 'https://www.salesforce.com/saas/']",1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+104,"Which cloud service provides access to things like virtual machines, containers, networks, and storage?","a. IaaS
+b. SaaS
+c. FaaS
+d. PaaS
+",,a,a,,"Infrastructure as a Service (IaaS) provides virtualized computing resources over the internet. It includes access to things like virtual machines, containers, networks, and storage, allowing customers to run any operating system or application on rented servers without the need to manage or control the underlying cloud infrastructure. The other options do not fit the description as closely: SaaS (Software as a Service) provides access to software applications over the internet; FaaS (Function as a Service) is a category of cloud computing services that provides a platform allowing customers to develop, run, and manage application functionalities without the complexity of building and maintaining the infrastructure; PaaS (Platform as a Service) provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure necessary for developing and launching an app.","['https://azure.microsoft.com/en-us/overview/what-is-iaas/', 'https://www.ibm.com/cloud/learn/iaas-paas-saas']",1,6_troubleshooting_and_future_networking,1,0.999999806387369,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+105,An IPv6 address is how many bits long?,"a. 16
+b. 128
+c. 64
+d. 32",,b,b,,"An IPv6 address is 128 bits long. This is in contrast to an IPv4 address, which is only 32 bits long. IPv6 addresses are written as eight groups of four hexadecimal digits, each group representing 16 bits. Thus, 8 groups * 16 bits per group equals 128 bits in total for an IPv6 address.",['https://en.wikipedia.org/wiki/IPv6_address'],1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+106,What is the very first field in an IPv6 header?,"a. traffic class field
+b. source address field
+c. version field
+d. data payload field
+",,c,c,,"The very first field in an IPv6 header is the version field. This 4-bit field indicates the version of the IP protocol used to create the packet, which for IPv6 is set to the number 6. This is consistent with the structure of IP headers where the version field is always positioned at the beginning to facilitate easy identification of the IP protocol version.","['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header', 'https://tools.ietf.org/html/rfc8200']",1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+107,Which IPv6 header field indicates how many routers can forward a packet before it's discarded?,"a. hop limit field
+b. TTL
+c. router forward field
+d. next header field
+",,a,a,,"In IPv6, the 'hop limit field' is used to ensure that packets are not circulated indefinitely. This field is decremented by one by each router that forwards the packet. When the hop limit reaches zero, the packet is discarded to prevent it from looping infinitely in the network. The 'TTL' (Time To Live) serves a similar purpose in IPv4, but it is not a field in the IPv6 header. The 'router forward field' does not exist in the IPv6 header. The 'next header field' in IPv6 indicates the type of the next header, which could be a transport layer header (like TCP or UDP) or an extension header, but it does not relate to the packet's lifetime in the network.","['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header', 'https://tools.ietf.org/html/rfc8200']",1,6_troubleshooting_and_future_networking,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+108,The IPv4 mapped address space within IPv6 always starts with _______ zeroes.,"a. 80
+b. ""128""
+c. 32
+d. 64",,a,a,,"An IPv4-mapped IPv6 address is used to represent an IPv4 address within an IPv6 address. These addresses are used to enable IPv6 hosts to communicate with IPv4 hosts. The format for an IPv4-mapped IPv6 address is as follows: it starts with 80 bits set to zero, followed by 16 bits set to one ('FFFF'), and the last 32 bits represent the IPv4 address. Therefore, the correct answer is 80 zeroes at the beginning of the IPv4-mapped IPv6 address.","['https://tools.ietf.org/html/rfc4291#section-2.5.5.2', 'https://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses']",1,6_troubleshooting_and_future_networking,1,0.99698975559877,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1

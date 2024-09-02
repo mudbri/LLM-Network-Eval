@@ -1,0 +1,68 @@
+Question 43. Which of the following statements are true about the OpenFlow specification? Select all that apply.
+(A) If a switch does not contain a flow table entry that matches a particular packet, the switch forwards the packet to the controller for handling. -*
+(B) The main purpose of the OpenFlow control channel is to update flow table entries on switches. -*
+(C) The OpenFlow specification provides mechanisms to perform Layer 2 learning across a network of switches.
+(D) Once a switch has sent one packet for a flow, it must also send all subsequent packets for that flow to the controller.
+(E) Some versions of the OpenFlow specification allow for performing more than one action on a single packet. -*
+
+Question 44. Which of the following statements are true about dpctl? Select all that apply.
+(A) dpctl is invoked from within the Mininet emulator.
+(B) dpctl can modify flow table entries on an OpenFlow switch. -*
+(C) dpctl can respond to network events, such as packets sent from a switch.
+(D) dpctl is an OpenFlow controller.
+(E) dpctl can inspect flow table entries on an OpenFlow switch. -*
+
+Question 45. Which of the following are reasonable considerations for the choice of controller? Select all that apply.
+(A) Performance of the programming language that the controller is implemented in. -*
+(B) Support for and integration with cloud applications. -*
+(C) Ease of learning curve. -*
+(D) Need for production-quality operation. -*
+(E) Speed of prototyping. -*
+
+Question 46. Which of the following controllers support OpenStack integration? Select all that apply.
+(A) NOX
+(B) Pox
+(C) CpQD
+(D) Floodlight -*
+(E) Ryu -*
+
+Question 47. Which of the following are true about Pox? Select all that apply.
+(A) Pox automatically determines the order to install flow table rules, to avoid inconsistent forwarding behavior.
+(B) Pox's _handle_PacketIn function determines how a packet should be handled when it arrives at the controller. -*
+(C) Pox provides a function to modify flow table entries at a switch. -*
+(D) Pox's performance is typically slower than NOX. -*
+(E) Pox automatically determines the priority between two conflicting rules.
+
+Question 48. What is the difference between a hard timeout and an idle timeout?
+(A) A hard timeout occurs exactly at the specified interval, whereas an idle timeout may occur slightly later than the specified interval.
+(B) A hard timeout expunges a flow table entry regardless of whether there have been active matches, whereas an idle timeout expunges the flow table entry only if there have been no matches for that flow within the specified interval. -*
+(C) A hard timeout expunges all flow table entry from the switch, whereas an idle timeout only expunges one flow at a time.
+(D) A hard timeout expunges a flow table entry for all switches in the network, whereas an idle timeout only expunges the flow table entry on the switches that have seen no matches for that flow within the specified interval.
+
+Question 49. Which of the following are true about hubs and learning switches? Select all that apply
+(A) A hub implemented in Pox requires all incoming packets to be directed to the controller.
+(B) A learning switch requires more logic at the controller (in terms of lines of code in Pox) than a hub. -*
+(C) A learning switch implemented in Pox can be easily extended to support firewall capabilities. -*
+(D) A learning switch implemented in Pox requires all incoming packets to be redirected to the controller.
+(E) A hub forwards an incoming packet on all ports (except the incoming port), whereas a switch only floods an incoming packet on all ports if it does not have a table entry that determines the output port for that packet. -*
+
+Question 50. Which of the following functions ensures that the controller will hear PacketIn messages? Select all that apply.
+(A) connection.addListeners -*
+(B) _handle_PacketIn
+(C) AddRule
+(D) init
+(E) launch
+
+Question 51. What are the two key steps of an OpenFlow flow table entry (select two)?
+(A) match -*
+(B) action -*
+(C) redirect
+(D) drop
+(E) forward
+
+Question 52. Which of the following are true about the OpenDaylight controller? Select all that apply.
+(A) It allows dynamic reloading of controller functionality without restarting the controller. -*
+(B) It only supports OpenFlow as a "southbound" control framework.
+(C) Its code shares a lot of similarities with Beacon. -*
+(D) Open Daylight only supports proprietary switches from Cisco and IBM.
+(E) It is slower and less scalable than some of the more lightweight SDN controllers such as Pox.

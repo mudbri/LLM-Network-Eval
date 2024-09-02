@@ -1,0 +1,90 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+106,"The senior network engineer typed the following commands on the R1.
+""R1# conf t
+Enter configuration commands, one per line. End with CNTL/Z.
+R1(config)# interface g0/0/0
+R1(config-if)# ip ospf cost 6
+R1(config-if)# interface g0/1/0
+R1(config-if)# ip ospf cost 7
+R1(config-if)# ^Z""
+What command will you type in order to confirm the OSPF interface costs?","a. show ip ospf
+b. show ip ospf interface brief
+c. show ospf brief
+d. show ospf interface brief
+",,b,b,,"The correct answer is B. The 'show ip ospf interface brief' command is used to display a brief summary of OSPF interface information, including the cost of each OSPF-enabled interface. This command provides a quick overview of OSPF interface parameters such as the interface IP address, area, cost, and state without the verbosity of the full 'show ip ospf interface' command.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/iro-s1.html#wp4815056664'],1,chapter6_ospf_routing_protocol,0.95,0.9999893165220688
+108,You have been tasked to list the OSPF neighbors off interface serial 1/0. Which command will you type to complete the task?,"a. show ip ospf neighbor serial 0/1
+b. show ip ospf neighbor serial 1/0
+c. show ip ospf neighbor fastethernet 0/1
+d. show ip ospf serial 0/1
+",,b,b,,"B is the correct answer. The command 'show ip ospf neighbor' followed by the interface name is used to display the OSPF neighbors on a specific interface. In this case, 'serial 1/0' is the interface in question, so the command should be 'show ip ospf neighbor serial 1/0'. The other commands are incorrect because they either refer to the wrong interface name or use an incorrect command syntax.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/iro-s1.html#wp2271962496'],1,chapter6_ospf_routing_protocol,1,0.9999479541484323
+109,"The routing protocol that was designed and intended
+for use between different autonomous systems is called
+____________________________.","a. interior gateway protocol
+b. different gateway protocol
+c. autonomous gateway protocol
+d. exterior gateway protocol
+",,d,d,,"D is the correct answer. The term 'exterior gateway protocol' refers to protocols that are designed to route between different autonomous systems. These are also known as inter-AS routing protocols or BGP (Border Gateway Protocol) which is the most commonly used exterior gateway protocol on the internet. Interior Gateway Protocols (IGPs), such as OSPF or EIGRP, are used within a single autonomous system. There are no standard protocols named 'different gateway protocol' or 'autonomous gateway protocol'.","['https://en.wikipedia.org/wiki/Exterior_gateway_protocol', 'https://en.wikipedia.org/wiki/Border_Gateway_Protocol']",1,chapter6_ospf_routing_protocol,1,0.9999856212553752
+110,"Given the following OSPF network commands,
+type the wildcard masks to match the requirement.
+Requirement: Match addresses that begin with 110.20
+Command: network 110.20.0.0 {wildcard mask}
+Which of the following wildcard mask will you use to meet the
+requirement?","a. 0.0.255.255
+b. 0.0.0.255
+c. 0.255.255.255
+d. 0.0.0.0
+",,a,c,,"C is the correct answer. The wildcard mask 0.255.255.255 will match any addresses that begin with 110.20. A wildcard mask is used in OSPF to indicate which IP addresses should be included in the network command. The wildcard mask works by matching the bits set to '0' against the corresponding bits of the address and ignoring the bits set to '1'. Therefore, a wildcard mask of 0.255.255.255 means that only the first octet (110) and the second octet (20) must match exactly, while the last two octets can be any value.",['https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13685-11.html'],0,chapter6_ospf_routing_protocol,1,0.999992773397112
+111,"Which of the following commands produces the output below?
+""Codes: L – local, C – connected, S – static, R – RIP, M – mobile, B – BGP
+D – EIGRP, EX – EIGRP external, O – OSPF, IA – OSPF inter area
+N1 – OSPF NSSA external type 1, N2 – OSPF NSSA external type 2
+E1 – OSPF external type 1, E2 – OSPF external type 2
+
+! Additional lines omitted for brevity
+
+Gateway of last resort is not set
+10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+O 10.1.1.0/24 [110/2] via 10.1.14.1, 00:19:24, GigabitEthernet0/0/0
+O 10.1.2.0/24 [110/2] via 10.1.14.1, 00:19:24, GigabitEthernet0/0/0
+C 10.1.4.0/24 is directly connected, Vlan3
+L 10.1.4.4/32 is directly connected, Vlan3
+O 10.1.12.0/24 [110/2] via 10.1.14.1, 00:17:24, GigabitEthernet0/0/0
+O 10.1.13.0/24 [110/2] via 10.1.14.1, 00:14:15, GigabitEthernet0/0/0
+C 10.1.14.0/24 is directly connected, GigabitEthernet0/0/0
+L 10.1.14.4/32 is directly connected, GigabitEthernet0/0/0
+O 10.1.23.0/24 [110/3] via 10.1.14.1, 00:15:35, GigabitEthernet0/0/0""","a. show ip codes
+b. show ip route
+c. show ip interfaces
+d. show ip connected
+",,b,b,,"The correct answer is B. The output provided is from the 'show ip route' command, which displays the routing table of a router or a Layer 3 switch. The output includes the codes for the types of routes present in the routing table, such as L for local, C for connected, S for static, O for OSPF, and so on. The routes for different networks and the associated details such as the administrative distance, metric, next hop, and outgoing interface are also listed, which are typical of the 'show ip route' command output.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_pi/command/iproute_pi-cr-book/iproute_pi_s1.html'],1,chapter6_ospf_routing_protocol,1,0.9999975415208221
+112,"Routing protocol is a set of rules, and algorithms used by routers for the overall purpose of learning routes. This process includes the exchange and analysis of routing information.","a. TRUE
+b. FALSE
+",,a,a,,"Routing protocols are indeed sets of rules and algorithms that routers use to facilitate the exchange, analysis, and learning of routing information. They enable routers to dynamically communicate with each other about the existence and status of routes to various network destinations, allowing for the creation of routing tables and the determination of the best path for network traffic.",['https://en.wikipedia.org/wiki/Routing_protocol'],1,chapter6_ospf_routing_protocol,1,0.9995329745103706
+113,"Routed protocol is a protocol that defines a packet structure and logical addressing, allowing routers to forward or route the packets.","a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. A routed protocol is indeed a protocol that provides enough information in its network layer address to allow a packet to be forwarded from a source to a destination across multiple network segments, and it defines the packet structure. Examples of routed protocols include IP (Internet Protocol) and IPv6.",['https://en.wikipedia.org/wiki/Routed_protocol'],1,chapter6_ospf_routing_protocol,1,0.9999557020111849
+114,"Which of the following network commands following the command router ospf 1, tells the router to start using OSPF on interfaces whose IP addresses are 20.1.20.1, 20.1.30.1, and 20.1.40.1?","a. network 20.0.0.1 0.0.255.255 area 0
+b. network 20.0.0.1 0.0.0.255 area 0
+c. network 20.0.0.0 255.0.0.0 area 0
+d. network 20.0.0.0 0.255.255.255 area 0
+",,d,d,,"The correct answer is D. The OSPF network command uses a combination of an IP address and a wildcard mask to determine which interfaces are included in the OSPF process. The wildcard mask is the inverse of a subnet mask. In this case, the IP addresses 20.1.20.1, 20.1.30.1, and 20.1.40.1 all fall within the range of 20.0.0.0 to 20.255.255.255. The wildcard mask 0.255.255.255 allows for the last three octets to vary, which matches the requirement to include the mentioned IP addresses in the OSPF process. Option D correctly specifies this range with the appropriate wildcard mask.","['https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13689-11.html', 'https://en.wikipedia.org/wiki/Wildcard_mask']",1,chapter6_ospf_routing_protocol,1,0.9999647611309035
+117,You have been task to list the interfaces on which the OSPF protocol is enabled. Which of the following command will you type?,"a. show ip ospf brief
+b. show ip ospf interface brief
+c. show ip interface brief
+d. show ospf interface brief
+",,b,b,,"The correct answer is B. The command 'show ip ospf interface brief' is used to display a brief list of interfaces on which OSPF is enabled, along with key information about the state of OSPF on those interfaces. The command 'show ip ospf brief' is not a recognized command in Cisco IOS. 'show ip interface brief' provides a summary of all interfaces, including their IP addresses and status, but it does not provide OSPF-specific information. 'show ospf interface brief' is not the correct syntax for Cisco IOS.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/iro-s1.html#wp8536850608'],1,chapter6_ospf_routing_protocol,0.95,0.9998089942439226
+118,A network engineer connects routers R5 and R6 to the same Ethernet LAN and configures them to use OSPFv2. Which answers describe a combination of settings that would prevent the two routers from becoming OSPF neighbors?,"a. Both routers’ interface IP addresses are in the same subnet
+b. Both routers’ OSPF process uses process ID 3
+c. Both routers’ OSPF process uses router ID 42.42.42.42
+d. Both routers’ interfaces use an OSPF Dead interval of 80
+",,c,c,,"C is the correct answer. In OSPF, router IDs must be unique within the same OSPF area. If two routers are configured with the same router ID, they will not form an OSPF adjacency. The router ID is an important component of the OSPF protocol, and it's used to identify the source of OSPF routing information. Options A and D do not prevent OSPF neighbors from forming. Routers on the same Ethernet LAN must have IP addresses in the same subnet to communicate, and the OSPF dead interval is a timer that determines how long a router will wait without hearing from its neighbor before declaring the neighbor down, but it does not need to be different between routers. Option B is irrelevant because the OSPF process ID is locally significant to the router and does not affect neighbor relationships.","['https://en.wikipedia.org/wiki/Open_Shortest_Path_First', 'https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13685-13.html']",1,chapter6_ospf_routing_protocol,0.95,0.9997305946361441
+119,Which of the following terms described as an OSPF router with interfaces connected to the backbone area and to at least one other area?,"a. Backbone area
+b. Internal router
+c. Backbone router
+d. Area Border Router
+",,d,d,,"D is the correct answer. An Area Border Router (ABR) in OSPF is a router that has at least one interface in the OSPF backbone area (Area 0) and one or more interfaces in one or more other OSPF areas. It is responsible for routing traffic between the backbone area and other areas, and for summarizing and propagating routing information between them.",['https://en.wikipedia.org/wiki/Open_Shortest_Path_First'],1,chapter6_ospf_routing_protocol,1,0.9999522452652937
+120,Which of the following route types has 110 as default Administrative Distance (AD)?,"a. IGRP
+b. OSPF
+c. RIP
+d. IS-IS
+",,b,b,,"B is the correct answer. Open Shortest Path First (OSPF) is a routing protocol with a default Administrative Distance (AD) of 110. The Administrative Distance is a measure used by routers to choose the best path when there are two or more different routes to the same destination from two different routing protocols. IGRP (Interior Gateway Routing Protocol) has a default AD of 100, RIP (Routing Information Protocol) has a default AD of 120, and IS-IS (Intermediate System to Intermediate System) is not commonly assigned a default AD because it is less common, but when compared, it is usually considered similar to OSPF, but the exact value can depend on the router's operating system.","['https://en.wikipedia.org/wiki/Administrative_distance', 'https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html']",1,chapter6_ospf_routing_protocol,1,0.9999704827216435

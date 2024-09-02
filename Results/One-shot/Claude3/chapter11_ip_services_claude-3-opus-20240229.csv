@@ -1,0 +1,47 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. The cause is not related to dynamic NAT
+b. The command output does not provide any clue to identify the problem
+c. Dynamic NAT can't use Standard ACLs
+d. The NAT pool does not have enough entries to fulfill the user's requests
+",,d,d,,"The output shows that the NAT pool 'examsdigest' has a total of 10 addresses available, and all 10 have been allocated. It also shows there have been 595 misses, meaning 595 attempts to allocate an address from the pool have failed because no addresses were available. This indicates the NAT pool is too small to handle the number of users/devices trying to use NAT to access the Internet. The pool needs to be expanded with more addresses to accommodate the demand.","['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr_nat/configuration/15-mt/nat-15-mt-book/iadnat-addr-consv.html', 'https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/13773-2.html']",1,chapter11_ip_services,0.95,1
+195,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Warning - Warning condition?","a. 2
+b. 3
+c. 4
+d. 5
+",,c,c,,"Severity level 4 corresponds to a Warning condition in Cisco IOS log messages. The severity levels range from 0 to 7, with lower numbers indicating more critical issues. Level 0 is an emergency, 1 is an alert, 2 is critical, 3 is an error, 4 is a warning, 5 is a notification, 6 is informational, and 7 is debugging. So a message logged with severity 4 indicates a warning or a potential issue that should be monitored or addressed, but is not as severe as an error, critical issue, alert or emergency.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sys-msg-logging/configuration/15-mt/sml-15-mt-book/sml-config-sev-lvl.html'],1,chapter11_ip_services,0.95,1
+196,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Informational: Informational message only?","a. 1
+b. 6
+c. 4
+d. 5
+",,b,b,,"Severity level 6 corresponds to informational messages in Cisco IOS. These messages are not errors, but rather just messages stating information about some event. The severity levels range from 0 to 7, with 0 being the most severe (emergency) and 7 being the least severe (debugging). Some key severity levels are: 0 - emergency, 1 - alert, 2 - critical, 3 - error, 4 - warning, 5 - notification, 6 - informational, 7 - debugging. So informational messages, which are not errors or issues, are assigned severity level 6.","['https://www.cisco.com/E-Learning/bulk/public/tac/cim/cib/using_cisco_ios_software/02_cisco_ios_hierarchy.htm', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sys-mgmt/configuration/15-mt/sm-15-mt-book/sm-logging.html']",1,chapter11_ip_services,0.95,1
+198,One of the features of SNMPv3 is called message integrity.,"a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. SNMPv3 introduced several security enhancements over the previous versions, including message integrity. Message integrity ensures that SNMP messages have not been altered in transit. It uses a hash function to create a message authentication code that is sent along with the message. The receiver can then verify the integrity of the message by recomputing the hash and comparing it to the received hash value. This protects against unauthorized modification of SNMP messages.","['https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol#Version_3', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/snmp/configuration/15-mt/snmp-15-mt-book/nm-snmp-snmpv3.html']",1,chapter11_ip_services,1,1
+199,You have been tasked to find out whether the Cisco Discovery Protocol (CDP) is enabled globally. Which command will you type?,"a. show protocols
+b. show cdp
+c. show running-config
+d. show interface brief
+",,b,b,,"The 'show cdp' command is used to display information about the Cisco Discovery Protocol (CDP) configuration and status on a Cisco device. This command will show whether CDP is enabled globally or not. The 'show running-config' command would also show the CDP configuration, but it displays the entire running configuration, which may be more information than needed. The 'show protocols' and 'show interface brief' commands do not specifically provide information about the CDP configuration.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/cdp/command/cdp-cr-book/cdp-i1.html'],1,chapter11_ip_services,0.95,1
+200,Which of the following protocols synchronize the time of different systems?,"a. NTP
+b. SMTP
+c. UDP
+d. CDP
+",,a,a,,"NTP (Network Time Protocol) is the correct answer. NTP is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks. It is designed to synchronize all participating computers to within a few milliseconds of Coordinated Universal Time (UTC). SMTP (Simple Mail Transfer Protocol) is used for email transmission, UDP (User Datagram Protocol) is a transport layer protocol used for connectionless communication, and CDP (Cisco Discovery Protocol) is a proprietary protocol used to share information about directly connected Cisco devices. None of these other protocols are used for time synchronization.","['https://en.wikipedia.org/wiki/Network_Time_Protocol', 'https://tools.ietf.org/html/rfc5905']",1,chapter11_ip_services,1,1
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. You can't connect two routers to the same LAN subnet.
+b. If one router fails, hosts can't send packets off-subnet
+c. If one router fails, both hosts will use the one remaining router as a default router
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",,c,c,,"If R1 and R2 are using a First Hop Redundancy Protocol (FHRP) like HSRP or VRRP on the same LAN subnet, they will share a virtual IP address that acts as the default gateway for the hosts on that subnet. The FHRP allows the routers to negotiate which one is active and which is standby. If the active router fails, the standby router will take over the virtual IP and continue to act as the default gateway for all hosts on the subnet. Therefore, if one of the routers fails, both host A and host B will use the remaining operational router as their default gateway to send packets off-subnet. The FHRP provides redundancy and avoids a single point of failure.","['https://en.wikipedia.org/wiki/First-hop_redundancy_protocol', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipapp_fhrp/configuration/xe-16/fhp-xe-16-book/fhp-hsrp.html']",1,chapter11_ip_services,0.95,1
+203,Which of the following characteristics of network traffic can be managed by Quality of Service (QoS)? (Choose all that apply),"a. Bandwidth
+b. LLQ
+c. Loss
+d. Delay
+e. CoS
+f. Jitter
+",,"a,c,d,f","a,c,d,f",,"Quality of Service (QoS) is a set of technologies that work on a network to guarantee its ability to dependably run high-priority applications and traffic under limited network capacity. QoS can manage bandwidth (a) by allocating more bandwidth to critical applications. It can manage loss (c) by prioritizing certain packets to be dropped later than others when congestion occurs. QoS can manage delay (d) by prioritizing latency-sensitive traffic to be transmitted earlier. Jitter (f), the variation in packet delay, can also be managed by QoS mechanisms to ensure a steady stream for applications sensitive to jitter like VoIP. However, Low Latency Queuing (LLQ) (b) and Class of Service (CoS) (e) are QoS mechanisms or tools rather than characteristics of network traffic that QoS manages.","['https://en.wikipedia.org/wiki/Quality_of_service', 'https://www.cisco.com/c/en/us/products/ios-nx-os-software/quality-of-service-qos/index.html']",1,chapter11_ip_services,0.95,1

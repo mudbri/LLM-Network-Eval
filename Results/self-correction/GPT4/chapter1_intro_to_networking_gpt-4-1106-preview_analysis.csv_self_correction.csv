@@ -1,0 +1,124 @@
+Question Number,Question Text,Choices,Correct Answer,Old LLM Answer,New LLM Answer,Old LLM Explanation,New LLM Explanation,Old Answer Correct?,New Correct,Topic,Score-right-minus-wrong
+1,Which of the following terms describe Ethernet addresses that can send one frame and is delivered to multiple devices on the LAN? (Choose two answers.),"a. Broadcast address
+b. Multicast address
+c. IP address
+d. MAC address
+e. Unicast address
+","a,b","a,b","a,b","In Ethernet networking, a broadcast address is used to send a frame to all devices on the local network segment. When a frame is sent to the broadcast address, all devices on the local area network (LAN) are intended to receive and process the frame. The broadcast address for Ethernet is all binary 1's, which is typically represented as FF-FF-FF-FF-FF-FF in hexadecimal notation. A multicast address is used to send a frame to a group of devices on the LAN that have been configured to listen for frames sent to that specific multicast address. Multicast addresses are a subset of the MAC address range that is reserved for multicast use. In contrast, unicast addresses (e) identify a single specific device, and IP addresses (c) and MAC addresses (d) are general terms that do not inherently imply frames being delivered to multiple devices.","Evaluation of original answer: The original answer is correct. It accurately explains the use of broadcast and multicast addresses within Ethernet networking. The broadcast address is indeed used to send a frame to all devices on a LAN, and the multicast address is used to send a frame to multiple devices that are part of a multicast group. The explanation provided for each term is appropriate and helps clarify why the other options (c, d, and e) are not correct in this context.
+
+Correct Answers: a, b",1,1,chapter1_intro_to_networking,1.0
+3,___________ is a set of rules determining how network devices respond when two devices attempt to use a data channel simultaneously and encounter a data collision.,"a. CSMA/CD
+b. CSMA/CA
+c. TCP/IP
+d. TCP/UDP
+",a,a,a,"CSMA/CD, which stands for Carrier Sense Multiple Access with Collision Detection, is the set of rules used in networking to govern how devices on a network respond when a data collision occurs. This protocol is used in networks such as Ethernet to monitor the data traffic on the line and to ensure that a collision is dealt with by stopping transmissions and resending the information after a random time delay. CSMA/CA, or Carrier Sense Multiple Access with Collision Avoidance, is used in wireless networks to prevent collisions. TCP/IP and TCP/UDP are protocols used for different purposes: TCP/IP is a suite of communication protocols used to interconnect network devices on the internet, and TCP/UDP refers to Transmission Control Protocol and User Datagram Protocol, which are used for sending packets of data but do not handle collision scenarios.","Evaluation of original answer: The original answer is correct. CSMA/CD stands for Carrier Sense Multiple Access with Collision Detection and is indeed the protocol used to handle data collisions in networks, particularly in traditional Ethernet networks. The explanation accurately describes the function of CSMA/CD and contrasts it with CSMA/CA, which is used for collision avoidance in wireless networks. Additionally, the answer correctly states that TCP/IP is a suite of communication protocols and that TCP and UDP are different protocols for sending data but are not related to collision handling.
+
+Correct Answers: a. CSMA/CD",1,0,chapter1_intro_to_networking,1.0
+4,Ethernet standard ___________ BASE-T defines Gigabit Ethernet over UTP cabling.,"a. 100
+b. 10
+c. 1000
+d. 1",c,c,c,"The Ethernet standard 1000BASE-T defines Gigabit Ethernet over UTP (Unshielded Twisted Pair) cabling. The '1000' in 1000BASE-T indicates the transmission speed of 1000 Mbps, or 1 Gbps, hence the term Gigabit Ethernet.","Evaluation of original answer: The original answer is correct. The Ethernet standard 1000BASE-T indeed defines Gigabit Ethernet over UTP cabling. The number ""1000"" represents the speed of the network in megabits per second, which is 1000 Mbps or 1 Gbps.
+
+Correct Answers: c",1,1,chapter1_intro_to_networking,1.0
+5,Which of the following IEEE 802.3 Ethernet Header and Trailer Fields allows devices on the network to easily synchronize their receiver clocks?,"a. Frame Check Sequence
+b. Data and Pad
+c. Start Frame Delimiter
+d. Preamble
+",d,d,d,"The Preamble field in an Ethernet frame is used to allow devices on the network to synchronize their receiver clocks, providing a timing reference for bit-level synchronization. It consists of a 7-byte sequence of alternating 1s and 0s that alerts receiving systems to the coming frame and enables them to establish bit-level synchronization. The Start Frame Delimiter (SFD) that follows the preamble marks the end of the preamble and the start of the frame header.","Evaluation of original answer: The original answer is correct. The Preamble field in an Ethernet frame is indeed used to allow network devices to synchronize their receiver clocks. It consists of a 7-byte sequence (56 bits) of alternating 1s and 0s (10101010...) that helps the receiving network interface controllers (NICs) to lock onto the data stream for proper bit-level synchronization. The Start Frame Delimiter (SFD) follows the preamble and signals the beginning of the frame header.
+
+Correct Answers: d",1,1,chapter1_intro_to_networking,1.0
+6,The host sends packets to its default gateway if the ____________ IP address is in a different subnet than the host.,"a. Source
+b. Destination
+c. Unicast
+d. Broadcast
+",b,b,b,"The host will send packets to its default gateway if the destination IP address is in a different subnet than the host. When a host needs to communicate with an IP address on a different network, it uses a router (default gateway) to forward the packets to the destination network.","Evaluation of original answer: The original answer is correct. When a host determines that the destination IP address is on a different subnet, it sends the packets to its default gateway, which is typically a router or a similar device that routes the packets to the appropriate network. The default gateway is used because the host cannot directly communicate with devices outside its own subnet. Therefore, the answer correctly identifies that the host uses its default gateway when the destination IP address is in a different subnet.
+
+Correct Answers: b. Destination",1,0,chapter1_intro_to_networking,1.0
+9,Which of the following protocols resides in the Application TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",a,a,a,"SMTP (Simple Mail Transfer Protocol) is an application layer protocol used for sending emails. The Application layer in the TCP/IP model includes high-level protocols that provide services to application software. TCP (Transmission Control Protocol) is a core protocol of the Internet Protocol Suite and operates at the Transport layer, not the Application layer. Ethernet is a network protocol that operates at the Data Link layer, and IP (Internet Protocol) operates at the Internet layer, which is equivalent to the Network layer in the OSI model.","Evaluation of original answer: The original answer is correct. SMTP (Simple Mail Transfer Protocol) is indeed an application layer protocol, which is used for sending emails. The explanation provided correctly distinguishes between the different layers of the TCP/IP model and correctly identifies the layers at which TCP, Ethernet, and IP operate.
+
+Correct Answers: a",1,1,chapter1_intro_to_networking,1.0
+10,Which of the following protocols resides in the Transport TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",b,b,b,"TCP, or Transmission Control Protocol, is one of the main protocols of the Internet protocol suite and resides in the Transport layer of the TCP/IP model. The Transport layer is responsible for providing host-to-host communication services for applications. It is the layer that establishes, maintains, and terminates virtual circuits for data transmission between devices. SMTP (Simple Mail Transfer Protocol) resides in the Application layer, Ethernet is a technology for LANs and operates at the Data Link layer, and IP (Internet Protocol) operates at the Internet layer, also known as the Network layer in the OSI model.","Evaluation of original answer: The original answer is correct. TCP (Transmission Control Protocol) indeed resides in the Transport layer of the TCP/IP model, which is responsible for providing host-to-host communication services for applications. The explanation correctly identifies the layers in which the other protocols and technologies reside: SMTP in the Application layer, Ethernet in the Data Link layer, and IP in the Internet layer (which corresponds to the Network layer in the OSI model).
+
+Correct Answers: b",1,1,chapter1_intro_to_networking,1.0
+11,Which of the following protocols resides in the Internet TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",d,"b,d","b,d","TCP and IP are both part of the Internet layer in the TCP/IP model, which corresponds to the Transport and Internet layers of the OSI model, respectively. SMTP is an application layer protocol, and Ethernet is a technology that operates at the Data Link layer of the OSI model, which is below the Internet layer in the TCP/IP model.","Evaluation of original answer: The original answer is mostly correct but slightly misleading in its explanation. TCP and IP are indeed part of the TCP/IP model, but they do not both reside in the ""Internet layer."" TCP corresponds to the Transport layer, and IP corresponds to the Internet layer, within the TCP/IP model. The OSI model is mentioned for comparison, but the question specifically asks about the TCP/IP model, so the OSI model's layers are not directly relevant to the answer. SMTP is indeed an application layer protocol, and Ethernet operates at the Data Link layer, which is not part of the TCP/IP model but can be related to the Link layer in the TCP/IP model.
+
+Correct Answers: b, d
+
+The correct answers are:
+b. TCP (Transport layer in the TCP/IP model)
+d. IP (Internet layer in the TCP/IP model)",0,0,chapter1_intro_to_networking,0.5
+12,Which of the following protocols resides in the Data Link & Physical TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",c,c,c,"In the TCP/IP model, the Data Link layer and the Physical layer of the OSI model are often combined into a single layer. Ethernet is a technology that operates at these layers, specifically handling the physical transmission of data on the network and the framing of data for the network. SMTP, TCP, and IP operate at higher layers of the TCP/IP model. SMTP (Simple Mail Transfer Protocol) operates at the Application layer, TCP (Transmission Control Protocol) operates at the Transport layer, and IP (Internet Protocol) operates at the Internet layer.","Evaluation of original answer: The original answer is correct. Ethernet is indeed the protocol that resides in the Data Link and Physical layers of the TCP/IP model. The explanation correctly identifies the layers at which the other protocols (SMTP, TCP, and IP) operate within the TCP/IP model, reinforcing that Ethernet is the correct answer.
+
+Correct Answers: c",1,1,chapter1_intro_to_networking,1.0
+13,Which of the following protocols is used from PC1 to learn information from some other device on the same network?,"a. ping
+b. ARP
+c. DHCP
+d. DNS
+",b,b,b,"ARP (Address Resolution Protocol) is used for mapping a network address (like an IP address) to a physical address like a MAC address. When a PC wants to communicate with another device on the same local network, it uses ARP to find out the MAC address associated with the IP address it wants to communicate with. Other options like ping, DHCP, and DNS serve different purposes. Ping is used to test the reachability of a host on an IP network. DHCP (Dynamic Host Configuration Protocol) is used for dynamically distributing network configuration parameters, such as IP addresses. DNS (Domain Name System) is used to translate domain names to IP addresses.","Evaluation of original answer: The original answer is correct. ARP (Address Resolution Protocol) is indeed used to resolve the physical MAC address of a device on the local network when the IP address is known. It is a necessary protocol for communication between devices on the same LAN (Local Area Network). The explanation provided for the other options (ping, DHCP, DNS) is also accurate and helps to clarify why they are not the correct answer to the question asked.
+
+Correct Answers: b",1,1,chapter1_intro_to_networking,1.0
+14,"If the devices below were connected with UTP Ethernet cables, which pairs of devices would require a straight-through cable? (Choose two answers.)","a. Router and PC
+b. Switch and PC
+c. Hub and switch
+d. Router and hub
+","b,d","b,d","a,b","A straight-through cable is used to connect devices of different types, such as a host to a network intermediary (switch, hub) or a router to a network intermediary. In the case of connecting a switch to a PC (host), a straight-through cable is appropriate because they are different types of devices. Similarly, when connecting a router to a hub, a straight-through cable is used because the router is a different type of device compared to the hub, which is a network intermediary.","Evaluation of original answer: The original answer is partially correct. The explanation given is accurate in stating that a straight-through cable is used to connect devices of different types. However, the answer choices provided in the original answer are not completely correct. While a straight-through cable is indeed used to connect a switch to a PC (b), the connection between a router and a hub (d) is not typically made with a straight-through cable. Routers and hubs are both considered intermediary devices, and traditionally, a crossover cable would be used to connect two similar device types (e.g., router to router, switch to switch, hub to hub). However, many modern devices support Auto-MDIX (automatic medium-dependent interface crossover), which allows them to automatically detect the required cable type and adjust accordingly, making the type of cable (straight-through or crossover) less critical in some cases. Given the traditional standards, the correct answer for the second device pair that requires a straight-through cable would be a router to a PC (a), not a router to a hub (d).
+
+Correct Answers: a, b",1,0,chapter1_intro_to_networking,0.0
+15,Which of the following protocols are examples of TCP/IP data-link layer protocols? (Choose two answers.),"a. TCP
+b. HTTP
+c. Ethernet
+d. PPP
+e. SMTP
+f. HTTPS
+","c,d","c,d","c,d","The TCP/IP data-link layer corresponds to the OSI model's layer 2, which is responsible for node-to-node data transfer. Ethernet (option 'c') is a set of networking technologies used for local area networks (LANs), which operates at the data-link layer. PPP (Point-to-Point Protocol, option 'd') is a data-link layer protocol commonly used for establishing a direct connection between two networking nodes. TCP (option 'a') is a transport layer protocol, and HTTP (option 'b'), SMTP (option 'e'), and HTTPS (option 'f') are application layer protocols.","Evaluation of original answer: The original answer is correct. It correctly identifies Ethernet (option 'c') and PPP (Point-to-Point Protocol, option 'd') as data-link layer protocols within the TCP/IP suite. The explanation provided is accurate in stating that Ethernet is used for local area networks and operates at the data-link layer, and that PPP is used for establishing direct connections between two nodes and also operates at the data-link layer. The answer also correctly clarifies that TCP is a transport layer protocol and that HTTP, SMTP, and HTTPS are application layer protocols, which are not part of the data-link layer.
+
+Correct Answers: c, d",1,1,chapter1_intro_to_networking,1.0
+16,Which of the following statements are functions of a routing protocol? (Choose two answers.),"a. Learning routes and putting those routes into the routing table for routes advertised to the router by its neighboring routers
+b. Advertising known routes to neighboring routers
+c. Learning routes for subnets directly connected to the router
+d. Forwarding IP packets based on a packet’s destination IP address
+","a,b","a,b","a,b","Routing protocols have two main functions: learning routes from neighboring routers and advertising known routes to those neighbors. Option 'a' is correct because routing protocols learn routes from advertisements sent by neighboring routers and then place those routes into the routing table. Option 'b' is also correct because routing protocols advertise routes that the router knows about to its neighboring routers. Option 'c' is incorrect because learning routes for directly connected subnets is not a function of routing protocols; the router identifies these routes itself without the need for a routing protocol. Option 'd' is incorrect because forwarding IP packets based on a packet's destination IP address is a function of the router's forwarding process, not of routing protocols themselves.","Evaluation of original answer: The original answer is correct. It accurately describes the functions of routing protocols and correctly identifies which options are part of those functions. Routing protocols are indeed designed to learn and advertise routes to neighboring routers. The explanation provided for why options 'c' and 'd' are incorrect is also accurate. Directly connected routes are identified by the router itself and do not require a routing protocol, and forwarding IP packets is a function of the router's forwarding process or the routing table, not the routing protocol.
+
+Correct Answers: a, b",1,1,chapter1_intro_to_networking,1.0
+17,"When you open a web browser and type in the hostname www.examsdigest.com, your computer does not send an IP packet with a destination IP address www.examsdigest.com; it sends an IP packet to an IP address used by the web server for Examsdigest. TCP/IP needs a way to let a computer find the IP address used by the listed hostname. That method uses the Domain Name System (DNS).","a. TRUE
+b. FALSE
+",a,a,a,"The statement is true. The Domain Name System (DNS) is used to resolve human-readable hostnames like www.examsdigest.com into machine-readable IP addresses. When you type a URL into a web browser, the browser contacts a DNS server to query the IP address associated with the hostname. Only after obtaining the IP address can your computer send an IP packet to the web server's IP address. IP packets require numerical IP addresses, not alphabetic hostnames.","Evaluation of original answer: The original answer is correct. It accurately describes the role of DNS in translating human-readable domain names into machine-readable IP addresses. The process is essential for the functioning of the internet, as computers use IP addresses to communicate with each other, and DNS serves as the translator between the domain names that humans use and the IP addresses that networking equipment requires.
+
+Correct Answers: a",1,1,chapter1_intro_to_networking,1.0
+18,A __________________ address is an address that enables transmission to every node in a local network.,"a. Broadcast
+b. Multicast
+c. Unicast
+d. MAC
+",a,a,a,"A broadcast address allows a network device to transmit a message to every device in a local network. In contrast, unicast addresses are used for one-to-one communication, multicast addresses are used for one-to-many communication, and MAC addresses are unique identifiers assigned to network interfaces for communications at the data link layer.","Evaluation of original answer: The original answer is correct. A broadcast address is indeed used for transmitting data to every node within a local network. The explanation provided is accurate and effectively distinguishes between broadcast, unicast, multicast, and MAC addresses, by explaining their different purposes in networking.
+
+Correct Answers: a. Broadcast",1,0,chapter1_intro_to_networking,1.0
+19,TCP and ______________ are the two most commonly used TCP/IP transport layer protocols.,"a. UDP
+b. HTTP
+c. DNS
+d. SMTP
+",a,a,a,"TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two most commonly used transport layer protocols in the TCP/IP protocol suite. TCP is used for connection-oriented transmissions, whereas UDP is used for connectionless transmissions.","Evaluation of original answer: The original answer is correct. TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are indeed the two most commonly used transport layer protocols in the TCP/IP suite. TCP is reliable, connection-oriented and ensures that data is delivered in order and without errors. UDP, on the other hand, is connectionless and does not guarantee delivery, order, or error checking. This makes UDP faster and more efficient for certain types of communications. HTTP, DNS, and SMTP are application layer protocols in the TCP/IP model, which operate at a higher layer than the transport layer.
+
+Correct Answers: a. UDP",1,0,chapter1_intro_to_networking,1.0
+20,Which of the following IEEE 802.3 Ethernet Header and Trailer Fields provides a method for the receiving NIC to determine whether the frame experienced transmission errors?,"a. Frame Check Sequence
+b. Data and Pad
+c. Start Frame Delimiter
+d. Preamble
+",a,a,a,"The Frame Check Sequence (FCS) field in an Ethernet frame is used to detect any errors that may have occurred during the transmission of the frame. The FCS contains a cyclic redundancy check (CRC) value that is calculated by the sending network interface card (NIC) and is then verified by the receiving NIC to ensure the integrity of the received data. If the calculated CRC of the received data does not match the FCS value, it indicates that the data has been corrupted during transmission.","Evaluation of original answer: The original answer is correct. The Frame Check Sequence (FCS) is indeed the part of an Ethernet frame that allows the receiving NIC to determine if the frame experienced transmission errors through a cyclic redundancy check (CRC). The explanation provided is accurate and reflects the purpose of the FCS field in the Ethernet frame structure.
+
+Correct Answers: a. Frame Check Sequence",1,0,chapter1_intro_to_networking,1.0

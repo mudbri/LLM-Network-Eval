@@ -1,0 +1,46 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. FIN, FIN/ACK, ACK
+b. SYN, SYN/ACK, ACK
+c. SYN, ACK, FIN
+d. SYN, ACK, SYN, ACK
+",,b,b,,"The correct ordering of TCP flags in the Three-Way Handshake is SYN, SYN/ACK, ACK. This sequence is used to establish a connection between two hosts. The initiating host sends a SYN (synchronize) packet to the receiving host, which responds with a SYN/ACK (synchronize/acknowledgment) packet, and finally, the initiating host sends an ACK (acknowledgment) packet to complete the connection setup.",['https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment'],1,3_transport_application_layer,0.9,0.9999996871837188,1.0
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 8
+d. 32
+",,a,a,,"In the TCP and UDP headers, the port field is 16 bits long. This allows for a range of 0 to 65535 (2^16). Ports 0-1023 are reserved for well-known services.","['https://tools.ietf.org/html/rfc768', 'https://tools.ietf.org/html/rfc793']",1,3_transport_application_layer,0.9,0.9999629731405112,1.0
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Router
+b. Hub
+c. Firewall
+d. Switch
+",,c,c,,"The correct option is 'Firewall'. A firewall is a device that monitors and controls incoming and outgoing network traffic based on predetermined security rules. It acts as a barrier between a trusted network and an untrusted network, filtering the data that passes through it to block or allow traffic based on specific criteria such as IP addresses, port numbers, protocols, and more. Routers, hubs, and switches do not primarily function as traffic-blocking devices like firewalls do.",[],1,3_transport_application_layer,0.9,0.9999984951481324,1.0
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,b,,"The TCP flag used to make the listening program respond immediately is the PSH (Push) flag. When a segment with the PSH flag set arrives at the receiving TCP, it indicates that the data should be pushed up to the receiving application immediately without waiting for more data to arrive.",['https://datatracker.ietf.org/doc/html/rfc793'],1,3_transport_application_layer,0.9,0.8527682129589965,1.0
+40,_________are identified as ports 49152 through 65535.,"a. Ephemeral ports
+b. User ports
+c. Sockets
+d. System ports
+",,a,a,,The ports 49152 through 65535 are known as ephemeral ports. Ephemeral ports are used as temporary ports by the client-side applications to initiate a connection to a server. They are assigned dynamically from this range by the operating system.,[],1,3_transport_application_layer,0.9,0.9999961110815618,1.0
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The interconnection layer
+b. The compression layer
+c. The session layer
+d. The presentation layer
+",,"c,d",c,,"In the OSI network model, the two additional layers added on top of the Application Layer are the presentation layer and the session layer. The presentation layer is responsible for data translation, encryption, and compression, while the session layer manages communication sessions between processes.","['https://www.cloudflare.com/learning/network-layer/what-is-the-presentation-layer/', 'https://www.geeksforgeeks.org/session-layer-in-osi-model/']",0,3_transport_application_layer,0.9,0.9999840716318578,0.5
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"An example of something that operates at the application layer is a web browser. The application layer in the OSI model is responsible for providing network services directly to end-users or applications. Web browsers are applications that interact directly with users to access and display web pages, making them an application layer entity.",[],1,3_transport_application_layer,0.9,0.9999993295729248,1.0
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. The source port
+c. ARP message
+d. The router
+",,a,a,,"The correct option is 'a. Networking stack.' When an application needs to establish a TCP connection, it communicates this requirement to the operating system through the networking stack. The networking stack is responsible for handling network communication protocols and ensuring data is properly transmitted over the network.",['https://www.geeksforgeeks.org/networking-stack/'],1,3_transport_application_layer,0.9,0.9997067679209324,1.0
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The header of the Ethernet frame
+d. The payload of the TCP segment
+",,"a,b,d",d,,"In the TCP/IP Five-Layer Network Model, the data that the application wants to send is contained in the payload of the TCP segment. The TCP segment is responsible for carrying the actual data from the application layer.",['https://www.geeksforgeeks.org/tcp-ip-model/'],0,3_transport_application_layer,0.9,0.9429322746149084,0.0

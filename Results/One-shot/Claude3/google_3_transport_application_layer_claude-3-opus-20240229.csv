@@ -1,0 +1,41 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 32
+d. 8
+",,a,a,,"A port number is a 16-bit unsigned integer, thus ranging from 0 to 65535. Port numbers allow multiple applications on each host to utilize network resources without interfering with each other. Some port numbers are pre-assigned for specific uses by the IANA, these are called the ""well-known ports"" and range from 0 to 1023.","['https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'https://en.wikipedia.org/wiki/Port_(computer_networking)']",1,google_3_transport_application_layer,1,1
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Hub
+b. Router
+c. Switch
+d. Firewall
+",,d,d,,"A firewall is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on a set of security rules. Firewalls are used to establish a barrier between internal networks and external networks, such as the Internet, to block malicious traffic like viruses and hackers.","['https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html', 'https://www.paloaltonetworks.com/cyberpedia/what-is-a-firewall']",1,google_3_transport_application_layer,1,1
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,c,,"The URG (urgent) flag is used to notify the receiving station that some urgent data has been placed in the segment. This causes the receiving TCP to process the urgent data immediately, without waiting for data preceding it in the stream.","['https://www.geeksforgeeks.org/tcp-flags/', 'https://www.ionos.com/digitalguide/server/know-how/tcp-flags/']",0,google_3_transport_application_layer,0.9,1
+40,_________are identified as ports 49152 through 65535.,"a. User ports
+b. Ephemeral ports
+c. Sockets
+d. System ports
+",,b,b,,"Ephemeral ports are identified as ports 49152 through 65535. These ports are dynamically allocated by the client's operating system for establishing outbound connections. They are short-lived and released after the connection is closed, allowing them to be reused for future connections.","['https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'https://www.cloudflare.com/learning/network-layer/what-is-a-computer-port/']",1,google_3_transport_application_layer,0.95,1
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The compression layer
+b. The session layer
+c. The interconnection layer
+d. The presentation layer
+",,"b,d","b,d",,"The OSI model adds two layers above the Application layer compared to the five-layer model. These are the Session layer and the Presentation layer. The Session layer manages the establishment, maintenance, and termination of sessions between applications. The Presentation layer handles data formatting, encryption, and compression to ensure data from the application layer can be properly consumed by the recipient.","['https://www.imperva.com/learn/application-security/osi-model/', 'https://www.javatpoint.com/session-layer-in-osi-model', 'https://www.javatpoint.com/presentation-layer']",1,google_3_transport_application_layer,0.95,1
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"A web browser operates at the application layer of the OSI model. The application layer is the topmost layer where user-facing software like web browsers, email clients, and chat applications function. UDP and TCP are transport layer protocols, while routers operate at the network layer.","['https://www.imperva.com/learn/application-security/osi-model/', 'https://www.comptia.org/content/guides/what-is-the-osi-model']",1,google_3_transport_application_layer,1,1
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. ARP message
+c. The source port
+d. The router
+",,a,a,,"The networking stack is the part of the operating system that applications use to communicate their need to establish network connections, including TCP connections. The networking stack implements the various protocols and provides an interface for applications to utilize those protocols.","['https://en.wikipedia.org/wiki/Protocol_stack', 'https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:the-internet/xcae6f4a7ff015e7d:introducing-the-internet/a/the-internet-protocol-suite']",1,google_3_transport_application_layer,0.95,1
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The payload of the TCP segment
+d. The header of the Ethernet frame
+",,"a,b,c","a,b,c",,"The data from the application layer is encapsulated and becomes the payload at each subsequent layer of the TCP/IP model. It starts as the payload of the TCP segment at the transport layer, which then becomes the payload of the IP datagram at the network layer, and finally the payload of the Ethernet frame at the data link layer. The Ethernet frame header contains frame-specific information like MAC addresses, not the application data.","['https://www.geeksforgeeks.org/tcp-ip-model/', 'https://docs.microsoft.com/en-us/windows-hardware/drivers/network/windows-network-architecture-and-the-osi-model']",1,google_3_transport_application_layer,0.95,1

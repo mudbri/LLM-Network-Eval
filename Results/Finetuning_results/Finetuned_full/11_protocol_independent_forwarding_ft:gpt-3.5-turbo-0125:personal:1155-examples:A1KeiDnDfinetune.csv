@@ -1,0 +1,43 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+78,What are some of the desired features in future SDN switches that motivate a programmable data plane? Select all that apply.,"a. Reducing energy consumption for custom packet processing.
+b. Processing packets at higher rates.
+c. A wider range of packet processing primitives.
+d. Flexible match-action tables, such as the ability to compose multiple match-action tables in sequence or in parallel.
+e. A configurable packet parser that is not tied to a specific header format.
+",,"c,d,e",a,,,[],0,11_protocol_independent_forwarding,1,1
+79,Which of the following best describes protocol independence?,"a. The ability to configure a packet parser in hardware that is agnostic to (and not constrained by) the control protocol.
+b. The ability to evolve an existing control protocol without breaking interoperability.
+c. The ability to run a switch independently from the controller.
+d. The ability to support multiple protocols running in parallel on the same hardware.
+e. The ability to run a network with both legacy OpenFlow switches and switches that support custom packet processing.
+",,a,a,,,[],1,11_protocol_independent_forwarding,1,1
+81,Which of the following describe functions of the P4 parser? Select all that apply.,"a. Constructing a graph of dependencies between different logical tables.
+b. Translating rules to physical tables.
+c. Verifying that the description of packet parsing is consistent with the behavior of an existing hardware switch (e.g., a legacy OpenFlow switch).
+d. Translating a packet processing specification to a state machine.
+e. Mapping logical tables to underlying switch resources.
+",,"c,d",a,,,[],0,11_protocol_independent_forwarding,1,1
+82,"Which of the following best describe the relationship between a language like P4, an assembler like NetASM, and target programmable hardware (e.g., RMT)?","a. P4 is much more amenable to ""cost semantics"" (i.e., figuring out how much a particular operation would cost in terms of power or area) than NetASM.
+NetASM and P4 are two examples of high-level programming languages; they are interchangeable.
+b. P4 has verifiable semantics, whereas NetASM does not.
+c. A language like P4 would ""compile"" to an assembly language like NetASM, which would then specify a one-to-one relationship with resources on the target forwarding hardware.
+d. A language like NetASM would ""compile"" to an assembly language like P4, which would then specify a one-to-one relationship with resources on the target forwarding hardware.
+",,c,c,,,[],1,11_protocol_independent_forwarding,1,1
+83,Which of the folloiwing instruction types create state elements in NetASM? Select all that apply.,"a. JMP
+b. DRP
+c. LBL
+d. MKT
+e. MKR
+",,"d,e","d,e",,,[],1,11_protocol_independent_forwarding,1,1
+84,Which of the following are true about locally contained applications? Select all that apply.,"a. Locally contained applications can be implemented with regular OpenFlow instructions.
+b. A MAC learning switch can be implemented as a locally contained application.
+c. Locally contained applications forward packets more slowly than their stateless counterparts.
+d. A locally contained application can implement SDN logic without ever requiring a packet to be sent to the controller.
+e. Locally contained applications allow the hardware pipeline to make switch-local state modifications.
+",,"b,d,e",a,,,[],0,11_protocol_independent_forwarding,1,1
+86,What are some examples of optimizations that a compiler could perform on NetASM instructions? Select all that apply.,"a. Preventing bufferbloat for real-time application traffic.
+b. Forwarding packets for high-volume flows at higher rates.
+c. Composing or decomposing tables to save either on table size or table width.
+d. Only instantiating hardware resources (e.g., table entries) for flows that actually have nonzero traffic volume.
+e. Reordering instructions so that subsequent tables need not be as large (e.g., not storing state for unmatched packets).
+",,"c,d,e",a,,,[],0,11_protocol_independent_forwarding,1,1

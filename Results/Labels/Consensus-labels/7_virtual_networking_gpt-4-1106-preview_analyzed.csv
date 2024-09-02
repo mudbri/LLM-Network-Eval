@@ -1,0 +1,63 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+56,Which of the following are true of the Mininet network emulator? Select all that apply.,"a. It requires running OpenFlow-capable switches.
+b. It is difficult to use it to route traffic for real services.
+c. Mininet only allows users to create three types of topologies: linear, tree, and single-switch topologies.
+d. It can create an emulation that runs across multiple physically distributed nodes.
+e. All of the hosts in the topology must run the same underlying operating system.
+","b,e","a,d,e","Mininet is a network emulator which can create a realistic virtual network, running real kernel, switch, and application code, on a single machine (VM, cloud or native), in seconds, with a single command. Here are the evaluations for each choice:
+
+a. True. Mininet typically uses Open vSwitch, which is an open-source implementation of a distributed virtual multilayer switch, and it is OpenFlow-capable. This is one of the key features that allows Mininet to emulate Software-Defined Networking (SDN) environments.
+
+b. False. Mininet can be quite flexible and it is possible to use it to route traffic for real services, although with some limitations due to it being an emulator running on a single system.
+
+c. False. Mininet allows users to create various types of topologies beyond just linear, tree, or single-switch. Users can create custom topologies as well.
+
+d. True. While Mininet is typically used on a single system, it can be extended to run across multiple nodes using clustering techniques, although this is more complex and not the primary use case.
+
+e. True. Since Mininet emulates a network on a single operating system, all the hosts within the topology indeed run the same underlying operating system of the host machine.","['http://mininet.org/', 'https://github.com/mininet/mininet', 'https://www.opennetworking.org/software-defined-standards/models/']",0,7_virtual_networking,0.95,0.585533546922365,Misinterpreting questions (quantifier issue) for choice a and b. Not knowing information for choice d,"Wrong Facts/Concept,        Misinterpreting questions","Incorrect information/concept,        Quantifier issue",,,0,3,"documentation, documentation, service description",3,1,1,1,Network administration,2,6,2,4,0.0
+58,Which of the following are possible in Mininet? Select all that apply.,"a. Measuring the latency between a host in San Francisco and a host in Los Angeles.
+b. Assigning custom IP addresses to each node in the topology.
+c. Assigning IP addresses to each node in the topology using a DHCP server.
+d. Running performance measurement tools (e.g., iperf, wget) between nodes.
+e. ""Shaping"" a link between two nodes to a particular traffic rate.
+","b,c,d,e","b,d,e","Mininet is a network emulator which can create a virtual network on a single machine. It can be used to emulate the network topology of a real network and to run various network applications within that virtual network. Here's an evaluation of each choice:
+
+a. Measuring the latency between a host in San Francisco and a host in Los Angeles is not possible in Mininet as it does not emulate the actual geographical distances or the real-world physical infrastructure that would impact latency over such distances.
+
+b. Assigning custom IP addresses to each node in the topology is possible in Mininet. You can specify the IP addresses for each host or switch when you define the topology.
+
+c. While Mininet allows you to assign IP addresses manually, it does not support the use of a DHCP server out of the box. However, it might be possible to run a DHCP server on one of the emulated hosts, but this is not a standard feature of Mininet.
+
+d. Running performance measurement tools like iperf or wget between nodes is indeed possible in Mininet. These tools can be used to measure the performance of the emulated network.
+
+e. 'Shaping' a link between two nodes to a particular traffic rate is also possible in Mininet. You can set bandwidth limits, delay, loss, and other link parameters using Mininet's API or command-line options.","['http://mininet.org/', 'http://mininet.org/walkthrough/', 'https://github.com/mininet/mininet/wiki/Introduction-to-Mininet']",0,7_virtual_networking,0.95,0.519481602321699,"Again, the question is asking for what is possible, not what is typically the case",Misinterpreting questions,Quantifier issue,,,1,3,"documentation, documentation, documentation",3,1,1,0,Network administration,1,4,1,4,0.6000000000000001
+59,Which of the following functions does FlowVisor enable? Select all that apply.,"a. Allowing two different researchers to implement and deploy different load balancing applications for all traffic between the same source-destination pair.
+b. Allowing two controllers to control traffic on distinct VLANs.
+c. Allowing two different researchers to implement and deploy different Web load balancing applications for port 80 traffic.
+d. Allowing two different researchers to implement and deploy control mechanisms for two distinct applications.
+e. Allowing one controller to control TCP traffic and one controller to control UDP traffic.","b,d,e","b,c,d,e","FlowVisor is a special purpose OpenFlow controller that acts as a transparent proxy between OpenFlow switches and multiple OpenFlow controllers. It allows for the slicing of a network so that different controllers can manage different virtualized slices of the network. Each of these slices can be defined by various parameters such as VLANs, IP addresses, ports, etc. Let's evaluate the choices:
+
+a. This choice is incorrect because FlowVisor does not inherently enable two different researchers to deploy different load balancing applications for all traffic between the same source-destination pair. Load balancing typically would be managed within a single slice, not across multiple slices for the same traffic.
+
+b. This is correct because FlowVisor can allow two controllers to control traffic on distinct VLANs, effectively slicing the network by VLANs.
+
+c. This is correct as FlowVisor can slice the network by port numbers, allowing different researchers to implement and deploy different Web load balancing applications for port 80 traffic.
+
+d. This is correct because FlowVisor enables different slices to be created for different applications, allowing researchers to implement and deploy control mechanisms for each application within its slice.
+
+e. This is correct because FlowVisor can slice the network based on traffic type, such as TCP or UDP, allowing one controller to manage TCP traffic and another to manage UDP traffic.","['https://www.opennetworking.org/wp-content/uploads/2013/02/cs-flowvisor.pdf', 'https://www.sciencedirect.com/topics/computer-science/software-defined-networking']",0,7_virtual_networking,0.95,0.765668895792412,Misinformation since flow visor cannot separate ports?,Wrong Facts/Concept,Incorrect information/concept,,,0,1,research paper,0,1,1,1,Advanced networking,3,4,3,4,0.6000000000000001
+60,Which of the following are stated applications of the Nicira Network Virtualization Platform? Select all that apply.,"a. Easier transition to IPv6 in data-center networks.
+b. Creating more than 1024 virtual networks, as opposed to the alternative of using VLAN tags.
+c. Allowing experimental protocols to coincide with a production network.
+d. Central management of security policies.
+e. Dynamic workload placement in multi-tenant data centers.","b,d,e","a,b,c,d,e","Nicira's Network Virtualization Platform (NVP) is designed to address various issues in modern data center networking by decoupling the network from the underlying hardware. Here's an analysis of each option in the context of NVP's applications:
+
+a. Easier transition to IPv6 in data-center networks: NVP can aid in the transition to IPv6 by providing a network abstraction that can handle both IPv4 and IPv6, making the transition smoother for the underlying infrastructure.
+
+b. Creating more than 1024 virtual networks, as opposed to the alternative of using VLAN tags: VLANs are limited to 4096 unique IDs, but NVP can create a much larger number of isolated virtual networks, overcoming the limitations of VLAN tagging.
+
+c. Allowing experimental protocols to coincide with a production network: NVP allows for the creation of isolated virtual networks where experimental protocols can be deployed without affecting the production network.
+
+d. Central management of security policies: NVP provides a centralized platform to manage security policies across all virtual networks, simplifying security administration.
+
+e. Dynamic workload placement in multi-tenant data centers: NVP facilitates dynamic workload placement by abstracting the physical network, which is particularly useful in multi-tenant environments where workloads may need to move frequently for load balancing, maintenance, or other reasons.","['https://www.vmware.com/products/nsx.html', 'https://www.networkworld.com/article/2160454/why-vmware-spent--1-2-billion-on-nicira.html', 'https://www.sdxcentral.com/network-virtualization/definitions/what-is-nicira-network-virtualization-platform/']",0,7_virtual_networking,0.95,0.774817571244812,Reasoning error since 4096>1024. Missing information since NIcira cannot handle both ipv4 and ipv6 at the same time,"Incorrect reasoning/deduction,        Wrong Facts/Concept","Incorrect calculation or counting,        Incorrect information/concept",,,0,1,service description,0,1,1,1,Advanced networking,1,4,1,4,0.1999999999999999

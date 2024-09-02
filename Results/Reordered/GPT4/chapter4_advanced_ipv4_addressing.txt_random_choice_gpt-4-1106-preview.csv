@@ -1,0 +1,139 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+64,Given the following IP address - 20.54.23.3 and subnet mask - 255.255.255.0 choose the subnet ID and the broadcast address from that particular IP.,"a. Subnet ID: 20.54.0.0
+Broadcast Address: 20.54.0.255
+b. Subnet ID: 20.54.0.0
+Broadcast Address: 20.54.255.255
+c. Subnet ID: 20.54.23.0
+Broadcast Address: 20.54.23.255
+d. Subnet ID: 20.54.23.1
+Broadcast Address: 20.54.23.255
+",,c,c,,"The subnet ID is the IP address with all host bits set to 0, while the broadcast address is the IP address with all host bits set to 1. Given the IP address 20.54.23.3 and the subnet mask 255.255.255.0 (which is a /24 in CIDR notation), we can determine the subnet ID and broadcast address. The subnet mask indicates that the first three octets (20.54.23) are the network portion, and the last octet (0) is the host portion. Therefore, the subnet ID is 20.54.23.0. For the broadcast address, you replace all the host bits with 1s, which would make the last octet 255. So, the broadcast address is 20.54.23.255.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.ripe.net/participate/member-support/lir-basics/ipv4-subnetting']",1,chapter4_advanced_ipv4_addressing,1.0,1.0,1.0
+65,The converted binary mask 11111111.11111111.11000000.00000000 to decimal is _______________.,"a. 255.255.192.0
+b. 255.192.0.0
+c. 255.255.64.0
+d. 255.255.255.192
+",,a,a,,"The binary mask 11111111.11111111.11000000.00000000 can be converted to decimal by translating each octet of binary numbers into their decimal equivalents. The first two octets are full of ones, which in binary translate to 255 in decimal. The third octet has the first two bits set to 1 and the rest to 0, which in binary is 11000000, translating to 192 in decimal. The last octet is all zeros, which translates to 0 in decimal. Therefore, the binary mask converts to 255.255.192.0 in decimal notation.",['https://www.pcwdld.com/subnet-mask-cheat-sheet'],1,chapter4_advanced_ipv4_addressing,1.0,0.9999359152835132,1.0
+66,The converted binary mask 11111111.11100000.00000000.00000000 to decimal is _______________.,"a. 255.255.255.224
+b. 255.224.0.0
+c. 255.64.0.0
+d. 255.255.224.0
+",,b,b,,"The binary mask given is '11111111.11100000.00000000.00000000'. To convert this binary mask to decimal, each octet (group of 8 bits) is converted individually. The first octet '11111111' converts to 255 in decimal. The second octet '11100000' converts to 224 in decimal (128 + 64 + 32 = 224). The third and fourth octets are all zeros, which convert to 0 in decimal. Therefore, the correct decimal representation of the binary mask is 255.224.0.0.",['https://www.ionos.com/digitalguide/server/know-how/ip-subnet-mask/'],1,chapter4_advanced_ipv4_addressing,1.0,0.9968599014544912,1.0
+67,The converted binary mask 11111110.00000000.00000000.00000000 to decimal is _______________.,"a. 255.255.255.254
+b. 255.254.0.0
+c. 255.255.254.0
+d. 254.0.0.0
+",,d,b,,"The binary mask given is 11111110.00000000.00000000.00000000. To convert this binary mask to decimal, each octet (group of 8 bits) is converted individually. The first octet is 11111110 which is 254 in decimal (128+64+32+16+8+4+2+0). The remaining octets are all zeros, which convert to 0 in decimal. Therefore, the correct decimal representation of the binary mask is 254.0.0.0.","['https://www.potaroo.net/ispcol/2007-08/mask.html', 'https://www.computerhope.com/jargon/b/binary.htm']",0,chapter4_advanced_ipv4_addressing,1.0,0.9826015674915314,0.0
+69,Your senior network engineer tells you to configure the DHCP server to lease the last 100 usable IP addresses in subnet 12.5.4.0/23. Which of the following IP addresses could be leased as a result of your new configuration?,"a. 12.5.255.200
+b. 12.5.4.254
+c. 12.5.1.156
+d. 12.5.5.200
+",,d,d,,"The subnet 12.5.4.0/23 has an IP address range from 12.5.4.0 to 12.5.5.255, because a /23 subnet mask means that the first 23 bits of the IP address are used for network identification, leaving the remaining 9 bits for host addresses. This gives us 2^9 or 512 possible IP addresses. The last 100 usable IP addresses of this range would be from 12.5.5.156 to 12.5.5.255, because the first and last addresses in the subnet (12.5.4.0 and 12.5.5.255) are reserved for the network and broadcast addresses, respectively. Therefore, only option d (12.5.5.200) falls within the last 100 usable IP addresses of this subnet.","['https://www.cisco.com/c/en/us/support/docs/ip/dynamic-address-allocation-resolution/13788-3.html', 'https://www.calculator.net/ip-subnet-calculator.html', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter4_advanced_ipv4_addressing,0.95,0.9994408095352976,1.0
+70,"You are working with a network engineer to design a network for the new Campus. He provided the following details:
+The IP address is 195.240.37.43
+The subnet mask is 255.255.255.224
+You have been tasked to find the:
+1. Network (N) bits
+2. Subnet bits (S)
+3. Host (H) bits.","a. Network Bits = 15 | Subnet Bits = 2 | Host Bits = 1
+b. Network Bits = 28 | Subnet Bits = 1 | Host Bits = 2
+c. Network Bits = 24 | Subnet Bits = 3 | Host Bits = 5
+d. Network Bits = 20 | Subnet Bits = 3 | Host Bits = 1
+",,c,c,,"The IP address provided is a class C address because it starts with 195, which falls within the range of 192 to 223 for class C addresses. Class C addresses have 24 network bits by default. The subnet mask 255.255.255.224 has 27 bits for the network and subnet combined because the binary representation of the last octet (224) is 11100000, which adds 3 more bits to the default 24 network bits of a class C address. Therefore, the subnet bits are 3 (27 total network and subnet bits minus the default 24 network bits). The remaining bits are for hosts. Since an octet has 8 bits and we have used 3 for subnetting, we have 5 bits left for hosts (8 - 3 = 5).","['https://en.wikipedia.org/wiki/Classful_network', 'https://www.calculator.net/ip-subnet-calculator.html']",1,chapter4_advanced_ipv4_addressing,0.95,0.9990888326652866,1.0
+71,Which of the following binary masks is equivalent to the 255.255.255.240 dotted-decimal notation (DDN)?,"a. 11111111.11111111.11111111.11110000
+b. 11111111.11111111.11111111.11111110
+c. 11111111.11111111.11111111.11111100
+d. 11111111.11111111.11111111.10000000
+",,a,a,,"The binary mask equivalent to the dotted-decimal notation (DDN) 255.255.255.240 is a series of ones followed by a series of zeros. In binary, 255 is represented as 11111111, which accounts for the first three octets of the mask. The last octet in the DDN is 240, which in binary is 11110000. This is because the decimal number 240 corresponds to the binary digits where the first four bits are ones and the last four bits are zeros (128 + 64 + 32 + 16 = 240). Therefore, the correct binary mask is 11111111.11111111.11111111.11110000.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://www.ionos.com/digitalguide/server/know-how/subnet-masks/']",1,chapter4_advanced_ipv4_addressing,1.0,1.0,1.0
+72,Which of the following binary masks is equivalent to the 255.192.0.0 dotted-decimal notation (DDN)?,"a. 11111111.11111111.11111111.00000000
+b. 11111111.11111111.11111111.10000000
+c. 11111111.11000000.00000000.00000000
+d. 11111111.11111111.11111111.11111110
+",,c,c,,"The binary mask equivalent to the dotted-decimal notation (DDN) 255.192.0.0 is 'c' 11111111.11000000.00000000.00000000. In DDN, each octet represents 8 bits, and the value 255 in binary is represented as 11111111, which corresponds to all bits set to 1. The value 192 in binary is 11000000, which corresponds to the first two bits set to 1 and the remaining six bits set to 0. The last two octets are 0.0, which in binary is represented as 00000000.00000000, with all bits set to 0.","['https://www.ionos.com/digitalguide/server/know-how/subnet-masks-and-subnetting/', 'https://www.computerhope.com/jargon/s/subnet.htm']",1,chapter4_advanced_ipv4_addressing,0.99,1.0,1.0
+73,Find the subnet ID from the IP address 10.75.20.3/24,"a. 10.75.5.0
+b. 10.0.0.0
+c. 10.75.0.0
+d. 10.75.20.0
+",,d,d,,"The subnet ID is the first address in a subnet, which can be determined by applying the subnet mask to the IP address. With a /24 subnet mask, the first 24 bits of the IP address are the network portion, and the last 8 bits are for host addresses. Therefore, the subnet ID is the IP address with the last 8 bits set to zero. In this case, the subnet ID is 10.75.20.0.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter4_advanced_ipv4_addressing,1.0,1.0,1.0
+74,Find the subnet ID from the IP address 10.75.20.4/17,"a. 10.75.0.0
+b. 10.0.0.0
+c. 10.75.20.0
+d. 10.75.5.0
+",,a,a,,"To find the subnet ID from the given IP address 10.75.20.4 with a /17 prefix, we need to calculate the network portion of the IP address based on the subnet mask. A /17 prefix indicates that the first 17 bits of the IP address are the network bits. In binary, the address 10.75.20.4 is 00001010.01001011.00010100.00000100. The subnet mask for /17 is 255.255.128.0, which in binary is 11111111.11111111.10000000.00000000. When we apply the subnet mask to the IP address, we keep the first 17 bits and set the rest to 0, which gives us the subnet ID. The result is 00001010.01001011.00000000.00000000, which translates back to 10.75.0.0.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://www.subnet-calculator.com/']",1,chapter4_advanced_ipv4_addressing,1.0,0.9999983759447189,1.0
+75,Which of the following dotted-decimal notation (DDN) is equivalent of /17.,"a. 255.255.192.0
+b. 255.255.224.0
+c. 255.128.0.0
+d. 255.255.128.0
+",,d,d,,"A subnet mask of /17 means that the first 17 bits of the IP address are used for the network portion. In dotted-decimal notation, this corresponds to 255.255.128.0. Here's how it breaks down: The first two octets are completely filled with 1 bits, which is 255 in each case. The third octet has 1 bit for the first half (128) and 0 for the second half, making it 128. The fourth octet is all 0 bits since they are all used for the host portion in this subnet. Therefore, the correct answer is 255.255.128.0.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter4_advanced_ipv4_addressing,1.0,0.647496979684012,1.0
+76,Which of the following dotted-decimal notation (DDN) is equivalent of /28.,"a. 255.255.255.240
+b. 255.128.224.0
+c. 255.255.255.248
+d. 255.255.255.224
+",,a,a,,"The /28 denotes a subnet mask with 28 bits set to 1, and the remaining 4 bits set to 0. In binary, this would be 11111111.11111111.11111111.11110000, which translates to the dotted-decimal notation as 255.255.255.240. Here's the breakdown of the other options: b) 255.128.224.0 is incorrect because it does not represent a continuous string of 28 ones in binary. c) 255.255.255.248 corresponds to /29 in CIDR notation. d) 255.255.255.224 corresponds to /27 in CIDR notation.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter4_advanced_ipv4_addressing,1.0,0.999999448776502,1.0
+77,The broadcast address from the IP address 67.68.67.68/12 is 67.79.255.255.,"a. FALSE
+b. TRUE
+",,b,a,,"To find the broadcast address from an IP address with a given subnet mask, you have to perform binary calculations. A /12 subnet mask means that the first 12 bits of the IP address are dedicated to the network portion, and the remaining 20 bits are used for hosts within that network. The IP address 67.68.67.68 in binary is 01000011.01000100.01000011.01000100. The network portion is the first 12 bits (01000011.0100), and the host portion is the remaining 20 bits (0100.01000011.01000100). To get the broadcast address, you set all the host bits to 1, which would be 01000011.01001111.11111111.11111111 in binary, or 67.79.255.255 in decimal. However, the given IP address 67.68.67.68 does not fall within the range of the network defined by a /12 subnet mask starting with 67.0.0.0. Therefore, the broadcast address for the network 67.68.0.0/12 would actually be 67.79.255.255, making the statement TRUE. This was a mistake in the initial analysis.","['https://www.calculator.net/ip-subnet-calculator.html', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",0,chapter4_advanced_ipv4_addressing,1.0,0.8190855286462986,0.0
+78,"Subnet masks can be written as 32-bit binary numbers, but not just any binary number. In particular, the binary subnet mask must follow these rules:
+1. The value must not interleave 1s and 0s.
+2. If 0s exist, they are on the left.
+3. If 1s exist, they are on the right.","a. TRUE
+b. FALSE
+",,b,b,,"The rules listed in the question are incorrect and therefore, the statement is false. The correct rules for binary subnet masks are as follows: 1. The subnet mask must consist of contiguous 1s followed by 0s. 2. The 1s are on the left, and the 0s are on the right. 3. There should not be any interleaving of 1s and 0s. The incorrect rules stated in the question are likely a misinterpretation of these correct rules.","['https://en.wikipedia.org/wiki/Subnetwork', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13769-5.html']",1,chapter4_advanced_ipv4_addressing,1.0,0.9980880685739116,1.0
+79,Which of the following answers lists the prefix (CIDR) format equivalent of 255.255.254.0?,"a. /22
+b. /20
+c. /23
+d. /21
+",,c,c,,"The subnet mask 255.255.254.0 in binary would be 11111111.11111111.11111110.00000000. Counting the number of '1' bits gives us 23, which corresponds to a /23 prefix in CIDR notation.","['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.ripe.net/about-us/press-centre/understanding-ip-addressing']",1,chapter4_advanced_ipv4_addressing,1.0,0.9999984951481324,1.0
+80,Which of the following answers lists the prefix (CIDR) format equivalent of 255.192.0.0?,"a. /11
+b. /12
+c. /10
+d. /13
+",,c,b,,"The prefix (CIDR) format is a shorthand for expressing an IP address and its associated network mask. CIDR notation is expressed as the IP address, a slash ('/') character, and a number (the prefix length) specifying the number of bits in the network portion of the address. To find the CIDR equivalent of a subnet mask, you count the number of consecutive '1' bits in the mask from left to right. The subnet mask 255.192.0.0 in binary is 11111111.11000000.00000000.00000000. Counting the number of '1' bits gives us 8 (from the first octet) + 4 (from the second octet) = 12 bits. Therefore, the CIDR notation for the subnet mask 255.192.0.0 is /12.","['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.ripe.net/about-us/press-centre/understanding-ip-addressing']",0,chapter4_advanced_ipv4_addressing,1.0,0.9829428272714656,0.0
+81,"Your task is to troubleshoot a user’s PC with IP 192.168.100.1/28. Based on the given details choose the number of the network (N), subnet (S), and host (H) bits.","a. Network Bits = 20 | Subnet Bits = 5 | Host Bits = 7
+b. Network Bits = 28 | Subnet Bits = 1 | Host Bits = 2
+c. Network Bits = 30 | Subnet Bits = 1 | Host Bits = 1
+d. Network Bits = 24 | Subnet Bits = 4 | Host Bits = 4
+",,d,d,,"The IP address 192.168.100.1/28 indicates that 28 bits are used for the network and subnet portion of the address. In the context of the standard classful addressing, the IP address falls within Class C, which by default has 24 network bits. The remaining 4 bits (28 - 24) are used for subnetting. This leaves 32 - 28 = 4 bits for host addresses. Therefore, there are 24 network bits, 4 subnet bits, and 4 host bits.","['https://en.wikipedia.org/wiki/Classful_network', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter4_advanced_ipv4_addressing,1.0,0.8903224664720188,1.0
+82,Your task is to find the broadcast address from the IP address 10.75.20.3 with subnet mask 255.248.0.0,"a. Broadcast address: 10.75.255.255
+b. Broadcast address: 10.79.255.255
+c. Broadcast address: 10.75.20.255
+d. Broadcast address: 10.80.255.255
+",,b,b,,"The subnet mask 255.248.0.0 corresponds to a /13 prefix length. This means that the first 13 bits of the IP address are used for network identification and the remaining bits are used for host addresses. To find the broadcast address, we set all the host bits to 1. The subnet mask 255.248.0.0 in binary is 11111111.11111000.00000000.00000000. The IP address 10.75.20.3 in binary is 00001010.01001011.00010100.00000011. When we apply the subnet mask, we keep the network part unchanged and set all the host bits to 1, which gives us 00001010.01001111.11111111.11111111 in binary, or 10.79.255.255 in decimal. Therefore, the broadcast address is 10.79.255.255.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://www.calculator.net/ip-subnet-calculator.html']",1,chapter4_advanced_ipv4_addressing,1.0,0.9996296944000496,1.0
+83,Your task is to find the broadcast address from the IP address 172.30.70.26 with subnet mask 255.255.192.0,"a. Broadcast address: 172.30.87.255
+b. Broadcast address: 172.30.70.255
+c. Broadcast address: 172.30.127.255
+d. Broadcast address: 172.30.100.255
+",,c,c,,"To find the broadcast address for the IP address 172.30.70.26 with a subnet mask of 255.255.192.0, we need to determine the range of the network. The subnet mask 255.255.192.0 corresponds to the prefix /18 in CIDR notation. This means that the first 18 bits of the IP address are used for the network part, and the remaining bits are used for hosts within that network. The binary representation of the subnet mask is 11111111.11111111.11000000.00000000.
+
+When we apply the subnet mask to the IP address, we keep the network part the same and set all host bits to 1 to get the broadcast address. For the third octet, 192 in binary is 11000000, so we need to set the remaining bits to 1 to get the broadcast address for that octet, which becomes 11111111 or 255 in decimal. Therefore, the broadcast address for the network 172.30.70.26 with a subnet mask of 255.255.192.0 is 172.30.127.255, where 127 is the last network address for the third octet before the host portion starts.","['https://www.calculator.net/ip-subnet-calculator.html', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,0.95,0.9999249493064444,1.0
+84,Which of the following answers lists the dotted decimal notation (DDN) equivalent of /30?,"a. 255.255.255.240
+b. 255.255.192.0
+c. 255.255.255.252
+d. 255.255.252.0
+",,c,c,,"A /30 subnet mask indicates that 30 bits are used for the network portion of the address, leaving 2 bits for the host portion. In dotted decimal notation, this translates to 255.255.255.252. Option 'c' correctly represents the subnet mask /30 in dotted decimal notation. Here's the breakdown of how the bits are represented in each octet for a /30 subnet mask: 11111111.11111111.11111111.11111100, which in decimal format is 255.255.255.252. Option 'a' represents a /28 subnet mask, option 'b' represents a /18 subnet mask, and option 'd' represents a /22 subnet mask.",['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing'],1,chapter4_advanced_ipv4_addressing,1.0,1.0,1.0
+85,Which of the following answers lists the dotteddecimal notation (DDN) equivalent of /18?,"a. 255.255.255.192
+b. 255.255.224.0
+c. 255.255.128.0
+d. 255.255.192.0
+",,d,b,,"A /18 subnet mask means that the first 18 bits of the 32-bit address are used for the network portion. In dotted decimal notation, this corresponds to 255.255.224.0. Here's how it breaks down: The first two octets are full, so they are 255 each. The third octet has 2^(8-2) = 64 subnets, so the subnet mask for the third octet is 256 - 64 = 192, but since we need 18 bits, we take one more bit to make it 256 - 128 = 128. However, we don't subtract the 128 from 256; the value of the third octet is 128 less than 256, which is 224. The last octet is 0 because no bits are used for the network portion in that octet.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://www.calculator.net/ip-subnet-calculator.html']",0,chapter4_advanced_ipv4_addressing,1.0,0.9034744303630184,0.0
+86,"Which of the following masks, when used within a Class B network, would supply enough subnet bits to support 90 subnets? (Choose two)","a. /19
+b. /21
+c. 255.255.224.0
+d. /24
+e. 255.255.255.252
+f. 255.255.240.0
+",,"d,e","a,c",,"For a Class B network, the default subnet mask is 255.255.0.0, which is equivalent to /16. To support 90 subnets, we need enough subnet bits beyond the default 16 bits. To calculate the number of subnet bits required, we can use the formula 2^n >= number of subnets, where n is the number of bits. For 90 subnets, we need at least 7 bits (since 2^6 = 64 and 2^7 = 128). Therefore, we need to add 7 bits to the default 16, which gives us 23 bits for the subnet mask. A /19 subnet mask (which is 255.255.224.0) provides 3 bits for host addresses within each subnet and 7 bits for the subnetting, which is enough to support 128 subnets (2^7). Therefore, options a and c are correct.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.ripe.net/about-us/press-centre/understanding-ip-addressing']",0,chapter4_advanced_ipv4_addressing,1.0,0.802577351067421,0.0
+88,"Your task is to troubleshoot a user’s PC with IP 10.20.30.5 and mask 255.255.255.0. Based on the given details type the number of the network (N), subnet (S), and host (H) bits.","a. Network Bits = 8 | Subnet Bits = 16 | Host Bits = 8
+b. Network Bits = 16 | Subnet Bits = 15 | Host Bits = 1
+c. Network Bits = 8 | Subnet Bits = 8 | Host Bits = 16
+d. Network Bits = 16 | Subnet Bits = 1 | Host Bits = 15
+",,a,c,,"The IP address given is 10.20.30.5 with a subnet mask of 255.255.255.0. This subnet mask indicates that the first three octets (each octet is 8 bits) are used for the network and subnet portions, while the last octet is used for host addresses. In a classful network, the IP address 10.0.0.0 would be a Class A address, which typically has 8 network bits and 24 host bits. However, subnetting is being used here as indicated by the subnet mask 255.255.255.0, which means that an additional 16 bits are being used for subnetting (making a total of 24 bits for network and subnetting), leaving 8 bits for the host portion. Therefore, the correct answer is 8 network bits, 16 subnet bits, and 8 host bits.","['https://en.wikipedia.org/wiki/Subnetwork', 'https://en.wikipedia.org/wiki/Classful_network', 'https://en.wikipedia.org/wiki/IPv4_subnetting_reference']",0,chapter4_advanced_ipv4_addressing,1.0,0.8323280791379414,0.0
+89,The converted binary mask 11111111.11111111.11111110.00000000 to decimal is _______________.,"a. 255.255.252.0
+b. 255.255.255.192
+c. 255.255.254.0
+d. 255.255.255.224
+",,c,c,,"The binary mask given is 11111111.11111111.11111110.00000000. When converted to decimal, each octet represents a number from 0 to 255. The first two octets with all '1's represent the number 255. The third octet has all '1's except for the last bit, which is '0', represents 254 (128 + 64 + 32 + 16 + 8 + 4 + 2). The last octet with all '0's represents the number 0. Therefore, the binary mask in decimal is 255.255.254.0.","['https://www.paloaltonetworks.com/cyberpedia/what-is-a-subnet-mask', 'https://www.computerhope.com/jargon/b/binary.htm']",1,chapter4_advanced_ipv4_addressing,1.0,0.9999996871837188,1.0
+90,Which of the following binary masks is equivalent to the 255.192.0.0 dotted-decimal notation (DDN)?,"a. 11111111.11110000.00000000.00000000
+b. 11111111.11100000.00000000.00000000
+c. 11111111.11000000.00000000.00000000
+d. 11111111.11111000.00000000.00000000
+",,c,c,,"The dotted-decimal notation (DDN) 255.192.0.0 corresponds to the binary mask where the first octet is 255 (which is 11111111 in binary), the second octet is 192 (which is 11000000 in binary), and the third and fourth octets are 0 (which are 00000000 in binary). Therefore, the binary mask equivalent to the DDN 255.192.0.0 is 11111111.11000000.00000000.00000000.","['https://www.ripe.net/about-us/press-centre/understanding-ip-addressing', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter4_advanced_ipv4_addressing,1.0,0.9999839524287636,1.0

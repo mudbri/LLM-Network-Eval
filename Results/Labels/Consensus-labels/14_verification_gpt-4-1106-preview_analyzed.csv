@@ -1,0 +1,66 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Unnamed: 46,Score-right-minus-wrong
+107,"Which of the following assertions could be verified with configuration verification (i.e., of a snapshot of router and switch configuration)? Select all that apply.","a. A route learned from one peer will not be readvertised to another peer.
+b. The current settings of link weights will result in all routers being connected.
+c. The configuration of route reflectors and clients ensures that any route learned from a neighboring AS will propagate to all routers in the topology.
+d. There is no traffic pattern that would ever result in a stateful firewall dropping traffic.
+e. Any time that an infection occurs, hosts are automatically quarantined.
+","a,b,c","a,c","Configuration verification involves examining the static configuration of network devices, like routers and switches, to ensure that they are set up correctly according to the network policies and intended design. It does not involve the dynamic state of the network or traffic patterns.
+
+a. Verifying that a route learned from one peer will not be readvertised to another peer can be done by examining routing policies and filters in the configuration.
+
+b. The current settings of link weights affecting connectivity is a dynamic property which can be influenced by various factors like link failures or changes in the network topology. Configuration alone cannot guarantee connectivity.
+
+c. The configuration of route reflectors and clients can be verified by examining the BGP configuration to ensure that the appropriate BGP sessions and policies are set up to allow propagation of routes.
+
+d. The behavior of a stateful firewall under various traffic patterns is dynamic and cannot be fully verified by static configuration alone since it depends on the state of the network traffic.
+
+e. Whether hosts are automatically quarantined in the event of an infection involves dynamic behavior and interaction with security systems, which cannot be verified through static configuration verification alone.","['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_bgp/configuration/xe-16/irg-xe-16-book/irg-route-reflector.html', 'https://www.juniper.net/documentation/en_US/junos/topics/topic-map/bgp-route-reflection.html', 'https://www.oreilly.com/library/view/network-warrior-2nd/9781449387860/ch04.html']",0,14_verification,0.95,0.859194171454021,Does not know that the current settings are affecting link connectivity is not a dynamic property,Wrong Facts/Concept,Incorrect information/concept,,,0,0,,,1,1,1,Advanced networking,3,4,2,2,,0.6000000000000001
+108,Which of the following are true about data-plane verification? Select all that apply.,"a. Data-plane verification techniques such as header-space analysis typically operate on a single ""snapshot"" of data-plane state.
+b. Data plane verification can only operate on the forwarding table of a single router or switch; network-wide analysis is not possible.
+c. Data-plane verification may detect errors that configuration analysis can miss in the cases of buggy control-plane software.
+d. Data-plane verification requires accurate modeling of network protocols, including which bits are present in which part of the packet header.
+e. Header-space analysis can only provide verification/analysis for specific packets; it cannot answer questions for general parts of flowspace.
+","a,c","a,c,d","Data-plane verification is a technique used to ensure that the network is forwarding packets correctly according to the current configuration and state of the network devices. Here's an evaluation of each choice provided:
+
+a. Data-plane verification techniques such as header-space analysis do indeed typically operate on a single 'snapshot' of data-plane state. This snapshot represents the state of the network at a particular point in time.
+
+b. This statement is incorrect. Data-plane verification can be performed network-wide, not just on a single router or switch. Tools and techniques are designed to analyze the collective behavior of multiple forwarding tables across the network.
+
+c. Data-plane verification can detect errors that configuration analysis might miss, especially in cases where the control-plane software is buggy or the network state has inconsistencies due to transient conditions or faults.
+
+d. Accurate modeling of network protocols is necessary for data-plane verification, as it involves understanding how packets are processed and forwarded based on the bits present in the packet headers.
+
+e. Header-space analysis is not limited to specific packets; it can analyze and verify the behavior of the network for general parts of the flow space. It works by abstracting the packet headers and analyzing the forwarding behavior for entire sets of packets that match certain header patterns.","['https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/kazemian', 'https://www.sciencedirect.com/science/article/pii/S1877050919315462', 'https://www.cs.princeton.edu/~jrex/papers/hsa12.pdf']",0,14_verification,0.95,0.9999867388666,Conceptual issue - data plane verification does not require knowledge about protocols,Wrong Facts/Concept,Incorrect information/concept,,,0,1,research paper,1.0,1,1,1,Advanced networking,3,4,2,2,,0.6000000000000001
+109,Which of the following assertions could be verified with data plane verification? Select all that apply.,"a. The network will remain connected, given the failure of at most two links.
+b. Two virtual network ""slices"" are not completely isolated: it is possible for traffic to travel from one slice to the other.
+c. The configuration of the network's routing protocols will result in persistent oscillation (i.e., they will never settle on a stable set of routes).
+d. The forwarding table state in the routers across the network will result in a forwarding loop.
+e. The rules installed on the firewalls in the network ensure that only port 80 traffic can ever reach the web server from the rest of the Internet.","b,d,e","b,d","Data plane verification is concerned with ensuring that the actual forwarding behavior of the network matches the desired behavior according to the network's configuration. It involves checking the state of the network's forwarding tables, the rules installed on network devices like firewalls, and the actual flow of packets through the network.
+
+a. The network's ability to remain connected given the failure of links is related to the network's control plane and its resilience or redundancy mechanisms, not the data plane.
+
+b. Verifying whether two virtual network 'slices' are isolated can be done by analyzing the forwarding tables and firewall rules to see if there are paths that traffic can take between the slices. This is a data plane verification task.
+
+c. The configuration of routing protocols and their convergence to a stable state is a control plane issue. Data plane verification does not deal with the dynamics of routing protocol state.
+
+d. Checking for forwarding loops involves analyzing the forwarding tables in routers to see if packets could be sent in a loop, which is a data plane verification task.
+
+e. Ensuring that only certain types of traffic can reach a server is related to the rules installed on the firewalls, which is part of the data plane. However, verifying that 'only port 80 traffic can ever reach the web server' involves ensuring that the network adheres to a policy, which may require both data plane and control plane verification to ensure that the rules are correctly implemented and enforced.","['https://en.wikipedia.org/wiki/Software-defined_networking', 'https://www.cs.princeton.edu/~jrex/papers/dpverification.pdf']",0,14_verification,0.85,0.703868396575614,Conceptual issue - data plane verification is still about policies,Wrong Facts/Concept,Incorrect information/concept,,,0,1,wikipedia ,0.0,1,1,1,Advanced networking,3,4,2,2,,0.6000000000000001
+110,Which of the following is true about Kinetic policies? Select all that apply.,"a. State transitions can be exogenous or endogenous.
+b. Kinetic's NuSMV verifier can verify that the data plane will never have loops.
+c. State transitions can occur based on timing (e.g., a timeout).
+d. The Kinetic controller can only process external events from routers and switches.
+e. Pyretic's composition operators can help prevent state explosion.
+","a,c,e","a,b,c,e","Kinetic is a framework for programming networks with stateful abstractions. Here's the analysis of each statement:
+
+a. State transitions in Kinetic can indeed be both exogenous, triggered by external events, and endogenous, triggered by internal conditions or state changes. This is a characteristic of stateful SDN controllers.
+
+b. One of the advantages of Kinetic is that it can use model checking tools like NuSMV to verify properties of the network, such as the absence of loops in the data plane, which is a critical safety property.
+
+c. Kinetic policies can specify state transitions based on timing conditions, such as timeouts, which is useful for implementing features like aging out flow entries or handling transient states.
+
+d. The Kinetic controller is not limited to processing only external events from routers and switches. It can also process internal events and maintain state across different events, which is a key feature of stateful SDN applications.
+
+e. Pyretic, which is a network programming language, provides composition operators that can be used to build complex policies from simpler ones without causing state explosion. This is because these operators allow for modular programming, which helps manage complexity.
+
+Therefore, options a, b, c, and e are correct, while option d is not true about Kinetic policies.","['https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-foster.pdf', 'https://www.researchgate.net/publication/283318418_Kinetic_A_New_Approach_to_Software_Defined_Networking', 'https://dl.acm.org/doi/10.1145/2491185.2491207']",0,14_verification,0.95,0.996158182645102,Conceptual issue - Kinetic cannot verify the absence of loops,Wrong Facts/Concept,Incorrect information/concept,,,0,1,research paper,0.0,1,1,1,Advanced networking,3,4,2,2,,0.6000000000000001

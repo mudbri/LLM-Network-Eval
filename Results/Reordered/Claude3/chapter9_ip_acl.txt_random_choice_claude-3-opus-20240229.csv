@@ -1,0 +1,137 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+154,"Given the following URI https://courses.examsdigest.com/ccna, which part is the hostname?","a. examsdigest.com/ccna
+b. courses
+c. courses.examsdigest.com
+d. https
+e. examsdigest.com
+",,c,c,,The hostname in the given URI is courses.examsdigest.com. The hostname is the part of the URI that identifies the host or domain name of the network location. It comes after the scheme (https in this case) and before the path (/ccna).,"['CCNA 200-301 Official Cert Guide, Volume 1, Wendell Odom, Chapter 28: Fundamentals of IP Version 6', 'RFC 3986: Uniform Resource Identifier (URI): Generic Syntax, Section 3.2.2. Host']",1,chapter9_ip_acl,0.95,1,1.0
+155,Which of the following protocols uses the port 443?,"a. SMTP
+b. HTTPS
+c. SSH
+d. HTTP
+",,b,b,,"HTTPS (Hypertext Transfer Protocol Secure) uses port 443 by default. It is the secure version of HTTP, which uses port 80. HTTPS encrypts the data transmitted between the client and server using SSL/TLS protocols, ensuring secure communication over the internet.","['IANA Service Name and Transport Protocol Port Number Registry: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'Cisco Networking Academy: Introduction to Networks v7.0 - Chapter 9: Transport Layer']",1,chapter9_ip_acl,0.99,1,1.0
+156,Which of the following protocols uses the port 80?,"a. HTTPS
+b. SMTP
+c. HTTP
+d. SSH
+",,c,c,,"HTTP (Hypertext Transfer Protocol) uses port 80 by default. It is the protocol used for transmitting web pages and other web content over the Internet. The other protocols listed use different default ports: HTTPS uses port 443, SMTP uses port 25, and SSH uses port 22.","['IANA Service Name and Transport Protocol Port Number Registry (https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)', 'RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1 (https://tools.ietf.org/html/rfc2616)']",1,chapter9_ip_acl,0.99,1,1.0
+157,Which of the following protocols uses the port 25?,"a. SSH
+b. HTTPS
+c. SMTP
+d. HTTP
+",,c,c,,"SMTP (Simple Mail Transfer Protocol) is the protocol used for sending email messages between servers. It uses port 25 by default. SSH uses port 22, HTTPS uses port 443, and HTTP uses port 80.","['IANA Service Name and Transport Protocol Port Number Registry (https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)', 'RFC 821 - Simple Mail Transfer Protocol (https://tools.ietf.org/html/rfc821)']",1,chapter9_ip_acl,0.95,1,1.0
+158,Which of the following protocols uses the port 22?,"a. SMTP
+b. HTTPS
+c. HTTP
+d. SSH
+",,d,d,,"SSH (Secure Shell) is a network protocol that uses port 22 by default for secure remote login and other secure network services over an unsecured network. SMTP uses port 25, HTTP uses port 80, and HTTPS uses port 443.","['IANA Service Name and Transport Protocol Port Number Registry: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'SSH.com: https://www.ssh.com/academy/ssh/port']",1,chapter9_ip_acl,0.99,1,1.0
+159,Which of the following port numbers the SNMP protocol uses?,"a. 25
+b. 160
+c. 20
+d. 161
+",,d,d,,"The Simple Network Management Protocol (SNMP) uses UDP port 161 for sending and receiving requests between managers and agents. Port 161 is the standard port reserved for SNMP. The other port numbers listed are used for different protocols - port 25 for SMTP, port 20 for FTP data transfer, and port 160 is not a well-known port.","['IETF RFC 1157: A Simple Network Management Protocol (SNMP)', 'IANA Service Name and Transport Protocol Port Number Registry']",1,chapter9_ip_acl,0.95,1,1.0
+160,Which of the following port numbers the POP3 protocol uses?,"a. 110
+b. 130
+c. 100
+d. 120
+",,a,a,,The POP3 (Post Office Protocol version 3) protocol uses port number 110 for non-encrypted communication. POP3 is an application-layer protocol used by email clients to retrieve email messages from a remote server over a TCP/IP connection.,"['IANA Service Name and Transport Protocol Port Number Registry: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'RFC 1939 - Post Office Protocol - Version 3: https://tools.ietf.org/html/rfc1939']",1,chapter9_ip_acl,0.98,1,1.0
+161,Which of the following port numbers the DNS protocol uses?,"a. 51
+b. 52
+c. 53
+d. 50
+",,c,c,,The Domain Name System (DNS) protocol uses port 53 for its communication. DNS is used to translate domain names to IP addresses. Port 53 is reserved for both TCP and UDP traffic for DNS queries and responses between DNS clients and servers.,"['IANA Service Name and Transport Protocol Port Number Registry: https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'RFC 1035 - Domain Names - Implementation and Specification: https://tools.ietf.org/html/rfc1035']",1,chapter9_ip_acl,1.0,1,1.0
+163,Which of the following options are things that a standard IP ACL could be configured to do? (Choose two answers.),"a. Match only the packet’s destination IP address
+b. Match IP addresses 20.2.2.2 through 20.2.2.22 with one access-list command without matching other IP addresses
+c. Match the exact source IP address
+d. Match all IP addresses in a subnet with one access-list command without matching other IP addresses
+",,"c,d","c,d",,"A standard IP access control list (ACL) can match the exact source IP address of a packet using a single access-list command. It can also match all IP addresses in a subnet using a wildcard mask without matching other IP addresses outside that subnet. However, a standard ACL cannot match a packet's destination IP address or a specific range of IP addresses like 20.2.2.2 through 20.2.2.22 with a single command.","['CCNA 200-301 Official Cert Guide, Volume 2, Chapter 16: IP Access Control Lists', 'Cisco IOS Security Configuration Guide, Release 12.4: Configuring IP Access Lists']",1,chapter9_ip_acl,0.95,1,1.0
+164,"One of the differences between named and numbered ACLs is that named ACLS using ACL subcommands, not global commands, to define the action and matching parameters.","a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. Named ACLs use ACL subcommands within the named ACL configuration mode to define the action (permit or deny) and the matching parameters for the ACL entries. In contrast, numbered ACLs use global configuration commands to define the action and matching parameters directly under the global configuration mode.","['Cisco Press CCNA 200-301 Official Cert Guide, Chapter 16: Access Control Lists (ACLs)', 'Cisco Documentation: Configure IP Access Control Lists (https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html)']",1,chapter9_ip_acl,0.95,1,1.0
+165,"Given the following fields, which of those cannot be compared on an extended IP ACL?","a. Source IP address
+b. URL
+c. Destination IP address
+d. TOS Byte
+e. Application protocol
+",,b,b,,"URL cannot be compared on an extended IP access control list (ACL). Extended IP ACLs can filter based on source and destination IP addresses, IP protocol number, TCP or UDP port numbers, and optional protocol type information for finer granularity of control. However, they do not have the capability to filter based on URL, which operates at the application layer. To filter web traffic by URL, a firewall or web proxy that can inspect HTTP traffic would be needed.","['Cisco Press CCNA 200-301 Official Cert Guide, Chapter 16: IP Access Control Lists', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_data_acl/configuration/15-mt/sec-data-acl-15-mt-book/sec-create-ip-apply.html']",1,chapter9_ip_acl,0.95,1,1.0
+166,"Your task is to type a one-line standard ACL that matches the following criteria. All access-list commands use the number 1 in the command.
+Criteria #1: Permit packets from 186.33.2.3
+ACL command #1: ______________________","a. access-list 1 deny 186.33.0.0
+b. access-list 1 permit 186.33.2.0
+c. access-list 1 deny 186.33.2.3
+d. access-list 1 permit 186.33.2.3
+",,d,d,,"To permit packets from the specific IP address 186.33.2.3, the correct ACL command is 'access-list 1 permit 186.33.2.3'. This command explicitly allows traffic from that exact IP address. The other options are incorrect because they either deny traffic (which is the opposite of what we want) or use a different IP address or subnet that doesn't precisely match 186.33.2.3.","['Cisco CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1,1.0
+167,"Your task is to type a one-line standard ACL that matches the following criteria. All access-list commands use the number 1 in the command.
+Criteria #2: Permit packets from hosts with 56.57.2 as the first three octets
+ACL command #2: ______________________","a. access-list 1 permit 57.57.2.0 0.0.0.255
+b. access-list 1 deny 56.57.2.0 0.0.0.255
+c. access-list 1 permit 56.57.2.0 0.0.0.255
+d. access-list 1 permit 56.57.2.0 0.0.255.255
+",,c,c,,"The correct answer is c. The ACL command 'access-list 1 permit 56.57.2.0 0.0.0.255' matches the criteria of permitting packets from hosts with 56.57.2 as the first three octets. The wildcard mask 0.0.0.255 allows any value in the last octet, effectively matching all hosts with 56.57.2.x IP addresses.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1,1.0
+168,"Your task is to type a one-line standard ACL that matches the following criteria. All access-list commands use the number 1 in the command.
+Criteria #3: Permit packets from hosts with 56.57 as the first two octets
+ACL command #3: ______________________","a. access-list 1 permit 56.58.0.0 0.0.255.255
+b. access-list 1 permit 56.57.0.0 0.255.255.255
+c. access-list 1 permit 56.57.0.0 0.0.0.0
+d. access-list 1 permit 56.57.0.0 0.0.255.255
+",,d,d,,"To permit packets from hosts with 56.57 as the first two octets, the correct wildcard mask should be 0.0.255.255. This mask will match any IP address that starts with 56.57, while the last two octets can be any value. Option 'a' has the wrong second octet (58 instead of 57). Option 'b' uses 0.255.255.255 which will only match a single IP 56.57.0.0. Option 'c' uses 0.0.0.0 which will only match the exact IP 56.57.0.0. Therefore, option 'd' with the ACL command 'access-list 1 permit 56.57.0.0 0.0.255.255' is the correct answer.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1,1.0
+169,"Your task is to type a one-line extended ACL that matches the following criteria. All access-list commands use the number 101 in the command.
+Criteria #4: Permit packets from web client 65.5.5.5, sent to a web server in subnet 65.5.6.0/24
+ACL command #4: ______________________","a. access-list 101 deny tcp host 65.5.5.5 65.5.6.0 0.0.0.255 eq www
+b. access-list 101 permit tcp host 65.5.5.5 65.5.6.0 0.0.0.255 eq 23
+c. access-list 101 permit any any
+d. access-list 101 permit tcp host 65.5.5.5 65.5.6.0 0.0.0.255 eq www
+",,d,d,,"The correct answer is option d. The ACL command 'access-list 101 permit tcp host 65.5.5.5 65.5.6.0 0.0.0.255 eq www' matches the given criteria. It permits TCP packets from the specific host 65.5.5.5 to any host in the 65.5.6.0/24 subnet, but only if the destination port is www (HTTP). The other options are incorrect because: a) uses 'deny' instead of 'permit', b) specifies the wrong destination port (23 instead of www), and c) permits all traffic without matching the specific criteria.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: IP Access Control Lists', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_data_acl/configuration/15-mt/sec-data-acl-15-mt-book/sec-create-ip-al.html']",1,chapter9_ip_acl,0.95,1,1.0
+170,"Your task is to type a one-line extended ACL that matches the following criteria. All access-list commands use the number 101 in the command.
+Criteria #5: Permit any and every IPv4 packet
+ACL command #5: ______________________","a. access-list 101 permit ip 0.0.0.0 any
+b. access-list 101 permit ip any any
+c. access-list 101 permit ip any 0.0.0.0
+d. access-list 101 deny ip any any
+",,b,b,,"To permit any and every IPv4 packet in an extended ACL, the correct syntax is 'access-list 101 permit ip any any'. This matches all source IP addresses (first 'any') and all destination IP addresses (second 'any'), effectively permitting all IPv4 traffic.","['Cisco IOS Security Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book.html', 'Cisco Networking Academy - Access Control Lists: https://www.ciscopress.com/articles/article.asp?p=1697887&seqNum=3']",1,chapter9_ip_acl,0.95,1,1.0
+171,"Which of the following commands display the configuration of an IPv4 ACL, including line numbers? (Choose two answers.)","a. show running-config
+b. show access-lists
+c. show ip access-lists
+d. show startup-config
+",,"b,c","b,c",,"The 'show access-lists' and 'show ip access-lists' commands are used to display the configuration of IPv4 ACLs, including line numbers. The 'show running-config' and 'show startup-config' commands display the entire running or startup configuration of the device, which includes ACLs but not in a format that specifically focuses on ACLs with line numbers.","['Cisco IOS Security Command Reference: Commands S to Z - Cisco', 'Cisco CCNA 200-301 Official Cert Guide, Wendell Odom']",1,chapter9_ip_acl,0.95,1,1.0
+172,Type the access-list command that permits all packets sent from hosts in subnet 14.15.16.0/24. Use the ACL number 50 for the ACL rule.,"a. access-list 50 deny 14.15.16.0 0.0.0.255
+b. access-list 50 permit 14.15.16.0 0.0.0.255
+c. access-list 50 permit 14.15.17.0 0.0.0.255
+d. access-list 50 permit 14.15.16.0 0.255.255.255
+",,b,b,,"The correct command to permit all packets sent from hosts in subnet 14.15.16.0/24 using ACL number 50 is 'access-list 50 permit 14.15.16.0 0.0.0.255'. The command syntax is 'access-list [ACL number] [permit/deny] [source IP] [wildcard mask]'. The wildcard mask 0.0.0.255 matches the inverse of subnet mask 255.255.255.0, allowing any host within the 14.15.16.0/24 subnet.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1,1.0
+173,"Given the following access-list command access-list 2 permit 192.168.4.0 0.0.0.255, choose the exact range of IP addresses, matched by the command.","a. 192.168.4.0 – 192.168.5.255
+b. 192.168.4.0 – 192.168.4.255
+c. 192.167.4.0 – 192.168.4.255
+d. 192.0.0.0 – 192.168.4.255
+",,b,b,,"The access-list command 'access-list 2 permit 192.168.4.0 0.0.0.255' matches the IP address range 192.168.4.0 - 192.168.4.255. The wildcard mask 0.0.0.255 allows any value in the last octet, while fixing the first three octets to 192.168.4. This results in the range starting from 192.168.4.0 and ending at 192.168.4.255.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 16: IP Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,1.0,1,1.0
+174,The range of valid ACL numbers for standard numbered IP ACLs is:,"a. 1-101 and 1300 - 1999
+b. 1-49 and 1400 - 1999
+c. 1-99 and 1700 - 1999
+d. 1-99 and 1300 - 1999
+",,d,d,,"The range of valid ACL numbers for standard numbered IP ACLs is 1-99 and 1300-1999. Standard ACLs use numbers 1-99 or 1300-1999, while extended ACLs use numbers 100-199 or 2000-2699.","['Cisco Networking Academy, CCNA 200-301 Official Cert Guide, Volume 1, Chapter 16: Access Control Lists (ACLs)', 'Cisco Documentation, Access Control Lists: Overview and Guidelines, https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_data_acl/configuration/15-mt/sec-data-acl-15-mt-book/sec-access-list-ov.html']",1,chapter9_ip_acl,0.95,1,1.0
+175,"The ACL 55 on R1 has four statements, in the following order, with address and wildcard mask values as follows:
+1. 20.0.0.0 0.255.255.255
+2. 20.20.0.0 0.0.255.255
+3. 20.20.20.0 0.0.0.255
+4. 2.2.2.0 0.0.0.255
+If a router tried to match a packet sourced from IP address 20.20.20.20 using this ACL, which ACL statement does a router consider the packet to have matched?","a. Forth statement
+b. Third statement
+c. Implied deny at the end of the ACL
+d. First statement
+e. Second statement
+",,d,b,,"The router will match the packet to the third ACL statement. When a router processes an ACL, it goes through the statements in order from top to bottom. The packet with source IP 20.20.20.20 matches the third statement because it falls within the range specified by 20.20.20.0 0.0.0.255. Even though it also matches the less specific ranges in the first and second statements, the router stops processing the ACL as soon as it finds a match, so the third statement is the one considered matched.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",0,chapter9_ip_acl,0.95,1,0.1999999999999999
+176,"Which of the following access-list denies packets with a UDP header, any source IP address with source port greater than 10455, a destination IP address 30.3.3.3 and a destination port equal to 25?","a. access-list 101 deny udp any gt 10455 host 30.3.3.3 eq 28
+b. access-list 101 deny udp any gt 25 host 30.3.3.3 eq 25
+c. access-list 101 deny tcp any gt 10455 host 30.3.3.3 eq 25
+d. access-list 101 deny udp any gt 10455 host 30.3.3.3 eq 25
+",,d,d,,"The correct answer is d. The access-list command 'access-list 101 deny udp any gt 10455 host 30.3.3.3 eq 25' matches the given criteria: - It denies UDP packets (not TCP) - The source IP is 'any'  - The source port is greater than 10455 - The destination IP is the specific host 30.3.3.3 - The destination port equals 25 The other options have incorrect protocol (c), destination port (a), or source port (b) specifications that do not match the question.","['Cisco IOS Security Command Reference: access-list', 'Cisco Networking Academy: Access Control Lists']",1,chapter9_ip_acl,0.95,1,1.0
+177,"Which of the following access-list denies packets with a UDP header, a source IP address 30.3.3.3 and a source port greater than 10455, any destination IP address 30.3.3.3 with destination port equal to 25?","a. access-list 101 deny udp host 30.3.3.3 gt 10455 any eq 25
+b. access-list 101 deny udp host 30.3.3.3 gt 10455 any eq 30
+c. access-list 101 deny udp host 30.3.3.3 gt 25 any eq 25
+d. access-list 101 deny udp host 30.0.0.0 gt 10455 any eq 25
+",,a,a,,The correct answer is a. The access-list command 'access-list 101 deny udp host 30.3.3.3 gt 10455 any eq 25' will deny UDP packets from source IP 30.3.3.3 with source port greater than 10455 to any destination IP with destination port 25. This matches the criteria specified in the question.,"['Cisco IOS Security Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book.html', 'Cisco IOS Access Lists Cheat Sheet: https://packetlife.net/media/library/13/Cisco_IOS_Access_Lists.pdf']",1,chapter9_ip_acl,0.95,1,1.0
+178,"Choose the wildcard mask that matches all IP packets in the subnet 46.45.44.0, and mask 255.255.255.0.","a. 0.0.0.255
+b. 0.255.255.255
+c. 0.0.255.255
+d. 255.255.255.255
+",,a,a,,"The wildcard mask is the inverse of the subnet mask. Given the subnet mask is 255.255.255.0, the wildcard mask would be 0.0.0.255. This wildcard mask will match any IP address in the 46.45.44.0/24 subnet.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 12: IP Addressing', 'https://www.cisco.com/c/en/us/support/docs/ip/access-lists/26448-ACLsamples.html']",1,chapter9_ip_acl,0.95,1,1.0

@@ -1,0 +1,81 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+78,What are some of the desired features in future SDN switches that motivate a programmable data plane? Select all that apply.,"a. Reducing energy consumption for custom packet processing.
+b. Flexible match-action tables, such as the ability to compose multiple match-action tables in sequence or in parallel.
+c. A wider range of packet processing primitives.
+d. A configurable packet parser that is not tied to a specific header format.
+e. Processing packets at higher rates.
+",,"b,c,d","b,c,d",,"Software Defined Networking (SDN) aims to provide a more flexible and programmable approach to managing network traffic. The motivation for a programmable data plane includes the following features: 
+
+b. Flexible match-action tables are a core component of SDN switches, allowing for a variety of packet processing rules. The ability to compose these tables in sequence or in parallel adds to the flexibility and programmability of the network, enabling more complex and tailored processing scenarios. 
+
+c. A wider range of packet processing primitives allows for more sophisticated and customized network functions, which can be tailored to specific applications or services. This aligns with the SDN principle of enabling programmability at various layers of the network stack. 
+
+d. A configurable packet parser that is not tied to a specific header format is crucial for supporting new protocols and custom packet formats. This flexibility is essential in a programmable data plane to accommodate the evolving needs of network traffic and services. 
+
+While reducing energy consumption (a) and processing packets at higher rates (e) are general goals in networking, they are not features that specifically motivate a programmable data plane in the context of SDN switches. These goals can be achieved through various means and are not unique to the concept of programmability in the data plane.","['https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/', 'https://www.ietf.org/mail-archive/web/sdn/current/msg00016.html', 'https://www.opennetworking.org/software-defined-standards/specifications/']",1,11_protocol_independent_forwarding,0.95,0.9863196321689792,1.0
+79,Which of the following best describes protocol independence?,"a. The ability to run a switch independently from the controller.
+b. The ability to run a network with both legacy OpenFlow switches and switches that support custom packet processing.
+c. The ability to configure a packet parser in hardware that is agnostic to (and not constrained by) the control protocol.
+d. The ability to evolve an existing control protocol without breaking interoperability.
+e. The ability to support multiple protocols running in parallel on the same hardware.
+",,c,"c,e",,"Protocol independence refers to the capability of network devices or systems to handle multiple types of protocols or to be agnostic to the specific protocols being used. This means that the system can support various protocols without being tied to a particular one. Option 'c' is correct because it describes the ability to configure a packet parser in hardware that is not limited by the control protocol, which implies protocol independence. Option 'e' is also correct because it talks about supporting multiple protocols running in parallel on the same hardware, which is a direct example of protocol independence. Option 'a' is incorrect because it refers to the operational independence of a switch from the controller, not protocol independence. Option 'b' describes the ability to run a network with different types of switches, which is more about interoperability than protocol independence. Option 'd' is about evolving a control protocol, which is related to protocol versioning or extension, not independence.","['https://en.wikipedia.org/wiki/Software-defined_networking', 'https://www.sdxcentral.com/networking/sdn/definitions/whats-protocol-oblivious-forwarding/']",0,11_protocol_independent_forwarding,0.95,0.6771560773677762,0.6000000000000001
+81,Which of the following describe functions of the P4 parser? Select all that apply.,"a. Constructing a graph of dependencies between different logical tables.
+b. Translating a packet processing specification to a state machine.
+c. Mapping logical tables to underlying switch resources.
+d. Translating rules to physical tables.
+e. Verifying that the description of packet parsing is consistent with the behavior of an existing hardware switch (e.g., a legacy OpenFlow switch).
+",,"b,e","b,e",,"P4 is a high-level language designed for programming protocol-independent packet processors. The P4 parser is a component within the P4 language specification that defines how packets are processed and understood by the network device. Here's an evaluation of each choice in the context of P4 parser functions:
+
+a. Constructing a graph of dependencies between different logical tables. - This is not a direct function of the P4 parser. While P4 does involve describing how packets are processed through a series of tables, the parser itself is not responsible for constructing dependency graphs; it focuses on the parsing logic of packet headers.
+
+b. Translating a packet processing specification to a state machine. - This is one of the core functions of the P4 parser. It takes the packet processing specifications written in P4 and translates them into a state machine that can be used to parse packet headers.
+
+c. Mapping logical tables to underlying switch resources. - This is more related to the compiler or control plane aspect of P4, which takes the high-level description and maps it to the specific resources available on the switch hardware.
+
+d. Translating rules to physical tables. - Similar to 'c', this is related to the process of taking the high-level P4 program and implementing it on the physical hardware, not a direct function of the parser.
+
+e. Verifying that the description of packet parsing is consistent with the behavior of an existing hardware switch (e.g., a legacy OpenFlow switch). - While not a primary function, the P4 language and its tools can be used to verify that a P4 program's packet parsing behavior is consistent with that of existing hardware, as part of the process of ensuring compatibility and correctness.","['https://p4.org/p4-spec/docs/P4-16-v1.0.0-spec.html', 'https://www.sciencedirect.com/science/article/pii/S0140366418312464', 'https://www.cs.cornell.edu/courses/cs5413/2014fa/lectures/08-sdn-openflow.pdf']",1,11_protocol_independent_forwarding,0.95,0.994715227903034,1.0
+82,"Which of the following best describe the relationship between a language like P4, an assembler like NetASM, and target programmable hardware (e.g., RMT)?","a. A language like NetASM would ""compile"" to an assembly language like P4, which would then specify a one-to-one relationship with resources on the target forwarding hardware.
+b. A language like P4 would ""compile"" to an assembly language like NetASM, which would then specify a one-to-one relationship with resources on the target forwarding hardware.
+c. P4 is much more amenable to ""cost semantics"" (i.e., figuring out how much a particular operation would cost in terms of power or area) than NetASM.
+NetASM and P4 are two examples of high-level programming languages; they are interchangeable.
+d. P4 has verifiable semantics, whereas NetASM does not.
+",,b,b,,"P4 is a high-level programming language designed for programming packet forwarding planes, such as those in switches and routers. It is used to tell networking devices how to process packets. NetASM, on the other hand, is a low-level assembly-like language that can be used to program network data planes. The typical workflow is that a high-level language like P4 would be written by a network programmer to define desired packet processing behavior. This P4 program would then be 'compiled' down to a lower-level language like NetASM. The lower-level language provides a more direct specification of how resources on the target forwarding hardware (e.g., RMT, which stands for Reconfigurable Match Tables) should be used to achieve the behavior defined in the P4 program. This establishes a one-to-one relationship with the resources on the hardware, which is necessary for configuring the hardware to perform the specified packet processing tasks. Therefore, option b is the correct answer. Options a, c, and d are incorrect because they either misrepresent the relationship between the languages or make incorrect claims about their properties.","['https://p4.org/p4-spec/p4-16-v1.0.0-spec.html', 'https://www.opennetworking.org/wp-content/uploads/2014/10/CS-NetASM.pdf', 'https://www.barefootnetworks.com/technology/brief-introduction-p4/']",1,11_protocol_independent_forwarding,0.95,0.9984508681454002,1.0
+83,Which of the folloiwing instruction types create state elements in NetASM? Select all that apply.,"a. MKR
+b. LBL
+c. DRP
+d. JMP
+e. MKT
+",,"a,e","a,e",,"NetASM (Network Assembly) is a low-level instruction set architecture designed for Software Defined Networks (SDN). In NetASM, instructions that create state elements are typically those that define match-action tables or registers, which are used to maintain state within the network. MKR (Make Register) and MKT (Make Table) are instructions that create state elements in the form of registers and tables, respectively. LBL (Label) is used for defining labels for jumps and does not create state. DRP (Drop) is an action that discards a packet and does not create state. JMP (Jump) is an instruction for control flow, specifically for jumping to a label, and does not create state elements.","['Bosshart, P., Gibb, G., Kim, H. S., Varghese, G., McKeown, N., Izzard, M., ... & Song, H. (2014). P4: Programming protocol-independent packet processors. ACM SIGCOMM Computer Communication Review, 44(3), 87-95.', 'NetASM: A New Intermediate Language and Architecture for High-Performance Software-Defined Networks. (n.d.).']",1,11_protocol_independent_forwarding,0.9,0.9812281895919358,1.0
+84,Which of the following are true about locally contained applications? Select all that apply.,"a. Locally contained applications forward packets more slowly than their stateless counterparts.
+b. Locally contained applications allow the hardware pipeline to make switch-local state modifications.
+c. Locally contained applications can be implemented with regular OpenFlow instructions.
+d. A locally contained application can implement SDN logic without ever requiring a packet to be sent to the controller.
+e. A MAC learning switch can be implemented as a locally contained application.
+",,"b,d,e","b,c,d,e",,"Locally contained applications in the context of Software Defined Networking (SDN) are those that can execute their logic entirely within the switch without needing to communicate with the SDN controller for every decision. Here is an evaluation of each choice:
+
+a. This statement is generally not true. Locally contained applications do not necessarily forward packets more slowly than stateless counterparts. The speed of packet forwarding is more related to the efficiency of the application and the hardware capabilities rather than whether the application is stateful or stateless.
+
+b. True. Locally contained applications can indeed allow the hardware pipeline to make switch-local state modifications. This is because the logic for state changes is contained within the switch, allowing for rapid changes to state without needing to communicate with the controller.
+
+c. True. Locally contained applications can be implemented with regular OpenFlow instructions. OpenFlow is a protocol that enables SDN controllers to interact with the forwarding plane of network devices such as switches and routers, and it provides the instructions necessary to implement SDN logic.
+
+d. True. A locally contained application can implement SDN logic without ever requiring a packet to be sent to the controller for processing, as the necessary logic and state are maintained locally within the switch.
+
+e. True. A MAC learning switch, which learns the MAC addresses of devices connected to it and forwards packets based on this learned information, can be implemented as a locally contained application. The switch can update its local MAC address table without needing to consult the controller for every forwarding decision.","['https://www.opennetworking.org/wp-content/uploads/2013/02/cs-berkeley-lavanya.pdf', 'https://www.opennetworking.org/software-defined-standards/specifications/']",0,11_protocol_independent_forwarding,0.95,0.7860821420330286,0.6000000000000001
+86,What are some examples of optimizations that a compiler could perform on NetASM instructions? Select all that apply.,"a. Preventing bufferbloat for real-time application traffic.
+b. Reordering instructions so that subsequent tables need not be as large (e.g., not storing state for unmatched packets).
+c. Forwarding packets for high-volume flows at higher rates.
+d. Only instantiating hardware resources (e.g., table entries) for flows that actually have nonzero traffic volume.
+e. Composing or decomposing tables to save either on table size or table width.
+",,"b,d,e","b,d,e",,"NetASM is a programming language for Software Defined Networking (SDN) that can be used to specify the behavior of network devices. Compiler optimizations for NetASM instructions would generally focus on making the program more efficient in terms of the resources it uses and the performance it achieves. Here's an evaluation of each choice:
+
+a. Preventing bufferbloat for real-time application traffic is not a compiler optimization but rather a network management policy.
+
+b. Reordering instructions to reduce the size of subsequent tables is a kind of optimization that a compiler might perform to make the program more efficient.
+
+c. Forwarding packets for high-volume flows at higher rates is more of a network policy or a function of the control logic, not a compiler optimization.
+
+d. Instantiating hardware resources only for active flows is an optimization that conserves hardware resources and is something a compiler might do to optimize the use of a network device's capabilities.
+
+e. Composing or decomposing tables to save on table size or width is an optimization that affects the data plane's memory usage, which is a typical concern in compiler optimizations.","['https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-shahbaz.pdf', 'https://www.sigcomm.org/sites/default/files/ccr/papers/2014/April/0000000-0000002.pdf']",1,11_protocol_independent_forwarding,0.95,0.9999207478882844,1.0

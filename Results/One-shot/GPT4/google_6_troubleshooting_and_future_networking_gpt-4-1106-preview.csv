@@ -1,0 +1,96 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+90,The protocol used to communicate network errors is known as __________.,"a. ICMP
+b. Traceroute
+c. TCP
+d. UDP
+",,a,a,,"ICMP, which stands for Internet Control Message Protocol, is used by network devices to send error messages and operational information indicating success or failure when communicating with another IP address, for instance, an unreachable network, a host, a router, or a gateway.",['https://www.cloudflare.com/learning/ddos/glossary/internet-control-message-protocol-icmp/'],1,google_6_troubleshooting_and_future_networking,1,0.9999955150656573
+91,The ping utility sends what message type?,"a. Echo Request
+b. Echo Reply
+c. Destination Network Unknown
+d. Destination Network Unreachable
+",,a,a,,The ping utility sends an ICMP Echo Request message to the target host and waits for an ICMP Echo Reply.,"['https://www.ietf.org/rfc/rfc1122.txt', 'https://en.wikipedia.org/wiki/Ping_(networking_utility)']",1,google_6_troubleshooting_and_future_networking,1,0.9999963494876631
+92,What is one of the tools you can use to verify connectivity to a specific port on Windows OS?,"a. nc (netcat)
+b. Ping
+c. Test-NetConnection
+d. Tracert
+",,c,c,,"Test-NetConnection is a PowerShell cmdlet on Windows that can be used to check connectivity to a specific port on a remote host. While 'nc' (netcat) is also a tool that can be used for this purpose, it is not specific to Windows OS and might not be installed by default. 'Ping' is used to check connectivity to an IP address but does not check specific ports. 'Tracert' is used to determine the route packets take to reach a destination but also does not check specific ports.","['https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ping', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert']",1,google_6_troubleshooting_and_future_networking,0.95,0.9999748931371826
+93,Traceroute uses UDP packets on which of the following operating systems? Select all that apply.,"a. Mac Os
+b. Windows 10
+c. Windows 7
+d. Linux
+",,"a,d","a,d",,"Traceroute typically uses UDP packets on Unix-like operating systems such as Linux and Mac OS. Windows versions of traceroute, however, usually use ICMP echo requests instead of UDP packets for the trace.","['https://en.wikipedia.org/wiki/Traceroute', 'https://www.lifewire.com/traceroute-linux-command-4092586']",1,google_6_troubleshooting_and_future_networking,0.95,0.9980729815837043
+94,"During a traceroute, which action does a router perform to the value in the Time To Live (TTL) field?","a. Multiplication
+b. Division
+c. Subtraction
+d. Addition
+",,c,c,,"During a traceroute, each router that receives the packet decrements the value in the Time To Live (TTL) field by one before forwarding the packet. This process continues until the TTL reaches zero, at which point the packet is discarded and an ICMP 'Time Exceeded' message is sent back to the originator.","['https://www.cloudflare.com/learning/network-layer/what-is-traceroute/', 'https://en.wikipedia.org/wiki/Traceroute']",1,google_6_troubleshooting_and_future_networking,1,0.9999183936139823
+95,One of Level 3's public DNS servers is ____________.,"a. 4.2.2.3
+b. 8.8.8.8
+c. 127.0.0.1
+d. 192.168.1.1
+",,a,a,,"The IP address 4.2.2.3 is one of Level 3's public DNS servers. 8.8.8.8 is a public DNS server provided by Google. 127.0.0.1 is the loopback address, typically used to refer to the local machine. 192.168.1.1 is commonly used as the default IP address for local routers, not a public DNS server.",['https://www.lifewire.com/free-and-public-dns-servers-2626062'],1,google_6_troubleshooting_and_future_networking,1,0.9999564172037576
+96,A DNS resolver tool available on all major desktop operating systems is __________.,"a. Nslookup
+b. Host
+c. Tracert
+d. Ping
+",,a,a,,"Nslookup is a network administration command-line tool available for many computer operating systems for querying the Domain Name System (DNS) to obtain domain name or IP address mapping or for any other specific DNS record. It is available on all major desktop operating systems, including Windows, MacOS, and Linux.","['https://en.wikipedia.org/wiki/Nslookup', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/nslookup']",1,google_6_troubleshooting_and_future_networking,1,0.9999924157887603
+97,Which top-level organization manages the global DNS (Domain Name System)?,"a. RFC
+b. IANA
+c. ICANN
+d. Google
+",,c,c,,"ICANN (the Internet Corporation for Assigned Names and Numbers) manages the global DNS. It is responsible for coordinating the maintenance and procedures of several databases related to the namespaces and numerical spaces of the Internet, thereby ensuring the network's stable and secure operation.","['https://www.icann.org/resources/pages/welcome-2012-02-25-en', 'https://en.wikipedia.org/wiki/Internet_Corporation_for_Assigned_Names_and_Numbers']",1,google_6_troubleshooting_and_future_networking,0.95,0.9999844292352256
+98,Which of the following commands displays the current network configuration information?,"a. Winver
+b. Pathping
+c. Net user
+d. Ipconfig
+",,d,d,,"The 'ipconfig' command is used in Windows to display the current network adapter configuration, including IP address, subnet mask, default gateway, and more.",['https://support.microsoft.com/en-us/topic/use-ipconfig-to-evaluate-your-network-connection-45f76d3c-8ee7-2c0c-ee0b-76d62842a8a0'],1,google_6_troubleshooting_and_future_networking,1,0.9999616619499219
+99,An organization responsible for assigning individual domain names to other organizations or individuals is known as a(n) ______.,"a. DNS registrar
+b. Autonomous system
+c. Internet authority
+d. Government
+",,a,a,,A DNS registrar is an organization that manages the reservation of internet domain names. A registrar must be accredited by a generic top-level domain (gTLD) registry and/or a country code top-level domain (ccTLD) registry.,"['https://www.icann.org/resources/pages/registrar-2012-02-25-en', 'https://en.wikipedia.org/wiki/Domain_name_registrar']",1,google_6_troubleshooting_and_future_networking,1,0.9999666683255126
+100,A piece of software that runs and manages virtual machines is known as a __________.,"a. cloud storage device
+b. cloud computing device
+c. Hypervisor
+d. virtual instance
+",,c,c,,"A hypervisor, also known as a virtual machine monitor (VMM), is a piece of software that runs and manages virtual machines by allocating resources and creating isolated environments for them.","['https://www.vmware.com/topics/glossary/content/hypervisor', 'https://searchservervirtualization.techtarget.com/definition/hypervisor']",1,google_6_troubleshooting_and_future_networking,1,0.9999938462231346
+101,What is Office 365 Outlook an example of?,"a. FttH
+b. IaaS
+c. SaaS
+d. PaaS
+",,c,c,,"Office 365 Outlook is an example of Software as a Service (SaaS). SaaS provides users with software applications over the internet. Office 365 is a subscription-based service that includes access to various Microsoft applications, including Outlook, which is used for email and calendar services.",['https://docs.microsoft.com/en-us/office365/servicedescriptions/office-365-service-descriptions-technet-library'],1,google_6_troubleshooting_and_future_networking,1,0.9999225654082128
+102,A hybrid cloud is ________________.,"a. a combination of a public cloud and a private cloud
+b. a combination of a private cloud and a mesh network
+c. a combination of a public cloud and hardware virtualization
+d. a combination of virtual hosts and virtual guests
+",,a,a,,"A hybrid cloud is a cloud computing environment that uses a mix of on-premises, private cloud and third-party, public cloud services with orchestration between the two platforms. It allows for the sharing of data and applications between them.",['https://azure.microsoft.com/en-us/overview/what-is-a-hybrid-cloud/'],1,google_6_troubleshooting_and_future_networking,1,0.9999748931371826
+103,Which of the following are  cloud services? Select all that apply.,"a. Platform as a Service (PaaS)
+b. Python as a Service (PaaS)
+c. Infrastructure as a Service (IaaS)
+d. Software as a Service (SaaS)
+",,"a,c,d","a,c,d",,"Platform as a Service (PaaS) provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure. Infrastructure as a Service (IaaS) provides virtualized computing resources over the internet. Software as a Service (SaaS) is a software distribution model in which a third-party provider hosts applications and makes them available to customers over the internet. Python as a Service (PaaS) is not a recognized cloud service model.","['https://azure.microsoft.com/en-us/overview/what-is-paas/', 'https://aws.amazon.com/what-is-iaas/', 'https://www.salesforce.com/saas/']",1,google_6_troubleshooting_and_future_networking,1,0.9999988527586581
+104,"Which cloud service provides access to things like virtual machines, containers, networks, and storage?","a. IaaS
+b. SaaS
+c. FaaS
+d. PaaS
+",,a,a,,"Infrastructure as a Service (IaaS) provides access to fundamental computing resources such as virtual machines, containers, networks, and storage. Users have control over the virtualized hardware behind their applications.","['https://azure.microsoft.com/en-us/overview/what-is-iaas/', 'https://aws.amazon.com/types-of-cloud-computing/']",1,google_6_troubleshooting_and_future_networking,1,0.9999913429644723
+105,An IPv6 address is how many bits long?,"a. 16
+b. 128
+c. 64
+d. 32
+",,b,b,,"An IPv6 address is 128 bits long, which allows for a significantly larger number of unique IP addresses compared to IPv4, which is only 32 bits long.",['https://en.wikipedia.org/wiki/IPv6'],1,google_6_troubleshooting_and_future_networking,1,0.9999951574563252
+106,What is the very first field in an IPv6 header?,"a. traffic class field
+b. source address field
+c. version field
+d. data payload field
+",,c,c,,"The very first field in an IPv6 header is the version field, which is 4 bits long and indicates the version of the IP protocol used, which for IPv6 is set to the number 6.",['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header'],1,google_6_troubleshooting_and_future_networking,1,0.9999764427474764
+107,Which IPv6 header field indicates how many routers can forward a packet before it's discarded?,"a. hop limit field
+b. TTL
+c. router forward field
+d. next header field
+",,a,a,,"The hop limit field in the IPv6 header is used to indicate how many routers (hops) a packet can pass through before it is discarded. This is similar to the TTL (Time to Live) field in IPv4, but IPv6 specifically refers to it as the hop limit.",['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header'],1,google_6_troubleshooting_and_future_networking,1,0.999994561441089
+108,The IPv4 mapped address space within IPv6 always starts with _______ zeroes.,"a. 80
+b. ""128""
+c. 32
+d. 64
+",,a,a,,"An IPv4-mapped address in an IPv6 environment starts with 80 zeroes, followed by 16 ones, and then the last 32 bits are the IPv4 address. This is represented in hexadecimal as ::ffff:0:0/96, where '::' represents those 80 zeroes.","['https://tools.ietf.org/html/rfc4291#section-2.5.5.2', 'https://en.wikipedia.org/wiki/IPv6_transition_mechanism#IPv4-mapped_IPv6_addresses']",1,google_6_troubleshooting_and_future_networking,1,0.9999926541946805

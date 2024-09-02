@@ -1,0 +1,53 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. Dynamic NAT can't use Standard ACLs
+b. The NAT pool does not have enough entries to fulfill the user's requests
+c. The cause is not related to dynamic NAT
+d. The command output does not provide any clue to identify the problem
+",,b,b,,"The correct answer is B. The NAT pool configured with a total of 10 addresses has already allocated all of them (100% allocated). Since there are no more available addresses in the pool, new user requests to reach the Internet cannot be fulfilled. This exhaustion of addresses in the NAT pool is causing the issue.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr_nat/configuration/15-mt/nat-15-mt-book/iadnat-addr-consv.html'],1,chapter11_ip_services,0.9,0.9999955150656572,1.0
+195,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Warning - Warning condition?","a. 4
+b. 3
+c. 2
+d. 5
+",,a,b,,Severity level 3 means Warning - Warning condition in IOS. This level indicates a warning message that might indicate a possible issue that needs attention but does not prevent normal operation.,['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/syslog/configuration/xe-3s/asr1000/syslog-xe-3s-asr1000-book/syslog-msgs-crs.html'],0,chapter11_ip_services,1.0,0.9999980183344636,0.0
+196,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Informational: Informational message only?","a. 4
+b. 6
+c. 5
+d. 1
+",,b,c,,Severity level 5 corresponds to Informational messages only in Cisco IOS. These messages are purely informational and do not indicate any issues or problems.,['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/syslog/configuration/xe-3s/3850/syslog-xe-3s-3850-book/syslog-msgs-severity.html'],0,chapter11_ip_services,1.0,0.9999955150656572,0.0
+198,One of the features of SNMPv3 is called message integrity.,"a. FALSE
+b. TRUE
+",,b,b,,The statement is TRUE. SNMPv3 provides message integrity as one of its security features. Message integrity ensures that the data has not been tampered with during transmission.,['https://tools.ietf.org/html/rfc3414'],1,chapter11_ip_services,1.0,0.999997541520822,1.0
+199,You have been tasked to find out whether the Cisco Discovery Protocol (CDP) is enabled globally. Which command will you type?,"a. show running-config
+b. show protocols
+c. show cdp
+d. show interface brief
+",,c,c,,"To determine if Cisco Discovery Protocol (CDP) is enabled globally on a Cisco device, the correct command to use is 'show cdp'. This command will display the CDP information, including whether it is enabled or disabled on the device globally.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/cdp/command/cdp-cr-book/cdp-s1.html'],1,chapter11_ip_services,0.95,0.9999984951481324,1.0
+200,Which of the following protocols synchronize the time of different systems?,"a. UDP
+b. SMTP
+c. CDP
+d. NTP
+",,d,d,,NTP (Network Time Protocol) is used to synchronize the time of different systems within a network. It is specifically designed for this purpose and ensures that all devices have a consistent time reference for various operations.,['https://en.wikipedia.org/wiki/Network_Time_Protocol'],1,chapter11_ip_services,1.0,0.9999996871837188,1.0
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. If one router fails, both hosts will use the one remaining router as a default router
+b. If one router fails, hosts can't send packets off-subnet
+c. You can't connect two routers to the same LAN subnet.
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",,a,a,,"If one router fails in an FHRP (First Hop Redundancy Protocol) setup, the remaining router will take over as the default gateway for the hosts on the LAN. This ensures that there is always a functional default gateway available for hosts to send packets off-subnet.",['https://en.wikipedia.org/wiki/First_hop_redundancy_protocol'],1,chapter11_ip_services,1.0,0.9999855020530962,1.0
+203,Which of the following characteristics of network traffic can be managed by Quality of Service (QoS)? (Choose all that apply),"a. Jitter
+b. CoS
+c. Delay
+d. LLQ
+e. Loss
+f. Bandwidth
+",,"a,c,e,f","a,b,c,d,e",,"The correct characteristics of network traffic that can be managed by Quality of Service (QoS) include: 
+- Jitter: QoS can help manage and reduce jitter, which is the variation in packet delay. 
+- CoS (Class of Service): QoS can prioritize different classes of traffic based on CoS values to ensure critical traffic gets preferential treatment. 
+- Delay: QoS mechanisms can help control and minimize delays in transmitting packets across the network. 
+- LLQ (Low Latency Queuing): LLQ is a QoS mechanism used to prioritize delay-sensitive traffic, ensuring low latency for critical applications. 
+- Loss: QoS can mitigate packet loss by prioritizing important traffic and ensuring reliable delivery. 
+Bandwidth, although important, is not directly managed by QoS mechanisms.",['https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/software/release/16-5/configuration_guide/qos/b_165_qos_3850_cg/b_165_qos_3850_cg_chapter_01000.html'],0,chapter11_ip_services,1.0,0.8597900852003458,0.0

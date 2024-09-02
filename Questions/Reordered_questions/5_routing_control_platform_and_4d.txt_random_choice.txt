@@ -1,0 +1,70 @@
+Question 32. What are some of the reasons that it is difficult to deploy improvements to BGP? Select all that apply.
+(A) Changes are necessarily incremental because of the large installed base of routers that already run BGP. -*
+(B) Deploying changes requires coordination in standards bodies such as the IETF. -*
+(C) BGP is implemented in hardware, so deploying changes to BGP requires changes on the timescale of hardware development cycles.
+(D) Deplyoing changes to BGP requires coordination across potentially tens of thousands of ASes in the Internet. -*
+(E) Only a few vendors implement BGP, and deploying changes requires convincing those vendors to change the protocol.
+
+Question 33. Which of the following are true about the RCP? Select all that apply.
+(A) In Phase 1 of RCP deployment, there is no need for ASes to use BGP to exchange routes.
+(B) In an RCP deployment, routers no longer have to compute routes. -*
+(C) In Phase 1 of RCP deployment, a single AS can benefit from deploying RCP even if no other ASes deploy RCP. -*
+(D) In Phase 1 of RCP deployment, the RCP controller for an AS sees all routes for all destinations that an AS learns from neighboring ASes.
+(E) The RCP controller operates just like a route reflector would, selecting a single best route for each destination for all client routers.
+
+Question 34. Which of the following are true about network management with BGP, in the absence of RCP? Select all that apply.
+(A) BGP routing has a single point of failure.
+(B) Implementing network-wide policy sometimes causes the routers themeselves to have to carry state. -*
+(C) BGP's interaction with the underlying routing IGP routing protocol can result in persistent forwarding loops. -*
+(D) It is not possible to perform traffic engineering with conventional BGP.
+(E) Each router operates and makes decisions based only on a local view of network state. -*
+
+Question 35. Which of the following is true about the second phase of RCP deployment? Select all that apply.
+(A) The second phase of RCP deployment offers potential benefits such as reduced routing table size. -*
+(B) The second phase of deployment requires fewer BGP sessions at the RCP controller than the first phase, thus improving scalability of the controller.
+(C) The second phase of RCP deployment requires no coordination with neighboring ASes.
+(D) In the second phase of RCP deployment, ASes do not need to use BGP to exchange routes with one another.
+(E) In the second phase of deployment, the RCP controller sees all routes for every destination that neighboring ASes advertise. -*
+
+Question 36. In terms of the parlance of the 4D architecture, which protocol serves as the "dissemination plane" for the RCP?
+(A) Spanning Tree Protocol
+(B) LLDP
+(C) The Internal Gateway Protocol (IGP)
+(D) External BGP
+(E) Internal BGP -*
+
+Question 37. What are some of the stated goals of simplifying the control plane in the 4D architecture. Select all that apply.
+(A) Simpler routers and switches -*
+(B) Simpler management systems -*
+(C) Faster innovation -*
+(D) Inherent robustness of control plane
+(E) Improved security.
+
+Question 38. What are some examples of how a separate decision plane in the 4D architecture can amortize system overhead? Select all that apply.
+(A) Performing inbound traffic engineering on a set of links in a coordinated fashion.
+(B) If secure BGP were deployed, verifying the signatures on the AS paths of routes received from neighbors. -*
+(C) Maintaining a single table in memory of AS paths that are learned across all BGP sessions in the AS, and using references into that table for specific routers (and routing decisions), to save memory. -*
+(D) Performing route computation on behalf of all the routers in the AS.
+(E) Keeping track of topology information. -*
+
+Question 39. What are some examples of network-wide objectives that could be achieved by the decision plane in the 4D architecture? Select all that apply.
+(A) Ensuring that connectivity is not interrupted when a link or router fails -*
+(B) Provisioning a BGP peering session to a neighbor AS
+(C) Counting the volume of video streaming traffic across a peering link
+(D) Balancing traffic load across a network -*
+(E) Ensuring predictable behavior for planned maintenance events -*
+
+Question 40. Which plane is responsible for installing state into the data plane (e.g., FIB entries, ACLs) in the 4D architecture?
+(A) Discovery plane
+(B) None of the above
+(C) Dissemination plane -*
+(D) Data plane
+(E) Decision plane
+
+Question 41. Which plane is responsible for path selection and traffic engineering in the 4D architecture?
+(A) Decision plane -*
+(B) None of the above
+(C) Data plane
+(D) Dissemination plane
+(E) Discovery plane
+

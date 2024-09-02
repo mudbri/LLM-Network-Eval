@@ -1,0 +1,85 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+87,Which of the following reasons make programming OpenFlow switches difficult? Select all that apply.,"a. Networks often have switches from multiple hardware vendors.
+b. OpenFlow switches control switches at a low level of abstraction.
+c. An OpenFlow controller only sees events for packets that the switches do not know how to handle.
+d. Network policies involve many independent tasks that may have conflicting behaviors.
+e. OpenFlow networks require a single, centralized network controller.
+",,"b,c,d","a,b,c,d",,"Programming OpenFlow switches can be challenging for several reasons. Firstly, networks often have switches from multiple hardware vendors (a), which can lead to interoperability issues due to proprietary extensions or variations in OpenFlow implementations. Secondly, OpenFlow switches control switches at a low level of abstraction (b), which means that programmers need to have a deep understanding of the underlying network protocols and behaviors. Thirdly, an OpenFlow controller only sees events for packets that the switches do not know how to handle (c), which can make it difficult to program comprehensive network policies since the controller does not have visibility into all traffic. Lastly, network policies involve many independent tasks that may have conflicting behaviors (d), making it challenging to ensure that the overall network behavior aligns with the intended policies. The statement that OpenFlow networks require a single, centralized network controller (e) is not inherently true since OpenFlow does not mandate a single controller architecture; distributed control planes are also possible.","['https://www.opennetworking.org/wp-content/uploads/2013/02/openflow-spec-v1.3.0.pdf', 'https://www.sdxcentral.com/networking/sdn/definitions/what-is-the-difference-between-sdn-and-openflow/', 'https://www.researchgate.net/publication/261149295_OpenFlow_A_Comprehensive_Review']",0,12_programming_SDNs,0.95,0.8599119125741259,0.6000000000000001
+89,"Suppose that a network operator wants to express a policy that drops all traffic except for traffic from a specific IP prefix (i.e., group of IP addresses).  What problems exist with expressing this policy as a set of OpenFlow rules? Select all that apply.","a. If the operator starts adding more IP addresses that are permitted to send traffic, performance of the switch might suffer as the number of entries in the switch table grows.
+b. Switches have limited room for flow table entries and cannot store rules for all IP addresses in a prefix by default.
+c. Flow table entries can only perform exact matches on IP addresses, so installing rules that operate on groups of IP addresses will take many flow-table entries in the switch.
+d. The controller may see more than the first packet for a flow that it has already installed.
+e. If the controller installs the rules in the wrong order, all traffic might be dropped, instead of allowing the permitted traffic.
+",,"a,b,d,e","a,b,c,e",,"a. As the number of permitted IP addresses increases, the switch's flow table will need to accommodate more entries, which could indeed affect performance if the table becomes large and complex.
+
+b. Switches do have a limited capacity for flow table entries, and it is not feasible to store a rule for every individual IP address within a larger prefix without using a mask or CIDR notation to represent the range.
+
+c. OpenFlow switches can perform matches on IP prefixes using CIDR notation, so this statement is not entirely accurate. However, if the rules were to be set up for exact matches without using CIDR, it would indeed require many entries, which is impractical.
+
+d. This option is incorrect. The controller is designed to see only the first packet of a flow (in the absence of specific rules to handle subsequent packets), after which it should install a rule in the switch to handle the rest of the flow automatically.
+
+e. The order of rule installation is critical. If the default rule to drop all traffic is installed before the rule to permit specific traffic, no traffic will be allowed until the permit rule is installed. This is a potential problem with the order of rule installation.","['Open Networking Foundation, OpenFlow Switch Specification, Version 1.5.1', 'https://www.opennetworking.org/wp-content/uploads/2014/10/openflow-switch-v1.5.1.pdf']",0,12_programming_SDNs,0.9,0.6648377521327078,0.1999999999999999
+90,Which of the following have examples of sequential composition? Select all that apply.,"a. Block all port 80 traffic and count the number of packets that are blocked.
+b. Load balance traffic based on whether the traffic matches a particular destination IP prefix.
+c. Block all traffic except port 80 and count the number of packets that are blocked.
+d. Block all traffic except port 80 and count the number of packets that are not blocked.
+e. Block all traffic except port 80 traffic, and load balance port 80 traffic across three destination IP addresses.
+",,"b,d,e","a,c,d",,"Sequential composition in the context of Software Defined Networking (SDN) refers to the process of applying multiple network control functions in a specific order. This typically involves performing one action and then another action in sequence. Let's evaluate the choices based on this definition:
+
+a. Block all port 80 traffic and count the number of packets that are blocked. This is a sequential composition because first, the traffic is blocked, and then the blocked packets are counted.
+
+b. Load balance traffic based on whether the traffic matches a particular destination IP prefix. This choice represents a conditional action rather than sequential composition. The action taken is based on a match condition, but there is no indication of a sequence of different actions.
+
+c. Block all traffic except port 80 and count the number of packets that are blocked. Similar to option a, this involves a sequential composition where traffic is first filtered and then the filtered results are counted.
+
+d. Block all traffic except port 80 and count the number of packets that are not blocked. This is also a sequential composition as it involves blocking certain traffic and then counting the packets that pass through the filter.
+
+e. Block all traffic except port 80 traffic, and load balance port 80 traffic across three destination IP addresses. Although this involves multiple actions, they are not strictly sequential. Blocking is a filtering action, and load balancing is a distribution action, but load balancing does not necessarily follow as a direct consequence of the blocking in a sequential manner. It is a parallel action applied specifically to port 80 traffic.
+
+Based on this analysis, options a, c, and d are examples of sequential composition.",[],0,12_programming_SDNs,0.95,0.9971847265358108,0.0
+91,Which of the following have examples of parallel composition? Select all that apply.,"a. Load balance traffic across multiple destination IP addresses and perform routing to the resulting destination IP addresses.
+b. Count all port 80 traffic.
+c. Perform MAC learning on all traffic that is not blocked by a firewall rule.
+d. Perform load balancing on any traffic that arrives from prefix 130.207.0.0/16 or is destined to port 80.
+e. Block all traffic whose source IP address is contained in a list of blocked IP addresses.
+",,"b,d,e","a,c,d",,"Parallel composition in the context of Software Defined Networking (SDN) refers to the ability to perform multiple independent operations on network traffic in parallel. Here's an evaluation of each option:
+
+a. Load balance traffic across multiple destination IP addresses and perform routing to the resulting destination IP addresses. - This involves two operations: load balancing and routing, which can be done in parallel.
+
+b. Count all port 80 traffic. - This is a single operation and does not involve parallel composition.
+
+c. Perform MAC learning on all traffic that is not blocked by a firewall rule. - This implies two operations: MAC learning and firewall filtering, which can be done in parallel.
+
+d. Perform load balancing on any traffic that arrives from prefix 130.207.0.0/16 or is destined to port 80. - This involves load balancing based on two different criteria (source IP and destination port), which can be done in parallel.
+
+e. Block all traffic whose source IP address is contained in a list of blocked IP addresses. - This is a single operation of blocking and does not imply parallel composition.","['https://en.wikipedia.org/wiki/Software-defined_networking', 'https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/']",0,12_programming_SDNs,0.9,0.9160163473997284,0.0
+92,Which of the following is the appropriate Pyretic rule for matching traffic that sends packets from either 10.0.0.1 or 10.0.0.2 to IP address 1.2.3.4?,"a. (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)
+b. (match(srcip=10.0.0.1) >> (match(srcip=10.0.0.2) >> mod(dstip=1.2.3.4))
+c. (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)
+d. (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+e. (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+",,a,a,,"In Pyretic, the '+' operator is used to denote the logical OR operation, which is appropriate for matching packets from either of two source IP addresses. The '>>' operator is used to denote the sequence of match and action in a rule, where the action is applied to packets that match the criteria. Therefore, to match traffic from either 10.0.0.1 or 10.0.0.2 and modify the destination IP to 1.2.3.4, the correct rule would use the '+' operator to combine the two match conditions and then the '>>' operator to apply the modification action. Choices b, c, d, and e either use the wrong combination of operators or improperly sequence the match conditions, which would not accomplish the desired matching.",['https://www.cs.princeton.edu/courses/archive/fall13/cos597E/assignments/pyretic.pdf'],1,12_programming_SDNs,0.95,0.9916989237978842,1.0
+93,Which of the following is the appropiate Pyretic rule for sending traffic from source IP address 10.0.0.1 to destination IP address 10.1.2.3 and traffic from source IP address 10.0.0.2 to destination IP address 10.2.3.4?,"a. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) & (match(srcip=10.0.0.2)  >> mod(dstip=10.2.3.4))
+b. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) >>mod(dstip=10.2.3.4))
+c. (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) + mod(dstip=10.2.3.4))
+d. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2) >> mod(dstip=10.2.3.4))
+e. (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2)  + mod(dstip=10.2.3.4))
+",,d,d,,"In Pyretic, the 'match' function is used to specify the match criteria for packets, and the 'mod' function is used to modify packet headers. The '>>' operator is used to denote that the action on the right should be applied to packets that match the criteria on the left. The '&' operator is used for bitwise AND, which is not appropriate in this context. The '+' operator is used to denote a parallel composition of policies, which allows for both policies to be applied independently. In this case, we want to apply two separate policies in parallel, one for traffic from source IP 10.0.0.1 to destination IP 10.1.2.3 and another for traffic from source IP 10.0.0.2 to destination IP 10.2.3.4. Therefore, the correct option is the one that uses the '+' operator to join two policies that each use the '>>' operator to specify a match and a modification.","['https://frenetic-lang.org/pyretic/', 'https://github.com/frenetic-lang/pyretic/wiki/Pyretic:-Joining-Policies']",1,12_programming_SDNs,0.9,0.9965298605990698,1.0
+94,Which of the following might be examples that would use a dynamic policy in Pyretic? Select all that apply.,"a. Count all traffic arriving from source IP addresses in prefix 10.0.0.0/8.
+b. Assign each new traffic flow to a different destination IP address based on a round-robin load balancing policy across servers.
+c. Check each new traffic flow against a list of permitted and prohibited source IP addresses that may change over time.
+d. Drop all traffic arriving from source IP addresses in prefix 10.0.0.0/8.
+e. Forward traffic through the network based on shortest paths routing, re-routing traffic appropriately when links or nodes fail.
+",,"b,c,e","b,c,e",,"Dynamic policies in Pyretic and other Software Defined Networking (SDN) platforms are used for network behaviors that change over time or need to adapt to new conditions. Let's evaluate each choice:
+
+a. Counting all traffic from a specific IP prefix is a static policy since the prefix is fixed and does not require dynamic updates to the policy.
+
+b. Assigning new traffic flows to different destination IP addresses based on load balancing requires a dynamic policy because the destination for each new flow changes over time, depending on the current load on each server.
+
+c. Checking each new traffic flow against a changing list of permitted and prohibited source IP addresses necessitates a dynamic policy, as the list can be updated frequently with new entries.
+
+d. Dropping all traffic from a specific IP prefix is a static policy because it does not change over time unless the policy itself is manually updated.
+
+e. Forwarding traffic based on shortest paths and rerouting when links or nodes fail is inherently dynamic because the network topology and state can change, requiring the policy to adapt to these changes in real-time.
+
+Therefore, the examples that would use a dynamic policy are those that involve changing conditions or requirements, which are options b, c, and e.","['https://www.cs.cornell.edu/projects/bigdata/pyretic/pyretic_language.html', 'https://www.sciencedirect.com/topics/computer-science/software-defined-networking']",1,12_programming_SDNs,0.95,0.9999083517612264,1.0

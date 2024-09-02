@@ -1,0 +1,72 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+106,Which of the following are true about configuration verification? Select all that apply.,"a. Configuration verification can only detect errors after the configuration is installed on production routers.
+b. Configuration verification cannot detect incorrect protocol behavior that may result from faulty hardware.
+c. Verifying the correctness of network behavior based on configuration requires a model of protocol behavior.
+d. Configuration verification requires a large-scale simulation of network protocols, complete with tests for different message orderings and timings.
+e. Configuration verification cannot detect incorrect protocol behavior that may result from buggy software.
+",,"b,c,e","b,c",,"a. Configuration verification can be performed before the configuration is installed on production routers, for example, using tools that analyze the configuration for correctness against a set of policies or intended behavior.
+b. Configuration verification typically involves checking the correctness of the configuration logic itself, not the physical hardware on which it runs. Therefore, it cannot detect errors due to faulty hardware.
+c. To verify the correctness of network behavior based on configuration, a model of protocol behavior is indeed required. This model helps to understand how the configuration will affect the network operation.
+d. While simulation can be a part of configuration verification, it is not a requirement for all verification methods. Some methods can statically analyze the configuration without the need for large-scale simulations.
+e. Configuration verification can detect some types of incorrect protocol behavior that are due to configuration errors, but it may not be able to detect all issues that arise from buggy software. However, the statement is absolute in saying that it 'cannot detect', which is too strong; some software bugs related to configuration might indeed be detectable through verification.","['https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-fayazbakhsh.pdf', 'https://www.cs.princeton.edu/~jrex/papers/config13.pdf']",0,14_verification,0.9,0.953619994326555
+107,"Which of the following assertions could be verified with configuration verification (i.e., of a snapshot of router and switch configuration)? Select all that apply.","a. A route learned from one peer will not be readvertised to another peer.
+b. The current settings of link weights will result in all routers being connected.
+c. The configuration of route reflectors and clients ensures that any route learned from a neighboring AS will propagate to all routers in the topology.
+d. There is no traffic pattern that would ever result in a stateful firewall dropping traffic.
+e. Any time that an infection occurs, hosts are automatically quarantined.
+",,"a,b,c","a,c",,"Configuration verification involves examining the static configuration of network devices to ensure they meet certain policies or standards. It does not involve dynamic state or traffic patterns, which are required to verify assertions like link weights resulting in connectivity, firewall behavior, or automatic responses to events like infections.
+
+a. This involves verifying route advertisement policies, which can be done by examining the configuration of routing protocols.
+
+b. This requires knowledge of the dynamic state of the network, not just the configuration, hence cannot be verified by configuration verification alone.
+
+c. This can be verified by examining BGP configuration regarding route reflectors and clients, ensuring correct propagation of routes according to the configuration.
+
+d. Firewall behavior under various traffic patterns requires actual traffic flow analysis or simulation, not just configuration verification.
+
+e. Automatic response to events such as infections typically involve dynamic monitoring and response systems, not just static configuration verification.","['https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13751-26.html', 'https://www.juniper.net/documentation/en_US/junos/topics/concept/policy-bgp-route-advertisement-understanding.html', 'https://www.ietf.org/rfc/rfc4456.txt']",0,14_verification,0.95,0.8555816124371403
+108,Which of the following are true about data-plane verification? Select all that apply.,"a. Data-plane verification techniques such as header-space analysis typically operate on a single ""snapshot"" of data-plane state.
+b. Data plane verification can only operate on the forwarding table of a single router or switch; network-wide analysis is not possible.
+c. Data-plane verification may detect errors that configuration analysis can miss in the cases of buggy control-plane software.
+d. Data-plane verification requires accurate modeling of network protocols, including which bits are present in which part of the packet header.
+e. Header-space analysis can only provide verification/analysis for specific packets; it cannot answer questions for general parts of flowspace.
+",,"a,c","a,c,d",,"a. Data-plane verification techniques like header-space analysis do indeed typically work on a snapshot of the network's data-plane state at a certain point in time. This allows for analyzing the forwarding behavior of the network under specific conditions.
+
+b. This statement is incorrect because data-plane verification can be done network-wide, not just on a single router or switch. Tools have been developed to analyze the data plane of an entire network.
+
+c. Data-plane verification can indeed find errors that might be missed by configuration analysis, especially if there are bugs in the control-plane software that lead to unintended data-plane behaviors.
+
+d. Accurate modeling of network protocols is necessary for data-plane verification because the behavior of the network depends on the interpretation of specific bits in packet headers.
+
+e. Header-space analysis is not limited to specific packets; it can analyze the behavior of the network for entire sets of packets defined by headers, which represent general parts of flowspace.","['https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf', 'https://www.sciencedirect.com/science/article/pii/S1877050919315466', 'https://dl.acm.org/doi/10.1145/2934872.2959081']",0,14_verification,0.95,0.9999981823323519
+109,Which of the following assertions could be verified with data plane verification? Select all that apply.,"a. The network will remain connected, given the failure of at most two links.
+b. Two virtual network ""slices"" are not completely isolated: it is possible for traffic to travel from one slice to the other.
+c. The configuration of the network's routing protocols will result in persistent oscillation (i.e., they will never settle on a stable set of routes).
+d. The forwarding table state in the routers across the network will result in a forwarding loop.
+e. The rules installed on the firewalls in the network ensure that only port 80 traffic can ever reach the web server from the rest of the Internet.
+",,"b,d,e","b,d,e",,"Data plane verification involves checking the state of the network as it pertains to the forwarding behavior of packets, including the analysis of forwarding tables, firewall rules, and potential traffic isolation issues. Here's why each choice does or does not involve data plane verification:
+a. This is related to the network's resilience to failures and involves an understanding of the network topology and potential rerouting, which is typically a control plane issue.
+b. Verifying isolation between slices involves checking that the forwarding tables and firewall rules enforce the required separation, which is a data plane function.
+c. Persistent oscillation of routing protocols is a control plane issue, as it concerns the routing protocol's behavior and its path selection process.
+d. Forwarding loops are a result of the state of the forwarding tables, which is a data plane issue and can be verified by examining the actual forwarding behavior.
+e. Checking that only port 80 traffic can reach the web server involves verifying firewall rules, which is a data plane function as it pertains to the actual handling of packets based on their headers.","['https://www.sciencedirect.com/topics/computer-science/data-plane', 'https://www.oreilly.com/library/view/software-defined-networking/9781449342302/ch01.html']",1,14_verification,0.95,0.9968678937739062
+110,Which of the following is true about Kinetic policies? Select all that apply.,"a. State transitions can be exogenous or endogenous.
+b. Kinetic's NuSMV verifier can verify that the data plane will never have loops.
+c. State transitions can occur based on timing (e.g., a timeout).
+d. The Kinetic controller can only process external events from routers and switches.
+e. Pyretic's composition operators can help prevent state explosion.
+",,"a,c,e","a,b,c,e",,"a. Kinetic policies allow state transitions to be both exogenous (triggered by external events) and endogenous (triggered by internal conditions or state changes), enabling dynamic policy changes based on a variety of factors.
+
+b. Kinetic's NuSMV verifier is a model checking tool that can verify properties of the network, including ensuring that the data plane does not have forwarding loops, which are critical for network reliability.
+
+c. Kinetic policies can indeed include state transitions based on timing, such as timeouts, allowing policies to change state after certain time intervals have elapsed.
+
+d. The Kinetic controller is not limited to processing external events from routers and switches; it can also process internal events and manage state transitions based on a combination of internal and external inputs.
+
+e. Pyretic's composition operators are designed to help manage the complexity of policies by allowing simpler policies to be composed into more complex ones, which can help prevent state explosion by managing how policies are combined and applied.","['https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-foster.pdf', 'https://www.cs.cornell.edu/~jnfoster/papers/kinetic.pdf']",0,14_verification,0.95,0.9991043156340738
+112,"Which of the following NuSMV expressions encodes the statement ""It is always possible for the policy state to go to 'allow'.""","a. SPEC AG (!authenticated -> AX policy=allow)
+b. None of the above.
+c. SPEC A [ policy=allow U authenticated ]
+d. SPEC AG (authenticated -> AX policy=allow)
+e. SPEC AG (EF policy=allow)
+",,e,e,,"The expression that encodes 'It is always possible for the policy state to go to 'allow'' is captured by temporal logic that asserts it is always (G) the case that there exists a future (F) state where the policy is 'allow'. This is exactly what option e, 'SPEC AG (EF policy=allow)', states. It asserts that in all states (AG), it is possible (EF) to eventually reach a state where the policy is 'allow'. The other options do not correctly encode the statement. Option a asserts something different, that whenever not authenticated, in the next state (AX) the policy will be 'allow', which is not the same as being always possible. Option c uses until (U) which is not the correct operator for the given statement. Option d also uses next (AX) incorrectly, and it conditions the policy being 'allow' on being authenticated, which is not the same as 'always possible'.",['https://nusmv.fbk.eu/NuSMV/userman/v22/nusmv_5.html'],1,14_verification,0.95,0.9999975415208221

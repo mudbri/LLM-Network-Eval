@@ -1,0 +1,68 @@
+Question Number,Question Text,Choices,Correct Answer,Old LLM Answer,New LLM Answer,Old LLM Explanation,New LLM Explanation,Old Answer Correct?,New Correct,Topic,Score-right-minus-wrong
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. The cause is not related to dynamic NAT
+b. The command output does not provide any clue to identify the problem
+c. Dynamic NAT can't use Standard ACLs
+d. The NAT pool does not have enough entries to fulfill the user's requests
+",d,d,d,"The output shows that the NAT pool 'examsdigest' has a total of 10 addresses, all of which have been allocated. The 'misses' counter indicates there have been 595 requests that could not be fulfilled due to lack of available addresses in the pool. This suggests the NAT pool is undersized and does not have enough entries to handle the number of users/requests, preventing some users from accessing the Internet.","Evaluation of original answer: The original answer is correct. The command output clearly shows that the NAT pool ""examsdigest"" has a total of 10 addresses, all of which have been allocated (100% utilization). The ""misses"" counter value of 595 indicates that there have been many requests that could not be fulfilled due to the lack of available addresses in the pool. This strongly suggests that the root cause of users not being able to reach the Internet is the undersized NAT pool that cannot handle the volume of requests from users.
+
+The other options can be ruled out:
+a) The cause appears to be directly related to the exhaustion of addresses in the dynamic NAT pool.
+b) The command output provides a clear clue about the problem - the pool is 100% allocated and there is a high number of misses.
+c) Dynamic NAT can use standard ACLs. The use of ACL 1 in this configuration is not a problem.
+
+Therefore, option d) is the most appropriate answer based on the given command output and problem description.
+
+Correct Answer: d",1,1,chapter11_ip_services,1.0
+195,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Warning - Warning condition?","a. 2
+b. 3
+c. 4
+d. 5",c,c,c,"Severity level 4 in Cisco IOS log messages indicates a warning condition. The severity levels range from 0 to 7, with 0 being the most severe (emergency) and 7 being the least severe (debugging). Level 4 specifically denotes warning messages that notify about potential issues or conditions that may require attention, but do not necessarily impact the functioning of the device.","Evaluation of original answer: The original answer is correct. Severity level 4 in Cisco IOS log messages does indeed indicate a warning condition. The explanation provided is accurate, mentioning the range of severity levels from 0 to 7 and correctly identifying level 4 as the severity level for warning messages that notify about potential issues or conditions requiring attention, but not necessarily impacting device functionality.
+
+Correct Answer: c",1,1,chapter11_ip_services,1.0
+196,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Informational: Informational message only?","a. 1
+b. 6
+c. 4
+d. 5",b,b,b,"Severity level 6 corresponds to informational messages in Cisco IOS. These messages are not errors, but rather provide general information about system operation or status. Severity levels range from 0 to 7, with 0 being the most severe (emergencies) and 7 being the least severe (debugging).","Evaluation of original answer: The original answer is correct. Severity level 6 in Cisco IOS corresponds to informational messages, which are not errors but provide general information about system operation or status. The answer correctly explains that severity levels range from 0 (most severe, emergencies) to 7 (least severe, debugging).
+
+Correct Answer: b",1,1,chapter11_ip_services,1.0
+198,One of the features of SNMPv3 is called message integrity.,"a. TRUE
+b. FALSE
+",a,a,a,Message integrity is indeed one of the key features introduced in SNMPv3. It ensures that SNMP messages have not been altered or corrupted in transit by using hash functions to create a message authentication code. This protects against unauthorized modification of management information exchanged between the manager and agent.,"Evaluation of original answer: The original answer is correct. SNMPv3 introduced several security enhancements over the previous versions of SNMP, and message integrity is one of those key features. Message integrity in SNMPv3 ensures that the SNMP messages exchanged between the manager and agent have not been tampered with or corrupted during transmission. This is achieved by using hash functions to create a message authentication code, which allows the receiver to verify the integrity of the received message.
+
+Correct Answer: a",1,1,chapter11_ip_services,1.0
+199,You have been tasked to find out whether the Cisco Discovery Protocol (CDP) is enabled globally. Which command will you type?,"a. show protocols
+b. show cdp
+c. show running-config
+d. show interface brief
+",b,b,b,"The 'show cdp' command is used to display information about the Cisco Discovery Protocol (CDP) configuration and status on a Cisco device. It will show whether CDP is enabled globally and on individual interfaces. The other options are not specifically related to CDP: 'show protocols' displays the status of routing protocols, 'show running-config' shows the entire running configuration, and 'show interface brief' provides a summary of interface status and configuration.","Evaluation of original answer: The original answer is correct. The 'show cdp' command is the most direct way to determine if CDP is enabled globally on a Cisco device. While 'show running-config' would also show the CDP configuration as part of the full running config, 'show cdp' specifically targets CDP information, making it the best choice for this task. The other options are not relevant for determining the global CDP state.
+
+Correct Answer: b",1,1,chapter11_ip_services,1.0
+200,Which of the following protocols synchronize the time of different systems?,"a. NTP
+b. SMTP
+c. UDP
+d. CDP
+",a,a,a,"NTP (Network Time Protocol) is used to synchronize the clocks of computer systems over packet-switched, variable-latency data networks. It allows network devices to maintain accurate timekeeping. SMTP is used for email transmission, UDP is a connectionless transport protocol, and CDP is a Cisco proprietary protocol used to share information between directly connected Cisco devices. None of these other protocols are used for time synchronization.","Evaluation of original answer: The original answer is correct and provides a good explanation. NTP (Network Time Protocol) is indeed the protocol used to synchronize the clocks of computer systems over networks. The answer correctly identifies that SMTP, UDP, and CDP serve different purposes and are not used for time synchronization.
+
+Correct Answer: a",1,1,chapter11_ip_services,1.0
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. You can't connect two routers to the same LAN subnet.
+b. If one router fails, hosts can't send packets off-subnet
+c. If one router fails, both hosts will use the one remaining router as a default router
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",c,c,c,"In a LAN with two routers using a First Hop Redundancy Protocol (FHRP) like HSRP or VRRP, if one router fails, the other router will take over as the active router. All hosts on the LAN will then use the remaining active router as their default gateway to send packets off-subnet. The FHRP ensures that there is always an active router available to forward traffic, providing redundancy and preventing a single point of failure.","Evaluation of original answer: The original answer is correct. In a LAN with two routers using a First Hop Redundancy Protocol (FHRP) like HSRP or VRRP, if one router fails, the other router will take over as the active router. All hosts on the LAN will then use the remaining active router as their default gateway to send packets off-subnet. The FHRP ensures that there is always an active router available to forward traffic, providing redundancy and preventing a single point of failure.
+
+Correct Answer: c",1,1,chapter11_ip_services,1.0
+203,Which of the following characteristics of network traffic can be managed by Quality of Service (QoS)? (Choose all that apply),"a. Bandwidth
+b. LLQ
+c. Loss
+d. Delay
+e. CoS
+f. Jitter
+","a,c,d,f","a,c,d,f","a,c,d,f","Quality of Service (QoS) is a set of technologies used to manage network traffic and ensure the performance of critical applications. QoS can manage bandwidth (a) by allocating a minimum amount of bandwidth for certain types of traffic. It can manage packet loss (c) by prioritizing important traffic and dropping less important packets during congestion. QoS can manage delay (d) by ensuring that high-priority packets are processed and forwarded first. Finally, QoS can manage jitter (f), the variation in delay, by using techniques like traffic shaping and policing to smooth out the traffic flow. LLQ and CoS are QoS mechanisms, not characteristics of network traffic.","Evaluation of original answer: The original answer is correct and provides a good explanation of how Quality of Service (QoS) can manage various characteristics of network traffic. The answer correctly identifies that QoS can manage bandwidth, loss, delay, and jitter, which are all important aspects of network performance. The explanation also correctly points out that LLQ (Low Latency Queuing) and CoS (Class of Service) are QoS mechanisms rather than characteristics of network traffic.
+
+Correct Answer: a, c, d, f",1,1,chapter11_ip_services,1.0

@@ -1,0 +1,41 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+72,"In NFV, which of the following is the function of steering?","a. Finding the best location to place a single network function in an enterprise or wide area network.
+b. Installing custom packet processing code on servers in the network.
+c. Placing middleboxes at places throughout the network to minimize network load.
+d. Installing custom packet processing code on switches in the network.
+e. Installing flow table entries in switches to forward traffic through network functions or middleboxes that are installed in the network
+",,e,e,,"Steering in the context of Network Function Virtualization (NFV) refers to the process of directing traffic through a sequence of network functions or middleboxes. This is done by installing flow table entries in switches, which ensure that traffic is forwarded through the designated virtualized network functions (VNFs) as required. Options a, b, c, and d do not specifically describe the steering function in NFV.",['https://www.sdxcentral.com/networking/nfv/definitions/what-is-network-functions-virtualization-nfv/'],1,9_NFV_and_Docker,0.95,0.9999715555225518
+74,What are some advantages of Docker containers over virtual machines? Select all that apply.,"a. Containers can be connected to build a virtual network, whereas virtual machines cannot.
+b. Performance in containers may be better since they invoke OS system calls directly, rather than through an emulated machine.
+c. Containers require less storage and memory per-instance, and require less time to instantiate than virtual machines.
+d. Containers provide more flexibility in the choice of operating system.
+e. Containers provide better isolation than virtual machines.
+",,"b,c","b,c",,"a. This statement is incorrect because virtual machines can also be connected to build a virtual network. Virtual networking is a common feature in virtual machine environments, such as those provided by VMware and VirtualBox.
+
+b. Containers may indeed offer better performance because they share the host's operating system kernel and avoid the overhead of simulating a full hardware layer, which is what virtual machines do.
+
+c. Containers are typically more lightweight than virtual machines because they share the host system's kernel and do not need to load an entire operating system for each instance. This results in less storage and memory usage, as well as faster instantiation times.
+
+d. This statement is incorrect because containers are generally constrained to the host's operating system type, whereas virtual machines can run different operating systems on the same host.
+
+e. This statement is incorrect because virtual machines provide stronger isolation by abstracting the entire hardware, which can prevent many types of attacks that might affect containers that share the same kernel.","['https://www.docker.com/resources/what-container', 'https://www.ibm.com/cloud/learn/containers', 'https://www.redhat.com/en/topics/virtualization/what-is-a-virtual-machine']",1,9_NFV_and_Docker,0.95,0.9999992103693117
+75,Which of the following commands is used to instantiate a new Docker container by invoking a command in that container?,"a. docker stop
+b. docker attach
+c. docker commit
+d. docker pull
+e. docker run
+",,e,e,,"e. The 'docker run' command is used to create a new container from a specified image and start it. It can also invoke a command within that container upon instantiation. The other commands have different purposes: 'docker stop' stops a running container, 'docker attach' attaches to a running container, 'docker commit' creates a new image from a container's changes, and 'docker pull' pulls an image from a registry.","['https://docs.docker.com/engine/reference/commandline/run/', 'https://docs.docker.com/engine/reference/commandline/stop/', 'https://docs.docker.com/engine/reference/commandline/attach/', 'https://docs.docker.com/engine/reference/commandline/commit/', 'https://docs.docker.com/engine/reference/commandline/pull/']",1,9_NFV_and_Docker,1,0.9999680987188567
+76,Which of the following is true about networking Docker containers? Select all that apply.,"a. Docker containers can be networked to each other via the native Docker bridge or Open vSwitch.
+b. A Docker container can never expose a low port (e.g., port 80) to the external Internet; Internet hosts must always reach a Docker service by a high port (e.g., 8080).
+c. Docker containers running in different virtual machines cannot be networked together.
+d. Connecting Docker containers requires setting up GRE tunnels between the containers.
+e. Docker containers are not reachable from the external Internet by default.
+",,"a,e","a,e",,"a. Docker provides a native bridge network for containers, and it is also possible to use Open vSwitch for more advanced networking capabilities, such as creating a multi-host network for containers.
+
+b. This statement is incorrect. Docker containers can expose low ports to the external Internet using port mapping. For example, it's common to map port 80 inside the container to port 80 on the host.
+
+c. Containers running in different virtual machines can be networked together, for example, by using overlay networks or by exposing and mapping ports to the host VM's network.
+
+d. GRE tunnels are not a requirement for connecting Docker containers. Docker has its own networking capabilities that do not necessarily require GRE tunnels. GRE tunnels could be used in some advanced networking scenarios but are not a standard requirement for Docker networking.
+
+e. By default, Docker containers are isolated and not reachable from the external Internet unless specifically configured to be exposed via port mapping or other networking configurations.","['https://docs.docker.com/network/', 'https://docs.docker.com/network/bridge/', 'https://docs.docker.com/network/overlay/', 'https://docs.docker.com/config/containers/container-networking/']",1,9_NFV_and_Docker,0.95,0.999852295283086

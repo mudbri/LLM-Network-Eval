@@ -1,0 +1,73 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+43,Which of the following statements are true about the OpenFlow specification? Select all that apply.,"a. If a switch does not contain a flow table entry that matches a particular packet, the switch forwards the packet to the controller for handling.
+b. The main purpose of the OpenFlow control channel is to update flow table entries on switches.
+c. Once a switch has sent one packet for a flow, it must also send all subsequent packets for that flow to the controller.
+d. The OpenFlow specification provides mechanisms to perform Layer 2 learning across a network of switches.
+e. Some versions of the OpenFlow specification allow for performing more than one action on a single packet.
+",,"a,b,e","a,b,e",,"a. If a switch does not contain a flow table entry that matches a particular packet, the switch forwards the packet to the controller for handling, which is a fundamental concept in OpenFlow. This process is known as packet-in processing. 
+b. The main purpose of the OpenFlow control channel is to update flow table entries on switches, enabling centralized control over network devices. 
+e. Some versions of the OpenFlow specification allow for performing more than one action on a single packet, which provides flexibility in network management and control.","['https://www.opennetworking.org/sdn-resources/onf-specifications/openflow/', 'https://www.sdxcentral.com/sdn/definitions/what-is-openflow/']",1,6_control_plane,0.95,0.9886902538182036,1.0
+44,Which of the following statements are true about dpctl? Select all that apply.,"a. dpctl can modify flow table entries on an OpenFlow switch.
+b. dpctl is an OpenFlow controller.
+c. dpctl can inspect flow table entries on an OpenFlow switch.
+d. dpctl can respond to network events, such as packets sent from a switch.
+e. dpctl is invoked from within the Mininet emulator.
+",,"a,c","a,c,e",,"a. dpctl can modify flow table entries on an OpenFlow switch, allowing for changes in the switch's behavior remotely. This is a valid function of dpctl. 
+c. dpctl can inspect flow table entries on an OpenFlow switch, enabling administrators to view the current state of the switch's flow table. This is a correct statement about dpctl. 
+e. dpctl is invoked from within the Mininet emulator, providing a command-line interface to interact with OpenFlow switches in a Mininet network. This statement is true.",['https://github.com/mininet/mininet/blob/master/util/dpctl'],0,6_control_plane,0.9,0.6352903084641995,0.6000000000000001
+45,Which of the following are reasonable considerations for the choice of controller? Select all that apply.,"a. Speed of prototyping.
+b. Support for and integration with cloud applications.
+c. Performance of the programming language that the controller is implemented in.
+d. Need for production-quality operation.
+e. Ease of learning curve.
+",,"a,b,c,d,e","a,b,d,e",,"a. Speed of prototyping is crucial as it impacts the development and testing phases of SDN solutions. A controller that allows quick prototyping can accelerate the deployment process. b. Support for and integration with cloud applications is essential for modern SDN environments that often interact with cloud services. c. The performance of the programming language is less critical compared to other factors like scalability and ease of use. d. The need for production-quality operation is a key consideration to ensure stability, reliability, and security in a live network environment. e. Ease of learning curve is important to facilitate the adoption of the controller by network administrators and developers. Therefore, options a, b, d, and e are all reasonable considerations for choosing a controller.","['https://www.sciencedirect.com/science/article/pii/S1877050915009279', 'https://ieeexplore.ieee.org/document/7461371']",0,6_control_plane,0.95,0.9793019747043644,0.6000000000000001
+46,Which of the following controllers support OpenStack integration? Select all that apply.,"a. Pox
+b. Ryu
+c. Floodlight
+d. CpQD
+e. NOX
+",,"b,c","b,c",,Ryu and Floodlight are known to support OpenStack integration. They provide compatibility and functionality to work seamlessly with OpenStack environments.,"['https://ryu-sdn.org/', 'https://www.projectfloodlight.org/floodlight/']",1,6_control_plane,0.9,0.6882176006776929,1.0
+47,Which of the following are true about Pox? Select all that apply.,"a. Pox's _handle_PacketIn function determines how a packet should be handled when it arrives at the controller.
+b. Pox automatically determines the priority between two conflicting rules.
+c. Pox's performance is typically slower than NOX.
+d. Pox provides a function to modify flow table entries at a switch.
+e. Pox automatically determines the order to install flow table rules, to avoid inconsistent forwarding behavior.
+",,"a,c,d","a,d",,"a. Pox's _handle_PacketIn function is responsible for processing incoming packets at the controller, determining how they should be handled. This function is crucial for SDN controllers like Pox. 
+d. Pox does provide functions to modify flow table entries at switches, allowing dynamic control over network behavior.","['https://opennetlinux.org/wp-content/uploads/2016/06/SDN-Controller-Performance-Comparison.pdf', 'https://opennetlinux.org/wp-content/uploads/2016/06/SDN-Controller-Performance-Comparison.pdf']",0,6_control_plane,0.9,0.9997008286306818,0.6000000000000001
+48,What is the difference between a hard timeout and an idle timeout?,"a. A hard timeout expunges all flow table entry from the switch, whereas an idle timeout only expunges one flow at a time.
+b. A hard timeout expunges a flow table entry for all switches in the network, whereas an idle timeout only expunges the flow table entry on the switches that have seen no matches for that flow within the specified interval.
+c. A hard timeout occurs exactly at the specified interval, whereas an idle timeout may occur slightly later than the specified interval.
+d. A hard timeout expunges a flow table entry regardless of whether there have been active matches, whereas an idle timeout expunges the flow table entry only if there have been no matches for that flow within the specified interval.
+",,d,a,,"A hard timeout expunges all flow table entries from the switch when the specified interval expires, regardless of whether there have been active matches. On the other hand, an idle timeout removes a flow table entry only if there have been no matches for that flow within the specified interval, expunging one flow at a time.",['https://ieeexplore.ieee.org/document/7461371'],0,6_control_plane,0.9,0.8516575326012445,0.0
+49,Which of the following are true about hubs and learning switches? Select all that apply,"a. A hub forwards an incoming packet on all ports (except the incoming port), whereas a switch only floods an incoming packet on all ports if it does not have a table entry that determines the output port for that packet.
+b. A learning switch requires more logic at the controller (in terms of lines of code in Pox) than a hub.
+c. A hub implemented in Pox requires all incoming packets to be directed to the controller.
+d. A learning switch implemented in Pox requires all incoming packets to be redirected to the controller.
+e. A learning switch implemented in Pox can be easily extended to support firewall capabilities.
+",,"a,b,e","a,e",,"a. A hub indeed forwards an incoming packet on all ports (except the incoming port), while a switch only floods an incoming packet on all ports if it does not have a table entry that determines the output port for that packet. This behavior is due to the switch's ability to make forwarding decisions based on its MAC address table. 
+e. A learning switch implemented in Pox can be extended to support firewall capabilities. Learning switches can be programmed to perform various functions beyond basic switching, such as implementing firewall rules based on learned MAC addresses.","['https://www.geeksforgeeks.org/difference-between-hub-switch-and-router/', 'https://opennetlinux.org/docs/tutorials/pox-firewall/']",0,6_control_plane,0.9,0.5107253611687189,0.6000000000000001
+50,Which of the following functions ensures that the controller will hear PacketIn messages? Select all that apply.,"a. init
+b. connection.addListeners
+c. _handle_PacketIn
+d. launch
+e. AddRule
+",,b,"b,c",,"The function 'connection.addListeners' is responsible for ensuring that the controller will hear PacketIn messages by adding listeners to the connection. The function '_handle_PacketIn' is also crucial for handling PacketIn messages within the controller. Therefore, options b and c are correct in this context.",['https://github.com/floodlight/floodlight/blob/master/src/main/java/net/floodlightcontroller/core/internal/Controller.java'],0,6_control_plane,0.95,0.9527752446348842,0.6000000000000001
+51,What are the two key steps of an OpenFlow flow table entry (select two)?,"a. match
+b. redirect
+c. forward
+d. action
+e. drop
+",,"a,d","a,d",,"The two key steps of an OpenFlow flow table entry are: 
+a. Match: This step defines the criteria that incoming packets must meet to be processed by the flow entry. 
+d. Action: This step specifies the action to be taken when a packet matches the defined criteria, such as forwarding, modifying, or dropping the packet.",['https://opennetworking.org/software-defined-standards/learn-sdn/'],1,6_control_plane,1.0,0.9999992551639774,1.0
+52,Which of the following are true about the OpenDaylight controller? Select all that apply.,"a. It is slower and less scalable than some of the more lightweight SDN controllers such as Pox.
+b. It only supports OpenFlow as a ""southbound"" control framework.
+c. Open Daylight only supports proprietary switches from Cisco and IBM.
+d. Its code shares a lot of similarities with Beacon.
+e. It allows dynamic reloading of controller functionality without restarting the controller.
+",,"d,e","b,d,e",,"a. OpenDaylight is known for its scalability and performance, not slower and less scalable than lightweight controllers like Pox. Therefore, this statement is incorrect. 
+b. OpenDaylight supports multiple southbound protocols, not just OpenFlow. 
+c. OpenDaylight is an open-source controller that supports a wide range of switches, not limited to proprietary switches from specific vendors like Cisco and IBM. 
+d. OpenDaylight's codebase shares similarities with Beacon, making this statement true. 
+e. OpenDaylight allows dynamic reloading of controller functionality without requiring a full restart, which is a beneficial feature of the controller. 
+Therefore, the correct statements are options b, d, and e.",['https://www.opendaylight.org/'],0,6_control_plane,0.9,0.7890883321370901,0.6000000000000001

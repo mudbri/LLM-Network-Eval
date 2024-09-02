@@ -1,0 +1,42 @@
+Question 106. Which of the following are true about configuration verification? Select all that apply.
+(A) Configuration verification requires a large-scale simulation of network protocols, complete with tests for different message orderings and timings.
+(B) Configuration verification cannot detect incorrect protocol behavior that may result from faulty hardware. -*
+(C) Configuration verification cannot detect incorrect protocol behavior that may result from buggy software. -*
+(D) Verifying the correctness of network behavior based on configuration requires a model of protocol behavior. -*
+(E) Configuration verification can only detect errors after the configuration is installed on production routers.
+
+Question 107. Which of the following assertions could be verified with configuration verification (i.e., of a snapshot of router and switch configuration)? Select all that apply.
+(A) There is no traffic pattern that would ever result in a stateful firewall dropping traffic.
+(B) A route learned from one peer will not be readvertised to another peer. -*
+(C) Any time that an infection occurs, hosts are automatically quarantined.
+(D) The current settings of link weights will result in all routers being connected. -*
+(E) The configuration of route reflectors and clients ensures that any route learned from a neighboring AS will propagate to all routers in the topology. -*
+
+Question 108. Which of the following are true about data-plane verification? Select all that apply.
+(A) Data-plane verification may detect errors that configuration analysis can miss in the cases of buggy control-plane software. -*
+(B) Data plane verification can only operate on the forwarding table of a single router or switch; network-wide analysis is not possible.
+(C) Data-plane verification requires accurate modeling of network protocols, including which bits are present in which part of the packet header.
+(D) Data-plane verification techniques such as header-space analysis typically operate on a single "snapshot" of data-plane state. -*
+(E) Header-space analysis can only provide verification/analysis for specific packets; it cannot answer questions for general parts of flowspace.
+
+Question 109. Which of the following assertions could be verified with data plane verification? Select all that apply.
+(A) The rules installed on the firewalls in the network ensure that only port 80 traffic can ever reach the web server from the rest of the Internet. -*
+(B) The configuration of the network's routing protocols will result in persistent oscillation (i.e., they will never settle on a stable set of routes).
+(C) The network will remain connected, given the failure of at most two links.
+(D) Two virtual network "slices" are not completely isolated: it is possible for traffic to travel from one slice to the other. -*
+(E) The forwarding table state in the routers across the network will result in a forwarding loop. -*
+
+Question 110. Which of the following is true about Kinetic policies? Select all that apply.
+(A) Kinetic's NuSMV verifier can verify that the data plane will never have loops.
+(B) The Kinetic controller can only process external events from routers and switches.
+(C) Pyretic's composition operators can help prevent state explosion. -*
+(D) State transitions can occur based on timing (e.g., a timeout). -*
+(E) State transitions can be exogenous or endogenous. -*
+
+Question 112. Which of the following NuSMV expressions encodes the statement "It is always possible for the policy state to go to 'allow'."
+(A) SPEC AG (EF policy=allow) -*
+(B) SPEC AG (authenticated -> AX policy=allow)
+(C) SPEC AG (!authenticated -> AX policy=allow)
+(D) None of the above.
+(E) SPEC A [ policy=allow U authenticated ]
+

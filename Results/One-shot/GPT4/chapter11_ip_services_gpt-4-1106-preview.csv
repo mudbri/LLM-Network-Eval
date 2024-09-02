@@ -1,0 +1,47 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. The cause is not related to dynamic NAT
+b. The command output does not provide any clue to identify the problem
+c. Dynamic NAT can't use Standard ACLs
+d. The NAT pool does not have enough entries to fulfill the user's requests
+",,d,d,,"The correct answer is D. The 'show' command output indicates that the NAT pool named 'examsdigest' has a total of 10 addresses available for dynamic NAT translation (from 190.1.1.1 to 190.1.1.10), and all 10 of these addresses are currently allocated (100%). Additionally, there have been 595 'misses,' which suggests that there have been 595 instances where an inside device tried to translate an inside local address to an inside global address, but there was no address available to fulfill the request. This implies that the NAT pool does not have enough addresses to handle all the NAT translation requests from the users, which is why users are not able to reach the Internet.",['https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/13772-12.html'],1,chapter11_ip_services,0.95,0.9990308862942991
+195,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Warning - Warning condition?","a. 2
+b. 3
+c. 4
+d. 5
+",,c,c,,"In the Cisco IOS logging system, severity level 4 represents 'Warning' messages. These messages indicate a warning condition. Severity levels in Cisco IOS are numbered from 0 (emergencies) to 7 (debugging), with lower numbers representing more severe conditions.",['https://www.cisco.com/c/en/us/td/docs/ios/12_2/configfun/command/reference/ffun_r/frf014.html#wp1057595'],1,chapter11_ip_services,1,0.999944378229948
+196,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Informational: Informational message only?","a. 1
+b. 6
+c. 4
+d. 5
+",,b,b,,"In the Cisco IOS logging system, severity level 6 represents 'Informational' messages. These are messages that provide information about normal operations of the system and are not indicative of any problems.",['https://www.cisco.com/c/en/us/support/docs/ip/access-lists/13608-21.html#anc7'],1,chapter11_ip_services,0.95,0.9999800187796273
+198,One of the features of SNMPv3 is called message integrity.,"a. TRUE
+b. FALSE
+",,a,a,,"A is the correct answer. SNMPv3 provides message integrity, which ensures that a packet has not been tampered with in transit. This is achieved through the use of cryptographic checksums. SNMPv3 also provides authentication and encryption, which are not features of SNMPv1 or SNMPv2c.","['https://www.ietf.org/rfc/rfc3414.txt', 'https://www.ietf.org/rfc/rfc3411.txt']",1,chapter11_ip_services,1,0.9998304433663511
+199,You have been tasked to find out whether the Cisco Discovery Protocol (CDP) is enabled globally. Which command will you type?,"a. show protocols
+b. show cdp
+c. show running-config
+d. show interface brief
+",,b,c,,"The correct answer is C. The 'show running-config' command on a Cisco device will display the current configuration of the router or switch, which includes whether CDP is enabled globally on the device. The 'show cdp' command will show the CDP settings and information about neighbors if CDP is enabled, but it will not specifically show whether CDP is enabled globally. 'show protocols' displays the status of configured Layer 3 protocols, and 'show interface brief' provides a brief summary of interface status and configurations, but neither specifically indicate whether CDP is enabled globally.","['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/cdp/command/cdp-cr-book/cdp-s1.html', 'https://www.ciscopress.com/articles/article.asp?p=2348264&seqNum=3']",0,chapter11_ip_services,0.95,0.9998282980724635
+200,Which of the following protocols synchronize the time of different systems?,"a. NTP
+b. SMTP
+c. UDP
+d. CDP
+",,a,a,,NTP (Network Time Protocol) is the correct answer. NTP is used to synchronize the clocks of computers to some time reference. SMTP (Simple Mail Transfer Protocol) is for sending emails. UDP (User Datagram Protocol) is a transport layer protocol used for establishing low-latency and loss-tolerating connections between applications on the internet. CDP (Cisco Discovery Protocol) is a proprietary protocol designed by Cisco to help in the discovery of Cisco devices within a network.,"['https://en.wikipedia.org/wiki/Network_Time_Protocol', 'https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol', 'https://en.wikipedia.org/wiki/User_Datagram_Protocol', 'https://en.wikipedia.org/wiki/Cisco_Discovery_Protocol']",1,chapter11_ip_services,1,0.9999641651360841
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. You can't connect two routers to the same LAN subnet.
+b. If one router fails, hosts can't send packets off-subnet
+c. If one router fails, both hosts will use the one remaining router as a default router
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",,c,c,,"C is the correct answer. First and foremost, you can connect two routers to the same LAN subnet, which eliminates option A. FHRP, or First Hop Redundancy Protocol, is designed to ensure that user traffic immediately and transparently recovers from first hop router failures, where the first hop is the link between the host computers and the routers. Therefore, if one router fails, the other router takes over the responsibility of routing packets to and from the subnet, which makes option B incorrect. Because both hosts are configured to use the FHRP, they will both use the remaining router as their default router if one router fails, which confirms option C and rules out option D.","['https://en.wikipedia.org/wiki/First_hop_redundancy_protocol', 'https://www.cisco.com/c/en/us/support/docs/ip/hot-standby-router-protocol-hsrp/13780-6.html']",1,chapter11_ip_services,0.95,0.999628860289388
+203,Which of the following characteristics of network traffic can be managed by Quality of Service (QoS)? (Choose all that apply),"a. Bandwidth
+b. LLQ
+c. Loss
+d. Delay
+e. CoS
+f. Jitter
+",,"a,c,d,f","a,c,d,f",,"Quality of Service (QoS) is a set of technologies and techniques used to manage network traffic and ensure the performance of critical applications by prioritizing certain types of traffic. Bandwidth (a) can be managed by QoS by limiting the amount of bandwidth certain traffic can use or by reserving bandwidth for critical applications. Loss (c) can be managed by QoS by implementing mechanisms that reduce packet loss for high-priority traffic. Delay (d) can be managed by using QoS to prioritize traffic and reduce latency for time-sensitive applications. Jitter (f), which is the variation in delay of received packets, can also be managed by QoS through techniques such as traffic shaping and scheduling. LLQ (b) stands for Low Latency Queueing, which is a specific QoS feature and not a characteristic of network traffic. CoS (e) stands for Class of Service, which is a method of categorizing traffic to apply QoS policies but is not a characteristic of the traffic itself.","['https://en.wikipedia.org/wiki/Quality_of_service', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/qos/configuration/15-mt/qos-15-mt-book.html']",1,chapter11_ip_services,0.95,0.9996829048509972

@@ -1,0 +1,198 @@
+Question Number,Question Text,Choices,Correct Answer,Old LLM Answer,New LLM Answer,Old LLM Explanation,New LLM Explanation,Old Answer Correct?,New Correct,Topic,Score-right-minus-wrong
+46,What transport layer protocol does DNS normally use?,"a. TCP
+b. IP
+c. UDP
+d. ICMP
+",c,c,c,"DNS (Domain Name System) normally uses UDP (User Datagram Protocol) as its transport layer protocol. UDP is a lightweight, connectionless protocol that is well-suited for the small, quick queries and responses typical of DNS lookups. DNS queries and responses are usually small enough to fit within a single UDP datagram. TCP is used by DNS only when the response data exceeds the maximum UDP packet size of 512 bytes, in which case the DNS client will retry over TCP.","Evaluation of original answer: The original answer is correct and provides a good explanation. It accurately states that DNS normally uses UDP as its transport layer protocol due to UDP's lightweight and connectionless nature, which is suitable for the small and quick queries and responses typical of DNS lookups. The answer also correctly mentions that TCP is used by DNS only when the response data exceeds the maximum UDP packet size of 512 bytes.
+
+Correct Answer: c",1,1,4_networking_serices,1.0
+47,A DNS TTL determines what?,"a. How far away a DNS can be from you.
+b. How many DNS resolutions can take place before the IP has to change.
+c. How many steps there are in the resolution process.
+d. How long a DNS entry is allowed to be cached.
+",d,d,d,"The DNS TTL (Time to Live) determines how long a DNS entry can be cached by a DNS resolver before it must be refreshed from the authoritative name server. It does not relate to the physical distance of the DNS server, the number of resolutions before an IP change, or the number of steps in the resolution process.","Evaluation of original answer: The original answer is correct. The DNS TTL (Time to Live) value specifies the amount of time that a DNS record can be cached by a resolver before it must be discarded and re-fetched from the authoritative name server. It is a mechanism to control the lifespan of cached DNS information.
+
+The other options are incorrect:
+a. The physical distance of a DNS server is not determined by the TTL.
+b. The TTL does not dictate the number of resolutions before an IP address must change.
+c. The TTL is unrelated to the number of steps in the DNS resolution process.
+
+Therefore, option d is the only correct choice.
+
+Correct Answer: d",1,1,4_networking_serices,1.0
+48,How many root servers are there?,"a. 16
+b. 8
+c. 13
+d. 17",c,c,c,There are 13 root name servers that are authoritative for the root zone of the Domain Name System (DNS). These servers are operated by 12 different organizations and are distributed globally to provide redundancy and improve performance. Each root server is actually a cluster of servers using anycast addressing. The 13 root servers are named from A to M.,"Evaluation of original answer: The original answer is correct. There are indeed 13 root name servers in the Domain Name System (DNS) that are responsible for the root zone. These servers are crucial for the functioning of the DNS and are operated by 12 different organizations worldwide. The explanation provided about the naming convention (A to M) and the use of anycast addressing for redundancy and performance is also accurate.
+
+Correct Answer: c",1,1,4_networking_serices,1.0
+49,Which of the following are benefits of using Domain Name Resolution (DNS)? (Select all that apply.),"a. Easier for humans to remember website names.
+b. Easy for the node to find the network ID.
+c. Allows administrative changes to happen seamlessly.
+d. Small routing tables.
+","a,c","a,c","a,c","The main benefits of using DNS are:a) It allows the use of easy-to-remember domain names instead of IP addresses, which are harder for humans to remember and type correctly.  c) DNS allows changes in network administration, like IP address changes, to happen seamlessly without end-users needing to change anything, as the domain name stays the same.Choices b and d are not direct benefits of DNS. Finding the network ID is more related to IP addressing and small routing tables are a benefit of hierarchical addressing, but not specifically of DNS.","Evaluation of original answer: The original answer is correct and provides a good explanation for why choices a and c are benefits of using Domain Name Resolution (DNS). The answer correctly identifies that DNS allows the use of easy-to-remember domain names instead of IP addresses and enables seamless administrative changes without impacting end-users. The answer also correctly points out that choices b and d are not directly related to the benefits of DNS.
+
+Correct Answer: a, c",1,1,4_networking_serices,1.0
+50,The process of using DNS to turn a domain name into an IP address is known as_________.,"a. IP addresses
+b. DNS server
+c. name resolution
+d. ARP table lookup
+",c,c,c,"The process of using the Domain Name System (DNS) to convert a domain name into an IP address is known as name resolution. When a user enters a domain name in their web browser, the DNS is queried to resolve that name into the corresponding IP address, which is then used to establish the connection to the appropriate web server.","Evaluation of original answer: The original answer is correct. The process of using DNS to convert a domain name into an IP address is indeed called name resolution. The explanation provided is accurate and clearly explains how name resolution works in the context of accessing websites using domain names.
+
+Correct Answer: c",1,1,4_networking_serices,1.0
+51,An A Record contains what?,"a. An SOA
+b. An IPv4 address
+c. An IPv6 address
+d. A CNAME",b,b,b,An A record (Address record) is a DNS record type that maps a hostname to an IPv4 address. It allows domain names to be resolved to the IP addresses of the servers hosting the domain.,"Evaluation of original answer: The original answer is correct. An A record in DNS does contain an IPv4 address that a hostname resolves to.
+
+Correct Answer: b",1,1,4_networking_serices,1.0
+52,MX stands for ________.,"a. Mail exchange
+b. Meta exchange
+c. Micro exchange
+d. Micro extreme
+",a,a,a,"MX stands for 'mail exchange'. In the context of computer networking and email systems, an MX record specifies the mail server responsible for accepting email messages on behalf of a domain name. It is a type of resource record in the Domain Name System (DNS) that maps a domain name to a list of mail exchange servers for that domain.","Evaluation of original answer: The original answer is correct. MX does indeed stand for ""mail exchange"" in the context of computer networking and email systems. The provided explanation accurately describes the purpose and function of MX records in the Domain Name System (DNS).
+
+Correct Answer: a",1,1,4_networking_serices,1.0
+53,A fully qualified domain name can contain how many characters?,"a. 255
+b. 127
+c. 64
+d. 63",a,a,"d.Thecorrectansweristhatafullyqualifieddomainnamecancontainamaximumof63charactersperlabel.ThetotallengthoftheFQDNcangoupto255characters,buteachindividualpartseparatedbydots(i.e.,eachlabel)islimitedto63characters.","A fully qualified domain name (FQDN) can contain a maximum of 255 characters. This includes all labels (parts separated by dots), with each label allowing a maximum of 63 characters. The 255 character limit is specified in RFC 1035.","Evaluation of original answer: The original answer is incorrect. While it's true that a fully qualified domain name (FQDN) can theoretically contain up to 255 characters in total, there is an additional constraint on the length of each individual label (the parts separated by dots). According to RFC 1035, each label can be a maximum of 63 characters long. So while the total length of an FQDN can go up to 255 characters, it's not possible to have a single label that is 255 characters long.
+
+Correct Answer: d. The correct answer is that a fully qualified domain name can contain a maximum of 63 characters per label. The total length of the FQDN can go up to 255 characters, but each individual part separated by dots (i.e., each label) is limited to 63 characters.",1,0,4_networking_serices,0.0
+54,What technique is used to balance traffic across multiple IPs for the same domain?,"a. Quad A record
+b. CNAME
+c. Cycling records
+d. Round robin
+",d,d,d,"Round robin is a technique used to balance traffic across multiple IP addresses for the same domain. It works by configuring multiple A records for a domain, each pointing to a different IP address. When a DNS query is made for the domain, the DNS server responds with the list of IP addresses in a cyclic order, distributing the traffic across the different servers.","Evaluation of original answer: The original answer is correct. Round robin is indeed the technique used to balance traffic across multiple IP addresses for the same domain by configuring multiple A records that are returned in a cyclic order by the DNS server.
+
+Correct Answer: d",1,1,4_networking_serices,1.0
+55,Which of the following are part of a Zone File? (select all that apply),"a. A Record
+b. NS record
+c. FQDN
+d. SOA
+","a,b,d","a,b,d","a,b,d","A Zone File contains several types of DNS records, including:A (Address) Record - Maps a hostname to an IP addressNS (Name Server) Record - Specifies the authoritative name servers for the domainSOA (Start of Authority) Record - Provides key information about the zone, such as the primary name server, email of the domain administrator, domain serial number, and timing information for zone refreshes and retries.While an FQDN (Fully Qualified Domain Name) is used within these records, the FQDN itself is not considered a specific part or record type within a Zone File.","Evaluation of original answer: The original answer is correct and provides a clear explanation. It correctly identifies that A records, NS records, and SOA records are all part of a typical DNS zone file, while clarifying that an FQDN, although used within these records, is not itself a specific record type.
+
+Correct Answer: a, b, d",1,1,4_networking_serices,1.0
+56,Which of the following need to be configured for a computer to operate on a modern network? Check all that apply.,"a. A MAC address
+b. An IP address
+c. A TCP port
+d. A name server
+","b,d","b,d","b,d","To operate on a modern network, a computer needs to be configured with an IP address and a name server (DNS server). The IP address uniquely identifies the computer on the network and allows it to communicate with other devices. The name server translates human-readable domain names into IP addresses. While a MAC address is necessary for a network interface card to function, it does not need to be manually configured as it is assigned by the manufacturer. TCP ports are used by applications and services but do not need to be configured for basic network operation.","Evaluation of original answer: The original answer is correct and provides a good explanation. It correctly identifies that an IP address and a name server (DNS server) need to be configured for a computer to operate on a modern network. The answer also clarifies that while a MAC address is necessary for a network interface card, it does not need to be manually configured. Additionally, it points out that TCP ports are used by applications and services but are not required for basic network operation.
+
+Correct Answer: b, d",1,1,4_networking_serices,1.0
+57,"When using Fixed Allocation DHCP, what is used to determine a computer's IP?","a. A MAC address
+b. A subnet mask
+c. An A Record
+d. Location
+",a,a,a,"When using Fixed Allocation DHCP (Dynamic Host Configuration Protocol), a computer's IP address is determined based on its MAC (Media Access Control) address. The DHCP server maintains a mapping table that associates specific MAC addresses with predetermined IP addresses. When a device with a known MAC address requests an IP address, the DHCP server assigns the corresponding IP address from its mapping table.","Evaluation of original answer: The original answer is correct. When using Fixed Allocation DHCP, a computer's IP address is indeed determined based on its MAC address. The DHCP server maintains a mapping table that associates specific MAC addresses with predetermined IP addresses, ensuring that a particular device consistently receives the same IP address.
+
+Correct Answer: a",1,1,4_networking_serices,1.0
+58,"The process by which a client, configured to use DHCP, attempts to get network configuration information is known as _________________.","a. DHCP Request
+b. DHCP Offer
+c. DHCP Acknowledgement
+d. DHCP Discovery
+",d,d,d,"The process by which a DHCP client attempts to obtain network configuration information is known as DHCP Discovery. When a DHCP client boots up or connects to the network, it broadcasts a DHCPDISCOVER message on its local physical subnet to find available DHCP servers. The DHCP server then responds with a DHCPOFFER message, which includes an available IP address and other configuration parameters. The client then sends a DHCPREQUEST to accept the offered parameters, and the server confirms with a DHCPACK (acknowledgement).","Evaluation of original answer: The original answer is correct. The process by which a DHCP client attempts to obtain network configuration information is indeed called DHCP Discovery. The answer accurately describes the DHCP Discovery process, including the client broadcasting a DHCPDISCOVER message, the server responding with a DHCPOFFER, the client sending a DHCPREQUEST, and the server confirming with a DHCPACK. The explanation provides a clear and concise overview of the DHCP Discovery process.
+
+Correct Answer: d",1,1,4_networking_serices,1.0
+59,Which of the following are ways a DHCP can operate? Select all that apply.,"a. CIDR
+b. ARP
+c. Fixed allocation
+d. Dynamic allocation
+","c,d","c,d","c,d","DHCP (Dynamic Host Configuration Protocol) can operate in two main ways to assign IP addresses to devices on a network:c. Fixed allocation (also known as static allocation): The DHCP server assigns a specific, pre-configured IP address to a device based on its MAC address. This ensures that a particular device always receives the same IP address.d. Dynamic allocation: The DHCP server assigns an IP address from a defined pool (range) of addresses. When a device requests an IP address, the DHCP server selects an available address from the pool and leases it to the device for a specified period. After the lease expires, the device must renew the lease or request a new IP address.CIDR (Classless Inter-Domain Routing) and ARP (Address Resolution Protocol) are not directly related to how DHCP operates.","Evaluation of original answer: The original answer is correct and provides a clear explanation of how DHCP can operate using fixed allocation (static allocation) and dynamic allocation. The answer also correctly points out that CIDR and ARP are not directly related to DHCP operation.
+
+Correct Answer: c, d",1,1,4_networking_serices,1.0
+60,DHCP is a protocol of which layer?,"a. Transport layer
+b. Network Layer
+c. Application layer
+d. Physical layer
+",c,c,b,"DHCP (Dynamic Host Configuration Protocol) is an application layer protocol that automates the process of configuring devices on IP networks, thus eliminating the need for manual configuration. It operates at the application layer of the OSI model and uses UDP as its transport protocol.","Evaluation of original answer: The original answer is incorrect. DHCP (Dynamic Host Configuration Protocol) is not an application layer protocol. It actually operates at the network layer of the OSI model, not the application layer.
+
+DHCP is used to automatically assign IP addresses and other network configuration parameters to devices on a network. It uses UDP (User Datagram Protocol) as its transport protocol, but UDP operates at the transport layer, while DHCP itself functions at the network layer.
+
+The network layer is responsible for logical addressing (IP addresses) and routing, which aligns with the purpose and functionality of DHCP in assigning IP addresses to devices.
+
+Correct Answer: b",1,0,4_networking_serices,0.0
+61,What technique allows for specific destination ports to be configured to always deliver to specific nodes?,"a. Port forwarding
+b. Ephemeral ports
+c. IP translation
+d. IP masquerading
+",a,a,a,"Port forwarding is a technique that allows incoming traffic on specific ports to be redirected to particular nodes or devices on a private network. It enables services running on internal hosts to be accessible from the public Internet via the router's public IP address and designated ports. Ephemeral ports are temporary ports dynamically allocated by the client, IP translation modifies the source/destination IP in packets, and IP masquerading is a form of NAT where multiple private IPs are hidden behind a single public IP. But port forwarding is the only technique listed that delivers traffic on configured destination ports to specific internal nodes.","Evaluation of original answer: The original answer is correct and provides a clear explanation. Port forwarding is indeed the technique that allows specific destination ports to be configured to always deliver traffic to specific nodes on an internal network. The answer accurately describes how port forwarding works and why the other options are not applicable in this scenario. It provides additional context about ephemeral ports, IP translation, and IP masquerading to demonstrate understanding of the concepts. The explanation is detailed and logically sound.
+
+Correct Answer: a",1,1,4_networking_serices,1.0
+62,The total number of IPv4 addresses is approximately:,"a. 4.2 trillion
+b. 100 billion
+c. 4.2 billion
+d. 4.2 million",c,c,c,"The total number of IPv4 addresses is approximately 4.2 billion. This is because IPv4 uses 32-bit addresses, which allows for 2^32 unique addresses. This equates to 4,294,967,296 addresses, or roughly 4.2 billion.","Evaluation of original answer: The original answer is correct. The explanation provided is accurate and clearly justifies why choice ""c"" is the correct answer. It correctly states that IPv4 uses 32-bit addresses, which allows for 2^32 unique addresses, equating to approximately 4.2 billion total IPv4 addresses.
+
+Correct Answer: c",1,1,4_networking_serices,1.0
+63,Which Regional Internet Registry(RIR) serves the USA and Canada?,"a. ARIN
+b. APNIC
+c. RIPE
+d. LACNIC
+",a,a,a,"ARIN (American Registry for Internet Numbers) is the Regional Internet Registry that serves the United States, Canada, and parts of the Caribbean. It is responsible for allocating and managing IP addresses and Autonomous System Numbers (ASNs) in these regions.","Evaluation of original answer: The original answer is correct. ARIN (American Registry for Internet Numbers) is indeed the Regional Internet Registry responsible for allocating and managing IP addresses and Autonomous System Numbers (ASNs) for the United States, Canada, and parts of the Caribbean. The other RIRs mentioned serve different regions:
+
+- APNIC (Asia-Pacific Network Information Centre) serves the Asia-Pacific region
+- RIPE NCC (Réseaux IP Européens Network Coordination Centre) serves Europe, the Middle East, and parts of Central Asia
+- LACNIC (Latin America and Caribbean Network Information Centre) serves Latin America and parts of the Caribbean
+
+Therefore, the original answer correctly identifies ARIN as the RIR serving the USA and Canada.
+
+Correct Answer: a",1,1,4_networking_serices,1.0
+64,What is another solution to IP exhaustion that will create more public IP addresses as it is implemented?,"a. RFC1918
+b. IP masquerading
+c. Port preservation
+d. IPv6",d,d,d,"IPv6 is the next-generation Internet Protocol that provides a solution to the IP address exhaustion problem faced by IPv4. It uses 128-bit addresses, allowing for an extremely large number of unique IP addresses (approximately 340 undecillion). As IPv6 is gradually implemented and adopted worldwide, it will create a vast pool of new public IP addresses, alleviating the scarcity issue. The other choices, while related to IP addressing, do not directly solve the exhaustion problem: RFC1918 defines private IP address ranges, IP masquerading enables multiple devices to share a single public IP address, and port preservation is a technique used in network address translation (NAT).","Evaluation of original answer: The original answer is correct and provides a clear explanation of why IPv6 is the best solution to IP address exhaustion among the given choices. The answer accurately describes how IPv6's 128-bit addressing scheme allows for an extremely large number of unique IP addresses, which will help alleviate the scarcity issue faced by IPv4. The answer also briefly explains why the other choices do not directly solve the exhaustion problem, providing additional context and demonstrating a good understanding of the topic.
+
+Correct Answer: d",1,1,4_networking_serices,1.0
+65,What allows a gateway to rewrite the source IP of an outgoing datagram?,"a. IPv6
+b. IPv4
+c. NAT
+d. IANA",c,c,c,"Network Address Translation (NAT) allows a gateway, such as a router, to rewrite the source IP address of an outgoing datagram. NAT is commonly used to enable multiple devices with private IP addresses to access the Internet using a single public IP address. When an outgoing datagram passes through the NAT-enabled gateway, the source IP address is replaced with the public IP address of the gateway. This allows the datagram to be routed over the Internet. When the response returns, the NAT gateway translates the destination IP address back to the original private IP address and forwards the datagram to the appropriate device on the private network.","Evaluation of original answer: The original answer is correct and provides a clear and accurate explanation of how Network Address Translation (NAT) allows a gateway to rewrite the source IP address of an outgoing datagram. The answer correctly identifies that NAT is used to enable multiple devices with private IP addresses to access the Internet using a single public IP address. It also explains the process of how the NAT gateway replaces the source IP address with the public IP address when the datagram is outgoing and translates the destination IP address back to the original private IP address when the response returns. The answer is complete and does not contain any serious problems or inaccuracies.
+
+Correct Answer: c",1,1,4_networking_serices,1.0
+66,What is two-factor authentication? Select all that apply.,"a. a method where you need two passwords
+b. a method where you authenticate twice
+c. a method that requires two usernames
+d. a method where users are required to verify their credentials through a combination of hardware and/or software. Usually a username, password, and a short-lived token.
+","b,d",d,"b,d.Bothoptionsbanddarecorrectdescriptionsoftwo-factorauthentication.Itisamethodthatrequiresuserstoauthenticatetwice(b),verifyingtheircredentialsthroughacombinationoftwodifferentfactors,usuallysomethingtheyknowandsomethingtheyhave(d).",Two-factor authentication (2FA) is a security process that requires users to provide two different authentication factors to verify their identity. It usually consists of something the user knows (like a username and password) and something the user has (like a hardware token or mobile app that generates a one-time code). The two factors together provide an additional layer of security compared to single-factor authentication methods.,"Evaluation of original answer: The original answer is partially correct but incomplete. While option d accurately describes two-factor authentication, option b is also a valid description. Two-factor authentication does involve authenticating twice - once with each factor. The original answer should have selected both b and d to be fully correct.
+
+Correct Answer: b, d. Both options b and d are correct descriptions of two-factor authentication. It is a method that requires users to authenticate twice (b), verifying their credentials through a combination of two different factors, usually something they know and something they have (d).",0,0,4_networking_serices,0.0
+67,VPNs are known as a _____ protocol.,"a. network layer
+b. data link layer
+c. Connectionless
+d. Tunneling
+",d,d,d,"VPNs (Virtual Private Networks) are known as a tunneling protocol. VPN tunneling allows private network communications to be sent across a public network, such as the Internet, by encapsulating the private network data and protocol information within the public network transmission units. This creates a secure 'tunnel' between the VPN client and server, protecting the transmitted data from unauthorized access.","Evaluation of original answer: The original answer is correct. VPNs are indeed known as a tunneling protocol. They create a secure, encrypted ""tunnel"" over a public network like the Internet, allowing private network traffic to pass through securely. The tunneling process encapsulates the private network data packets inside the packets used by the public network's transmission protocol.
+
+Correct Answer: d",1,1,4_networking_serices,1.0
+68,A proxy is something that _______________________.,"a. communicates on behalf of something else
+b. allows for many devices to speak to one other device
+c. encrypts traffic sent across the Internet
+d. sends data across a single network segment
+",a,a,a,"A proxy is something that communicates on behalf of something else. It acts as an intermediary between a client and a server, forwarding requests and responses between them. Proxies can provide functions like content filtering, security, or caching. They do not necessarily allow many devices to speak to one device, encrypt traffic, or send data across a single network segment.","Evaluation of original answer: The original answer is correct. A proxy server acts as an intermediary between a client and a server, communicating on behalf of the client. It forwards requests from the client to the server and then sends the server's responses back to the client. While proxies can provide additional functions like caching, filtering, or security, their core purpose is to communicate on behalf of the client.
+
+The other options are not accurate descriptions of a proxy:
+- b) A proxy does not necessarily allow many devices to speak to one device. That would better describe a hub or switch.
+- c) While a proxy can be used in conjunction with encryption, it does not inherently encrypt traffic sent across the Internet. 
+- d) A proxy can send data across multiple network segments, not just a single segment.
+
+Therefore, option a is the only correct choice.
+
+Correct Answer: a",1,1,4_networking_serices,1.0
+69,What are some use cases for reverse proxies? Select all that apply.,"a. Improved computer graphics
+b. Load balancing
+c. IP address translation
+d. Encryption and Decryption
+","b,d","b,c,d","b,c,d",Reverse proxies have several common use cases:b) Load balancing - A reverse proxy can distribute incoming requests across multiple backend servers to balance the load.  c) IP address translation - The reverse proxy translates the destination IP of incoming packets to the IP of the appropriate backend server. This hides the internal IP addresses.d) Encryption/Decryption - A reverse proxy can handle encryption and decryption of HTTPS traffic so the backend servers don't have to.Improved computer graphics is not a typical use case for reverse proxies.,"Evaluation of original answer: The original answer is correct and provides a good explanation of why each selected option is a valid use case for reverse proxies. It correctly identifies that load balancing, IP address translation, and encryption/decryption are common functions performed by reverse proxies, while improved computer graphics is not a relevant use case. The answer provides concise but informative details on how reverse proxies are used for each selected option.
+
+Correct Answer: b, c, d",0,0,4_networking_serices,0.5
+70,What was one of the first technologies that commonly utilized 2FA (Two-Factor Authentication)?,"a. TCP
+b. DNS
+c. VPN
+d. UDP
+",c,c,none,"VPNs (Virtual Private Networks) were one of the earliest technologies to commonly utilize two-factor authentication (2FA). 2FA adds an extra layer of security by requiring users to provide two different authentication factors to verify their identity. In the context of VPNs, this often involves something the user knows (like a password) and something the user has (like a security token or code generated by an authenticator app on their phone). The other options - TCP, DNS, and UDP - are fundamental networking protocols that do not inherently incorporate 2FA.","Evaluation of original answer: The original answer is incorrect. While VPNs can utilize 2FA for enhanced security, they were not one of the first technologies to commonly use it. VPNs became more widespread in the late 1990s and early 2000s, whereas other technologies adopted 2FA earlier.
+
+One of the first common uses of 2FA was with ATM cards in the 1980s. The card itself (something you have) combined with the PIN (something you know) provided two-factor authentication. In the 1990s, 2FA began being used more for remote network access, often with hardware tokens that generated one-time passwords. RSA Security was a pioneer in this space.
+
+So while the reasoning about VPNs and 2FA is generally correct, VPNs were not actually one of the earliest adopters of 2FA technology. The correct answer among the given choices is that none of them were early 2FA technologies.
+
+Correct Answer: none",1,0,4_networking_serices,0.0

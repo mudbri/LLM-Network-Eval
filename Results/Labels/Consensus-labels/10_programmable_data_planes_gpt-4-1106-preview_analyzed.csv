@@ -1,0 +1,39 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+114,What are functions that are commonly performed by a programmable data plane? Select all that apply.,"a. Performing deep packet inspection
+b. Forwarding
+c. Specifying access control policies
+d. Shaping traffic
+e. Computing routes
+","a,b,d","a,b,c,d","In a programmable data plane, the following functions are commonly performed: 
+
+a. Performing deep packet inspection: Programmable data planes can inspect packet contents beyond the basic header information, enabling more sophisticated traffic management and security functions.
+
+b. Forwarding: This is a fundamental function of any data plane, programmable or not. It involves making decisions on where to send packets next based on their headers.
+
+c. Specifying access control policies: Programmable data planes can implement complex access control policies, allowing or denying traffic based on a wide range of criteria.
+
+d. Shaping traffic: Data planes can shape traffic by controlling the rate at which packets are sent to ensure quality of service (QoS) and compliance with network policies.
+
+e. Computing routes: This is typically a function of the control plane, not the data plane. The control plane is responsible for making high-level decisions about the path that traffic takes through the network, while the data plane executes these decisions at the packet level.","['https://www.sdxcentral.com/networking/sdn/definitions/whats-the-definition-of-sdn/', 'https://www.ietf.org/blog/programmable-data-planes/', 'https://en.wikipedia.org/wiki/Software-defined_networking']",0,10_programmable_data_planes,0.95,0.999933144159301,"Misinterpreting question. The question is not asking if something can P4 can implement policies, but whether or not it can control them",Misinterpreting questions,Incorrect copying of the question,,,1,1,wikipedia,0.0,1,1,0,Advanced networking,1,3,1,1,0.6000000000000001
+116,Which of the following are true about programmable data planes in Click? Select all that apply.,"a. Click elements cannot perform common data plane operations such as TTL decrement or checksum computations.
+b. Data-plane processing in Click is limited to a fixed set of elements provided by the software.
+c. Click elements can be composed to perform complex functions, such as the forwarding at an IP router.
+d. Click configuration is a simplified version of Python.
+e. Click elements can be composed to perform complex network-wide functions, such as shortest paths or BGP routing.
+",c,"c,e","Click is a modular software router framework that allows for the composition of packet processing elements to define complex data plane behaviors. Each element in Click performs a simple packet operation, and complex behaviors are achieved by connecting these elements into a graph that defines the path packets take through the router. Here's an analysis of each option:
+
+a. This statement is false. Click elements can indeed perform common data plane operations, including TTL decrement and checksum computations. These are basic operations that any flexible packet processing software should be able to handle.
+
+b. This statement is false. While Click comes with a rich set of pre-defined elements, it is also possible to create new elements, thus extending the data-plane processing capabilities beyond the fixed set provided by the software.
+
+c. This statement is true. Click elements can be composed to perform complex functions, including those required for forwarding at an IP router. By linking elements that perform specific tasks such as routing decisions, packet filtering, and address translation, Click can implement the full functionality of an IP router.
+
+d. This statement is false. Click configurations are not written in Python or a simplified version of Python. They are written in a domain-specific language that is tailored for defining packet processing pipelines in the Click software.
+
+e. This statement is true. Click can be used to implement complex network-wide functions, such as computing shortest paths or implementing BGP routing protocols. These functions can be achieved by combining Click elements in a way that they work together to perform the necessary computations and packet manipulations for such protocols.","['https://www.read.cs.ucla.edu/click/click', 'https://www.read.cs.ucla.edu/click/elements']",0,10_programmable_data_planes,0.95,0.979564620150864,Misinformation that Click elements can perform shortest path computation,Wrong Facts/Concept,Incorrect information/concept,,,0,0,,,1,1,1,Advanced networking,3,4,3,4,0.6000000000000001
+118,What are some tricks commonly employed in software to accelerate packet forwarding? Select all that apply.,"a. Ethernet GRE tunnels
+b. Large packet buffers that hold multiple packets that can be read with a single read
+c. Forwarding smaller packets before larger packets
+d. Avoiding lookups on the software bridge between virtual interfaces and physical interfaces
+e. Batch processing
+","a,b,d,e","b,d,e","To accelerate packet forwarding in software, several techniques can be utilized. Option 'b' mentions large packet buffers that hold multiple packets, which can be read with a single read operation. This approach reduces the number of I/O operations needed to process packets, thereby increasing throughput. Option 'd' suggests avoiding lookups on the software bridge between virtual interfaces and physical interfaces, which can save processing time by reducing the overhead associated with the bridging process. Option 'e' refers to batch processing, which is a technique where operations are processed in large batches rather than one at a time, improving efficiency by taking advantage of data locality and reducing per-packet processing overhead. Option 'a', Ethernet GRE tunnels, is a tunneling protocol used to encapsulate a wide variety of network layer protocols inside virtual point-to-point links over an Internet Protocol internetwork but does not directly accelerate packet forwarding. Option 'c', forwarding smaller packets before larger packets, could potentially increase latency for the larger packets and does not necessarily accelerate overall packet forwarding; it is more related to traffic management and Quality of Service (QoS).","['https://www.cisco.com/c/en/us/support/docs/ip/generic-routing-encapsulation-gre/118457-config-gre-00.html', 'https://www.intel.com/content/www/us/en/io/universal-serial-bus/usb3-frequency-interference-paper.html', 'https://www.researchgate.net/publication/221252707_Batch_processing_in_firewalls']",0,10_programmable_data_planes,0.9,0.498904551371983,Does not really know that GRE avoids expensive lookups by the software bridge,Wrong Facts/Concept,Incorrect information/concept,,,0,0,,,1,1,1,Advanced networking,3,3,3,3,0.6000000000000001

@@ -1,0 +1,97 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+1,Which of the following are true about Classless Interdomain Routing (CIDR)? Select all that apply.,"a. The only sizes for an IP address allocation before CIDR were 8, 16, or 24 bits.
+b. The prefix length for a CIDR prefix can be anywhere in the range from 0 to 32 bits.
+c. In an Internet forwarding table with CIDR, there can only be one unique matching entry for any given IP address.
+d. CIDR slowed the rate of Internet routing table growth because prefixes no longer had to be allocated in fixed-size blocks.
+",,"b,d","b,d",,"a. Before CIDR, IP address allocations were commonly based on classful network design, which indeed used class A (8-bit prefix), class B (16-bit prefix), and class C (24-bit prefix) blocks. However, this statement is not entirely true as it implies these were the only sizes available, which neglects the existence of Class D (multicast) and Class E (reserved for future or experimental use) addresses. CIDr allowed for more flexible allocation sizes beyond the classful boundaries, hence the term 'classless'.
+
+b. CIDR allows for a prefix length anywhere from 0 to 32 bits, which is true. This allows for a more flexible and efficient allocation of IP addresses.
+
+c. This statement is not necessarily true. Internet routing tables with CIDR can have overlapping entries, where a more specific prefix (longer prefix length) will take precedence over a less specific one when forwarding decisions are made. This is known as the 'longest prefix match' rule.
+
+d. CIDR did indeed slow the rate of Internet routing table growth. By allowing for arbitrary-length subnet masks, network addresses could be allocated much more efficiently, reducing the need for large numbers of small, fixed-size blocks and thus slowing the expansion of routing tables.
+
+Therefore, the correct answers are options b and d.","['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.rfc-editor.org/rfc/rfc1518.txt', 'https://www.rfc-editor.org/rfc/rfc1519.txt']",1,1_SDN_Basics,0.95,0.9874461851030536
+2,Which of the following are true about how DNS lookups work? Select all that apply.,"a. A DNS A-record query for google.com will only return a single IP address at a time.
+b. An NS-record query for a DNS lookup will return the name(s) of the authoritative name server(s) for that domain.
+c. If your local DNS resolver caches an NS record for google.com for multiple days, all clients who use that DNS resolver will continue using the same IP address to reach Google’s Web server until that NS record expires.
+d. An MX-record query for a DNS lookup will return the IP address of the mail server for that domain.
+e. All DNS PTR records are maintained by a single organization in-addr.arpa.
+",,b,"b,d",,"a. A DNS A-record query for google.com can return multiple IP addresses, not just a single address. This is because large websites often use load balancing across different servers located around the world.
+b. An NS-record (Name Server record) query returns the name(s) of the authoritative name server(s) for the domain, which is correct.
+c. An NS record pertains to name servers, not the IP addresses of web servers. Therefore, caching an NS record does not affect the IP address clients use to reach a web server. Additionally, the IP address for a web server would be associated with an A or AAAA record, not an NS record.
+d. An MX-record (Mail Exchange record) query returns information about the mail server and specifically its domain name, not the IP address. However, the domain name can be used to find the IP address of the mail server through an additional DNS lookup (A or AAAA record).
+e. While PTR records are used for reverse DNS lookups and are indeed delegated from the in-addr.arpa (for IPv4) and ip6.arpa (for IPv6) domains, they are not maintained by a single organization. They are distributed among the organizations that own the IP addresses.","['https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/', 'https://www.cloudflare.com/learning/dns/dns-records/dns-ns-record/', 'https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/', 'https://www.ripe.net/manage-ips-and-asns/db/support/configuring-reverse-dns']",0,1_SDN_Basics,0.95,0.9871202083266228
+3,Which of the following are true about traffic control with BGP? Select all that apply.,"a. A network operator can use the BGP local preference attribute to control outbound traffic from his or her AS to a destination.
+b. A network operator can use BGP AS path prepending to control inbound traffic from his or her AS to a destination.
+c. A network operator can use BGP AS path prepending to control outbound traffic from his or her AS to a destination.
+d. A network operator can use the BGP local preference attribute to control inbound traffic from his or her AS to a destination.
+",,"a,b","a,b",,"a. The BGP local preference attribute is used to prefer one path over another for outbound traffic originating from the AS where the local preference is set. It influences the decision process for selecting the best path out of an AS.
+
+b. BGP AS path prepending is a technique where a network operator artificially inflates the length of the AS_PATH attribute by repeating their own AS number. This makes a path look less preferable and can influence other ASes to choose a different path for inbound traffic to the operator's AS.
+
+c. AS path prepending does not control outbound traffic; it is used to influence inbound traffic from other ASes by making a path appear longer and thus less preferable.
+
+d. The BGP local preference attribute does not influence inbound traffic directly. It is used within an AS to select the preferred path for outbound traffic.","['https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13759-37.html', 'https://www.juniper.net/documentation/us/en/software/junos/bgp/topics/topic-map/bgp-route-selection.html']",1,1_SDN_Basics,0.95,0.9580359020870228
+4,Which of the following are true about layering? Select all that apply.,"a. The network layer guarantees reliable, in-order delivery of packets.
+b. The network layer has only a single protocol in widespread use today, representing what we call the “narrow waist”.
+c. The transport layer uses port numbers.
+d. The destination address in the link layer header is always the address of the next layer-3 node along an end-to-end IP path.
+",,"b,c","b,c",,"a. The network layer does not guarantee reliable, in-order delivery of packets; this is typically a service provided by the transport layer (e.g., TCP provides reliable, in-order delivery, while IP does not guarantee delivery, order, or reliability).
+b. The 'narrow waist' of the Internet architecture refers to the fact that there is a single network layer protocol, the Internet Protocol (IP), that is almost universally used and allows for the interconnection of networks using different technologies.
+c. The transport layer indeed uses port numbers to distinguish between different services or applications running on the same host.
+d. The destination address in the link layer header is the address of the next hop along the path, which might not be the final layer-3 node (destination host) but rather the next router or switch in the path.","['https://en.wikipedia.org/wiki/Internet_protocol_suite#Layer_names_and_number_of_layers_in_the_literature', 'https://en.wikipedia.org/wiki/Transport_layer', 'https://en.wikipedia.org/wiki/Network_layer']",1,1_SDN_Basics,0.95,0.9997220627153954
+5,Which of the following are not true about packet switching? Select all that apply.,"a. Once a connection is established between two endpoints in a packet switched network, the end-to-end route cannot change, or the connection must be re-established.
+b. Traffic running over a packet-switched network between two endpoints will always experience predictable latency.
+c. Traffic running over a packet-switched network between two endpoints will never be dropped by intermediate nodes along the path.
+d. A user of a packet switched network might occasionally get a “busy signal” if there are too many users on the network.
+",,"a,b,c,d","a,b,c,d",,"a. Packet switched networks are designed to allow dynamic routing of packets, which means that the route can change as needed for efficiency or due to network conditions without needing to re-establish the connection.
+b. Latency in packet-switched networks can be unpredictable due to varying network conditions, congestion, and the dynamic nature of packet routing.
+c. Packets can be dropped in a packet-switched network if there is congestion or if intermediate nodes are experiencing issues, such as a lack of buffer space.
+d. Packet switched networks do not provide a 'busy signal' like circuit-switched networks might when all circuits are in use. Instead, they may experience packet loss or increased latency during high congestion, but they do not block new connections with a busy signal.","['https://en.wikipedia.org/wiki/Packet_switching', 'https://www.lifewire.com/packet-switching-vs-circuit-switching-817544']",1,1_SDN_Basics,1,0.9872689258821068
+6,Which of the following are true about content distribution networks? Select all that apply.,"a. Content distribution networks can improve the performance that a client sees by reducing the network latency between the client and the content that it is downloading.
+b. Content distribution networks can reduce transit expenses for a content provider by enabling much of the provider’s content to be served from a nearby network, sometimes even from a cache that is within the client’s own network.
+c. Real-time content such as video streams cannot be distributed from a content distribution network.
+d. Content distribution networks typically redirect Web clients to a nearby Web cache by rewriting the IP address of packets sent from the client to the IP address of the nearby Web cache.
+",,"a,b","a,b,d",,"a. CDNs improve performance by reducing the distance that content travels over the network, thereby reducing latency.
+b. CDNs can reduce transit expenses because they often serve content from a location that is closer to the user, which can decrease the amount of data traveling over the provider's backbone network.
+c. This statement is false. Real-time content, including live video streams, can be and is commonly distributed through CDNs, although this might involve different techniques for caching and streaming.
+d. CDNs use various mechanisms to direct clients to the nearest server. DNS redirection is one such mechanism where the DNS response points to the IP address of a nearby cache. While the actual IP packets are not rewritten, the client is given the IP address of a nearby cache to which it connects directly.
+Therefore, the correct answers are options a, b, and d.","['https://www.akamai.com/our-thinking/cdn/what-is-a-cdn', 'https://www.cloudflare.com/learning/cdn/what-is-a-cdn/', 'https://www.imperva.com/learn/performance/cdn-guide/']",0,1_SDN_Basics,0.95,0.999984474030529
+7,Which of the following are true about 802.11 wireless medium access control? Select all that apply.,"a. Only wireless networks can have collisions at the receiver; such collisions are not possible on wired Ethernet networks.
+b. Using RTS/CTS (“request to send”, “clear to send”) control reduces the overall achievable throughput of the wireless network.
+c. A wireless sender can avoid causing a collision at the receiver by performing a “carrier sense” to determine whether any other sender wants to transmit at the time that it wishes to send a packet.
+d. Disabling RTS/CTS necessarily lowers the effective throughput of the wireless network, since more collisions will occur at the receiver without RTS/CTS enabled.
+",,b,"b,c",,"a. This statement is incorrect because wired Ethernet networks can also have collisions, especially in non-switched networks using a shared medium like coaxial cable, where the CSMA/CD protocol is used to manage collisions.
+b. Using RTS/CTS indeed reduces the raw data throughput because it adds control frame exchange overhead before the actual data frame is transmitted. However, it can be beneficial in certain scenarios by avoiding the hidden node problem and thus potentially improving the overall network performance.
+c. Carrier sense is a fundamental part of the CSMA/CA protocol used in 802.11 wireless networks, which helps to avoid collisions by checking if the medium is free before transmitting.
+d. Disabling RTS/CTS does not necessarily lower effective throughput, as it can sometimes increase throughput by reducing overhead in environments where the likelihood of collisions is low. The effect of RTS/CTS on throughput is situational and depends on factors such as network congestion and the presence of hidden nodes.","['https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_avoidance', 'https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_detection', 'https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/116056-technote-negotiation-00.html']",0,1_SDN_Basics,0.95,0.9999571771856229
+8,Which of the following are true about video streaming? Select all that apply.,"a. Using UDP to stream a video instead of TCP is appropriate if the client is more concerned about low delay and interactivity than it does about receiving a high-quality stream.
+b. A larger playout buffer at the client allows the client more time to recover from lost packets.
+c. Using TCP for video streaming could result in larger delays between transmission and playout than streaming the same video with UDP.
+d. Since UDP provides no reliable delivery guarantees, a video streaming application that uses UDP as its transport cannot recover from any packet loss in the video stream.
+",,"a,b,c","a,b,c",,"a. UDP is often chosen for streaming media, where occasional loss is preferable to the delay caused by TCP's retransmission strategies, making it suitable for applications that prioritize low delay over high quality. b. A larger playout buffer gives the client more time to deal with jitter and potential packet loss by delaying the playout, allowing for retransmissions or error recovery mechanisms to take effect. c. TCP's congestion control and retransmission mechanisms can introduce additional delays that are not present with UDP, which does not have these features and thus can result in lower delay between transmission and playout. d. This statement is incorrect because even though UDP itself does not provide reliability, video streaming applications can implement their own error correction and recovery mechanisms on top of UDP to handle packet loss.","['https://tools.ietf.org/html/rfc3550', 'https://en.wikipedia.org/wiki/User_Datagram_Protocol', 'https://en.wikipedia.org/wiki/Real-time_Transport_Protocol']",1,1_SDN_Basics,0.95,0.9997963315349383
+9,Which of the following are true about TCP? Select all that apply.,"a. TCP guarantees that the receiver sees the same in-order stream of bytes that the sender transmitted.
+b. A TCP sender and receiver use a “three-way handshake” both to set up and to terminate the TCP connection.
+c. TCP’s congestion avoidance algorithm causes the sender to reduce its sending rate by a factor of two when it sees a packet loss.
+d. A TCP sender controls its sending rate by adjusting the number of unacknowledged packets that can be sent over the network at any time.
+",,"a,c,d","a,b,c,d",,"a. TCP (Transmission Control Protocol) is a reliable transport protocol that ensures that the receiver gets the data exactly as it was sent by the sender, in the correct order. This is achieved through acknowledgments, sequence numbers, and retransmissions of lost packets.
+
+b. The 'three-way handshake' is a process used by TCP to establish a connection between a sender and receiver. It involves the exchange of SYN (synchronize), SYN-ACK (synchronize-acknowledge), and ACK (acknowledge) messages. This process is also used to terminate connections, with the exchange of FIN (finish) and ACK messages.
+
+c. TCP's congestion avoidance algorithm, such as the widely used 'Additive Increase Multiplicative Decrease' (AIMD), indeed reduces the sending rate by approximately a factor of two upon detecting packet loss (through mechanisms like duplicate ACKs or timeouts), which is indicative of network congestion.
+
+d. TCP uses a 'congestion window' and a 'receive window' to control the sending rate. The congestion window adjusts the number of unacknowledged packets that can be in transit to avoid overwhelming the network, while the receive window is advertised by the receiver to prevent sender from overwhelming the receiver's buffer.","['https://tools.ietf.org/html/rfc793', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol', 'https://en.wikipedia.org/wiki/Additive_increase/multiplicative_decrease']",0,1_SDN_Basics,1,0.998124949894336
+10,Which of the following are true about denial of service attacks (and defenses)? Select all that apply.,"a. If every network on the Internet performed stateless ingress filtering to defend against source IP spoofing, the DNS reflection attack would not work.
+b. If every network on the Internet performed stateless egress filtering to defend against source IP address spoofing, the DNS reflection attack could not be carried out.
+c. In a “SYN Flood” attack, each TCP SYN packet that a victim receives causes it to set up TCP connection state.
+d. A “DNS Reflection” attack requires the attacking client to “spoof” the source IP address of the packet containing the DNS request.
+",,"b,c,d","a,c,d",,"a. Stateless ingress filtering prevents packets with spoofed source IP addresses from entering a network. If every network on the Internet did this, the DNS reflection attack, which relies on spoofed source addresses, would not work because the responses would not be sent to the intended victim's IP address.
+
+b. While egress filtering is important, it prevents packets with spoofed source IP addresses from leaving a network. This option is slightly misleading because DNS reflection attacks involve the attacker sending queries to a DNS server with the victim's spoofed IP address as the source. It is the response from the DNS server that needs to be filtered, not the outgoing request from the attacker. However, if every network performed egress filtering correctly, it would indirectly prevent the attack by not allowing spoofed packets to leave the attacker's network in the first place.
+
+c. In a 'SYN Flood' attack, the attacker sends a large number of TCP SYN packets to the victim, each one prompting the victim to allocate resources and send a SYN-ACK response while waiting for the final ACK in the TCP handshake, which never comes. This can exhaust the victim's resources.
+
+d. A 'DNS Reflection' attack involves the attacker sending a DNS query with a spoofed source IP address, which is the address of the intended victim. The DNS server then sends the response to the victim's IP address, overwhelming their network with traffic.
+
+Therefore, the correct answers are options a, c, and d.","['https://www.us-cert.gov/ncas/tips/ST04-015', 'https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/', 'https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/']",0,1_SDN_Basics,0.9,0.9844583794790384

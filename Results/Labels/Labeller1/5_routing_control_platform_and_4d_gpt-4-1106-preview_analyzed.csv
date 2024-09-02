@@ -1,0 +1,46 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Unnamed: 46,Score-right-minus-wrong
+33,Which of the following are true about the RCP? Select all that apply.,"a. In Phase 1 of RCP deployment, the RCP controller for an AS sees all routes for all destinations that an AS learns from neighboring ASes.
+b. In Phase 1 of RCP deployment, there is no need for ASes to use BGP to exchange routes.
+c. In an RCP deployment, routers no longer have to compute routes.
+d. The RCP controller operates just like a route reflector would, selecting a single best route for each destination for all client routers.
+e. In Phase 1 of RCP deployment, a single AS can benefit from deploying RCP even if no other ASes deploy RCP.","c,e","a,c,e","The Routing Control Platform (RCP) is a centralized platform that can control routing decisions in a network. Here's an analysis of each choice:
+
+a. True. In Phase 1 of RCP deployment, the RCP controller for an Autonomous System (AS) has visibility into all routes for all destinations that the AS learns from neighboring ASes. This comprehensive view allows the RCP to make informed routing decisions.
+
+b. False. Even with RCP, ASes still use BGP to exchange routing information. RCP does not replace BGP but works alongside it to make more centralized routing decisions.
+
+c. True. In an RCP deployment, the computation of routes can be offloaded from individual routers to the RCP controller. Routers still forward traffic but do not need to compute the routes themselves.
+
+d. False. The RCP controller does not operate exactly like a route reflector. While a route reflector selects a single best route for each destination for its clients, the RCP can potentially make more individualized routing decisions for each router based on a wider array of information.
+
+e. True. An AS can benefit from deploying RCP independently of other ASes because the control over its own routing decisions can be improved internally, even if neighboring ASes do not deploy RCP.","['https://www.nanog.org/sites/default/files/2_Feamster_NsdI.pdf', 'https://www.usenix.org/legacy/event/nsdi04/tech/full_papers/feamster/feamster.pdf', 'https://www.ietf.org/proceedings/63/slides/plenaryt-2.pdf']",0,5_routing_control_platform_and_4d,0.95,0.966904770294848,Does not know that RCP only communicated with the border routers so it can’t have access to all routes,Wrong Facts/Concept,Incorrect information/concept,,,0,0,,,1,1,1,Advanced networking,3,3,2,3,,0.6000000000000001
+37,What are some of the stated goals of simplifying the control plane in the 4D architecture. Select all that apply.,"a. Improved security.
+b. Inherent robustness of control plane
+c. Simpler management systems
+d. Faster innovation
+e. Simpler routers and switches
+","c,d,e","a,b,c,d","The 4D architecture for network control proposes four dimensions: decision, dissemination, discovery, and data. The goal of simplifying the control plane in the 4D architecture includes several aspects. Improved security (a) is a goal because a simpler control plane can reduce the attack surface and make it easier to implement and manage security policies. Inherent robustness of the control plane (b) is also a goal since a simpler control plane can lead to fewer errors and more straightforward fault tolerance mechanisms. Simpler management systems (c) are a goal because complexity is often the enemy of management; a simpler control plane can lead to more straightforward management tools and processes. Faster innovation (d) is a goal as well since a simplified control plane can allow for quicker development and deployment of new features and protocols. Simpler routers and switches (e) might be a consequence of a simplified control plane but are not explicitly stated as a goal of the 4D architecture.","[""Greenberg, Albert, et al. 'A clean slate 4D approach to network control and management.' ACM SIGCOMM Computer Communication Review 35.5 (2005): 41-54."", ""Casado, Martin, et al. 'Rethinking enterprise network control.' IEEE/ACM Transactions on Networking 17.4 (2009): 1270-1283.""]",0,5_routing_control_platform_and_4d,0.9,0.956342122047291,Does not really know the stated goals. Seems like its trying to infer goals,Wrong Facts/Concept,Incorrect information/concept,Misinterpreting questions,Incorrect copying of the question,0,2,"research paper, research paper",2,1,0,0,Advanced networking,3,4,2,4,,0
+38,What are some examples of how a separate decision plane in the 4D architecture can amortize system overhead? Select all that apply.,"a. Maintaining a single table in memory of AS paths that are learned across all BGP sessions in the AS, and using references into that table for specific routers (and routing decisions), to save memory.
+b. If secure BGP were deployed, verifying the signatures on the AS paths of routes received from neighbors.
+c. Keeping track of topology information.
+d. Performing route computation on behalf of all the routers in the AS.
+e. Performing inbound traffic engineering on a set of links in a coordinated fashion.
+","a,b,c","a,c,d,e","The 4D architecture in networking proposes a separation of the network's control plane (decision plane) from the data plane (forwarding plane) and management plane. This architecture can amortize system overhead in several ways. Here's how the given options align with this concept:
+
+a. Maintaining a single table of AS paths across all BGP sessions saves memory by avoiding duplication of this information across multiple routers. This is a clear example of a centralized decision plane reducing overhead.
+
+b. Verifying signatures on AS paths would indeed be a function of a secure BGP deployment, but it is not an example of amortizing system overhead by using a separate decision plane. This process would likely add overhead for security purposes, not reduce it.
+
+c. Keeping track of topology information centrally in the decision plane can reduce the overhead on individual routers, which no longer need to maintain and update their own complete topology information.
+
+d. Performing route computation centrally for all routers in the AS can greatly reduce the computational overhead on individual routers, as they no longer need to perform these computations themselves.
+
+e. Coordinated inbound traffic engineering can optimize the use of network resources and reduce overhead by allowing the decision plane to make more informed and holistic decisions about traffic flows across multiple links.
+
+The options a, c, d, and e are examples of how a separate decision plane can help to amortize system overhead by centralizing functions that would otherwise be duplicated across many routers in the network.","['https://www.cs.princeton.edu/courses/archive/fall07/cos561/papers/networkOS.pdf', 'https://www.researchgate.net/publication/221516673_4D_Control_Plane_for_Networks']",0,5_routing_control_platform_and_4d,0.95,0.855022637193354,Misinterpreting goals later on + Reasoning error: Main issue seems to be that it thinks that benefits and system amortization are the same thing,"Incorrect reasoning/deduction,     Misinterpreting questions","Faulty inference,     Misinterpreting a word",,,0,0,,,1,0,1,Advanced networking,3,4,2,4,,0
+40,"Which plane is responsible for installing state into the data plane (e.g., FIB entries, ACLs) in the 4D architecture?","a. Discovery plane
+b. Data plane
+c. Decision plane
+d. Dissemination plane
+e. None of the above
+",d,c,"In the 4D architecture for network control, the Decision plane is responsible for the control logic that determines how the network should behave. This includes making decisions about routing, access control lists (ACLs), and other state information, which are then installed into the data plane. The data plane, also known as the forwarding plane, is responsible for actually forwarding packets based on the state installed by the decision plane. The Discovery plane is responsible for collecting information about the network's current state, and the Dissemination plane is responsible for distributing state within the control plane. Therefore, the correct answer is the Decision plane.",['https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/network_os.pdf'],0,5_routing_control_platform_and_4d,1,0.992552342972582,Does not know what dissemination stage does,Wrong Facts/Concept,Incorrect information/concept,,,0,0,,,1,1,1,Advanced networking,3,4,2,4,,0.1999999999999999

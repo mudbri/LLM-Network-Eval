@@ -1,0 +1,53 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+62,Which of the following are true of “network slicing”? Select all that apply.,"a. Network operators can use slicing to test configurations on “shadow” networks that mirror a production network topology.
+b. One way to slice networks is according to “flow space”, whereby different controllers might control distinct and non-overlapping traffic flows.
+c. A controller can prevent one network slice from interfering with the resources of another.
+d. Multi-tenant datacenters are one use case for network slicing.
+e. Conventional (i.e., non-SDN) networks have no concept of network virtualization or slicing.
+","a,b,d","a,b,c,d","Network slicing is a concept that allows multiple virtual networks to be created on top of a shared physical infrastructure. It is commonly associated with Software Defined Networking (SDN) and is instrumental in creating separate logical networks for different purposes or tenants. Here's an evaluation of each choice provided in the question:
+
+a. Network operators can indeed use slicing to create 'shadow' networks for testing purposes, which is a safe way to test configurations without affecting the production network.
+
+b. Slicing a network according to 'flow space' is a valid approach in SDN, where different traffic flows can be managed by different controllers, ensuring that each slice handles distinct and non-overlapping traffic flows.
+
+c. Controllers in SDN environments are designed to manage network resources. They can enforce policies that prevent one network slice from interfering with or consuming the resources allocated to another slice, ensuring isolation among slices.
+
+d. Multi-tenant datacenters can benefit from network slicing, as it allows each tenant to have a separate logical network, providing security and customization for their specific needs.
+
+e. The statement that conventional networks have no concept of network virtualization or slicing is incorrect. Traditional networks can implement virtualization techniques such as VLANs (Virtual Local Area Networks) and VPNs (Virtual Private Networks), which are forms of network slicing or virtualization. These techniques allow for the creation of separate logical networks over a shared physical infrastructure.
+
+Given these evaluations, options a, b, c, and d are correct statements about network slicing, while option e is incorrect.","['https://en.wikipedia.org/wiki/Network_slicing', 'https://en.wikipedia.org/wiki/Software-defined_networking', 'https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-network-slicing.html', 'https://www.networkworld.com/article/3238666/what-is-a-vlan-how-to-setup-a-vlan.html']",0,8_data_center_virtualization,0.95,0.999961155539866,Conceptual error. c) controller cannot establish resource isolation between slices,Wrong Facts/Concept,Incorrect information/concept,,,0,2,"wikipedia, wikipedia",2,1,1,1,Advanced networking,3,3,3,3,0.6000000000000001
+63,Which of the following are true about flow spaces? Select all that apply.,"a. Two flow spaces cannot overlap.
+b. One host could send traffic that ends up in two different flow spaces.
+c. Flow spaces can only be defined according to combinations of packet header fields.
+d. Flowspace isolation separates individual virtual networks from one another but incurs some performance penalty for doing so.
+e. Two controllers that write data-plane rules for non-overlapping parts of flowspace can never cause traffic from one “slice” to enter the other slice.
+",b,"b,c,d","Flow spaces in the context of Software Defined Networking (SDN) are used to define virtual network slices based on certain criteria, typically involving packet header fields. Here's an evaluation of each statement:
+
+a. This statement is false. Two flow spaces can overlap; the same packet can match multiple flow spaces, and the specific actions taken may depend on the priority of the rules within those flow spaces.
+
+b. This statement is true. One host could send different types of traffic (e.g., HTTP and FTP) that are classified into different flow spaces based on their packet headers (like destination port).
+
+c. This statement is true. Flow spaces are commonly defined according to combinations of packet header fields such as source IP, destination IP, transport protocol, source port, and destination port.
+
+d. This statement is true. Flowspace isolation does allow the separation of virtual networks. However, there is typically some performance penalty due to the additional processing required to enforce isolation.
+
+e. This statement is false. Even if two controllers are managing non-overlapping parts of the flowspace, there could be scenarios where misconfigurations or specific network conditions cause traffic to inadvertently cross from one slice to another.","['https://www.sciencedirect.com/topics/computer-science/flow-space', 'https://ieeexplore.ieee.org/document/6133521', 'https://www.researchgate.net/publication/261043850_Flowspace_management_and_flow_visibilities_in_virtualized_network_environments']",0,8_data_center_virtualization,0.9,0.667777515127543,Conceptual error. 1. Flow spaces can be defined on physical ports too. 2. They do not incur any additional penalty,Wrong Facts/Concept,Incorrect information/concept,,,0,1,research paper,0,1,1,1,Advanced networking,3,3,3,3,0.1999999999999999
+71,Which of the following are true about NVP? Select all that apply.,"a. NVP allows tenants to configure logical datapaths on their own virtual hosts.
+b. NVP relies on switches with custom hardware.
+c. NVP allows tenants to configure switches in the middle of the network for portions of flowspace that they own.
+d. Exact matches for policies in NVP must always be performed in user space on the host.
+e. In NVP, most of the “intelligence” for datapath processing lies in virtual hosts, not in switches.
+","a,e","a,c,e","NVP, which stands for Network Virtualization Platform, is designed to allow tenants to create and manage their own virtual networks. Here's an analysis of each option:
+
+a. True. NVP allows tenants to configure logical datapaths on their own virtual hosts. Tenants can create isolated networks with their own topologies and policies.
+
+b. False. NVP typically does not rely on switches with custom hardware. It is designed to work with standard, off-the-shelf hardware and leverages software for network virtualization.
+
+c. True. NVP allows tenants to configure switches in the middle of the network for portions of flowspace that they own. This is part of the flexibility provided by network virtualization platforms, allowing tenants to define network behavior.
+
+d. False. While NVP can use user space for some processing, this statement is too absolute as it does not always require exact matches to be performed in user space. Network functions can be offloaded to kernel space or even to hardware for better performance.
+
+e. True. In NVP, most of the 'intelligence' for datapath processing lies in virtual hosts, not in switches. This is consistent with the principles of software-defined networking (SDN) where the control plane (intelligence) is decoupled from the data plane (switching hardware) and can be centralized in software controllers or distributed among virtual hosts.","['https://www.vmware.com/topics/glossary/content/network-virtualization.html', 'https://www.opennetworking.org/sdn-resources/sdn-definition/', 'https://ieeexplore.ieee.org/document/6630745']",0,8_data_center_virtualization,0.95,0.99895900328301,"NVP has nothing to do with configuring switches in the middle of the network.  It is, by and large, host configuration.
+
+",Wrong Facts/Concept,Incorrect information/concept,,,0,1,trusted article ,0,1,1,1,Advanced networking,3,3,3,3,0.6000000000000001

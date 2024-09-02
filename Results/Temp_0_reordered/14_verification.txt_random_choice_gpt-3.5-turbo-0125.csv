@@ -1,0 +1,40 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+106,Which of the following are true about configuration verification? Select all that apply.,"a. Configuration verification requires a large-scale simulation of network protocols, complete with tests for different message orderings and timings.
+b. Configuration verification cannot detect incorrect protocol behavior that may result from faulty hardware.
+c. Configuration verification cannot detect incorrect protocol behavior that may result from buggy software.
+d. Verifying the correctness of network behavior based on configuration requires a model of protocol behavior.
+e. Configuration verification can only detect errors after the configuration is installed on production routers.
+",,"b,c,d","a,d",,"a. Configuration verification indeed involves simulating network protocols and testing various scenarios to ensure correctness. This process helps in identifying issues before deployment.
+d. Having a model of protocol behavior is essential for verifying the correctness of network behavior based on configuration. It helps in predicting how the network will behave under different conditions.","['https://www.sciencedirect.com/science/article/pii/S0140366419303324', 'https://ieeexplore.ieee.org/document/7963133']",0,14_verification,0.9,0.989783935099666,0.0
+107,"Which of the following assertions could be verified with configuration verification (i.e., of a snapshot of router and switch configuration)? Select all that apply.","a. There is no traffic pattern that would ever result in a stateful firewall dropping traffic.
+b. A route learned from one peer will not be readvertised to another peer.
+c. Any time that an infection occurs, hosts are automatically quarantined.
+d. The current settings of link weights will result in all routers being connected.
+e. The configuration of route reflectors and clients ensures that any route learned from a neighboring AS will propagate to all routers in the topology.
+",,"b,d,e","a,b,d",,"a. Verifying that there is no traffic pattern resulting in a stateful firewall dropping traffic can be confirmed through configuration verification by checking the firewall rules and policies in the configuration snapshot. This is related to network security and traffic handling, which can be validated through configuration checks. 
+ b. Ensuring that a route learned from one peer will not be readvertised to another peer involves checking the routing protocols and their configurations in the snapshot. This is a routing policy that can be verified through configuration analysis. 
+ d. Validating that the current settings of link weights will result in all routers being connected requires examining the routing protocol configurations and link weights in the snapshot. This is a network connectivity-related assertion that can be verified through configuration verification.","['https://www.sciencedirect.com/topics/computer-science/configuration-verification', 'https://www.sciencedirect.com/topics/computer-science/network-configuration-management']",0,14_verification,0.9,0.6192457971723571,0.1999999999999999
+108,Which of the following are true about data-plane verification? Select all that apply.,"a. Data-plane verification may detect errors that configuration analysis can miss in the cases of buggy control-plane software.
+b. Data plane verification can only operate on the forwarding table of a single router or switch; network-wide analysis is not possible.
+c. Data-plane verification requires accurate modeling of network protocols, including which bits are present in which part of the packet header.
+d. Data-plane verification techniques such as header-space analysis typically operate on a single ""snapshot"" of data-plane state.
+e. Header-space analysis can only provide verification/analysis for specific packets; it cannot answer questions for general parts of flowspace.
+",,"a,d","a,c,d",,"a. Data-plane verification can indeed catch errors that configuration analysis might overlook, especially in cases of faulty control-plane software. This is a crucial aspect of ensuring network correctness. c. Accurate modeling of network protocols, including the arrangement of bits in packet headers, is essential for effective data-plane verification. d. Data-plane verification techniques like header-space analysis typically work on a single snapshot of the data-plane state to ensure correctness at a specific point in time.",['https://dl.acm.org/doi/10.1145/3371934.3371963'],0,14_verification,0.9,0.9848088116417052,0.6000000000000001
+109,Which of the following assertions could be verified with data plane verification? Select all that apply.,"a. The rules installed on the firewalls in the network ensure that only port 80 traffic can ever reach the web server from the rest of the Internet.
+b. The configuration of the network's routing protocols will result in persistent oscillation (i.e., they will never settle on a stable set of routes).
+c. The network will remain connected, given the failure of at most two links.
+d. Two virtual network ""slices"" are not completely isolated: it is possible for traffic to travel from one slice to the other.
+e. The forwarding table state in the routers across the network will result in a forwarding loop.
+",,"a,d,e","a,d",,"a. Verifying that only port 80 traffic can reach the web server involves checking the actual traffic flow, which is a data plane operation. This can be verified using data plane verification tools. d. Ensuring isolation between two virtual network slices by verifying traffic flow between them is a data plane verification task. It involves checking the actual paths taken by packets, making it suitable for data plane verification.",['https://www.sciencedirect.com/science/article/pii/S2352864820300973'],0,14_verification,0.9,0.9986590732467876,0.6000000000000001
+110,Which of the following is true about Kinetic policies? Select all that apply.,"a. Kinetic's NuSMV verifier can verify that the data plane will never have loops.
+b. The Kinetic controller can only process external events from routers and switches.
+c. Pyretic's composition operators can help prevent state explosion.
+d. State transitions can occur based on timing (e.g., a timeout).
+e. State transitions can be exogenous or endogenous.
+",,"c,d,e","c,d,e",,"a. Kinetic's NuSMV verifier focuses on verifying properties of the control plane, not the data plane's behavior regarding loops. This is typically handled by routing protocols and mechanisms in the data plane. b. The Kinetic controller can process both external events from routers and switches as well as internal events within the controller itself. c. Pyretic's composition operators are designed to help prevent state explosion issues by composing policies more efficiently. d. State transitions in Kinetic policies can indeed occur based on timing, such as timeouts triggering changes in the system. e. State transitions in Kinetic policies can be either exogenous (triggered by external events) or endogenous (triggered internally within the system).","['https://dl.acm.org/doi/10.1145/2656877.2656880', 'https://dl.acm.org/doi/10.1145/2627585.2627603']",1,14_verification,0.9,0.9988734511631164,1.0
+112,"Which of the following NuSMV expressions encodes the statement ""It is always possible for the policy state to go to 'allow'.""","a. SPEC AG (EF policy=allow)
+b. SPEC AG (authenticated -> AX policy=allow)
+c. SPEC AG (!authenticated -> AX policy=allow)
+d. None of the above.
+e. SPEC A [ policy=allow U authenticated ]
+",,a,c,,"The correct expression that encodes the statement 'It is always possible for the policy state to go to 'allow'' is option c. This expression specifies that 'It is always the case that if not authenticated, then at the next state, policy will be 'allow'. This captures the condition of policy state transitioning to 'allow' when not authenticated.",[],0,14_verification,0.9,0.5695745729880871,0.1999999999999999

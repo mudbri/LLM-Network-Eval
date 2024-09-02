@@ -1,0 +1,101 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+90,The protocol used to communicate network errors is known as __________.,"a. UDP
+b. TCP
+c. ICMP
+d. Traceroute
+",,c,c,,"The Internet Control Message Protocol (ICMP) is used for sending error messages and operational information indicating, for example, that a requested service is not available or that a host or router could not be reached. ICMP is a key component of the Internet Protocol Suite. It is used by network devices, like routers, to send error messages and operational information indicating, for example, that a service is not available or that a host or router could not be reached. UDP (User Datagram Protocol) and TCP (Transmission Control Protocol) are both transport layer protocols used for data transmission but do not communicate network errors in the same way ICMP does. Traceroute is a utility that uses ICMP to trace the path from one network to another, but it is not a protocol for communicating network errors.","['https://www.ietf.org/rfc/rfc792.txt', 'https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol', 'https://en.wikipedia.org/wiki/Traceroute']",1,6_troubleshooting_and_future_networking,1.0,1.0,1.0
+91,The ping utility sends what message type?,"a. Destination Network Unreachable
+b. Echo Request
+c. Destination Network Unknown
+d. Echo Reply
+",,b,b,,"The ping utility is used to test the reachability of a host on an Internet Protocol (IP) network and measures the round-trip time for messages sent from the originating host to a destination computer. The utility sends ICMP (Internet Control Message Protocol) 'Echo Request' messages to the destination host and listens for 'Echo Reply' messages in response. Therefore, the correct message type sent by the ping utility is 'Echo Request'.","['https://en.wikipedia.org/wiki/Ping_(networking_utility)', 'https://www.ietf.org/rfc/rfc1122.txt']",1,6_troubleshooting_and_future_networking,1.0,1.0,1.0
+92,What is one of the tools you can use to verify connectivity to a specific port on Windows OS?,"a. Ping
+b. Tracert
+c. Test-NetConnection
+d. nc (netcat)
+",,c,c,,"To verify connectivity to a specific port on a Windows operating system, you can use the 'Test-NetConnection' cmdlet. This cmdlet is a part of the PowerShell environment and allows you to test TCP connections to a specified port. It can provide information about the TCP connection, including whether the port is accessible from your computer. The 'Ping' command (a) is used to test the reachability of a host on an IP network and measures round-trip time, but it does not test connectivity to a specific port. 'Tracert' (b) is another utility that traces the path that an IP packet takes to reach its destination, but again, it does not test specific port connectivity. 'nc' or 'netcat' (d) is indeed a networking utility for reading from and writing to network connections using TCP or UDP, but it is not natively available on Windows OS and must be installed separately. Therefore, the correct answer is 'Test-NetConnection'.","['https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection', 'https://en.wikipedia.org/wiki/Ping_(networking_utility)', 'https://en.wikipedia.org/wiki/Traceroute', 'https://en.wikipedia.org/wiki/Netcat']",1,6_troubleshooting_and_future_networking,0.95,0.999999091165773,1.0
+93,Traceroute uses UDP packets on which of the following operating systems? Select all that apply.,"a. Windows 10
+b. Windows 7
+c. Mac Os
+d. Linux
+",,"c,d","c,d",,"Traceroute is a network diagnostic tool used to track the path that an IP packet takes to reach its destination. On Unix-like operating systems, including Linux and Mac OS, traceroute typically uses UDP (User Datagram Protocol) packets to perform its analysis. It sends out UDP packets with a low TTL (Time To Live) value, which causes routers along the path to return an ICMP 'Time Exceeded' message, thereby revealing the route. On the other hand, Windows implements a similar tool called 'tracert' which uses ICMP (Internet Control Message Protocol) Echo Request packets instead of UDP packets. This is consistent across various versions of Windows, including Windows 7 and Windows 10.","['https://en.wikipedia.org/wiki/Traceroute', 'https://www.lifewire.com/traceroute-linux-command-4092586', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert']",1,6_troubleshooting_and_future_networking,0.95,0.9977601884297675,1.0
+94,"During a traceroute, which action does a router perform to the value in the Time To Live (TTL) field?","a. Division
+b. Addition
+c. Subtraction
+d. Multiplication
+",,c,c,,"During a traceroute operation, each router along the path to the destination decreases the TTL value by 1. The Time To Live (TTL) field in the IP header is used to prevent packets from looping indefinitely in the network. When the TTL field reaches zero, the packet is discarded, and an ICMP 'Time Exceeded' message is sent back to the source. There's no division, addition, or multiplication performed on the TTL value by routers during this process.","['https://en.wikipedia.org/wiki/Time_to_live', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13730-16.html']",1,6_troubleshooting_and_future_networking,1.0,0.9999998063873689,1.0
+95,One of Level 3's public DNS servers is ____________.,"a. 192.168.1.1
+b. 127.0.0.1
+c. 4.2.2.3
+d. 8.8.8.8
+",,c,c,,"Level 3 Communications is a large multinational telecommunications and Internet service provider company. They provide public DNS servers that are widely used. The IP address 4.2.2.3 is one of the public DNS servers provided by Level 3. The other choices are not associated with Level 3's public DNS servers: 192.168.1.1 is a common default IP address for home routers, 127.0.0.1 is the loopback address used to refer to the local computer, and 8.8.8.8 is a public DNS server provided by Google.","['https://www.lifewire.com/free-and-public-dns-servers-2626062', 'https://support.google.com/a/answer/48090?hl=en']",1,6_troubleshooting_and_future_networking,0.95,0.999999448776502,1.0
+96,A DNS resolver tool available on all major desktop operating systems is __________.,"a. Host
+b. Tracert
+c. Nslookup
+d. Ping
+",,c,c,,"The DNS resolver tool available on all major desktop operating systems that is specifically used for querying the Domain Name System (DNS) to obtain domain name or IP address mapping is 'nslookup'. Here's a brief evaluation of each option:
+
+a. Host - This is a DNS lookup utility, but it is not as universally available on all major desktop operating systems as 'nslookup'. It is most commonly found on Unix-like operating systems.
+b. Tracert - This is a command-line utility used to determine the path taken by packets across an IP network (traceroute). It is not used for DNS resolution.
+c. Nslookup - This is the correct answer. 'Nslookup' is a network administration command-line tool available for many computer operating systems for querying the Domain Name System to obtain domain name or IP address mapping or other DNS records.
+d. Ping - This utility is used to test the reachability of a host on an Internet Protocol (IP) network and to measure the round-trip time for messages sent from the originating host to a destination computer. It is not a DNS resolver tool.","['https://en.wikipedia.org/wiki/Nslookup', 'https://en.wikipedia.org/wiki/Host_(Unix)', 'https://en.wikipedia.org/wiki/Traceroute', 'https://en.wikipedia.org/wiki/Ping_(networking_utility)']",1,6_troubleshooting_and_future_networking,0.95,0.9999640459343628,1.0
+97,Which top-level organization manages the global DNS (Domain Name System)?,"a. RFC
+b. Google
+c. IANA
+d. ICANN
+",,d,d,,"The Internet Corporation for Assigned Names and Numbers (ICANN) is the top-level organization that manages the global Domain Name System (DNS). ICANN oversees the distribution of unique identifiers across the world, including domain names, IP addresses, and protocol parameter identifiers. The Internet Assigned Numbers Authority (IANA) is a department of ICANN responsible for some key functions related to the management of the DNS, including the coordination of the DNS Root, IP addressing, and other Internet protocol resources. The Request for Comments (RFC) is a type of publication from the technology community and does not manage DNS. Google is a private corporation that provides DNS services among its many offerings but does not manage the global DNS.","['https://www.icann.org/', 'https://www.iana.org/']",1,6_troubleshooting_and_future_networking,1.0,0.9846257610747036,1.0
+98,Which of the following commands displays the current network configuration information?,"a. Net user
+b. Pathping
+c. Ipconfig
+d. Winver
+",,c,c,,"The 'ipconfig' command in Windows is used to display the current network configuration information, including the IP address, subnet mask, and default gateway for all adapters. 'Net user' is used for managing user accounts on the computer. 'Pathping' is a network utility that provides information about network latency and network loss at intermediate hops between a source and destination. 'Winver' is a command that shows the version of Windows that is currently running on the system.","['https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/net-user', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/pathping', 'https://support.microsoft.com/en-us/windows/which-version-of-windows-operating-system-am-i-running-5c3f21f8-0fc6-c9b8-f1d7-4d7a3ff1d0ef']",1,6_troubleshooting_and_future_networking,1.0,0.999999448776502,1.0
+99,An organization responsible for assigning individual domain names to other organizations or individuals is known as a(n) ______.,"a. DNS registrar
+b. Internet authority
+c. Autonomous system
+d. Government
+",,a,a,,"An organization that is responsible for assigning domain names and managing the registration of those domain names is known as a DNS (Domain Name System) registrar. DNS registrars are accredited by the Internet Corporation for Assigned Names and Numbers (ICANN) or by a national country code top-level domain (ccTLD) authority. They provide services to the public that allow them to register domain names which are then part of the global DNS. 'Internet authority' is not a specific entity in the context of domain name registration. An 'autonomous system' refers to a collection of IP routing prefixes under the control of one or more network operators that presents a common, clearly defined routing policy to the internet. 'Government' is too broad and does not specifically refer to the role of assigning domain names.","['https://www.icann.org/', 'https://en.wikipedia.org/wiki/Domain_name_registrar', 'https://en.wikipedia.org/wiki/Autonomous_system_(Internet)']",1,6_troubleshooting_and_future_networking,1.0,1.0,1.0
+100,A piece of software that runs and manages virtual machines is known as a __________.,"a. cloud storage device
+b. Hypervisor
+c. virtual instance
+d. cloud computing device
+",,b,b,,"A hypervisor, also known as a virtual machine monitor (VMM), is a piece of software that allows one to create, run, and manage virtual machines (VMs). The hypervisor sits between the hardware and the virtual machines and allocates physical resources such as CPU, memory, and storage to each VM. Options 'a' and 'd' are incorrect because cloud storage and cloud computing devices are more broadly related to services that deliver storage and computing power over the internet. Option 'c', virtual instance, refers to an individual virtual machine or server, not the software that manages it.","['https://en.wikipedia.org/wiki/Hypervisor', 'https://searchservervirtualization.techtarget.com/definition/hypervisor']",1,6_troubleshooting_and_future_networking,1.0,1.0,1.0
+101,What is Office 365 Outlook an example of?,"a. PaaS
+b. SaaS
+c. FttH
+d. IaaS
+",,b,b,,"Office 365 Outlook is an example of Software as a Service (SaaS). SaaS refers to a software distribution model in which applications are hosted by a third-party provider and made available to customers over the internet. In the case of Office 365 Outlook, Microsoft hosts the email service and provides it to users as a part of their Office 365 suite, which is a subscription-based service. The other options do not apply: PaaS (Platform as a Service) provides a platform allowing customers to develop, run, and manage applications; FttH (Fiber to the Home) is related to fiber-optic cable installations to residential buildings to improve internet speeds; and IaaS (Infrastructure as a Service) provides virtualized computing resources over the internet.","['https://azure.microsoft.com/en-us/overview/what-is-saas/', 'https://www.microsoft.com/en-us/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook']",1,6_troubleshooting_and_future_networking,1.0,1.0,1.0
+102,A hybrid cloud is ________________.,"a. a combination of a private cloud and a mesh network
+b. a combination of a public cloud and a private cloud
+c. a combination of virtual hosts and virtual guests
+d. a combination of a public cloud and hardware virtualization
+",,b,b,,"A hybrid cloud is a cloud computing environment that uses a mix of on-premises, private cloud, and third-party, public cloud services with orchestration between the two platforms. This allows for data and applications to be shared between them. A hybrid cloud strategy provides businesses with greater flexibility and more deployment options. Choice 'b' correctly identifies a hybrid cloud as a combination of a public cloud and a private cloud.","['https://azure.microsoft.com/en-us/overview/what-is-a-hybrid-cloud/', 'https://www.ibm.com/cloud/learn/hybrid-cloud']",1,6_troubleshooting_and_future_networking,1.0,0.9999993295729248,1.0
+103,Which of the following are  cloud services? Select all that apply.,"a. Platform as a Service (PaaS)
+b. Software as a Service (SaaS)
+c. Python as a Service (PaaS)
+d. Infrastructure as a Service (IaaS)
+",,"a,b,d","a,b,d",,"Cloud services typically refer to services that are provided over the internet by cloud computing providers. The common models include: Platform as a Service (PaaS), which provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure; Software as a Service (SaaS), which allows users to connect to and use cloud-based apps over the Internet (e.g., email, calendaring, and office tools); and Infrastructure as a Service (IaaS), which provides virtualized computing resources over the internet. Python as a Service (PaaS) is not a standard cloud service model and seems to be a confusion with Platform as a Service, which also has the acronym PaaS.","['https://azure.microsoft.com/en-us/overview/what-is-paas/', 'https://www.ibm.com/cloud/learn/iaas-paas-saas', 'https://aws.amazon.com/types-of-cloud-computing/']",1,6_troubleshooting_and_future_networking,1.0,0.9999998063873689,1.0
+104,"Which cloud service provides access to things like virtual machines, containers, networks, and storage?","a. PaaS
+b. IaaS
+c. SaaS
+d. FaaS
+",,b,b,,"Infrastructure as a Service (IaaS) provides virtualized computing resources over the internet. It includes access to things like virtual machines, containers, networks, and storage, allowing customers to run any operating systems or applications on the rented servers. PaaS (Platform as a Service) provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure. SaaS (Software as a Service) delivers software applications over the internet, on demand and typically on a subscription basis. FaaS (Function as a Service) is a type of cloud computing service that allows you to execute code in response to events without the complexity of building and maintaining the infrastructure typically associated with developing and launching microservices applications.","['https://azure.microsoft.com/en-us/overview/what-is-iaas/', 'https://aws.amazon.com/types-of-cloud-computing/']",1,6_troubleshooting_and_future_networking,1.0,0.9999998063873689,1.0
+105,An IPv6 address is how many bits long?,"a. 128
+b. 32
+c. 64
+d. 16
+",,a,a,,"An IPv6 address is 128 bits in length, which allows for a significantly larger number of unique IP addresses compared to IPv4's 32-bit addressing scheme.",['https://en.wikipedia.org/wiki/IPv6_address'],1,6_troubleshooting_and_future_networking,1.0,0.9999996871837188,1.0
+106,What is the very first field in an IPv6 header?,"a. data payload field
+b. source address field
+c. version field
+d. traffic class field
+",,c,c,,"The very first field in an IPv6 header is the version field. This 4-bit field indicates the version of the Internet Protocol, and for IPv6, this is set to the number 6. The version field is used to distinguish IPv6 packets from those of other versions of the protocol, such as IPv4. Following the version field, there are other fields like the traffic class field and the source and destination address fields, but these come after the version field in the header structure.","['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header', 'https://tools.ietf.org/html/rfc8200']",1,6_troubleshooting_and_future_networking,1.0,1.0,1.0
+107,Which IPv6 header field indicates how many routers can forward a packet before it's discarded?,"a. next header field
+b. hop limit field
+c. TTL
+d. router forward field
+",,b,b,,"In IPv6, the 'hop limit' field is used to ensure that packets are not circulated indefinitely. This field is decremented by one by each router that forwards the packet. When the hop limit reaches zero, the packet is discarded to prevent it from looping endlessly in the network. This is similar to the 'Time To Live' (TTL) field in IPv4. However, the correct term for IPv6 is 'hop limit', not TTL.","['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header', 'https://tools.ietf.org/html/rfc8200']",1,6_troubleshooting_and_future_networking,1.0,1.0,1.0
+108,The IPv4 mapped address space within IPv6 always starts with _______ zeroes.,"a. 64
+b. ""128""
+c. 80
+d. 32
+",,c,c,,"An IPv4-mapped IPv6 address is used to represent an IPv4 address within an IPv6 address. The format for these addresses is defined in RFC 4291. It specifies that the first 80 bits are set to zero, the next 16 bits are set to one, and the last 32 bits are used to represent the IPv4 address. Therefore, the correct answer is 80 zeroes.",['https://tools.ietf.org/html/rfc4291#section-2.5.5.2'],1,6_troubleshooting_and_future_networking,1.0,0.9998981308540138,1.0

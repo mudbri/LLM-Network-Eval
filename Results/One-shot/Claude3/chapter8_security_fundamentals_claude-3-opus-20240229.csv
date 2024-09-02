@@ -1,0 +1,100 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+137,"In a spoofing attack, which of the following parameters are commonly spoofed? (Choose two answers)","a. Source IP address
+b. MAC address
+c. ARP address
+d. Routing table
+e. Destination IP address
+f. ARP table
+",,"a,b","a,b",,"In a spoofing attack, the two most commonly spoofed parameters are:a. Source IP address: By forging the source IP address in packets, an attacker can make it appear as if the packets are originating from a trusted source, hiding their real identity. This is known as IP spoofing.b. MAC address: Attackers can change the MAC address of their device to impersonate another device on the network. This is called MAC spoofing and can be used to bypass access control lists or steal traffic intended for the legitimate device.The other options are not typically spoofed in this type of attack. The ARP address and ARP table are used in Address Resolution Protocol (ARP) to map IP addresses to MAC addresses, but are not directly spoofed. The routing table and destination IP address are also not usually targets for spoofing, as the attacker's goal is usually to disguise the source rather than the destination of malicious traffic.","['https://en.wikipedia.org/wiki/Spoofing_attack', 'https://www.cisco.com/c/en/us/products/security/what-is-spoofing.html']",1,chapter8_security_fundamentals,0.95,1
+138,AAA servers usually support the protocol TACACS+ and ____________________ to communicate with enterprise resources.,"a. DHCP
+b. ARP
+c. RADIUS
+d. HTTP
+",,c,c,,"RADIUS (Remote Authentication Dial-In User Service) is the other protocol commonly supported by AAA servers along with TACACS+ for communicating with enterprise resources. RADIUS is a client/server protocol that provides centralized Authentication, Authorization, and Accounting (AAA) management for users connecting and using a network service. It is widely used by ISPs and enterprises to manage access to Internet or internal networks. DHCP is used for IP address assignment, ARP for IP to MAC resolution, and HTTP is an application layer protocol for web communication - none of these directly relate to AAA server communication.","['https://en.wikipedia.org/wiki/RADIUS', 'https://www.cisco.com/c/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/12433-32.html']",1,chapter8_security_fundamentals,0.95,1
+139,"The senior network engineer assigns you a task related to port security. He needs your help to configure the fa0/1 from the SW-examsD to accept frames only from the MAC 0200.1111.2222.
+Type the commands that need to be configured on the SW-examsD following the requirements below:
+1. configure the FastEthernet0/1 to be an access port
+2. enable port security on that interface
+3. define the allowed MAC address","a. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/2
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+SW-examsD(config-if)#switchport port-security macaddress 0200.1111.2222
+b. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/1
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+c. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/1
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+SW-examsD(config-if)#switchport port-security macaddress 0200.2222.2222
+d. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/1
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+SW-examsD(config-if)#switchport port-security macaddress 0200.1111.2222
+",,d,d,,"Option d is the correct configuration to meet the requirements. The commands configure FastEthernet0/1 as an access port, enable port security on the interface, and define the allowed MAC address as 0200.1111.2222, matching the MAC address specified in the task. Option a configures the wrong interface (fa0/2 instead of fa0/1). Option b enables port security but does not define the allowed MAC address. Option c defines the wrong allowed MAC address (0200.2222.2222 instead of 0200.1111.2222).",['https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/12-2_55_se/configuration/guide/scg_2960/swtrafc.html'],1,chapter8_security_fundamentals,1,1
+140,"_____________________ attacks typically function by overwhelming or flooding a targeted machine with requests until normal traffic is unable to be processed, resulting in denial- of-service to additional users.","a. Spoofing
+b. Phishing
+c. DoS
+d. SQL injection
+",,c,c,,"Denial-of-Service (DoS) attacks are designed to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to a network. This is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. The result is that the targeted system either responds so slowly as to be unusable, or it crashes completely, thereby denying service to legitimate users or systems.","['https://en.wikipedia.org/wiki/Denial-of-service_attack', 'https://www.cloudflare.com/learning/ddos/glossary/denial-of-service/']",1,chapter8_security_fundamentals,1,1
+141,A _________________ is malicious software that is hidden and packaged inside other software that looks normal and legitimate.,"a. Worm
+b. Virus
+c. Spyware
+d. Trojan
+",,d,d,,"A Trojan horse, commonly known as a Trojan, is a type of malicious software (malware) that misleads users of its true intent by disguising itself as legitimate software. The term is derived from the Ancient Greek story of the deceptive Trojan Horse that led to the fall of the city of Troy. Trojans are often bundled covertly with benign or desirable software that unsuspecting users are tricked into installing. Once activated, Trojans can enable attackers to spy on you, steal your sensitive data, and gain backdoor access to your system. This is different from viruses which self-replicate, worms which spread over networks, and spyware which stealthily collects information.","['https://en.wikipedia.org/wiki/Trojan_horse_(computing)', 'https://www.malwarebytes.com/trojan/']",1,chapter8_security_fundamentals,0.95,1
+142,What devices can be used to implement DHCP Snooping? (Choose two answers),"a. Hub
+b. Layer 2 switches
+c. Routers
+d. Layer 3 switches
+e. Access Points
+f. End users
+",,"b,d","b,d",,"DHCP snooping can be implemented on Layer 2 switches and Layer 3 switches. DHCP snooping is a security feature that acts like a firewall between untrusted hosts and trusted DHCP servers. The switch builds a DHCP snooping binding database, which contains information such as MAC address, IP address, lease time, binding type, and VLAN number of the untrusted interface. Hubs, routers, access points, and end user devices do not have the capability to implement DHCP snooping as it requires switch functionality.","['https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-2SX/configuration/guide/book/snoodhcp.html', 'https://www.juniper.net/documentation/us/en/software/junos/dhcp/topics/topic-map/dhcp-snooping.html']",1,chapter8_security_fundamentals,0.95,1
+143,"Which of the following Cisco Firepower NGIPS’s features provides more insights into and control over the users, applications, devices, threats, and vulnerabilities in your network with real-time visibility?","a. Security automation
+b. Granular application visibility and control
+c. Contextual awareness
+d. Superior effectiveness
+",,c,c,,"Contextual awareness provides more insights into and control over the users, applications, devices, threats, and vulnerabilities in the network with real-time visibility. Cisco Firepower NGIPS uses contextual awareness to analyze traffic and provide detailed information about network entities and their activities. This enables administrators to have a comprehensive understanding of what's happening in the network and take appropriate actions based on that context. While the other options are also features of Cisco Firepower NGIPS, they don't directly relate to providing real-time visibility and insights into various aspects of the network like contextual awareness does.","['https://www.cisco.com/c/en/us/products/collateral/security/firepower-ngfw/datasheet-c78-736661.html', 'https://www.cisco.com/c/dam/en/us/products/collateral/security/firepower-management-center/at-a-glance-c45-736155.pdf']",1,chapter8_security_fundamentals,0.9,1
+144,What can be accomplished with a brute-force attack?,"a. Guess a user’s password
+b. Make a server unavailable
+c. Spoof every possible IP address
+d. Alter a routing table
+",,a,a,,"A brute-force attack involves systematically checking all possible keys or passwords until the correct one is found. It can be used to guess a user's password by trying every possible combination of characters. Brute-force attacks do not directly make a server unavailable (which describes a denial-of-service attack), spoof IP addresses, or alter routing tables.",['https://en.wikipedia.org/wiki/Brute-force_attack'],1,chapter8_security_fundamentals,0.95,1
+145,Social engineering attack is accomplished through human interactions. It uses psychological manipulation to trick users into making security mistakes or giving away sensitive information.,"a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. Social engineering attacks exploit human psychology and manipulate people into divulging sensitive information or taking actions that compromise security. These attacks rely on deception and take advantage of the human tendency to trust others. Attackers may impersonate authority figures, create a sense of urgency, or play on emotions to trick victims into revealing passwords, providing unauthorized access, or performing other harmful actions. Social engineering tactics include phishing emails, pretexting, baiting, and more. Technical controls alone are not sufficient to prevent these attacks, so security awareness training is crucial for users to recognize and resist social engineering attempts.","['https://www.csoonline.com/article/2124681/what-is-social-engineering.html', 'https://us.norton.com/internetsecurity-emerging-threats-what-is-social-engineering.html']",1,chapter8_security_fundamentals,1,1
+146,"Which of the following human security vulnerabilities attacks is a type of attack that targets high-profile employees, such as the CEO or CFO, in order to steal sensitive information from a company?","a. Social engineering
+b. Phishing
+c. Whaling
+d. Pharming
+",,c,c,,"Whaling is a type of phishing attack that specifically targets high-profile employees, such as the CEO, CFO, or other executives, in order to steal sensitive information from a company. The attackers often research their targets and craft highly personalized messages to trick the victim into revealing confidential data, transferring money, or granting access to restricted systems. While phishing attacks target a broad group of people, whaling focuses on specific, high-value targets within an organization.","['https://www.kaspersky.com/resource-center/definitions/spear-phishing-whale-phishing', 'https://www.tripwire.com/state-of-security/security-awareness/6-common-phishing-attacks-and-how-to-protect-against-them/']",1,chapter8_security_fundamentals,0.95,1
+147,Which of the following human security vulnerabilities attacks is the attempt to obtain sensitive information such as passwords and credit card details by disguising oneself as a trustworthy entity?,"a. Social engineering
+b. Phishing
+c. Whaling
+d. Pharming
+",,b,b,,"Phishing is the correct answer. Phishing is a type of social engineering attack where an attacker sends a fraudulent message designed to trick a person into revealing sensitive information to the attacker or to deploy malicious software on the victim's infrastructure. Phishing attacks often take the form of an email purporting to be from a trusted entity, like a bank or colleague, in an attempt to lure recipients into divulging sensitive information such as passwords or credit card numbers.","['https://www.imperva.com/learn/application-security/phishing-attack-scam/', 'https://www.cisco.com/c/en/us/products/security/email-security/what-is-phishing.html']",1,chapter8_security_fundamentals,0.95,1
+149,Which of the following security features rejects invalid and malicious ARP packets and prevents a class of man-in-the-middle attacks?,"a. DoS
+b. DAI
+c. Packet secure
+d. ARP protect
+",,b,b,,"Dynamic ARP Inspection (DAI) is the security feature that rejects invalid and malicious ARP packets to prevent man-in-the-middle attacks. DAI validates ARP packets in a network by intercepting all ARP requests and responses, verifying each intercepted packet for valid IP-to-MAC address bindings before updating the local ARP cache or forwarding the packet to the appropriate destination. By doing this, DAI can prevent common ARP spoofing attacks where an attacker sends fake ARP packets to a switch in an attempt to associate their MAC address with the IP address of another host, allowing them to intercept data frames. The other options are not directly related to preventing ARP spoofing attacks.","['https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-2SX/configuration/guide/book/dynarp.html', 'https://en.wikipedia.org/wiki/ARP_spoofing']",1,chapter8_security_fundamentals,0.95,1
+150,"In a reflection attack, the source IP address in the attack packets is spoofed so that it contains the address of the victim.","a. TRUE
+b. FALSE
+",,a,b,,"The statement is false. In a reflection attack, the source IP address is spoofed to be the address of the victim, but the attack packets are sent to other systems or servers, not directly to the victim. These systems then send their replies to the victim's IP address, overwhelming the victim with traffic it did not request. The attacker never sends packets directly to the victim in a reflection attack. Instead, the attacker tricks other systems into flooding the victim with traffic by forging the source IP to be the victim's address.","['https://en.wikipedia.org/wiki/Denial-of-service_attack#Reflected_attack', 'https://www.cloudflare.com/learning/ddos/glossary/reflection-attack/']",0,chapter8_security_fundamentals,0.95,1
+151,"Type the command that needs to be configured on a switch to automatically recover from the err-disabled state, when caused by port security.","a. recovery cause psecure-violation
+b. errdisable recovery psecure-violation
+c. errdisable recovery
+d. errdisable recovery cause psecure-violation
+",,d,d,,"The correct command to automatically recover from the err-disabled state caused by port security violations is 'errdisable recovery cause psecure-violation'. This command enables the switch to automatically re-enable an interface that has been error-disabled due to port security violations after a specified timeout interval. The 'errdisable recovery' command by itself only enables the recovery mechanism globally but does not specify the cause. The 'recovery cause psecure-violation' is an invalid command syntax. Therefore, option D is the most complete and accurate command to address the given scenario.",['https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3750x_3560x/software/release/12-2_55_se/configuration/guide/3750xscg/swerrdis.html'],1,chapter8_security_fundamentals,0.95,1
+152,A next-generation firewall sits at the edge of a company’s connection to the Internet. A network engineer has been configured to prevent Telnet clients residing on the Internet from accessing Telnet servers inside the company. Which of the following might a next-generation firewall use that a traditional firewall would not?,"a. Match message destination well-known port 23
+b. Match message application data
+c. Match message IP protocol 23
+d. Match message source TCP ports lower than 5400
+",,b,b,,"A next-generation firewall can inspect the application layer data in packets, beyond just the header information like ports and IP addresses that a traditional firewall examines. By analyzing the application data, a next-generation firewall can identify the specific application generating the traffic, like Telnet in this case, regardless of what port numbers are used. The other options all rely on assuming Telnet uses well-known port 23 or protocol number 23, which is not always the case and can be easily changed to evade traditional firewall rules. Matching source ports under 1024 would block many legitimate applications as well. So application data inspection is the key differentiating capability of a next-generation firewall that would be useful here.","['https://www.paloaltonetworks.com/cyberpedia/what-is-a-next-generation-firewall-ngfw', 'https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-next-generation-firewall.html']",1,chapter8_security_fundamentals,0.95,1
+153,"Your PC connects to a LAN and uses DHCP to lease an IP address for the first time. Of the usual four DHCP messages that flow between the PC (DHCP client) and the DHCP server, which ones do the server send? (Choose two answers)","a. Acknowledgment
+b. Request
+c. Offer
+d. Discover
+",,"a,c","a,c",,"The DHCP server sends two of the four DHCP messages: the DHCP Offer message and the DHCP Acknowledgment message. When a DHCP client wants to obtain an IP address, it broadcasts a DHCP Discover message. The DHCP server responds with a DHCP Offer message, proposing an IP address. The client then sends a DHCP Request message to accept the offered IP address and request the server to allocate it. Finally, the server sends a DHCP Acknowledgment message, confirming the IP address allocation to the client. The client sends the Discover and Request messages, while the server sends the Offer and Acknowledgment messages in this four-way handshake.","['https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol#Operation', 'https://www.cisco.com/c/en/us/support/docs/ip/dynamic-address-allocation-resolution/27470-100.html']",1,chapter8_security_fundamentals,0.95,1

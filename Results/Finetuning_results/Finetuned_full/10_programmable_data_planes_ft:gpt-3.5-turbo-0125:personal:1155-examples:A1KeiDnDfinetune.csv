@@ -1,0 +1,48 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+113,"Which are reasonable approaches for designing a fast, scalable, programmable data plane? Select all that apply.","a. Make hardware routers more programmable with custom OpenFlow chips.
+b. Make software routers faster by reducing the need to copy packets from the kernel into user space.
+c. Send all traffic through software switches running in user space.
+d. Make software routers faster by distributing software routers across clusters.
+e. Make software routers faster by amortizing packet-processing costs across batches of packets.
+",,"a,b,d,e","a,b,d,e",,,[],1,10_programmable_data_planes,1,1
+114,What are functions that are commonly performed by a programmable data plane? Select all that apply.,"a. Performing deep packet inspection
+b. Forwarding
+c. Specifying access control policies
+d. Shaping traffic
+e. Computing routes
+",,"a,b,d","a,c",,,[],0,10_programmable_data_planes,1,1
+115,Which of the following functions might be performed by a Click element? Select all that apply.,"a. Reading a packet from a network device
+b. Dropping packets
+c. Counting packets
+d. Classifying packets into different priority queues
+e. Computing shortest paths routes between two routers
+",,"a,b,c,d",a,,,[],0,10_programmable_data_planes,1,1
+116,Which of the following are true about programmable data planes in Click? Select all that apply.,"a. Click elements cannot perform common data plane operations such as TTL decrement or checksum computations.
+b. Data-plane processing in Click is limited to a fixed set of elements provided by the software.
+c. Click elements can be composed to perform complex functions, such as the forwarding at an IP router.
+d. Click configuration is a simplified version of Python.
+e. Click elements can be composed to perform complex network-wide functions, such as shortest paths or BGP routing.
+",,c,"c,e",,,[],0,10_programmable_data_planes,1,1
+117,Why does a RouteBricks server assign one core per queue?,"a. Having multiple cores accessing the same queue would require each core to perform only one function in the packet processing pipeline, which is inefficient.
+b. Having multiple cores accessing the same queue would require locking to prevent concurrent memory accesses, slowing packet forwarding performance.
+c. Having multiple cores accessing the same queue might create the possibility that there is a queue that is not served by any cores.
+d. Cores have heterogeneous performance, and packets are different sizes, so it makes sense to assign less powerful cores to queues that have smaller packets.
+",,b,b,,,[],1,10_programmable_data_planes,1,1
+118,What are some tricks commonly employed in software to accelerate packet forwarding? Select all that apply.,"a. Ethernet GRE tunnels
+b. Large packet buffers that hold multiple packets that can be read with a single read
+c. Forwarding smaller packets before larger packets
+d. Avoiding lookups on the software bridge between virtual interfaces and physical interfaces
+e. Batch processing
+",,"a,b,d,e","b,d,e",,,[],0,10_programmable_data_planes,1,1
+119,What are some of the problems with current OpenFlow hardware that motivated a custom OpenFlow chip design? Select all that apply.,"a. Current hardware makes it difficult to implement multiple match action stages, and to repurpose TCAM and SRAM across multiple match-action stages.
+b. Current hardware cannot forward traffic at line rates.
+c. The current OpenFlow protocol depends on the constraints of conventional switching chips.
+d. Current hardware cannot support OpenFlow 1.0 match-action primitives.
+e. Current hardware is difficult to repurpose in the field.
+",,"a,c,e",a,,,[],0,10_programmable_data_planes,1,1
+120,"Which of the following are motivations for SwitchBlade, which supports composition of pre-synthesized hardware data plane modules on an FPGA? Select all that apply.","a. Most data plane protocols involve composing only a limited number of data-plane actions.
+b. Experimental data planes may need to operate in parallel with production data planes.
+c. Programming in Verilog is difficult.
+d. FPGAs are lower-cost and consume less power than conventional ASICs or OpenFlow switching chips.
+e. Programming in C is difficult.
+",,"a,b,c","a,b",,,[],0,10_programmable_data_planes,1,1

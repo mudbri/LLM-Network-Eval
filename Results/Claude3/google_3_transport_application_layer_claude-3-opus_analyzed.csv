@@ -1,0 +1,45 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,QD - Goal clear?(0/1),QD - Context clear?(0/1),QD - How challenging(1-4),QD - Level learnt(1-7),SM - Description,SM - Goal understood?(0/1),SM - Context understood?(0/1),SM - Implied Context understood?(0/1),SM - Relvant facts identified?(0/1),SM - Correct facts retieved?(0/1),SM - No incorrect facts?(0/1),SM - Correct reasoning?(0/1),SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),Source Problems,AQ - Precise?,AQ - Explainable?,Effect - Description of effects,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,Effect - Error Type,Effect - Severity,Effect - Who is most effected(1-4),CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. SYN, ACK, FIN
+b. SYN, SYN/ACK, ACK
+c. FIN, FIN/ACK, ACK
+d. SYN, ACK, SYN, ACK
+",,b,b,,"The Three-Way Handshake in TCP is used to establish a connection between two hosts. It consists of three steps: 1) The client sends a SYN (synchronize) packet to the server to initiate the connection. 2) The server responds with a SYN/ACK packet, acknowledging the client's SYN and sending its own SYN. 3) The client sends an ACK packet to acknowledge the server's SYN, completing the connection establishment.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'https://www.geeksforgeeks.org/tcp-3-way-handshake-process/']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 32
+d. 8",,a,a,,The port field in transport layer protocols like TCP and UDP is 16 bits long. This allows for port numbers ranging from 0 to 65535. The 16-bit size provides a balance between having a sufficient number of ports for various services while keeping the overhead in the protocol header reasonably low.,"['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'IETF RFC 793 - Transmission Control Protocol']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Hub
+b. Router
+c. Switch
+d. Firewall
+",,d,d,,"A firewall is a network security device that monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic based on a defined set of security rules. Firewalls can be hardware, software, or a combination of both. They are designed to establish a barrier between trusted internal networks and untrusted external networks, such as the Internet. Firewalls block traffic that meets certain criteria, such as specific IP addresses, ports, or protocols, to prevent unauthorized access and potential security threats.","['Kurose, J. F., & Ross, K. W. (2017). Computer Networking: A Top-Down Approach (7th Edition). Pearson.', 'Tanenbaum, A. S., & Wetherall, D. J. (2011). Computer Networks (5th Edition). Prentice Hall.', 'NIST Special Publication 800-41 Revision 1: Guidelines on Firewalls and Firewall Policy. (2009). National Institute of Standards and Technology.']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,c,,"The URG (Urgent) flag is used to inform the receiving host to process the urgent data immediately. When the URG flag is set, the receiving host is notified to stop its normal data processing and handle the urgent data right away. The urgent data is processed out-of-band, separately from the normal data stream.","['TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'Computer Networking: A Top-Down Approach by James F. Kurose and Keith W. Ross', 'https://www.ietf.org/rfc/rfc793.txt - Transmission Control Protocol RFC']",0,3_transport_application_layer,0.95,1,1,1,1,3,Wrong information. URG flag is just for priority. PSH flag is used to ask to send data immediately,1,1,1,1,0,1,1,Wrong Facts/Concept,Incorrect information/concept,,,0,3,"book, book, RFC",3,,1,1,Confusing flags,1,TCP,misinformation,Minor,1,3,2,3,2,0
+40,_________are identified as ports 49152 through 65535.,"a. User ports
+b. Ephemeral ports
+c. Sockets
+d. System ports
+",,b,b,,Ephemeral ports are identified as ports 49152 through 65535. These ports are dynamically allocated by the client's operating system whenever a client application requests an outbound connection. They are temporary ports used for the duration of the client-server session and are released once the session ends.,"['IANA Service Name and Transport Protocol Port Number Registry', 'RFC 6335 - Internet Assigned Numbers Authority (IANA) Procedures for the Management of the Service Name and Transport Protocol Port Number Registry']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The compression layer
+b. The session layer
+c. The interconnection layer
+d. The presentation layer
+",,"b,d","b,d",,"The OSI network model adds the session layer and presentation layer on top of the application layer, compared to the five-layer model. The session layer manages dialogues (connections) between applications, while the presentation layer handles data representation, encryption and compression.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"A web browser operates at the application layer of the OSI model. The application layer is the topmost layer that interacts directly with user applications. Web browsers like Chrome, Firefox, or Safari are examples of application layer software that allow users to access and interact with websites and web applications over the network. The other choices - UDP, TCP, and routers - operate at lower layers (transport and network layers respectively).","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. ARP message
+c. The source port
+d. The router
+",,a,a,,"The application uses the networking stack of the operating system to communicate the need to establish a TCP connection. The networking stack is responsible for managing network communications and protocols, including TCP. When an application needs to establish a TCP connection, it makes a request to the operating system's networking stack, which then handles the details of setting up the connection.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The payload of the TCP segment
+d. The header of the Ethernet frame
+",,"a,b,c","a,b,c",,"The payload sections of the Ethernet frame, IP datagram, and TCP segment all contain the data the application wants to send. As data moves down the TCP/IP layers, each layer encapsulates the data from the layer above, adding its own header information. The application data ends up in the payload section at each layer. The Ethernet frame header does not contain application data, only frame-specific information.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13769-5.html']",1,3_transport_application_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1

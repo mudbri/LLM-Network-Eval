@@ -1,0 +1,38 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+95,What are some benefits to using a layer-2 MAC topology for an entire data center? Select all that apply.,"a. Host configuration is simpler, since all hosts are visible from a single large Ethernet topology.
+b. Forwarding on physical MAC addresses is simpler, since both the data center network topology and hosts' physical MAC addresses are hierarchical.
+c. IP routing does not need to be reconfigured when physical or virtual machines move from one part of the network to another.
+d. Scaling problems are simpler, since all hosts are configured on a single, flat topology.
+e. Load balancing is easier on a layer-2 topology than on a layer 3 topology.","a,c","a,c,d","Using a layer-2 MAC topology for an entire data center can indeed simplify host configuration (a) because all hosts appear to be on the same local network, thus avoiding the need for complex routing configurations. Additionally, when physical or virtual machines move across the network (c), their IP addresses can remain the same, which means that IP routing does not need to be reconfigured. Scaling problems can also be simpler (d) because a flat topology does not require additional routing protocols or complex network designs to accommodate more hosts. However, forwarding on physical MAC addresses (b) is not necessarily simpler just because the network is layer-2; in fact, large flat networks can lead to issues like broadcast storms and MAC address table overflow, which are not hierarchical by nature. Lastly, load balancing (e) is not inherently easier on a layer-2 topology compared to a layer-3 topology; load balancing can be implemented effectively on both layers, and layer-3 load balancing can take advantage of routing protocols and techniques that are not available at layer-2.","['https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-data-centers/design-guide-content.html', 'https://www.networkcomputing.com/data-centers/pros-and-cons-flat-network-design', 'https://en.wikipedia.org/wiki/Load_balancing_(computing)']",0,13_SDN_use_cases,0.85,0.998683288,,Incorrect reasoning/deduction,Contradictory reasoning,,,1,,,,1,1,1,,2,2,2,2,0.6
+101,What are some of the features that an SDX enables that today's IXPs cannot support? Select all that apply.,"a. Application of different business relationships across different regions of the world (e.g., peering only in a specific geographic region).
+b. Application-specific peering
+c. Wide-area load balancing using DNS-based redirection
+d. On-the-fly redirection to middleboxes
+e. Wide-area load balancing using IP packet rewriting
+","b,d,e","a,b,d,e","Software Defined Exchange (SDX) enables more flexible and programmable network management compared to traditional Internet Exchange Points (IXPs). Here are the evaluations for each choice provided:
+
+a. Application of different business relationships across different regions of the world (e.g., peering only in a specific geographic region) - SDXs allow the definition of complex policies that can be applied to traffic based on various criteria, including geographic regions. This is not typically possible with traditional IXPs.
+
+b. Application-specific peering - SDXs enable policies that can be tailored to specific applications, allowing for more granular control over peering decisions based on application types or requirements.
+
+d. On-the-fly redirection to middleboxes - SDXs can dynamically redirect traffic to various services such as firewalls, load balancers, or other middleboxes for processing without the need for manual reconfiguration.
+
+e. Wide-area load balancing using IP packet rewriting - SDXs can perform functions like IP packet rewriting to distribute traffic across multiple sites for load balancing purposes.
+
+As for choice c, 'Wide-area load balancing using DNS-based redirection,' this is a technique that is already possible without the need for an SDX. DNS-based redirection is commonly used for load balancing and is not a unique feature enabled by SDXs.","['https://www.opennetworking.org/sdn-resources/sdn-definition/', 'https://www.interoute.com/what-software-defined-networking-sdn', 'https://www.sciencedirect.com/topics/computer-science/internet-exchange-point']",0,13_SDN_use_cases,0.95,0.92963297,,Wrong Facts/Concept,Incorrect information/concept,,,0,,,,1,1,0,,3,3,3,3,0.6
+103,What are some of the motivations for applying software defined networking in home networks? Select all that apply.,"a. Better performance, since control decisions can be made from a well-provisioned server, as opposed to an under-provisioned router.
+b. Ability to better user interfaces to control home network behavior, independent of the interfaces that ship with home router devices.
+c. Ability to allow multiple service providers access to the home network infrastructure for different applications and services.
+d. Outsourcing control and management of the home network to a third party.
+e. More fine-grained control over the forwarding behavior of individual devices as conditions in the network change (e.g., a device uses too much bandwidth or data).
+","b,c,d,e","a,b,c,e","Software Defined Networking (SDN) brings several benefits to home networks. Here's an evaluation of each choice given the context of SDN in home networks:
+
+a. Better performance is a motivation because SDN allows for centralizing the control decisions, which can be made from a more powerful server instead of relying on less capable home routers.
+
+b. SDN can provide more user-friendly and customizable interfaces for managing home networks, independent of the default interfaces provided by router manufacturers.
+
+c. SDN enables the home network infrastructure to be programmatically controlled, which can allow multiple service providers to offer various applications and services using the same physical network.
+
+d. While outsourcing control and management of the home network to a third party could be a use case for SDN, it is not a primary motivation for applying SDN in home networks. The focus of SDN is more on the flexibility and programmability of the network rather than on who manages it.
+
+e. SDN allows for fine-grained control over network devices, enabling dynamic adjustments to the network's forwarding behavior based on changing conditions, such as a device consuming excessive bandwidth.","['https://www.sdxcentral.com/networking/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/', 'https://www.opennetworking.org/sdn-definition/']",0,13_SDN_use_cases,0.9,0.941583524,,Wrong Facts/Concept,Incorrect information/concept,,,0,,,,1,1,1,,3,3,2,3,0.2

@@ -1,0 +1,48 @@
+Question 87. Which of the following reasons make programming OpenFlow switches difficult? Select all that apply.
+(A) An OpenFlow controller only sees events for packets that the switches do not know how to handle. -*
+(B) OpenFlow networks require a single, centralized network controller.
+(C) Networks often have switches from multiple hardware vendors.
+(D) OpenFlow switches control switches at a low level of abstraction. -*
+(E) Network policies involve many independent tasks that may have conflicting behaviors. -*
+
+Question 89. Suppose that a network operator wants to express a policy that drops all traffic except for traffic from a specific IP prefix (i.e., group of IP addresses).  What problems exist with expressing this policy as a set of OpenFlow rules? Select all that apply.
+(A) Switches have limited room for flow table entries and cannot store rules for all IP addresses in a prefix by default. -*
+(B) The controller may see more than the first packet for a flow that it has already installed. -*
+(C) If the controller installs the rules in the wrong order, all traffic might be dropped, instead of allowing the permitted traffic. -*
+(D) If the operator starts adding more IP addresses that are permitted to send traffic, performance of the switch might suffer as the number of entries in the switch table grows. -*
+(E) Flow table entries can only perform exact matches on IP addresses, so installing rules that operate on groups of IP addresses will take many flow-table entries in the switch.
+
+Question 90. Which of the following have examples of sequential composition? Select all that apply.
+(A) Block all port 80 traffic and count the number of packets that are blocked.
+(B) Load balance traffic based on whether the traffic matches a particular destination IP prefix. -*
+(C) Block all traffic except port 80 and count the number of packets that are blocked.
+(D) Block all traffic except port 80 traffic, and load balance port 80 traffic across three destination IP addresses. -*
+(E) Block all traffic except port 80 and count the number of packets that are not blocked. -*
+
+Question 91. Which of the following have examples of parallel composition? Select all that apply.
+(A) Perform load balancing on any traffic that arrives from prefix 130.207.0.0/16 or is destined to port 80. -*
+(B) Perform MAC learning on all traffic that is not blocked by a firewall rule.
+(C) Count all port 80 traffic. -*
+(D) Block all traffic whose source IP address is contained in a list of blocked IP addresses. -*
+(E) Load balance traffic across multiple destination IP addresses and perform routing to the resulting destination IP addresses.
+
+Question 92. Which of the following is the appropriate Pyretic rule for matching traffic that sends packets from either 10.0.0.1 or 10.0.0.2 to IP address 1.2.3.4?
+(A) (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+(B) (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+(C) (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4) -*
+(D) (match(srcip=10.0.0.1) >> (match(srcip=10.0.0.2) >> mod(dstip=1.2.3.4))
+(E) (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)
+
+Question 93. Which of the following is the appropiate Pyretic rule for sending traffic from source IP address 10.0.0.1 to destination IP address 10.1.2.3 and traffic from source IP address 10.0.0.2 to destination IP address 10.2.3.4?
+(A) (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2)  + mod(dstip=10.2.3.4))
+(B) (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2) >> mod(dstip=10.2.3.4)) -*
+(C) (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) >>mod(dstip=10.2.3.4))
+(D) (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) + mod(dstip=10.2.3.4))
+(E) (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) & (match(srcip=10.0.0.2)  >> mod(dstip=10.2.3.4))
+
+Question 94. Which of the following might be examples that would use a dynamic policy in Pyretic? Select all that apply.
+(A) Check each new traffic flow against a list of permitted and prohibited source IP addresses that may change over time. -*
+(B) Drop all traffic arriving from source IP addresses in prefix 10.0.0.0/8.
+(C) Assign each new traffic flow to a different destination IP address based on a round-robin load balancing policy across servers. -*
+(D) Count all traffic arriving from source IP addresses in prefix 10.0.0.0/8.
+(E) Forward traffic through the network based on shortest paths routing, re-routing traffic appropriately when links or nodes fail. -*

@@ -1,0 +1,16 @@
+Question Number,Question Text,Choices,Correct Answer,LLM Answer,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,SM - Description,SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),AQ - Precise?,AQ - Explainable?,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+4,Which TCP flag must be set in a packet in order for the packet to match an ACL entry that contains the established keyword? Select one choice.,"a. SYN only
+b. ACK only
+c. RST only
+d. SYN or ACK
+e. ACK or RST
+",e,b,"The correct option is 'b. ACK only'. When an ACL entry contains the 'established' keyword, it is looking for packets with the ACK flag set. This indicates that the connection has been established and is part of an existing session. SYN-only packets are used to initiate connections, while RST-only packets are used to terminate connections. SYN or ACK packets are used during the connection establishment phase, but for matching an ACL entry with the 'established' keyword, only ACK flag is necessary.",[],0,NetSec,0.9,0.595096322490538,RST flag is also used to indicate that a tcp connection is already established. Missing info,Wrong Facts/Concept,Incorrect information/concept,,,0,,,,1,1,0,Basic networking,3,2,3,2,0.1999999999999999
+11,On which OSI layer or layers does ARP operate? Select one choice.,"a. Between Layer 2 and Layer 3
+b. At Layer 2
+c. At Layer 3
+d. Between Layer 1 and Layer 2",a,b,"ARP (Address Resolution Protocol) operates at Layer 2 of the OSI model. It is specifically used to map IP addresses to MAC addresses within the same subnet. Layer 2 deals with the data link layer, where devices communicate within the same network.",['https://www.cloudflare.com/learning/network-layer/what-is-arp/'],0,NetSec,0.9,0.999797433759312,Just wrong info,Wrong Facts/Concept,Incorrect information/concept,,,0,0,,,1,1,0,Basic networking,3,3,1,1,0
+17,What information can an attacker use within ICMP to determine what type of OS the device is running? Select one choice.,"a. Total length
+b. TTL value
+c. Version
+d. Checksum
+",b,c,"The information an attacker can use within ICMP to determine what type of OS the device is running is the Version field. The Version field in ICMP messages can sometimes reveal the operating system of the device. Different operating systems may generate slightly different ICMP messages, allowing attackers to infer the OS by analyzing these subtle variations.",['https://www.cloudflare.com/learning/ddos/glossary/internet-control-message-protocol-icmp/'],0,NetSec,0.9,0.971745351401866,Missing info about OS having unique TTLs,Wrong Facts/Concept,Incorrect information/concept,,,0,1,Article,0,1,1,1,Network security,3,4,3,4,0

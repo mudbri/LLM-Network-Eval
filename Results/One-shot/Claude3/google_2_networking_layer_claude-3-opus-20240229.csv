@@ -1,0 +1,71 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+21,Please select all of the valid IP addresses. Check all that apply.,"a. 257.70.312.49
+b. 123.456.123.456
+c. 192.168.1.1
+d. 8.8.8.8
+",,"c,d","c,d",,"Valid IP addresses must have four octets, each ranging from 0 to 255. Options 'c' (192.168.1.1) and 'd' (8.8.8.8) are the only valid IP addresses given. Option 'a' (257.70.312.49) is invalid because the first octet exceeds 255. Option 'b' (123.456.123.456) is invalid because the second and third octets exceed 255.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.techtarget.com/searchnetworking/definition/IP-address']",1,google_2_networking_layer,1,1
+22,How many IP addresses does a class C network have?,"a. 65,536 addresses
+b. 256 addresses
+c. 1 address
+d. 16,777,216 addresses
+",,b,b,,"A Class C network uses the first three octets (24 bits) to identify the network and the last octet (8 bits) to identify the host. Since each octet represents 8 bits, the number of unique host addresses in a Class C network is 2^8, or 256 addresses. However, the first and last addresses are reserved for the network and broadcast addresses respectively, leaving 254 usable host addresses.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/tcpip-addressing-and-subnetting']",1,google_2_networking_layer,0.95,1
+23,Which IP address class has the first two octets reserved for the network ID and the last two octets for the host ID?,"a. Class C addresses
+b. Class B
+c. Class E
+d. Class A
+",,b,b,,"Class B IP addresses have the first two octets reserved for the network ID and the last two octets for the host ID. The first bit of the first octet is always 1 and the second bit is always 0 for Class B addresses. This allows for 16,384 Class B networks, each with up to 65,534 hosts.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.tutorialspoint.com/ipv4/ipv4_address_classes.htm']",1,google_2_networking_layer,0.95,1
+24,The ____ is used to indicate that the datagram is allowed to be fragmented or to indicate that the datagram has already been fragmented.,"a. flag field
+b. service type field
+c. fragmentation offset field
+d. total length field
+",,a,a,,"The flag field in the IP header is used to control or indicate the fragmentation of a datagram. It contains three flags: Reserved (must be zero), Don't Fragment (DF), and More Fragments (MF). The DF flag indicates that the datagram should not be fragmented. The MF flag indicates whether more fragments of the datagram follow the current fragment.","['https://en.wikipedia.org/wiki/IPv4#Header', 'https://www.oreilly.com/library/view/tcp-ip-illustrated/9780321336316/']",1,google_2_networking_layer,0.95,1
+25,The IP address assigned to a device would depend on the _______ it is connected.,"a. IP datagram
+b. ARP
+c. network
+d. MAC addresses
+",,c,c,,The IP address assigned to a device depends on the network it is connected to. Each network has a specific range of IP addresses that can be assigned to devices within that network. The network administrator or DHCP server is responsible for allocating IP addresses to devices based on the network they are connected to.,"['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.comptia.org/content/guides/what-is-an-ip-address']",1,google_2_networking_layer,1,1
+26,What does CIDR stand for?,"a. Classful Interlink-Destination Routing
+b. Classful Identification Routing
+c. Class Interconnect Destination Routing
+d. Classless Inter-Domain Routing
+",,d,d,,CIDR stands for Classless Inter-Domain Routing. It is a method for allocating IP addresses and routing Internet Protocol packets. CIDR replaced the previous classful network addressing architecture in an effort to slow the growth of routing tables on routers across the Internet and to help slow the rapid exhaustion of IPv4 addresses.,"['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.cloudflare.com/learning/network-layer/what-is-cidr/']",1,google_2_networking_layer,1,1
+27,Which of the following is a correct form of CIDR notation?,"a. 192.168.1.0 + 255.255.255.0
+b. 192.168.1.0:24
+c. 192.168.1.0/24
+d. 192.168.1.0\24
+",,c,c,,"CIDR notation is written as an IP address, followed by a slash, then the number of network prefix bits. So 192.168.1.0/24 indicates the IP is 192.168.1.0 and the first 24 bits (192.168.1) represent the network portion, with the last octet (0) representing the host portion. The other options use incorrect symbols like +, :, and \ rather than the slash.","['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation', 'https://www.rfc-editor.org/rfc/rfc4632']",1,google_2_networking_layer,1,1
+28,How many octets does a subnet mask have?,"a. 1
+b. 3
+c. 4
+d. 2
+",,c,c,,"A subnet mask is a 32-bit number that masks an IP address, and divides the IP address into network address and host address. 32 bits are divided into four octets (1 octet = 8 bits). Each octet is represented by a decimal number separated by a dot, just like an IP address. So a subnet mask contains 4 octets.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://docs.microsoft.com/en-us/troubleshoot/windows-client/networking/tcpip-addressing-and-subnetting']",1,google_2_networking_layer,1,1
+29,"Consider the following scenario: Your IP address is 192.168.8.34, and your subnet mask is 255.255.0.0. What part of the subnet mask represents the subnet ID?","a. 255.255.0.1
+b. The last two octets of the subnet mask, 0.0
+c. The first two octets of the subnet mask, 255.255
+d. 192.168.0.254
+",,c,c,,"The subnet mask 255.255.0.0 has the first two octets set to 255, which in binary is 11111111.11111111.00000000.00000000. This means that the first 16 bits of the IP address represent the network ID, and the remaining 16 bits represent the host ID. Therefore, the part of the subnet mask that represents the subnet ID is the first two octets, 255.255.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.comptia.org/content/guides/what-is-a-subnet-mask']",1,google_2_networking_layer,1,1
+30,How many possible host IDs do you always lose per network?,"a. 8
+b. 12
+c. 4
+d. 2
+",,d,d,,"In every network, you always lose 2 possible host IDs - one for the network ID and one for the broadcast ID. The network ID has all host bits set to 0, while the broadcast ID has all host bits set to 1. These two addresses cannot be assigned to hosts, so they reduce the number of usable host IDs in each network by 2.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.pearsonitcertification.com/articles/article.aspx?p=2990395&seqNum=2']",1,google_2_networking_layer,1,1
+31,Which of the following are types of Interior Gateway Protocols? (Select all that apply),"a. Link State Routing Protocols
+b. Distance-Vector Protocols
+c. Hypertext Transfer Protocol
+d. Transmission Control Protocol
+",,"a,b","a,b",,"Interior Gateway Protocols (IGPs) are used for routing within an autonomous system. The two main types of IGPs are:a. Link State Routing Protocols: These protocols create a complete view of the network topology. Each router shares information about the state of its directly connected links with all other routers. Examples include OSPF and IS-IS. b. Distance-Vector Protocols: In these protocols, each router shares its routing table with its directly connected neighbors. Routers calculate the best path based on the information received from neighbors. Examples include RIP and EIGRP.Hypertext Transfer Protocol (HTTP) and Transmission Control Protocol (TCP) are not types of routing protocols.","['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_pi/configuration/xe-3s/iri-xe-3s-book/iri-ip-igp.html', 'https://www.geeksforgeeks.org/types-of-routing-protocols-in-computer-network/']",1,google_2_networking_layer,0.95,1
+32,Who is permitted to use non-routable address space?,"a. Anyone
+b. The IETF
+c. It's for testing purposes only
+d. The IANA
+",,a,a,,"Non-routable address space, such as private IP addresses (e.g., 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), can be used by anyone within their own private networks. These addresses are not unique globally and are not routed on the public Internet. Organizations can freely use this address space in their internal networks without needing permission from any governing body.","['https://en.wikipedia.org/wiki/Private_network', 'https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml', 'https://tools.ietf.org/html/rfc1918']",1,google_2_networking_layer,0.95,1
+34,What is the difference between Interior Gateway Protocols and Exterior Gateway Protocols?,"a. There is no difference between them.
+b. Interior Gateway Protocols share information within a single autonomous system. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+c. Interior gateway protocols share information with public networks. Exterior gateway protocols are used for private networks.
+d. Interior gateway protocols share information with multiple autonomous systems. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+",,b,b,,"Interior Gateway Protocols (IGPs) like OSPF and EIGRP are used to exchange routing information within a single autonomous system (AS). An AS is a group of routers under a single technical administration, like a company network. Exterior Gateway Protocols (EGPs) like BGP are used to exchange routing information between different autonomous systems, allowing communication across the wider Internet which is comprised of many independent networks.","['https://www.cloudflare.com/learning/network-layer/what-is-bgp/', 'https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13753-25.html']",1,google_2_networking_layer,0.95,1
+35,Which of the following are non-routable IP addresses? (Select all that apply),"a. 9.0.0.0
+b. 172.16.0.0/12
+c. 10.0.0.0/8
+d. 192.168.0.0/16
+",,"b,c,d","b,c,d",,"Non-routable IP addresses, also known as private IP addresses, are IP addresses that are reserved for use within private networks and cannot be routed on the public Internet. The non-routable IP address ranges are: - 10.0.0.0/8 (10.0.0.0 - 10.255.255.255) - 172.16.0.0/12 (172.16.0.0 - 172.31.255.255)  - 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)  Therefore, options b, c, and d are all non-routable IP address ranges. Option a (9.0.0.0) is a public IP address and is routable on the Internet.","['https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml', 'https://en.wikipedia.org/wiki/Private_network#Private_IPv4_addresses']",1,google_2_networking_layer,0.95,1

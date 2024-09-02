@@ -1,0 +1,71 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+21,Please select all of the valid IP addresses. Check all that apply.,"a. 257.70.312.49
+b. 123.456.123.456
+c. 192.168.1.1
+d. 8.8.8.8
+",,"c,d","c,d",,Option c (192.168.1.1) and option d (8.8.8.8) are valid IP addresses. An IPv4 address is a 32-bit number typically represented in decimal format with four octets separated by periods. Each octet must be a decimal value between 0 and 255.,['https://en.wikipedia.org/wiki/IP_address'],1,2_networking_layer,1.0,0.9999994935711484,1.0
+22,How many IP addresses does a class C network have?,"a. 65,536 addresses
+b. 256 addresses
+c. 1 address
+d. 16,777,216 addresses
+",,b,b,,"A class C network uses a /24 subnet mask, which provides 256 IP addresses (2^8 = 256) with 8 bits available for host addresses.",['https://www.ionos.com/digitalguide/server/know-how/ip-address/'],1,2_networking_layer,1.0,0.9999921773835968,1.0
+23,Which IP address class has the first two octets reserved for the network ID and the last two octets for the host ID?,"a. Class C addresses
+b. Class B
+c. Class E
+d. Class A
+",,b,b,,Class B addresses have the first two octets reserved for the network ID and the last two octets for the host ID. This allows for a larger number of networks compared to Class A while still providing a significant number of hosts per network.,['https://www.geeksforgeeks.org/difference-between-classful-addressing-and-classless-addressing/'],1,2_networking_layer,1.0,0.9999964686909352,1.0
+24,The ____ is used to indicate that the datagram is allowed to be fragmented or to indicate that the datagram has already been fragmented.,"a. flag field
+b. service type field
+c. fragmentation offset field
+d. total length field
+",,a,a,,"The flag field in the IP header is used to control or indicate fragmentation. The 'Don't Fragment' (DF) bit is set to indicate that the datagram should not be fragmented, while the 'More Fragments' (MF) bit is set in all fragments except the last one to indicate more fragments are coming.",['https://www.ietf.org/rfc/rfc791.txt'],1,2_networking_layer,1.0,0.9999971839107652,1.0
+25,The IP address assigned to a device would depend on the _______ it is connected.,"a. IP datagram
+b. ARP
+c. network
+d. MAC addresses
+",,c,c,,"The IP address assigned to a device depends on the network it is connected to. IP addresses are assigned based on the network to which a device is connected, following the addressing scheme of that specific network.",['https://www.cloudflare.com/learning/network-layer/what-is-an-ip-address/'],1,2_networking_layer,0.95,0.9999684563215124,1.0
+26,What does CIDR stand for?,"a. Classful Interlink-Destination Routing
+b. Classful Identification Routing
+c. Class Interconnect Destination Routing
+d. Classless Inter-Domain Routing
+",,d,d,,CIDR stands for Classless Inter-Domain Routing. It is a method for allocating IP addresses and IP routing. CIDR allows for more flexible allocation of IP addresses than the older system based on classes of addresses.,['https://www.cloudflare.com/learning/network-layer/what-is-cidr/'],1,2_networking_layer,1.0,0.9999995679800934,1.0
+27,Which of the following is a correct form of CIDR notation?,"a. 192.168.1.0 + 255.255.255.0
+b. 192.168.1.0:24
+c. 192.168.1.0/24
+d. 192.168.1.0\24
+",,c,c,,"The correct form of CIDR (Classless Inter-Domain Routing) notation uses the format of IP address followed by a slash (/) and then the subnet mask in decimal format. For example, 192.168.1.0/24 represents an IP address 192.168.1.0 with a subnet mask of 255.255.255.0.",['https://www.cloudflare.com/learning/network-layer/what-is-cidr/'],1,2_networking_layer,1.0,0.9999853828508316,1.0
+28,How many octets does a subnet mask have?,"a. 1
+b. 3
+c. 4
+d. 2
+",,c,c,,"A subnet mask is a 32-bit number represented in dotted decimal format, where each octet (8 bits) represents part of the mask. Therefore, a subnet mask consists of 4 octets.",['https://www.cloudflare.com/learning/network-layer/what-is-a-subnet/'],1,2_networking_layer,1.0,0.999994919049908,1.0
+29,"Consider the following scenario: Your IP address is 192.168.8.34, and your subnet mask is 255.255.0.0. What part of the subnet mask represents the subnet ID?","a. 255.255.0.1
+b. The last two octets of the subnet mask, 0.0
+c. The first two octets of the subnet mask, 255.255
+d. 192.168.0.254
+",,c,c,,"In the subnet mask 255.255.0.0, the first two octets (255.255) represent the subnet ID. These octets define the network portion of the IP address.",['https://www.iplocation.net/subnet-mask'],1,2_networking_layer,1.0,0.9999915813694368,1.0
+30,How many possible host IDs do you always lose per network?,"a. 8
+b. 12
+c. 4
+d. 2
+",,d,d,,You always lose 2 host IDs per network due to the network address (all 0s) and the broadcast address (all 1s) being unusable for host assignment.,['https://www.geeksforgeeks.org/introduction-of-variable-length-subnet-masks-vlsm/'],1,2_networking_layer,1.0,0.9999926541946804,1.0
+31,Which of the following are types of Interior Gateway Protocols? (Select all that apply),"a. Link State Routing Protocols
+b. Distance-Vector Protocols
+c. Hypertext Transfer Protocol
+d. Transmission Control Protocol
+",,"a,b","a,b",,Types of Interior Gateway Protocols include Link State Routing Protocols and Distance-Vector Protocols. These protocols are used for routing within autonomous systems.,['https://www.geeksforgeeks.org/difference-between-distance-vector-routing-protocol-and-link-state-routing-protocol/'],1,2_networking_layer,1.0,0.9999998063873689,1.0
+32,Who is permitted to use non-routable address space?,"a. Anyone
+b. The IETF
+c. It's for testing purposes only
+d. The IANA
+",,a,c,,"Non-routable address space, such as private IP addresses defined in RFC 1918, is reserved for internal use within a private network or for testing purposes. These addresses are not meant to be routed on the public internet.",['https://datatracker.ietf.org/doc/html/rfc1918'],0,2_networking_layer,0.9,0.9999980183344636,0.0
+34,What is the difference between Interior Gateway Protocols and Exterior Gateway Protocols?,"a. There is no difference between them.
+b. Interior Gateway Protocols share information within a single autonomous system. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+c. Interior gateway protocols share information with public networks. Exterior gateway protocols are used for private networks.
+d. Interior gateway protocols share information with multiple autonomous systems. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+",,b,b,,"Interior Gateway Protocols (IGPs) are used for routing within a single autonomous system (AS) and share routing information within that AS. Exterior Gateway Protocols (EGPs) are designed for communication between different autonomous systems, exchanging routing information between them.",['https://www.geeksforgeeks.org/difference-between-igp-and-egp/'],1,2_networking_layer,1.0,0.999999448776502,1.0
+35,Which of the following are non-routable IP addresses? (Select all that apply),"a. 9.0.0.0
+b. 172.16.0.0/12
+c. 10.0.0.0/8
+d. 192.168.0.0/16
+",,"b,c,d","b,c,d",,"Non-routable IP addresses are reserved for private networks and should not be routed on the public internet. The ranges designated for private networks are: 10.0.0.0 to 10.255.255.255 (10.0.0.0/8), 172.16.0.0 to 172.31.255.255 (172.16.0.0/12), and 192.168.0.0 to 192.168.255.255 (192.168.0.0/16). Therefore, options b, c, and d are non-routable IP addresses.","['https://www.arin.net/knowledge/address_filters.html', 'https://www.iana.org/help/cidr']",1,2_networking_layer,1.0,0.6185823183658866,1.0

@@ -1,0 +1,101 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+32,What are some of the reasons that it is difficult to deploy improvements to BGP? Select all that apply.,"a. Changes are necessarily incremental because of the large installed base of routers that already run BGP.
+b. Deploying changes requires coordination in standards bodies such as the IETF.
+c. BGP is implemented in hardware, so deploying changes to BGP requires changes on the timescale of hardware development cycles.
+d. Deplyoing changes to BGP requires coordination across potentially tens of thousands of ASes in the Internet.
+e. Only a few vendors implement BGP, and deploying changes requires convincing those vendors to change the protocol.
+",,"a,b,d","a,b,d",,"The Border Gateway Protocol (BGP) is a core part of the internet's infrastructure, and making changes to it is inherently complex due to several factors. First, BGP has a large installed base of routers, meaning that any changes need to be incremental to ensure compatibility across the network (a). Second, BGP is a standardized protocol, and any changes to it require coordination and agreement within standards bodies such as the Internet Engineering Task Force (IETF) (b). Lastly, BGP changes need to be coordinated across a vast number of Autonomous Systems (ASes), which can number in the tens of thousands, making widespread changes logistically challenging (d). The claim that BGP is implemented in hardware (c) is not always true; while some routers might have hardware components optimized for BGP, the protocol itself is implemented in software, and updates do not necessarily require hardware development cycles. Regarding the number of vendors (e), there are actually many vendors that implement BGP, and while vendor cooperation is necessary for changes, the protocol's ubiquity means that no small group of vendors can control its deployment.","['https://www.rfc-editor.org/info/bgp', 'https://www.ietf.org/', 'https://en.wikipedia.org/wiki/Border_Gateway_Protocol']",1,5_routing_control_platform_and_4d,0.95,0.9322790953704722,1.0
+33,Which of the following are true about the RCP? Select all that apply.,"a. In Phase 1 of RCP deployment, there is no need for ASes to use BGP to exchange routes.
+b. In an RCP deployment, routers no longer have to compute routes.
+c. In Phase 1 of RCP deployment, a single AS can benefit from deploying RCP even if no other ASes deploy RCP.
+d. In Phase 1 of RCP deployment, the RCP controller for an AS sees all routes for all destinations that an AS learns from neighboring ASes.
+e. The RCP controller operates just like a route reflector would, selecting a single best route for each destination for all client routers.
+",,"b,c","b,c,d",,"The Route Control Platform (RCP) is a centralized platform that can control routing decisions in a network, often associated with Software Defined Networking (SDN) principles. Here's an analysis of each statement:
+
+a. Incorrect. Even with RCP, Autonomous Systems (ASes) still need to use BGP to exchange routes with each other. RCP does not replace BGP; instead, it centralizes the control of routing decisions.
+
+b. Correct. Routers in an RCP deployment offload the route computation task to the RCP controller. The RCP controller computes the routes and provides them to the routers. This centralization can simplify the routers' operation and improve network-wide visibility and control.
+
+c. Correct. A single AS can benefit from deploying RCP even if no other ASes deploy RCP. The centralization of routing decisions within a single AS can improve routing efficiency and policy enforcement within that AS.
+
+d. Correct. The RCP controller for an AS can see all routes for all destinations that an AS learns from neighboring ASes. This comprehensive view is part of what enables the RCP to make more informed routing decisions.
+
+e. Incorrect. The RCP controller does more than what a route reflector would do. While a route reflector selects a single best route, the RCP controller has a broader role that includes the computation of routes and potentially optimizing them based on a wider set of criteria than BGP would on its own.","[""Feamster, Nick, et al. 'The case for separating routing from routers.' Proceedings of the ACM SIGCOMM workshop on Future directions in network architecture. 2004."", ""Caesar, Matthew, et al. 'Design and implementation of a routing control platform.' Proceedings of the 2nd conference on Symposium on Networked Systems Design & Implementation-Volume 2. 2005.""]",0,5_routing_control_platform_and_4d,0.95,0.8959619578815908,0.6000000000000001
+34,"Which of the following are true about network management with BGP, in the absence of RCP? Select all that apply.","a. BGP routing has a single point of failure.
+b. Implementing network-wide policy sometimes causes the routers themeselves to have to carry state.
+c. BGP's interaction with the underlying routing IGP routing protocol can result in persistent forwarding loops.
+d. It is not possible to perform traffic engineering with conventional BGP.
+e. Each router operates and makes decisions based only on a local view of network state.
+",,"b,c,e","b,c,e",,"In the absence of a Routing Control Platform (RCP), network management with BGP has the following characteristics:
+
+a. BGP routing does not necessarily have a single point of failure. BGP is a distributed protocol, and the failure of a single BGP router does not necessarily cause the entire BGP routing system to fail. Therefore, this statement is false.
+
+b. Implementing network-wide policies can indeed cause routers to carry additional state. This is because BGP routers need to maintain policy information and state for each route they manage. Hence, this statement is true.
+
+c. BGP's interaction with the Interior Gateway Protocol (IGP) can result in persistent forwarding loops. This is because BGP selects routes based on path attributes and may not be aware of IGP metrics or topology changes, leading to suboptimal routing decisions that could cause loops. Therefore, this statement is true.
+
+d. It is possible to perform traffic engineering with conventional BGP to some extent by manipulating BGP attributes such as AS path, local preference, and MED. However, traffic engineering may be more complex and limited compared to using an RCP. This statement is false.
+
+e. Each router in BGP makes decisions based on its local view of the network state, which includes the routes advertised by its neighbors. BGP does not have a full network-wide view, which can lead to suboptimal routing decisions. Therefore, this statement is true.","['https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/21321-bgploop.html', 'https://www.juniper.net/documentation/us/en/software/junos/bgp/topics/topic-map/bgp-route-selection-algorithm.html', 'https://www.ietf.org/rfc/rfc4271.txt']",1,5_routing_control_platform_and_4d,0.95,0.9513508088718176,1.0
+35,Which of the following is true about the second phase of RCP deployment? Select all that apply.,"a. The second phase of RCP deployment offers potential benefits such as reduced routing table size.
+b. The second phase of deployment requires fewer BGP sessions at the RCP controller than the first phase, thus improving scalability of the controller.
+c. The second phase of RCP deployment requires no coordination with neighboring ASes.
+d. In the second phase of RCP deployment, ASes do not need to use BGP to exchange routes with one another.
+e. In the second phase of deployment, the RCP controller sees all routes for every destination that neighboring ASes advertise.
+",,"a,e","a,e",,"The Routing Control Platform (RCP) is a concept in Software Defined Networking (SDN) applied to inter-domain routing that separates the control plane from the data plane. It provides a centralized point of control for routing decisions and can lead to various benefits in the deployment of BGP (Border Gateway Protocol) routing. Here's an analysis of the given options in the context of the second phase of RCP deployment:
+
+a. The second phase of RCP deployment can indeed offer potential benefits such as reduced routing table size because of the centralized nature of routing control, which can aggregate routes and reduce redundancy.
+
+b. The number of BGP sessions at the RCP controller in the second phase is not specified as being fewer than the first phase in the question. The scalability of the controller is not directly tied to the number of BGP sessions in this context.
+
+c. The second phase of RCP deployment would likely require coordination with neighboring ASes (Autonomous Systems) because it involves routing decisions that affect traffic flow between ASes.
+
+d. ASes still need to use BGP or another routing protocol to exchange routes with one another, even if they are using an RCP controller, as the RCP controller is managing the routing decisions, not the exchange of routing information itself.
+
+e. In the second phase of deployment, if the RCP controller is fully operational and has visibility into the network, it should see all routes for every destination that neighboring ASes advertise, as it would need this information to make informed routing decisions.",[],1,5_routing_control_platform_and_4d,0.75,0.6083606332896869,1.0
+36,"In terms of the parlance of the 4D architecture, which protocol serves as the ""dissemination plane"" for the RCP?","a. Spanning Tree Protocol
+b. LLDP
+c. The Internal Gateway Protocol (IGP)
+d. External BGP
+e. Internal BGP
+",,e,e,,"The 4D architecture is a concept that separates network control functions into four planes: decision, dissemination, discovery, and data. In this architecture, the dissemination plane is responsible for distributing control decisions to the devices. The Route Control Platform (RCP) is a system that makes routing decisions and disseminates these decisions to routers. Internal BGP (iBGP) is used for disseminating routing information within an Autonomous System (AS), which fits the role of the dissemination plane in this context. It allows the RCP to distribute routing information to all the routers within the AS.","['https://www.cs.princeton.edu/courses/archive/spr06/cos598E/bib/4DNetworking.pdf', 'https://en.wikipedia.org/wiki/Border_Gateway_Protocol']",1,5_routing_control_platform_and_4d,0.9,0.878761824414123,1.0
+37,What are some of the stated goals of simplifying the control plane in the 4D architecture. Select all that apply.,"a. Simpler routers and switches
+b. Simpler management systems
+c. Faster innovation
+d. Inherent robustness of control plane
+e. Improved security.
+",,"a,b,c","a,b,c,d",,"The 4D architecture for network control proposes a design that separates the network's decision-making elements (the control plane) from the underlying systems that forward traffic (the data plane). The goals of simplifying the control plane in the 4D architecture include: a) Simpler routers and switches, because by abstracting the control logic, individual devices can be less complex; b) Simpler management systems, as a simplified control plane can lead to more straightforward network management; c) Faster innovation, because with a simplified control plane, it is easier to implement and test new ideas without the constraints of traditional network protocols; d) Inherent robustness of the control plane, as the separation allows for more resilient and fault-tolerant designs. Improved security (e) is a benefit that can arise from a well-designed control plane, but it is not stated as a primary goal of simplifying the control plane within the context of the 4D architecture.","['https://www.cs.cornell.edu/projects/quicksilver/public_pdfs/4DNetworking.pdf', 'https://www.researchgate.net/publication/221516673_The_4D_Architecture_for_Network_Control_and_Management']",0,5_routing_control_platform_and_4d,0.9,0.9167688900948678,0.6000000000000001
+38,What are some examples of how a separate decision plane in the 4D architecture can amortize system overhead? Select all that apply.,"a. Performing inbound traffic engineering on a set of links in a coordinated fashion.
+b. If secure BGP were deployed, verifying the signatures on the AS paths of routes received from neighbors.
+c. Maintaining a single table in memory of AS paths that are learned across all BGP sessions in the AS, and using references into that table for specific routers (and routing decisions), to save memory.
+d. Performing route computation on behalf of all the routers in the AS.
+e. Keeping track of topology information.
+",,"b,c,e","a,b,c,d",,"The 4D architecture for network control separates the network's control plane into four planes: decision, dissemination, discovery, and data. The decision plane is responsible for making high-level control decisions that are then disseminated to the routers. Here's an evaluation of each choice in relation to the decision plane's role in amortizing system overhead:
+
+a. Performing inbound traffic engineering on a set of links in a coordinated fashion allows for centralized control and optimization of traffic flows, which can lead to more efficient use of network resources and reduced overhead in managing traffic at individual routers.
+
+b. Secure BGP (Border Gateway Protocol) involves cryptographic operations which can be resource-intensive. Centralizing this function can reduce the overhead on individual routers, as the decision plane can handle the verification of signatures on AS paths more efficiently.
+
+c. Maintaining a single table of AS paths in memory across all BGP sessions in an Autonomous System (AS) is an example of data deduplication, which can significantly save memory resources across the network. This is a key advantage of having a centralized decision plane.
+
+d. Centralized route computation can optimize routing decisions and reduce the computation required on individual routers, thereby saving processing power and memory on those routers.
+
+e. Keeping track of topology information is a task associated with the discovery plane, not the decision plane. The discovery plane is responsible for learning the physical topology of the network and the capabilities of nodes and links, not for making routing decisions or optimizing system overhead.","['https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/4DNetworking.pdf', 'https://www.researchgate.net/publication/221518674_The_4D_architecture_for_network_control_and_management']",0,5_routing_control_platform_and_4d,0.95,0.6586122622515824,0.0
+39,What are some examples of network-wide objectives that could be achieved by the decision plane in the 4D architecture? Select all that apply.,"a. Ensuring that connectivity is not interrupted when a link or router fails
+b. Provisioning a BGP peering session to a neighbor AS
+c. Counting the volume of video streaming traffic across a peering link
+d. Balancing traffic load across a network
+e. Ensuring predictable behavior for planned maintenance events
+",,"a,d,e","a,d,e",,"The 4D architecture for network control decomposes network control into four planes: decision, dissemination, discovery, and data. The decision plane is responsible for making high-level control decisions based on network-wide objectives. Ensuring connectivity in the event of failures (a), balancing traffic load across the network (d), and ensuring predictable behavior during maintenance (e) are all examples of network-wide objectives that the decision plane would handle. These tasks involve making strategic decisions that affect the network as a whole, rather than being limited to a single device or link. Provisioning a BGP peering session to a neighbor AS (b) is more of a configuration task, which may be part of the decision plane's responsibility, but it is not an example of a network-wide objective. Counting the volume of video streaming traffic across a peering link (c) is a monitoring task, likely part of the data plane or a separate analytics function, rather than a decision plane objective.","['https://ieeexplore.ieee.org/document/1452322', 'https://dl.acm.org/doi/10.1145/1096536.1096541']",1,5_routing_control_platform_and_4d,0.9,0.9999542420196282,1.0
+40,"Which plane is responsible for installing state into the data plane (e.g., FIB entries, ACLs) in the 4D architecture?","a. Discovery plane
+b. None of the above
+c. Dissemination plane
+d. Data plane
+e. Decision plane
+",,c,e,,"In the 4D architecture for network control, the Decision Plane is responsible for making decisions about the network behavior, such as routing and access control. It is this plane that computes the state that needs to be installed in the network devices' Data Planes, such as Forwarding Information Base (FIB) entries and Access Control Lists (ACLs). The Data Plane is responsible for actually forwarding traffic based on the state installed by the Decision Plane. The Discovery Plane is responsible for discovering the physical and logical topology of the network. The Dissemination Plane is responsible for distributing information (such as state and configuration) among the various components of the network control plane.",['https://www.cs.cornell.edu/projects/quicksilver/public_pdfs/4DNetworking.pdf'],0,5_routing_control_platform_and_4d,0.95,0.965926456167126,0.1999999999999999
+41,Which plane is responsible for path selection and traffic engineering in the 4D architecture?,"a. Decision plane
+b. None of the above
+c. Data plane
+d. Dissemination plane
+e. Discovery plane
+",,a,a,,"In the 4D architecture for network control, the Decision plane is responsible for path selection and traffic engineering. The 4D architecture decomposes network control and management into four planes: Decision, Dissemination, Discovery, and Data. The Decision plane takes high-level, network-wide objectives and policies and translates them into forwarding rules for packets. The Discovery plane is responsible for discovering the physical devices and their capabilities in the network. The Dissemination plane is in charge of distributing the forwarding rules created by the Decision plane to the Data plane elements. Finally, the Data plane is the layer that actually handles the forwarding of packets based on the rules provided.","['https://ieeexplore.ieee.org/document/1452332', 'https://www.researchgate.net/publication/221252419_4D_Control_Plane_for_Networks']",1,5_routing_control_platform_and_4d,0.95,0.9999686947220204,1.0

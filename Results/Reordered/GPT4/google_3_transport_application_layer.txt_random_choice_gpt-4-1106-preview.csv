@@ -1,0 +1,58 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,Score-right-minus-wrong
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. FIN, FIN/ACK, ACK
+b. SYN, SYN/ACK, ACK
+c. SYN, ACK, FIN
+d. SYN, ACK, SYN, ACK
+",,b,b,,"The Three-Way Handshake is a process used in TCP (Transmission Control Protocol) to establish a connection between a client and server. The correct sequence of flags used in this process is: 
+1. SYN: The client wants to establish a connection and sends a SYN (synchronize) packet to the server. 
+2. SYN/ACK: The server acknowledges the SYN packet by sending back a SYN packet of its own, along with an ACK (acknowledge) for the client's SYN packet. 
+3. ACK: The client acknowledges the server's SYN packet, completing the handshake and establishing the connection.
+Therefore, the correct sequence is SYN, SYN/ACK, ACK.",['https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment'],1,3_transport_application_layer,1.0,1.0,1.0
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 8
+d. 32
+",,a,a,,"In both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol), the port field is 16 bits long. This allows for a total of 2^16, or 65,536, possible port numbers, which are used to differentiate between different services or applications running on the same host.","['https://en.wikipedia.org/wiki/Transmission_Control_Protocol', 'https://en.wikipedia.org/wiki/User_Datagram_Protocol']",1,3_transport_application_layer,1.0,1.0,1.0
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Router
+b. Hub
+c. Firewall
+d. Switch
+",,c,c,,"A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies. At its most basic, a firewall is essentially the barrier that sits between a private internal network and the public Internet. Its main purpose is to block malicious traffic requests and data packets while allowing legitimate traffic through. Routers, hubs, and switches do not inherently block traffic based on criteria; they are devices used for connecting and managing networks. Routers direct traffic at the network layer, hubs are basic devices that connect multiple computers in a network without filtering or routing capabilities, and switches connect devices and manage data flows at the data link layer.","['https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html', 'https://en.wikipedia.org/wiki/Network_switch', 'https://en.wikipedia.org/wiki/Network_hub', 'https://en.wikipedia.org/wiki/Router_(computing)']",1,3_transport_application_layer,0.95,1.0,1.0
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,b,,"The TCP flag that is used to make the listening program respond immediately is the PSH (Push) flag. When the PSH flag is set, it instructs the receiving host to push the data to the receiving application immediately without buffering it. This is used when the sender wants to ensure that the receiver processes the data as soon as possible. The other flags have different purposes: ACK (Acknowledgment) is used to acknowledge the receipt of packets, URG (Urgent) indicates that the data contained in the packet should be processed urgently, and RST (Reset) is used to reset the connection.","['https://www.ietf.org/rfc/rfc793.txt', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol']",1,3_transport_application_layer,0.95,0.999998852758658,1.0
+40,_________are identified as ports 49152 through 65535.,"a. Ephemeral ports
+b. User ports
+c. Sockets
+d. System ports
+",,a,a,,"Ephemeral ports are temporary ports assigned by an operating system to a client when the client is communicating with a server. These ports are used when a client initiates a connection to a server, and the client needs a port to use for the duration of the session. The range for ephemeral ports can vary by operating system, but the IANA suggests the range 49152 to 65535 for dynamic or private ports which are often used for ephemeral ports.",['https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml'],1,3_transport_application_layer,1.0,0.999999091165773,1.0
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The interconnection layer
+b. The compression layer
+c. The session layer
+d. The presentation layer
+",,"c,d","c,d",,"The OSI (Open Systems Interconnection) model is a conceptual framework used to understand and implement standards for network communication. The OSI model has seven layers, two more than the five-layer model typically discussed in simplified networking contexts. The five-layer model generally includes the following layers: Application, Transport, Network, Data Link, and Physical. The OSI model includes all these layers but separates the Application layer into three distinct layers: the Application layer, the Presentation layer, and the Session layer. The Presentation layer (Layer 6) is responsible for the translation, encryption, and compression of data. The Session layer (Layer 5) manages sessions between communication systems, handling connection establishment, maintenance, and termination. The options 'interconnection layer' and 'compression layer' are not standard layers in the OSI model.","['https://www.ibm.com/cloud/learn/osi-model', 'https://en.wikipedia.org/wiki/OSI_model']",1,3_transport_application_layer,1.0,0.9999996871837188,1.0
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"The application layer in the OSI model is where end-user software operates. It is responsible for dealing with the more abstract data and providing services to the software through a set of interfaces. A web browser is an application that operates at this layer, as it provides an interface for the user to interact with the Internet, specifically with web services using protocols like HTTP or HTTPS. On the other hand, UDP (User Datagram Protocol) and TCP (Transmission Control Protocol) are core protocols of the Internet protocol suite that operate at the transport layer, not the application layer. A router operates at the network layer, as it is responsible for forwarding data packets between computer networks.","['https://www.lifewire.com/layers-of-the-osi-model-illustrated-818017', 'https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/']",1,3_transport_application_layer,1.0,1.0,1.0
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. The source port
+c. ARP message
+d. The router
+",,a,a,,"The networking stack, also known as the network stack or TCP/IP stack, is the part of the operating system that provides the communication protocols necessary for networking. When an application needs to establish a TCP connection, it uses the networking stack to handle the creation, management, and termination of the connection. The networking stack includes the implementation of the TCP protocol, which is responsible for establishing a reliable connection between two endpoints over an IP network.","['https://en.wikipedia.org/wiki/Internet_protocol_suite', 'https://en.wikipedia.org/wiki/Network_socket']",1,3_transport_application_layer,1.0,1.0,1.0
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The header of the Ethernet frame
+d. The payload of the TCP segment
+",,"a,b,d","a,b,d",,"In the TCP/IP model, data from the application layer is encapsulated into segments or datagrams as it travels down the layers to be transmitted across the network. Here's how each choice relates to the data the application wants to send: 
+
+a. The payload section of the Ethernet frame - This is where the actual data from the application layer, encapsulated within an IP datagram and then a TCP or UDP segment, is carried. So, this section does contain the application data.
+
+b. The payload section of the IP Datagram - The IP datagram encapsulates the TCP segment, which in turn encapsulates the application data, so the payload section of the IP datagram does contain the application's data.
+
+c. The header of the Ethernet frame - The header contains control information, such as source and destination MAC addresses, and does not contain the application data itself.
+
+d. The payload of the TCP segment - The TCP segment's payload is the actual data that the application wants to send, so this section contains the application data.","['https://en.wikipedia.org/wiki/Internet_protocol_suite', 'https://en.wikipedia.org/wiki/Ethernet_frame', 'https://en.wikipedia.org/wiki/IPv4#Header', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure']",1,3_transport_application_layer,1.0,0.9991236134152413,1.0

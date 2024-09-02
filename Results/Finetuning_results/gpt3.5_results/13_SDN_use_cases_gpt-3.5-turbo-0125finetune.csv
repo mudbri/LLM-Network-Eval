@@ -1,0 +1,45 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+95,What are some benefits to using a layer-2 MAC topology for an entire data center? Select all that apply.,"a. Host configuration is simpler, since all hosts are visible from a single large Ethernet topology.
+b. Forwarding on physical MAC addresses is simpler, since both the data center network topology and hosts' physical MAC addresses are hierarchical.
+c. IP routing does not need to be reconfigured when physical or virtual machines move from one part of the network to another.
+d. Scaling problems are simpler, since all hosts are configured on a single, flat topology.
+e. Load balancing is easier on a layer-2 topology than on a layer 3 topology.
+",,"a,c","a,b,c",,,[],0,13_SDN_use_cases,1,1
+96,"In PortLand, what are the reasons for assigning hosts pseudo-MAC addresses, as opposed to simply forwarding traffic on physical MAC addresses? Select all that apply.","a. Hosts in the data-center network topology are more vulnerable to attack if they expose their actual physical MAC addresses, rather than having a layer of indirection.
+b. It is very difficult to load balance traffic using physical MAC addresses; pseudo MAC addresses make it possible to assign traffic to destination IP addresses.
+c. Without pseudo-MAC addresses, switches would have to update forwarding state whenever hosts with a particular MAC address moved from one portion of the topology to another.
+d. Forwarding loops are be more common in a flat layer-2 topology than they are in a topology with hierarchical pseudo MAC addresses.
+e. In a flat layer-2 topology, switches cannot know on which port to forward traffic without maintaining switch tables for each MAC address, since MAC addresses are flat, not hierarchical.
+",,"c,e","c,e",,,[],1,13_SDN_use_cases,1,1
+97,What are the steps involved in the Proxy ARP process that PortLand's Fabric Manager runs?,"a. Host sends ARP query, edge switch intercepts query and redirects to the fabric manager, fabric manager consults PMAC mapping table and returns returns PMAC directly to the end host.
+b. Edge switch sends ARP query to fabric manager, fabric manager consults PMAC mapping table and returns PMAC to edge switch, edge switch updates its local PMAC mapping table.
+c. Host sends ARP query, fabric manager intercepts ARP query, consults PMAC mapping table and returns PMAC to end host.
+d. Host sends ARP query, edge switch intercepts query, consults PMAC mapping table and returns PMAC to the host.
+e. Host sends ARP query, edge switch intercepts query and redirects to the fabric manager, fabric manager consults PMAC mapping table and returns PMAC to edge switch, edge switch returns PMAC to end host.
+",,e,e,,,[],1,13_SDN_use_cases,1,1
+98,"What are some of the disadvantages of today's interdomain routing protocol, BGP? Select all that apply.","a. ISPs cannot load-balance traffic across multiple routes to the same destination IP prefix.
+b. Routing and forwarding decisions are only based on IP prefix, not on a broader range of traffic flow attributes.
+c. ISPs can only influence route selection through indirect mechanisms (e.g., prepending), rather than directly manipulating the forwarding table entries in switches.
+d. ISPs cannot express preference of one route over another, given multiple routes to a destination.
+e. ISPs can only influence the routing decisions of their immediate neighbor, not the entire end-to-end path.
+",,"b,c,e","b,c,e",,,[],1,13_SDN_use_cases,1,1
+101,What are some of the features that an SDX enables that today's IXPs cannot support? Select all that apply.,"a. Application of different business relationships across different regions of the world (e.g., peering only in a specific geographic region).
+b. Application-specific peering
+c. Wide-area load balancing using DNS-based redirection
+d. On-the-fly redirection to middleboxes
+e. Wide-area load balancing using IP packet rewriting
+",,"b,d,e","b,d",,,[],0,13_SDN_use_cases,1,1
+103,What are some of the motivations for applying software defined networking in home networks? Select all that apply.,"a. Better performance, since control decisions can be made from a well-provisioned server, as opposed to an under-provisioned router.
+b. Ability to better user interfaces to control home network behavior, independent of the interfaces that ship with home router devices.
+c. Ability to allow multiple service providers access to the home network infrastructure for different applications and services.
+d. Outsourcing control and management of the home network to a third party.
+e. More fine-grained control over the forwarding behavior of individual devices as conditions in the network change (e.g., a device uses too much bandwidth or data).
+",,"b,c,d,e","a,b,e",,,[],0,13_SDN_use_cases,1,1
+104,"Suppose that an operator of a home network wants to write the following policy:
+1. Block all traffic to Facebook from my child's computer.
+2. Rate limit BitTorrent traffic from my child's computer if the VoIP client on my desktop is active.
+Which of the following most closely approximates the policy?  Assume that ""facebook"" represents Facebook IP addresses, that ""bittorrent"" represents BitTorrent ports, and that ""limitifVOIP"" is a dynamic policy that checks a Resonance-like state machine to determine whether VOIP traffic has recently been observed.","a. (match(srcip=child, dstip=facebook) + drop) + (match(srcip=child, dstport=bittorrent) + dynamic(limitIfVOIP))
+b. (match(srcip=child, dstip=facebook) >> drop) >> (match(srcip=child, dstport=bittorrent) >> dynamic(limitIfVOIP))
+c. (match(srcip=child, dstip=facebook) >> drop) + (match(srcip=child, dstport=bittorrent) >> dynamic(limitIfVOIP))
+d. (match(srcip=child, dstip=facebook) + drop) >> (match(srcip=child, dstport=bittorrent) + dynamic(limitIfVOIP))
+",,c,c,,,[],1,13_SDN_use_cases,1,1

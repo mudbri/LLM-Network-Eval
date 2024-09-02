@@ -1,0 +1,62 @@
+Question 23. Which of the following are examples of control plane operations? Select all that apply.
+(A) Computing a shortest path routing tree. -*
+(B) Determining that a user's MAC address is authentic before allowing it to send traffic on the network. -*
+(C) Rate-limiting traffic so that the overall sending rate does not exceed a certain throughput.
+(D) Load balancing traffic across two output ports based on the hash of each packet's source IP address.
+(E) Determining the forwarding path that satisfies an access control policy. -*
+
+Question 25. What could be the operational steps behind the AT&T's IRSCP (a commercial version of the Routing Control Platform) for detecting malicious traffic? Select all that apply.
+(A) The controller sees all traffic passing through the network, detects an attack, and installs a null route to drop traffic at the entry point where the attack traffic is originating.
+(B) A measurement system detects an attack, identifies the entry point of the attack, and instructs a controller to install a null route to drop traffic at the entry point where attack traffic is originating. -*
+(C) A victim end host sends an alert to an on-path firewall about the source and nature of an attack, at which point the firewall installs a null route to drop the traffic at the entry point where the attack is originating.
+(D) The end host changes its IP address so that it is no longer the target of the attack traffic.
+(E) A measurement system detects an attack, identifies the entry point of the attack, and instructs a controller to re-route traffic through a deep-packet inspection device. -*
+
+Question 26. What are some example network management applications that become easier with control and data plane separation? Select all that apply.
+(A) Improved interdomain routing security. -*
+(B) Customer-controlled egress selection. -*
+(C) Improved logging capabilities.
+(D) Forecasting of network capacity.
+(E) Planned maintenance of an edge router. -*
+
+Question 27. What are some of the motivations for using Layer-2 forwarding in a data center? Select all that apply.
+(A) Easier configuration/administration, since there is no need to number hosts or configure subnets. -*
+(B) Better security properties.
+(C) Better load balancing properties.
+(D) Ability to use existing routing protocols to establish paths between hosts.
+(E) Better scaling properties.
+
+Question 28. How does the separation of the control and data plane make networking in data centers easier?
+(A) A network controller can permit the renumbering of end hosts to have topology-dependent Layer 2 MAC addresses. -*
+(B) Virtual machines can be migrated within the network without renumbering entire portions of the network or re-assigning network services to different IP addresses. -*
+(C) All routes can be controlled and monitored from a central point of control. -*
+(D) The control plane allows traffic to be forwarded using Layer 2 addresses, thus allowing automatic load balance across the topology.
+(E) The separation allows fewer switches to be used in the data center topology, thus lowering costs.
+
+Question 29. What are some examples of problems that can arise from consistency problems in the control plane, where a network has multiple controller replicas?
+(A) Incorrect security policies. -*
+(B) Inability to respond to link failures.
+(C) Incorrect operation when one controller fails.
+(D) Forwarding loops. -*
+(E) A flood of traffic at the controller.
+
+Question 30. What are some approaches to coping with inconsistency across controller replicas? Select all that apply.
+(A) Having multiple controllers install forwarding table entries on the same router and resolving the conflict on the router itself.
+(B) Using different controllers for independent parts of the network. -*
+(C) Running a consistency protocol across controller replicas. -*
+(D) Keeping a "hot spare" replica that has a complete view of the network state. -*
+(E) Only keeping a subset of the network state in memory at any time. -*
+
+Question 31. What are some approaches to coping with scalability challenges associated with control and data plane separation? Select all that apply.
+(A) Caching forwarding decisions in the data plane to reduce traffic at the controller. -*
+(B) Running multiple controllers, and having each controller only manage a part of the network. -*
+(C) Sending all traffic through the controller to minimize forwarding decisions that the routers and switches must make.
+(D) Eliminating redundant data structures. -*
+(E) Only performing control-plane operations for a limited set of network operations. -*
+
+Question 32. Which property guarantees that each RCP replica continues to install correct forwarding state in the network data plane, even in the case of a partition in the data plane?
+(A) The controller cannot see many of the routers in the network anyway, so there is no way for it to install incorrect routing state in the routers that it is not connected to.
+(B) Running the network from a single high-level control plane guarantees that network partitions and loops never occur in the first place.
+(C) Each controller has a complete view of the portion of the network that it is controlling, and therefore can guarantee consistent routing within that partition. -*
+(D) The controllers are partitioned from the network routers, and the routers will fall back to running a distributed routing protocol.
+
