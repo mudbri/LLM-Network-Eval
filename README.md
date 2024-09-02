@@ -25,7 +25,7 @@ Before running the code, ensure you have Python 3.8+ installed. We recommend usi
 
 ## Running LLM_Project.ipynb
 
-To reproduce all results from the paper, execute the `LLM_Project.ipynb` notebook. This notebook contains the code for data preparation, model evaluation, and result analysis.
+To reproduce all results from the paper, execute the `LLM_Project.ipynb` notebook. This notebook contains the code for data preparation, model evaluation, and result analysis. It uses the results stored in the Results folder.
 
 1. **Open the notebook:**
    ```bash
