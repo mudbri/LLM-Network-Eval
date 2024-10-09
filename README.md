@@ -1,6 +1,6 @@
 # LLM-Network-Eval
 
-This repository contains all the necessary code and instructions to reproduce the results presented in our paper. The project involves running large language models (LLMs) to evaluate their performance on various questions relaated to computer networking, generating data for fine-tuning, and analyzing the results.
+This repository contains all the necessary code and instructions to reproduce the results presented in our paper. The project involves running large language models (LLMs) to evaluate their performance on various questions related to computer networking, generating data for fine-tuning, and analyzing the results.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Before running the code, ensure you have Python 3.8+ installed. We recommend usi
    pip install pandas scikit-learn openai anthropic transformers torch accelerate beautifulsoup4 matplotlib tabulate
    ```
 
-## Running LLM_Project.ipynb
+## Reproducing Results
 
 To reproduce all results from the paper, execute the `LLM_Project.ipynb` notebook. This notebook contains the code for data preparation, model evaluation, and result analysis. It uses the results stored in the Results folder.
 
@@ -35,7 +35,7 @@ To reproduce all results from the paper, execute the `LLM_Project.ipynb` noteboo
 2. **Run all cells:**
    Ensure that you run all cells in sequence to reproduce the results.
 
-## Running generate_llm_answers.py
+## Generate answers
 
 The `generate_llm_answers.py` script is used to generate results using OpenAI and Claude LLMs. You need to provide your API keys for both services and specify other parameters using command-line arguments.
 
@@ -64,7 +64,7 @@ The `generate_llm_answers.py` script is used to generate results using OpenAI an
 
 ## Running Open-Source LLMs
 
-To evaluate open-source LLMs, you can use the provided `run_open_source_llm.py` script. This script now includes an option to pass your Hugging Face (HF) API token for models that require authentication.
+To evaluate open-source LLMs, you can use the provided `run_open_source_llm.py` script. This script includes an option to pass your Hugging Face (HF) API token for models that require authentication.
 
 ### Command-Line Arguments
 - `--folder`: Path to the folder containing the CSV files that contain questions. Use Results/GPT3.5 to make this script work for this project.
@@ -96,3 +96,6 @@ The script will generate a `jsonl` file that can be used to fine-tune OpenAI mod
 ## Acknowledgments
 
 We would like to thank the students who contributed their time and effort to help with the labeling process: Taimoor Tariq, Saif ur Rehman, Talha Waheed, Gabriella Xue, Nafis Chaudhary, Aj Grama, Richard Wang, John Wei, Jonathan Ng, Tanay Pareek, Jia Qing Tan, Sahithya Ranjith, Muawiz Feroze Khan, Saad Alam
+
+## Credits
+The networking questions are obtained from Cisco CCNA 200-301 Practice Tests by [examsdigest](https://examsdigest.com/courses/cisco-ccna-200-301/) and the quiz questions from multiple courses on Coursera: [Network Security](https://www.coursera.org/learn/network-security) from Cisco’s Cybersecurity Operations Fundamentals Specialization, [Software Defined Networking](https://www.coursera.org/learn/sdn/) from University of Chicago, [TCP/IP and Advanced Topics](https://coursera.org/learn/tcp-ip-advanced) from University of Colorado, [The Bits and Bytes of Computer Networking](https://www.coursera.org/learn/computer-networking) from Google’s IT Support Professional Certificate, and [Computer Networking ](https://www.coursera.org/learn/illinois-tech-computer-networking) from Illinois Tech. For fine-tuning, we used some more practice questions for [Cisco CCNA 200-301](https://www.examtopics.com/exams/cisco/200-301/view/1/) and [computer networking questions](https://www.sanfoundry.com/computer-networks-mcqs-basics/) from an online repository.
