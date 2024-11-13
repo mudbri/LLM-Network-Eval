@@ -93,5 +93,8 @@ To generate data for fine-tuning OpenAI models using networking questions, use t
    ```
 The script will generate a `jsonl` file that can be used to fine-tune OpenAI models
 
+## Acknowledgments
+We would like to thank the students who contributed their time and effort to help with the labeling process: Taimoor Tariq, Saif ur Rehman, Talha Waheed, Gabriella Xue, Nafis Chaudhary, Aj Grama, Richard Wang, John Wei, Jonathan Ng, Tanay Pareek, Jia Qing Tan, Sahithya Ranjith, Muawiz Feroze Khan, Saad Alam
+
 ## Credits
 The networking questions are obtained from Cisco CCNA 200-301 Practice Tests by [examsdigest](https://examsdigest.com/courses/cisco-ccna-200-301/) and the quiz questions from multiple courses on Coursera: [Network Security](https://www.coursera.org/learn/network-security) from Cisco’s Cybersecurity Operations Fundamentals Specialization, [Software Defined Networking](https://www.coursera.org/learn/sdn/) from University of Chicago, [TCP/IP and Advanced Topics](https://coursera.org/learn/tcp-ip-advanced) from University of Colorado, [The Bits and Bytes of Computer Networking](https://www.coursera.org/learn/computer-networking) from Google’s IT Support Professional Certificate, and [Computer Networking ](https://www.coursera.org/learn/illinois-tech-computer-networking) from Illinois Tech. For fine-tuning, we used some more practice questions for [Cisco CCNA 200-301](https://www.examtopics.com/exams/cisco/200-301/view/1/) and [computer networking questions](https://www.sanfoundry.com/computer-networks-mcqs-basics/) from an online repository.
