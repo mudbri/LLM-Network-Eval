@@ -31,12 +31,20 @@ def extract_rows_with_ip(input_folder, output_file):
                     reader = csv.DictReader(csv_file)
                     # Write header if not already written
                     if not header_written:
-                        writer.writerow(reader.fieldnames)
+                        # Filter out empty columns from the header
+                        header = [field for field in reader.fieldnames if field]
+                        writer.writerow(header)
                         header_written = True
                     # Check if 'Question Text' or 'Choices' contain an IP address
                     for row in reader:
+                        # Filter out empty values from the row
+                        filtered_row = [value for value in row.values() if value]
+                        
+                        # Check if 'Question Text' or 'Choices' contain an IP address
                         if is_ip_address(row.get('Question Text', '')) or is_ip_address(row.get('Choices', '')):
-                            writer.writerow(row.values())
+                            # Write the row only if it contains non-empty values
+                            writer.writerow(filtered_row)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
