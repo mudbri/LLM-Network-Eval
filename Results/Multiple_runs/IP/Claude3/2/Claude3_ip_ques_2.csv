@@ -1,0 +1,560 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+91,You have noticed that a server with IP 145.45.3.2 doesn’t respond to requests. What command will you type first in order to test connectivity between your device and the server?,"a. request 145.45.3.2
+b. check 145.45.3.2
+c. ping 145.45.3.2
+d. ping 145.45.3.2
+",,c,c,,"The 'ping' command is the standard tool used to test the reachability of a host on an IP network and measure the round-trip time for messages sent from the originating host to a destination computer. It works by sending ICMP 'echo request' packets to the target host and waiting for an ICMP 'echo reply'. So to test connectivity to the server at 145.45.3.2, you would use the command 'ping 145.45.3.2'.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 16: IP Services, Cisco Press', 'https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-software-releases-121-mainline/12778-ping-traceroute.html']",1,chapter5_ipv4_routing,0.95,1
+94,"Which of the given commands produces the following output?
+Output:
+""Global values:
+Internet Protocol routing is enabled
+Embedded-Service-Engine0/0 is administratively down, line
+protocol is down
+GigabitEthernet0/0 is up, line protocol is up
+Internet address is 158.16.1.1/24
+GigabitEthernet0/1 is administratively down, line protocol is
+down
+Serial0/0/0 is up, line protocol is up
+Internet address is 158.16.4.1/24
+Serial0/0/1 is administratively down, line protocol is down
+GigabitEthernet0/1/0 is up, line protocol is up
+Internet address is 158.16.1.1/24""","a. show interfaces
+b. show protocols
+c. show values
+d. show routing
+",,b,b,,"The 'show protocols' command displays the global protocol status and the status of each interface, including the line protocol state and IP address if configured. The output format matches the one provided in the question, showing the global IP routing status and the status of each interface.","['Cisco CCNA Official Cert Guide, Chapter 16: Troubleshooting IPv4 Routing', 'Cisco IOS Network Management Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netmgmt/command/nm-cr-book.html']",1,chapter5_ipv4_routing,0.95,1
+96,Which of the following commands lists detailed information about the route 156.10.2.0.,"a. show route 156.10.2.0
+b. show routing table 156.10.2.0
+c. show ip route 156.10.2.0
+d. show route table 156.10.2.0
+",,c,c,,"The 'show ip route' command is used to display the IP routing table on Cisco IOS devices. When followed by a specific network address like 156.10.2.0, it will show detailed information about the route to that network, including the outgoing interface, next hop IP, administrative distance, and metric. The other command options listed are not valid Cisco IOS commands for displaying IP routing information.","['Cisco IOS IP Routing: RIP Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_rip/command/irr-cr-book/irr-s1.html', 'Cisco CCNA Routing and Switching ICND2 200-105 Official Cert Guide, Chapter 14: Troubleshooting IPv4 Routing']",1,chapter5_ipv4_routing,0.95,1
+98,"A router lists the following partial output from the show ip route command. Out which interface will the router route packets destined to IP address 180.5.38.122? 10.0.0.0/8 is variably subnetted, 8 subnets, 5 masks
+O 180.5.38.100/32 [110/50] via 172.16.25.2, 00:00:04, GigabitEthernet0/0/0
+O 180.5.38.64/26 [110/100] via 172.16.25.129, 00:00:09, GigabitEthernet0/1/0
+O 180.5.37.0/23 [110/65] via 172.16.24.2, 00:00:04, Gigabit-Ethernet0/2/0
+O 180.5.38.96/27 [110/65] via 172.16.24.129, 00:00:09, GigabitEthernet0/3/0
+O 0.0.0.0/0 [110/129] via 172.16.25.129, 00:00:09, GigabitEthernet0/0/0","a. G0/3/0
+b. G0/2/0
+c. G0/1/0
+d. G0/0/0
+",,a,c,,"The IP address 180.5.38.122 falls within the 180.5.38.64/26 subnet. According to the routing table, packets destined for this subnet are routed via 172.16.25.129 out the GigabitEthernet0/1/0 interface.","['Cisco CCNA Routing and Switching ICND2 200-105 Official Cert Guide, Chapter 16: IP Routing in the LAN', 'Cisco Documentation: show ip route command - https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_pi/command/iri-cr-book/iri-cr-s2.html#wp2367997220']",0,chapter5_ipv4_routing,0.95,1
+99,"You are connected on a router R1, Which command will you type the command to connect to R2 using SSH. Login credentials in order to get access to R2. R2’s IP address: 145.167.2.1
+username: userexamsdigest
+password: passexamsdigest","a. ssh -l userexamsdigest 145.167.2.1
+passexamsdigest
+b. ssh -l userexamsdigest 145.167.2.2
+passexamsdigest
+c. ssh -l userexams 145.167.2.1
+passexamsdigest
+d. ssh -l userexamsdigest 145.167.2.1
+examsdigest
+",,a,a,,"To connect to router R2 using SSH from router R1, the correct command is 'ssh -l userexamsdigest 145.167.2.1' followed by entering the password 'passexamsdigest' when prompted. This command specifies the correct IP address of R2 (145.167.2.1) and the correct username (userexamsdigest) using the -l option.","['Cisco CCNA Official Cert Guide, Chapter 6: Configuring Basic Switch Management', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/s1/sec-s1-cr-book/sec-cr-s1.html']",1,chapter5_ipv4_routing,0.95,1
+103,"After configuring a working router interface with IP address/mask 10.1.1.100/26, which of the following routes would you expect to see in the output of the show ip route command? (Choose two answers.)","a. A connected route for subnet 10.1.1.64 255.255.255.192
+b. A local route for host 10.1.1.64 255.255.255.255
+c. A local route for host 10.1.1.100 255.255.255.255
+d. A local route for host 10.1.1.100 255.255.255.192
+e. A connected route for subnet 10.1.1.0 255.255.255.0
+",,"a,c","a,c",,"With an IP address of 10.1.1.100/26, the subnet is 10.1.1.64/26 (255.255.255.192 mask). This will create a connected route for the subnet 10.1.1.64/26 in the routing table. Additionally, a /32 local route (255.255.255.255 mask) will be created for the specific IP address 10.1.1.100 assigned to the interface.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: IP Routing Essentials', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter5_ipv4_routing,0.95,1
+105,You are responsible to configure a static route for the network 156.187.45.0/24 using the IP address 156.187.80.45 as the next-hop IP. Which command will you type to meet the requirement?,"a. ip route 156.187.45.0 255.255.0.0 156.187.80.45
+b. ip route 156.187.45.0 255.255.255.0 156.187.80.46
+c. ip route 156.187.0.0 255.255.255.0 156.187.80.45
+d. ip route 156.187.45.0 255.255.255.0 156.187.80.45
+",,d,d,,"The correct command to configure a static route for the network 156.187.45.0/24 using the IP address 156.187.80.45 as the next-hop is: 'ip route 156.187.45.0 255.255.255.0 156.187.80.45'. This command specifies the destination network (156.187.45.0), the subnet mask (255.255.255.0 corresponding to /24), and the next-hop IP address (156.187.80.45).","['Cisco CCNA Official Cert Guide, Chapter 16: IP Routing', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/16448-default.html']",1,chapter5_ipv4_routing,0.95,1
+163,Which of the following options are things that a standard IP ACL could be configured to do? (Choose two answers.),"a. Match the exact source IP address
+b. Match all IP addresses in a subnet with one access-list command without matching other IP addresses
+c. Match IP addresses 20.2.2.2 through 20.2.2.22 with one access-list command without matching other IP addresses
+d. Match only the packet’s destination IP address
+",,"a,b","a,b",,"A standard IP access control list (ACL) can match the exact source IP address of a packet, as well as all IP addresses in a subnet using wildcard masking with a single access-list command. It cannot match a specific range of IP addresses like 20.2.2.2 through 20.2.2.22 with one command. Standard IP ACLs also only examine the source IP address of packets, not the destination IP address.","['Cisco CCNA 200-301 Official Cert Guide, Chapter 16: IP Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1
+166,"Your task is to type a one-line standard ACL that matches the following criteria. All access-list commands use the number 1 in the command.
+Criteria #1: Permit packets from 186.33.2.3
+ACL command #1: ______________________","a. access-list 1 permit 186.33.2.3
+b. access-list 1 deny 186.33.2.3
+c. access-list 1 permit 186.33.2.0
+d. access-list 1 deny 186.33.0.0
+",,a,a,,"The correct answer is 'a' because the access-list command should use 'permit' to allow packets from the specific IP address 186.33.2.3. The other options are incorrect because they either use 'deny' which would block the packets, or they specify a different IP address or network that does not match the given criteria.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 12: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1
+167,"Your task is to type a one-line standard ACL that matches the following criteria. All access-list commands use the number 1 in the command.
+Criteria #2: Permit packets from hosts with 56.57.2 as the first three octets
+ACL command #2: ______________________","a. access-list 1 permit 56.57.2.0 0.0.0.255
+b. access-list 1 permit 57.57.2.0 0.0.0.255
+c. access-list 1 permit 56.57.2.0 0.0.255.255
+d. access-list 1 deny 56.57.2.0 0.0.0.255
+",,a,a,,"The correct answer is 'a'. The ACL command 'access-list 1 permit 56.57.2.0 0.0.0.255' matches the given criteria to permit packets from hosts with 56.57.2 as the first three octets. The wildcard mask '0.0.0.255' allows any value in the last octet, effectively matching all hosts with 56.57.2 in the first three octets.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 14: ACL Concepts', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1
+168,"Your task is to type a one-line standard ACL that matches the following criteria. All access-list commands use the number 1 in the command.
+Criteria #3: Permit packets from hosts with 56.57 as the first two octets
+ACL command #3: ______________________","a. access-list 1 permit 56.57.0.0 0.255.255.255
+b. access-list 1 permit 56.57.0.0 0.0.255.255
+c. access-list 1 permit 56.58.0.0 0.0.255.255
+d. access-list 1 permit 56.57.0.0 0.0.0.0
+",,b,b,,The correct answer is 'b' because the wildcard mask '0.0.255.255' matches the first two octets (56.57) exactly while allowing any value in the last two octets. This will permit packets from hosts with IP addresses starting with 56.57.x.x. Option 'a' uses an incorrect wildcard mask that would match any IP in the range 56.x.x.x. Option 'c' has the wrong third octet value (58 instead of 57). Option 'd' uses a wildcard mask of all zeros which would only match the exact IP 56.57.0.0.,"['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 16: Access Control Lists', 'Cisco Documentation: Configure IP Access Control Lists - https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1
+169,"Your task is to type a one-line extended ACL that matches the following criteria. All access-list commands use the number 101 in the command.
+Criteria #4: Permit packets from web client 65.5.5.5, sent to a web server in subnet 65.5.6.0/24
+ACL command #4: ______________________","a. access-list 101 permit tcp host 65.5.5.5 65.5.6.0 0.0.0.255 eq 23
+b. access-list 101 permit any any
+c. access-list 101 permit tcp host 65.5.5.5 65.5.6.0 0.0.0.255 eq www
+d. access-list 101 deny tcp host 65.5.5.5 65.5.6.0 0.0.0.255 eq www
+",,c,c,,"The correct answer is c. The access-list command should permit TCP traffic from the specific host 65.5.5.5 to the subnet 65.5.6.0/24 using the www (HTTP) port. Option a uses the wrong port number 23 (Telnet). Option b permits all traffic, which is too broad. Option d denies the traffic instead of permitting it.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 12: Access Control Lists', 'Cisco IOS Security Configuration Guide, Release 12.4, Configuring IP Access Lists']",1,chapter9_ip_acl,0.95,1
+170,"Your task is to type a one-line extended ACL that matches the following criteria. All access-list commands use the number 101 in the command.
+Criteria #5: Permit any and every IPv4 packet
+ACL command #5: ______________________","a. access-list 101 permit ip any any
+b. access-list 101 deny ip any any
+c. access-list 101 permit ip 0.0.0.0 any
+d. access-list 101 permit ip any 0.0.0.0
+",,a,a,,"The correct answer is 'a. access-list 101 permit ip any any'. This extended ACL command permits any and every IPv4 packet as specified in the criteria. The 'any' keyword is used for both the source and destination, effectively matching all IPv4 traffic.","['Cisco CCNA 200-301 Official Cert Guide, Volume 2, Chapter 16: Access Control Lists', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_data_acl/configuration/15-mt/sec-data-acl-15-mt-book/sec-create-ip-apply.html']",1,chapter9_ip_acl,1,1
+172,Type the access-list command that permits all packets sent from hosts in subnet 14.15.16.0/24. Use the ACL number 50 for the ACL rule.,"a. access-list 50 permit 14.15.17.0 0.0.0.255
+b. access-list 50 deny 14.15.16.0 0.0.0.255
+c. access-list 50 permit 14.15.16.0 0.255.255.255
+d. access-list 50 permit 14.15.16.0 0.0.0.255
+",,d,d,,"The correct command to permit all packets from the 14.15.16.0/24 subnet is 'access-list 50 permit 14.15.16.0 0.0.0.255'. The ACL number 50 is used as specified. The subnet 14.15.16.0 is the source address, and the wildcard mask 0.0.0.255 matches all hosts within that /24 subnet.","['Cisco CCNA Official Cert Guide, Chapter 12: ACLs and Security', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1
+173,"Given the following access-list command access-list 2 permit 192.168.4.0 0.0.0.255, choose the exact range of IP addresses, matched by the command.","a. 192.167.4.0 – 192.168.4.255
+b. 192.168.4.0 – 192.168.5.255
+c. 192.168.4.0 – 192.168.4.255
+d. 192.0.0.0 – 192.168.4.255
+",,c,c,,"The access-list command 'access-list 2 permit 192.168.4.0 0.0.0.255' matches the IP address range 192.168.4.0 - 192.168.4.255. The first part '192.168.4.0' specifies the network address, and the second part '0.0.0.255' is the wildcard mask. A wildcard mask of '0.0.0.255' means that the last octet can be any value from 0 to 255, while the first three octets must match exactly. Therefore, the range matched by this command is 192.168.4.0 through 192.168.4.255.","['Cisco CCNA Official Cert Guide, Chapter 12: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1
+175,"The ACL 55 on R1 has four statements, in the following order, with address and wildcard mask values as follows:
+1. 20.0.0.0 0.255.255.255
+2. 20.20.0.0 0.0.255.255
+3. 20.20.20.0 0.0.0.255
+4. 2.2.2.0 0.0.0.255
+If a router tried to match a packet sourced from IP address 20.20.20.20 using this ACL, which ACL statement does a router consider the packet to have matched?","a. First statement
+b. Second statement
+c. Third statement
+d. Forth statement
+e. Implied deny at the end of the ACL
+",,a,c,,"The router will match the packet to the most specific ACL statement. In this case, the third statement '20.20.20.0 0.0.0.255' is the most specific match for the source IP 20.20.20.20. The first and second statements are less specific matches, while the fourth statement does not match at all. The implied deny at the end is only considered if no other statements match.","['Cisco CCNA 200-301 Official Cert Guide, Chapter 16: Access Control Lists', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",0,chapter9_ip_acl,0.95,1
+176,"Which of the following access-list denies packets with a UDP header, any source IP address with source port greater than 10455, a destination IP address 30.3.3.3 and a destination port equal to 25?","a. access-list 101 deny udp any gt 10455 host 30.3.3.3 eq 28
+b. access-list 101 deny udp any gt 10455 host 30.3.3.3 eq 25
+c. access-list 101 deny tcp any gt 10455 host 30.3.3.3 eq 25
+d. access-list 101 deny udp any gt 25 host 30.3.3.3 eq 25
+",,b,b,,"The correct access-list command to deny packets with a UDP header, any source IP address with source port greater than 10455, a destination IP address 30.3.3.3, and a destination port equal to 25 is: 'access-list 101 deny udp any gt 10455 host 30.3.3.3 eq 25'. This matches the syntax and parameters specified in the question.","['Cisco IOS Security Command Reference: access-list (IP extended) command', 'Cisco CCNA Official Cert Guide Library, Chapter 12: Access Control Lists']",1,chapter9_ip_acl,0.95,1
+177,"Which of the following access-list denies packets with a UDP header, a source IP address 30.3.3.3 and a source port greater than 10455, any destination IP address 30.3.3.3 with destination port equal to 25?","a. access-list 101 deny udp host 30.3.3.3 gt 10455 any eq 30
+b. access-list 101 deny udp host 30.3.3.3 gt 25 any eq 25
+c. access-list 101 deny udp host 30.0.0.0 gt 10455 any eq 25
+d. access-list 101 deny udp host 30.3.3.3 gt 10455 any eq 25
+",,d,d,,"The correct answer is d. The access list entry 'access-list 101 deny udp host 30.3.3.3 gt 10455 any eq 25' matches the given criteria: - It denies UDP packets (deny udp) - From source IP 30.3.3.3 (host 30.3.3.3)  - With source port greater than 10455 (gt 10455) - To any destination IP (any) - With destination port equal to 25 (eq 25) The other options have incorrect parameters such as wrong source IP (30.0.0.0 in option c), wrong destination port (eq 30 in option a), or wrong source port (gt 25 in option b) which do not match the question.","['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_data_acl/configuration/15-mt/sec-data-acl-15-mt-book/sec-create-ip-apply.html', 'https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/23602-confaccesslists.html']",1,chapter9_ip_acl,0.95,1
+178,"Choose the wildcard mask that matches all IP packets in the subnet 46.45.44.0, and mask 255.255.255.0.","a. 0.0.0.255
+b. 0.0.255.255
+c. 0.255.255.255
+d. 255.255.255.255
+",,a,a,,"The wildcard mask is the inverse of the subnet mask. In this case, the subnet mask is 255.255.255.0, so the wildcard mask would be 0.0.0.255. This wildcard mask will match all IP addresses in the 46.45.44.0/24 subnet.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', 'https://www.cisco.com/c/en/us/support/docs/ip/access-lists/26448-ACLsamples.html']",1,chapter9_ip_acl,0.95,1
+110,"Given the following OSPF network commands,
+type the wildcard masks to match the requirement.
+Requirement: Match addresses that begin with 110.20
+Command: network 110.20.0.0 {wildcard mask}
+Which of the following wildcard mask will you use to meet the
+requirement?","a. 0.0.255.255
+b. 0.0.0.255
+c. 0.255.255.255
+d. 0.0.0.0
+",,a,a,,"To match addresses that begin with 110.20, the wildcard mask should allow any value in the third and fourth octets while fixing the first two octets. The wildcard mask 0.0.255.255 achieves this by using 0's in the first two octets to match exactly 110.20, and 255's in the last two octets to allow any value from 0 to 255.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 20: OSPF Network Types and Neighbors', 'https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/7039-1.html']",1,chapter6_ospf_routing_protocol,0.95,1
+111,"Which of the following commands produces the output below?
+""Codes: L – local, C – connected, S – static, R – RIP, M – mobile, B – BGP
+D – EIGRP, EX – EIGRP external, O – OSPF, IA – OSPF inter area
+N1 – OSPF NSSA external type 1, N2 – OSPF NSSA external type 2
+E1 – OSPF external type 1, E2 – OSPF external type 2
+
+! Additional lines omitted for brevity
+
+Gateway of last resort is not set
+10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+O 10.1.1.0/24 [110/2] via 10.1.14.1, 00:19:24, GigabitEthernet0/0/0
+O 10.1.2.0/24 [110/2] via 10.1.14.1, 00:19:24, GigabitEthernet0/0/0
+C 10.1.4.0/24 is directly connected, Vlan3
+L 10.1.4.4/32 is directly connected, Vlan3
+O 10.1.12.0/24 [110/2] via 10.1.14.1, 00:17:24, GigabitEthernet0/0/0
+O 10.1.13.0/24 [110/2] via 10.1.14.1, 00:14:15, GigabitEthernet0/0/0
+C 10.1.14.0/24 is directly connected, GigabitEthernet0/0/0
+L 10.1.14.4/32 is directly connected, GigabitEthernet0/0/0
+O 10.1.23.0/24 [110/3] via 10.1.14.1, 00:15:35, GigabitEthernet0/0/0""","a. show ip codes
+b. show ip route
+c. show ip interfaces
+d. show ip connected
+",,b,b,,"The output shown is from the 'show ip route' command. This command displays the IP routing table of the device, including directly connected networks, static routes, and routes learned from dynamic routing protocols like OSPF, EIGRP, RIP, etc. The other commands listed do not produce this specific output format.","['Cisco CCNA Official Cert Guide, Wendell Odom', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_pi/command/iri-cr-book/iri-cr-s2.html']",1,chapter6_ospf_routing_protocol,0.95,1
+114,"Which of the following network commands following the command router ospf 1, tells the router to start using OSPF on interfaces whose IP addresses are 20.1.20.1, 20.1.30.1, and 20.1.40.1?","a. network 20.0.0.1 0.0.255.255 area 0
+b. network 20.0.0.1 0.0.0.255 area 0
+c. network 20.0.0.0 255.0.0.0 area 0
+d. network 20.0.0.0 0.255.255.255 area 0
+",,d,c,,"The 'network' command under OSPF configuration mode is used to enable OSPF on interfaces that fall within the specified network range. The correct syntax is 'network <network-address> <wildcard-mask> area <area-id>'. Among the given options, only option 'c' has the correct wildcard mask (inverse of subnet mask) that would match the IP addresses 20.1.20.1, 20.1.30.1, and 20.1.40.1. The wildcard mask 255.0.0.0 essentially means that any IP address starting with 20 will be matched.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 11: Perspectives on IPv4 Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/7039-1.html']",0,chapter6_ospf_routing_protocol,0.95,1
+64,Given the following IP address - 20.54.23.3 and subnet mask - 255.255.255.0 choose the subnet ID and the broadcast address from that particular IP.,"a. Subnet ID: 20.54.23.0
+Broadcast Address: 20.54.23.255
+b. Subnet ID: 20.54.0.0
+Broadcast Address: 20.54.0.255
+c. Subnet ID: 20.54.0.0
+Broadcast Address: 20.54.255.255
+d. Subnet ID: 20.54.23.1
+Broadcast Address: 20.54.23.255
+",,a,a,,"With the given IP address 20.54.23.3 and subnet mask 255.255.255.0, the subnet ID is calculated by performing a bitwise AND operation between the IP address and subnet mask. This results in 20.54.23.0 as the subnet ID. The broadcast address for this subnet is obtained by setting all host bits to 1, which gives 20.54.23.255.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 12: Perspectives on IPv4 Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,0.95,1
+65,The converted binary mask 11111111.11111111.11000000.00000000 to decimal is _______________.,"a. 255.255.192.0
+b. 255.255.64.0
+c. 255.192.0.0
+d. 255.255.255.192
+",,a,a,,"The given binary mask 11111111.11111111.11000000.00000000 converted to decimal is 255.255.192.0. In the binary mask, the first two octets are all 1s, which convert to 255 in decimal. The third octet has the first two bits as 1s, which is 192 in decimal (128+64). The last octet is all 0s, which is 0 in decimal.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 12: IP Addressing and Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+66,The converted binary mask 11111111.11100000.00000000.00000000 to decimal is _______________.,"a. 255.255.255.224
+b. 255.255.224.0
+c. 255.224.0.0
+d. 255.64.0.0
+",,c,c,,"To convert the binary mask 11111111.11100000.00000000.00000000 to decimal, we need to calculate the decimal value for each octet. The first octet is 11111111, which equals 255 in decimal. The second octet is 11100000, which equals 224 in decimal (128+64+32=224). The third and fourth octets are all zeros, so they equal 0 in decimal. Therefore, the correct decimal representation of the given binary mask is 255.224.0.0.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 13: Perspectives on IPv4 Subnetting)', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+67,The converted binary mask 11111110.00000000.00000000.00000000 to decimal is _______________.,"a. 255.255.255.254
+b. 254.0.0.0
+c. 255.254.0.0
+d. 255.255.254.0
+",,b,b,,"The given binary mask is 11111110.00000000.00000000.00000000. Converting each octet to decimal:11111110 = 25400000000 = 000000000 = 0 00000000 = 0Therefore, the decimal representation of the subnet mask is 254.0.0.0, which corresponds to option b.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 12: IP Addressing and Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+69,Your senior network engineer tells you to configure the DHCP server to lease the last 100 usable IP addresses in subnet 12.5.4.0/23. Which of the following IP addresses could be leased as a result of your new configuration?,"a. 12.5.1.156
+b. 12.5.5.200
+c. 12.5.4.254
+d. 12.5.255.200
+",,b,c,,"Subnet 12.5.4.0/23 includes the IP address range 12.5.4.0 to 12.5.5.255. The last 100 usable IP addresses in this subnet would be 12.5.5.156 to 12.5.5.255. From the given choices, only 12.5.4.254 falls within this range and could be leased by the DHCP server based on the specified configuration.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing in the LAN)', 'Cisco Networking Academy: Introduction to Networks v7.0 (Module 11: Build a Small Network)']",0,chapter4_advanced_ipv4_addressing,0.95,1
+70,"You are working with a network engineer to design a network for the new Campus. He provided the following details:
+The IP address is 195.240.37.43
+The subnet mask is 255.255.255.224
+You have been tasked to find the:
+1. Network (N) bits
+2. Subnet bits (S)
+3. Host (H) bits.","a. Network Bits = 15 | Subnet Bits = 2 | Host Bits = 1
+b. Network Bits = 20 | Subnet Bits = 3 | Host Bits = 1
+c. Network Bits = 24 | Subnet Bits = 3 | Host Bits = 5
+d. Network Bits = 28 | Subnet Bits = 1 | Host Bits = 2
+",,c,c,,"To determine the number of network, subnet, and host bits, we need to analyze the subnet mask. The subnet mask 255.255.255.224 in binary is 11111111.11111111.11111111.11100000. Counting the number of consecutive 1s from left to right, we get 27 bits. The first 24 bits represent the network portion, the next 3 bits (27 - 24) represent the subnet portion, and the remaining 5 bits (32 - 27) represent the host portion.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 12: Perspectives on IPv4 Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,0.95,1
+71,Which of the following binary masks is equivalent to the 255.255.255.240 dotted-decimal notation (DDN)?,"a. 11111111.11111111.11111111.11111100
+b. 11111111.11111111.11111111.11110000
+c. 11111111.11111111.11111111.10000000
+d. 11111111.11111111.11111111.11111110
+",,b,b,,"The subnet mask 255.255.255.240 in binary notation is 11111111.11111111.11111111.11110000. This can be determined by converting each octet of the DDN mask to its binary equivalent. The first three octets (255) are all 1's in binary (11111111), while the last octet (240) is 11110000 in binary, as 240 in decimal equals 11110000 in binary.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing and Subnetting)', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+72,Which of the following binary masks is equivalent to the 255.192.0.0 dotted-decimal notation (DDN)?,"a. 11111111.11000000.00000000.00000000
+b. 11111111.11111111.11111111.00000000
+c. 11111111.11111111.11111111.10000000
+d. 11111111.11111111.11111111.11111110
+",,a,a,,"The binary mask 11111111.11000000.00000000.00000000 is equivalent to the 255.192.0.0 dotted-decimal notation. In this mask, the first 10 bits are set to 1, indicating the network portion of the address, while the remaining 22 bits are set to 0, representing the host portion. This corresponds to a /10 subnet mask, where the first two octets are fully masked (255.192), and the last two octets are not masked (0.0).","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing)', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,0.95,1
+73,Find the subnet ID from the IP address 10.75.20.3/24,"a. 10.75.5.0
+b. 10.75.0.0
+c. 10.75.20.0
+d. 10.0.0.0
+",,c,c,,"The subnet ID is determined by performing a bitwise AND operation between the IP address and the subnet mask. In this case, for a /24 subnet mask (255.255.255.0), the subnet ID is obtained by setting all host bits to zero. Since the first three octets (10.75.20) represent the network portion, and the last octet (.3) represents the host portion, the subnet ID is 10.75.20.0.","['CCNA 200-301 Official Cert Guide, Volume 1, by Wendell Odom, Chapter 12: Perspectives on IPv4 Subnetting', 'Cisco Networking Academy: Introduction to Networks v7.0, Module 11: IP Addressing']",1,chapter4_advanced_ipv4_addressing,0.95,1
+74,Find the subnet ID from the IP address 10.75.20.4/17,"a. 10.75.5.0
+b. 10.75.0.0
+c. 10.75.20.0
+d. 10.0.0.0
+",,b,b,,"To find the subnet ID, we need to perform a bitwise AND operation between the IP address and the subnet mask. A /17 subnet mask is 255.255.128.0 in dotted decimal notation. Converting 10.75.20.4 and 255.255.128.0 to binary and performing the AND operation:10.75.20.4   -> 00001010.01001011.00010100.00000100255.255.128.0 -> 11111111.11111111.10000000.00000000AND result   -> 00001010.01001011.00000000.00000000Converting the AND result back to dotted decimal notation gives us 10.75.0.0, which matches option b.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 12: IP Addressing and Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,0.95,1
+75,Which of the following dotted-decimal notation (DDN) is equivalent of /17.,"a. 255.255.192.0
+b. 255.128.0.0
+c. 255.255.128.0
+d. 255.255.224.0
+",,c,d,,"The subnet mask /17 in binary is 11111111.11111111.10000000.00000000, which converts to 255.255.128.0 in dotted decimal notation. Therefore, the correct answer is option d, 255.255.224.0.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",0,chapter4_advanced_ipv4_addressing,1,1
+76,Which of the following dotted-decimal notation (DDN) is equivalent of /28.,"a. 255.255.255.240
+b. 255.128.224.0
+c. 255.255.255.224
+d. 255.255.255.248
+",,a,a,,"The /28 subnet mask in binary is 11111111.11111111.11111111.11110000, which converts to 255.255.255.240 in dotted-decimal notation. This subnet mask has 28 network bits and 4 host bits, allowing for 14 usable host addresses per subnet.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+77,The broadcast address from the IP address 67.68.67.68/12 is 67.79.255.255.,"a. TRUE
+b. FALSE
+",,a,a,,"The given IP address 67.68.67.68 with subnet mask /12 (255.240.0.0) belongs to the network 67.64.0.0/12. In this subnet, the broadcast address is obtained by setting all host bits to 1. With a /12 mask, the first 12 bits are network bits, and the remaining 20 bits are host bits. Setting all 20 host bits to 1 results in the broadcast address 67.79.255.255. Therefore, the statement is TRUE.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', ""TCP/IP Guide by Charles M. Kozierok (Section 'IP Addressing and Subnetting', Subsection 'Subnet Masks and Subnet Calculations')"", ""Wikipedia: 'Subnetwork' article, 'Subnet Masks' and 'Broadcast Address' sections""]",1,chapter4_advanced_ipv4_addressing,0.95,1
+79,Which of the following answers lists the prefix (CIDR) format equivalent of 255.255.254.0?,"a. /20
+b. /21
+c. /22
+d. /23
+",,d,d,,"The subnet mask 255.255.254.0 in binary is 11111111.11111111.11111110.00000000. This subnet mask has 23 contiguous 1s, so the equivalent prefix format is /23.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', 'Cisco CCNA Certification, https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html']",1,chapter4_advanced_ipv4_addressing,1,1
+80,Which of the following answers lists the prefix (CIDR) format equivalent of 255.192.0.0?,"a. /10
+b. /11
+c. /12
+d. /13
+",,a,a,,"The subnet mask 255.192.0.0 is equivalent to the CIDR prefix /10. In binary, 255.192.0.0 is represented as 11111111.11000000.00000000.00000000. Counting the number of consecutive 1s from the left gives us 10, which corresponds to the /10 prefix.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+82,Your task is to find the broadcast address from the IP address 10.75.20.3 with subnet mask 255.248.0.0,"a. Broadcast address: 10.75.255.255
+b. Broadcast address: 10.75.20.255
+c. Broadcast address: 10.79.255.255
+d. Broadcast address: 10.80.255.255
+",,c,c,,"To find the broadcast address, we need to determine the network and host portions of the IP address using the subnet mask. The subnet mask 255.248.0.0 (/13) means that the first 13 bits are network bits, and the remaining 19 bits are host bits. In binary, 10.75.20.3 is 00001010.01001011.00010100.00000011. The first 13 bits (00001010.01001) represent the network portion, and the remaining 19 bits (011.00010100.00000011) represent the host portion. To get the broadcast address, we set all host bits to 1. This gives us 00001010.01001111.11111111.11111111 in binary, which translates to 10.79.255.255 in decimal notation.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing)', 'Cisco Learning Network: https://learningnetwork.cisco.com/s/article/ip-addressing-and-subnetting-for-new-users']",1,chapter4_advanced_ipv4_addressing,0.95,1
+83,Your task is to find the broadcast address from the IP address 172.30.70.26 with subnet mask 255.255.192.0,"a. Broadcast address: 172.30.127.255
+b. Broadcast address: 172.30.70.255
+c. Broadcast address: 172.30.100.255
+d. Broadcast address: 172.30.87.255
+",,a,a,,"To find the broadcast address, we need to find the network address first. The network address is found by performing a bitwise AND operation between the IP address and subnet mask. In this case:
+
+172.30.70.26 AND 255.255.192.0 = 172.30.64.0
+
+The broadcast address is the last address in the network range. To find it, we keep the network portion unchanged and set all host bits to 1. The network portion here is /18 or 18 bits, so the last 14 bits are host bits. Setting the last 14 bits to 1 in the network address gives:
+
+172.30.64.0 + 0.0.63.255 = 172.30.127.255
+
+Therefore, the broadcast address for 172.30.70.26 with subnet mask 255.255.192.0 is 172.30.127.255.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 12: Perspectives on IPv4 Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,0.95,1
+84,Which of the following answers lists the dotted decimal notation (DDN) equivalent of /30?,"a. 255.255.255.240
+b. 255.255.255.252
+c. 255.255.192.0
+d. 255.255.252.0
+",,b,b,,"The dotted decimal notation (DDN) equivalent of the subnet mask /30 is 255.255.255.252. This subnet mask is used for point-to-point links and allows for only 2 usable host IP addresses in the subnet, as it borrows 30 bits for the network portion of the address, leaving only 2 bits for host addressing.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 12: Perspectives on IPv4 Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+85,Which of the following answers lists the dotteddecimal notation (DDN) equivalent of /18?,"a. 255.255.255.192
+b. 255.255.224.0
+c. 255.255.128.0
+d. 255.255.192.0
+",,d,d,,"The dotted-decimal notation (DDN) equivalent of /18 is 255.255.192.0. In DDN, each octet represents 8 bits. The /18 prefix means that the first 18 bits are network bits, and the remaining 14 bits are host bits. To calculate the DDN, we set the network bits to 1 and the host bits to 0. The first two octets are fully covered by the 18 network bits (8 + 8 = 16). The third octet has 2 network bits (18 - 16 = 2), so it is calculated as 11000000 in binary, which is 192 in decimal. The last octet is all host bits, so it remains as 0.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 13: Perspectives on IPv4 Subnetting)', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,0.95,1
+86,"Which of the following masks, when used within a Class B network, would supply enough subnet bits to support 90 subnets? (Choose two)","a. /24
+b. /21
+c. /19
+d. 255.255.255.252
+e. 255.255.240.0
+f. 255.255.224.0
+",,"a,d","c,f",,"To support 90 subnets, we need at least 7 subnet bits (2^7 = 128 subnets). A Class B network has 16 host bits by default. Option c (/19) borrows 3 bits from the host portion, resulting in 13 host bits and 19 network/subnet bits (16 + 3). This provides 8 subnet bits (19 - 8 network bits - 3 host bits borrowed), enough for 90 subnets. Option f (255.255.224.0) also borrows 3 bits, as seen in the subnet mask where 224 is 11100000 in binary.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Cisco Press', 'Subnetting for Beginners: How to Easily Master IP Subnetting and Binary Math to Pass Your CCNA, Chase Andrews']",0,chapter4_advanced_ipv4_addressing,0.95,1
+88,"Your task is to troubleshoot a user’s PC with IP 10.20.30.5 and mask 255.255.255.0. Based on the given details type the number of the network (N), subnet (S), and host (H) bits.","a. Network Bits = 16 | Subnet Bits = 15 | Host Bits = 1
+b. Network Bits = 16 | Subnet Bits = 1 | Host Bits = 15
+c. Network Bits = 8 | Subnet Bits = 8 | Host Bits = 16
+d. Network Bits = 8 | Subnet Bits = 16 | Host Bits = 8
+",,d,c,,"The subnet mask 255.255.255.0 is a /24 mask, which means that the first 24 bits are network and subnet bits, while the remaining 8 bits are host bits. In this case, the IP address 10.20.30.5 belongs to a Class A network, where the first octet (8 bits) represents the network portion. The second and third octets (16 bits) are used for subnetting, and the last octet (8 bits) is used for host addressing. Therefore, the correct distribution of bits is: Network Bits = 8, Subnet Bits = 8, and Host Bits = 16.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Cisco Press, 2020', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",0,chapter4_advanced_ipv4_addressing,0.95,1
+89,The converted binary mask 11111111.11111111.11111110.00000000 to decimal is _______________.,"a. 255.255.255.192
+b. 255.255.254.0
+c. 255.255.252.0
+d. 255.255.255.224
+",,b,b,,"To convert the binary mask to decimal, group the binary digits into octets and convert each octet to decimal. The given binary mask is 11111111.11111111.11111110.00000000. Grouping into octets: 11111111 (255), 11111111 (255), 11111110 (254), and 00000000 (0). Therefore, the decimal representation of the subnet mask is 255.255.254.0, which corresponds to choice b.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 12: IP Addressing and Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+90,Which of the following binary masks is equivalent to the 255.192.0.0 dotted-decimal notation (DDN)?,"a. 11111111.11000000.00000000.00000000
+b. 11111111.11100000.00000000.00000000
+c. 11111111.11110000.00000000.00000000
+d. 11111111.11111000.00000000.00000000
+",,a,a,,"The dotted-decimal notation 255.192.0.0 represents a subnet mask. To find the equivalent binary mask, we need to convert each octet to binary. 255 in binary is 11111111, 192 in binary is 11000000, and 0 in binary is 00000000. Therefore, the correct binary mask equivalent to 255.192.0.0 is 11111111.11000000.00000000.00000000, which corresponds to choice a.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Cisco Press, 2020', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter4_advanced_ipv4_addressing,1,1
+139,"The senior network engineer assigns you a task related to port security. He needs your help to configure the fa0/1 from the SW-examsD to accept frames only from the MAC 0200.1111.2222.
+Type the commands that need to be configured on the SW-examsD following the requirements below:
+1. configure the FastEthernet0/1 to be an access port
+2. enable port security on that interface
+3. define the allowed MAC address","a. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/2
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+SW-examsD(config-if)#switchport port-security macaddress 0200.1111.2222
+b. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/1
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+c. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/1
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+SW-examsD(config-if)#switchport port-security macaddress 0200.2222.2222
+d. SW-examsD#configure terminal
+SW-examsD(config)#interface FastEthernet0/1
+SW-examsD(config-if)#switchport mode access
+SW-examsD(config-if)#switchport port-security
+SW-examsD(config-if)#switchport port-security macaddress 0200.1111.2222
+",,d,d,,The correct set of commands to configure port security on interface FastEthernet0/1 of SW-examsD to only accept frames from MAC address 0200.1111.2222 is:  1. Enter global configuration mode with 'configure terminal' 2. Select the correct interface FastEthernet0/1 with 'interface FastEthernet0/1'  3. Configure the interface as an access port with 'switchport mode access' 4. Enable port security on the interface with 'switchport port-security' 5. Define the specific allowed MAC address with 'switchport port-security mac-address 0200.1111.2222'  Option a uses the wrong interface (fa0/2 instead of fa0/1). Option b is missing the command to specify the allowed MAC address. Option c has the correct commands but specifies the wrong MAC address.,"['Cisco CCNA Routing and Switching ICND2 200-105 Official Cert Guide, Chapter 9: Configuring Switch Port Security', 'https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/12-2_55_se/configuration/guide/scg_2960/swtrafc.html#wp1075898']",1,chapter8_security_fundamentals,0.95,1
+95,One of Level 3's public DNS servers is ____________.,"a. 4.2.2.3
+b. 8.8.8.8
+c. 127.0.0.1
+d. 192.168.1.1
+",,a,a,,"Level 3 Communications operates several public DNS servers, one of which is 4.2.2.3. 8.8.8.8 is a public DNS server operated by Google. 127.0.0.1 is the loopback address, not a public DNS server. 192.168.1.1 is a common default gateway IP for home routers, not a public DNS server.","['https://www.lifewire.com/free-and-public-dns-servers-2626062', 'https://developers.google.com/speed/public-dns', 'https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml']",1,google_6_troubleshooting_and_future_networking,0.95,1
+91,Which of the following have examples of parallel composition? Select all that apply.,"a. Perform load balancing on any traffic that arrives from prefix 130.207.0.0/16 or is destined to port 80.
+b. Perform MAC learning on all traffic that is not blocked by a firewall rule.
+c. Count all port 80 traffic.
+d. Block all traffic whose source IP address is contained in a list of blocked IP addresses.
+e. Load balance traffic across multiple destination IP addresses and perform routing to the resulting destination IP addresses.
+",,"a,c,d","a,e",,"Parallel composition involves applying multiple policies or actions simultaneously to the same traffic. In choice (a), load balancing is performed on traffic that matches either the source prefix or the destination port, which are two parallel criteria. In choice (e), load balancing and routing are performed in parallel on the same traffic. The other choices describe sequential composition where policies are applied one after the other based on certain conditions.","['https://www.cs.princeton.edu/~jrex/papers/frenetic13.pdf', 'https://opennetworking.org/wp-content/uploads/2013/02/openflow-spec-v1.3.1.pdf']",0,12_programming_SDNs,0.9,1
+92,Which of the following is the appropriate Pyretic rule for matching traffic that sends packets from either 10.0.0.1 or 10.0.0.2 to IP address 1.2.3.4?,"a. (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+b. (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+c. (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)
+d. (match(srcip=10.0.0.1) >> (match(srcip=10.0.0.2) >> mod(dstip=1.2.3.4))
+e. (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)
+",,c,c,,"The correct Pyretic rule for matching traffic from either source IP 10.0.0.1 or 10.0.0.2 to destination IP 1.2.3.4 is '(match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)'. The '+' operator performs a parallel composition, matching packets from either source IP. The '>>' operator then performs a sequential composition, modifying the destination IP of the matched packets to 1.2.3.4.","['Pyretic Language Tutorial, https://github.com/frenetic-lang/pyretic/wiki/Language-Tutorial', 'Composing Software Defined Networks, NSDI 2013, https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final232.pdf']",1,12_programming_SDNs,0.95,1
+93,Which of the following is the appropiate Pyretic rule for sending traffic from source IP address 10.0.0.1 to destination IP address 10.1.2.3 and traffic from source IP address 10.0.0.2 to destination IP address 10.2.3.4?,"a. (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2)  + mod(dstip=10.2.3.4))
+b. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2) >> mod(dstip=10.2.3.4))
+c. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) >>mod(dstip=10.2.3.4))
+d. (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) + mod(dstip=10.2.3.4))
+e. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) & (match(srcip=10.0.0.2)  >> mod(dstip=10.2.3.4))
+",,b,b,,"The correct Pyretic rule for sending traffic from source IP 10.0.0.1 to destination IP 10.1.2.3 and traffic from source IP 10.0.0.2 to destination IP 10.2.3.4 is option b: (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2) >> mod(dstip=10.2.3.4)). The >> operator in Pyretic represents sequential composition, meaning the match condition is applied first, followed by the modification action. The + operator represents parallel composition, combining the two traffic flows. Options a and d incorrectly use + instead of >> between match and mod. Options c and e use >> and & operators respectively, which do not correctly combine the two traffic flows in parallel.","['https://github.com/frenetic-lang/pyretic/wiki/Language-Basics', 'https://www.sdxcentral.com/networking/sdn/definitions/what-is-pyretic-sdn-programming-language/']",1,12_programming_SDNs,0.95,1
+4,What is the dotted notation of an IP address of 10000000 10000111 01000100 00000101? Select one choice.,"a. 128.135.65.5
+b. 128.135.68.5
+c. 128.135.65.5
+d. 128.133.68.5
+",,b,b,,"To convert a 32-bit binary IP address to dotted decimal notation, we divide the 32 bits into four 8-bit segments (octets) and convert each octet to its decimal equivalent. 10000000 = 12810000111 = 13501000100 = 6800000101 = 5Therefore, the IP address in dotted decimal notation is 128.135.68.5, which corresponds to choice b.","[""Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross, Section 1.3 on 'The Network Edge'"", ""TCP/IP Guide by Charles M. Kozierok, Section 'IP Addressing Overview and Fundamentals' at http://www.tcpipguide.com/free/t_IPAddressingOverviewandFundamentals.htm""]",1,grad_TCP,1,1
+5,"Given a network address 128.100.0.0, what is its network class type? Select one choice.","a. Class A
+b. Class B
+c. Class C
+d. None of the above
+",,b,b,,"The network address 128.100.0.0 belongs to Class B. In classful addressing, IP addresses are divided into classes based on the value of the first octet. Class A addresses have a first octet between 1-126, Class B between 128-191, and Class C between 192-223. Since the first octet of the given address is 128, it falls under the Class B range.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,grad_TCP,0.95,1
+8,What is the subnetwork number of a host with an IP address of 172.16.66.0/21? Select one choice.,"a. 172.16.48.0
+b. 172.16.64.0
+c. 172.16.0.0
+d. 172.16.36.0
+",,b,b,,"The subnet mask for a /21 network is 255.255.248.0. When this subnet mask is applied to the IP address 172.16.66.0, the network portion is 172.16.64.0. This is calculated by performing a bitwise AND operation between the IP address and the subnet mask. The first 21 bits (indicated by /21) of the subnet mask are 1's, masking the network portion of the IP address. The remaining 11 bits are 0's, indicating the host portion of the address.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', ""TCP/IP Guide by Charles M. Kozierok (Section 'IP Addressing and Subnetting')"", ""Wikipedia: 'Subnetwork' - https://en.wikipedia.org/wiki/Subnetwork""]",1,grad_TCP,0.95,1
+9,What is the first valid host on the subnetwork that the node 172.30.190.198/24 belongs to? Select one choice.,"a. 172.30.190.0
+b. 172.30.190.1
+c. 172.30.190.100
+d. None of the above
+",,b,b,,"The first valid host on a /24 subnet is the IP address with the host portion set to 1. In this case, 172.30.190.198/24 belongs to the 172.30.190.0/24 subnet. The first valid host address in this subnet is 172.30.190.1, as the network address 172.30.190.0 cannot be assigned to a host. Therefore, the correct answer is choice b.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.comptia.org/content/guides/a-guide-to-network-troubleshooting']",1,grad_TCP,1,1
+10,"Based on 1.1.1.0/24, the IP address would be: Select one choice.","a. Class A
+b. Class B
+c. Class C
+d. Class D
+",,a,c,,"The IP address 1.1.1.0/24 belongs to Class C. Class C addresses have the first octet ranging from 192 to 223. In this case, the first octet is 1, which falls outside the Class C range. However, the /24 subnet mask is typically used with Class C addresses. The /24 mask indicates that the first 24 bits (3 octets) are used for the network portion, leaving the last 8 bits (1 octet) for host addresses. This is consistent with Class C addressing.","['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://www.tutorialspoint.com/ipv4/ipv4_address_classes.htm']",0,grad_TCP,0.9,1
+12,"Using CIDR notation, a prefix 205.100.0.0 of length 22 is written as 205.100.0.0/22. What network mask does the /22 notation indicate? Select one choice.","a. 205.255.255.0
+b. 255.255.252.0
+c. 255.255.22.0
+d. None of the above
+",,b,b,,"In CIDR notation, the /22 indicates that the first 22 bits of the 32-bit IP address are used for the network portion, while the remaining 10 bits are used for host addresses. To determine the subnet mask, we set the first 22 bits to 1 and the remaining 10 bits to 0. This results in the binary subnet mask of 11111111.11111111.11111100.00000000, which translates to the dotted decimal notation of 255.255.252.0.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing and Subnetting)', 'Computer Networking: A Top-Down Approach by James Kurose and Keith Ross (Chapter 4: The Network Layer)']",1,grad_TCP,0.95,1
+13,"Perform CIDR aggregation on the following /24 IP addresses: 128.58.24.0/24, 128.58.25.0/24, 128.58.26.0/24, 128.58.27.0/24. What is the CIDR outcome? Select one choice.","a. 128.58.28.0/22
+b. 128.58.24.0/22
+c. 128.58.28.0/24
+d. None of the above
+",,b,b,,"To perform CIDR aggregation, we need to find the common network prefix among the given IP addresses. In this case, the first three octets (128.58) are the same for all addresses, and the fourth octet ranges from 24 to 27. By converting these to binary, we get:24 = 0001100025 = 00011001 26 = 0001101027 = 00011011The common prefix is 128.58.000110xx, where xx represents the host bits. This translates to 128.58.24.0/22, where the /22 indicates that the first 22 bits are the network prefix.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing)', 'Computer Networking: A Top-Down Approach by James Kurose and Keith Ross (Chapter 4: The Network Layer)']",1,grad_TCP,0.95,1
+21,Please select all of the valid IP addresses. Check all that apply.,"a. 257.70.312.49
+b. 123.456.123.456
+c. 192.168.1.1
+d. 8.8.8.8
+",,"c,d","c,d",,"The valid IP addresses are 192.168.1.1 and 8.8.8.8. An IP address consists of four numbers, each ranging from 0 to 255, separated by dots. 257.70.312.49 is invalid because the first octet exceeds 255. 123.456.123.456 is also invalid as each octet must be less than or equal to 255.","['https://en.wikipedia.org/wiki/IP_address', 'https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml']",1,google_2_networking_layer,1,1
+27,Which of the following is a correct form of CIDR notation?,"a. 192.168.1.0 + 255.255.255.0
+b. 192.168.1.0:24
+c. 192.168.1.0/24
+d. 192.168.1.0\24
+",,c,c,,"CIDR notation is a compact representation of an IP address and its associated network mask. The correct format is an IP address, followed by a forward slash, and then the number of network bits. In this case, 192.168.1.0/24 is the correct CIDR notation, where /24 indicates that the first 24 bits are the network part of the address, and the remaining 8 bits are for host addresses.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 13: Perspectives on IPv4 Subnetting', 'https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation']",1,google_2_networking_layer,0.95,1
+29,"Consider the following scenario: Your IP address is 192.168.8.34, and your subnet mask is 255.255.0.0. What part of the subnet mask represents the subnet ID?","a. 255.255.0.1
+b. The last two octets of the subnet mask, 0.0
+c. The first two octets of the subnet mask, 255.255
+d. 192.168.0.254
+",,c,c,,"The subnet ID is represented by the first two octets of the subnet mask, which are 255.255 in this case. The subnet mask 255.255.0.0 indicates that the first two octets (16 bits) are used for the network ID, and the remaining two octets (16 bits) are used for host IDs within the subnet. Therefore, the subnet ID is determined by the portion of the IP address corresponding to the 1s in the subnet mask, which is 192.168 in this scenario.","['CompTIA Network+ Certification Study Guide, Seventh Edition (Exam N10-007) by Todd Lammle, Chapter 4: Understanding IP Addressing', 'Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 12: Perspectives on IPv4 Subnetting']",1,google_2_networking_layer,0.95,1
+35,Which of the following are non-routable IP addresses? (Select all that apply),"a. 9.0.0.0
+b. 172.16.0.0/12
+c. 10.0.0.0/8
+d. 192.168.0.0/16
+",,"b,c,d","b,c,d",,"IP addresses in the ranges 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16 are all considered private, non-routable IP address ranges. These IP ranges are reserved for use within private networks and cannot be routed on the public Internet. 9.0.0.0 is a public IP address.","['RFC 1918 - Address Allocation for Private Internets (https://tools.ietf.org/html/rfc1918)', 'IANA IPv4 Address Space Registry (https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml)']",1,google_2_networking_layer,0.99,1
+28,A Layer 2 switch configuration places all its physical ports into VLAN 2. The IP addressing plan shows that address 175.28.1.150 (with mask 255.255.255.0) is reserved for use by this new LAN switch and that 175.28.1.254 is already configured on the router connected to that same VLAN. The switch needs to support SSH connections into the switch from any subnet in the network. Which of the following commands are part of the required configuration in this case? (Choose two answers.),"a. The switch cannot support SSH because all its ports connect to VLAN 2, and the IP address must be configured on interface VLAN 1.
+b. The ip address 175.28.1.150 255.255.255.0 command in interface vlan 2 configuration mode.
+c. The ip default-gateway 175.28.1.254 command in global configuration mode.
+d. The ip address 172.16.2.250 255.255.255.0 command in interface vlan 1 configuration mode.
+e. The ip default-gateway 175.28.1.150 command in global configuration mode.
+",,"b,c","b,c",,"To configure the Layer 2 switch with the given IP address and enable SSH access, the switch needs an IP address on the VLAN interface corresponding to the VLAN where all ports are assigned (VLAN 2 in this case). This is done with the 'ip address 175.28.1.150 255.255.255.0' command in interface VLAN 2 configuration mode. Additionally, the switch needs a default gateway configured to reach other subnets, which is set with the 'ip default-gateway 175.28.1.254' command in global configuration mode, using the router's IP address in that VLAN.","['Cisco CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 8: Configuring Switch Management', 'Cisco IOS Configuration Fundamentals Command Reference: ip default-gateway', 'Cisco Catalyst 2960 and 2960-S Software Configuration Guide, 12.2(55)SE: Configuring Interface Characteristics']",1,chapter2_ethernet_lans,0.95,1
+33,"You have been tasked to configure the IPv4 address on the switch only on the VLAN 1 following the details below.
+Configuration details:
+IP address: 199.255.240.100
+Subnet mask: 255.255.255.0
+Default gateway: 199.255.240.1
+Which of the following commands will you type to complete the task?","a. Examsdigest#(config)# interface vlan 1
+Examsdigest#(config-line)# ip address 199.255.240.100 255.255.255.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+b. Examsdigest#(config)# interface vlan 1
+Examsdigest#(config-line)# ip address 199.255.241.100 255.255.255.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+c. Examsdigest#(config)# interface vlan 1
+Examsdigest#(config-line)# ip address 199.255.240.100 255.255.0.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+d. Examsdigest#(config)# interface vlan 11
+Examsdigest#(config-line)# ip address 199.255.240.100 255.255.255.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+",,a,a,,"Option a is the correct set of commands to configure the IPv4 address on VLAN 1 of the switch. It enters the VLAN 1 interface configuration mode, sets the correct IP address and subnet mask, enables the interface with 'no shutdown', exits back to global configuration mode, and sets the default gateway. The other options have errors such as incorrect IP address (b), wrong subnet mask (c), or configuring the wrong VLAN interface (d).","['Cisco CCNA 200-301 Official Cert Guide, Wendell Odom', 'https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/15-2_2_e/configuration/guide/b_1522e_2960_2960c_2960s_2960sf_2960p_cg/b_1522e_2960_2960c_2960s_2960sf_2960p_cg_chapter_0100.html']",1,chapter2_ethernet_lans,0.95,1
+35,"Which of the following command will you type to produce the output below?
+""Vlan1 is up, line protocol is up
+Hardware is EtherSVI, address is 0023.e21b.4cc0 (bia 0023.e21b.4cc0)
+Internet address is 192.168.1.101/24
+MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec, reliability 255/255, txload 1/255, rxload 1/255""","a. show interfaces vlans
+b. show interfaces
+c. show interfaces vlan 1
+d. show vlan 1
+",,c,c,,"The correct command to produce the given output is 'show interfaces vlan 1'. This command displays detailed information about the specified VLAN interface, including its status, hardware type, MAC address, IP address, MTU, bandwidth, delay, reliability, and load. The other options are either incorrect or do not exist as valid Cisco IOS commands.","['Cisco IOS Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/interface/command/ir-cr-book/ir-s4.html#wp3996468220', 'Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,chapter2_ethernet_lans,0.95,1
+41,Which of the following addresses are not valid Class A network IDs? (Choose all that apply),"a. 1.0.0.0
+b. 5.0.0.0
+c. 140.0.0.0
+d. 127.0.0.0
+e. 9.0.0.0
+f. 195.0.0.0
+",,"c,d,f","c,d,f",,"Class A network IDs range from 1.0.0.0 to 126.0.0.0. The addresses 140.0.0.0, 127.0.0.0, and 195.0.0.0 fall outside this range and are therefore not valid Class A network IDs. 127.0.0.0 is reserved for loopback addresses. 140.0.0.0 and 195.0.0.0 belong to Class B and Class C network ranges, respectively.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'TCP/IP Guide by Charles M. Kozierok', 'RFC 791 - Internet Protocol']",1,chapter3_ipv4_addressing,1,1
+43,Which of the following addresses are valid Class C network IDs? (Choose two answers),"a. 195.0.0.0
+b. 22.22.3.0
+c. 222.0.0.0
+d. 191.255.255.0
+e. 127.0.0.0
+",,"a,c","a,c",,"Class C network IDs have the first octet between 192 and 223. The last three octets represent the host portion and must be all zeros for the network ID. Both 195.0.0.0 and 222.0.0.0 meet these criteria, making them valid Class C network IDs.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 13: Perspectives on IPv4 Subnetting', 'RFC 791 - Internet Protocol']",1,chapter3_ipv4_addressing,0.95,1
+46,Which of the following IPv4 addresses has a subnet mask 255.255.0.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,a,d,,"The IP address 10.0.0.56 belongs to the Class A private IP address range 10.0.0.0 to 10.255.255.255. Class A networks use a default subnet mask of 255.0.0.0, which can be written as /8 in CIDR notation. However, the question specifies a subnet mask of 255.255.0.0 (/16), which is a valid subnet mask for Class A networks. This narrows down the network to a smaller range within the Class A space. The other IP addresses given (188.187.186.185, 204.203.202.201, and 55.44.22.11) are public IP addresses belonging to Class B and Class C ranges, which use different default subnet masks.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing)', 'RFC 1918 - Address Allocation for Private Internets', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",0,chapter3_ipv4_addressing,0.95,1
+47,Which of the following IPv4 addresses has a subnet mask 255.255.255.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,b,d,,"The IP address 10.0.0.56 belongs to the private IP address range 10.0.0.0/8, which uses the default subnet mask of 255.0.0.0. However, the question specifies a subnet mask of 255.255.255.0, which is commonly used for smaller subnets within the private IP ranges. Among the given choices, only 10.0.0.56 falls within a private IP range (10.0.0.0/8) that can be subnetted using the 255.255.255.0 mask. The other IP addresses are public IP addresses and typically do not use the 255.255.255.0 subnet mask.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 12: IP Addressing', 'RFC 1918: Address Allocation for Private Internets']",0,chapter3_ipv4_addressing,0.95,1
+49,Which of the following IPv4 addresses has a subnet mask 255.0.0.0? (Choose all that apply),"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+e. 100.24.5.56
+f. 192.168.178.6
+",,"c,d,e",d,,"The subnet mask 255.0.0.0 corresponds to the /8 CIDR notation, meaning that the first octet of the IP address represents the network portion. This subnet mask is used for Class A IP addresses, which have the first octet ranging from 1 to 126. Among the given choices, only option 'd' (10.0.0.56) falls within the Class A range and would have a subnet mask of 255.0.0.0.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens (Chapter 2: The Internet Address Architecture)']",0,chapter3_ipv4_addressing,0.95,1
+50,Which of the following ranges is a valid class B network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,a,a,,"Class B network numbers range from 128.0.0.0 to 191.255.0.0. The first octet of a Class B network number ranges from 128 to 191, while the remaining three octets are used for host addresses.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter3_ipv4_addressing,0.95,1
+51,Which of the following ranges is a valid class C network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,c,c,,"Class C network numbers range from 192.0.0.0 to 223.255.255.0. This range of IP addresses has the first three octets representing the network portion, while the last octet represents the host portion. Each Class C network can accommodate up to 254 hosts.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter3_ipv4_addressing,0.95,1
+52,Which of the following is the default mask of the IP 10.2.0.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,a,a,,"The IP address 10.2.0.0 belongs to the Class A address range, which uses a default subnet mask of 255.0.0.0. Class A addresses have the first octet between 1 and 126, and the default mask for Class A networks is 255.0.0.0, which means that the first octet represents the network portion of the address, while the remaining three octets represent the host portion.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Cisco Press, 2020', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter3_ipv4_addressing,0.95,1
+53,What information can you extract having the IP address 172.16.99.45? (Choose two answers.),"a. The network ID is 172.0.0.0.
+b. The default mask for the network is 255.255.255.0.
+c. The network is a Class B network.
+d. The number of host bits in the unsubnetted network is 16.
+e. The broadcast address of the network is 172.255.255.255
+",,"c,d","c,d",,"The IP address 172.16.99.45 belongs to the Class B private address range (172.16.0.0 - 172.31.255.255). Class B networks use a default subnet mask of 255.255.0.0, which means that the first two octets (16 bits) represent the network portion, and the last two octets (16 bits) represent the host portion of the address. Therefore, the network is a Class B network, and the number of host bits in the unsubnetted network is 16.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: IP Addressing)', 'RFC 1918 - Address Allocation for Private Internets', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter3_ipv4_addressing,0.95,1
+55,"The senior network engineer asked you to choose the broadcast address from the last subnet according to the following details:
+Network 172.28.0.0 (Class B)
+Mask 255.255.0.0 (for all subnets)","a. 172.28.255.254
+b. 172.255.255.255
+c. 172.28.200.255
+d. 172.28.255.255
+",,d,d,,"The correct broadcast address for the last subnet in the 172.28.0.0/16 network is 172.28.255.255. Here's why:  - The network is 172.28.0.0 with a subnet mask of 255.255.0.0 (or /16). This means there are 16 network bits and 16 host bits. - The last subnet in this network will have all host bits set to 1.  - With 16 host bits, the last subnet's broadcast address will be 172.28.255.255, where the network portion (172.28) remains the same, and all host bits are set to 1 (255.255).  The other options are incorrect:  - a. 172.28.255.254 is the last usable host address in the last subnet, not the broadcast. - b. 172.255.255.255 is an invalid address because the network portion (172.255) does not match the given network (172.28). - c. 172.28.200.255 is a broadcast address for a different subnet within the 172.28.0.0/16 network, but not the last subnet.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 12: Perspectives on IPv4 Subnetting', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter3_ipv4_addressing,0.95,1
+56,The address 130.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,b,b,,"The IP address 130.0.0.0 falls within the range of Class B network IDs, which span from 128.0.0.0 to 191.255.0.0. Class B networks use the first two octets to represent the network ID, with the remaining two octets used for host addresses.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 13: Perspectives on IPv4 Subnetting)', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens (Chapter 2: The Internet Address Architecture)']",1,chapter3_ipv4_addressing,0.95,1
+57,Which of the following is the default mask of the IP 178.25.3.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,b,b,,"The IP address 178.25.3.0 is a Class B address. Class B addresses have a default subnet mask of 255.255.0.0, which means the first two octets (16 bits) are used for the network portion, and the last two octets (16 bits) are used for the host portion of the address.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 12: Perspectives on IPv4 Subnetting)', ""TCP/IP Guide by Charles M. Kozierok (Section 'IP Addressing Concepts and Issues', Subsection 'IP Address Classes (Classful Addressing)')""]",1,chapter3_ipv4_addressing,0.95,1
+58,The address 200.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,c,c,,"The IP address 200.0.0.0 falls within the range of Class C network IDs, which span from 192.0.0.0 to 223.255.255.0. Class C networks use a default subnet mask of 255.255.255.0 and have 24 network bits and 8 host bits. This allows for 2,097,152 Class C networks, each supporting up to 254 hosts.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 13: Perspectives on IPv4 Subnetting', 'RFC 1918 - Address Allocation for Private Internets', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter3_ipv4_addressing,0.95,1
+59,The range of the Class C public IP Networks is _________________ - _________________,"a. 10.0.0.0 - 140.255.255.0
+b. 192.0.0.0 - 223.255.255.0
+c. 200.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,b,b,,"The range of Class C public IP networks is 192.0.0.0 - 223.255.255.0. Class C networks use the first three octets (24 bits) to represent the network portion, and the last octet (8 bits) represents the host portion. This allows for 2,097,152 Class C networks, each with 254 usable host addresses.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 14: IP Architecture)', ""TCP/IP Guide by Charles M. Kozierok (Section 'IP Address Class A, B, and C Network and Host Capacities')"", ""RFC 791 - Internet Protocol (Section 'Addressing')""]",1,chapter3_ipv4_addressing,0.95,1
+60,"The senior network engineer asked you to choose the last usable address for a host from the last subnet according to the following details:
+Network 9.0.0.0 (Class A)
+Mask 255.255.0.0 (for all subnets)","a. 9.255.255.254
+b. 10.255.255.254
+c. 11.255.255.254
+d. 12.255.255.254
+",,a,a,,"The network 9.0.0.0 with a mask of 255.255.0.0 is a Class A network that has been subnetted. The mask 255.255.0.0 provides 16 bits for the network portion and 16 bits for the host portion. This means there are 2^16 - 2 = 65,534 usable host addresses per subnet. The last subnet in this network would be 9.255.0.0, and the last usable host address in that subnet would be 9.255.255.254, since the broadcast address is 9.255.255.255.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'Computer Networking: A Top-Down Approach by James Kurose and Keith Ross']",1,chapter3_ipv4_addressing,0.95,1
+63,Which of the following are private IP networks? (Choose all that apply),"a. 172.31.100.0
+b. 164.16.2.0
+c. 192.166.255.0
+d. 192.168.1.0
+e. 11.11.11.0
+f. 172.24.0.0
+",,"a,d,f","a,d,f",,"Private IP networks are defined in RFC 1918. The private IP address ranges are:- 10.0.0.0 to 10.255.255.255 (10/8 prefix)- 172.16.0.0 to 172.31.255.255 (172.16/12 prefix) - 192.168.0.0 to 192.168.255.255 (192.168/16 prefix)Based on this, the private IP networks from the given choices are:a. 172.31.100.0 (falls within 172.16.0.0 to 172.31.255.255 range)d. 192.168.1.0 (falls within 192.168.0.0 to 192.168.255.255 range)f. 172.24.0.0 (falls within 172.16.0.0 to 172.31.255.255 range)","['RFC 1918 - Address Allocation for Private Internets (https://tools.ietf.org/html/rfc1918)', 'IANA IPv4 Address Space Registry (https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml)']",1,chapter3_ipv4_addressing,1,1
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. The cause is not related to dynamic NAT
+b. The command output does not provide any clue to identify the problem
+c. Dynamic NAT can't use Standard ACLs
+d. The NAT pool does not have enough entries to fulfill the user's requests
+",,d,d,,"The output shows that the NAT pool 'examsdigest' has a total of 10 addresses available, and all 10 have been allocated (100% utilization). Additionally, there have been 595 'misses', meaning there were 595 attempts to allocate an address from the pool when none were available. This indicates the NAT pool is exhausted and does not have enough entries to fulfill all the requests from users trying to access the Internet.","['Cisco CCNA Official Cert Guide, Chapter 10: Network Address Translation', 'https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/13772-12.html']",1,chapter11_ip_services,0.95,1
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. You can't connect two routers to the same LAN subnet.
+b. If one router fails, hosts can't send packets off-subnet
+c. If one router fails, both hosts will use the one remaining router as a default router
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",,c,c,,"In a LAN with two routers using a First Hop Redundancy Protocol (FHRP) like HSRP or VRRP, if one router fails, the other router will take over as the active router. All hosts on the LAN will then use the remaining active router as their default gateway to send packets off-subnet. The FHRP ensures that there is always an active router available to forward traffic, providing redundancy and preventing a single point of failure.","['Cisco CCNA 200-301 Official Cert Guide, Chapter 16: First Hop Redundancy Protocol', 'https://www.cisco.com/c/en/us/support/docs/ip/hot-standby-router-protocol-hsrp/9234-hsrpguidetoc.html']",1,chapter11_ip_services,0.95,1

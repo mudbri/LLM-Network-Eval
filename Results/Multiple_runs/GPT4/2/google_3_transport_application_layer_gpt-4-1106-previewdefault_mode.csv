@@ -1,0 +1,46 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. SYN, ACK, FIN
+b. SYN, SYN/ACK, ACK
+c. FIN, FIN/ACK, ACK
+d. SYN, ACK, SYN, ACK
+",,b,b,,"The Three-Way Handshake in TCP (Transmission Control Protocol) is used to establish a connection between a client and server. It involves three steps: (1) The client sends a SYN (synchronize) packet to the server to initiate a connection. (2) The server responds with a SYN/ACK (synchronize/acknowledge) packet to acknowledge the receipt of the SYN and to send its own SYN. (3) The client sends an ACK (acknowledge) packet to acknowledge the receipt of the server's SYN packet. This process sets up the initial sequence numbers for the connection and ensures both parties are ready to communicate, thereby establishing a reliable connection.","['https://www.rfc-editor.org/rfc/rfc793.html', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol']",1,google_3_transport_application_layer,1,1.0
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 32
+d. 8
+",,a,a,,"In both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol), the port field is 16 bits long. This allows for 2^16 or 65,536 possible port numbers.","['https://en.wikipedia.org/wiki/Transmission_Control_Protocol', 'https://en.wikipedia.org/wiki/User_Datagram_Protocol']",1,google_3_transport_application_layer,1,1.0
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Hub
+b. Router
+c. Switch
+d. Firewall
+",,d,d,,"A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies. At its most basic, a firewall is essentially the barrier that sits between a private internal network and the public Internet. Its main purpose is to block malicious traffic like viruses and hackers and to control the flow of legitimate traffic in and out of the network.",['https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html'],1,google_3_transport_application_layer,1,0.999999091165773
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,b,,"The PSH (Push) flag in TCP is used to indicate that the data should be pushed to the receiving application as soon as possible. This is often interpreted by TCP stacks as an instruction to bypass the buffer and make the data available to the listening program immediately. The ACK flag is used to acknowledge receipt of packets, URG indicates that there is urgent data to be processed, and RST is used to reset the connection.","['https://www.ietf.org/rfc/rfc793.txt', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure']",1,google_3_transport_application_layer,0.95,0.9999956342685299
+40,_________are identified as ports 49152 through 65535.,"a. User ports
+b. Ephemeral ports
+c. Sockets
+d. System ports
+",,b,b,,"Ephemeral ports are temporary ports assigned by a computer's operating system. They are used by network client applications when initiating a connection to a server, especially when the client does not request a specific port number. The range for ephemeral ports is 49152 through 65535 according to the IANA specification. These ports are above the well-known system ports (0-1023) and the registered ports (1024-49151).",['https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml'],1,google_3_transport_application_layer,1,0.9999967070975216
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The compression layer
+b. The session layer
+c. The interconnection layer
+d. The presentation layer
+",,"b,d","b,d",,"The OSI (Open Systems Interconnection) model is a conceptual framework used to understand and implement networking protocols in seven layers. The OSI model adds two layers on top of the Application Layer that are not explicitly defined in the simplified five-layer model (which typically includes the Application, Transport, Network, Data Link, and Physical layers). These two additional layers are the Session Layer and the Presentation Layer. The Session Layer (Layer 5) establishes, manages, and terminates connections between applications. The Presentation Layer (Layer 6) is responsible for the translation, encryption, and compression of data.","['https://www.lifewire.com/layers-of-the-osi-model-illustrated-818017', 'https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-networking-foundation/enterprise-networking-models.html']",1,google_3_transport_application_layer,1,0.9999988527586581
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"The application layer is the topmost layer in both the OSI model and the TCP/IP model, and it is where user-interface applications operate. A web browser is an example of an application layer software because it enables users to access and interact with web content. UDP (User Datagram Protocol) and TCP (Transmission Control Protocol) operate at the transport layer, which is responsible for providing host-to-host communication services for applications. A router operates at the network layer, which is responsible for packet forwarding including routing through intermediate routers.","['https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/', 'https://www.ibm.com/cloud/learn/networking-a-complete-guide']",1,google_3_transport_application_layer,1,0.9999995679800934
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. ARP message
+c. The source port
+d. The router
+",,a,a,,"The networking stack, also known as the network stack or TCP/IP stack, is the part of the operating system that provides networking functionality. Applications use the networking stack to communicate with the network, including establishing TCP connections. The stack is responsible for the implementation of the TCP/IP protocol suite and managing the various layers involved in communication, such as the transport layer where TCP operates.","['https://en.wikipedia.org/wiki/Network_stack', 'https://www.techopedia.com/definition/24643/network-stack']",1,google_3_transport_application_layer,0.95,1.0
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The payload of the TCP segment
+d. The header of the Ethernet frame
+",,"a,b,c","a,b,c",,"In the TCP/IP model, the data that the application wants to send is encapsulated into segments or datagrams as it moves down the layers. At the Transport layer, the data is encapsulated into a segment if TCP is used, which means the payload of the TCP segment contains the application data. At the Internet layer, the TCP segment is further encapsulated into an IP datagram, which means the payload section of the IP Datagram also contains the application data. Finally, at the Link layer, the IP datagram is encapsulated into an Ethernet frame if Ethernet technology is used, so the payload section of the Ethernet frame contains the application data as well. The header of the Ethernet frame contains control and addressing information, not the application data.","['https://en.wikipedia.org/wiki/TCP/IP_model', 'https://en.wikipedia.org/wiki/Ethernet_frame', 'https://en.wikipedia.org/wiki/Internet_protocol_suite']",1,google_3_transport_application_layer,0.95,0.9998062942063903

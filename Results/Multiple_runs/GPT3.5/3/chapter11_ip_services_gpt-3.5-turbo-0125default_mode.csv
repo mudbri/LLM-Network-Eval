@@ -1,0 +1,53 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+194,"Examine the following show command output on a router configured for dynamic NAT:
+""— Inside Source
+access-list 1 pool examsdigest
+pool examsdigest: netmask 255.255.255.240
+start 190.1.1.1 end 190.1.1.10
+type generic, total addresses 10, allocated 10 (100%), misses 595""
+You are responsible to find out why users are not being able to reach the Internet.","a. The cause is not related to dynamic NAT
+b. The command output does not provide any clue to identify the problem
+c. Dynamic NAT can't use Standard ACLs
+d. The NAT pool does not have enough entries to fulfill the user's requests
+",,d,d,,"The output shows that all 10 addresses in the NAT pool have been allocated (100%), which means there are no more available addresses for new translations. This lack of available addresses in the NAT pool is likely the reason why users are unable to reach the Internet.",[],1,chapter11_ip_services,0.9,0.9941806305097851
+195,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Warning - Warning condition?","a. 2
+b. 3
+c. 4
+d. 5
+",,c,b,,Severity level 3 means Warning - Warning condition in Cisco IOS. It indicates a warning message that might require attention but does not typically indicate an error.,['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sys-sec-messages-v1-2/ios-sys-sec-messages-v1-2-book/sm_msg_overview.html'],0,chapter11_ip_services,0.9,0.9617523922115804
+196,"Log messages may tell you about some events, either critical or not. To help you make sense of the importance of each message, IOS assigns each message a severity level. Which of the following severity level means Informational: Informational message only?","a. 1
+b. 6
+c. 4
+d. 5
+",,b,c,,"In Cisco IOS, severity level 4 is used for Informational messages only. These messages are purely informational and do not indicate any issues or problems.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sys-logs/configuration/xe-3s/3850/sys-logs-xe-3s-3850-book/syslog-msgs-codes.html'],0,chapter11_ip_services,0.9,0.5838533737638598
+198,One of the features of SNMPv3 is called message integrity.,"a. TRUE
+b. FALSE
+",,a,a,,The statement is TRUE. SNMPv3 provides message integrity to ensure that the data has not been tampered with during transmission. This is achieved through the use of hashing algorithms like MD5 or SHA.,['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/snmp/configuration/xe-16-5/snmp-xe-16-5-book/snmp-v3.html'],1,chapter11_ip_services,0.9,0.9999988527586581
+199,You have been tasked to find out whether the Cisco Discovery Protocol (CDP) is enabled globally. Which command will you type?,"a. show protocols
+b. show cdp
+c. show running-config
+d. show interface brief
+",,b,b,,"To determine if the Cisco Discovery Protocol (CDP) is enabled globally, you would use the command 'show cdp'. This command will display the current status of CDP on the device.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/cdp/command/cdp-cr-book/cdp-s1.html'],1,chapter11_ip_services,0.9,0.9998996803423534
+200,Which of the following protocols synchronize the time of different systems?,"a. NTP
+b. SMTP
+c. UDP
+d. CDP
+",,a,a,,The correct protocol that synchronizes the time of different systems is NTP (Network Time Protocol). NTP is specifically designed for this purpose to ensure that all systems within a network are using the same time reference.,['https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/ip_multicast/White_papers/mcstntp.html'],1,chapter11_ip_services,0.9,0.9999959918780326
+201,"R1 and R2 are attached to the same Ethernet VLAN, with subnet 192.168.1.0/24, and addresses 192.168.1.1, 192.168.2 respectively. The routers use an FHRP. Host A and host B attach to the same LAN and have correct default router settings per the FHRP configuration. Which of the following statements is true for this LAN?","a. You can't connect two routers to the same LAN subnet.
+b. If one router fails, hosts can't send packets off-subnet
+c. If one router fails, both hosts will use the one remaining router as a default router
+d. if one router fails, only one of the two hosts will still be able to send packets off-subnet
+",,c,c,,"In this scenario, R1 and R2 are configured with an FHRP (First Hop Redundancy Protocol) such as HSRP (Hot Standby Router Protocol) or VRRP (Virtual Router Redundancy Protocol). When one router fails, the other router will take over as the default gateway for both hosts to ensure connectivity is maintained. This allows for redundancy and high availability in the network.",['https://www.cisco.com/c/en/us/support/docs/ip/hot-standby-router-protocol-hsrp/13780-6.html'],1,chapter11_ip_services,0.9,0.9980663292548275
+203,Which of the following characteristics of network traffic can be managed by Quality of Service (QoS)? (Choose all that apply),"a. Bandwidth
+b. LLQ
+c. Loss
+d. Delay
+e. CoS
+f. Jitter
+",,"a,c,d,f","a,b,c,d,e,f",,"Quality of Service (QoS) can manage various characteristics of network traffic including: 
+a. Bandwidth: QoS can prioritize and allocate bandwidth to different types of traffic. 
+b. LLQ (Low Latency Queuing): QoS mechanism that provides strict priority queuing for delay-sensitive data like voice and video. 
+c. Loss: QoS can help mitigate packet loss by prioritizing critical traffic. 
+d. Delay: QoS can manage and reduce delays for time-sensitive applications. 
+e. CoS (Class of Service): QoS can assign different classes of service to different types of traffic for prioritization. 
+f. Jitter: QoS can help minimize jitter by prioritizing real-time traffic like voice and video.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/qos_conmmand/reference/qos_commands_book/qos_commands_book_chapter_01.html'],0,chapter11_ip_services,0.95,0.49643858543089514

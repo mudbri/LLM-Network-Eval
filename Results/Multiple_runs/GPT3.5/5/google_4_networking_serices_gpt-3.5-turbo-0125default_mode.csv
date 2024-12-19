@@ -1,0 +1,126 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+46,What transport layer protocol does DNS normally use?,"a. TCP
+b. IP
+c. UDP
+d. ICMP
+",,c,c,,DNS (Domain Name System) normally uses UDP (User Datagram Protocol) as its transport layer protocol. UDP is preferred for DNS due to its lower overhead and faster transmission compared to TCP.,['https://www.cloudflare.com/learning/dns/what-is-dns/'],1,google_4_networking_serices,0.95,0.999983475621529
+47,A DNS TTL determines what?,"a. How far away a DNS can be from you.
+b. How many DNS resolutions can take place before the IP has to change.
+c. How many steps there are in the resolution process.
+d. How long a DNS entry is allowed to be cached.
+",,d,d,,"Option d is correct. DNS TTL (Time To Live) determines how long a DNS entry is allowed to be cached by resolvers or DNS servers. Once the TTL expires, the resolver needs to query the DNS server again to get the updated information.",['https://www.cloudflare.com/learning/dns/dns-records/dns-ttl/'],1,google_4_networking_serices,0.9,0.9999993295729247
+48,How many root servers are there?,"a. 16
+b. 8
+c. 13
+d. 17
+",,c,c,,There are 13 root servers (labeled A through M) worldwide that are crucial for the functioning of the Domain Name System (DNS). These servers are distributed across the globe and are managed by different organizations.,['https://www.iana.org/domains/root/servers'],1,google_4_networking_serices,0.9,0.8840411921282262
+49,Which of the following are benefits of using Domain Name Resolution (DNS)? (Select all that apply.),"a. Easier for humans to remember website names.
+b. Easy for the node to find the network ID.
+c. Allows administrative changes to happen seamlessly.
+d. Small routing tables.
+",,"a,c","a,c",,"Option a is correct because DNS provides a human-readable way to associate domain names with IP addresses, making it easier for humans to remember website names. Option c is also correct as DNS allows administrative changes, such as IP address updates or server migrations, to occur without affecting end-users as long as the DNS records are updated accordingly.",['https://www.cloudflare.com/learning/dns/what-is-dns/'],1,google_4_networking_serices,0.9,0.9999996871837189
+50,The process of using DNS to turn a domain name into an IP address is known as_________.,"a. IP addresses
+b. DNS server
+c. name resolution
+d. ARP table lookup
+",,c,c,,The correct term for the process of using DNS to turn a domain name into an IP address is known as name resolution. Name resolution is the process of mapping a domain name to an IP address.,[],1,google_4_networking_serices,0.95,0.9999976607241361
+51,An A Record contains what?,"a. An SOA
+b. An IPv4 address
+c. An IPv6 address
+d. A CNAME
+",,b,b,,An A Record contains an IPv4 address. A Records in Domain Name System (DNS) are used to map a domain name to the corresponding IPv4 address of the server hosting the domain.,['https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/'],1,google_4_networking_serices,0.9,0.9999987335551019
+52,MX stands for ________.,"a. Mail exchange
+b. Meta exchange
+c. Micro exchange
+d. Micro extreme
+",,a,a,,MX stands for Mail Exchange. It is a DNS resource record type that specifies the mail servers responsible for receiving emails on behalf of a domain. These servers are used in the email delivery process to route emails to the correct destination.,['https://en.wikipedia.org/wiki/MX_record'],1,google_4_networking_serices,0.95,0.9998369984661938
+53,A fully qualified domain name can contain how many characters?,"a. 255
+b. 127
+c. 64
+d. 63
+",,a,a,,A fully qualified domain name (FQDN) can contain up to 255 characters. This limit includes the sum of all labels and dots in the FQDN.,[],1,google_4_networking_serices,0.9,0.9799186254698327
+54,What technique is used to balance traffic across multiple IPs for the same domain?,"a. Quad A record
+b. CNAME
+c. Cycling records
+d. Round robin
+",,d,d,,The correct technique used to balance traffic across multiple IPs for the same domain is Round Robin. It is a method where each IP address is used in a sequential order to distribute traffic evenly among them.,[],1,google_4_networking_serices,0.9,0.9998788220126454
+55,Which of the following are part of a Zone File? (select all that apply),"a. A Record
+b. NS record
+c. FQDN
+d. SOA
+",,"a,b,d","a,b,d",,"A Zone File contains various types of records that define a DNS zone. A Record (a) maps a domain name to an IP address, NS record (b) specifies the name servers for the domain, and SOA (d) record contains important information about the zone such as the primary name server, email of the domain administrator, etc. FQDN (c) stands for Fully Qualified Domain Name and is not a part of a Zone File.",['https://www.cloudflare.com/learning/dns/dns-records/what-is-a-zone-file/'],1,google_4_networking_serices,0.9,0.9999880948848865
+56,Which of the following need to be configured for a computer to operate on a modern network? Check all that apply.,"a. A MAC address
+b. An IP address
+c. A TCP port
+d. A name server
+",,"b,d","a,b,d",,"To operate on a modern network, a computer needs to have a MAC address (a) for identifying the physical network interface, an IP address (b) for network communication, and a name server (d) for domain name resolution.",[],0,google_4_networking_serices,0.95,0.9999839972226457
+57,"When using Fixed Allocation DHCP, what is used to determine a computer's IP?","a. A MAC address
+b. A subnet mask
+c. An A Record
+d. Location
+",,a,a,,"In Fixed Allocation DHCP, a computer's IP address is determined based on its MAC address. The DHCP server assigns a specific IP address to a device based on its unique MAC address, ensuring that the same IP is always assigned to that device.",['https://www.cloudflare.com/learning/network-layer/what-is-dhcp/'],1,google_4_networking_serices,0.9,0.9999458085984071
+58,"The process by which a client, configured to use DHCP, attempts to get network configuration information is known as _________________.","a. DHCP Request
+b. DHCP Offer
+c. DHCP Acknowledgement
+d. DHCP Discovery
+",,d,d,,"The correct term for the process by which a client, configured to use DHCP, attempts to get network configuration information is DHCP Discovery. During this phase, the client broadcasts a DHCP Discover message to locate available DHCP servers on the network.",[],1,google_4_networking_serices,0.9,0.9999964686909351
+59,Which of the following are ways a DHCP can operate? Select all that apply.,"a. CIDR
+b. ARP
+c. Fixed allocation
+d. Dynamic allocation
+",,"c,d","c,d",,"DHCP can operate in two main ways: fixed allocation and dynamic allocation. In fixed allocation, a specific IP address is permanently assigned to a device, while in dynamic allocation, IP addresses are leased to devices for a specific period.",[],1,google_4_networking_serices,0.9,0.9999993295729247
+60,DHCP is a protocol of which layer?,"a. Transport layer
+b. Network Layer
+c. Application layer
+d. Physical layer
+",,c,c,,"DHCP (Dynamic Host Configuration Protocol) operates at the application layer of the OSI model. It is used to dynamically distribute network configuration parameters, such as IP addresses, to devices on a network.",['https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol'],1,google_4_networking_serices,0.95,0.9964023809944177
+61,What technique allows for specific destination ports to be configured to always deliver to specific nodes?,"a. Port forwarding
+b. Ephemeral ports
+c. IP translation
+d. IP masquerading
+",,a,a,,The correct option is 'a. Port forwarding.' Port forwarding is a technique that allows specific destination ports to be configured to always deliver to specific nodes. It is commonly used in networking to redirect incoming network traffic from one port to another destination.,[],1,google_4_networking_serices,0.9,0.9999974223173222
+62,The total number of IPv4 addresses is approximately:,"a. 4.2 trillion
+b. 100 billion
+c. 4.2 billion
+d. 4.2 million
+",,c,c,,"The total number of IPv4 addresses is approximately 4.2 billion. IPv4 addresses are 32 bits in length, allowing for a total of 2^32 addresses, which equals 4,294,967,296 unique addresses.",[],1,google_4_networking_serices,0.9,0.9997346464624792
+63,Which Regional Internet Registry(RIR) serves the USA and Canada?,"a. ARIN
+b. APNIC
+c. RIPE
+d. LACNIC
+",,a,a,,"The Regional Internet Registry (RIR) that serves the USA and Canada is ARIN (American Registry for Internet Numbers). ARIN is responsible for the distribution and registration of Internet number resources, including IP addresses and AS numbers, in its designated region which includes the United States, Canada, and parts of the Caribbean.",['https://www.arin.net/about/welcome/region/'],1,google_4_networking_serices,0.95,0.9999946806438478
+64,What is another solution to IP exhaustion that will create more public IP addresses as it is implemented?,"a. RFC1918
+b. IP masquerading
+c. Port preservation
+d. IPv6
+",,d,d,,"IPv6 is another solution to IP exhaustion that will create more public IP addresses as it uses a 128-bit address scheme compared to IPv4's 32-bit address scheme, significantly increasing the number of available IP addresses.",['https://www.cloudflare.com/learning/network-layer/what-is-ipv6/'],1,google_4_networking_serices,0.95,0.9999993295729247
+65,What allows a gateway to rewrite the source IP of an outgoing datagram?,"a. IPv6
+b. IPv4
+c. NAT
+d. IANA
+",,c,c,,NAT (Network Address Translation) allows a gateway to rewrite the source IP of an outgoing datagram. NAT is commonly used to allow multiple devices on a local network to share a single public IP address for outgoing traffic.,['https://www.cloudflare.com/learning/network-layer/what-is-nat/'],1,google_4_networking_serices,0.9,0.9999884821053314
+66,What is two-factor authentication? Select all that apply.,"a. a method where you need two passwords
+b. a method where you authenticate twice
+c. a method that requires two usernames
+d. a method where users are required to verify their credentials through a combination of hardware and/or software. Usually a username, password, and a short-lived token.
+",,"b,d","b,d",,"Two-factor authentication is a method where the user is required to provide two different authentication factors to verify themselves. This typically involves something the user knows (like a password) and something the user has (like a smartphone for receiving a verification code). Option 'b' aligns with this definition as it involves authenticating twice with different factors. Option 'd' is also correct as it mentions the combination of different factors like hardware tokens, software tokens, passwords, etc.","['https://auth0.com/docs/mfa/what-is-mfa', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_8021x/configuration/xe-16/sec-8021x-xe-16-book/sec-ieee-8021x.html']",1,google_4_networking_serices,0.9,0.8994569433971323
+67,VPNs are known as a _____ protocol.,"a. network layer
+b. data link layer
+c. Connectionless
+d. Tunneling
+",,d,d,,"VPNs are known as a tunneling protocol. Tunneling involves encapsulating one type of protocol packet within the datagram of a different protocol. In the case of VPNs, they create a secure tunnel over an existing network, such as the internet, to securely transmit data.",['https://www.cloudflare.com/learning/security/glossary/what-is-tunneling/'],1,google_4_networking_serices,0.9,0.7654755532938756
+68,A proxy is something that _______________________.,"a. communicates on behalf of something else
+b. allows for many devices to speak to one other device
+c. encrypts traffic sent across the Internet
+d. sends data across a single network segment
+",,a,a,,"A proxy is a server that acts as an intermediary for requests from clients seeking resources from other servers. It communicates on behalf of the clients, allowing them to access resources indirectly. Proxies can provide additional functionalities such as security, anonymity, and caching.",['https://en.wikipedia.org/wiki/Proxy_server'],1,google_4_networking_serices,0.9,0.999999091165773
+69,What are some use cases for reverse proxies? Select all that apply.,"a. Improved computer graphics
+b. Load balancing
+c. IP address translation
+d. Encryption and Decryption
+",,"b,d","b,c",,"Reverse proxies are commonly used for load balancing to distribute incoming client requests across multiple servers, improving performance and reliability. They are also used for IP address translation to hide the actual origin of the client from the server, providing an additional layer of security and privacy.",[],0,google_4_networking_serices,0.95,0.9999993295729247
+70,What was one of the first technologies that commonly utilized 2FA (Two-Factor Authentication)?,"a. TCP
+b. DNS
+c. VPN
+d. UDP
+",,c,c,,"One of the first technologies that commonly utilized Two-Factor Authentication (2FA) was Virtual Private Network (VPN). VPNs often require both a password (something the user knows) and a unique code from a token or app (something the user has) to authenticate a user, thus implementing 2FA.",[],1,google_4_networking_serices,0.9,0.82326449568777

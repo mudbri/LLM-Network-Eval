@@ -1,0 +1,71 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,QD - Goal clear?(0/1),QD - Context clear?(0/1),QD - How challenging(1-4),QD - Level learnt(1-7),SM - Description,SM - Goal understood?(0/1),SM - Context understood?(0/1),SM - Implied Context understood?(0/1),SM - Relvant facts identified?(0/1),SM - Correct facts retieved?(0/1),SM - No incorrect facts?(0/1),SM - Correct reasoning?(0/1),SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),Source Problems,AQ - Precise?,AQ - Explainable?,Effect - Description of effects,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,Effect - Error Type,Effect - Severity,Effect - Who is most effected(1-4),CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+21,Please select all of the valid IP addresses. Check all that apply.,"a. 257.70.312.49
+b. 123.456.123.456
+c. 192.168.1.1
+d. 8.8.8.8
+",,"c,d","c,d",,"The valid IP addresses are 192.168.1.1 and 8.8.8.8. An IP address consists of four octets, each ranging from 0 to 255. The options 257.70.312.49 and 123.456.123.456 are invalid because they contain octets that exceed the valid range of 0-255.","['https://en.wikipedia.org/wiki/IP_address', 'https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml']",1,2_networking_layer,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+22,How many IP addresses does a class C network have?,"a. 65,536 addresses
+b. 256 addresses
+c. 1 address
+d. 16,777,216 addresses
+",,b,b,,"A class C network has 256 IP addresses. In the IPv4 addressing scheme, a class C network uses a /24 prefix, meaning the first 24 bits are used for the network portion, leaving 8 bits for host addresses. With 8 bits, there are 2^8 = 256 possible host addresses in a class C network, including the network address and broadcast address.","['https://en.wikipedia.org/wiki/Classful_network', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,2_networking_layer,0.99,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+23,Which IP address class has the first two octets reserved for the network ID and the last two octets for the host ID?,"a. Class C addresses
+b. Class B
+c. Class E
+d. Class A
+",,b,b,,"Class B IP addresses have the first two octets reserved for the network ID and the last two octets for the host ID. The first bit of the first octet is always 1 and the second bit is always 0 for Class B addresses, allowing for 16,384 networks and 65,534 hosts per network.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+24,The ____ is used to indicate that the datagram is allowed to be fragmented or to indicate that the datagram has already been fragmented.,"a. flag field
+b. service type field
+c. fragmentation offset field
+d. total length field
+",,a,a,,"The flag field in the IP header is used to control or indicate fragmentation. It contains three bits: a reserved bit, the 'Don't Fragment' (DF) bit, and the 'More Fragments' (MF) bit. The DF bit, when set to 1, indicates that the datagram should not be fragmented. The MF bit, when set to 1, indicates that more fragments of the current datagram follow. When it is 0, it indicates the last fragment.","['Kurose, J. F., & Ross, K. W. (2017). Computer networking: a top-down approach (7th ed.). Pearson.', 'RFC 791 - Internet Protocol. (1981). https://tools.ietf.org/html/rfc791']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+25,The IP address assigned to a device would depend on the _______ it is connected.,"a. IP datagram
+b. ARP
+c. network
+d. MAC addresses
+",,c,c,,The IP address assigned to a device depends on the network it is connected to. Each network has a specific range of IP addresses that can be assigned to devices within that network. The network administrator or DHCP server is responsible for allocating IP addresses to devices based on the network they are connected to.,"['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+26,What does CIDR stand for?,"a. Classful Interlink-Destination Routing
+b. Classful Identification Routing
+c. Class Interconnect Destination Routing
+d. Classless Inter-Domain Routing
+",,d,d,,CIDR stands for Classless Inter-Domain Routing. It is a method for allocating IP addresses and routing Internet Protocol packets. CIDR replaced the previous classful network addressing architecture in an effort to slow the growth of routing tables on routers across the Internet and to help slow the rapid exhaustion of IPv4 addresses.,"['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,2_networking_layer,0.99,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+27,Which of the following is a correct form of CIDR notation?,"a. 192.168.1.0 + 255.255.255.0
+b. 192.168.1.0:24
+c. 192.168.1.0/24
+d. 192.168.1.0\24
+",,c,c,,"CIDR notation is a compact representation of an IP address and its associated network mask. The correct format is an IP address, followed by a forward slash, and then the number of network bits. In this case, 192.168.1.0/24 correctly denotes the IP address 192.168.1.0 with a 24-bit network mask, which is equivalent to the subnet mask 255.255.255.0.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+28,How many octets does a subnet mask have?,"a. 1
+b. 3
+c. 4
+d. 2
+",,c,c,,"A subnet mask has 4 octets, just like an IPv4 address. Each octet is 8 bits and can represent a number from 0 to 255. The subnet mask is used in conjunction with the IP address to determine which part represents the network and which part represents the host.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 12: Perspectives on IPv4 Subnetting', 'TCP/IP Guide: Subnet Masks (https://www.tcpipguide.com/free/t_IPAddressingSubnetMasksandSubnetting.htm)']",1,2_networking_layer,0.99,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+29,"Consider the following scenario: Your IP address is 192.168.8.34, and your subnet mask is 255.255.0.0. What part of the subnet mask represents the subnet ID?","a. 255.255.0.1
+b. The last two octets of the subnet mask, 0.0
+c. The first two octets of the subnet mask, 255.255
+d. 192.168.0.254
+",,c,c,,"The subnet mask 255.255.0.0 has the first two octets set to 255, which represents the network portion of the IP address. The remaining two octets (0.0) represent the host portion. Therefore, the subnet ID is represented by the first two octets of the subnet mask, which is 255.255.","['CompTIA Network+ Certification Study Guide, Seventh Edition (Exam N10-007) by Todd Lammle, Chapter 4: Understanding IP Addressing', 'Networking Basics: IP Addressing and Subnetting, Cisco Networking Academy, https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+30,How many possible host IDs do you always lose per network?,"a. 8
+b. 12
+c. 4
+d. 2
+",,d,d,,"In every network, you always lose 2 possible host IDs - one for the network ID and one for the broadcast ID. The network ID has all host bits set to 0, while the broadcast ID has all host bits set to 1. These two addresses cannot be assigned to hosts, so they are considered 'lost' from the pool of usable host addresses in each network.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'Computer Networking: A Top-Down Approach by James Kurose and Keith Ross']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+31,Which of the following are types of Interior Gateway Protocols? (Select all that apply),"a. Link State Routing Protocols
+b. Distance-Vector Protocols
+c. Hypertext Transfer Protocol
+d. Transmission Control Protocol
+",,"a,b","a,b",,"The two main types of Interior Gateway Protocols (IGPs) are Link State Routing Protocols and Distance-Vector Protocols. Link State Routing Protocols like OSPF and IS-IS use a complete topology of the network to make routing decisions. Distance-Vector Protocols like RIP determine the best path based on a distance metric, usually the number of hops. Hypertext Transfer Protocol (HTTP) and Transmission Control Protocol (TCP) are not IGPs - they operate at the application layer and transport layer respectively.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+32,Who is permitted to use non-routable address space?,"a. Anyone
+b. The IETF
+c. It's for testing purposes only
+d. The IANA
+",,a,a,,"Non-routable address space, such as private IP address ranges (e.g., 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), can be used by anyone within their own private networks. These addresses are not unique globally and are not routed on the public Internet. Organizations are free to use these private IP ranges in their internal networks as they see fit.","['IETF RFC 1918 - Address Allocation for Private Internets: https://tools.ietf.org/html/rfc1918', 'Wikipedia - Private network: https://en.wikipedia.org/wiki/Private_network']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+34,What is the difference between Interior Gateway Protocols and Exterior Gateway Protocols?,"a. There is no difference between them.
+b. Interior Gateway Protocols share information within a single autonomous system. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+c. Interior gateway protocols share information with public networks. Exterior gateway protocols are used for private networks.
+d. Interior gateway protocols share information with multiple autonomous systems. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+",,b,b,,"Interior Gateway Protocols (IGPs) are used to exchange routing information within a single autonomous system (AS). They enable routers within the same AS to learn about the network topology and determine the best paths to destinations inside the AS. Examples of IGPs include OSPF, IS-IS, and EIGRP. On the other hand, Exterior Gateway Protocols (EGPs) are used to exchange routing information between different autonomous systems. They enable border routers of different ASes to share reachability information and establish paths for traffic between the ASes. The primary EGP used on the Internet is BGP (Border Gateway Protocol).","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/13753-25.html']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+35,Which of the following are non-routable IP addresses? (Select all that apply),"a. 9.0.0.0
+b. 172.16.0.0/12
+c. 10.0.0.0/8
+d. 192.168.0.0/16
+",,"b,c,d","b,c,d",,"The IP address ranges 172.16.0.0/12, 10.0.0.0/8, and 192.168.0.0/16 are all considered non-routable or private IP addresses according to RFC 1918. These address ranges are reserved for use within private networks and cannot be routed on the public Internet. The address 9.0.0.0 is a public IP address that can be routed on the Internet.","['RFC 1918 - Address Allocation for Private Internets (https://tools.ietf.org/html/rfc1918)', 'IANA IPv4 Address Space Registry (https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml)']",1,2_networking_layer,0.95,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1

@@ -1,0 +1,123 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+41,Which of the following addresses are not valid Class A network IDs? (Choose all that apply),"a. 1.0.0.0
+b. 5.0.0.0
+c. 140.0.0.0
+d. 127.0.0.0
+e. 9.0.0.0
+f. 195.0.0.0
+",,"c,d,f","b,e,f",,"In Class A network, the first octet ranges from 1 to 126, where 127 is reserved for loopback addresses. Therefore, 5.0.0.0, 9.0.0.0, and 195.0.0.0 are not valid Class A network IDs.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,chapter3_ipv4_addressing,0.9,0.4117385529741504
+42,Why does the formula for the number of hosts per subnet (2H – 2) require the subtraction of two hosts?,"a. To reserve two addresses for redundant default gateways(routers)
+b. To reserve the two addresses required for DHCP operation
+c. To reserve addresses for the subnet broadcast address and subnet ID
+d. To reserve addresses for the subnet ID and default gateway (router)
+",,c,c,,"The formula for the number of hosts per subnet (2^H - 2) reserves two addresses to account for the subnet ID and the broadcast address of the subnet. These addresses cannot be assigned to individual hosts on the network, hence the need for subtraction.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.9,0.999984906043415
+43,Which of the following addresses are valid Class C network IDs? (Choose two answers),"a. 195.0.0.0
+b. 22.22.3.0
+c. 222.0.0.0
+d. 191.255.255.0
+e. 127.0.0.0
+",,"a,c","b,d",,"In Class C networks, the first octet ranges from 192 to 223, inclusive. Therefore, 22.22.3.0 and 191.255.255.0 are valid Class C network IDs.",['https://en.wikipedia.org/wiki/Classful_network'],0,chapter3_ipv4_addressing,0.9,0.7664640795751687
+44,A network designer asked you how many subnet (S) bits does he need to create 200 subnets?,"a. 2
+b. 5
+c. 8
+d. 11
+",,c,c,,"To create 200 subnets, we need to find the smallest value of S (subnet bits) that satisfies the inequality 2^S >= 200. By calculating 2^S for increasing values of S, we find that S=8 is the smallest value that gives 2^8 = 256 subnets, which is more than 200. Therefore, 8 subnet bits are required to create 200 subnets.",[],1,chapter3_ipv4_addressing,0.9,0.4807362288794851
+45,The addresses in the same network have different values in the network part.,"a. TRUE
+b. FALSE
+",,b,a,,"This statement is TRUE. In a network, all devices must have the same network part of the IP address to be able to communicate with each other. If the network part of the IP addresses is different, those devices are not in the same network.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,chapter3_ipv4_addressing,0.9,0.7162836150840085
+46,Which of the following IPv4 addresses has a subnet mask 255.255.0.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,a,"b,d",,"The IPv4 addresses with a subnet mask of 255.255.0.0 belong to Class B networks. In Class B, the subnet mask is 255.255.0.0, which means the first two octets represent the network portion and the last two octets represent the host portion. Therefore, options b (204.203.202.201) and d (10.0.0.56) fall under Class B addressing with a subnet mask of 255.255.0.0.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,chapter3_ipv4_addressing,0.9,0.4780376518653788
+47,Which of the following IPv4 addresses has a subnet mask 255.255.255.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,b,d,,"The IPv4 address 10.0.0.56 has a subnet mask of 255.255.255.0. This is because the subnet mask 255.255.255.0 corresponds to a /24 subnet, which means the first 24 bits are used for the network portion, leaving 8 bits for the host portion.",[],0,chapter3_ipv4_addressing,0.9,0.812531960135892
+48,"The first octet range from the Class A IP networks
+is 1 - 126.","a. TRUE
+b. FALSE
+",,a,a,,"The first octet range for Class A IP networks is indeed from 1 to 126, making the statement true. Class A IP addresses have their first octet in the range of 1 to 126, which allows for a very large number of networks but with a limited number of hosts per network.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.95,0.9999989719621284
+49,Which of the following IPv4 addresses has a subnet mask 255.0.0.0? (Choose all that apply),"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+e. 100.24.5.56
+f. 192.168.178.6
+",,"c,d,e","a,b,c,d,e",,"An IPv4 address has a subnet mask 255.0.0.0 if its first octet is 255 and the rest are 0. Therefore, the correct IPv4 addresses with the subnet mask 255.0.0.0 are: a. 188.187.186.185, b. 204.203.202.201, c. 55.44.22.11, d. 10.0.0.56, and e. 100.24.5.56.",[],0,chapter3_ipv4_addressing,0.9,0.6281191153974838
+50,Which of the following ranges is a valid class B network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,a,a,,"Class B networks have a range of IP addresses starting from 128.0.0.0 to 191.255.255.255. Therefore, the range 128.0.0.0 - 191.255.0.0 is a valid class B network range.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.95,0.9693081891497219
+51,Which of the following ranges is a valid class C network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,c,c,,"The valid range for a class C network is from 192.0.0.0 to 223.255.255.255. In a class C network, the first octet ranges from 192 to 223, allowing for up to 254 hosts per network.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.9,0.9999731051276736
+52,Which of the following is the default mask of the IP 10.2.0.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,a,a,,"The default mask for a Class A IP address, such as 10.2.0.0, is 255.0.0.0. This default mask allows for 8 bits to represent the network portion of the address and 24 bits for the host portion.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.9,0.6893256831695658
+53,What information can you extract having the IP address 172.16.99.45? (Choose two answers.),"a. The network ID is 172.0.0.0.
+b. The default mask for the network is 255.255.255.0.
+c. The network is a Class B network.
+d. The number of host bits in the unsubnetted network is 16.
+e. The broadcast address of the network is 172.255.255.255
+",,"c,d","b,e",,"The default mask for the network 172.16.99.45 is 255.255.255.0, which means it is a Class C network. The broadcast address for a Class C network is calculated by setting all host bits to 1, which gives 172.16.99.255 as the broadcast address.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,chapter3_ipv4_addressing,0.9,0.8768858444901528
+54,A network designer asked you how many subnets (S) bits does he need to create 100 subnets? (Type only the number),"a. 4
+b. 5
+c. 6
+d. 7
+",,d,c,,"To create 100 subnets, you need to borrow 6 subnet bits because 2^6 = 64 subnets, which is the closest power of 2 greater than 100.",[],0,chapter3_ipv4_addressing,0.9,0.9304480915512177
+55,"The senior network engineer asked you to choose the broadcast address from the last subnet according to the following details:
+Network 172.28.0.0 (Class B)
+Mask 255.255.0.0 (for all subnets)","a. 172.28.255.254
+b. 172.255.255.255
+c. 172.28.200.255
+d. 172.28.255.255
+",,d,d,,"In this scenario, the given network address is 172.28.0.0 with a subnet mask of 255.255.0.0. This means the subnet size is 255.255.0.0. To find the broadcast address of the last subnet, you need to consider the increment value, which is 65536 (256^2) in this case. The broadcast address of the last subnet will be the last address before the next network starts. Therefore, the broadcast address for the last subnet will be 172.28.255.255.",[],1,chapter3_ipv4_addressing,0.9,0.6285108863125086
+56,The address 130.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,b,a,,"The address 130.0.0.0 falls within the range of Class A addresses, which have a first octet in the range of 1 to 126. Class A addresses use the first octet to represent the network portion of the address.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,chapter3_ipv4_addressing,0.9,0.4740330661073543
+57,Which of the following is the default mask of the IP 178.25.3.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,b,c,,"The default mask for a Class B network (like 178.25.3.0) is 255.255.0.0. This default mask corresponds to the Class B address range and provides a subnet mask that allows for up to 65,536 IP addresses within the network.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,chapter3_ipv4_addressing,0.9,0.9997131993651673
+58,The address 200.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,c,c,,"The address 200.0.0.0 falls within the range of Class C addresses, which have their first octet in the range of 192 to 223.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.9,0.5533165046750562
+59,The range of the Class C public IP Networks is _________________ - _________________,"a. 10.0.0.0 - 140.255.255.0
+b. 192.0.0.0 - 223.255.255.0
+c. 200.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,b,b,,The range of Class C public IP Networks is from 192.0.0.0 to 223.255.255.0. Class C addresses always have the first octet in the range of 192 to 223.,['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.9,0.9844727581818682
+60,"The senior network engineer asked you to choose the last usable address for a host from the last subnet according to the following details:
+Network 9.0.0.0 (Class A)
+Mask 255.255.0.0 (for all subnets)","a. 9.255.255.254
+b. 10.255.255.254
+c. 11.255.255.254
+d. 12.255.255.254
+",,a,c,,"The given network address is 9.0.0.0 with a subnet mask of 255.255.0.0. This means the subnet size is 16 bits (32 total bits - 16 network bits - 16 host bits). To find the last subnet, we increment the third octet by 1, making it 11.0.0.0. The last usable address in this subnet would be the broadcast address minus 1, which is 11.255.255.254.",[],0,chapter3_ipv4_addressing,0.9,0.8278995652179785
+61,The first octet range from the Class B IP networks is 1 - 126.,"a. TRUE
+b. FALSE
+",,b,a,,"The first octet range from the Class B IP networks is indeed 128 - 191, not 1 - 126. Class B IP addresses have a first octet in the range of 128 to 191.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],0,chapter3_ipv4_addressing,0.9,0.9798814314044578
+62,A network designer asked you how many subnet (S) bits does he need to create 5 subnets?,"a. 2
+b. 3
+c. 4
+d. 5
+",,b,b,,"To create 5 subnets, you need to find the smallest subnet size that accommodates at least 5 subnets. The formula to calculate the number of subnet bits (S) is 2^S >= number of subnets. By trying out different values, it is found that 2^3 = 8, which gives us 8 subnets, more than the required 5. Therefore, you need at least 3 subnet bits to create 5 subnets.",[],1,chapter3_ipv4_addressing,0.9,0.89575376466339
+63,Which of the following are private IP networks? (Choose all that apply),"a. 172.31.100.0
+b. 164.16.2.0
+c. 192.166.255.0
+d. 192.168.1.0
+e. 11.11.11.0
+f. 172.24.0.0
+",,"a,d,f","a,d,f",,"Private IP networks are reserved for internal use within private networks and are not routable on the public internet. The ranges defined for private networks are: 10.0.0.0 to 10.255.255.255, 172.16.0.0 to 172.31.255.255, and 192.168.0.0 to 192.168.255.255. Therefore, the correct private IP networks from the given choices are 172.31.100.0, 192.168.1.0, and 172.24.0.0.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter3_ipv4_addressing,0.9,0.9999749827239373

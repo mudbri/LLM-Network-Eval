@@ -1,0 +1,15 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+16,Which of the following command is used to generate an OpenFlow network topology consisting of a single switch and 8 hosts with randomly generated MAC addresses for each host?,"a. sudo mn --topo single,8  --switch ovsk --controller remote
+b. sudo mn --topo single,3 --mac --switch ovsk --controller remote
+c. sudo mn --topo single,8 --mac --switch ovsk --controller remote
+d. sudo mn --topo linear,8  --switch ovsk --controller remote
+",,a,c,,"The command 'sudo mn --topo single,8 --mac --switch ovsk --controller remote' is used to create a Mininet network topology with a single switch and 8 hosts. The '--topo single,8' specifies a single switch connected to 8 hosts. The '--mac' option tells Mininet to automatically assign MAC addresses to the hosts. The '--switch ovsk' indicates the use of the Open vSwitch kernel switch, and '--controller remote' specifies that the switch should connect to a remote controller.","['http://mininet.org/', 'http://mininet.org/walkthrough/']",0,3_mininet_setup,1,0.9999994487765019
+17,What is the purpose of --mac flag used in mininet?,"a. Generates random MAC addresses for the hosts.
+b. Generates sequential MAC addresses for the hosts, matching their IP address.
+c. Generates sequential MAC addresses for the switch ports, matching their IP address.
+d. Generates random MAC addresses for the switch ports.
+",,b,b,,"The --mac flag in Mininet is used to generate sequential MAC addresses for the hosts. When this flag is used, the MAC addresses are designed to match the IP addresses of the hosts, which can make it easier to identify and manage the hosts in a network. By having a predictable MAC-to-IP mapping, it simplifies the network configuration and troubleshooting processes.","['http://mininet.org/api/annotated.html', 'http://mininet.org/walkthrough/']",1,3_mininet_setup,0.95,0.9763157671287414
+20,"What is the purpose of dpctl, provided with mininet?","a. To enable visibility and control over a single switch’s flow table.
+b. To enable visibility and control over multiple switch flow table.
+c. Is an OpenFlow controller.
+",,a,a,,"dpctl is a command-line tool provided with Mininet (a network emulator) that allows users to interact with OpenFlow switches. It is used for debugging and testing purposes by enabling visibility and control over a single switch's flow table. With dpctl, you can add, delete, and modify flow entries, as well as examine the switch's flow table and statistics. It does not control multiple switch flow tables simultaneously, nor is it an OpenFlow controller itself.","['https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#using-mininet', 'https://github.com/mininet/mininet/blob/master/examples/mininet/dpctl.py']",1,3_mininet_setup,0.95,0.9996114668385652

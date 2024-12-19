@@ -1,0 +1,96 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+90,The protocol used to communicate network errors is known as __________.,"a. ICMP
+b. Traceroute
+c. TCP
+d. UDP
+",,a,a,,"ICMP (Internet Control Message Protocol) is used to communicate network errors and operational information. It is used by network devices like routers to generate error messages to the source IP address when network problems prevent delivery of IP packets. ICMP is not used to exchange data between systems, but rather to communicate network-level information.","['https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13730-ext-ping-trace.html']",1,google_6_troubleshooting_and_future_networking,0.95,1
+91,The ping utility sends what message type?,"a. Echo Request
+b. Echo Reply
+c. Destination Network Unknown
+d. Destination Network Unreachable
+",,a,a,,"The ping utility sends ICMP Echo Request messages to a specified host to test network connectivity. If the destination host receives the Echo Request and is able to communicate back, it responds with an ICMP Echo Reply message. This allows ping to determine the round-trip time and whether the host can be reached over the network.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,google_6_troubleshooting_and_future_networking,0.95,1
+92,What is one of the tools you can use to verify connectivity to a specific port on Windows OS?,"a. nc (netcat)
+b. Ping
+c. Test-NetConnection
+d. Tracert
+",,c,c,,"Test-NetConnection is a PowerShell cmdlet in Windows that can be used to test TCP connectivity to a remote host and port. It can verify if a specific port is reachable on a target system. Ping only tests ICMP connectivity, not specific ports. Tracert traces the route to a host but doesn't test ports. Netcat (nc) could potentially be used but is not a built-in Windows tool.","['https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection', 'https://adamtheautomator.com/test-netconnection/']",1,google_6_troubleshooting_and_future_networking,0.95,1
+93,Traceroute uses UDP packets on which of the following operating systems? Select all that apply.,"a. Mac Os
+b. Windows 10
+c. Windows 7
+d. Linux
+",,"a,d","a,d",,"Traceroute uses UDP packets by default on Mac OS and Linux operating systems. On Windows operating systems, including Windows 7 and Windows 10, traceroute uses ICMP echo request packets instead of UDP packets.","['https://en.wikipedia.org/wiki/Traceroute', 'https://www.ibm.com/docs/en/aix/7.2?topic=t-traceroute-command', 'https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/tracert']",1,google_6_troubleshooting_and_future_networking,0.95,1
+94,"During a traceroute, which action does a router perform to the value in the Time To Live (TTL) field?","a. Multiplication
+b. Division
+c. Subtraction
+d. Addition
+",,c,c,,"During a traceroute, each router that receives the packet subtracts one from the Time To Live (TTL) value before forwarding the packet to the next hop. If the TTL reaches zero, the router discards the packet and sends an ICMP Time Exceeded message back to the source. This process allows traceroute to map the path a packet takes from the source to the destination by incrementing the starting TTL value and tracking the ICMP Time Exceeded messages.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'https://en.wikipedia.org/wiki/Traceroute']",1,google_6_troubleshooting_and_future_networking,0.95,1
+95,One of Level 3's public DNS servers is ____________.,"a. 4.2.2.3
+b. 8.8.8.8
+c. 127.0.0.1
+d. 192.168.1.1
+",,a,a,,"Level 3 Communications operates several public DNS servers, one of which is 4.2.2.3. 8.8.8.8 is a public DNS server operated by Google. 127.0.0.1 is the loopback address, not a public DNS server. 192.168.1.1 is a common default gateway IP for home routers, not a public DNS server.","['https://www.lifewire.com/free-and-public-dns-servers-2626062', 'https://developers.google.com/speed/public-dns', 'https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml']",1,google_6_troubleshooting_and_future_networking,0.95,1
+96,A DNS resolver tool available on all major desktop operating systems is __________.,"a. Nslookup
+b. Host
+c. Tracert
+d. Ping
+",,a,a,,"Nslookup is a command-line DNS resolver tool that is available on all major desktop operating systems, including Windows, macOS, and Linux. It allows users to query DNS servers to obtain domain name or IP address mapping and other DNS records.","['https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/nslookup', 'https://en.wikipedia.org/wiki/Nslookup']",1,google_6_troubleshooting_and_future_networking,0.95,1
+97,Which top-level organization manages the global DNS (Domain Name System)?,"a. RFC
+b. IANA
+c. ICANN
+d. Google
+",,c,c,,"ICANN (Internet Corporation for Assigned Names and Numbers) is the top-level organization that manages the global DNS (Domain Name System). ICANN is responsible for coordinating the maintenance and procedures of several databases related to the namespaces and numerical spaces of the Internet, ensuring the network's stable and secure operation.","['https://www.icann.org/resources/pages/what-2012-02-25-en', 'https://www.cloudflare.com/learning/dns/glossary/what-is-icann/']",1,google_6_troubleshooting_and_future_networking,0.95,1
+98,Which of the following commands displays the current network configuration information?,"a. Winver
+b. Pathping
+c. Net user
+d. Ipconfig
+",,d,d,,"The 'ipconfig' command is used to display the current configuration of the TCP/IP network protocol on a networked PC. It shows information such as the IP address, subnet mask, and default gateway for all network adapters. The other commands listed have different purposes: 'winver' displays the Windows version, 'pathping' is a route tracing tool combining features of 'ping' and 'tracert', and 'net user' is used to add, remove, and manage user accounts.","['Microsoft Documentation: Ipconfig (https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)', 'CompTIA A+ Certification All-in-One Exam Guide, Tenth Edition (Exams 220-1001 & 220-1002) by Mike Meyers']",1,google_6_troubleshooting_and_future_networking,0.95,1
+99,An organization responsible for assigning individual domain names to other organizations or individuals is known as a(n) ______.,"a. DNS registrar
+b. Autonomous system
+c. Internet authority
+d. Government
+",,a,a,,A DNS registrar is an organization or commercial entity that manages the reservation of Internet domain names. They are accredited by generic top-level domain (gTLD) registries and country code top-level domain (ccTLD) registries to sell domain names to the public. Registrars operate in accordance with the guidelines of the designated domain name registries and offer services to individuals or organizations wishing to register a domain name.,"['ICANN - Domain Name Registration Process: https://www.icann.org/resources/pages/register-domain-name-2017-06-20-en', 'Verisign - What Is a Domain Name Registrar?: https://www.verisign.com/en_US/domain-names/what-is-a-domain-name-registrar/index.xhtml']",1,google_6_troubleshooting_and_future_networking,0.95,1
+100,A piece of software that runs and manages virtual machines is known as a __________.,"a. cloud storage device
+b. cloud computing device
+c. Hypervisor
+d. virtual instance
+",,c,c,,"A hypervisor, also known as a virtual machine monitor (VMM), is a piece of software that creates and runs virtual machines (VMs). It allows one host computer to support multiple guest VMs by virtually sharing its resources, such as memory and processing. The hypervisor manages the execution of the guest operating systems.","['https://www.vmware.com/topics/glossary/content/hypervisor', 'https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor']",1,google_6_troubleshooting_and_future_networking,0.95,1
+101,What is Office 365 Outlook an example of?,"a. FttH
+b. IaaS
+c. SaaS
+d. PaaS
+",,c,c,,"Office 365 Outlook is an example of Software as a Service (SaaS). SaaS is a cloud computing model where a provider hosts applications and makes them available to customers over the internet. In this model, the software is centrally hosted and licensed on a subscription basis. Office 365, which includes Outlook, is a suite of productivity applications delivered by Microsoft as a subscription service over the internet, making it a clear example of SaaS.","['https://azure.microsoft.com/en-us/overview/what-is-saas/', 'https://www.gartner.com/en/information-technology/glossary/software-as-a-service-saas']",1,google_6_troubleshooting_and_future_networking,0.95,1
+102,A hybrid cloud is ________________.,"a. a combination of a public cloud and a private cloud
+b. a combination of a private cloud and a mesh network
+c. a combination of a public cloud and hardware virtualization
+d. a combination of virtual hosts and virtual guests
+",,a,a,,"A hybrid cloud is a computing environment that combines a public cloud and a private cloud, allowing data and applications to be shared between them. This enables an organization to leverage the scalability and cost-effectiveness of public cloud services while maintaining control over sensitive data and critical applications in their private cloud infrastructure.","['https://www.ibm.com/cloud/learn/hybrid-cloud', 'https://azure.microsoft.com/en-us/overview/what-is-hybrid-cloud-computing/', 'https://www.vmware.com/topics/glossary/content/hybrid-cloud.html']",1,google_6_troubleshooting_and_future_networking,0.95,1
+103,Which of the following are  cloud services? Select all that apply.,"a. Platform as a Service (PaaS)
+b. Python as a Service (PaaS)
+c. Infrastructure as a Service (IaaS)
+d. Software as a Service (SaaS)
+",,"a,c,d","a,c,d",,"The correct cloud service models are:a. Platform as a Service (PaaS) - provides a platform for developers to build, run, and manage applications without the complexity of maintaining the underlying infrastructure.  c. Infrastructure as a Service (IaaS) - provides virtualized computing resources over the internet, such as virtual machines, storage, and networking.d. Software as a Service (SaaS) - delivers software applications over the internet, which are managed by a third-party vendor and whose interface is accessed on the clients' side.Python as a Service (PaaS) is not a recognized cloud service model.","['https://azure.microsoft.com/en-us/overview/types-of-cloud-computing/', 'https://aws.amazon.com/types-of-cloud-computing/', 'https://www.ibm.com/cloud/learn/iaas-paas-saas']",1,google_6_troubleshooting_and_future_networking,0.95,1
+104,"Which cloud service provides access to things like virtual machines, containers, networks, and storage?","a. IaaS
+b. SaaS
+c. FaaS
+d. PaaS
+",,a,a,,"Infrastructure as a Service (IaaS) is the cloud service model that provides access to fundamental computing resources such as virtual machines, containers, networks, and storage. IaaS gives the most control and flexibility to the customer to manage the operating systems, storage, deployed applications and some networking components, while the cloud provider manages the underlying cloud infrastructure.","['https://azure.microsoft.com/en-us/overview/what-is-iaas/', 'https://aws.amazon.com/what-is/iaas/', 'https://www.ibm.com/cloud/learn/iaas']",1,google_6_troubleshooting_and_future_networking,0.95,1
+105,An IPv6 address is how many bits long?,"a. 16
+b. 128
+c. 64
+d. 32
+",,b,b,,"An IPv6 address is 128 bits long. This is a significant increase from the 32-bit length of IPv4 addresses. The 128-bit address space of IPv6 allows for a vastly larger number of unique IP addresses compared to IPv4, helping to address the problem of IPv4 address exhaustion.","['https://en.wikipedia.org/wiki/IPv6', 'https://www.cisco.com/c/en/us/products/ios-nx-os-software/ipv6-addressing-and-basic-connectivity/index.html']",1,google_6_troubleshooting_and_future_networking,1,1
+106,What is the very first field in an IPv6 header?,"a. traffic class field
+b. source address field
+c. version field
+d. data payload field
+",,c,c,,"The version field is the very first field in an IPv6 header. It is a 4-bit field that indicates the version of the IP protocol being used, which in this case is 6 for IPv6. The version field allows devices to quickly determine how to interpret the rest of the header and packet.","['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header', 'https://www.ietf.org/rfc/rfc2460.txt']",1,google_6_troubleshooting_and_future_networking,0.95,1
+107,Which IPv6 header field indicates how many routers can forward a packet before it's discarded?,"a. hop limit field
+b. TTL
+c. router forward field
+d. next header field
+",,a,a,,The hop limit field in the IPv6 header indicates the maximum number of routers that can forward the packet before it must be discarded. It is decremented by 1 by each node that forwards the packet. The packet is discarded if the hop limit is decremented to zero. This field serves a similar purpose as the TTL (Time to Live) field in IPv4.,"['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header', 'https://www.ietf.org/rfc/rfc2460.txt', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipv6/configuration/15-2mt/ip6-15-2mt-book/ip6-hop-limit.html']",1,google_6_troubleshooting_and_future_networking,0.95,1
+108,The IPv4 mapped address space within IPv6 always starts with _______ zeroes.,"a. 80
+b. ""128""
+c. 32
+d. 64
+",,a,a,,"The IPv4 mapped address space within IPv6 always starts with 80 zeroes. This is followed by 16 ones, then a 32-bit IPv4 address. The 80 zeroes and 16 ones (totaling 96 bits) serve as a prefix to indicate that the remaining 32 bits represent an IPv4 address mapped into the IPv6 address space.","['RFC 4291: IP Version 6 Addressing Architecture, Section 2.5.5.2', 'Kurose, J. F., & Ross, K. W. (2017). Computer networking: a top-down approach. Pearson.']",1,google_6_troubleshooting_and_future_networking,0.95,1

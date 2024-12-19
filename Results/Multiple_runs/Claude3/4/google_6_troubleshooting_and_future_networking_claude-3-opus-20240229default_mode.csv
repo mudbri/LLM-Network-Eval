@@ -1,0 +1,96 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+90,The protocol used to communicate network errors is known as __________.,"a. ICMP
+b. Traceroute
+c. TCP
+d. UDP
+",,a,a,,"ICMP (Internet Control Message Protocol) is used to communicate network errors and operational information between network devices. It is not used for end-to-end data transfer like TCP or UDP, but rather for sending control messages such as error notifications when network issues occur.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'RFC 792 - Internet Control Message Protocol, https://tools.ietf.org/html/rfc792']",1,google_6_troubleshooting_and_future_networking,0.95,1
+91,The ping utility sends what message type?,"a. Echo Request
+b. Echo Reply
+c. Destination Network Unknown
+d. Destination Network Unreachable
+",,a,a,,"The ping utility sends ICMP Echo Request messages to the target host and expects ICMP Echo Reply messages in return. If the target host is reachable and functioning properly, it will respond with Echo Reply messages. This allows ping to determine the round-trip time and packet loss, thereby testing the reachability of the target host and the network path.","['CCNA 200-301 Official Cert Guide, Volume 1, Chapter 16: IP Services, Cisco Press', 'RFC 792 - Internet Control Message Protocol, https://tools.ietf.org/html/rfc792']",1,google_6_troubleshooting_and_future_networking,0.95,1
+92,What is one of the tools you can use to verify connectivity to a specific port on Windows OS?,"a. nc (netcat)
+b. Ping
+c. Test-NetConnection
+d. Tracert
+",,c,c,,Test-NetConnection is a PowerShell cmdlet in Windows that can be used to test TCP connectivity to a remote host and port. It can verify if a specific port is reachable on a target system. Ping tests basic IP connectivity but not specific ports. Tracert traces the route to a host but doesn't test ports. Netcat (nc) could potentially be used but is not a built-in Windows tool.,"['https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection', 'https://www.varonis.com/blog/powershell-test-netconnection/']",1,google_6_troubleshooting_and_future_networking,0.95,1
+93,Traceroute uses UDP packets on which of the following operating systems? Select all that apply.,"a. Mac Os
+b. Windows 10
+c. Windows 7
+d. Linux
+",,"a,d","a,d",,"Traceroute uses UDP packets by default on Mac OS and Linux operating systems. On Windows operating systems, including Windows 7 and Windows 10, traceroute uses ICMP echo request packets instead of UDP packets.","['https://en.wikipedia.org/wiki/Traceroute', 'https://www.cisco.com/c/en/us/support/docs/ip/routing/17246-traceroute.html']",1,google_6_troubleshooting_and_future_networking,0.95,1
+94,"During a traceroute, which action does a router perform to the value in the Time To Live (TTL) field?","a. Multiplication
+b. Division
+c. Subtraction
+d. Addition
+",,c,c,,"During a traceroute, each router that receives the packet subtracts one from the Time To Live (TTL) value before forwarding the packet to the next hop. If the TTL reaches zero, the router discards the packet and sends an ICMP Time Exceeded message back to the source. This allows traceroute to map the route and measure transit delays of packets across an IP network.","['Kurose, J. F., & Ross, K. W. (2017). Computer Networking: A Top-Down Approach (7th Edition). Pearson.', 'https://en.wikipedia.org/wiki/Traceroute']",1,google_6_troubleshooting_and_future_networking,0.95,1
+95,One of Level 3's public DNS servers is ____________.,"a. 4.2.2.3
+b. 8.8.8.8
+c. 127.0.0.1
+d. 192.168.1.1
+",,a,a,,"Level 3 Communications operates public DNS servers, one of which is 4.2.2.3. 8.8.8.8 is a public DNS server operated by Google. 127.0.0.1 is the loopback address referring to the local host. 192.168.1.1 is a common private IP address often used as the default gateway in home networks.","['https://www.lifewire.com/free-and-public-dns-servers-2626062', 'https://www.cloudflare.com/learning/dns/what-is-dns/']",1,google_6_troubleshooting_and_future_networking,0.95,1
+96,A DNS resolver tool available on all major desktop operating systems is __________.,"a. Nslookup
+b. Host
+c. Tracert
+d. Ping
+",,a,a,,"Nslookup (Name Server Lookup) is a command-line tool available on all major desktop operating systems, including Windows, macOS, and Linux. It is used to query the Domain Name System (DNS) to obtain domain name or IP address mapping, or other DNS records.","['https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/nslookup', 'https://en.wikipedia.org/wiki/Nslookup']",1,google_6_troubleshooting_and_future_networking,0.95,1
+97,Which top-level organization manages the global DNS (Domain Name System)?,"a. RFC
+b. IANA
+c. ICANN
+d. Google
+",,c,c,,ICANN (Internet Corporation for Assigned Names and Numbers) is the top-level organization that manages the global DNS (Domain Name System). ICANN is responsible for coordinating the management of the technical elements of the DNS to ensure universal resolvability so that all users of the Internet can find all valid addresses.,"['https://www.icann.org/resources/pages/what-2012-02-25-en', 'https://www.cloudflare.com/learning/dns/glossary/what-is-icann/']",1,google_6_troubleshooting_and_future_networking,0.95,1
+98,Which of the following commands displays the current network configuration information?,"a. Winver
+b. Pathping
+c. Net user
+d. Ipconfig
+",,d,d,,"The 'ipconfig' command is used to display the current network configuration information on a Windows system. It shows details such as the IP address, subnet mask, default gateway, and DNS server settings for all network adapters. The other options are incorrect: 'winver' displays the Windows version, 'pathping' is a route tracing tool, and 'net user' is used to manage user accounts.","['Microsoft Documentation: Ipconfig (https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)', 'CompTIA A+ Certification All-in-One Exam Guide, Tenth Edition (Exams 220-1001 & 220-1002) by Mike Meyers']",1,google_6_troubleshooting_and_future_networking,0.95,1
+99,An organization responsible for assigning individual domain names to other organizations or individuals is known as a(n) ______.,"a. DNS registrar
+b. Autonomous system
+c. Internet authority
+d. Government
+",,a,a,,"A DNS registrar is an organization that manages the reservation of Internet domain names. They are accredited by generic top-level domain (gTLD) registries and country code top-level domain (ccTLD) registries to sell domain names to the public. Registrars provide services to check domain name availability, reserve and manage domain name registrations, and provide DNS hosting.","['ICANN: Domain Name Registration Process - https://www.icann.org/resources/pages/register-domain-name-2017-06-20-en', 'Verisign: What Is a Domain Name Registrar? - https://www.verisign.com/en_US/domain-names/what-is-a-domain-name-registrar/index.xhtml']",1,google_6_troubleshooting_and_future_networking,0.95,1
+100,A piece of software that runs and manages virtual machines is known as a __________.,"a. cloud storage device
+b. cloud computing device
+c. Hypervisor
+d. virtual instance
+",,c,c,,"A hypervisor, also known as a virtual machine monitor (VMM), is a piece of software that creates and runs virtual machines (VMs). It allows one host computer to support multiple guest VMs by virtually sharing its resources, such as memory and processing. The hypervisor manages the execution of the guest operating systems.","['https://www.vmware.com/topics/glossary/content/hypervisor', 'https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor']",1,google_6_troubleshooting_and_future_networking,0.95,1
+101,What is Office 365 Outlook an example of?,"a. FttH
+b. IaaS
+c. SaaS
+d. PaaS
+",,c,c,,"Office 365 Outlook is an example of Software as a Service (SaaS). SaaS is a cloud computing model where a provider hosts applications and makes them available to customers over the internet. With Office 365, Microsoft hosts the Outlook email application and provides it to users as a subscription service accessible through a web browser, without the need for local installation or management of the software.","['https://azure.microsoft.com/en-us/overview/what-is-saas/', 'https://www.microsoft.com/en-us/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook']",1,google_6_troubleshooting_and_future_networking,0.95,1
+102,A hybrid cloud is ________________.,"a. a combination of a public cloud and a private cloud
+b. a combination of a private cloud and a mesh network
+c. a combination of a public cloud and hardware virtualization
+d. a combination of virtual hosts and virtual guests
+",,a,a,,"A hybrid cloud is a computing environment that combines a public cloud and a private cloud, allowing data and applications to be shared between them. This enables an organization to leverage the scalability and cost-effectiveness of public cloud services while maintaining control over sensitive data and mission-critical applications in their private cloud infrastructure.","['https://www.ibm.com/cloud/learn/hybrid-cloud', 'https://azure.microsoft.com/en-us/overview/what-is-hybrid-cloud-computing/', 'https://www.vmware.com/topics/glossary/content/hybrid-cloud.html']",1,google_6_troubleshooting_and_future_networking,0.95,1
+103,Which of the following are  cloud services? Select all that apply.,"a. Platform as a Service (PaaS)
+b. Python as a Service (PaaS)
+c. Infrastructure as a Service (IaaS)
+d. Software as a Service (SaaS)
+",,"a,c,d","a,c,d",,"Platform as a Service (PaaS), Infrastructure as a Service (IaaS), and Software as a Service (SaaS) are all types of cloud computing services. PaaS provides a platform for developers to build and deploy applications without managing the underlying infrastructure. IaaS offers virtualized computing resources over the internet, such as servers, storage, and networking. SaaS delivers software applications to end-users over the internet, usually on a subscription basis. Python as a Service (PaaS) is not a real cloud service offering.","['https://azure.microsoft.com/en-us/overview/types-of-cloud-computing/', 'https://aws.amazon.com/types-of-cloud-computing/', 'https://www.ibm.com/cloud/learn/iaas-paas-saas']",1,google_6_troubleshooting_and_future_networking,0.95,1
+104,"Which cloud service provides access to things like virtual machines, containers, networks, and storage?","a. IaaS
+b. SaaS
+c. FaaS
+d. PaaS
+",,a,a,,"Infrastructure as a Service (IaaS) is the cloud computing model that provides virtualized computing resources over the internet. IaaS offerings give users access to fundamental computing infrastructure like virtual machines, containers, networks, and storage on a pay-as-you-go basis from a cloud provider. The user is responsible for managing the operating systems, middleware, runtimes, data and applications, while the provider manages the servers, hard drives, networking, storage, and virtualization.","['https://azure.microsoft.com/en-us/overview/what-is-iaas/', 'https://aws.amazon.com/what-is/iaas/', 'https://www.ibm.com/cloud/learn/iaas']",1,google_6_troubleshooting_and_future_networking,0.95,1
+105,An IPv6 address is how many bits long?,"a. 16
+b. 128
+c. 64
+d. 32
+",,b,b,,"An IPv6 address is 128 bits long. This is a significant increase from the 32-bit length of IPv4 addresses. The 128-bit address space of IPv6 allows for a vastly larger number of unique IP addresses compared to IPv4, helping to alleviate the problem of IPv4 address exhaustion.","['https://en.wikipedia.org/wiki/IPv6', 'https://www.cisco.com/c/en/us/products/ios-nx-os-software/ipv6-addressing-and-basic-connectivity/index.html']",1,google_6_troubleshooting_and_future_networking,0.99,1
+106,What is the very first field in an IPv6 header?,"a. traffic class field
+b. source address field
+c. version field
+d. data payload field
+",,c,c,,"The very first field in an IPv6 header is the version field. This 4-bit field is used to indicate the version of the IP protocol, which is 6 for IPv6. The version field allows devices to quickly determine if the packet is using IPv4 or IPv6 and process it accordingly.","['https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header', 'https://www.ietf.org/rfc/rfc2460.txt']",1,google_6_troubleshooting_and_future_networking,0.95,1
+107,Which IPv6 header field indicates how many routers can forward a packet before it's discarded?,"a. hop limit field
+b. TTL
+c. router forward field
+d. next header field
+",,a,a,,The hop limit field in the IPv6 header indicates the maximum number of routers that can forward the packet before it must be discarded. It is decremented by 1 by each node that forwards the packet. The packet is discarded if the hop limit is decremented to zero. This field serves a similar purpose as the TTL (Time to Live) field in IPv4.,"['RFC 8200: Internet Protocol, Version 6 (IPv6) Specification. https://tools.ietf.org/html/rfc8200#section-3', 'Kurose, J. and Ross, K. Computer Networking: A Top-Down Approach. Pearson Education.']",1,google_6_troubleshooting_and_future_networking,0.95,1
+108,The IPv4 mapped address space within IPv6 always starts with _______ zeroes.,"a. 80
+b. ""128""
+c. 32
+d. 64
+",,a,a,,The IPv4 mapped address space within IPv6 always starts with 80 zeroes. This is followed by 16 ones and then the 32-bit IPv4 address. The resulting 128-bit address allows IPv6 hosts to communicate with IPv4 hosts using a special address format.,"['https://www.rfc-editor.org/rfc/rfc4291#section-2.5.5', 'https://www.cisco.com/c/en/us/support/docs/ip/ip-version-6-ipv6/113328-ipv6-nat-00.html']",1,google_6_troubleshooting_and_future_networking,0.95,1

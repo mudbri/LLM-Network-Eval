@@ -1,0 +1,87 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+1,Which of the following terms describe Ethernet addresses that can send one frame and is delivered to multiple devices on the LAN? (Choose two answers.),"a. Broadcast address
+b. Multicast address
+c. IP address
+d. MAC address
+e. Unicast address
+",,"a,b","a,b",,"In Ethernet networking, a broadcast address is used to send a frame to all devices on the local area network (LAN). This is typically represented by an address of all 1s in binary, or FF-FF-FF-FF-FF-FF in hexadecimal notation for MAC addresses. A multicast address is used to send a frame to a group of devices on a LAN that have been configured to listen for transmissions sent to that specific address. Unlike unicast addresses, which are unique to a single network interface, broadcast and multicast addresses are designed for one-to-many communication.","['https://en.wikipedia.org/wiki/Broadcast_address', 'https://en.wikipedia.org/wiki/Multicast_address', 'https://www.cisco.com/c/en/us/support/docs/ip/ip-multicast/13749-1.html']",1,chapter1_intro_to_networking,1,0.999998420739297
+3,___________ is a set of rules determining how network devices respond when two devices attempt to use a data channel simultaneously and encounter a data collision.,"a. CSMA/CD
+b. CSMA/CA
+c. TCP/IP
+d. TCP/UDP
+",,a,a,,"CSMA/CD (Carrier Sense Multiple Access/Collision Detection) is the set of rules used in networks, particularly Ethernet networks, to determine how devices on a network respond when they try to send data at the same time and a collision occurs. When a collision is detected, CSMA/CD dictates that each device must wait a random amount of time before attempting to retransmit. This helps to prevent the devices from colliding again when they retransmit.","['https://en.wikipedia.org/wiki/Carrier-sense_multiple_access_with_collision_detection', 'https://www.cisco.com/c/en/us/support/docs/smb/switches/cisco-200-series-smart-switches/smb4884-how-does-csma-cd-work-on-a-switch.html']",1,chapter1_intro_to_networking,1,0.9999995679800934
+4,Ethernet standard ___________ BASE-T defines Gigabit Ethernet over UTP cabling.,"a. 100
+b. 10
+c. 1000
+d. 1
+",,c,c,,"The Ethernet standard 1000BASE-T defines Gigabit Ethernet over UTP cabling. The '1000' in the name 1000BASE-T signifies the transmission speed of 1000 Mbps, or 1 Gbps, over copper twisted-pair cabling.","['https://en.wikipedia.org/wiki/Gigabit_Ethernet', 'https://en.wikipedia.org/wiki/IEEE_802.3']",1,chapter1_intro_to_networking,1,0.9999983759447187
+5,Which of the following IEEE 802.3 Ethernet Header and Trailer Fields allows devices on the network to easily synchronize their receiver clocks?,"a. Frame Check Sequence
+b. Data and Pad
+c. Start Frame Delimiter
+d. Preamble
+",,d,d,,"The Preamble field in the IEEE 802.3 Ethernet frame is used to allow devices on the network to synchronize their receiver clocks, providing a timing reference for the bits that follow in the frame. It consists of 7 bytes (56 bits) of alternating 1s and 0s that prepare the receiving device for the incoming frame.","['https://en.wikipedia.org/wiki/Ethernet_frame#Preamble_and_start_frame_delimiter', 'https://www.cisco.com/c/en/us/support/docs/smb/switches/cisco-200-series-smart-switches/smb5044-ethernet-frame-structure-and-ieee-8021q-tag.html']",1,chapter1_intro_to_networking,0.95,0.9950415213442452
+6,The host sends packets to its default gateway if the ____________ IP address is in a different subnet than the host.,"a. Source
+b. Destination
+c. Unicast
+d. Broadcast
+",,b,b,,"The host sends packets to its default gateway when the destination IP address is in a different subnet than the host. This is because the host cannot directly communicate with a destination that is not on the same local network. Instead, it relies on a router (default gateway) to forward the packets to the appropriate destination.","['https://www.ciscopress.com/articles/article.asp?p=2180210', 'https://www.networkstraining.com/what-is-a-default-gateway-in-networking/']",1,chapter1_intro_to_networking,1,1.0
+9,Which of the following protocols resides in the Application TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",,a,a,,"SMTP (Simple Mail Transfer Protocol) resides in the Application layer of the TCP/IP model, which is used for sending emails. TCP (Transmission Control Protocol) is in the Transport layer, which is responsible for establishing connections and ensuring data packets are delivered reliably. Ethernet is a technology that operates at the Data Link layer, providing services for network interface cards to access the physical media. IP (Internet Protocol) is in the Internet layer, handling the routing of packets across network boundaries.","['https://www.ietf.org/rfc/rfc2821.txt', 'https://tools.ietf.org/html/rfc791']",1,chapter1_intro_to_networking,1,1.0
+10,Which of the following protocols resides in the Transport TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",,b,b,,"TCP (Transmission Control Protocol) is one of the main protocols of the Transport layer in the TCP/IP model. The Transport layer is responsible for providing communication services directly to the application processes running on different hosts. SMTP (Simple Mail Transfer Protocol) is an application layer protocol used for email transmission. Ethernet is a protocol that operates at the Data Link layer, which is responsible for node-to-node data transfer. IP (Internet Protocol) operates at the Internet layer, which is responsible for addressing and routing packets across network boundaries.","['https://www.ietf.org/rfc/rfc793.txt', 'https://www.ietf.org/rfc/rfc1122.txt', 'https://en.wikipedia.org/wiki/Internet_protocol_suite']",1,chapter1_intro_to_networking,1,1.0
+11,Which of the following protocols resides in the Internet TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",,d,"b,d",,"In the Internet TCP/IP architecture, the Internet layer is responsible for host-to-host data transfer across networks and includes the Internet Protocol (IP). The Transport layer ensures reliable data transfer and includes the Transmission Control Protocol (TCP). SMTP (Simple Mail Transfer Protocol) resides in the Application layer, which is responsible for providing services to the user. Ethernet is a protocol that operates at the Data Link layer, which is responsible for node-to-node data transfer on the same network.","['https://www.ietf.org/rfc/rfc791.html', 'https://www.ietf.org/rfc/rfc793.html', 'https://tools.ietf.org/html/rfc1123']",0,chapter1_intro_to_networking,1,0.9978901992449981
+12,Which of the following protocols resides in the Data Link & Physical TCP/IP Architecture layer?,"a. SMTP
+b. TCP
+c. Ethernet
+d. IP
+",,c,c,,"In the TCP/IP model, the Data Link layer and the Physical layer of the OSI model are often combined into a single layer. Ethernet is a technology that operates at these layers, providing the physical transmission of data and the data link protocols necessary for local network (LAN) communications. SMTP and TCP operate at higher layers in the model, with SMTP being an application layer protocol and TCP being a transport layer protocol. IP operates at the Internet layer, which is equivalent to the network layer in the OSI model.","['https://en.wikipedia.org/wiki/Internet_protocol_suite', 'https://en.wikipedia.org/wiki/Ethernet', 'https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol', 'https://en.wikipedia.org/wiki/Internet_Protocol']",1,chapter1_intro_to_networking,1,1.0
+13,Which of the following protocols is used from PC1 to learn information from some other device on the same network?,"a. ping
+b. ARP
+c. DHCP
+d. DNS
+",,b,b,,"ARP (Address Resolution Protocol) is used to map IP network addresses to the hardware (MAC) addresses used by a data link protocol. When PC1 needs to communicate with another device on the same network and it knows the IP address but not the MAC address, it will use ARP to learn the MAC address of the target device.","['https://www.cisco.com/c/en/us/support/docs/ip/dynamic-address-allocation-resolution/13718-5.html', 'https://en.wikipedia.org/wiki/Address_Resolution_Protocol']",1,chapter1_intro_to_networking,1,0.9999870516788303
+14,"If the devices below were connected with UTP Ethernet cables, which pairs of devices would require a straight-through cable? (Choose two answers.)","a. Router and PC
+b. Switch and PC
+c. Hub and switch
+d. Router and hub
+",,"b,d","b,d",,"In Ethernet networking, the type of cable used for connecting devices depends on the type of devices being connected. A straight-through cable is used to connect devices that operate at different layers of the OSI model, such as a switch (Layer 2 device) and a PC (Layer 7 device), or a router (Layer 3 device) and a hub (Layer 1 device). Therefore, a straight-through cable would be used for the pairs 'Switch and PC' and 'Router and hub'.","['https://www.cisco.com/c/en/us/support/docs/smb/routers/cisco-rv-series-small-business-routers/smb5686-how-to-make-straight-through-cable-versus-crossover-cable.html', 'https://www.computernetworkingnotes.com/ccna-study-guide/straight-through-and-crossover-cable-explained-with-color-coding.html']",1,chapter1_intro_to_networking,0.95,0.5456649152317795
+15,Which of the following protocols are examples of TCP/IP data-link layer protocols? (Choose two answers.),"a. TCP
+b. HTTP
+c. Ethernet
+d. PPP
+e. SMTP
+f. HTTPS
+",,"c,d","c,d",,"The TCP/IP data-link layer corresponds to the OSI model's data link layer and includes protocols that operate at this level. Ethernet (c) is a set of networking technologies and protocols that operate at the data link layer, providing the necessary link between the physical transmission medium and the upper layer network protocols. PPP (d), or Point-to-Point Protocol, is also a data-link layer protocol that provides a standard method for transporting multi-protocol datagrams over point-to-point links. TCP (a) is a transport layer protocol, while HTTP (b), SMTP (e), and HTTPS (f) are application layer protocols.","['https://en.wikipedia.org/wiki/Ethernet', 'https://en.wikipedia.org/wiki/Point-to-Point_Protocol', 'https://en.wikipedia.org/wiki/OSI_model']",1,chapter1_intro_to_networking,0.95,1.0
+16,Which of the following statements are functions of a routing protocol? (Choose two answers.),"a. Learning routes and putting those routes into the routing table for routes advertised to the router by its neighboring routers
+b. Advertising known routes to neighboring routers
+c. Learning routes for subnets directly connected to the router
+d. Forwarding IP packets based on a packet’s destination IP address
+",,"a,b","a,b",,"Routing protocols have two main functions: learning routes from neighboring routers and advertising routes to neighboring routers. Option 'a' is correct because routing protocols learn routes from advertisements received from other routers and then place those routes in the routing table. Option 'b' is correct because routing protocols advertise routes that the router knows about to its neighbors. Option 'c' is incorrect because learning routes for directly connected subnets is not a function of routing protocols; instead, the router automatically knows about its directly connected networks. Option 'd' is incorrect because forwarding IP packets based on the destination IP address is a function of the router's forwarding process, not a routing protocol's function.","['https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/5212-46.html', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,chapter1_intro_to_networking,0.95,0.9999990167568334
+17,"When you open a web browser and type in the hostname www.examsdigest.com, your computer does not send an IP packet with a destination IP address www.examsdigest.com; it sends an IP packet to an IP address used by the web server for Examsdigest. TCP/IP needs a way to let a computer find the IP address used by the listed hostname. That method uses the Domain Name System (DNS).","a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. The Domain Name System (DNS) is essentially the phonebook of the internet, which translates human-friendly hostnames like www.examsdigest.com into IP addresses that networking equipment uses to route data. When you type a website's hostname into your browser, your computer uses DNS to retrieve the website's IP address before it can send an IP packet. Without DNS, users would have to remember the numerical IP addresses of every website they want to visit.","['https://www.cloudflare.com/learning/dns/what-is-dns/', 'https://en.wikipedia.org/wiki/Domain_Name_System']",1,chapter1_intro_to_networking,1,0.9999993295729247
+18,A __________________ address is an address that enables transmission to every node in a local network.,"a. Broadcast
+b. Multicast
+c. Unicast
+d. MAC
+",,a,a,,"A broadcast address is used to send data to all possible destinations in a network simultaneously, typically in a local network. In the context of an IPv4 network, the broadcast address is the last address in the address space, where all host bits are set to 1. For example, in a network with the address 192.168.1.0/24, the broadcast address would be 192.168.1.255. Broadcasts are not routed across different networks by routers as they are limited to the local network segment.","['https://en.wikipedia.org/wiki/Broadcast_address', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13769-5.html']",1,chapter1_intro_to_networking,1,0.9999998063873687
+19,TCP and ______________ are the two most commonly used TCP/IP transport layer protocols.,"a. UDP
+b. HTTP
+c. DNS
+d. SMTP
+",,a,a,,"TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are the two most commonly used protocols at the transport layer of the TCP/IP model. While TCP provides a connection-oriented service with guaranteed delivery, UDP offers a connectionless service with no guarantee for delivery, making it faster but less reliable than TCP.","['https://www.ietf.org/rfc/rfc768.txt', 'https://www.ietf.org/rfc/rfc793.txt']",1,chapter1_intro_to_networking,1,1.0
+20,Which of the following IEEE 802.3 Ethernet Header and Trailer Fields provides a method for the receiving NIC to determine whether the frame experienced transmission errors?,"a. Frame Check Sequence
+b. Data and Pad
+c. Start Frame Delimiter
+d. Preamble
+",,a,a,,"The Frame Check Sequence (FCS) field in an Ethernet frame is used to detect any errors that may have occurred during the transmission of the frame. The FCS contains a cyclic redundancy check (CRC) value that is calculated by the sending network interface card (NIC) and is used by the receiving NIC to verify the integrity of the received frame. If the calculated CRC of the received frame does not match the FCS value, it indicates that the frame has experienced transmission errors.","['https://en.wikipedia.org/wiki/Ethernet_frame', 'https://www.cisco.com/c/en/us/support/docs/network-management/remote-monitoring-rmon/200227-Understand-CRC-Errors-on-Cisco-Devices.html']",1,chapter1_intro_to_networking,1,1.0

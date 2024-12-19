@@ -1,0 +1,48 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence,QD - Goal clear?(0/1),QD - Context clear?(0/1),QD - How challenging(1-4),QD - Level learnt(1-7),SM - Description,SM - Goal understood?(0/1),SM - Context understood?(0/1),SM - Implied Context understood?(0/1),SM - Relvant facts identified?(0/1),SM - Correct facts retieved?(0/1),SM - No incorrect facts?(0/1),SM - Correct reasoning?(0/1),SM - Misunderstanding General,SM - Misunderstanding Reasons,SM - Misunderstanding General (secondary),SM - Misunderstanding Reasons (secondary),AQ - Inferrable(0-2)?,Source links work(number),Sources Types,Sources Relevant(number),Source Problems,AQ - Precise?,AQ - Explainable?,Effect - Description of effects,Effect - Conceptual error in explanaiton?(0/1),Effect - Subtopics,Effect - Error Type,Effect - Severity,Effect - Who is most effected(1-4),CD - detection student(1-3),CD - correction student(1-8),CD - detection knowledgeable(1-3),CD - correction knowledgeable(1-8),Score-right-minus-wrong
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. SYN, ACK, FIN
+b. SYN, SYN/ACK, ACK
+c. FIN, FIN/ACK, ACK
+d. SYN, ACK, SYN, ACK
+",,b,b,,"The correct ordering of TCP flags in the Three-Way Handshake is: SYN, SYN/ACK, ACK. 
+- SYN: The initiating device sends a SYN (synchronize) flag to the receiving device to request a connection. 
+- SYN/ACK: The receiving device responds with a SYN/ACK (synchronize/acknowledge) flag to acknowledge the request and signal its own readiness to communicate. 
+- ACK: Finally, the initiating device sends an ACK (acknowledge) flag back to the receiving device to confirm the connection establishment.",[],1,3_transport_application_layer,0.95,0.999999806387369,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 32
+d. 8",,a,a,,"In the TCP/UDP header, the port field is 16 bits long. This allows for a total of 2^16 (65,536) possible port numbers, which are used to differentiate between different applications/services running on a device.",['https://tools.ietf.org/html/rfc793'],1,3_transport_application_layer,0.9,0.999885496636011,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Hub
+b. Router
+c. Switch
+d. Firewall
+",,d,d,,"A device that blocks traffic based on certain criteria is known as a firewall. Firewalls are network security devices that monitor and control incoming and outgoing network traffic based on predetermined security rules. They act as a barrier between a trusted internal network and untrusted external networks, such as the internet, and can block or allow traffic based on defined rules.",['https://www.cloudflare.com/learning/security/glossary/what-is-a-firewall/'],1,3_transport_application_layer,0.9,0.999999448776502,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,b,,"The TCP flag used to make the listening program respond immediately is the PSH (Push) flag. When a segment with the PSH flag set arrives at the receiving TCP, that TCP must promptly deliver the data to the receiving application, rather than waiting for more data to fill the segment.",['https://datatracker.ietf.org/doc/html/rfc793'],1,3_transport_application_layer,0.9,0.569234729526119,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0
+40,_________are identified as ports 49152 through 65535.,"a. User ports
+b. Ephemeral ports
+c. Sockets
+d. System ports
+",,b,b,,Ports 49152 through 65535 are known as ephemeral ports. These ports are used as temporary communication endpoints by the client-side of client-server communication. They are dynamically allocated by the client's operating system from this range to establish outgoing connections.,['https://en.wikipedia.org/wiki/Ephemeral_port'],1,3_transport_application_layer,0.9,0.999988601307966,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The compression layer
+b. The session layer
+c. The interconnection layer
+d. The presentation layer
+",,"b,d",b,,"The OSI network model adds two more layers on top of the Application Layer: the Presentation Layer and the Session Layer. Among the given choices, the Session Layer (option b) is one of the additional layers in the OSI model. The Presentation Layer (option d) is the other additional layer. The Compression Layer (option a) and the Interconnection Layer (option c) are not part of the additional layers introduced by the OSI model.",[],0,3_transport_application_layer,0.9,0.999991223762511,1.0,1.0,1.0,3.0,Everything correct but incorrect choice selected for some reason,1.0,1.0,1.0,1.0,1.0,1.0,0.0,Incorrect reasoning/deduction,Incorrect Choice,,,2.0,,,,,1.0,1.0,Just misinformation,0.0,Network Architecture,misinformation,Minor,1.0,1.0,2.0,1.0,2.0,0.5
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"An example of something that operates at the application layer is a web browser. The application layer in the OSI model is responsible for providing network services directly to end-users or applications. Web browsers are applications that interact directly with users to access and display web pages, making them an application layer entity.",[],1,3_transport_application_layer,0.9,0.999999567980093,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. ARP message
+c. The source port
+d. The router
+",,a,a,,"The correct option is 'a. Networking stack'. When an application needs to establish a TCP connection, it communicates this need to the operating system through the networking stack. The networking stack is responsible for handling network communication protocols, including TCP/IP, and manages the establishment of connections, data transfer, and other networking tasks.",[],1,3_transport_application_layer,0.9,0.996869735027491,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The payload of the TCP segment
+d. The header of the Ethernet frame
+",,"a,b,c",c,,The data that the application wants to send is contained in the payload of the TCP segment. The TCP segment encapsulates the application data before it is further encapsulated into an IP datagram and then into an Ethernet frame. The payload section of the TCP segment carries the actual data from the application layer.,['https://www.geeksforgeeks.org/tcp-ip-model/'],0,3_transport_application_layer,0.9,0.736073132779586,1.0,1.0,2.0,3.0,"This is a reasoning error since the payload of ethernet and ip datagram also contain the actual payload of the TCP packet. Thus, technically, all three parts contain the payload",1.0,1.0,1.0,1.0,1.0,1.0,0.0,Incorrect reasoning/deduction,Faulty inference,,,0.0,1.0,trusted article,1.0,,1.0,1.0,Just misinformation,0.0,Network Architecture,misinformation,Minor,1.0,3.0,3.0,2.0,1.0,0.0

@@ -1,0 +1,46 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. SYN, ACK, FIN
+b. SYN, SYN/ACK, ACK
+c. FIN, FIN/ACK, ACK
+d. SYN, ACK, SYN, ACK
+",,b,b,,"The Three-Way Handshake in TCP (Transmission Control Protocol) is used to establish a connection between a client and server. It involves three steps: (1) the client sends a SYN (synchronize) packet to the server to initiate a connection, (2) the server responds with a SYN/ACK (synchronize/acknowledge) packet to acknowledge the receipt of the SYN and to send its own SYN, and (3) the client sends an ACK (acknowledge) packet back to the server to acknowledge the receipt of the server's SYN, completing the handshake. Therefore, the correct order is SYN, SYN/ACK, ACK.","['https://www.rfc-editor.org/rfc/rfc793', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Connection_establishment']",1,google_3_transport_application_layer,1,1.0
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 32
+d. 8
+",,a,a,,"In both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol), the port field is 16 bits long. This allows for 2^16 or 65,536 possible port numbers.","['https://en.wikipedia.org/wiki/Transmission_Control_Protocol', 'https://en.wikipedia.org/wiki/User_Datagram_Protocol']",1,google_3_transport_application_layer,1,1.0
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Hub
+b. Router
+c. Switch
+d. Firewall
+",,d,d,,"A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies. At its most basic, a firewall is essentially the barrier that sits between a private internal network and the public Internet. Its main purpose is to block malicious traffic like viruses and hackers and to control the flow of legitimate traffic in and out of the network.",['https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html'],1,google_3_transport_application_layer,1,0.999999091165773
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,b,,"The PSH (Push) flag in TCP is used to indicate that the data should be pushed to the receiving application as soon as possible. This is often interpreted by TCP stacks as an instruction to bypass the buffer and make the data available to the listening program immediately. The ACK flag is used to acknowledge receipt of packets, URG indicates that there is urgent data to be processed, and RST is used to reset the connection.","['https://www.ietf.org/rfc/rfc793.txt', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure']",1,google_3_transport_application_layer,0.95,0.9999975415208221
+40,_________are identified as ports 49152 through 65535.,"a. User ports
+b. Ephemeral ports
+c. Sockets
+d. System ports
+",,b,b,,"Ephemeral ports are temporary ports assigned by a computer's operating system. They are used by network client applications when initiating a connection to a server, especially when the client-side port number is not important. These ports range from 49152 through 65535, according to the Internet Assigned Numbers Authority (IANA). System ports (also known as well-known ports) range from 0 to 1023 and are assigned to common services and protocols. User ports range from 1024 to 49151 and are available for use by ordinary user applications.","['https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'https://en.wikipedia.org/wiki/Ephemeral_port']",1,google_3_transport_application_layer,1,0.9999965878943212
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The compression layer
+b. The session layer
+c. The interconnection layer
+d. The presentation layer
+",,"b,d","b,d",,"The OSI (Open Systems Interconnection) model is a conceptual framework used to understand and implement networking protocols in seven layers. The OSI model adds two layers on top of the Application Layer that are not explicitly defined in the simplified five-layer model (which typically includes the physical, data link, network, transport, and application layers). These two additional layers are the Session Layer and the Presentation Layer. The Session Layer (Layer 5) establishes, manages, and terminates connections between applications. The Presentation Layer (Layer 6) is responsible for the translation, encryption, and compression of data.","['https://www.lifewire.com/layers-of-the-osi-model-illustrated-818017', 'https://en.wikipedia.org/wiki/OSI_model']",1,google_3_transport_application_layer,1,0.9999988527586581
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"The application layer is the topmost layer in both the OSI model of computer networking and the Internet Protocol Suite (TCP/IP). It is where end-user software such as web browsers, email clients, and other applications that require network communication operate. UDP and TCP are protocols that operate at the transport layer, which is responsible for host-to-host communication over the network. A router operates at the network layer, which is responsible for routing packets across network boundaries.","['https://en.wikipedia.org/wiki/Application_layer', 'https://en.wikipedia.org/wiki/Transport_layer', 'https://en.wikipedia.org/wiki/Network_layer']",1,google_3_transport_application_layer,1,1.0
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. ARP message
+c. The source port
+d. The router
+",,a,a,,"The networking stack, also known as the network stack or TCP/IP stack, is the part of the operating system that provides networking functionality. Applications use the networking stack to communicate with the network, including establishing TCP connections. The stack is responsible for the implementation of the transport layer protocols (such as TCP and UDP), the internet layer protocols (such as IP), and the interface to the network hardware. ARP (Address Resolution Protocol) messages are used for resolving network layer addresses into link layer addresses, the source port is part of the transport layer header used to identify the sending application, and the router is a network device that forwards data packets between computer networks, not a part of the operating system.","['https://en.wikipedia.org/wiki/Network_stack', 'https://en.wikipedia.org/wiki/Address_Resolution_Protocol', 'https://en.wikipedia.org/wiki/Port_(computer_networking)', 'https://en.wikipedia.org/wiki/Router_(computing)']",1,google_3_transport_application_layer,0.95,1.0
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The payload of the TCP segment
+d. The header of the Ethernet frame
+",,"a,b,c","a,b,c",,"In the TCP/IP model, the data that the application wants to send is encapsulated into the payload sections at different layers as it moves down the stack. At the Transport layer, the data is encapsulated into the payload of the TCP segment. At the Internet layer, the TCP segment itself becomes the payload of the IP datagram. Finally, at the Link layer, the IP datagram is encapsulated into the payload section of the Ethernet frame. The header of the Ethernet frame (option d) contains control information, such as source and destination MAC addresses, not the application data itself.","['https://en.wikipedia.org/wiki/Internet_protocol_suite', 'https://en.wikipedia.org/wiki/Ethernet_frame', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol']",1,google_3_transport_application_layer,1,0.9999044928081022

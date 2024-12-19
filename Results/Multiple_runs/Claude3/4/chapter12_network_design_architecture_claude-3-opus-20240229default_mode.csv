@@ -1,0 +1,60 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+204,"The customer edge device is typically a router, that sits at a customer site on MPLS networks and connects to a provider edge router (PE router) to take communications from a customer site to a provider side.","a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. In an MPLS network, the Customer Edge (CE) device, which is typically a router, is located at the customer's premises. The CE router connects the customer's local network to the Provider Edge (PE) router, which is owned and operated by the service provider. The PE router is responsible for receiving traffic from the CE router and forwarding it across the provider's MPLS backbone network.","['MPLS Fundamentals by Luc De Ghein, Cisco Press', 'RFC 4364 - BGP/MPLS IP Virtual Private Networks (VPNs)', 'Cisco Documentation: MPLS VPN Technology Overview']",1,chapter12_network_design_architecture,0.95,1
+205,____________________ is a network design that connects a link between each pair of nodes.,"a. Full Mesh
+b. Star
+c. Hybrid
+d. Partial Mesh
+",,a,a,,"A full mesh network topology is one where each node (device) is connected directly to every other node in the network. In a full mesh topology, there is a dedicated link between each pair of nodes, providing maximum redundancy and reliability. However, this also requires the most cabling and ports, making it expensive and impractical for large networks.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 3: Fundamentals of LANs', 'https://www.cisco.com/c/en/us/products/switches/what-is-a-network-topology.html']",1,chapter12_network_design_architecture,0.95,1
+206,"With PoE, a LAN switch can act as the Power Sourcing Equipment (PSE).","a. TRUE
+b. FALSE
+",,a,a,,"With Power over Ethernet (PoE), a LAN switch can indeed act as the Power Sourcing Equipment (PSE). The switch provides both data connectivity and electrical power over the Ethernet cabling to powered devices (PDs) such as IP phones, wireless access points, and security cameras. This eliminates the need for separate power cables and outlets for each device.","['Cisco Networking Academy: Introduction to Networks v7.0 (ITN)', 'IEEE 802.3af and 802.3at standards for Power over Ethernet']",1,chapter12_network_design_architecture,0.95,1
+208,Which of the following roles of campus switches provides a connection point for end-user devices?,"a. Access
+b. Distribution
+c. Core
+d. Campus
+",,a,a,,"In a campus network, access layer switches provide a connection point for end-user devices such as computers, IP phones, and printers. Access switches are typically located close to the end-users and are responsible for connecting these devices to the network.","['Cisco Networking Academy: CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'Cisco Press: CCNA 200-301 Exam Cram by Anthony J. Sequeira']",1,chapter12_network_design_architecture,0.95,1
+209,Which of the following roles of campus switches provides an aggregation point for access switches?,"a. Access
+b. Distribution
+c. Core
+d. Campus
+",,b,b,,"In a hierarchical campus network design, the distribution layer switches provide an aggregation point for the access layer switches. The distribution layer aggregates the traffic from multiple access switches before it is forwarded to the core layer. The distribution layer can provide important functions such as routing, quality of service, and access control.","['Cisco Press - CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'Cisco Validated Design - Campus LAN and Wireless LAN Design Guide']",1,chapter12_network_design_architecture,0.95,1
+210,Which of the following roles of campus switches aggregates distribution switches in very large campus LANs?,"a. Access
+b. Distribution
+c. Core
+d. Campus
+",,c,c,,"In very large campus LANs, the core layer switches aggregate the distribution layer switches. The core layer provides high-speed switching and scalability, acting as the backbone of the network to efficiently transfer data between distribution layer devices.","['Cisco Press CCNA 200-301 Official Cert Guide, Chapter 3: Fundamentals of LANs and Ethernet', 'Cisco Networking Academy: Hierarchical Network Design Overview']",1,chapter12_network_design_architecture,0.95,1
+211,Your company plans to start using public cloud service and now you are considering different WAN options. Your main concern is security by keeping the data private while also providing good QoS services. Which of the following options are under consideration? (Choose two answers.),"a. Using private WAN connections directly to the cloud provider
+b. Using an Internet connection without VPN
+c. Using an Internet connection with VPN
+d. Using an intercloud exchange
+",,"a,d","a,c",,"When connecting to a public cloud service, the main considerations are security and Quality of Service (QoS). Using private WAN connections directly to the cloud provider (a) ensures data remains private as it travels over dedicated links rather than the public Internet. Using an Internet connection with a VPN (c) also provides security by encrypting the data before it traverses the public Internet. Both these options allow for better QoS compared to an unprotected Internet connection (b). While an intercloud exchange (d) enables connectivity between different cloud providers, it doesn't directly address the security and QoS concerns stated in the question.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 14: WAN Architecture', 'https://www.cisco.com/c/en/us/solutions/collateral/enterprise-networks/intelligent-wan/white-paper-c11-744566.html']",0,chapter12_network_design_architecture,0.9,1
+212,"One of the differences between Public Cloud and Private Cloud (On-Premise) is that on the Public Cloud solution you are responsible for all management, maintenance, and updating of data centers.","a. TRUE
+b. FALSE
+",,b,b,,"The statement is false. In a public cloud solution, the cloud service provider is responsible for managing, maintaining, and updating the data centers. This is one of the key advantages of using public cloud services - the provider takes care of the underlying infrastructure, allowing the customer to focus on their applications and services. In contrast, with a private cloud or on-premise solution, the organization is responsible for managing and maintaining their own data centers.","['https://aws.amazon.com/types-of-cloud-computing/', 'https://azure.microsoft.com/en-us/overview/what-is-a-public-cloud/', 'https://www.ibm.com/cloud/learn/public-cloud']",1,chapter12_network_design_architecture,0.95,1
+213,"A company uses a Metro Ethernet WAN with an Ethernet LAN (E-LAN) service, with the company headquarters plus 20 remote sites connected to the service. The enterprise uses OSPF at all sites, with one router connected to the service from each site. Which of the following are true about the Layer 3 details most likely used with this service and design? (Choose all that apply)","a. The WAN uses one IP subnet
+b. The WAN uses 20 or more IP subnets
+c. A remote site router would have one OSPF neighbor
+d. A remote site router would have 20 OSPF neighbors
+",,"a,d","a,c",,"In a Metro Ethernet WAN with an E-LAN service, all sites are connected to a single broadcast domain, effectively creating one large Ethernet LAN. This means that the WAN uses a single IP subnet (a) across all sites. Each remote site router would have a single connection to the E-LAN service, resulting in only one OSPF neighbor (c) for that router - the router at the company headquarters. The WAN does not require 20 or more IP subnets (b) since it operates as a single broadcast domain. A remote site router would not have 20 OSPF neighbors (d) because it only connects to the headquarters router through the E-LAN service.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 20: Ethernet WAN Topologies', 'Metro Ethernet Services for LAN Extension, MEF White Paper, https://www.mef.net/wp-content/uploads/2014/05/MEF-Carrier-Ethernet-for-Delivery-of-Private-Cloud-Services.pdf']",0,chapter12_network_design_architecture,0.95,1
+214,The process of dividing a physical server into multiple unique and isolated virtual servers by means of a software application is called server _________________.,"a. Integration
+b. Isolation
+c. Virtualization
+d. Segmentation
+",,c,c,,Server virtualization is the process of dividing a physical server into multiple unique and isolated virtual servers using a software application called a hypervisor. This allows for more efficient utilization of physical server resources by running multiple virtual machines on a single physical server.,"['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 15: Virtualization Protocols', 'https://www.cisco.com/c/en/us/solutions/data-center-virtualization/what-is-server-virtualization.html']",1,chapter12_network_design_architecture,0.95,1
+215,"Which cloud “As a Service” model is a form of cloud computing that delivers fundamental compute, network, and storage resources to consumers on-demand, over the internet, and on a pay-as-you-go basis?","a. Software as a Service
+b. Platform as a Service
+c. Infrastructure as a Service
+d. Database as a Service
+",,c,c,,"Infrastructure as a Service (IaaS) is the cloud computing model that provides fundamental compute, network, and storage resources to consumers on-demand, over the internet, and on a pay-as-you-go basis. IaaS allows users to rent IT infrastructure such as servers, virtual machines, storage, networks, and operating systems from a cloud provider.","['https://azure.microsoft.com/en-us/overview/what-is-iaas/', 'https://aws.amazon.com/what-is/iaas/', 'https://www.ibm.com/cloud/learn/iaas']",1,chapter12_network_design_architecture,0.95,1
+216,Which cloud “As a Service” model is a software distribution model in which a third-party provider hosts applications and makes them available to customers over the Internet?,"a. Software as a Service
+b. Platform as a Service
+c. Infrastructure as a Service
+d. Database as a Service
+",,a,a,,"Software as a Service (SaaS) is a software distribution model in which a third-party provider hosts applications and makes them available to customers over the Internet. In this model, the provider manages the infrastructure, platform, and software, while the customer can access the application through a web browser or API. The customer does not need to install, maintain, or update the software.","['https://azure.microsoft.com/en-us/overview/what-is-saas/', 'https://www.salesforce.com/saas/']",1,chapter12_network_design_architecture,0.95,1
+217,"Which cloud “As a Service” model is a complete development and deployment environment in the cloud, with resources that enable you to deliver everything from simple cloud-based apps to sophisticated, cloud-enabled enterprise applications?","a. Software as a Service
+b. Platform as a Service
+c. Infrastructure as a Service
+d. Database as a Service
+",,b,b,,"Platform as a Service (PaaS) provides a complete development and deployment environment in the cloud. It includes infrastructure (servers, storage, networking) as well as development tools, database management systems, business intelligence services, and more. PaaS allows developers to create, run, and manage applications without the complexity of building and maintaining the underlying infrastructure. It supports the complete web application lifecycle from development and testing to deployment and hosting.","['https://azure.microsoft.com/en-us/overview/what-is-paas/', 'https://www.ibm.com/cloud/learn/paas', 'https://aws.amazon.com/what-is/paas/']",1,chapter12_network_design_architecture,0.95,1

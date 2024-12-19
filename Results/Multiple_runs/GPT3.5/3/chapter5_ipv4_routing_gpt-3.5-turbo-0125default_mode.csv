@@ -1,0 +1,95 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+91,You have noticed that a server with IP 145.45.3.2 doesn’t respond to requests. What command will you type first in order to test connectivity between your device and the server?,"a. request 145.45.3.2
+b. check 145.45.3.2
+c. ping 145.45.3.2
+d. ping 145.45.3.2
+",,c,d,,"The correct command to test connectivity between your device and the server with IP 145.45.3.2 is 'ping 145.45.3.2'. The ping command sends ICMP echo request packets to the destination IP address and waits for ICMP echo reply packets, which helps in determining if the destination is reachable and responsive.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13730-4.html'],0,chapter5_ipv4_routing,0.9,0.7337605131277909
+92,"A LAN design uses a Layer 3 EtherChannel between two switches SW1 and SW2, with port-channel interface 1 used on both switches. SW1 uses ports G0/1 and G0/2 in the channel. However, only interface G0/1 is bundled into the channel and working. Think about the configuration settings on port G0/2 that could have existed before adding G0/2 to the EtherChannel. Which answers identify a setting that could prevent IOS from adding G0/2 to the Layer 3 EtherChannel? (Choose two answers.)","a. A different STP cost (spanning-tree cost value)
+b. A different access VLAN (switchport access vlan vlanid)
+c. A different speed (speed value)
+d. A default setting for switchport (switchport)
+",,"c,d","a,c",,"The different STP cost (spanning-tree cost value) and a different speed value on port G0/2 could prevent IOS from adding G0/2 to the Layer 3 EtherChannel. If the STP cost or speed settings are different between the two ports, the switch will not bundle them into the EtherChannel due to mismatched parameters.",[],0,chapter5_ipv4_routing,0.9,0.6005727204263492
+93,"A network engineer has configured a Layer 3 switch with SVIs for VLANs 4 and 5. Hosts in the subnets using VLANs 4 and 5 can ping each other with the Layer 3 switch routing the packets. The next week, the network engineer receives a call that those same users can no longer ping each other. If the problem is with the Layer 3 switching function, which of the following could have caused the problem? (Choose two answers.)","a. A shutdown command issued from VLAN 4 configuration mode
+b. VTP on the switch removing VLAN 5 from the switch’s VLAN list
+c. 1 out of 10 working VLAN 4 access ports failing due to physical problems
+d. A shutdown command issued from VLAN 6 configuration mode
+",,"a,b","a,c",,"Option a could have caused the problem if a shutdown command was issued from VLAN 4 configuration mode, which would bring down the SVI for VLAN 4, resulting in hosts in that VLAN not being able to communicate. Option c could also be a reason as if one out of ten working VLAN 4 access ports fails due to physical problems, connectivity for hosts in VLAN 4 will be affected, leading to communication issues.",[],0,chapter5_ipv4_routing,0.9,0.7515612225311903
+94,"Which of the given commands produces the following output?
+Output:
+""Global values:
+Internet Protocol routing is enabled
+Embedded-Service-Engine0/0 is administratively down, line
+protocol is down
+GigabitEthernet0/0 is up, line protocol is up
+Internet address is 158.16.1.1/24
+GigabitEthernet0/1 is administratively down, line protocol is
+down
+Serial0/0/0 is up, line protocol is up
+Internet address is 158.16.4.1/24
+Serial0/0/1 is administratively down, line protocol is down
+GigabitEthernet0/1/0 is up, line protocol is up
+Internet address is 158.16.1.1/24""","a. show interfaces
+b. show protocols
+c. show values
+d. show routing
+",,b,a,,"The correct command to produce the given output is 'show interfaces'. This command displays the status and configuration of all interfaces on the router, including their IP addresses, line protocol status, and administrative status.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/interface/command/ir-interfaces-cr-book/ir-s1.html'],0,chapter5_ipv4_routing,0.9,0.9454913467135653
+95,Which of the following commands lists the router’s entire routing table?,"a. show route
+b. show routing table
+c. show ip route
+d. show route table
+",,c,c,,"The correct command to list the router's entire routing table in Cisco IOS is 'show ip route'. This command displays the routing table entries, including directly connected networks, static routes, and dynamically learned routes.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter5_ipv4_routing,0.9,0.9999950382530095
+96,Which of the following commands lists detailed information about the route 156.10.2.0.,"a. show route 156.10.2.0
+b. show routing table 156.10.2.0
+c. show ip route 156.10.2.0
+d. show route table 156.10.2.0
+",,c,c,,"The correct command to use to list detailed information about a specific route, in this case, 156.10.2.0, is 'show ip route 156.10.2.0'. This command provides detailed information about the routing table entry for the specified network address.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html'],1,chapter5_ipv4_routing,0.9,0.9999889589149532
+97,The commands ping and traceroute send messages in the network to test connectivity and rely on other devices to send back a reply,"a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. Both the ping and traceroute commands are used to test network connectivity. Ping sends ICMP echo requests to the target device, which responds with an ICMP echo reply if reachable. Traceroute sends packets with increasing TTL values to trace the path to the destination and relies on devices along the path to send back ICMP time exceeded messages.",['https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13730-4.html'],1,chapter5_ipv4_routing,0.9,0.9999890781166442
+98,"A router lists the following partial output from the show ip route command. Out which interface will the router route packets destined to IP address 180.5.38.122? 10.0.0.0/8 is variably subnetted, 8 subnets, 5 masks
+O 180.5.38.100/32 [110/50] via 172.16.25.2, 00:00:04, GigabitEthernet0/0/0
+O 180.5.38.64/26 [110/100] via 172.16.25.129, 00:00:09, GigabitEthernet0/1/0
+O 180.5.37.0/23 [110/65] via 172.16.24.2, 00:00:04, Gigabit-Ethernet0/2/0
+O 180.5.38.96/27 [110/65] via 172.16.24.129, 00:00:09, GigabitEthernet0/3/0
+O 0.0.0.0/0 [110/129] via 172.16.25.129, 00:00:09, GigabitEthernet0/0/0","a. G0/3/0
+b. G0/2/0
+c. G0/1/0
+d. G0/0/0
+",,a,c,,"The router will route packets destined to IP address 180.5.38.122 via interface GigabitEthernet0/1/0 because the most specific match is the route for 180.5.38.64/26, which includes the destination IP address 180.5.38.122.",[],0,chapter5_ipv4_routing,0.9,0.7663165836821711
+99,"You are connected on a router R1, Which command will you type the command to connect to R2 using SSH. Login credentials in order to get access to R2. R2’s IP address: 145.167.2.1
+username: userexamsdigest
+password: passexamsdigest","a. ssh -l userexamsdigest 145.167.2.1
+passexamsdigest
+b. ssh -l userexamsdigest 145.167.2.2
+passexamsdigest
+c. ssh -l userexams 145.167.2.1
+passexamsdigest
+d. ssh -l userexamsdigest 145.167.2.1
+examsdigest
+",,a,d,,The correct command to connect to R2 using SSH is 'ssh -l userexamsdigest 145.167.2.1' followed by entering the password 'passexamsdigest'. The '-l' option is used to specify the username to log in with when connecting via SSH.,[],0,chapter5_ipv4_routing,0.95,0.9286560644282017
+101,You have been tasked to set the router’s IPv4 address and mask. What command will you type to complete the task?,"a. ip address [address mask]
+b. interface [address mask]
+c. set ip [address mask]
+d. add address [address mask]
+",,a,a,,The correct command to set the router's IPv4 address and mask is 'ip address [address mask]' when configuring an interface in Cisco IOS.,['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr/command/ipaddr-i1.html'],1,chapter5_ipv4_routing,0.95,0.9899421459454826
+102,"You have been tasked to list a single line of information about each interface, including the IP address, line and protocol status, and the method with which the address was configured. What command will you type to complete the task?","a. show ip protocol brief
+b. show ip addresses brief
+c. show ip interface brief
+d. show ip status brief
+",,c,c,,"The correct command to display a single line of information about each interface, including IP address, line and protocol status, and the method of address configuration, is 'show ip interface brief'. This command provides a concise overview of all interfaces on the device.",['https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/interface/command/ir-interfaces-cr-book/ir-i1.html'],1,chapter5_ipv4_routing,0.9,0.9999987335551019
+103,"After configuring a working router interface with IP address/mask 10.1.1.100/26, which of the following routes would you expect to see in the output of the show ip route command? (Choose two answers.)","a. A connected route for subnet 10.1.1.64 255.255.255.192
+b. A local route for host 10.1.1.64 255.255.255.255
+c. A local route for host 10.1.1.100 255.255.255.255
+d. A local route for host 10.1.1.100 255.255.255.192
+e. A connected route for subnet 10.1.1.0 255.255.255.0
+",,"a,c","a,e",,"The router interface with IP address/mask 10.1.1.100/26 belongs to the subnet 10.1.1.64/26. Therefore, you would expect to see a connected route for subnet 10.1.1.64 255.255.255.192 (option a) in the output of the 'show ip route' command. Additionally, since the interface configuration includes IP address 10.1.1.100, which is part of the subnet 10.1.1.0/26, you would also expect to see a connected route for subnet 10.1.1.0 255.255.255.0 (option e) in the routing table.",[],0,chapter5_ipv4_routing,0.9,0.9990664876739896
+104,What command will you type to enable a switch's interface to be a routed interface instead of a switched interface,"a. routed interface
+b. enable interface
+c. no switch interface
+d. no switchport
+",,d,d,,"The correct command to enable a switch's interface to be a routed interface instead of a switched interface is 'no switchport'. This command removes the Layer 2 switching capabilities from the interface, effectively turning it into a Layer 3 routed interface.",['https://www.cisco.com/c/en/us/support/docs/lan-switching/inter-vlan-routing/41860-howto-Layer3-intervlanrouting.html'],1,chapter5_ipv4_routing,0.95,0.9999996871837189
+105,You are responsible to configure a static route for the network 156.187.45.0/24 using the IP address 156.187.80.45 as the next-hop IP. Which command will you type to meet the requirement?,"a. ip route 156.187.45.0 255.255.0.0 156.187.80.45
+b. ip route 156.187.45.0 255.255.255.0 156.187.80.46
+c. ip route 156.187.0.0 255.255.255.0 156.187.80.45
+d. ip route 156.187.45.0 255.255.255.0 156.187.80.45
+",,d,d,,"The correct command to configure a static route for the network 156.187.45.0/24 using the next-hop IP address 156.187.80.45 is 'ip route 156.187.45.0 255.255.255.0 156.187.80.45'. This command specifies the destination network, subnet mask, and the next-hop IP address.",[],1,chapter5_ipv4_routing,0.9,0.9997788456082386

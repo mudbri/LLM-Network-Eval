@@ -1,0 +1,90 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+106,"The senior network engineer typed the following commands on the R1.
+""R1# conf t
+Enter configuration commands, one per line. End with CNTL/Z.
+R1(config)# interface g0/0/0
+R1(config-if)# ip ospf cost 6
+R1(config-if)# interface g0/1/0
+R1(config-if)# ip ospf cost 7
+R1(config-if)# ^Z""
+What command will you type in order to confirm the OSPF interface costs?","a. show ip ospf
+b. show ip ospf interface brief
+c. show ospf brief
+d. show ospf interface brief
+",,b,b,,"To confirm the OSPF interface costs configured on the router interfaces, the correct command to use is 'show ip ospf interface brief'. This command provides a concise summary of OSPF-related information for each interface, including the OSPF cost values assigned.","['Cisco CCNA Official Cert Guide, Wendell Odom', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/ospf-s1.html#wp2367682220']",1,chapter6_ospf_routing_protocol,0.95,1
+108,You have been tasked to list the OSPF neighbors off interface serial 1/0. Which command will you type to complete the task?,"a. show ip ospf neighbor serial 0/1
+b. show ip ospf neighbor serial 1/0
+c. show ip ospf neighbor fastethernet 0/1
+d. show ip ospf serial 0/1
+",,b,b,,"To list the OSPF neighbors off a specific interface, you use the command 'show ip ospf neighbor [interface]'. In this case, the correct interface is serial 1/0, so the full command would be 'show ip ospf neighbor serial 1/0'.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 8: OSPF', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/iro-s2.html#wp3989992760']",1,chapter6_ospf_routing_protocol,0.95,1
+109,"The routing protocol that was designed and intended
+for use between different autonomous systems is called
+____________________________.","a. interior gateway protocol
+b. different gateway protocol
+c. autonomous gateway protocol
+d. exterior gateway protocol
+",,d,d,,"Exterior Gateway Protocol (EGP) is the routing protocol designed for use between different autonomous systems. It allows routers in different autonomous systems to exchange routing information. Interior Gateway Protocols (IGPs) like OSPF and EIGRP are used within a single autonomous system, while EGPs like BGP are used between autonomous systems.","['Cisco CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 16: IP Routing in the LAN', 'CCNA Routing and Switching Complete Study Guide: Exam 100-105, Exam 200-105, Exam 200-125, 2nd Edition, Todd Lammle, Chapter 8: Routing Protocols']",1,chapter6_ospf_routing_protocol,0.95,1
+110,"Given the following OSPF network commands,
+type the wildcard masks to match the requirement.
+Requirement: Match addresses that begin with 110.20
+Command: network 110.20.0.0 {wildcard mask}
+Which of the following wildcard mask will you use to meet the
+requirement?","a. 0.0.255.255
+b. 0.0.0.255
+c. 0.255.255.255
+d. 0.0.0.0
+",,a,a,,"To match all addresses that begin with 110.20, the wildcard mask should be 0.0.255.255. This mask allows any value in the third and fourth octets, while fixing the first two octets to 110.20. The other options are incorrect because they either allow too much variation (like 0.255.255.255 which would match any address starting with 110) or are too restrictive (like 0.0.0.0 which would only match 110.20.0.0 exactly).","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 20: OSPF Concepts and Configuration', 'https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13692-17.html']",1,chapter6_ospf_routing_protocol,0.95,1
+111,"Which of the following commands produces the output below?
+""Codes: L – local, C – connected, S – static, R – RIP, M – mobile, B – BGP
+D – EIGRP, EX – EIGRP external, O – OSPF, IA – OSPF inter area
+N1 – OSPF NSSA external type 1, N2 – OSPF NSSA external type 2
+E1 – OSPF external type 1, E2 – OSPF external type 2
+
+! Additional lines omitted for brevity
+
+Gateway of last resort is not set
+10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+O 10.1.1.0/24 [110/2] via 10.1.14.1, 00:19:24, GigabitEthernet0/0/0
+O 10.1.2.0/24 [110/2] via 10.1.14.1, 00:19:24, GigabitEthernet0/0/0
+C 10.1.4.0/24 is directly connected, Vlan3
+L 10.1.4.4/32 is directly connected, Vlan3
+O 10.1.12.0/24 [110/2] via 10.1.14.1, 00:17:24, GigabitEthernet0/0/0
+O 10.1.13.0/24 [110/2] via 10.1.14.1, 00:14:15, GigabitEthernet0/0/0
+C 10.1.14.0/24 is directly connected, GigabitEthernet0/0/0
+L 10.1.14.4/32 is directly connected, GigabitEthernet0/0/0
+O 10.1.23.0/24 [110/3] via 10.1.14.1, 00:15:35, GigabitEthernet0/0/0""","a. show ip codes
+b. show ip route
+c. show ip interfaces
+d. show ip connected
+",,b,b,,"The output shown is from the 'show ip route' command. This command displays the IP routing table of the device, listing all known routes and their sources. The codes at the top indicate the origin of each route, such as OSPF (O), connected (C), or local (L). The output also shows specific route entries with their administrative distance, metric, outgoing interface, and next hop information.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 16: IP Routing in the LAN', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_pi/command/iri-cr-book/iri-cr-s1.html#wp3935158760']",1,chapter6_ospf_routing_protocol,0.95,1
+112,"Routing protocol is a set of rules, and algorithms used by routers for the overall purpose of learning routes. This process includes the exchange and analysis of routing information.","a. TRUE
+b. FALSE
+",,a,a,,The statement is true. Routing protocols are indeed a set of rules and algorithms used by routers to learn routes to various networks. This process involves exchanging routing information between routers and analyzing that information to determine the best paths to each network destination.,"['Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'CCNA Routing and Switching Complete Study Guide: Exam 100-105, Exam 200-105, Exam 200-125 by Todd Lammle']",1,chapter6_ospf_routing_protocol,0.95,1
+113,"Routed protocol is a protocol that defines a packet structure and logical addressing, allowing routers to forward or route the packets.","a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. A routed protocol defines a packet structure and logical addressing scheme that allows routers to forward packets based on the information contained within the packet headers. Examples of routed protocols include IP (Internet Protocol), IPX (Internetwork Packet Exchange), and AppleTalk.","['CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom, Chapter 3: Fundamentals of LANs and Ethernet LANs', 'Cisco Networking Academy: Introduction to Networks v7.0 (ITN), Module 2: Basic Switching and End Device Configuration']",1,chapter6_ospf_routing_protocol,0.95,1
+114,"Which of the following network commands following the command router ospf 1, tells the router to start using OSPF on interfaces whose IP addresses are 20.1.20.1, 20.1.30.1, and 20.1.40.1?","a. network 20.0.0.1 0.0.255.255 area 0
+b. network 20.0.0.1 0.0.0.255 area 0
+c. network 20.0.0.0 255.0.0.0 area 0
+d. network 20.0.0.0 0.255.255.255 area 0
+",,d,d,,"The correct command is 'network 20.0.0.0 0.255.255.255 area 0'. This command tells the router to start using OSPF on interfaces whose IP addresses match the network 20.0.0.0 with a wildcard mask of 0.255.255.255. The wildcard mask 0.255.255.255 matches any IP address that starts with 20, which includes 20.1.20.1, 20.1.30.1, and 20.1.40.1.","['Cisco CCNA Official Cert Guide, Chapter 20: OSPF', 'https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/7039-1.html']",1,chapter6_ospf_routing_protocol,0.95,1
+117,You have been task to list the interfaces on which the OSPF protocol is enabled. Which of the following command will you type?,"a. show ip ospf brief
+b. show ip ospf interface brief
+c. show ip interface brief
+d. show ospf interface brief
+",,b,b,,"The correct command to list the interfaces on which the OSPF protocol is enabled is 'show ip ospf interface brief'. This command provides a concise overview of OSPF-enabled interfaces, including their OSPF area, cost, state, and other relevant information.","['Cisco CCNA Official Cert Guide, Wendell Odom, Cisco Press', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/iproute_ospf/command/iro-cr-book/ospf-s1.html#wp2367674640']",1,chapter6_ospf_routing_protocol,0.95,1
+118,A network engineer connects routers R5 and R6 to the same Ethernet LAN and configures them to use OSPFv2. Which answers describe a combination of settings that would prevent the two routers from becoming OSPF neighbors?,"a. Both routers’ interface IP addresses are in the same subnet
+b. Both routers’ OSPF process uses process ID 3
+c. Both routers’ OSPF process uses router ID 42.42.42.42
+d. Both routers’ interfaces use an OSPF Dead interval of 80
+",,c,c,,"If two OSPF routers are configured with the same router ID (e.g., 42.42.42.42), they will not be able to form an OSPF neighbor relationship. Each OSPF router must have a unique router ID within the OSPF domain. The other options would not prevent the routers from becoming OSPF neighbors: (a) Having interface IP addresses in the same subnet is required for neighbor formation on the same link. (b) Using the same OSPF process ID on different routers does not impact neighbor formation. (d) Using the same OSPF dead interval value on both routers is normal and does not prevent neighbor formation.","['CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 20: OSPF Concepts and Configuration', 'https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13685-13.html']",1,chapter6_ospf_routing_protocol,0.95,1
+119,Which of the following terms described as an OSPF router with interfaces connected to the backbone area and to at least one other area?,"a. Backbone area
+b. Internal router
+c. Backbone router
+d. Area Border Router
+",,d,d,,An Area Border Router (ABR) is an OSPF router that has interfaces connected to the backbone area (Area 0) and at least one other non-backbone area. The ABR maintains separate link-state databases for each area it is connected to and performs routing information exchange between these areas.,"['Cisco CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 20: OSPF Concepts and Configuration', 'OSPF Design Guide, Cisco, https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/7039-1.html']",1,chapter6_ospf_routing_protocol,0.95,1
+120,Which of the following route types has 110 as default Administrative Distance (AD)?,"a. IGRP
+b. OSPF
+c. RIP
+d. IS-IS
+",,b,a,,"IGRP (Interior Gateway Routing Protocol) has a default administrative distance (AD) of 100, which is the closest to the value of 110 mentioned in the question. OSPF has a default AD of 110, RIP has a default AD of 120, and IS-IS has a default AD of 115.","['Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 16: IP Routing Essentials)', 'https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html']",0,chapter6_ospf_routing_protocol,0.9,1

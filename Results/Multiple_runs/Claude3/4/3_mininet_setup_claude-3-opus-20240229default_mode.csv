@@ -1,0 +1,15 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+16,Which of the following command is used to generate an OpenFlow network topology consisting of a single switch and 8 hosts with randomly generated MAC addresses for each host?,"a. sudo mn --topo single,8  --switch ovsk --controller remote
+b. sudo mn --topo single,3 --mac --switch ovsk --controller remote
+c. sudo mn --topo single,8 --mac --switch ovsk --controller remote
+d. sudo mn --topo linear,8  --switch ovsk --controller remote
+",,a,c,,"The correct command to generate an OpenFlow network topology with a single switch and 8 hosts, each with randomly generated MAC addresses, is: sudo mn --topo single,8 --mac --switch ovsk --controller remote. The '--topo single,8' specifies a single switch connected to 8 hosts. The '--mac' flag enables randomly generated MAC addresses for each host. The '--switch ovsk' specifies using Open vSwitch, and '--controller remote' indicates using a remote controller.","['Mininet Walkthrough - https://github.com/mininet/mininet/wiki/Walkthrough', 'Introduction to Mininet - https://github.com/mininet/mininet/wiki/Introduction-to-Mininet']",0,3_mininet_setup,0.95,1
+17,What is the purpose of --mac flag used in mininet?,"a. Generates random MAC addresses for the hosts.
+b. Generates sequential MAC addresses for the hosts, matching their IP address.
+c. Generates sequential MAC addresses for the switch ports, matching their IP address.
+d. Generates random MAC addresses for the switch ports.
+",,b,b,,"The --mac flag in Mininet is used to generate sequential MAC addresses for the hosts, matching their IP addresses. This means that each host will have a MAC address that corresponds to its assigned IP address in a predictable way. For example, a host with IP 10.0.0.1 might have a MAC like 00:00:00:00:00:01. This can be useful for testing and debugging purposes to easily identify hosts by their MAC.","['Mininet Documentation: https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#mac-address-assignment', 'SDN Hub Mininet FAQ: https://sdnhub.org/tutorials/mininet/mininet-faq/']",1,3_mininet_setup,0.95,1
+20,"What is the purpose of dpctl, provided with mininet?","a. To enable visibility and control over a single switch’s flow table.
+b. To enable visibility and control over multiple switch flow table.
+c. Is an OpenFlow controller.
+",,a,a,,"The purpose of dpctl, provided with Mininet, is to enable visibility and control over a single switch's flow table. It allows interacting with the flow table of an individual OpenFlow switch, such as adding, modifying, or deleting flow entries. While it provides control, it is limited to a single switch at a time and is not a full-fledged OpenFlow controller that can manage multiple switches.","['Mininet documentation: http://mininet.org/walkthrough/#dpctl-commands', 'OpenFlow Switch Specification: https://opennetworking.org/wp-content/uploads/2014/10/openflow-switch-v1.5.1.pdf']",1,3_mininet_setup,0.9,1

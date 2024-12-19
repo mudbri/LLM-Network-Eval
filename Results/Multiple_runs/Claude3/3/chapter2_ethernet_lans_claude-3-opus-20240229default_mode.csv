@@ -1,0 +1,135 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+21,Which of the following commands checks the status of the interfaces?,"a. show interface
+b. show status
+c. show interface status
+d. show status interface
+",,c,c,,"The command 'show interface status' is used to check the status of interfaces on a Cisco device. It provides a summary of the interfaces, their status (up/down), duplex mode, and speed. The other options are incorrect or not valid Cisco IOS commands.","['Cisco IOS Interface and Hardware Component Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/interface/command/ir-cr-book/ir-s4.html#wp3893078720', 'Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,chapter2_ethernet_lans,0.95,1
+22,You are in console line configuration mode. Which of the following commands would place you in enable mode?,"a. end
+b. back
+c. enable
+d. change
+",,a,a,,"The 'end' command is used to exit configuration mode and return to privileged EXEC mode (enable mode) from any configuration mode, including console line configuration mode. The other options are incorrect: 'back' is not a valid command, 'enable' is used to enter privileged EXEC mode from user EXEC mode, and 'change' is not a valid command in this context.","['Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom (Chapter 6: Using the Command-Line Interface)', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.html']",1,chapter2_ethernet_lans,0.95,1
+23,Which of the following commands copies the configuration from RAM into NVRAM,"a. copy running-config startup-config
+b. copy startup-config running-config
+c. copy ram nvram
+d. copy nvram ram
+",,a,a,,"The command 'copy running-config startup-config' is used to copy the current running configuration, which is stored in RAM, to the startup configuration stored in NVRAM. This ensures that the changes made to the running configuration are saved and will be loaded when the device reboots.","['Cisco Networking Academy: CCNA Routing and Switching Essentials v6.0 - Chapter 2: Basic Switching Concepts and Configuration', 'Cisco IOS Configuration Fundamentals Command Reference: copy running-config startup-config']",1,chapter2_ethernet_lans,0.95,1
+24,"The command that configures the switch as a DHCP client to discover its IPv4 address, mask, and default gateway is ip address dhcp.","a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. The 'ip address dhcp' interface configuration command enables a Cisco switch to act as a DHCP client. This allows the switch to automatically obtain its IPv4 address, subnet mask, and default gateway from a DHCP server on the network. Using DHCP simplifies IP address management for network devices.","['Cisco Networking Academy, CCNA 200-301 Official Cert Guide, Volume 1, Chapter 8: Configuring Basic Switch Management', 'Cisco IOS Network Management Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr/command/ipaddr-cr-book/ipaddr-i1.html#wp3989098100']",1,chapter2_ethernet_lans,0.95,1
+25,In which of the following modes of the CLI could you configure the duplex setting for interface Fast Ethernet 0/2?,"a. Global configuration mode
+b. Enable mode
+c. Interface configuration mode
+d. VLAN mode
+",,c,c,,"The duplex setting for a specific interface, such as Fast Ethernet 0/2, can be configured in interface configuration mode. To enter interface configuration mode, you first enter global configuration mode using the 'configure terminal' command, and then specify the interface using the 'interface' command followed by the interface identifier (e.g., 'interface FastEthernet 0/2'). Once in interface configuration mode, you can use the 'duplex' command to set the duplex mode for that specific interface.","['Cisco CCNA 200-301 Official Cert Guide, Volume 1, Chapter 6: Configuring Switch Interfaces', 'Cisco IOS Interface Configuration Guide, Release 15.2M&T: Configuring LAN Interfaces']",1,chapter2_ethernet_lans,0.95,1
+26,Which of the following commands administratively enables an interface,"a. shutdown
+b. no shutdown
+c. enable interface
+d. interface enable
+",,b,b,,"The 'no shutdown' command is used to administratively enable an interface on Cisco devices. The 'shutdown' command disables the interface, while 'enable interface' and 'interface enable' are not valid Cisco IOS commands.","['Cisco IOS Interface Configuration Guide, Release 12.4 - Configuring a Range of Interfaces: https://www.cisco.com/c/en/us/td/docs/ios/12_4/interface/configuration/guide/inb_ir.html', 'Cisco IOS Interface and Hardware Component Command Reference - shutdown (interface): https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/interface/command/ir-cr-book/ir-s2.html#wp3850917116']",1,chapter2_ethernet_lans,0.95,1
+27,"Switches use STP to prevent loops by causing some interfaces to block, meaning that they do not send or receive frames.","a. TRUE
+b. FALSE
+",,a,a,,"The statement is true. Switches use the Spanning Tree Protocol (STP) to logically block ports and prevent switching loops in a network with redundant paths. By blocking certain ports, STP ensures that there is only one active path between any two network devices, thus eliminating the possibility of broadcast storms or duplicate frames caused by loops.","['Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/5234-5.html']",1,chapter2_ethernet_lans,0.95,1
+28,A Layer 2 switch configuration places all its physical ports into VLAN 2. The IP addressing plan shows that address 175.28.1.150 (with mask 255.255.255.0) is reserved for use by this new LAN switch and that 175.28.1.254 is already configured on the router connected to that same VLAN. The switch needs to support SSH connections into the switch from any subnet in the network. Which of the following commands are part of the required configuration in this case? (Choose two answers.),"a. The switch cannot support SSH because all its ports connect to VLAN 2, and the IP address must be configured on interface VLAN 1.
+b. The ip address 175.28.1.150 255.255.255.0 command in interface vlan 2 configuration mode.
+c. The ip default-gateway 175.28.1.254 command in global configuration mode.
+d. The ip address 172.16.2.250 255.255.255.0 command in interface vlan 1 configuration mode.
+e. The ip default-gateway 175.28.1.150 command in global configuration mode.
+",,"b,c","b,c",,"To configure the Layer 2 switch with the given IP address and enable SSH access, the switch needs an IP address on the VLAN interface corresponding to the VLAN where all ports are assigned (VLAN 2 in this case). This is done with the 'ip address 175.28.1.150 255.255.255.0' command in interface vlan 2 configuration mode. Additionally, the switch needs a default gateway configured to reach other subnets, which is set with the 'ip default-gateway 175.28.1.254' command in global configuration mode, using the router's IP address in that VLAN.","['Cisco CCNA 200-301 Official Cert Guide, Wendell Odom, Chapter 8: Configuring Basic Switch Management', 'https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/15-2_2_e/configuration/guide/b_1522e_2960_2960c_2960s_2960sf_2960p_cg/b_1522e_2960_2960c_2960s_2960sf_2960p_cg_chapter_0100.html']",1,chapter2_ethernet_lans,0.95,1
+29,Which of the following commands lists the content of the startup-config (initial config) file.,"a. show startup-config
+b. show initial-config
+c. show content-config
+d. show file-config
+",,a,a,,The 'show startup-config' command is used to display the contents of the startup configuration file on Cisco devices. This file contains the initial configuration that is loaded when the device boots up. The other options listed are not valid Cisco IOS commands for viewing the startup configuration.,"['Cisco IOS Configuration Fundamentals Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.html', 'Cisco IOS Configuration Fundamentals Configuration Guide: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/configuration/15mt/fundamentals-15-mt-book.html']",1,chapter2_ethernet_lans,0.95,1
+30,You want to configure the console password with password examsdigest. Which of the following commands will you type to meet the requirement?,"a. Examsdigest#(config)# line console 0
+Examsdigest#(config-line)# password examsdigest
+Examsdigest#(config-line)# login
+Examsdigest#(config-line)# exit
+b. Examsdigest#(config)# enable secret examsdigest
+c. Examsdigest#(config)# enable console examsdigest
+d. Examsdigest#(config)# live vty 0 15
+Examsdigest#(config-line)# password examsdigest
+Examsdigest#(config-line)# login
+Examsdigest#(config-line)# end
+",,a,a,,"To configure the console password on a Cisco device, you need to enter line configuration mode for the console line (line console 0), set the password using the 'password' command followed by the desired password, and enable password checking with the 'login' command. The sequence of commands shown in option A correctly follows these steps.","['Cisco CCNA Official Cert Guide, Chapter 6: Console and vty access configuration', 'https://www.cisco.com/c/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/200529-Configure-the-console-line-password-on-a.html']",1,chapter2_ethernet_lans,0.95,1
+31,You want to configure the telnet password for all vty lines with password examsdigest. Which of the following commands will you type to meet the requirement?,"a. Examsdigest#(config)# line console 0
+Examsdigest#(config-line)# password examsdigest
+Examsdigest#(config-line)# login
+Examsdigest#(config-line)# exit
+b. Examsdigest#(config)# enable secret examsdigest
+c. Examsdigest#(config)# enable console examsdigest
+d. Examsdigest#(config)# live vty 0 15
+Examsdigest#(config-line)# password examsdigest
+Examsdigest#(config-line)# login
+Examsdigest#(config-line)# end
+",,d,d,,"To configure the telnet password for all vty lines, you need to enter line configuration mode for vty lines 0 through 15 using the 'line vty 0 15' command. Then set the password with the 'password examsdigest' command and require login with the 'login' command. Finally, end the line configuration with the 'end' command to return to privileged EXEC mode.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 6: Configuring Passwords and User Access', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.html']",1,chapter2_ethernet_lans,0.95,1
+32,Which of the following type of memory is used to store the configuration used by the switch when it is up and running?,"a. ROM
+b. RAM
+c. NVRAM
+d. Flash
+",,b,b,,"RAM (Random Access Memory) is used to store the running configuration of a switch while it is powered on and operating. The running configuration is the current active configuration that the switch uses for its operation. When changes are made to the switch configuration, they are stored in RAM. However, the contents of RAM are volatile and lost when the switch is powered off or restarted, which is why the startup configuration stored in NVRAM is used to initialize the switch upon boot.","['Cisco Networking Academy: Introduction to Networks v7.0 - Chapter 2: Basic Switching Concepts and Configuration', 'Cisco Press: CCNA 200-301 Official Cert Guide, Volume 1 - Chapter 6: Configuring Basic Switch Management']",1,chapter2_ethernet_lans,0.95,1
+33,"You have been tasked to configure the IPv4 address on the switch only on the VLAN 1 following the details below.
+Configuration details:
+IP address: 199.255.240.100
+Subnet mask: 255.255.255.0
+Default gateway: 199.255.240.1
+Which of the following commands will you type to complete the task?","a. Examsdigest#(config)# interface vlan 1
+Examsdigest#(config-line)# ip address 199.255.240.100 255.255.255.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+b. Examsdigest#(config)# interface vlan 1
+Examsdigest#(config-line)# ip address 199.255.241.100 255.255.255.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+c. Examsdigest#(config)# interface vlan 1
+Examsdigest#(config-line)# ip address 199.255.240.100 255.255.0.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+d. Examsdigest#(config)# interface vlan 11
+Examsdigest#(config-line)# ip address 199.255.240.100 255.255.255.0
+Examsdigest#(config-line)# no shutdown
+Examsdigest#(config-line)# end
+Examsdigest#(config)# ip default-gateway 199.255.240.1
+",,a,a,,"Option 'a' provides the correct commands to configure the IPv4 address on the switch for VLAN 1 based on the given configuration details. It enters the VLAN 1 interface configuration mode, sets the correct IP address and subnet mask, enables the interface with 'no shutdown', exits back to global configuration mode, and sets the correct default gateway.","['Cisco CCNA Official Cert Guide, Wendell Odom, Chapter 11: Implementing Ethernet Virtual LANs', 'https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/15-2_2_e/configuration/guide/b_1522e_2960_2960c_2960s_2960sf_2960p_cg/b_1522e_2960_2960c_2960s_2960sf_2960p_cg_chapter_0101.html']",1,chapter2_ethernet_lans,0.95,1
+34,Which of the following configuration commands defines the password that all users must use to reach enable mode?,"a. enable secret “type password“
+b. enable “type password“
+c. secret “type password“
+d. secret enable “type password“
+",,a,a,,"The 'enable secret' command sets the password that is required for users to enter privileged EXEC (enable) mode on Cisco IOS devices. The password is stored in an encrypted format using a strong hashing algorithm. The correct syntax is 'enable secret password', where 'password' is the actual password string.","['Cisco IOS Security Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-e1.html#wp3936110280', 'Cisco CCNA 200-301 Official Cert Guide, Volume 1, Chapter 6: Securing Network Devices']",1,chapter2_ethernet_lans,0.95,1
+35,"Which of the following command will you type to produce the output below?
+""Vlan1 is up, line protocol is up
+Hardware is EtherSVI, address is 0023.e21b.4cc0 (bia 0023.e21b.4cc0)
+Internet address is 192.168.1.101/24
+MTU 1500 bytes, BW 1000000 Kbit, DLY 10 usec, reliability 255/255, txload 1/255, rxload 1/255""","a. show interfaces vlans
+b. show interfaces
+c. show interfaces vlan 1
+d. show vlan 1
+",,c,c,,"The command 'show interfaces vlan 1' is the correct choice to produce the given output. This command displays detailed information about the specified VLAN interface, including its status, hardware type, MAC address, IP address, MTU, bandwidth, delay, reliability, and load. The other options are either incorrect or do not exist as valid Cisco IOS commands.","['Cisco IOS Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/interface/command/ir-cr-book/ir-s4.html#wp3592423220', 'Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,chapter2_ethernet_lans,0.95,1
+36,NVRAM stores the initial or startup configuration file that is used when the switch is first powered on and when the switch is reloaded.,"a. TRUE
+b. FALSE
+",,a,a,,"NVRAM (Non-Volatile Random Access Memory) is a type of memory that retains its contents even when the device is powered off. In Cisco switches, NVRAM is used to store the startup configuration file. This file contains the initial configuration settings that are loaded when the switch boots up or is reloaded. Therefore, the statement is true.","['Cisco Networking Academy: Introduction to Networks v7.0 (ITN)', 'Cisco Press: CCNA 200-301 Official Cert Guide, Volume 1']",1,chapter2_ethernet_lans,0.95,1
+37,Which of the following commands will you type to configure the interface VLAN 5 of the switch to learn the IP address with DHCP?,"a. configure terminal
+interface vlan 5
+no shutdown
+b. configure terminal
+interface vlan 5
+ip address dhcp
+no shutdown
+c. configure terminal
+native vlan dhcp
+ip address dhcp
+d. configure terminal
+interface vlan 5
+ip address dhcp
+",,b,b,,"To configure the interface VLAN 5 of the switch to learn the IP address with DHCP, you need to enter the following commands in sequence:1. 'configure terminal' to enter global configuration mode2. 'interface vlan 5' to enter the VLAN 5 interface configuration mode3. 'ip address dhcp' to configure the VLAN interface to obtain an IP address via DHCP4. 'no shutdown' to enable the VLAN interfaceTherefore, option b contains the correct and complete sequence of commands.","['Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960/software/release/12-2_55_se/configuration/guide/scg_2960/swdhcp82.html']",1,chapter2_ethernet_lans,0.95,1
+38,The running (active) configuration file is stored in the Flash Memory.,"a. TRUE
+b. FALSE
+",,b,b,,"The running configuration file is stored in RAM (Random Access Memory), not in Flash Memory. RAM is volatile memory that loses its contents when the device is powered off. In contrast, the startup configuration file, which is loaded when the device boots up, is stored in non-volatile memory such as NVRAM (Non-Volatile RAM) or Flash Memory.","['Cisco CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom', 'https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-software-releases-121-mainline/12778-50.html']",1,chapter2_ethernet_lans,0.95,1
+39,Which of the following Cisco IOS Software Command Help lists commands that start with int?,"a. int<Tab>
+b. int ?
+c. ?
+d. int?
+",,d,b,,"The command 'int ?' will list all the commands in Cisco IOS that start with 'int'. The '?' character is used to get help or a list of available commands that match the text before the '?'. The <Tab> key is used for command completion, not listing commands. The '?' by itself will list all available commands, not just those starting with 'int'. And 'int?' is not a valid command for listing commands starting with 'int'.","['Cisco IOS Command Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fundamentals/command/Cisco_IOS_Configuration_Fundamentals_Command_Reference.html', 'Cisco IOS Configuration Fundamentals Command Reference: https://www.cisco.com/c/en/us/td/docs/ios/fundamentals/command/reference/cf_book.html']",0,chapter2_ethernet_lans,0.95,1

@@ -1,0 +1,47 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+87,Which of the following reasons make programming OpenFlow switches difficult? Select all that apply.,"a. An OpenFlow controller only sees events for packets that the switches do not know how to handle.
+b. OpenFlow networks require a single, centralized network controller.
+c. Networks often have switches from multiple hardware vendors.
+d. OpenFlow switches control switches at a low level of abstraction.
+e. Network policies involve many independent tasks that may have conflicting behaviors.
+",,"a,d,e","a,c,d,e",,"Programming OpenFlow switches can be challenging due to various reasons. 
+- Option a is correct because OpenFlow switches only send events to the controller for packets they cannot handle locally, making it harder to have a complete view of the network. 
+- Option c is correct as networks often consist of switches from different vendors, which can lead to interoperability issues. 
+- Option d is valid because OpenFlow switches operate at a low level of abstraction, requiring detailed control and management. 
+- Option e is accurate as network policies involve numerous independent tasks that may conflict, making it complex to ensure consistency and avoid conflicts.",[],0,12_programming_SDNs,0.9,0.4679484196074041
+89,"Suppose that a network operator wants to express a policy that drops all traffic except for traffic from a specific IP prefix (i.e., group of IP addresses).  What problems exist with expressing this policy as a set of OpenFlow rules? Select all that apply.","a. Switches have limited room for flow table entries and cannot store rules for all IP addresses in a prefix by default.
+b. The controller may see more than the first packet for a flow that it has already installed.
+c. If the controller installs the rules in the wrong order, all traffic might be dropped, instead of allowing the permitted traffic.
+d. If the operator starts adding more IP addresses that are permitted to send traffic, performance of the switch might suffer as the number of entries in the switch table grows.
+e. Flow table entries can only perform exact matches on IP addresses, so installing rules that operate on groups of IP addresses will take many flow-table entries in the switch.
+",,"a,b,c,d","a,d,e",,"a. Switches have limited room for flow table entries, so storing rules for all IP addresses in a prefix may not be feasible due to space constraints. d. As more IP addresses are added to the permitted list, the switch table grows, potentially affecting switch performance. e. Flow table entries in OpenFlow can only perform exact matches on IP addresses, making it challenging to express policies for groups of IP addresses efficiently.",[],0,12_programming_SDNs,0.9,0.9872293474324675
+90,Which of the following have examples of sequential composition? Select all that apply.,"a. Block all port 80 traffic and count the number of packets that are blocked.
+b. Load balance traffic based on whether the traffic matches a particular destination IP prefix.
+c. Block all traffic except port 80 and count the number of packets that are blocked.
+d. Block all traffic except port 80 traffic, and load balance port 80 traffic across three destination IP addresses.
+e. Block all traffic except port 80 and count the number of packets that are not blocked.
+",,"b,d,e","c,e",,"Options c and e involve sequential composition. In option c, the first action is to block all traffic except port 80, followed by counting the number of packets that are blocked. In option e, the first action is to block all traffic except port 80, followed by counting the number of packets that are not blocked.",[],0,12_programming_SDNs,0.9,0.6361889944504577
+91,Which of the following have examples of parallel composition? Select all that apply.,"a. Perform load balancing on any traffic that arrives from prefix 130.207.0.0/16 or is destined to port 80.
+b. Perform MAC learning on all traffic that is not blocked by a firewall rule.
+c. Count all port 80 traffic.
+d. Block all traffic whose source IP address is contained in a list of blocked IP addresses.
+e. Load balance traffic across multiple destination IP addresses and perform routing to the resulting destination IP addresses.
+",,"a,c,d","a,e",,"Options a and e involve examples of parallel composition. In option a, the load balancing is performed on traffic arriving from a specific prefix or destined to a specific port, which can be done in parallel. In option e, the traffic is load balanced across multiple destination IP addresses and then routed accordingly, demonstrating parallel processing.",[],0,12_programming_SDNs,0.9,0.9806359811932367
+92,Which of the following is the appropriate Pyretic rule for matching traffic that sends packets from either 10.0.0.1 or 10.0.0.2 to IP address 1.2.3.4?,"a. (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+b. (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) + mod(dstip=1.2.3.4)
+c. (match(srcip=10.0.0.1) + match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)
+d. (match(srcip=10.0.0.1) >> (match(srcip=10.0.0.2) >> mod(dstip=1.2.3.4))
+e. (match(srcip=10.0.0.1) >> match(srcip=10.0.0.2)) >> mod(dstip=1.2.3.4)
+",,c,c,,"The correct option is c. This rule first matches packets with source IP address 10.0.0.1 or 10.0.0.2 and then modifies the destination IP address to 1.2.3.4. The use of '+' in Pyretic represents logical OR, and '>>' represents logical AND in matching rules.",['https://frenetic-lang.github.io/pyretic/api.html'],1,12_programming_SDNs,0.9,0.835005021814721
+93,Which of the following is the appropiate Pyretic rule for sending traffic from source IP address 10.0.0.1 to destination IP address 10.1.2.3 and traffic from source IP address 10.0.0.2 to destination IP address 10.2.3.4?,"a. (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2)  + mod(dstip=10.2.3.4))
+b. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) + (match(srcip=10.0.0.2) >> mod(dstip=10.2.3.4))
+c. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) >>mod(dstip=10.2.3.4))
+d. (match(srcip=10.0.0.1) + mod(dstip=10.1.2.3)) >> (match(srcip=10.0.0.2) + mod(dstip=10.2.3.4))
+e. (match(srcip=10.0.0.1) >> mod(dstip=10.1.2.3)) & (match(srcip=10.0.0.2)  >> mod(dstip=10.2.3.4))
+",,b,b,,The correct Pyretic rule for sending traffic from source IP address 10.0.0.1 to destination IP address 10.1.2.3 and traffic from source IP address 10.0.0.2 to destination IP address 10.2.3.4 is to use the >> operator to chain the match and mod functions for each pair of IP addresses. Option b correctly follows this logic.,[],1,12_programming_SDNs,0.9,0.8947009326613427
+94,Which of the following might be examples that would use a dynamic policy in Pyretic? Select all that apply.,"a. Check each new traffic flow against a list of permitted and prohibited source IP addresses that may change over time.
+b. Drop all traffic arriving from source IP addresses in prefix 10.0.0.0/8.
+c. Assign each new traffic flow to a different destination IP address based on a round-robin load balancing policy across servers.
+d. Count all traffic arriving from source IP addresses in prefix 10.0.0.0/8.
+e. Forward traffic through the network based on shortest paths routing, re-routing traffic appropriately when links or nodes fail.
+",,"a,c,e","a,c",,"Dynamic policy in Pyretic involves making decisions based on changing conditions or criteria. Option a involves checking traffic against a list that may change over time, which requires dynamic policy management. Option c describes load balancing based on a round-robin policy, which is a dynamic decision-making process.",[],0,12_programming_SDNs,0.9,0.9999369136390283

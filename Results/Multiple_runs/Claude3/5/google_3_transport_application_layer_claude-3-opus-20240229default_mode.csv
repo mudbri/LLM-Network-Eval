@@ -1,0 +1,46 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. SYN, ACK, FIN
+b. SYN, SYN/ACK, ACK
+c. FIN, FIN/ACK, ACK
+d. SYN, ACK, SYN, ACK
+",,b,b,,"The Three-Way Handshake in TCP connection establishment consists of the following flag sequence: SYN (from client to server to initiate connection), SYN/ACK (from server to client to acknowledge the SYN and send its own SYN), and ACK (from client to server to acknowledge the server's SYN, completing the handshake).","['TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'Computer Networking: A Top-Down Approach by James F. Kurose and Keith W. Ross']",1,google_3_transport_application_layer,0.95,1
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 32
+d. 8
+",,a,a,,The port field in the TCP and UDP headers is 16 bits long. This allows for port numbers ranging from 0 to 65535. The 16-bit size provides a balance between having a sufficient number of ports for various services while keeping the overhead in the packet headers reasonable.,"['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens']",1,google_3_transport_application_layer,0.95,1
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Hub
+b. Router
+c. Switch
+d. Firewall
+",,d,d,,"A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies. A firewall essentially acts as a barrier between a trusted network and an untrusted network, such as the Internet. It can block traffic that meets certain pre-defined criteria.","['NIST Special Publication 800-41 Revision 1: Guidelines on Firewalls and Firewall Policy, https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf', 'Cisco Networking Academy: Introduction to Networks v7.0, Chapter 5: Network Security Concepts, https://www.netacad.com/courses/networking/introduction-networks']",1,google_3_transport_application_layer,0.95,1
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,b,,"The PSH (Push) flag is used to make the listening program respond immediately. When the PSH flag is set, it indicates to the receiving host that the data should be pushed up to the receiving application immediately rather than buffering it. This is useful for applications that require real-time data delivery, such as interactive terminals or streaming media.","['TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'Computer Networking: A Top-Down Approach by James F. Kurose and Keith W. Ross', 'RFC 793 - Transmission Control Protocol']",1,google_3_transport_application_layer,0.95,1
+40,_________are identified as ports 49152 through 65535.,"a. User ports
+b. Ephemeral ports
+c. Sockets
+d. System ports
+",,b,b,,"Ephemeral ports are identified as ports 49152 through 65535. These are dynamically allocated ports used by clients when initiating a connection to a server. They are temporary ports allocated from a predefined range by the IP stack software. After the connection is closed, the port becomes available for reuse.","['IANA Service Name and Transport Protocol Port Number Registry', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens', 'Computer Networking: A Top-Down Approach by James Kurose and Keith Ross']",1,google_3_transport_application_layer,0.95,1
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The compression layer
+b. The session layer
+c. The interconnection layer
+d. The presentation layer
+",,"b,d","b,d",,"The OSI model adds the session layer and presentation layer on top of the application layer compared to the five-layer model. The session layer manages connections between applications, while the presentation layer handles data formatting and encryption. The compression layer and interconnection layer are not part of the standard OSI model.","['https://en.wikipedia.org/wiki/OSI_model', 'https://www.imperva.com/learn/application-security/osi-model/', 'https://www.javatpoint.com/osi-model']",1,google_3_transport_application_layer,0.95,1
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"A web browser is an application that operates at the application layer of the OSI model. The application layer is the topmost layer where user-facing software like web browsers, email clients, and messaging apps function. Protocols like HTTP and FTP also operate at this layer to enable communication between applications. UDP and TCP are transport layer protocols, while routers primarily operate at the network layer for routing data packets between networks.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'CCNA 200-301 Official Cert Guide, Volume 1 by Wendell Odom']",1,google_3_transport_application_layer,0.95,1
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. ARP message
+c. The source port
+d. The router
+",,a,a,,"The networking stack is the part of the operating system that applications use to communicate their need to establish network connections, including TCP connections. The networking stack handles the details of setting up the connection, managing the protocols, and interfacing with the network hardware. The other choices are not directly involved in how applications request TCP connections from the operating system.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens']",1,google_3_transport_application_layer,0.95,1
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The payload of the TCP segment
+d. The header of the Ethernet frame
+",,"a,b,c","a,b,c",,"The payload sections of the Ethernet frame, IP datagram, and TCP segment all contain the data that the application wants to send. As data moves down the TCP/IP layers, each layer encapsulates the data from the layer above, with the application data ultimately being carried in the payload section at each layer. The Ethernet frame header does not contain application data, as it is used for addressing and control information at the data link layer.","['Computer Networking: A Top-Down Approach, 7th Edition by James Kurose and Keith Ross, Chapter 1: Computer Networks and the Internet', 'TCP/IP Illustrated, Volume 1: The Protocols by W. Richard Stevens, Chapter 1: Introduction']",1,google_3_transport_application_layer,0.95,1

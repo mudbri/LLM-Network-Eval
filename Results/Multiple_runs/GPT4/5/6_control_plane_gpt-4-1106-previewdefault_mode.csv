@@ -1,0 +1,84 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+43,Which of the following statements are true about the OpenFlow specification? Select all that apply.,"a. If a switch does not contain a flow table entry that matches a particular packet, the switch forwards the packet to the controller for handling.
+b. The main purpose of the OpenFlow control channel is to update flow table entries on switches.
+c. The OpenFlow specification provides mechanisms to perform Layer 2 learning across a network of switches.
+d. Once a switch has sent one packet for a flow, it must also send all subsequent packets for that flow to the controller.
+e. Some versions of the OpenFlow specification allow for performing more than one action on a single packet.
+",,"a,b,e","a,b,e",,"The OpenFlow specification is a cornerstone of Software Defined Networking (SDN) that enables the decoupling of the control and data planes. Here's the rationale for the selected choices:
+
+- (a) True. If a switch does not have a matching flow table entry for a packet, the default behavior is to forward the packet to the controller. This is a fundamental aspect of OpenFlow, allowing the controller to make decisions about new flows.
+
+- (b) True. The control channel in OpenFlow is used by the controller to communicate with the switches, primarily to update flow table entries, thereby controlling the behavior of the network.
+
+- (e) True. OpenFlow specifications, particularly from version 1.1 onwards, allow for multiple actions to be specified for packets. This means that a packet can be instructed to undergo a series of actions, like being forwarded to a particular port, modified, or even sent to multiple ports (multicast).
+
+- (c) False. The OpenFlow specification itself does not provide mechanisms for Layer 2 learning across switches; this is typically handled by the controller logic that uses OpenFlow as a means to program the switches.
+
+- (d) False. After a switch sends the first packet of a new flow to the controller, the controller usually installs a flow entry in the switch's flow table to handle subsequent packets of the same flow directly without involving the controller for each packet.","['https://www.opennetworking.org/software-defined-standards/specifications/', 'https://www.opennetworking.org/wp-content/uploads/2013/04/openflow-spec-v1.1.0.pdf', 'https://www.opennetworking.org/wp-content/uploads/2013/04/openflow-spec-v1.3.0.pdf']",1,6_control_plane,0.95,0.9992661202166916
+44,Which of the following statements are true about dpctl? Select all that apply.,"a. dpctl is invoked from within the Mininet emulator.
+b. dpctl can modify flow table entries on an OpenFlow switch.
+c. dpctl can respond to network events, such as packets sent from a switch.
+d. dpctl is an OpenFlow controller.
+e. dpctl can inspect flow table entries on an OpenFlow switch.
+",,"b,e","b,e",,"dpctl is a command-line utility used to interact with OpenFlow switches. It is typically used to manage and inspect the flow table entries on an OpenFlow switch (option 'e'). This includes adding, modifying, and deleting flow entries, which means it can indeed modify flow table entries on an OpenFlow switch (option 'b'). However, dpctl is not an OpenFlow controller (option 'd'), it does not have the capabilities to respond to network events like an OpenFlow controller would (option 'c'), and it is not necessarily invoked from within the Mininet emulator (option 'a'), as it can be used independently of Mininet to interact with any OpenFlow-compatible switch.","['https://www.opennetworking.org/wp-content/uploads/2014/10/openflow-switch-specification-1.3.0.pdf', 'http://mininet.org/api/annotated.html', 'https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#using-the-command-line-interface']",1,6_control_plane,0.95,0.999723723807298
+45,Which of the following are reasonable considerations for the choice of controller? Select all that apply.,"a. Performance of the programming language that the controller is implemented in.
+b. Support for and integration with cloud applications.
+c. Ease of learning curve.
+d. Need for production-quality operation.
+e. Speed of prototyping.
+",,"a,b,c,d,e","a,b,c,d,e",,"When choosing a controller for Software Defined Networking (SDN), several factors should be taken into account to ensure that it meets the requirements of the network it is intended to manage. These factors include: a) The performance of the programming language that the controller is implemented in, as it can affect the overall performance and scalability of the network. b) Support for and integration with cloud applications, since many modern networks are closely integrated with cloud services and require seamless operation across on-premises and cloud environments. c) The ease of learning curve is important because it determines how quickly network administrators and developers can adopt and effectively use the controller. d) The need for production-quality operation is critical for ensuring that the controller can reliably manage the network under real-world conditions. e) Speed of prototyping is also a consideration, especially in environments where rapid development and testing of new network configurations or applications are required.","['https://www.sdxcentral.com/networking/sdn/definitions/choosing-right-sdn-controller/', 'https://www.networkworld.com/article/2172458/what-to-look-for-in-an-sdn-controller.html']",1,6_control_plane,0.95,0.9855629867806069
+46,Which of the following controllers support OpenStack integration? Select all that apply.,"a. NOX
+b. Pox
+c. CpQD
+d. Floodlight
+e. Ryu
+",,"d,e","c,d,e",,"OpenStack is a cloud computing platform that allows for the integration of Software Defined Networking (SDN) controllers to manage the network infrastructure. Among the listed options, CpQD, Floodlight, and Ryu are known to support OpenStack integration. NOX and Pox are earlier SDN controllers that do not have direct support for OpenStack integration or may not be actively maintained to support the latest features of OpenStack.","['https://wiki.opendaylight.org/view/OpenStack_and_OpenDaylight', 'https://www.openstack.org/software/', 'https://ryu-sdn.org/', 'https://floodlight.atlassian.net/wiki/spaces/floodlightcontroller/overview']",0,6_control_plane,0.9,0.5588951350797475
+47,Which of the following are true about Pox? Select all that apply.,"a. Pox automatically determines the order to install flow table rules, to avoid inconsistent forwarding behavior.
+b. Pox's _handle_PacketIn function determines how a packet should be handled when it arrives at the controller.
+c. Pox provides a function to modify flow table entries at a switch.
+d. Pox's performance is typically slower than NOX.
+e. Pox automatically determines the priority between two conflicting rules.
+",,"b,c,d","b,c,d",,"POX is an open-source development platform for Python-based Software Defined Networking (SDN) control applications, such as OpenFlow SDN controllers. Here's the analysis of each option provided in the question: 
+
+a. POX does not automatically determine the order to install flow table rules. It is up to the SDN application developer to handle potential inconsistencies in forwarding behavior. 
+
+b. The _handle_PacketIn function in POX is indeed responsible for determining how to handle packets that arrive at the controller. This function is typically overridden by developers to implement custom packet handling logic. 
+
+c. POX provides APIs that can be used to modify the flow table entries at a switch. This is a fundamental capability of SDN controllers to interact with the data plane. 
+
+d. POX's performance is typically slower than NOX, which was one of the first SDN controllers and is written in C++. POX is written in Python, which is generally slower due to being an interpreted language rather than a compiled language like C++. 
+
+e. POX does not automatically determine the priority between two conflicting rules. Conflict resolution and rule prioritization are tasks that must be explicitly managed by the SDN application developer.","['https://noxrepo.github.io/pox-doc/html/', 'https://github.com/noxrepo/pox', 'https://www.researchgate.net/publication/261149471_Python-based_Software-Defined_Networking_Controller_Performance_Evaluation']",1,6_control_plane,0.95,0.9999830884031026
+48,What is the difference between a hard timeout and an idle timeout?,"a. A hard timeout occurs exactly at the specified interval, whereas an idle timeout may occur slightly later than the specified interval.
+b. A hard timeout expunges a flow table entry regardless of whether there have been active matches, whereas an idle timeout expunges the flow table entry only if there have been no matches for that flow within the specified interval.
+c. A hard timeout expunges all flow table entry from the switch, whereas an idle timeout only expunges one flow at a time.
+d. A hard timeout expunges a flow table entry for all switches in the network, whereas an idle timeout only expunges the flow table entry on the switches that have seen no matches for that flow within the specified interval.
+",,b,b,,"In the context of Software Defined Networking (SDN), a hard timeout is used to remove a flow entry from a switch's flow table after a specified amount of time has passed, regardless of whether the flow entry has seen any packets or not. On the other hand, an idle timeout is used to remove a flow entry only if there have been no packets matching the flow entry for a specified amount of time. This means that if a flow is still active (i.e., packets are still being matched to the flow entry), the idle timeout will not trigger, and the flow entry will remain in the flow table until it becomes idle for the specified duration.","['Open Networking Foundation. (2012). OpenFlow Switch Specification, Version 1.3.0 (Wire Protocol 0x04). https://www.opennetworking.org/wp-content/uploads/2013/04/openflow-spec-v1.3.0.pdf', 'Kreutz, D., Ramos, F. M. V., Verissimo, P. E., Rothenberg, C. E., Azodolmolky, S., & Uhlig, S. (2015). Software-Defined Networking: A Comprehensive Survey. Proceedings of the IEEE, 103(1), 14–76. https://doi.org/10.1109/JPROC.2014.2371999']",1,6_control_plane,0.95,0.9999930118027176
+49,Which of the following are true about hubs and learning switches? Select all that apply,"a. A hub implemented in Pox requires all incoming packets to be directed to the controller.
+b. A learning switch requires more logic at the controller (in terms of lines of code in Pox) than a hub.
+c. A learning switch implemented in Pox can be easily extended to support firewall capabilities.
+d. A learning switch implemented in Pox requires all incoming packets to be redirected to the controller.
+e. A hub forwards an incoming packet on all ports (except the incoming port), whereas a switch only floods an incoming packet on all ports if it does not have a table entry that determines the output port for that packet.
+",,"b,c,e","b,c,e",,"a. This is not necessarily true. A hub implemented in Pox or any other controller doesn't require all packets to be directed to the controller. A basic hub functionality can be achieved by simply forwarding all incoming packets to all ports except the incoming port, which doesn't require controller intervention for every packet once the initial rules are set up.
+b. A learning switch does require more logic at the controller than a hub because it needs to maintain a table of MAC addresses and corresponding ports, and make forwarding decisions based on this table. This involves more lines of code than the simple functionality of a hub.
+c. A learning switch can indeed be extended to support additional capabilities such as firewall functions because it already has the logic to manage and inspect packets and their headers, and make decisions based on that.
+d. A learning switch implemented in Pox does not require all incoming packets to be redirected to the controller. It only needs to send packets to the controller when it does not know where to forward them (i.e., no matching entry in its MAC address table).
+e. A hub does forward an incoming packet on all ports except the incoming port, which is known as 'flooding'. A switch, on the other hand, will only flood the packet if it doesn't have a table entry to determine the output port. Otherwise, it will forward the packet to the specific port associated with the destination MAC address.","['https://en.wikipedia.org/wiki/Network_switch#Layer_2', 'https://en.wikipedia.org/wiki/Hub_(network_science)', 'https://www.opennetworking.org/software-defined-standards/overview/']",1,6_control_plane,0.95,0.9993328806261458
+50,Which of the following functions ensures that the controller will hear PacketIn messages? Select all that apply.,"a. connection.addListeners
+b. _handle_PacketIn
+c. AddRule
+d. init
+e. launch
+",,a,"a,b",,"In the context of Software Defined Networking (SDN) and more specifically within the OpenFlow protocol, the controller uses certain functions to manage the network. The 'connection.addListeners' function is used to add listeners to the connection, which would include listening for PacketIn messages. The '_handle_PacketIn' function is the actual handler for PacketIn messages that are received by the controller. When a PacketIn message is received, this function is called to process the message. 'AddRule' is typically used to add a flow entry to a switch, and 'init' and 'launch' are more general functions that might be used to initialize a controller module or launch an application, but they are not specifically tied to the handling of PacketIn messages.","['https://www.opennetworking.org/wp-content/uploads/2014/10/openflow-switch-v1.3.0.pdf', 'https://osrg.github.io/ryu-book/en/html/']",0,6_control_plane,0.9,0.9816478665209014
+51,What are the two key steps of an OpenFlow flow table entry (select two)?,"a. match
+b. action
+c. redirect
+d. drop
+e. forward
+",,"a,b","a,b",,"In OpenFlow, which is a protocol for software-defined networking (SDN), a flow table entry consists of two key components: match and action. The 'match' field specifies the flow's matching criteria, which determines how to identify packets that belong to a particular flow. The 'action' field specifies what to do with packets that match the criteria, such as forwarding, modifying, or dropping them. While 'redirect', 'drop', and 'forward' can be considered types of actions, they are not the names of the steps in the flow table entry process.","['https://www.opennetworking.org/wp-content/uploads/2014/10/openflow-spec-v1.3.0.pdf', 'https://www.sdxcentral.com/networking/sdn/definitions/what-is-openflow/']",1,6_control_plane,1,0.9999993743675356
+52,Which of the following are true about the OpenDaylight controller? Select all that apply.,"a. It allows dynamic reloading of controller functionality without restarting the controller.
+b. It only supports OpenFlow as a ""southbound"" control framework.
+c. Its code shares a lot of similarities with Beacon.
+d. Open Daylight only supports proprietary switches from Cisco and IBM.
+e. It is slower and less scalable than some of the more lightweight SDN controllers such as Pox.
+",,"a,c","a,c,e",,"The OpenDaylight controller is an open-source SDN controller which means that it is designed to be flexible and extensible. a) It allows for dynamic reloading of controller functionality without restarting the controller, which makes it easier to manage and update. c) OpenDaylight's codebase does indeed share similarities with Beacon, which is an earlier SDN controller platform. e) While OpenDaylight is feature-rich and supports a wide range of protocols and services, it is often considered slower and less scalable than some lightweight SDN controllers like Pox, which are designed with simplicity and speed in mind. However, b) is incorrect because OpenDaylight supports multiple southbound protocols, not just OpenFlow. d) is also incorrect because OpenDaylight is not limited to proprietary switches from Cisco and IBM; it is designed to work with a variety of hardware from different vendors.","['https://www.opendaylight.org/', 'https://wiki.opendaylight.org/view/Main_Page', 'https://www.sdxcentral.com/networking/sdn/controllers/opendaylight/']",0,6_control_plane,0.95,0.9998128976002075
