@@ -20,7 +20,7 @@ def ensure_directory_exists(path):
 def main():
     # Define the base paths for each set of commands
     models = ['Claude3', 'GPT4', 'GPT3.5']
-    runs = [1, 2, 3]
+    runs = [1, 2, 3, 4, 5]
     
     # Loop through each model and run number to construct the command
     for model in models:

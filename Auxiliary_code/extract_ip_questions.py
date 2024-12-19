@@ -32,18 +32,16 @@ def extract_rows_with_ip(input_folder, output_file):
                     # Write header if not already written
                     if not header_written:
                         # Filter out empty columns from the header
-                        header = [field for field in reader.fieldnames if field]
-                        writer.writerow(header)
+                        writer.writerow(reader.fieldnames)
                         header_written = True
                     # Check if 'Question Text' or 'Choices' contain an IP address
                     for row in reader:
-                        # Filter out empty values from the row
-                        filtered_row = [value for value in row.values() if value]
+                        # # Filter out empty values from the row
                         
                         # Check if 'Question Text' or 'Choices' contain an IP address
                         if is_ip_address(row.get('Question Text', '')) or is_ip_address(row.get('Choices', '')):
                             # Write the row only if it contains non-empty values
-                            writer.writerow(filtered_row)
+                            writer.writerow(row.values())
 
 
 if __name__ == "__main__":

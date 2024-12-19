@@ -4,7 +4,7 @@ This repository contains all the necessary code and instructions to reproduce th
 
 ## Prerequisites
 
-Before running the code, ensure you have Python 3.8+ installed. We recommend using a virtual environment to manage dependencies.
+Before running the code, ensure you have Python 3.8+ installed. This repository has been tested with Python 3.9.6. We recommend using a virtual environment to manage dependencies.
 
 ### Setting Up the Virtual Environment
 
@@ -37,7 +37,7 @@ To reproduce all results from the paper, execute the `LLM_Project.ipynb` noteboo
 
 ## Generate answers
 
-The `generate_llm_answers.py` script is used to generate results using OpenAI and Claude LLMs. You need to provide your API keys for both services and specify other parameters using command-line arguments.
+The `generate_llm_answers.py` script is used to generate results using OpenAI and Claude LLMs. You need to provide your API keys for both services and specify other parameters using command-line arguments. The output files will be saved in a folder named after the model within the main directory.
 
 ### Command-Line Arguments
 

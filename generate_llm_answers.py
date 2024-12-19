@@ -349,23 +349,31 @@ def overwrite_first_three_columns(csv_file_path, data):
     df.to_csv(csv_file_path, index=False)
     print(f"Successfully updated the first three columns in '{csv_file_path}'.")
 
-def write_csv_file(file_name, data, fieldnames):
-  """
-  Write data to a CSV file with specified fieldnames.
+def write_csv_file(file_name, data, fieldnames, model):
+    """
+    Write data to a CSV file with specified fieldnames.
 
-  Parameters:
-  - file_name: The name of the CSV file to be created.
-  - data: A list of dictionaries, where each dictionary represents a row of data.
-  - fieldnames: A list of strings representing the column headers in the CSV file.
-  """
-  with open(file_name, 'w', newline='', encoding='utf-8') as csvfile:
-      writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    Parameters:
+    - file_name: The name of the CSV file to be created.
+    - data: A list of dictionaries, where each dictionary represents a row of data.
+    - fieldnames: A list of strings representing the column headers in the CSV file.
+    - model: The name of the folder where the file will be created.
+    """
+    # Ensure the "model" folder exists
+    os.makedirs(model, exist_ok=True)
 
-      # Write the header row
-      writer.writeheader()
+    # Construct the full file path
+    full_file_path = os.path.join(model, file_name)
 
-      # Write the data rows
-      writer.writerows(data)
+    # Write data to the CSV file
+    with open(full_file_path, 'w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        # Write the header row
+        writer.writeheader()
+
+        # Write the data rows
+        writer.writerows(data)
 
 def output_to_csv(topic, questions, output_file="output.csv", file="CISCO", model="gpt-3.5-turbo-0125", mode="default", temp=0.5, api=""):
     data = []
@@ -400,7 +408,7 @@ def output_to_csv(topic, questions, output_file="output.csv", file="CISCO", mode
         data.append(questionData)
 
     # Write data to CSV file
-    write_csv_file(output_file, data, fieldnames)
+    write_csv_file(output_file, data, fieldnames, model)
 
 # takes questions as input and randomizes the order of the choices and the correct answers
 def randomizeChoices(questions):
