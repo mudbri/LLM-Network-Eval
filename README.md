@@ -1,6 +1,6 @@
 # LLM-Network-Eval
 
-This repository contains all the necessary code and instructions to reproduce the results presented in our paper. The project involves running large language models (LLMs) to evaluate their performance on various questions related to computer networking, generating data for fine-tuning, and analyzing the results.
+This repository contains all the necessary code and instructions to reproduce the results presented in our paper: [Understanding Misunderstandings: Evaluating LLMs on Networking Questions](https://dl.acm.org/doi/abs/10.1145/3717512.3717515). The repository involves running large language models (LLMs) to evaluate their performance on various questions related to computer networking, generating data for fine-tuning, and analyzing the results.
 
 ## Prerequisites
 
