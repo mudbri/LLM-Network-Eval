@@ -1,0 +1,130 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+3,How many bits are used for the header checksum in IPv4 packets? Select one choice.,"a. 8 bits
+b. 16 bits
+c. 32 bits
+d. None of the above
+",,b,b,,The IPv4 header contains a 'Header Checksum' field that is 16 bits long; it covers only the IP header (not the payload). This is specified in RFC 791 and standard networking texts.,"['https://datatracker.ietf.org/doc/html/rfc791', 'https://en.wikipedia.org/wiki/IPv4#Header']",1,grad_TCP,0.99,1
+4,What is the dotted notation of an IP address of 10000000 10000111 01000100 00000101? Select one choice.,"a. 128.135.65.5
+b. 128.135.68.5
+c. 128.135.65.5
+d. 128.133.68.5
+",,b,b,,"Split the 32-bit string into 4 octets and convert each binary octet to decimal: 10000000 = 128, 10000111 = 135, 01000100 = 68, 00000101 = 5. Therefore the dotted-decimal form is 128.135.68.5, which matches choice b.","['https://datatracker.ietf.org/doc/html/rfc791', 'https://en.wikipedia.org/wiki/IPv4_address', 'https://en.wikipedia.org/wiki/Binary_number']",1,grad_TCP,0.99,1
+5,"Given a network address 128.100.0.0, what is its network class type? Select one choice.","a. Class A
+b. Class B
+c. Class C
+d. None of the above
+",,b,b,,"The first octet of 128.100.0.0 is 128. In classful IPv4 addressing, Class B addresses have first-octet values from 128 to 191 (default mask 255.255.0.0, /16), so 128.100.0.0 is Class B.","['https://en.wikipedia.org/wiki/Classful_network#IPv4_address_classes', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13714-3.html']",1,grad_TCP,0.98,1
+6,Which of the following is provided at the IP layer? Select one choice.,"a. Connectionless
+b. Best effort delivery service
+c. Both of the above
+d. None of the above
+",,c,c,,"The IP protocol is a connectionless (datagram) protocol and provides best-effort delivery (no guaranteed reliability, ordering, or delivery). Therefore both statements apply to the IP layer.","['https://tools.ietf.org/html/rfc791', 'https://www.cisco.com/c/en/us/solutions/collateral/enterprise-networks/what-is-ip/white-paper-c11-741078.html', 'https://gaia.cs.umass.edu/kurose_ross/interactive/notes/contents.html (Kurose & Ross, Computer Networking textbook)']",1,grad_TCP,0.96,1
+8,What is the subnetwork number of a host with an IP address of 172.16.66.0/21? Select one choice.,"a. 172.16.48.0
+b. 172.16.64.0
+c. 172.16.0.0
+d. 172.16.36.0
+",,b,b,,"A /21 mask = 255.255.248.0 so the block size in the third octet is 8. Subnet boundaries are 0,8,16,...,64,72,... The third octet value 66 falls in the 64–71 range, so the subnet (network) address is 172.16.64.0.","['https://www.cisco.com/c/en/us/solutions/enterprise/design-zone-networking/what-is-ip-subnetting.html', 'https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/calculate-ip-subnet', 'https://en.wikipedia.org/wiki/Subnetwork']",1,grad_TCP,0.95,1
+9,What is the first valid host on the subnetwork that the node 172.30.190.198/24 belongs to? Select one choice.,"a. 172.30.190.0
+b. 172.30.190.1
+c. 172.30.190.100
+d. None of the above
+",,b,b,,With a /24 mask (255.255.255.0) the network address for 172.30.190.198/24 is 172.30.190.0. The first usable host address is the network address plus one: 172.30.190.1. (Broadcast would be 172.30.190.255.),"['https://tools.ietf.org/html/rfc950', 'https://en.wikipedia.org/wiki/IPv4', 'https://learn.microsoft.com/en-us/windows-server/networking/technologies/ipam/understanding-ip-addressing']",1,grad_TCP,0.98,1
+10,"Based on 1.1.1.0/24, the IP address would be: Select one choice.","a. Class A
+b. Class B
+c. Class C
+d. Class D
+",,a,a,,"The first octet is 1, which falls in the Class A range (1–126). Classful classification depends on the first octet; although the notation /24 indicates a 255.255.255.0 mask (a subnet), the address 1.1.1.0 originates from a Class A block (1.0.0.0/8).","['https://en.wikipedia.org/wiki/IPv4_address', 'https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml', 'https://developers.cloudflare.com/networking/glossary/ip-address/']",1,grad_TCP,0.95,1
+12,"Using CIDR notation, a prefix 205.100.0.0 of length 22 is written as 205.100.0.0/22. What network mask does the /22 notation indicate? Select one choice.","a. 205.255.255.0
+b. 255.255.252.0
+c. 255.255.22.0
+d. None of the above
+",,b,b,,"/22 means 22 leading 1 bits in the IPv4 mask: 11111111.11111111.11111100.00000000 which equals 255.255.252.0, so the correct network mask is 255.255.252.0.","['https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html', 'https://datatracker.ietf.org/doc/html/rfc4632']",1,grad_TCP,1.0,1
+13,"Perform CIDR aggregation on the following /24 IP addresses: 128.58.24.0/24, 128.58.25.0/24, 128.58.26.0/24, 128.58.27.0/24. What is the CIDR outcome? Select one choice.","a. 128.58.28.0/22
+b. 128.58.24.0/22
+c. 128.58.28.0/24
+d. None of the above
+",,b,b,,"The four contiguous /24 networks (.24, .25, .26, .27) form a block of 4 × /24 = one /22. A /22 has mask 255.255.252.0 and increments of 4 in the third octet; 24 is a multiple of 4, so the aggregate is 128.58.24.0/22 (covers .24–.27).","['https://tools.ietf.org/html/rfc4632', 'https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing', 'https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/13684-3.html']",1,grad_TCP,0.99,1
+14,Which protocol provides conversion from an IP address to a physical address? Select one choice.,"a. ICMP
+b. IGRP
+c. ARP
+d. DNS
+",,c,c,,"ARP (Address Resolution Protocol) translates an IPv4 address to a physical (MAC) address on the local network. ICMP is for control/error messages, IGRP is a routing protocol, and DNS maps domain names to IP addresses (not to physical/MAC addresses).","['https://www.rfc-editor.org/rfc/rfc826.txt', 'https://www.cisco.com/c/en/us/support/docs/ip/address-resolution-protocol-arp/13788-3.html', 'https://www.rfc-editor.org/rfc/rfc1035.txt']",1,grad_TCP,0.98,1
+15,Which protocol is used to assign temporary IP addresses to hosts? Select one choice.,"a. ICMP
+b. DHCP
+c. ARP
+d. None of the above
+",,b,b,,"DHCP (Dynamic Host Configuration Protocol) is used to automatically assign IP addresses to hosts, typically on a temporary lease basis. ICMP is for network control messages (e.g., ping), and ARP resolves IP addresses to MAC addresses, so they do not assign IP addresses.","['https://datatracker.ietf.org/doc/html/rfc2131', 'https://www.cisco.com/c/en/us/tech/ip/dynamic-host-configuration-protocol-dhcp/index.html', 'https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml']",1,grad_TCP,0.95,1
+17,The internet protocol allows IP fragmentation so that datagrams can be fragmented into pieces small enough to pass over a link with a smaller MTU than the original datagram size. Select one choice.,"a. True
+b. False
+",,a,a,,"True. IPv4 supports fragmentation: when a router (or the sending host) encounters a link with an MTU smaller than the datagram, the datagram can be split into fragments (using Identification, Flags, and Fragment Offset fields) so pieces fit the smaller MTU; the fragments are reassembled at the destination. (Note: IPv6 differs — routers do not fragment in IPv6; fragmentation must be done by the source.)","['https://tools.ietf.org/html/rfc791', 'https://tools.ietf.org/html/rfc8200', 'http://gaia.cs.umass.edu/kurose_ross/', 'https://en.wikipedia.org/wiki/IP_fragmentation']",1,grad_TCP,0.95,1
+18,Which of the following statement is correct for IPv6. Select one choice.,"a. Broadcast in IPv4 have been replaced with multicast in IPv6
+b. Does not support multiple IPv6 address per interface
+c. Addresses are not hierarchical and are randomly assigned
+d. There are 2.7 billion available addresses
+",,a,a,,"IPv6 does not implement IPv4-style broadcast addresses. Functions that used broadcast in IPv4 are handled in IPv6 by multicast (and anycast) addresses — e.g., Neighbor Discovery and other one-to-many communication use IPv6 multicast. The other choices are incorrect: IPv6 interfaces can have multiple addresses (link-local, global, temporary, etc.), IPv6 addressing is hierarchical (routing prefix, subnet ID, interface ID), and the address space is vastly larger than 2.7 billion (2^128 addresses).","['https://datatracker.ietf.org/doc/html/rfc2460', 'https://datatracker.ietf.org/doc/html/rfc4291', 'https://datatracker.ietf.org/doc/html/rfc4861', 'https://www.iana.org/assignments/ipv6-multicast-addresses/ipv6-multicast-addresses.xhtml']",1,grad_TCP,0.95,1
+19,Bootstrap Protocol (BOOTP) allows a diskless workstation to be remotely booted up in a network with TCP port designation for both client and server. Select one choice.,"a. True
+b. False
+",,b,b,,"False. BOOTP uses UDP, not TCP. The BOOTP/DHCP protocol operates over UDP port 67 for the server and UDP port 68 for the client (RFC951 and subsequent DHCP/BOOTP specifications).","['https://tools.ietf.org/html/rfc951', 'https://tools.ietf.org/html/rfc2131', 'https://en.wikipedia.org/wiki/Bootstrap_Protocol']",1,grad_TCP,0.98,1
+20,"In NAT operations, which of the following statements are correct? Select all that apply.","a. Translation table allows packets to be routed unambiguously.
+b. NAT maps each private IP address and port number into a shared global IP address and an available port number.
+c. Hosts inside private networks generate packets with private IP address and TCP/UDP port numbers.
+d. Translation table allows packets to be routed ambiguously.
+",,"a,b,c","a,b,c",,"a) Correct — NAT maintains a translation (mapping) table that associates external (global) IP:port tuples with internal (private) IP:port tuples so return traffic can be delivered to the correct internal host (i.e., unambiguous mapping). b) Correct — in PAT/NAT-overload, each private IP:port is mapped to a (shared) global IP and an available external port number. c) Correct — hosts on private networks use private IP addresses and generate packets with TCP/UDP port numbers at the transport layer. d) Incorrect — the translation table is used to disambiguate, not to create ambiguity.","['https://tools.ietf.org/html/rfc3022', 'https://tools.ietf.org/html/rfc2663', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr_nat/configuration/xe-3s/asr1000/nat-xe-3s-asr1000-book/nat-overview.html', 'https://en.wikipedia.org/wiki/Network_address_translation']",1,grad_TCP,0.95,1
+21,Which of the following controls is enabled in UDP? Select one choice.,"a. Flow control
+b. Error control
+c. Congestion control
+d. None of the above
+",,d,d,,"UDP is a simple, connectionless transport protocol that does not implement flow control, retransmission-based error control, or congestion control. (It only provides an optional checksum for error detection, not error recovery.) Therefore none of the listed controls are enabled in UDP.","['https://tools.ietf.org/html/rfc768', 'https://gaia.cs.umass.edu/kurose_ross/', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipapp/configuration/15-mt/ipapp-15-mt-book/udp.html']",1,grad_TCP,0.95,1
+23,"TCP adopts selective repeat ARQ protocol for flow control. In TCP flow control implementation, the window slides at:","a. Per-packet basis
+b. Per-byte basis
+c. Per-bit basis
+d. None of the above
+",,b,b,,"TCP is byte-oriented: sequence numbers and the receive/window bookkeeping are in bytes. The TCP sliding window advances as bytes are acknowledged (i.e., on a per-byte basis), not per packet or per bit.","['https://tools.ietf.org/html/rfc793', 'https://datatracker.ietf.org/doc/html/rfc1122', 'https://gaia.cs.umass.edu/kurose_ross/interactive_content/']",1,grad_TCP,0.98,1
+24,Which flag bit in TCP header must be set when a TCP client initiates a three-way handshake? Select one choice.,"a. SYN
+b. ACK
+c. RST
+d. None of the above
+",,a,a,,"When a TCP client initiates connection establishment it sends a segment with the SYN flag set (the initial ""SYN"" packet). The server responds with SYN+ACK, then the client sends an ACK to complete the three-way handshake. The initial packet does not have ACK set, and RST is for resets, not connection initiation.","['https://tools.ietf.org/html/rfc793', 'https://www.tcpipguide.com/free/t_TCPThree-WayHandshaking.htm', 'https://en.wikipedia.org/wiki/Three-way_handshake']",1,grad_TCP,0.99,1
+25,Which flag bit in TCP header must be set when a TCP entity wants to terminate a connection? Select one choice.,"a. SYN
+b. ACK
+c. RST
+d. FIN
+",,d,d,,"The FIN (finish) flag is used to indicate an orderly (graceful) termination of a TCP connection by the sender. SYN is for connection setup, ACK acknowledges segments, and RST aborts a connection immediately rather than performing a graceful close.","['https://tools.ietf.org/html/rfc793', 'https://developer.mozilla.org/en-US/docs/Glossary/TCP_flags', 'https://www.cloudflare.com/learning/ddos/glossary/tcp-flags/']",1,grad_TCP,0.98,1
+26,"In Transmission Control Protocol (TCP), when a segment carries a combination of data and control information, it uses a:","a. Slot Number
+b. Sequence Number
+c. Source Number
+d. Port Number
+",,b,b,,"TCP uses the Sequence Number field to identify the position of bytes in the stream. When a segment carries both data and control (e.g., SYN/FIN consume sequence space), the sequence number indicates the ordering/position of that data+control in the byte stream. Port numbers identify endpoints, and 'slot' or 'source number' are not TCP header fields.","['https://tools.ietf.org/html/rfc793', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure']",1,grad_TCP,0.98,1
+27,Transmission Control Protocol (TCP) has the same Checksum controlling as:,"a. UDP
+b. IP
+c. TCP/IP
+d. ICMP
+",,a,a,,"TCP and UDP use the same 16-bit one's‑complement checksum algorithm that covers a pseudo‑header plus the transport header and data. IP's checksum covers only the IP header, and ICMP's checksum (while also a 16‑bit one's‑complement sum) does not include the transport-layer pseudo‑header and so is not the same checksum controlling as TCP.","['https://tools.ietf.org/html/rfc793', 'https://tools.ietf.org/html/rfc768', 'https://tools.ietf.org/html/rfc1071', 'https://tools.ietf.org/html/rfc791']",1,grad_TCP,0.95,1
+31,Which of the following protocol allows a host to signal its multicast group membership to its attached routers?  Select one choice.,"a. ICMP
+b. IGMP
+c. OPSF
+d. None of the above
+",,b,b,,"IGMP (Internet Group Management Protocol) is the protocol used by IPv4 hosts to report multicast group membership to their directly attached routers. ICMP is for control/error messages and OSPF (misspelled as OPSF) is a unicast routing protocol, so neither is used for host-to-router multicast membership signaling.","['https://datatracker.ietf.org/doc/html/rfc1112', 'https://datatracker.ietf.org/doc/html/rfc2236', 'https://datatracker.ietf.org/doc/html/rfc3376', 'https://www.cisco.com/c/en/us/tech/ip/multicast/what-is-multicast.html']",1,grad_TCP,0.99,1
+33,Which class of IP address does reverse-path broadcasting use? Select one choice.,"a. Class A
+b. Class B
+c. Class C
+d. Class D
+",,d,d,,"Reverse-path broadcasting refers to multicast distribution using reverse-path forwarding (RPF). IP multicast uses Class D addresses, i.e. IPv4 addresses in the 224.0.0.0–239.255.255.255 range, so the correct class is D.","['https://tools.ietf.org/html/rfc1112', 'https://tools.ietf.org/html/rfc5771', 'https://en.wikipedia.org/wiki/Reverse-path_forwarding', 'https://www.iana.org/assignments/multicast-addresses/multicast-addresses.xhtml']",1,grad_TCP,0.95,1
+35,"In mobile IP, when a home agent wants to send a packet to a mobile host in a foreign network, each IP packet at the home agent will be encapsulated with an outer IP header. What is the destination IP address in the outer IP header? Select one choice.","a. Care-of address
+b. Mobile host’s address
+c. Home agent’s address
+d. None of the above
+",,a,a,,"The home agent tunnels packets destined for the mobile host to the mobile’s care-of address. The original (inner) destination remains the mobile’s home address, but the outer IP header’s destination is the care-of address (which may be a foreign agent’s address or a collocated care-of address).","['https://datatracker.ietf.org/doc/html/rfc3344', 'https://en.wikipedia.org/wiki/Mobile_IP', 'James_F._Kurose,_Keith_W._Ross,_Computer_Networking:_A_Top-Down_Approach_(textbook)']",1,grad_TCP,0.99,1
+36,An IP address associated with a mobile node while visiting a foreign link is called:,"a. Care of address
+b. Home link
+c. Handover address
+d. Home address
+",,a,a,,"In Mobile IP terminology, the temporary IP address assigned to a mobile node while it is visiting a foreign network is called the care-of address (CoA). The home address is the permanent IP on the node’s home network; 'home link' refers to that home network, and 'handover address' is not the standard Mobile IP term.","['https://tools.ietf.org/html/rfc3344', 'https://tools.ietf.org/html/rfc6275', 'https://en.wikipedia.org/wiki/Mobile_IP']",1,grad_TCP,0.99,1
+37,TCP SYN flood attack exploits the TCP three-way handshake. Select one choice.,"a. True
+b. False
+",,a,a,,"True — a TCP SYN flood abuses the TCP three-way handshake by sending many SYN (connection-init) packets and never completing the handshake (or using spoofed source addresses). The target allocates resources for half-open connections, exhausting its connection queue and preventing legitimate connections.","['https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/', 'https://owasp.org/www-community/attacks/SYN_flooding', 'https://www.rfc-editor.org/rfc/rfc793']",1,grad_TCP,0.98,1
+38,"In multicast communication, the relationship is:","a. one to one
+b. many to one
+c. one to many
+d. one to all
+",,c,c,,Multicast communication delivers packets from one sender to multiple designated receivers (one-to-many). It is distinct from unicast (one-to-one) and broadcast (one-to-all).,"['https://tools.ietf.org/html/rfc1112', 'https://tools.ietf.org/html/rfc3376', 'https://en.wikipedia.org/wiki/IP_multicast', 'https://www.cisco.com/c/en/us/solutions/service-provider/what-is-multicast.html']",1,grad_TCP,0.98,1

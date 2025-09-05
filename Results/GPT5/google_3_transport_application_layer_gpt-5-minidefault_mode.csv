@@ -1,0 +1,46 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+36,What ordering of TCP flags make up the Three-Way Handshake?,"a. SYN, ACK, FIN
+b. SYN, SYN/ACK, ACK
+c. FIN, FIN/ACK, ACK
+d. SYN, ACK, SYN, ACK
+",,b,b,,"TCP connection establishment uses a three-way handshake: the client sends SYN, the server replies with SYN+ACK (SYN/ACK), and the client sends an ACK to complete the connection. This sequence is SYN → SYN/ACK → ACK.","['https://datatracker.ietf.org/doc/html/rfc793', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Three-way_handshake', 'http://www.tcpipguide.com/free/t_TCPThreeWayHandshakeandConnectionEstablishment-3.htm']",1,google_3_transport_application_layer,0.99,1
+37,"Transport layer protocols, like TCP and UDP, introduce the concept of a port. How many bits are in a port field?","a. 16
+b. 4
+c. 32
+d. 8
+",,a,a,,Both TCP and UDP headers define 16-bit source and destination port fields (allowing port numbers 0–65535).,"['https://datatracker.ietf.org/doc/html/rfc793', 'https://datatracker.ietf.org/doc/html/rfc768', 'https://en.wikipedia.org/wiki/Port_(computer_networking)']",1,google_3_transport_application_layer,0.99,1
+38,A device that blocks traffic that meets certain criteria is known as a ________.,"a. Hub
+b. Router
+c. Switch
+d. Firewall
+",,d,d,,"A firewall is a network device or software that enforces access-control rules to block or allow traffic based on criteria (IP, port, protocol, application, etc.). Hubs simply repeat signals, switches forward frames by MAC address, and routers forward packets between networks — none are primarily designed to block traffic by policy like a firewall.","['https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html', 'https://www.techtarget.com/searchnetworking/definition/firewall', 'https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf']",1,google_3_transport_application_layer,0.99,1
+39,Which TCP flag is used to make the listening program respond immediately?,"a. ACK
+b. PSH
+c. URG
+d. RST
+",,b,b,,"The PSH (Push) flag tells the receiving TCP stack to push buffered data to the application immediately rather than wait to fill the buffer. ACK is just an acknowledgment, URG marks urgent data (uses urgent pointer), and RST resets the connection.","['https://datatracker.ietf.org/doc/html/rfc793', 'https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_segment_structure', 'https://www.tcpipguide.com/free/t_TCPHeaderFormatandFlags.htm']",1,google_3_transport_application_layer,0.95,1
+40,_________are identified as ports 49152 through 65535.,"a. User ports
+b. Ephemeral ports
+c. Sockets
+d. System ports
+",,b,b,,IANA and RFC port-numbering conventions designate ports 49152–65535 as the dynamic/private range used for ephemeral (temporary) client-side port assignments. These are commonly referred to as ephemeral ports.,"['https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml', 'https://datatracker.ietf.org/doc/html/rfc6335', 'https://en.wikipedia.org/wiki/Port_(computer_networking)']",1,google_3_transport_application_layer,0.98,1
+41,"Unlike our five-layer model, the OSI network model adds two more layers on top of the Application Layer. Select examples of these new layers below.","a. The compression layer
+b. The session layer
+c. The interconnection layer
+d. The presentation layer
+",,"b,d","b,d",,"The OSI seven-layer model defines (from top) Application, Presentation, and Session layers. The Presentation layer handles data representation (formatting, encryption, compression) and the Session layer manages dialogs/sessions. The five-layer Internet/TCP-IP model merges Presentation and Session functions into its Application layer, so the added OSI layers are session and presentation.","['https://en.wikipedia.org/wiki/OSI_model', 'https://www.cisco.com/c/en/us/about/press/internet-protocol-journal/blogs/2007/12/28/understanding-the-osi-model/', 'https://www.techtarget.com/searchnetworking/definition/OSI-model']",1,google_3_transport_application_layer,0.95,1
+42,An example of something that operates at the application layer is:,"a. UDP
+b. A router
+c. TCP
+d. A web browser
+",,d,d,,"A web browser is an application that implements application-layer protocols (HTTP/HTTPS) and runs at the application layer. TCP (c) and UDP (a) are transport-layer protocols, and a router (b) forwards packets at the network layer (IP).","['https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview', 'https://datatracker.ietf.org/doc/html/rfc793 (TCP)', 'https://datatracker.ietf.org/doc/html/rfc768 (UDP)', 'https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-a-router.html', 'https://www.cisco.com/c/en/us/about/press/internet-protocol-journal/blogs/2019/10/osi-model.html']",1,google_3_transport_application_layer,0.98,1
+44,Which part of the operating system does the application use to communicate the need to establish a TCP connection?,"a. Networking stack
+b. ARP message
+c. The source port
+d. The router
+",,a,a,,"An application signals the OS to establish a TCP connection via the operating system's networking stack (typically using the socket API, e.g., connect()). ARP is a link-layer address-resolution protocol, the source port is a TCP header field (not the mechanism an app uses to request a connection), and a router is an external network device, not the OS interface the application calls.","['https://man7.org/linux/man-pages/man2/connect.2.html', 'http://beej.us/guide/bgnet/html/#sockcreate', 'https://tools.ietf.org/html/rfc793', 'https://en.wikipedia.org/wiki/Network_stack']",1,google_3_transport_application_layer,0.95,1
+45,Which of the following sections of the TCP/IP Five-Layer Network Model contain the data the application wants to send? Select all that apply.,"a. The payload section of the Ethernet frame
+b. The payload section of the IP Datagram
+c. The payload of the TCP segment
+d. The header of the Ethernet frame
+",,"a,b,c","a,b,c",,"By encapsulation: the application’s data becomes the payload of the transport layer (TCP) segment; that TCP segment is the payload of the network-layer (IP) datagram; and the IP datagram is carried as the payload of the data-link (Ethernet) frame. The Ethernet header carries addressing/control fields, not the application payload, so (d) is incorrect.","['https://www.rfc-editor.org/rfc/rfc793', 'https://www.rfc-editor.org/rfc/rfc791', 'https://en.wikipedia.org/wiki/Ethernet_frame', 'https://gaia.cs.umass.edu/kurose_ross/']",1,google_3_transport_application_layer,0.95,1

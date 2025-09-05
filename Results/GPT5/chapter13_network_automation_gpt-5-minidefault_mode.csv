@@ -1,0 +1,59 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+218,Which of the following configuration management tools uses agentless architecture for managing network devices?,"a. Ansible
+b. Puppet
+c. Chef
+d. Ansible and Puppet
+e. Puppet and Chef
+",,a,a,,"Ansible uses an agentless architecture (it connects to managed nodes via SSH/WinRM). Puppet and Chef require agents (puppet agent, chef-client) to be installed on managed nodes, so they are agent-based.","['https://docs.ansible.com/ansible/latest/user_guide/intro_getting_started.html', 'https://www.redhat.com/en/topics/automation/what-is-ansible', 'https://puppet.com/docs/puppet/latest/what_is_puppet.html', 'https://docs.chef.io/']",1,chapter13_network_automation,0.98,1
+220,CRUD is the acronym of the four primary actions performed by an application. What does CRUD stand for?,"a. Create, Read, Update, Delete
+b. Create, Read, Update, Done
+c. Create, Resolve, Update, Delete
+d. Create, Resolve, Update, Done
+",,a,a,,"CRUD is the standard acronym for the four basic operations performed on persistent storage or records: Create, Read, Update, and Delete.","['https://en.wikipedia.org/wiki/Create,_read,_update_and_delete', 'https://developer.mozilla.org/en-US/docs/Glossary/CRUD']",1,chapter13_network_automation,0.99,1
+221,A Layer 2 switch examines a frame’s destination MAC address and forwards that frame out of the port G0/2. That action occurs as part of which plane of the switch?,"a. Data plane
+b. Management plane
+c. Control Plane
+d. None of the above
+",,a,a,,"Forwarding a frame based on its destination MAC address is a data-forwarding operation performed in the switch’s data plane (also called the forwarding plane). The control plane is responsible for building/maintaining tables (MAC, routing, STP) and running protocols; the management plane handles administrative access and management protocols.","['https://www.juniper.net/documentation/en_US/junos/topics/concept/forwarding-control-management-planes-overview.html', 'https://learningnetwork.cisco.com/s/article/what-is-the-difference-between-data-control-and-management-planes', 'https://en.wikipedia.org/wiki/Data_plane']",1,chapter13_network_automation,0.95,1
+223,Identify the hostname part from the given URI: https://cluster.cisco.com/dna/intent/api/v1/business/sda/fabric? ipaddress=10.1.2.3.,"a. https://
+b. cluster.cisco
+c. cluster.cisco.com
+d. dna/intent/api/v1/business/sda/fabric
+e. ?ipaddress=10.1.2.3
+",,c,c,,"The hostname (host) in a URI is the domain between the scheme (https://) and the first path slash. In this URI, that part is ""cluster.cisco.com"". The scheme is https://, the path is dna/intent/... and the query string starts with ?ipaddress=10.1.2.3.","['https://tools.ietf.org/html/rfc3986', 'https://developer.mozilla.org/en-US/docs/Web/API/URL', 'https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL']",1,chapter13_network_automation,0.99,1
+224,Which of the following features of Cisco DNA Center discovers the actual path the packets will take from the source to the destination based on the current forwarding tables?,"a. Encrypted traffic analysis
+b. Device 360 and Client 360
+c. Network time travel
+d. Path trace
+",,d,d,,"Path Trace. The Path Trace feature in Cisco DNA Center computes and displays the actual packet forwarding path between a source and destination using the network’s current forwarding/route tables and device state. The other options are different features: Encrypted Traffic Analysis inspects encrypted flows, Device 360/Client 360 provide device/client detail views, and Network Time Travel shows historical state and events rather than the live forwarding path.","['https://www.cisco.com/c/en/us/solutions/enterprise-networks/dna-center/index.html', 'https://community.cisco.com/t5/networking-documents/dna-center-path-trace/ta-p/3663367', 'https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/dna-center/2-2/user_guide/b_dna_center_user_guide_2_2/b_dna_center_user_guide_2_2_chapter_0111.html']",1,chapter13_network_automation,0.95,1
+225,Which of the following features of Cisco DNA Center shows past client performance in a timeline for comparison to current behavior?,"a. Encrypted traffic analysis
+b. Device 360 and Client 360
+c. Network time travel
+d. Path trace
+",,c,b,,"The Client 360 (and Device 360) views in Cisco DNA Center provide a historical timeline of client (and device) metrics and events so you can compare past client performance with current behavior. Other choices don’t match: Encrypted Traffic Analysis inspects encrypted flows, Path Trace shows the forwarding path, and Network Time Travel provides broader historical network snapshots rather than the per-client performance timeline described.","['https://www.cisco.com/c/en/us/td/docs/net_mgmt/dna_center/1-3/user_guide/b_cisco_dna_center_assurance_user_guide_1_3/client360.html', 'https://www.cisco.com/c/en/us/td/docs/net_mgmt/dna_center/1-3/user_guide/b_cisco_dna_center_assurance_user_guide_1_3/assurance.html']",0,chapter13_network_automation,0.9,1
+226,Which of the following features of Cisco DNA Center gives a comprehensive view of the health of the device?,"a. Encrypted traffic analysis
+b. Device 360 and Client 360
+c. Network time travel
+d. Path trace
+",,b,b,,"Device 360 (and Client 360) in Cisco DNA Center are the assurance features designed to present a consolidated, comprehensive view of device (and client) health — CPU/memory, interface status, alarms, logs, config, performance metrics and related troubleshooting data. The other choices are specific functions (encrypted traffic analysis for encrypted threat detection, network time travel for historical state, path trace for path troubleshooting) rather than the general device-health dashboard provided by Device 360/Client 360.","['https://www.cisco.com/c/en/us/products/cloud-systems-management/dna-center/index.html', 'https://developer.cisco.com/docs/dna-center/#!assurance-overview', 'https://community.cisco.com/t5/networking-documents/dna-center-assurance-device-360-and-client-360/ta-p/3134296']",1,chapter13_network_automation,0.95,1
+227,Which of the following features of Cisco DNA Center enables Cisco DNA to use algorithms to recognize security threats even in encrypted traffic?,"a. Encrypted traffic analysis
+b. Device 360 and Client 360
+c. Network time travel
+d. Path trace
+",,a,a,,"Cisco's Encrypted Traffic Analytics (ETA) — often referred to as encrypted traffic analysis — uses machine learning and TLS/SSL metadata (fingerprints and flow telemetry) to identify indicators of compromise even when payloads are encrypted. The other options (Device 360/Client 360, Network Time Travel, Path Trace) provide device/client visibility, historical troubleshooting, and path diagnostics, not algorithmic threat detection in encrypted traffic.","['https://www.cisco.com/c/en/us/products/security/what-is-encrypted-traffic-analytics-eta.html', 'https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-encrypted-traffic-analysis.html']",1,chapter13_network_automation,0.99,1
+228,"Your company decides to move away from manual configuration methods, making changes by editing centralized configuration files. The issues you are facing with non-centralized configuration files are:
+1) You don’t know who engineer made the changes in the configuration file.
+2) You don’t know the changes in the configuration file over time.
+Which tool your company will use in order to solve these issues?","a. Version Control System
+b. Version Control Configuration
+c. Version Control Change
+d. Version Control Edit
+",,a,a,,"A Version Control System (VCS) (e.g., Git) records who made each change, when it was made, and what changed (commits/diffs/history). Using a VCS for centralized configuration files provides auditability, change history, and the ability to roll back or review differences—solving both cited issues.","['https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control', 'https://www.atlassian.com/git/tutorials/what-is-version-control', 'https://en.wikipedia.org/wiki/Version_control']",1,chapter13_network_automation,0.95,1
+229,"One of the benefits of controller-based networks over traditional networks is that the configuration on the devices have fewer errors, and you spent less time troubleshooting the network.","a. TRUE
+b. FALSE
+",,a,a,,"True. Controller-based (SDN/controller-managed) architectures centralize configuration and policy, enable automation and templating, and maintain a single source of truth. This reduces human configuration errors, enforces consistency across devices, and simplifies troubleshooting and remediation compared to manually managing many standalone devices.","['https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-sdn.html', 'https://www.cisco.com/c/en/us/products/cloud-systems-management/dna-center/what-is-cisco-dna-center.html', 'https://opennetworking.org/sdn-resources/sdn-definition/']",1,chapter13_network_automation,0.98,1
+230,The ______________________ plane includes protocols that allow network engineers to manage the devices.,"a. Management
+b. Data
+c. Control
+d. Network
+",,a,a,,"The management plane is responsible for device management and includes protocols and interfaces used by network engineers to configure, monitor, and manage devices (for example SSH, Telnet, SNMP, syslog, NETCONF/RESTCONF). The data plane forwards user traffic, and the control plane runs routing/protocol logic — so the management plane is the correct choice.","['https://learningnetwork.cisco.com/s/article/what-are-data-control-and-management-planes', 'https://www.juniper.net/documentation/en_US/junos/topics/concept/control-plane-forwarding-plane-management-plane.html', 'https://networklessons.com/cisco/ccna/data-plane-control-plane-and-management-plane/']",1,chapter13_network_automation,0.95,1

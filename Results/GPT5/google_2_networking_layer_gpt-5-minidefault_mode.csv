@@ -1,0 +1,71 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+21,Please select all of the valid IP addresses. Check all that apply.,"a. 257.70.312.49
+b. 123.456.123.456
+c. 192.168.1.1
+d. 8.8.8.8
+",,"c,d","c,d",,IPv4 dotted-decimal addresses consist of four octets (0–255). a) contains 257 and 312 (>255) so invalid. b) contains 456 (>255) so invalid. c) 192.168.1.1 and d) 8.8.8.8 are both valid IPv4 addresses.,"['https://www.rfc-editor.org/rfc/rfc791.txt', 'https://en.wikipedia.org/wiki/IPv4', 'https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml']",1,google_2_networking_layer,0.99,1
+22,How many IP addresses does a class C network have?,"a. 65,536 addresses
+b. 256 addresses
+c. 1 address
+d. 16,777,216 addresses
+",,b,b,,"A Class C IPv4 network uses a default subnet mask of 255.255.255.0 (a /24), leaving 8 bits for host addresses. That yields 2^8 = 256 total IP addresses (254 usable hosts if you exclude the network and broadcast addresses).","['https://www.cloudflare.com/learning/network-layer/ipv4/', 'https://tools.ietf.org/html/rfc791', 'https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html']",1,google_2_networking_layer,0.99,1
+23,Which IP address class has the first two octets reserved for the network ID and the last two octets for the host ID?,"a. Class C addresses
+b. Class B
+c. Class E
+d. Class A
+",,b,b,,Class B addresses reserve the first two octets for the network ID and the last two octets for host IDs. Their default subnet mask is 255.255.0.0 and the address range is 128.0.0.0 to 191.255.255.255.,"['https://tools.ietf.org/html/rfc791', 'https://en.wikipedia.org/wiki/IPv4_address#Address_classes', 'https://learningnetwork.cisco.com/s/article/what-are-the-different-ip-address-classes']",1,google_2_networking_layer,0.99,1
+24,The ____ is used to indicate that the datagram is allowed to be fragmented or to indicate that the datagram has already been fragmented.,"a. flag field
+b. service type field
+c. fragmentation offset field
+d. total length field
+",,a,a,,"The IPv4 header contains a 3-bit Flags field (including the DF — Don't Fragment bit and the MF — More Fragments bit). DF controls whether fragmentation is allowed; MF indicates that a datagram is (one of) the fragments. The Fragment Offset field instead gives the position of a fragment, not the 'allowed/has been fragmented' indication.","['https://datatracker.ietf.org/doc/html/rfc791', 'https://en.wikipedia.org/wiki/IPv4_header']",1,google_2_networking_layer,0.95,1
+25,The IP address assigned to a device would depend on the _______ it is connected.,"a. IP datagram
+b. ARP
+c. network
+d. MAC addresses
+",,c,c,,"An IP address is allocated according to the network (subnet/prefix) a host is attached to — the network portion of the address identifies the network the device is on (addresses may be assigned statically or via DHCP). ARP is used to map an IP to a MAC on a local network, MAC addresses are hardware identifiers and do not determine the IP, and an IP datagram is the packet format, not a factor in address assignment.","['https://tools.ietf.org/html/rfc791', 'https://tools.ietf.org/html/rfc2131', 'https://tools.ietf.org/html/rfc826', 'https://www.arin.net/knowledge/addressing/']",1,google_2_networking_layer,0.95,1
+26,What does CIDR stand for?,"a. Classful Interlink-Destination Routing
+b. Classful Identification Routing
+c. Class Interconnect Destination Routing
+d. Classless Inter-Domain Routing
+",,d,d,,"CIDR stands for ""Classless Inter-Domain Routing."" It was introduced to replace classful IP addressing, enable aggregation of routes (route summarization), and slow growth of global routing tables by using variable-length network prefixes (prefix notation) instead of fixed class A/B/C boundaries.","['https://tools.ietf.org/html/rfc1519', 'https://datatracker.ietf.org/doc/html/rfc4632', 'https://www.arin.net/knowledge/addressing/cidr/', 'https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing']",1,google_2_networking_layer,0.99,1
+27,Which of the following is a correct form of CIDR notation?,"a. 192.168.1.0 + 255.255.255.0
+b. 192.168.1.0:24
+c. 192.168.1.0/24
+d. 192.168.1.0\24
+",,c,c,,"CIDR uses an IP address followed by a slash and the prefix length (number of leading 1 bits), e.g. 192.168.1.0/24 (which corresponds to mask 255.255.255.0). The other forms (plus sign, colon, or backslash) are not standard CIDR notation.","['https://tools.ietf.org/html/rfc1519', 'https://tools.ietf.org/html/rfc4632', 'https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing']",1,google_2_networking_layer,0.95,1
+28,How many octets does a subnet mask have?,"a. 1
+b. 3
+c. 4
+d. 2
+",,c,c,,An IPv4 subnet mask is a 32-bit value divided into four 8-bit octets (4 × 8 = 32 bits). Therefore a subnet mask has 4 octets.,"['https://www.rfc-editor.org/rfc/rfc791', 'https://learn.microsoft.com/en-us/windows-server/networking/technologies/ipam/plan/ipv4-subnet-masks', 'https://en.wikipedia.org/wiki/IPv4']",1,google_2_networking_layer,0.99,1
+29,"Consider the following scenario: Your IP address is 192.168.8.34, and your subnet mask is 255.255.0.0. What part of the subnet mask represents the subnet ID?","a. 255.255.0.1
+b. The last two octets of the subnet mask, 0.0
+c. The first two octets of the subnet mask, 255.255
+d. 192.168.0.254
+",,c,c,,"A subnet mask of 255.255.0.0 is a /16 mask: the first two octets (255.255) are the network (subnet ID) portion and the last two octets (0.0) are the host portion. Options a and d are not valid interpretations (a is not a proper mask, d is an IP), and b incorrectly states the host portion as the subnet ID.","['https://en.wikipedia.org/wiki/Subnetwork', 'https://learn.microsoft.com/en-us/windows-server/networking/technologies/ipam/understanding-ipv4-subnetting', 'https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr_basic/configuration/15-s/yip-15-s-book/iadsubnet.html']",1,google_2_networking_layer,0.95,1
+30,How many possible host IDs do you always lose per network?,"a. 8
+b. 12
+c. 4
+d. 2
+",,d,d,,"In IPv4 each subnet reserves two host addresses that cannot be assigned to hosts: the network address (all host bits = 0) and the broadcast address (all host bits = 1). Therefore you always lose 2 possible host IDs per network. (Note: modern exception—RFC 3021—permits /31 point-to-point links that effectively remove this loss, but the standard subnet rule is two reserved addresses.)","['https://tools.ietf.org/html/rfc950', 'https://tools.ietf.org/html/rfc919', 'https://tools.ietf.org/html/rfc3021', 'https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/what-are-reserved-ip-addresses']",1,google_2_networking_layer,0.98,1
+31,Which of the following are types of Interior Gateway Protocols? (Select all that apply),"a. Link State Routing Protocols
+b. Distance-Vector Protocols
+c. Hypertext Transfer Protocol
+d. Transmission Control Protocol
+",,"a,b","a,b",,"Interior Gateway Protocols (IGPs) operate within an autonomous system and are commonly classified as link-state (e.g., OSPF, IS‑IS) or distance‑vector (e.g., RIP) routing protocols. HTTP and TCP are application‑layer and transport‑layer protocols respectively, not routing protocols, so c and d are incorrect.","['https://en.wikipedia.org/wiki/Interior_gateway_protocol', 'https://datatracker.ietf.org/doc/html/rfc2328', 'https://datatracker.ietf.org/doc/html/rfc2453', 'https://datatracker.ietf.org/doc/html/rfc793', 'https://datatracker.ietf.org/doc/html/rfc7231']",1,google_2_networking_layer,0.99,1
+32,Who is permitted to use non-routable address space?,"a. Anyone
+b. The IETF
+c. It's for testing purposes only
+d. The IANA
+",,a,a,,"RFC 1918 defines private (non‑routable on the public Internet) IPv4 address ranges (10/8, 172.16/12, 192.168/16) that may be used by any organization or individual inside private networks without registration or permission from IANA or an RIR. IANA reserved those ranges, but their use is unrestricted for private/internal networks.","['https://datatracker.ietf.org/doc/html/rfc1918', 'https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml', 'https://www.arin.net/knowledge/faq/addressing/what-is-rfc1918/']",1,google_2_networking_layer,0.95,1
+34,What is the difference between Interior Gateway Protocols and Exterior Gateway Protocols?,"a. There is no difference between them.
+b. Interior Gateway Protocols share information within a single autonomous system. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+c. Interior gateway protocols share information with public networks. Exterior gateway protocols are used for private networks.
+d. Interior gateway protocols share information with multiple autonomous systems. Exterior Gateway Protocols are used for the exchange of information between independent autonomous systems.
+",,b,b,,"Interior Gateway Protocols (IGPs) operate inside a single autonomous system (AS) and are used for intra‑AS routing (examples: OSPF, IS‑IS, RIP). Exterior Gateway Protocols (EGPs) are used to exchange routing information between independent autonomous systems (inter‑AS), the primary example being BGP. The other choices are incorrect because IGP/EGP distinction is about scope (inside vs. between ASes), not public vs. private or no difference.","['https://datatracker.ietf.org/doc/html/rfc4271', 'https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-bgp.html', 'https://en.wikipedia.org/wiki/Interior_gateway_protocol', 'https://en.wikipedia.org/wiki/Border_Gateway_Protocol']",1,google_2_networking_layer,0.95,1
+35,Which of the following are non-routable IP addresses? (Select all that apply),"a. 9.0.0.0
+b. 172.16.0.0/12
+c. 10.0.0.0/8
+d. 192.168.0.0/16
+",,"b,c,d","b,c,d",,"Options b (172.16.0.0/12), c (10.0.0.0/8) and d (192.168.0.0/16) are the RFC 1918 private (non‑routable on the public Internet) address blocks. 9.0.0.0 (option a) is a public/assigned block and is routable on the Internet.","['https://datatracker.ietf.org/doc/html/rfc1918', 'https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml', 'https://rdap.arin.net/registry/ip/9.0.0.0']",1,google_2_networking_layer,0.99,1

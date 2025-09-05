@@ -1,0 +1,15 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+16,Which of the following command is used to generate an OpenFlow network topology consisting of a single switch and 8 hosts with randomly generated MAC addresses for each host?,"a. sudo mn --topo single,8  --switch ovsk --controller remote
+b. sudo mn --topo single,3 --mac --switch ovsk --controller remote
+c. sudo mn --topo single,8 --mac --switch ovsk --controller remote
+d. sudo mn --topo linear,8  --switch ovsk --controller remote
+",,a,c,,"In Mininet the option --topo single,8 creates a topology with a single switch and 8 hosts, and the --mac flag tells Mininet to assign randomly generated MAC addresses to hosts. The remaining flags (--switch ovsk and --controller remote) select Open vSwitch and a remote controller respectively. Option c exactly matches these requirements.","['https://mininet.org/walkthrough/', 'https://github.com/mininet/mininet/wiki/Walkthrough', 'https://github.com/mininet/mininet/blob/master/util/mn.coffee (mn usage/options)']",0,3_mininet_setup,0.99,1
+17,What is the purpose of --mac flag used in mininet?,"a. Generates random MAC addresses for the hosts.
+b. Generates sequential MAC addresses for the hosts, matching their IP address.
+c. Generates sequential MAC addresses for the switch ports, matching their IP address.
+d. Generates random MAC addresses for the switch ports.
+",,b,b,,"The --mac option tells Mininet to assign deterministic (sequential) MAC addresses to hosts derived from their IPs (e.g., 10.0.0.1 -> 00:00:00:00:00:01). It applies to hosts, not switch ports, and is not for generating random MACs.","['https://github.com/mininet/mininet/blob/master/mn', 'https://github.com/mininet/mininet/wiki/Walkthrough', 'http://mininet.org/walkthrough/']",1,3_mininet_setup,0.95,1
+20,"What is the purpose of dpctl, provided with mininet?","a. To enable visibility and control over a single switch’s flow table.
+b. To enable visibility and control over multiple switch flow table.
+c. Is an OpenFlow controller.
+",,a,a,,"dpctl is a datapath control utility that talks to an individual OpenFlow datapath/switch to dump, add, or delete flow entries and inspect counters. It operates on a single switch/datapath at a time (you can run it separately for multiple switches, but it does not act as a multi-switch manager), and it is not an OpenFlow controller.","['https://mininet.org/walkthrough/', 'https://github.com/mininet/mininet/wiki/Commands', 'https://docs.openvswitch.org/en/latest/refman/ovs-dpctl.8/']",1,3_mininet_setup,0.91,1

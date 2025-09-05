@@ -1,0 +1,123 @@
+Question Number,Question Text,Choices,Valid Question?,Correct Answer,LLM Answer,Correct Explanation,LLM Explanation,URLs,Correct?,Topic,LLM Confidence,logprob Confidence
+41,Which of the following addresses are not valid Class A network IDs? (Choose all that apply),"a. 1.0.0.0
+b. 5.0.0.0
+c. 140.0.0.0
+d. 127.0.0.0
+e. 9.0.0.0
+f. 195.0.0.0
+",,"c,d,f","c,d,f",,"Class A addresses have a first octet in the range 1–126 (so 1.0.0.0, 5.0.0.0, 9.0.0.0 are Class A network IDs). 127.0.0.0/8 is reserved for loopback and is not a usable Class A network ID. 140.0.0.0 and 195.0.0.0 have first octets outside the 1–126 range (they belong to Class B and Class C ranges respectively), so they are not Class A network IDs.","['https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml', 'https://tools.ietf.org/html/rfc5735', 'https://learningnetwork.cisco.com/s/article/ipv4-addressing']",1,chapter3_ipv4_addressing,0.99,1
+42,Why does the formula for the number of hosts per subnet (2H – 2) require the subtraction of two hosts?,"a. To reserve two addresses for redundant default gateways(routers)
+b. To reserve the two addresses required for DHCP operation
+c. To reserve addresses for the subnet broadcast address and subnet ID
+d. To reserve addresses for the subnet ID and default gateway (router)
+",,c,c,,The formula 2^H − 2 subtracts two addresses because two host addresses in each IPv4 subnet are reserved and cannot be assigned to hosts: the subnet (network) ID (all host bits = 0) and the subnet broadcast address (all host bits = 1). These two reserved addresses are why the usable host count is two fewer than the total combinations of host bits.,"['https://datatracker.ietf.org/doc/html/rfc950', 'https://datatracker.ietf.org/doc/html/rfc919', 'https://en.wikipedia.org/wiki/Subnetwork#IPv4', 'https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/ip-address-basics']",1,chapter3_ipv4_addressing,0.95,1
+43,Which of the following addresses are valid Class C network IDs? (Choose two answers),"a. 195.0.0.0
+b. 22.22.3.0
+c. 222.0.0.0
+d. 191.255.255.0
+e. 127.0.0.0
+",,"a,c","a,c",,"Class C addresses have a first octet in the range 192–223 and, for a classful Class C network ID, the host portion (the last octet) is 0 (/24). 195.0.0.0 and 222.0.0.0 both have first octets in 192–223 and end with .0, so they are valid Class C network IDs. 22.x.x.x is Class A, 191.x.x.x is Class B, and 127.0.0.0 is loopback/reserved, so b, d, and e are not Class C network IDs.","['https://tools.ietf.org/html/rfc791', 'https://en.wikipedia.org/wiki/IPv4_address#Address_classes', 'https://learningnetwork.cisco.com/s/article/what-are-the-ip-address-classful-network-ranges']",1,chapter3_ipv4_addressing,0.95,1
+44,A network designer asked you how many subnet (S) bits does he need to create 200 subnets?,"a. 2
+b. 5
+c. 8
+d. 11
+",,c,c,,"Number of subnet bits S must satisfy 2^S ≥ 200. 2^7 = 128 (too few), 2^8 = 256 (sufficient). Therefore 8 subnet bits are needed.","['https://en.wikipedia.org/wiki/IPv4_subnetting', 'https://tools.ietf.org/html/rfc950', 'https://learningnetwork.cisco.com/s/topic/0TO3i000000kC0aGAE/ipv4-subnetting']",1,chapter3_ipv4_addressing,0.99,1
+45,The addresses in the same network have different values in the network part.,"a. TRUE
+b. FALSE
+",,b,b,,False. Hosts in the same IP network share the same network portion (as defined by the subnet mask or prefix). Only the host portion differs between addresses within that network.,"['https://learningnetwork.cisco.com/s/article/what-is-a-subnet-mask', 'https://tools.ietf.org/html/rfc791', 'https://tools.ietf.org/html/rfc4632']",1,chapter3_ipv4_addressing,0.95,1
+46,Which of the following IPv4 addresses has a subnet mask 255.255.0.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,a,a,,"In classful IPv4 addressing, a Class B address has a first octet in the range 128–191 and uses the default subnet mask 255.255.0.0. The first octet of 188 (in 188.187.186.185) falls in that range, so option a is Class B with mask 255.255.0.0.","['https://en.wikipedia.org/wiki/IPv4#Address_classes', 'https://learningnetwork.cisco.com/s/article/ip-addressing-and-subnetting-basics']",1,chapter3_ipv4_addressing,0.99,1
+47,Which of the following IPv4 addresses has a subnet mask 255.255.255.0?,"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+",,b,b,,"In classful IPv4 addressing the default subnet mask for Class C addresses (first octet 192–223) is 255.255.255.0. The address 204.203.202.201 has a first octet of 204, which falls in the Class C range, so its default mask is 255.255.255.0. The others are Class A (10.x.x.x and 55.x.x.x) or Class B (188.x.x.x) and have different default masks.","['https://en.wikipedia.org/wiki/IPv4_address', 'https://www.cisco.com/c/en/us/td/docs/ios/ipaddr/basic/configuration/guide/ia3.html (see IPv4 addressing and subnet masks)', 'https://www.tcpipguide.com/free/t_IPAddressingandSubnetting.htm']",1,chapter3_ipv4_addressing,0.95,1
+48,"The first octet range from the Class A IP networks
+is 1 - 126.","a. TRUE
+b. FALSE
+",,a,a,,"True. In classful IPv4 addressing, Class A networks use a first-octet range of 1–126. (0.x.x.x is not used for normal host addressing and 127.x.x.x is reserved for loopback.)","['https://en.wikipedia.org/wiki/IPv4#Addressing', 'https://datatracker.ietf.org/doc/html/rfc5735', 'https://www.cisco.com/c/en/us/about/press/internet-protocol-journal/blogs/2012/06/ipv4-addressing.html']",1,chapter3_ipv4_addressing,0.98,1
+49,Which of the following IPv4 addresses has a subnet mask 255.0.0.0? (Choose all that apply),"a. 188.187.186.185
+b. 204.203.202.201
+c. 55.44.22.11
+d. 10.0.0.56
+e. 100.24.5.56
+f. 192.168.178.6
+",,"c,d,e","c,d,e",,"The mask 255.0.0.0 is the default (classful) mask for Class A addresses, whose first octet is 1–126. Options with first octets 55, 10, and 100 are in that range, so they use 255.0.0.0 by default. (10.0.0.56 is the RFC1918 private Class A address; 100.24.5.56 is within the public 100.* range and not inside the 100.64.0.0/10 carrier-grade NAT block.)","['https://en.wikipedia.org/wiki/IPv4_address#Address_space_and_addressing_scheme', 'https://tools.ietf.org/html/rfc791', 'https://tools.ietf.org/html/rfc1918', 'https://tools.ietf.org/html/rfc6598']",1,chapter3_ipv4_addressing,0.98,1
+50,Which of the following ranges is a valid class B network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,a,a,,"Classful IPv4 class B addresses have a first octet in the range 128–191, i.e. the overall range is 128.0.0.0 through 191.255.255.255. Option (a) is the choice that corresponds to the class B address space; the other choices correspond to class A (b), class C (c), and multicast/reserved ranges (d).","['https://en.wikipedia.org/wiki/IPv4_address#Address_classes', 'https://learningnetwork.cisco.com/s/article/what-are-the-ip-address-classes', 'https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml']",1,chapter3_ipv4_addressing,0.95,1
+51,Which of the following ranges is a valid class C network numbers?,"a. 128.0.0.0 - 191.255.0.0
+b. 1.0.0.0 - 126.0.0.0
+c. 192.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,c,c,,"Classful IPv4 addressing defines Class C networks as those with a first octet in the range 192–223. Option c (192.0.0.0 - 223.255.255.0) corresponds to the Class C address range. The other choices map to different classes: b is Class A (1–126), a is Class B (128–191), and d covers Class D/E (224–239 multicast and 240–255 reserved), so they are not Class C.","['https://en.wikipedia.org/wiki/IPv4_address#Address_space', 'https://learningnetwork.cisco.com/s/article/what-are-the-differences-between-class-a-class-b-and-class-c-ip-addresses', 'https://tools.ietf.org/html/rfc791']",1,chapter3_ipv4_addressing,0.95,1
+52,Which of the following is the default mask of the IP 10.2.0.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,a,a,,10.2.0.0 falls in the 10.0.0.0–10.255.255.255 range which is a Class A network. The default (classful) subnet mask for Class A is 255.0.0.0 (also written as /8).,"['https://tools.ietf.org/html/rfc1918', 'https://learn.microsoft.com/en-us/training/modules/intro-to-ipv4/3-assign-ip-addresses', 'https://en.wikipedia.org/wiki/IPv4#Addressing_system']",1,chapter3_ipv4_addressing,0.99,1
+53,What information can you extract having the IP address 172.16.99.45? (Choose two answers.),"a. The network ID is 172.0.0.0.
+b. The default mask for the network is 255.255.255.0.
+c. The network is a Class B network.
+d. The number of host bits in the unsubnetted network is 16.
+e. The broadcast address of the network is 172.255.255.255
+",,"c,d","c,d",,"172.16.99.45 falls in the 128.0.0.0–191.255.255.255 range (class B). In classful addressing a Class B network has a default mask of 255.255.0.0, so there are 16 host bits in the unsubnetted (default) network. The other options are incorrect: (a) 172.0.0.0 is not the classful network ID for 172.16.99.45, (b) the default mask is 255.255.0.0 (not 255.255.255.0), and (e) the broadcast for the classful network containing 172.16.99.45 would be 172.16.255.255 (not 172.255.255.255).","['https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-ipv4.html', 'https://www.ietf.org/rfc/rfc791.txt', 'https://en.wikipedia.org/wiki/IPv4_addressing#Address_space_and_address_classes']",1,chapter3_ipv4_addressing,0.95,1
+54,A network designer asked you how many subnets (S) bits does he need to create 100 subnets? (Type only the number),"a. 4
+b. 5
+c. 6
+d. 7
+",,d,d,,"Need S such that 2^S ≥ 100. 2^6 = 64 (too few), 2^7 = 128 (≥100), so 7 subnet bits are required.","['https://learningnetwork.cisco.com/s/article/what-is-subnetting', 'https://tools.ietf.org/html/rfc950', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter3_ipv4_addressing,1.0,1
+55,"The senior network engineer asked you to choose the broadcast address from the last subnet according to the following details:
+Network 172.28.0.0 (Class B)
+Mask 255.255.0.0 (for all subnets)","a. 172.28.255.254
+b. 172.255.255.255
+c. 172.28.200.255
+d. 172.28.255.255
+",,d,d,,"172.28.0.0 with mask 255.255.0.0 is a /16 network. The broadcast address for that subnet sets all host bits to 1 (the last two octets), giving 172.28.255.255. The other choices are either a host address (.254), an address outside the 172.28.0.0/16 network (172.255....), or not the full-subnet broadcast (.200.255).","['https://learningnetwork.cisco.com/s/article/what-is-ip-subnetting', 'https://tools.ietf.org/html/rfc950', 'https://en.wikipedia.org/wiki/IP_address']",1,chapter3_ipv4_addressing,0.95,1
+56,The address 130.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,b,b,,"The first octet 130 falls in the range 128–191, which defines Class B IPv4 addresses (network IDs from 128.0.0.0 through 191.255.0.0). Therefore 130.0.0.0 is a Class B network ID.","['https://datatracker.ietf.org/doc/html/rfc791', 'https://learningnetwork.cisco.com/s/article/what-are-ip-address-classes-a-b-and-c', 'https://en.wikipedia.org/wiki/IPv4_addressing']",1,chapter3_ipv4_addressing,0.99,1
+57,Which of the following is the default mask of the IP 178.25.3.0?,"a. 255.0.0.0
+b. 255.255.0.0
+c. 255.255.255.0
+d. 255.255.255.255
+",,b,b,,"The first octet 178 falls in the class B range (128–191). Class B addresses have a default subnet mask of 255.255.0.0, so the default mask for 178.25.3.0 is 255.255.0.0.","['https://en.wikipedia.org/wiki/IPv4_address#Address_classes', 'https://learningnetwork.cisco.com/s/article/ipv4-addressing-and-subnetting-overview', 'https://www.cloudflare.com/learning/network-layer/ipv4/']",1,chapter3_ipv4_addressing,0.98,1
+58,The address 200.0.0.0 is a Class ____________ network ID,"a. A
+b. B
+c. C
+d. D
+",,c,c,,"In classful IPv4 addressing, the class is determined by the first octet. Class A = 1–126, Class B = 128–191, Class C = 192–223, Class D = 224–239. The first octet of 200.0.0.0 is 200, which falls in the 192–223 range, so it is a Class C network ID.","['https://learningnetwork.cisco.com/s/article/what-are-ip-address-classes', 'https://en.wikipedia.org/wiki/IPv4#Addressing', 'https://datatracker.ietf.org/doc/html/rfc791']",1,chapter3_ipv4_addressing,0.99,1
+59,The range of the Class C public IP Networks is _________________ - _________________,"a. 10.0.0.0 - 140.255.255.0
+b. 192.0.0.0 - 223.255.255.0
+c. 200.0.0.0 - 223.255.255.0
+d. 224.0.0.0 - 254.255.255.0
+",,b,b,,"Classful IPv4 addressing defines Class C networks as those with leading bits 110, which corresponds to the address range 192.0.0.0 through 223.255.255.255. Choice (b) matches the Class C range (the option's end .0 appears to be a minor typo; the correct end is .255).","['https://en.wikipedia.org/wiki/Classful_network', 'https://en.wikipedia.org/wiki/IPv4_address', 'https://developers.cloudflare.com/fundamentals/networking/ipv4/ipv4-address-space/']",1,chapter3_ipv4_addressing,0.95,1
+60,"The senior network engineer asked you to choose the last usable address for a host from the last subnet according to the following details:
+Network 9.0.0.0 (Class A)
+Mask 255.255.0.0 (for all subnets)","a. 9.255.255.254
+b. 10.255.255.254
+c. 11.255.255.254
+d. 12.255.255.254
+",,a,a,,"The Class A network 9.0.0.0 subnetted with mask 255.255.0.0 is /16 subnets: 9.0.0.0/16, 9.1.0.0/16, ... up to 9.255.0.0/16. The last (highest) /16 subnet is 9.255.0.0/16. Its broadcast is 9.255.255.255, so the last usable host address is one less: 9.255.255.254.","['https://datatracker.ietf.org/doc/html/rfc950', 'https://learningnetwork.cisco.com/s/article/what-is-subnetting', 'https://en.wikipedia.org/wiki/IPv4_address']",1,chapter3_ipv4_addressing,0.98,1
+61,The first octet range from the Class B IP networks is 1 - 126.,"a. TRUE
+b. FALSE
+",,b,b,,"FALSE. Class B IPv4 addresses have a first octet range of 128–191. The range 1–126 corresponds to Class A (0 and 127 are special: 0.x.x.x reserved, 127.x.x.x loopback).","['https://en.wikipedia.org/wiki/IPv4_address#Address_classes', 'https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xhtml', 'https://www.cisco.com/c/en/us/support/docs/ip/ip-addresses/13788-3.html']",1,chapter3_ipv4_addressing,0.99,1
+62,A network designer asked you how many subnet (S) bits does he need to create 5 subnets?,"a. 2
+b. 3
+c. 4
+d. 5
+",,b,b,,Use the formula 2^S ≥ number_of_subnets. 2^2 = 4 (insufficient for 5). 2^3 = 8 (sufficient). Therefore 3 subnet bits are required to create at least 5 subnets.,"['https://learningnetwork.cisco.com/s/article/ipv4-subnetting', 'https://networklessons.com/cisco/ccna-200-301/ccna-subnetting/', 'https://en.wikipedia.org/wiki/Subnetwork']",1,chapter3_ipv4_addressing,0.98,1
+63,Which of the following are private IP networks? (Choose all that apply),"a. 172.31.100.0
+b. 164.16.2.0
+c. 192.166.255.0
+d. 192.168.1.0
+e. 11.11.11.0
+f. 172.24.0.0
+",,"a,d,f","a,d,f",,"RFC 1918 defines the private IPv4 ranges: 10.0.0.0/8, 172.16.0.0/12 (i.e. 172.16.0.0–172.31.255.255), and 192.168.0.0/16. - a (172.31.100.0) falls in 172.16.0.0/12 → private. - f (172.24.0.0) falls in 172.16.0.0/12 → private. - d (192.168.1.0) falls in 192.168.0.0/16 → private. The others (164.16.2.0, 192.166.255.0, 11.11.11.0) are not within the RFC1918 private ranges and are public addresses.","['https://datatracker.ietf.org/doc/html/rfc1918', 'https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml']",1,chapter3_ipv4_addressing,0.99,1
